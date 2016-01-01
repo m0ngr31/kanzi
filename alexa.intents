@@ -1,0 +1,129 @@
+{
+    "intents": [
+        {
+            "intent": "CheckNewShows",
+            "slots": []
+        },
+        {
+            "intent": "WhatNewShows",
+            "slots": []
+        },
+        {
+            "intent": "NewShowInquiry",
+            "slots": [
+                {
+                    "name": "Show",
+                    "type": "AMAZON.LITERAL"
+                }
+            ]
+        },
+        {
+            "intent": "PlayPause",
+            "slots": []
+        },
+        {
+            "intent": "Stop",
+            "slots": []
+        },
+        {
+            "intent": "ListenToArtist",
+            "slots": [
+                {
+                    "name": "Artist",
+                    "type": "AMAZON.LITERAL"
+                }
+            ]
+        },
+        {
+            "intent": "PlayRandomEpisode",
+            "slots": [
+                {
+                    "name": "Show",
+                    "type": "AMAZON.LITERAL"
+                }
+            ]
+        },
+        {
+            "intent": "PlayMovie",
+            "slots": [
+                {
+                    "name": "Movie",
+                    "type": "AMAZON.LITERAL"
+                }
+            ]
+        },
+        {
+            "intent": "PlayRandomMovie",
+            "slots": []
+        },
+        {
+            "intent": "Prev",
+            "slots": []
+        },
+        {
+            "intent": "Skip",
+            "slots": []
+        },
+        {
+            "intent": "StartOver",
+            "slots": []
+        },
+        {
+            "intent": "Home",
+            "slots": []
+        },
+        {
+            "intent": "Back",
+            "slots": []
+        },
+        {
+            "intent": "Up",
+            "slots": []
+        },
+        {
+            "intent": "Down",
+            "slots": []
+        },
+        {
+            "intent": "Right",
+            "slots": []
+        },
+        {
+            "intent": "Left",
+            "slots": []
+        },
+        {
+            "intent": "Select",
+            "slots": []
+        },
+        {
+            "intent": "Menu",
+            "slots": []
+        },
+        {
+            "intent": "PageUp",
+            "slots": []
+        },
+        {
+            "intent": "PageDown",
+            "slots": []
+        },
+        {
+            "intent": "PlayEpisode",
+            "slots": [
+                {
+                    "name": "Show",
+                    "type": "AMAZON.LITERAL"
+                },
+                {
+                    "name": "Episode",
+                    "type": "AMAZON.NUMBER"
+                },
+                {
+                    "name": "Season",
+                    "type": "AMAZON.NUMBER"
+                }
+            ]
+        }
+    ]
+}

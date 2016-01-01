@@ -1,0 +1,39 @@
+PlayPause (play/pause/resume)
+
+Stop (stop/cancel/shut up)
+
+Skip (skip/next) (/song)
+
+Prev previous (/song)
+
+StartOver (replay/start over)
+
+Home navigate home
+
+Back (navigate/go back)
+
+Up navigate up
+
+Down navigate down
+
+Right navigate right
+
+Left navigate left
+
+Select select
+
+Menu open menu
+
+PageUp navigate page up
+
+PageDown navigate page down
+
+ListenToArtist (listen to/shuffle) (/music by/artist) {(Radiohead/Muse/The XX/Explosions in the Sky)|Artist}
+
+PlayRandomMovie (play/watch) (/a) (/random) (movie/film)
+
+PlayRandomEpisode (play/watch) (/a) (/random) episode of {((/The )Amazing Race/America's Got Talent/Arrow/(/The )Big Bang Theory/(/The )Blacklist/The Flash/Gotham/How To Get Away With Murder/Person of Interest/Scandal/It's Always sunny in philidelphia/The man in the high castle)|Show}
+
+PlayEpisode (play/watch) (season/series) {Season} episode {Episode} of {((/The )Amazing Race/America's Got Talent/Arrow/(/The )Big Bang Theory/(/The )Blacklist/The Flash/Gotham/How To Get Away With Murder/Person of Interest/Scandal/It's Always sunny in philidelphia/The man in the high castle)|Show}
+
+PlayMovie (play/watch) movie {((/The )Godfather/Die Hard/Interstellar/A Few Good Men/(/The )Hunt for Red October/Back to the future)|Movie}
