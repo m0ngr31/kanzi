@@ -17,7 +17,7 @@ To get this running, you'll have to have your own server to handle the requests 
 
 OpenShift makes it easy to get it up and running and it is completely free to use. This way you won't have to worry about spinning up a VPS somewhere and fiddling with SSL certs, WSGI configs, Python packages, ect. Heroku will work fine as well, and has a similar setup, but the free tier requires the `dyno` to sleep for 6 hours a day and goes to sleep after approximately 30 minutes of inactivity, which would be a hassle to deal with.
 
-Once you have setup an OpenShift account setup, go ahead and [install the command line tool](https://developers.openshift.com/en/managing-client-tools.html) (You'll need Ruby installed). From the cli, you'll be able to create a new app that will create a folder with a git repo initialized. Go into that directory and replace the `wsgi.py` file and add the `kodi.py` files from this repo.
+Once you have setup an OpenShift account setup, go ahead and [install the command line tool](https://developers.openshift.com/en/managing-client-tools.html) (You'll need Ruby installed). From the cli, you'll be able to create a new app that will create a folder with a git repo initialized. Go into that directory and replace the `wsgi.py` file and add the `kodi.py` and `requirements.txt` files from this repo.
 
 Once you have everything ready, you can setup the following environment variables to talk to your Kodi box:
 
