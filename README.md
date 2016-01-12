@@ -6,10 +6,12 @@ I've expanded it to support the following features:
   - Basic navigation (Up/Down, Left/Right, Page Up/Down, Select, Back, Open Menu) 
   - Playback control (Play/Pause, Skip, Previous, Stop)
   - Shuffle music by artist
-  - Play random episode of TV show
-  - Play random movie
+  - Play random unwatched episode of TV show
+  - Play random unwatched movie
   - Play specific episode of a TV show ('Play season 4 episode 10 of The Office')
   - Play specific movie
+  - Continue watching next episode of last show that was watched
+  - Play next episode of other show
 
 ### Setup
 
@@ -17,7 +19,12 @@ To get this running, you'll have to have your own server to handle the requests 
 
 OpenShift makes it easy to get it up and running and it is completely free to use. This way you won't have to worry about spinning up a VPS somewhere and fiddling with SSL certs, WSGI configs, Python packages, ect. Heroku will work fine as well, and has a similar setup, but the free tier requires the `dyno` to sleep for 6 hours a day and goes to sleep after approximately 30 minutes of inactivity, which would be a hassle to deal with.
 
-Once you have setup an OpenShift account setup, go ahead and [install the command line tool](https://developers.openshift.com/en/managing-client-tools.html) (You'll need Ruby installed). From the cli, you'll be able to create a new app that will create a folder with a git repo initialized. Go into that directory and replace the `wsgi.py` file and add the `kodi.py` and `requirements.txt` files from this repo.
+Once you have setup an OpenShift account setup, go ahead and [install the command line tool](https://developers.openshift.com/en/managing-client-tools.html) (You'll need Ruby installed, and apparently there is some problems with newer versions, so might stick with 1.9 if you run into any issues).
+
+To create a new app, run this from the command line: `rhc app create kodi python-2.7`. If that runs successfully, you'll see something like this:
+![Create app](http://i.imgur.com/CycIDHZ.png)
+
+Sometimes it doesn't detect that you have git installed, so if it doesn't create a directory called kodi, do a `git clone` on that Git remote address that it gives you. Now go into the kodi directory and replace the `wsgi.py` file and add the `kodi.py` and `requirements.txt` files from this repo.
 
 Once you have everything ready, you can setup the following environment variables to talk to your Kodi box:
 
@@ -25,8 +32,10 @@ Once you have everything ready, you can setup the following environment variable
   - KODI_PORT
   - KODI_USERNAME
   - KODI_PASSWORD
+  
+You can do this easily from the command line: `rhc env set KODI_ADDRESS='kodi.ipaddress' KODI_PORT='8080' KODI_USERNAME='kodi' KODI_PASSWORD='kodi' -a kodi`. Changing of course for your settings.
 
-If you would rather not set this up, you can change the values in the `kodi.py` file. Just remember that this transmits your Kodi username and password in plaintext over HTTP, so make sure it's not something that you are using for other accounts.
+If you would rather not set this up, you can change the values in the `kodi.py` file instead. Just remember that either way, this transmits your Kodi username and password in plaintext over HTTP, so make sure it's not something that you are using for other accounts.
 
 Of course you'll need to have your Kodi box opened up to the internet via port forwarding. If you don't have a dedicated IP address, you'll also need a dynamic DNS service to give you a static URL to use so you don't have to be constantly change this value.
 
@@ -36,7 +45,7 @@ Here's what it'll look like:
 ![1st tab](http://i.imgur.com/q0Wqld1.png)
 You'll just need to stick the URL from your app in the Endpoint field
 
-On the next tab, you'll have to paste the `alexa.intents` file into the first field, and use [this tool here](http://www.makermusings.com/amazon-echo-utterance-expander/) to create the Sample utterances from the `alexa.utterances` file in the second field.
+On the next tab, you'll have to paste the `alexa.intents` file into the first field, and paste the `alexa.utterances` file in the second field.
 ![2nd tab](http://i.imgur.com/UcXVqSO.png)
 
 The next tab has info about the SSL cert, if you are using OpenShift, select the middle option.

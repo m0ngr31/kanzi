@@ -207,9 +207,42 @@ def GetTvShows():
 def GetMovies():
     data = SendCommand(RPCString("VideoLibrary.GetMovies"))
     return data
+    
+def GetUnwatchedMovies():
+    data = SendCommand(RPCString("VideoLibrary.GetMovies", {"filter":{"field":"playcount", "operator":"lessthan", "value":"1"}}))
+    return data
 
 def GetEpisodesFromShow(show_id):
     data = SendCommand(RPCString("VideoLibrary.GetEpisodes", {"tvshowid": int(show_id)}))
+    return data
+
+def GetUnwatchedEpisodesFromShow(show_id):
+    data = SendCommand(RPCString("VideoLibrary.GetEpisodes", {"tvshowid": int(show_id), "filter":{"field":"playcount", "operator":"lessthan", "value":"1"}}))
+    return data
+    
+def GetNextUnwatchedEpisode(show_id):
+    data = SendCommand(RPCString("VideoLibrary.GetEpisodes", {"limits":{"end":1},"tvshowid": int(show_id), "filter":{"field":"lastplayed", "operator":"greaterthan", "value":"0"}, "properties":["season", "episode", "lastplayed", "firstaired"], "sort":{"method":"lastplayed", "order":"descending"}}))
+    if 'episodes' in data['result']:
+        episode = data['result']['episodes'][0]
+        episode_season = episode['season']
+        episode_number = episode['episode']
+        
+        next_episode = GetSpecificEpisode(show_id, episode_season, int(episode_number) + 1)
+        
+        if next_episode:
+            return next_episode
+        else:
+            next_episode = GetSpecificEpisode(show_id, int(episode_season) + 1, 1)
+          
+            if next_episode:
+                return next_episode
+            else:
+                return None
+    else:
+        return None
+
+def GetLastWatchedShow():
+    data = SendCommand(RPCString("VideoLibrary.GetEpisodes", {"limits":{"end":1}, "filter":{"field":"playcount", "operator":"greaterthan", "value":"0"}, "filter":{"field":"lastplayed", "operator":"greaterthan", "value":"0"}, "sort":{"method":"lastplayed", "order":"descending"}, "properties":["tvshowid"]}))
     return data
     
 def GetSpecificEpisode(show_id, season, episode):
@@ -290,4 +323,3 @@ def GetVideoPlayStatus():
                 cur = '%02d:%02d' % (data['result']['time']['minutes'], data['result']['time']['seconds'])
             return {'state':'play' if speed > 0 else 'pause', 'time':cur, 'total':total, 'pct':data['result']['percentage']}
     return {'state':'stop'}
-

@@ -1,39 +1,325 @@
-PlayPause (play/pause/resume)
-
-Stop (stop/cancel/shut up)
-
-Skip (skip/next) (/song)
-
-Prev previous (/song)
-
-StartOver (replay/start over)
-
-Home (navigate/go) home
-
-Back (navigate/go) back
-
-Up navigate up
-
+Back go back
+Back navigate
+ContinueShow continue last show
+ContinueShow continue show
+ContinueShow continue watching last show
+ContinueShow continue watching show
 Down navigate down
-
-Right navigate right
-
+Home navigate home
 Left navigate left
-
-Select select
-
+ListenToArtist listen to artist {Explosions in the Sky|Artist}
+ListenToArtist listen to artist {Muse|Artist}
+ListenToArtist listen to artist {Radiohead|Artist}
+ListenToArtist listen to artist {The XX|Artist}
+ListenToArtist listen to music by {Explosions in the Sky|Artist}
+ListenToArtist listen to music by {Muse|Artist}
+ListenToArtist listen to music by {Radiohead|Artist}
+ListenToArtist listen to music by {The XX|Artist}
+ListenToArtist listen to {Explosions in the Sky|Artist}
+ListenToArtist listen to {Muse|Artist}
+ListenToArtist listen to {Radiohead|Artist}
+ListenToArtist listen to {The XX|Artist}
+ListenToArtist shuffle artist {Explosions in the Sky|Artist}
+ListenToArtist shuffle artist {Muse|Artist}
+ListenToArtist shuffle artist {Radiohead|Artist}
+ListenToArtist shuffle artist {The XX|Artist}
+ListenToArtist shuffle music by {Explosions in the Sky|Artist}
+ListenToArtist shuffle music by {Muse|Artist}
+ListenToArtist shuffle music by {Radiohead|Artist}
+ListenToArtist shuffle music by {The XX|Artist}
+ListenToArtist shuffle {Explosions in the Sky|Artist}
+ListenToArtist shuffle {Muse|Artist}
+ListenToArtist shuffle {Radiohead|Artist}
+ListenToArtist shuffle {The XX|Artist}
 Menu open menu
-
-PageUp navigate page up
-
 PageDown navigate page down
-
-ListenToArtist (listen to/shuffle) (/music by/artist) {(Radiohead/Muse/The XX/Explosions in the Sky)|Artist}
-
-PlayRandomMovie (play/watch) (/a) (/random) (movie/film)
-
-PlayRandomEpisode (play/watch) (/a) (/random) episode of {((/The )Amazing Race/America's Got Talent/Arrow/(/The )Big Bang Theory/(/The )Blacklist/The Flash/Gotham/How To Get Away With Murder/Person of Interest/Scandal/It's Always sunny in philidelphia/The man in the high castle)|Show}
-
-PlayEpisode (play/watch) (season/series) {Season} episode {Episode} of {((/The )Amazing Race/America's Got Talent/Arrow/(/The )Big Bang Theory/(/The )Blacklist/The Flash/Gotham/How To Get Away With Murder/Person of Interest/Scandal/It's Always sunny in philidelphia/The man in the high castle)|Show}
-
-PlayMovie (play/watch) movie {((/The )Godfather/Die Hard/Interstellar/A Few Good Men/(/The )Hunt for Red October/Back to the future)|Movie}
+PageUp navigate page up
+PlayEpisode play season {Season} episode {Episode} of {Amazing Race|Show}
+PlayEpisode play season {Season} episode {Episode} of {America's Got Talent|Show}
+PlayEpisode play season {Season} episode {Episode} of {Arrow|Show}
+PlayEpisode play season {Season} episode {Episode} of {Big Bang Theory|Show}
+PlayEpisode play season {Season} episode {Episode} of {Blacklist|Show}
+PlayEpisode play season {Season} episode {Episode} of {Gotham|Show}
+PlayEpisode play season {Season} episode {Episode} of {How To Get Away With Murder|Show}
+PlayEpisode play season {Season} episode {Episode} of {It's Always sunny in philadelphia|Show}
+PlayEpisode play season {Season} episode {Episode} of {Person of Interest|Show}
+PlayEpisode play season {Season} episode {Episode} of {Scandal|Show}
+PlayEpisode play season {Season} episode {Episode} of {The Amazing Race|Show}
+PlayEpisode play season {Season} episode {Episode} of {The Big Bang Theory|Show}
+PlayEpisode play season {Season} episode {Episode} of {The Blacklist|Show}
+PlayEpisode play season {Season} episode {Episode} of {The Flash|Show}
+PlayEpisode play season {Season} episode {Episode} of {The man in the high castle|Show}
+PlayEpisode play series {Season} episode {Episode} of {Amazing Race|Show}
+PlayEpisode play series {Season} episode {Episode} of {America's Got Talent|Show}
+PlayEpisode play series {Season} episode {Episode} of {Arrow|Show}
+PlayEpisode play series {Season} episode {Episode} of {Big Bang Theory|Show}
+PlayEpisode play series {Season} episode {Episode} of {Blacklist|Show}
+PlayEpisode play series {Season} episode {Episode} of {Gotham|Show}
+PlayEpisode play series {Season} episode {Episode} of {How To Get Away With Murder|Show}
+PlayEpisode play series {Season} episode {Episode} of {It's Always sunny in philadelphia|Show}
+PlayEpisode play series {Season} episode {Episode} of {Person of Interest|Show}
+PlayEpisode play series {Season} episode {Episode} of {Scandal|Show}
+PlayEpisode play series {Season} episode {Episode} of {The Amazing Race|Show}
+PlayEpisode play series {Season} episode {Episode} of {The Big Bang Theory|Show}
+PlayEpisode play series {Season} episode {Episode} of {The Blacklist|Show}
+PlayEpisode play series {Season} episode {Episode} of {The Flash|Show}
+PlayEpisode play series {Season} episode {Episode} of {The man in the high castle|Show}
+PlayEpisode watch season {Season} episode {Episode} of {Amazing Race|Show}
+PlayEpisode watch season {Season} episode {Episode} of {America's Got Talent|Show}
+PlayEpisode watch season {Season} episode {Episode} of {Arrow|Show}
+PlayEpisode watch season {Season} episode {Episode} of {Big Bang Theory|Show}
+PlayEpisode watch season {Season} episode {Episode} of {Blacklist|Show}
+PlayEpisode watch season {Season} episode {Episode} of {Gotham|Show}
+PlayEpisode watch season {Season} episode {Episode} of {How To Get Away With Murder|Show}
+PlayEpisode watch season {Season} episode {Episode} of {It's Always sunny in philadelphia|Show}
+PlayEpisode watch season {Season} episode {Episode} of {Person of Interest|Show}
+PlayEpisode watch season {Season} episode {Episode} of {Scandal|Show}
+PlayEpisode watch season {Season} episode {Episode} of {The Amazing Race|Show}
+PlayEpisode watch season {Season} episode {Episode} of {The Big Bang Theory|Show}
+PlayEpisode watch season {Season} episode {Episode} of {The Blacklist|Show}
+PlayEpisode watch season {Season} episode {Episode} of {The Flash|Show}
+PlayEpisode watch season {Season} episode {Episode} of {The man in the high castle|Show}
+PlayEpisode watch series {Season} episode {Episode} of {Amazing Race|Show}
+PlayEpisode watch series {Season} episode {Episode} of {America's Got Talent|Show}
+PlayEpisode watch series {Season} episode {Episode} of {Arrow|Show}
+PlayEpisode watch series {Season} episode {Episode} of {Big Bang Theory|Show}
+PlayEpisode watch series {Season} episode {Episode} of {Blacklist|Show}
+PlayEpisode watch series {Season} episode {Episode} of {Gotham|Show}
+PlayEpisode watch series {Season} episode {Episode} of {How To Get Away With Murder|Show}
+PlayEpisode watch series {Season} episode {Episode} of {It's Always sunny in philadelphia|Show}
+PlayEpisode watch series {Season} episode {Episode} of {Person of Interest|Show}
+PlayEpisode watch series {Season} episode {Episode} of {Scandal|Show}
+PlayEpisode watch series {Season} episode {Episode} of {The Amazing Race|Show}
+PlayEpisode watch series {Season} episode {Episode} of {The Big Bang Theory|Show}
+PlayEpisode watch series {Season} episode {Episode} of {The Blacklist|Show}
+PlayEpisode watch series {Season} episode {Episode} of {The Flash|Show}
+PlayEpisode watch series {Season} episode {Episode} of {The man in the high castle|Show}
+PlayMovie play movie {A Few Good Men|Movie}
+PlayMovie play movie {Back to the future|Movie}
+PlayMovie play movie {Die Hard|Movie}
+PlayMovie play movie {Godfather|Movie}
+PlayMovie play movie {Hunt for Red October|Movie}
+PlayMovie play movie {Interstellar|Movie}
+PlayMovie play movie {The Godfather|Movie}
+PlayMovie play movie {The Hunt for Red October|Movie}
+PlayMovie watch movie {A Few Good Men|Movie}
+PlayMovie watch movie {Back to the future|Movie}
+PlayMovie watch movie {Die Hard|Movie}
+PlayMovie watch movie {Godfather|Movie}
+PlayMovie watch movie {Hunt for Red October|Movie}
+PlayMovie watch movie {Interstellar|Movie}
+PlayMovie watch movie {The Godfather|Movie}
+PlayMovie watch movie {The Hunt for Red October|Movie}
+PlayNextEpisode play next episode of {Amazing Race|Show}
+PlayNextEpisode play next episode of {America's Got Talent|Show}
+PlayNextEpisode play next episode of {Arrow|Show}
+PlayNextEpisode play next episode of {Big Bang Theory|Show}
+PlayNextEpisode play next episode of {Blacklist|Show}
+PlayNextEpisode play next episode of {Gotham|Show}
+PlayNextEpisode play next episode of {How To Get Away With Murder|Show}
+PlayNextEpisode play next episode of {It's Always sunny in philadelphia|Show}
+PlayNextEpisode play next episode of {Person of Interest|Show}
+PlayNextEpisode play next episode of {Scandal|Show}
+PlayNextEpisode play next episode of {The Amazing Race|Show}
+PlayNextEpisode play next episode of {The Big Bang Theory|Show}
+PlayNextEpisode play next episode of {The Blacklist|Show}
+PlayNextEpisode play next episode of {The Flash|Show}
+PlayNextEpisode play next episode of {The man in the high castle|Show}
+PlayNextEpisode play the next episode of {Amazing Race|Show}
+PlayNextEpisode play the next episode of {America's Got Talent|Show}
+PlayNextEpisode play the next episode of {Arrow|Show}
+PlayNextEpisode play the next episode of {Big Bang Theory|Show}
+PlayNextEpisode play the next episode of {Blacklist|Show}
+PlayNextEpisode play the next episode of {Gotham|Show}
+PlayNextEpisode play the next episode of {How To Get Away With Murder|Show}
+PlayNextEpisode play the next episode of {It's Always sunny in philadelphia|Show}
+PlayNextEpisode play the next episode of {Person of Interest|Show}
+PlayNextEpisode play the next episode of {Scandal|Show}
+PlayNextEpisode play the next episode of {The Amazing Race|Show}
+PlayNextEpisode play the next episode of {The Big Bang Theory|Show}
+PlayNextEpisode play the next episode of {The Blacklist|Show}
+PlayNextEpisode play the next episode of {The Flash|Show}
+PlayNextEpisode play the next episode of {The man in the high castle|Show}
+PlayNextEpisode watch next episode of {Amazing Race|Show}
+PlayNextEpisode watch next episode of {America's Got Talent|Show}
+PlayNextEpisode watch next episode of {Arrow|Show}
+PlayNextEpisode watch next episode of {Big Bang Theory|Show}
+PlayNextEpisode watch next episode of {Blacklist|Show}
+PlayNextEpisode watch next episode of {Gotham|Show}
+PlayNextEpisode watch next episode of {How To Get Away With Murder|Show}
+PlayNextEpisode watch next episode of {It's Always sunny in philadelphia|Show}
+PlayNextEpisode watch next episode of {Person of Interest|Show}
+PlayNextEpisode watch next episode of {Scandal|Show}
+PlayNextEpisode watch next episode of {The Amazing Race|Show}
+PlayNextEpisode watch next episode of {The Big Bang Theory|Show}
+PlayNextEpisode watch next episode of {The Blacklist|Show}
+PlayNextEpisode watch next episode of {The Flash|Show}
+PlayNextEpisode watch next episode of {The man in the high castle|Show}
+PlayNextEpisode watch the next episode of {Amazing Race|Show}
+PlayNextEpisode watch the next episode of {America's Got Talent|Show}
+PlayNextEpisode watch the next episode of {Arrow|Show}
+PlayNextEpisode watch the next episode of {Big Bang Theory|Show}
+PlayNextEpisode watch the next episode of {Blacklist|Show}
+PlayNextEpisode watch the next episode of {Gotham|Show}
+PlayNextEpisode watch the next episode of {How To Get Away With Murder|Show}
+PlayNextEpisode watch the next episode of {It's Always sunny in philadelphia|Show}
+PlayNextEpisode watch the next episode of {Person of Interest|Show}
+PlayNextEpisode watch the next episode of {Scandal|Show}
+PlayNextEpisode watch the next episode of {The Amazing Race|Show}
+PlayNextEpisode watch the next episode of {The Big Bang Theory|Show}
+PlayNextEpisode watch the next episode of {The Blacklist|Show}
+PlayNextEpisode watch the next episode of {The Flash|Show}
+PlayNextEpisode watch the next episode of {The man in the high castle|Show}
+PlayPause pause
+PlayPause play
+PlayPause resume
+PlayRandomEpisode play a episode of {Amazing Race|Show}
+PlayRandomEpisode play a episode of {America's Got Talent|Show}
+PlayRandomEpisode play a episode of {Arrow|Show}
+PlayRandomEpisode play a episode of {Big Bang Theory|Show}
+PlayRandomEpisode play a episode of {Blacklist|Show}
+PlayRandomEpisode play a episode of {Gotham|Show}
+PlayRandomEpisode play a episode of {How To Get Away With Murder|Show}
+PlayRandomEpisode play a episode of {It's Always sunny in philadelphia|Show}
+PlayRandomEpisode play a episode of {Person of Interest|Show}
+PlayRandomEpisode play a episode of {Scandal|Show}
+PlayRandomEpisode play a episode of {The Amazing Race|Show}
+PlayRandomEpisode play a episode of {The Big Bang Theory|Show}
+PlayRandomEpisode play a episode of {The Blacklist|Show}
+PlayRandomEpisode play a episode of {The Flash|Show}
+PlayRandomEpisode play a episode of {The man in the high castle|Show}
+PlayRandomEpisode play a random episode of {Amazing Race|Show}
+PlayRandomEpisode play a random episode of {America's Got Talent|Show}
+PlayRandomEpisode play a random episode of {Arrow|Show}
+PlayRandomEpisode play a random episode of {Big Bang Theory|Show}
+PlayRandomEpisode play a random episode of {Blacklist|Show}
+PlayRandomEpisode play a random episode of {Gotham|Show}
+PlayRandomEpisode play a random episode of {How To Get Away With Murder|Show}
+PlayRandomEpisode play a random episode of {It's Always sunny in philadelphia|Show}
+PlayRandomEpisode play a random episode of {Person of Interest|Show}
+PlayRandomEpisode play a random episode of {Scandal|Show}
+PlayRandomEpisode play a random episode of {The Amazing Race|Show}
+PlayRandomEpisode play a random episode of {The Big Bang Theory|Show}
+PlayRandomEpisode play a random episode of {The Blacklist|Show}
+PlayRandomEpisode play a random episode of {The Flash|Show}
+PlayRandomEpisode play a random episode of {The man in the high castle|Show}
+PlayRandomEpisode play episode of {Amazing Race|Show}
+PlayRandomEpisode play episode of {America's Got Talent|Show}
+PlayRandomEpisode play episode of {Arrow|Show}
+PlayRandomEpisode play episode of {Big Bang Theory|Show}
+PlayRandomEpisode play episode of {Blacklist|Show}
+PlayRandomEpisode play episode of {Gotham|Show}
+PlayRandomEpisode play episode of {How To Get Away With Murder|Show}
+PlayRandomEpisode play episode of {It's Always sunny in philadelphia|Show}
+PlayRandomEpisode play episode of {Person of Interest|Show}
+PlayRandomEpisode play episode of {Scandal|Show}
+PlayRandomEpisode play episode of {The Amazing Race|Show}
+PlayRandomEpisode play episode of {The Big Bang Theory|Show}
+PlayRandomEpisode play episode of {The Blacklist|Show}
+PlayRandomEpisode play episode of {The Flash|Show}
+PlayRandomEpisode play episode of {The man in the high castle|Show}
+PlayRandomEpisode play random episode of {Amazing Race|Show}
+PlayRandomEpisode play random episode of {America's Got Talent|Show}
+PlayRandomEpisode play random episode of {Arrow|Show}
+PlayRandomEpisode play random episode of {Big Bang Theory|Show}
+PlayRandomEpisode play random episode of {Blacklist|Show}
+PlayRandomEpisode play random episode of {Gotham|Show}
+PlayRandomEpisode play random episode of {How To Get Away With Murder|Show}
+PlayRandomEpisode play random episode of {It's Always sunny in philadelphia|Show}
+PlayRandomEpisode play random episode of {Person of Interest|Show}
+PlayRandomEpisode play random episode of {Scandal|Show}
+PlayRandomEpisode play random episode of {The Amazing Race|Show}
+PlayRandomEpisode play random episode of {The Big Bang Theory|Show}
+PlayRandomEpisode play random episode of {The Blacklist|Show}
+PlayRandomEpisode play random episode of {The Flash|Show}
+PlayRandomEpisode play random episode of {The man in the high castle|Show}
+PlayRandomEpisode watch a episode of {Amazing Race|Show}
+PlayRandomEpisode watch a episode of {America's Got Talent|Show}
+PlayRandomEpisode watch a episode of {Arrow|Show}
+PlayRandomEpisode watch a episode of {Big Bang Theory|Show}
+PlayRandomEpisode watch a episode of {Blacklist|Show}
+PlayRandomEpisode watch a episode of {Gotham|Show}
+PlayRandomEpisode watch a episode of {How To Get Away With Murder|Show}
+PlayRandomEpisode watch a episode of {It's Always sunny in philadelphia|Show}
+PlayRandomEpisode watch a episode of {Person of Interest|Show}
+PlayRandomEpisode watch a episode of {Scandal|Show}
+PlayRandomEpisode watch a episode of {The Amazing Race|Show}
+PlayRandomEpisode watch a episode of {The Big Bang Theory|Show}
+PlayRandomEpisode watch a episode of {The Blacklist|Show}
+PlayRandomEpisode watch a episode of {The Flash|Show}
+PlayRandomEpisode watch a episode of {The man in the high castle|Show}
+PlayRandomEpisode watch a random episode of {Amazing Race|Show}
+PlayRandomEpisode watch a random episode of {America's Got Talent|Show}
+PlayRandomEpisode watch a random episode of {Arrow|Show}
+PlayRandomEpisode watch a random episode of {Big Bang Theory|Show}
+PlayRandomEpisode watch a random episode of {Blacklist|Show}
+PlayRandomEpisode watch a random episode of {Gotham|Show}
+PlayRandomEpisode watch a random episode of {How To Get Away With Murder|Show}
+PlayRandomEpisode watch a random episode of {It's Always sunny in philadelphia|Show}
+PlayRandomEpisode watch a random episode of {Person of Interest|Show}
+PlayRandomEpisode watch a random episode of {Scandal|Show}
+PlayRandomEpisode watch a random episode of {The Amazing Race|Show}
+PlayRandomEpisode watch a random episode of {The Big Bang Theory|Show}
+PlayRandomEpisode watch a random episode of {The Blacklist|Show}
+PlayRandomEpisode watch a random episode of {The Flash|Show}
+PlayRandomEpisode watch a random episode of {The man in the high castle|Show}
+PlayRandomEpisode watch episode of {Amazing Race|Show}
+PlayRandomEpisode watch episode of {America's Got Talent|Show}
+PlayRandomEpisode watch episode of {Arrow|Show}
+PlayRandomEpisode watch episode of {Big Bang Theory|Show}
+PlayRandomEpisode watch episode of {Blacklist|Show}
+PlayRandomEpisode watch episode of {Gotham|Show}
+PlayRandomEpisode watch episode of {How To Get Away With Murder|Show}
+PlayRandomEpisode watch episode of {It's Always sunny in philadelphia|Show}
+PlayRandomEpisode watch episode of {Person of Interest|Show}
+PlayRandomEpisode watch episode of {Scandal|Show}
+PlayRandomEpisode watch episode of {The Amazing Race|Show}
+PlayRandomEpisode watch episode of {The Big Bang Theory|Show}
+PlayRandomEpisode watch episode of {The Blacklist|Show}
+PlayRandomEpisode watch episode of {The Flash|Show}
+PlayRandomEpisode watch episode of {The man in the high castle|Show}
+PlayRandomEpisode watch random episode of {Amazing Race|Show}
+PlayRandomEpisode watch random episode of {America's Got Talent|Show}
+PlayRandomEpisode watch random episode of {Arrow|Show}
+PlayRandomEpisode watch random episode of {Big Bang Theory|Show}
+PlayRandomEpisode watch random episode of {Blacklist|Show}
+PlayRandomEpisode watch random episode of {Gotham|Show}
+PlayRandomEpisode watch random episode of {How To Get Away With Murder|Show}
+PlayRandomEpisode watch random episode of {It's Always sunny in philadelphia|Show}
+PlayRandomEpisode watch random episode of {Person of Interest|Show}
+PlayRandomEpisode watch random episode of {Scandal|Show}
+PlayRandomEpisode watch random episode of {The Amazing Race|Show}
+PlayRandomEpisode watch random episode of {The Big Bang Theory|Show}
+PlayRandomEpisode watch random episode of {The Blacklist|Show}
+PlayRandomEpisode watch random episode of {The Flash|Show}
+PlayRandomEpisode watch random episode of {The man in the high castle|Show}
+PlayRandomMovie play a film
+PlayRandomMovie play a movie
+PlayRandomMovie play a random film
+PlayRandomMovie play a random movie
+PlayRandomMovie play film
+PlayRandomMovie play movie
+PlayRandomMovie play random film
+PlayRandomMovie play random movie
+PlayRandomMovie watch a film
+PlayRandomMovie watch a movie
+PlayRandomMovie watch a random film
+PlayRandomMovie watch a random movie
+PlayRandomMovie watch film
+PlayRandomMovie watch movie
+PlayRandomMovie watch random film
+PlayRandomMovie watch random movie
+Prev previous
+Prev previous song
+Right navigate right
+Select select
+Skip next
+Skip next song
+Skip skip
+Skip skip song
+StartOver replay
+StartOver start over
+Stop cancel
+Stop shut up
+Stop stop
+Up navigate up

@@ -1,0 +1,5 @@
+v1.0.1 (1/12/2016)
+===================
+* Changed random on movies and tv shows to only search for unwatched episodes. If there are none, pick a watched one
+* Added Intent to be able to watch next episode of whatever was watched last
+* Added Intent to be able to watch next episode of specific tv show

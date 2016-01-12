@@ -44,6 +44,15 @@
             ]
         },
         {
+            "intent": "PlayNextEpisode",
+            "slots": [
+                {
+                    "name": "Show",
+                    "type": "AMAZON.LITERAL"
+                }
+            ]
+        },
+        {
             "intent": "PlayMovie",
             "slots": [
                 {
@@ -106,6 +115,10 @@
         },
         {
             "intent": "PageDown",
+            "slots": []
+        },
+        {
+            "intent": "ContinueShow",
             "slots": []
         },
         {
