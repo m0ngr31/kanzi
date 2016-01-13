@@ -16,7 +16,7 @@ except IOError:
 """
 The MIT License (MIT)
 
-Copyright (c) 2015 Maker Musings & m0ngr31
+Copyright (c) 2015 Maker Musings
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -285,7 +285,6 @@ def alexa_start_over(slots):
     kodi.PlayStartOver()
     return build_alexa_response('Starting over')
     
-    
 def alexa_skip(slots):
     kodi.PlaySkip()
     return build_alexa_response('Skipping item')
@@ -335,7 +334,7 @@ def alexa_prev(slots):
     return build_alexa_response('Playing previous item')
 
 def alexa_pick_random_movie(slots):
-    movies_response = kodi.GetMovies()
+    movies_response = kodi.GetUnwatchedMovies()
     movies = movies_response['result']['movies']
     random_movie = random.choice(movies)
 
@@ -442,7 +441,10 @@ def alexa_pick_random_episode(slots):
                 break
                 
     if located:
-        episodes_result = kodi.GetEpisodesFromShow(show_id)
+        episodes_result = kodi.GetUnwatchedEpisodesFromShow(show_id)
+        
+        if len(episodes_result['result']['episodes']) < 1:
+            episodes_result = kodi.GetEpisodesFromShow(show_id)
 
         episodes_array = []
 
@@ -523,7 +525,89 @@ def alexa_play_episode(slots):
           return build_alexa_response('Could not find season %s episode %s of %s' % (heard_season, heard_episode, located))
     else:
         return build_alexa_response('Could not find %s' % (heard_show))
+        
 
+def alexa_play_next_episode(slots):
+    shows = kodi.GetTvShows()
+    shows_array = shows['result']['tvshows']
+    
+    heard_show =  str(slots['Show']['value']).lower().translate(None, string.punctuation)
+    located = None
+    
+    for show in shows_array:
+        ascii_name = show['label'].encode('ascii', 'replace')
+        show_name = str(ascii_name).lower().translate(None, string.punctuation)
+        if show_name == heard_show:
+            located = show_name
+            show_id = show['tvshowid']
+            break
+            
+    if not located:
+        # Try an exact match after removing any leading "the"
+        heard_minus_the = remove_the(heard_show)
+        for show in shows_array:
+            ascii_name = show['label'].encode('ascii', 'replace')
+            show_name = str(ascii_name).lower().translate(None, string.punctuation)
+            if remove_the(show_name) == heard_minus_the:
+                located = show_name
+                show_id = show['tvshowid']
+                break
+                
+    if not located:
+        #Try removing everthing in parenthesis for shows that might have (2009) or (US)
+        for show in shows_array:
+            ascii_name = show['label'].encode('ascii', 'replace')
+            removed_paren = re.sub(r'\([^)]*\)', '', ascii_name).rstrip()
+            show_name = str(removed_paren).lower().translate(None, string.punctuation)
+            if show_name == heard_show:
+                located = show_name
+                show_id = show['tvshowid']
+                break
+                
+    if not located:
+        # Last resort -- take out some useless words and see if we have a show with
+        # any of the remaining words in common
+        heard_list = set([x for x in heard_show.split() if x not in STOPWORDS])
+        for show in shows_array:
+            show_list = set(show['label'].split())
+            if heard_list & show_list:
+                located = show
+                show_id = show['tvshowid']
+                break
+                
+    if located:
+        next_episode = kodi.GetNextUnwatchedEpisode(show_id)
+        
+        if next_episode:
+          kodi.ClearVideoPlaylist()
+          kodi.PrepEpisodePlayList(next_episode)
+
+          kodi.StartVideoPlaylist()
+          return build_alexa_response('Playing next episode of %s' % (located))
+        else:
+          return build_alexa_response('No new episodes for %s' % (heard_show))          
+    else:
+        return build_alexa_response('Could not find %s' % (heard_show))
+
+
+def alexa_continue_show(slots):
+    last_show_obj = kodi.GetLastWatchedShow()
+    
+    try:
+        last_show_id = last_show_obj['result']['episodes'][0]['tvshowid']
+        next_episode = kodi.GetNextUnwatchedEpisode(last_show_id)
+        
+        if next_episode:
+            kodi.ClearVideoPlaylist()
+            kodi.PrepEpisodePlayList(next_episode)
+
+            kodi.StartVideoPlaylist()
+            return build_alexa_response('Playing next episode')
+        else:
+            return build_alexa_response('No new episodes') 
+
+    except:
+        return build_alexa_response('Could not continue show')
 
 # Handle the WhatNewShows intent.
 
@@ -620,7 +704,9 @@ INTENTS = [
     ['Menu', alexa_context_menu],
     ['PageUp', alexa_pageup],
     ['PageDown', alexa_pagedown],
-    ['PlayEpisode', alexa_play_episode]
+    ['PlayEpisode', alexa_play_episode],
+    ['PlayNextEpisode', alexa_play_next_episode],
+    ['ContinueShow', alexa_continue_show]
 ]
 
 
