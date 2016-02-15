@@ -283,10 +283,7 @@ def GetUnwatchedEpisodes(max=90):
         show_info[show] = GetShowDetails(show=show)
     for d in data['result']['episodes']:
         showinfo = show_info[d['tvshowid']]
-        banner = ''
-        if 'banner' in showinfo['art']:
-            banner = "http://%s:%s/image/%s" % (urllib.quote(showinfo['art']['banner']))
-        answer.append({'title':d['title'], 'episodeid':d['episodeid'], 'show':d['showtitle'], 'label':d['label'], 'banner':banner, 'dateadded':datetime.datetime.strptime(d['dateadded'], "%Y-%m-%d %H:%M:%S")})
+        answer.append({'title':d['title'], 'episodeid':d['episodeid'], 'show':d['showtitle'], 'label':d['label'], 'dateadded':datetime.datetime.strptime(d['dateadded'], "%Y-%m-%d %H:%M:%S")})
     return answer
 
 

@@ -183,6 +183,17 @@ def alexa_new_show_inquiry(slots):
             if remove_the(one_show) == heard_minus_the:
                 located = one_show
                 break
+                
+    if not located:
+        #Try removing everthing in parenthesis for shows that might have (2009) or (US)
+        for show in new_episodes:
+            ascii_name = show['label'].encode('ascii', 'replace')
+            removed_paren = re.sub(r'\([^)]*\)', '', ascii_name).rstrip()
+            show_name = str(removed_paren).lower().translate(None, string.punctuation)
+            if show_name == heard_show:
+                located = show_name
+                show_id = show['tvshowid']
+                break
 
     if not located:
         # See if the spoken show matches the beginning of our show names
@@ -443,8 +454,8 @@ def alexa_pick_random_episode(slots):
     if located:
         episodes_result = kodi.GetUnwatchedEpisodesFromShow(show_id)
         
-        if len(episodes_result['result']['episodes']) < 1:
-            episodes_result = kodi.GetEpisodesFromShow(show_id)
+        if not 'episodes' in episodes_result['result']:
+          episodes_result = kodi.GetEpisodesFromShow(show_id)
 
         episodes_array = []
 
