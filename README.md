@@ -13,7 +13,7 @@ I've expanded it to support the following features:
   - Continue watching next episode of last show that was watched
   - Play next episode of other show
 
-### Setup
+### Server Setup
 
 Before you go any further, you'll need to have your Kodi box opened up to the internet via port forwarding. If you don't have a dedicated IP address, you'll also need a dynamic DNS service to give you a static URL to use so you don't have to be constantly change this value.
 
@@ -40,6 +40,10 @@ You can do this easily from the command line: `heroku config:set KODI_ADDRESS='y
 Now run `git remote add heroku https://git.heroku.com/your_apps_name_and_number.git`. This command will allow heroku to deploy new code based on what is in your directory.
 
 Next, run `git push heroku master`. This will push the code to Heroku and deploy the server!
+
+Heroku doesn't just fire up the server automatically, so you have to tell it to: `heroku ps:scale web=1 --app app-name-and-number`. Now you are ready to setup the Alexa skill.
+
+### Skill Setup
 
 Once you have this all setup, you'll need to setup an Amazon developer account and start setting up a new Alexa skill.
 
