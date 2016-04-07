@@ -1,5 +1,13 @@
-v1.0.1 (1/12/2016)
+v1.0.2 (04/07/2016)
+===================
+* Updated documentation and source for using Heroku by default instead of Openshift
+
+v1.0.1 (01/12/2016)
 ===================
 * Changed random on movies and tv shows to only search for unwatched episodes. If there are none, pick a watched one
 * Added Intent to be able to watch next episode of whatever was watched last
 * Added Intent to be able to watch next episode of specific tv show
+
+v.1.0.0 (01/01/2016)
+===================
+* Initial release

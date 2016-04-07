@@ -1,22 +1,10 @@
 #!/usr/bin/python
 import os
 
-virtenv = os.environ['OPENSHIFT_PYTHON_DIR'] + '/virtenv/'
-virtualenv = os.path.join(virtenv, 'bin/activate_this.py')
-try:
-    execfile(virtualenv, dict(__file__=virtualenv))
-except IOError:
-    pass
-#
-# IMPORTANT: Put any additional includes below this line.  If placed above this
-# line, it's possible required libraries won't be in your searchable path
-#
-#!/usr/bin/env python
-
 """
 The MIT License (MIT)
 
-Copyright (c) 2015 Maker Musings
+Copyright (c) 2015 Maker Musings && m0ngr31
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -37,7 +25,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 """
 
-# For a complete discussion, see http://www.makermusings.com
+# For a complete discussion, see http://forum.kodi.tv/showthread.php?tid=254502
 
 import datetime
 import json

@@ -1,6 +1,6 @@
 # Alexa integration with Kodi
 
-I'm forking this code off of [this project from Maker Musings](http://www.makermusings.com/2015/08/22/home-automation-with-amazon-echo-apps-part-2). It originally supported checking to see how many new episodes there are and you can ask it if there are any new episodes for a certain show.
+I'm forking the base code off of [this project from Maker Musings](http://www.makermusings.com/2015/08/22/home-automation-with-amazon-echo-apps-part-2). It originally supported checking to see how many new episodes there are and you can ask it if there are any new episodes for a certain show.
 
 I've expanded it to support the following features:
   - Basic navigation (Up/Down, Left/Right, Page Up/Down, Select, Back, Open Menu) 
@@ -15,29 +15,31 @@ I've expanded it to support the following features:
 
 ### Setup
 
-To get this running, you'll have to have your own server to handle the requests and pass them to your Kodi box. I've found the easiest way to get something up and running is to use [OpenShift](https://openshift.redhat.com/).
+Before you go any further, you'll need to have your Kodi box opened up to the internet via port forwarding. If you don't have a dedicated IP address, you'll also need a dynamic DNS service to give you a static URL to use so you don't have to be constantly change this value.
 
-OpenShift makes it easy to get it up and running and it is completely free to use. This way you won't have to worry about spinning up a VPS somewhere and fiddling with SSL certs, WSGI configs, Python packages, ect. Heroku will work fine as well, and has a similar setup, but the free tier requires the `dyno` to sleep for 6 hours a day and goes to sleep after approximately 30 minutes of inactivity, which would be a hassle to deal with.
+Okay, now that we have that sorted, next you'll have to have your own server to handle the requests and pass them to your Kodi box. I've found the easiest way to get something up and running is to use [Heroku](https://heroku.com/).
 
-Once you have setup an OpenShift account setup, go ahead and [install the command line tool](https://developers.openshift.com/en/managing-client-tools.html) (You'll need Ruby installed, and apparently there is some problems with newer versions, so might stick with 1.9 if you run into any issues).
+There is a small limitation with the free tier on Heroku where the 'dyno' will go to sleep after 30 minutes of activity. This might cause some commands to timeout, but so far it seems to be the best option for getting up and running as quickly as possibly. If you don't want to worry about the hassle, there are lots of good options you can pay for.
 
-To create a new app, run this from the command line: `rhc app create kodi python-2.7`. If that runs successfully, you'll see something like this:
-![Create app](http://i.imgur.com/CycIDHZ.png)
+Once you have setup an Heroku account setup, go ahead and [install the command line tool](https://toolbelt.heroku.com/). Once installed, open up a command line and run `heroku login`.
 
-Sometimes it doesn't detect that you have git installed, so if it doesn't create a directory called kodi, do a `git clone` on that Git remote address that it gives you. Now go into the kodi directory and replace the `wsgi.py` file and add the `kodi.py` and `requirements.txt` files from this repo.
+To create a new app, just run this from the command line: `heroku apps:create`. If that runs successfully, you'll see something like this:
+![Create app](http://i.imgur.com/C17Ts7L.png)
 
-Once you have everything ready, you can setup the following environment variables to talk to your Kodi box:
+Now, run clone my repo: `git clone https://github.com/m0ngr31/kodi-alexa.git` and `cd kodi-alexa`. 
+
+Once you have my repo cloned and you are in the directory, you can setup the following environment variables to talk to your Kodi box:
 
   - KODI_ADDRESS
   - KODI_PORT
   - KODI_USERNAME
   - KODI_PASSWORD
   
-You can do this easily from the command line: `rhc env set KODI_ADDRESS='kodi.ipaddress' KODI_PORT='8080' KODI_USERNAME='kodi' KODI_PASSWORD='kodi' -a kodi`. Changing of course for your settings.
+You can do this easily from the command line: `heroku config:set KODI_ADDRESS='your_ip_or_dynamic_address' KODI_PORT='kodi_port' KODI_USERNAME='kodi_username' KODI_PASSWORD='kodi_password' --app app-name-and-number`. Changing of course for your settings. You can also use the settings page on your Heroku app to add these.
 
-If you would rather not set this up, you can change the values in the `kodi.py` file instead. Just remember that either way, this transmits your Kodi username and password in plaintext over HTTP, so make sure it's not something that you are using for other accounts.
+Now run `git remote add heroku https://git.heroku.com/your_apps_name_and_number.git`. This command will allow heroku to deploy new code based on what is in your directory.
 
-Of course you'll need to have your Kodi box opened up to the internet via port forwarding. If you don't have a dedicated IP address, you'll also need a dynamic DNS service to give you a static URL to use so you don't have to be constantly change this value.
+Next, run `git push heroku master`. This will push the code to Heroku and deploy the server!
 
 Once you have this all setup, you'll need to setup an Amazon developer account and start setting up a new Alexa skill.
 
@@ -57,8 +59,8 @@ After that is pretty much just information that you can just put whatever into. 
 
 Here are a few demo videos showing how to use it. Other commands you can do are in the utterances file.
 
-[![Amazon Echo - Kodi integration (demo 1) ](http://img.youtube.com/vi/Xar4byrlEvo/0.jpg)](https://www.youtube.com/watch?v=Xar4byrlEvo "Amazon Echo - Kodi integration (demo 1) ")
+[![Amazon Echo - Kodi integration (demo 1) ](http://i.imgur.com/BrXDYm6.png)](https://www.youtube.com/watch?v=Xar4byrlEvo "Amazon Echo - Kodi integration (demo 1) ")
 
-[![Amazon Echo - Kodi integration (demo 2) ](http://img.youtube.com/vi/vAYUWaP3EXA/0.jpg)](https://www.youtube.com/watch?v=vAYUWaP3EXA "Amazon Echo - Kodi integration (demo 2) ")
+[![Amazon Echo - Kodi integration (demo 2) ](http://i.imgur.com/U4wUxYW.png)](https://www.youtube.com/watch?v=vAYUWaP3EXA "Amazon Echo - Kodi integration (demo 2) ")
 
-[![Amazon Echo - Kodi integration (demo 3) ](http://img.youtube.com/vi/4xrrEkimPV4/0.jpg)](https://www.youtube.com/watch?v=4xrrEkimPV4 "Amazon Echo - Kodi integration (demo 3) ")
+[![Amazon Echo - Kodi integration (demo 3) ](http://i.imgur.com/8UZbRMh.png)](https://www.youtube.com/watch?v=4xrrEkimPV4 "Amazon Echo - Kodi integration (demo 3) ")
