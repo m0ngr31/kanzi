@@ -11,7 +11,9 @@ I've expanded it to support the following features:
   - Play specific episode of a TV show ('Play season 4 episode 10 of The Office')
   - Play specific movie
   - Continue watching next episode of last show that was watched
-  - Play next episode of other show
+  - Play next episode of a show
+  - Play newest episode of a show
+  - Clean/Update video and audio sources
 
 ### Server Setup
 
@@ -42,6 +44,8 @@ Now run `git remote add heroku https://git.heroku.com/your_apps_name_and_number.
 Next, run `git push heroku master`. This will push the code to Heroku and deploy the server!
 
 Heroku doesn't just fire up the server automatically, so you have to tell it to: `heroku ps:scale web=1 --app app-name-and-number`. Now you are ready to setup the Alexa skill.
+
+*If I release a new update here, just browse to the repo directory in your terminal, and run these commands: `git pull origin master` and `git push heroku master`*
 
 ### Skill Setup
 

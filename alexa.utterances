@@ -192,6 +192,10 @@ CheckNewShows is there a new show to watch today
 CheckNewShows is there a new show to watch tonight
 CheckNewShows is there a new show today
 CheckNewShows is there a new show tonight
+CleanAudio clean audio library
+CleanAudio clean music library
+CleanVideo clean library
+CleanVideo clean video library
 ContinueShow continue last show
 ContinueShow continue show
 ContinueShow continue watching last show
@@ -225,1005 +229,205 @@ ListenToArtist shuffle {Radiohead|Artist}
 ListenToArtist shuffle {The XX|Artist}
 Menu open menu
 NewShowInquiry if there are any episodes of {Amazing Race|Show}
-NewShowInquiry if there are any episodes of {Amazing Race|Show} on the media server
-NewShowInquiry if there are any episodes of {Amazing Race|Show} on the server
-NewShowInquiry if there are any episodes of {Amazing Race|Show} recorded
-NewShowInquiry if there are any episodes of {Amazing Race|Show} to watch
 NewShowInquiry if there are any episodes of {America's Got Talent|Show}
-NewShowInquiry if there are any episodes of {America's Got Talent|Show} on the media server
-NewShowInquiry if there are any episodes of {America's Got Talent|Show} on the server
-NewShowInquiry if there are any episodes of {America's Got Talent|Show} recorded
-NewShowInquiry if there are any episodes of {America's Got Talent|Show} to watch
 NewShowInquiry if there are any episodes of {Arrow|Show}
-NewShowInquiry if there are any episodes of {Arrow|Show} on the media server
-NewShowInquiry if there are any episodes of {Arrow|Show} on the server
-NewShowInquiry if there are any episodes of {Arrow|Show} recorded
-NewShowInquiry if there are any episodes of {Arrow|Show} to watch
 NewShowInquiry if there are any episodes of {Big Bang Theory|Show}
-NewShowInquiry if there are any episodes of {Big Bang Theory|Show} on the media server
-NewShowInquiry if there are any episodes of {Big Bang Theory|Show} on the server
-NewShowInquiry if there are any episodes of {Big Bang Theory|Show} recorded
-NewShowInquiry if there are any episodes of {Big Bang Theory|Show} to watch
 NewShowInquiry if there are any episodes of {Blacklist|Show}
-NewShowInquiry if there are any episodes of {Blacklist|Show} on the media server
-NewShowInquiry if there are any episodes of {Blacklist|Show} on the server
-NewShowInquiry if there are any episodes of {Blacklist|Show} recorded
-NewShowInquiry if there are any episodes of {Blacklist|Show} to watch
 NewShowInquiry if there are any episodes of {Gotham|Show}
-NewShowInquiry if there are any episodes of {Gotham|Show} on the media server
-NewShowInquiry if there are any episodes of {Gotham|Show} on the server
-NewShowInquiry if there are any episodes of {Gotham|Show} recorded
-NewShowInquiry if there are any episodes of {Gotham|Show} to watch
 NewShowInquiry if there are any episodes of {How To Get Away With Murder|Show}
-NewShowInquiry if there are any episodes of {How To Get Away With Murder|Show} on the media server
-NewShowInquiry if there are any episodes of {How To Get Away With Murder|Show} on the server
-NewShowInquiry if there are any episodes of {How To Get Away With Murder|Show} recorded
-NewShowInquiry if there are any episodes of {How To Get Away With Murder|Show} to watch
 NewShowInquiry if there are any episodes of {It's Always sunny in philadelphia|Show}
-NewShowInquiry if there are any episodes of {It's Always sunny in philadelphia|Show} on the media server
-NewShowInquiry if there are any episodes of {It's Always sunny in philadelphia|Show} on the server
-NewShowInquiry if there are any episodes of {It's Always sunny in philadelphia|Show} recorded
-NewShowInquiry if there are any episodes of {It's Always sunny in philadelphia|Show} to watch
 NewShowInquiry if there are any episodes of {Person of Interest|Show}
-NewShowInquiry if there are any episodes of {Person of Interest|Show} on the media server
-NewShowInquiry if there are any episodes of {Person of Interest|Show} on the server
-NewShowInquiry if there are any episodes of {Person of Interest|Show} recorded
-NewShowInquiry if there are any episodes of {Person of Interest|Show} to watch
 NewShowInquiry if there are any episodes of {Scandal|Show}
-NewShowInquiry if there are any episodes of {Scandal|Show} on the media server
-NewShowInquiry if there are any episodes of {Scandal|Show} on the server
-NewShowInquiry if there are any episodes of {Scandal|Show} recorded
-NewShowInquiry if there are any episodes of {Scandal|Show} to watch
 NewShowInquiry if there are any episodes of {The Amazing Race|Show}
-NewShowInquiry if there are any episodes of {The Amazing Race|Show} on the media server
-NewShowInquiry if there are any episodes of {The Amazing Race|Show} on the server
-NewShowInquiry if there are any episodes of {The Amazing Race|Show} recorded
-NewShowInquiry if there are any episodes of {The Amazing Race|Show} to watch
 NewShowInquiry if there are any episodes of {The Big Bang Theory|Show}
-NewShowInquiry if there are any episodes of {The Big Bang Theory|Show} on the media server
-NewShowInquiry if there are any episodes of {The Big Bang Theory|Show} on the server
-NewShowInquiry if there are any episodes of {The Big Bang Theory|Show} recorded
-NewShowInquiry if there are any episodes of {The Big Bang Theory|Show} to watch
 NewShowInquiry if there are any episodes of {The Blacklist|Show}
-NewShowInquiry if there are any episodes of {The Blacklist|Show} on the media server
-NewShowInquiry if there are any episodes of {The Blacklist|Show} on the server
-NewShowInquiry if there are any episodes of {The Blacklist|Show} recorded
-NewShowInquiry if there are any episodes of {The Blacklist|Show} to watch
 NewShowInquiry if there are any episodes of {The Flash|Show}
-NewShowInquiry if there are any episodes of {The Flash|Show} on the media server
-NewShowInquiry if there are any episodes of {The Flash|Show} on the server
-NewShowInquiry if there are any episodes of {The Flash|Show} recorded
-NewShowInquiry if there are any episodes of {The Flash|Show} to watch
 NewShowInquiry if there are any episodes of {The man in the high castle|Show}
-NewShowInquiry if there are any episodes of {The man in the high castle|Show} on the media server
-NewShowInquiry if there are any episodes of {The man in the high castle|Show} on the server
-NewShowInquiry if there are any episodes of {The man in the high castle|Show} recorded
-NewShowInquiry if there are any episodes of {The man in the high castle|Show} to watch
 NewShowInquiry if there are any episodes of {The office|Show}
-NewShowInquiry if there are any episodes of {The office|Show} on the media server
-NewShowInquiry if there are any episodes of {The office|Show} on the server
-NewShowInquiry if there are any episodes of {The office|Show} recorded
-NewShowInquiry if there are any episodes of {The office|Show} to watch
 NewShowInquiry if there are any new episodes of {Amazing Race|Show}
-NewShowInquiry if there are any new episodes of {Amazing Race|Show} on the media server
-NewShowInquiry if there are any new episodes of {Amazing Race|Show} on the server
-NewShowInquiry if there are any new episodes of {Amazing Race|Show} recorded
-NewShowInquiry if there are any new episodes of {Amazing Race|Show} to watch
 NewShowInquiry if there are any new episodes of {America's Got Talent|Show}
-NewShowInquiry if there are any new episodes of {America's Got Talent|Show} on the media server
-NewShowInquiry if there are any new episodes of {America's Got Talent|Show} on the server
-NewShowInquiry if there are any new episodes of {America's Got Talent|Show} recorded
-NewShowInquiry if there are any new episodes of {America's Got Talent|Show} to watch
 NewShowInquiry if there are any new episodes of {Arrow|Show}
-NewShowInquiry if there are any new episodes of {Arrow|Show} on the media server
-NewShowInquiry if there are any new episodes of {Arrow|Show} on the server
-NewShowInquiry if there are any new episodes of {Arrow|Show} recorded
-NewShowInquiry if there are any new episodes of {Arrow|Show} to watch
 NewShowInquiry if there are any new episodes of {Big Bang Theory|Show}
-NewShowInquiry if there are any new episodes of {Big Bang Theory|Show} on the media server
-NewShowInquiry if there are any new episodes of {Big Bang Theory|Show} on the server
-NewShowInquiry if there are any new episodes of {Big Bang Theory|Show} recorded
-NewShowInquiry if there are any new episodes of {Big Bang Theory|Show} to watch
 NewShowInquiry if there are any new episodes of {Blacklist|Show}
-NewShowInquiry if there are any new episodes of {Blacklist|Show} on the media server
-NewShowInquiry if there are any new episodes of {Blacklist|Show} on the server
-NewShowInquiry if there are any new episodes of {Blacklist|Show} recorded
-NewShowInquiry if there are any new episodes of {Blacklist|Show} to watch
 NewShowInquiry if there are any new episodes of {Gotham|Show}
-NewShowInquiry if there are any new episodes of {Gotham|Show} on the media server
-NewShowInquiry if there are any new episodes of {Gotham|Show} on the server
-NewShowInquiry if there are any new episodes of {Gotham|Show} recorded
-NewShowInquiry if there are any new episodes of {Gotham|Show} to watch
 NewShowInquiry if there are any new episodes of {How To Get Away With Murder|Show}
-NewShowInquiry if there are any new episodes of {How To Get Away With Murder|Show} on the media server
-NewShowInquiry if there are any new episodes of {How To Get Away With Murder|Show} on the server
-NewShowInquiry if there are any new episodes of {How To Get Away With Murder|Show} recorded
-NewShowInquiry if there are any new episodes of {How To Get Away With Murder|Show} to watch
 NewShowInquiry if there are any new episodes of {It's Always sunny in philadelphia|Show}
-NewShowInquiry if there are any new episodes of {It's Always sunny in philadelphia|Show} on the media server
-NewShowInquiry if there are any new episodes of {It's Always sunny in philadelphia|Show} on the server
-NewShowInquiry if there are any new episodes of {It's Always sunny in philadelphia|Show} recorded
-NewShowInquiry if there are any new episodes of {It's Always sunny in philadelphia|Show} to watch
 NewShowInquiry if there are any new episodes of {Person of Interest|Show}
-NewShowInquiry if there are any new episodes of {Person of Interest|Show} on the media server
-NewShowInquiry if there are any new episodes of {Person of Interest|Show} on the server
-NewShowInquiry if there are any new episodes of {Person of Interest|Show} recorded
-NewShowInquiry if there are any new episodes of {Person of Interest|Show} to watch
 NewShowInquiry if there are any new episodes of {Scandal|Show}
-NewShowInquiry if there are any new episodes of {Scandal|Show} on the media server
-NewShowInquiry if there are any new episodes of {Scandal|Show} on the server
-NewShowInquiry if there are any new episodes of {Scandal|Show} recorded
-NewShowInquiry if there are any new episodes of {Scandal|Show} to watch
 NewShowInquiry if there are any new episodes of {The Amazing Race|Show}
-NewShowInquiry if there are any new episodes of {The Amazing Race|Show} on the media server
-NewShowInquiry if there are any new episodes of {The Amazing Race|Show} on the server
-NewShowInquiry if there are any new episodes of {The Amazing Race|Show} recorded
-NewShowInquiry if there are any new episodes of {The Amazing Race|Show} to watch
 NewShowInquiry if there are any new episodes of {The Big Bang Theory|Show}
-NewShowInquiry if there are any new episodes of {The Big Bang Theory|Show} on the media server
-NewShowInquiry if there are any new episodes of {The Big Bang Theory|Show} on the server
-NewShowInquiry if there are any new episodes of {The Big Bang Theory|Show} recorded
-NewShowInquiry if there are any new episodes of {The Big Bang Theory|Show} to watch
 NewShowInquiry if there are any new episodes of {The Blacklist|Show}
-NewShowInquiry if there are any new episodes of {The Blacklist|Show} on the media server
-NewShowInquiry if there are any new episodes of {The Blacklist|Show} on the server
-NewShowInquiry if there are any new episodes of {The Blacklist|Show} recorded
-NewShowInquiry if there are any new episodes of {The Blacklist|Show} to watch
 NewShowInquiry if there are any new episodes of {The Flash|Show}
-NewShowInquiry if there are any new episodes of {The Flash|Show} on the media server
-NewShowInquiry if there are any new episodes of {The Flash|Show} on the server
-NewShowInquiry if there are any new episodes of {The Flash|Show} recorded
-NewShowInquiry if there are any new episodes of {The Flash|Show} to watch
 NewShowInquiry if there are any new episodes of {The man in the high castle|Show}
-NewShowInquiry if there are any new episodes of {The man in the high castle|Show} on the media server
-NewShowInquiry if there are any new episodes of {The man in the high castle|Show} on the server
-NewShowInquiry if there are any new episodes of {The man in the high castle|Show} recorded
-NewShowInquiry if there are any new episodes of {The man in the high castle|Show} to watch
 NewShowInquiry if there are any new episodes of {The office|Show}
-NewShowInquiry if there are any new episodes of {The office|Show} on the media server
-NewShowInquiry if there are any new episodes of {The office|Show} on the server
-NewShowInquiry if there are any new episodes of {The office|Show} recorded
-NewShowInquiry if there are any new episodes of {The office|Show} to watch
 NewShowInquiry if there are any {Amazing Race|Show}
-NewShowInquiry if there are any {Amazing Race|Show} on the media server
-NewShowInquiry if there are any {Amazing Race|Show} on the server
-NewShowInquiry if there are any {Amazing Race|Show} recorded
-NewShowInquiry if there are any {Amazing Race|Show} to watch
 NewShowInquiry if there are any {America's Got Talent|Show}
-NewShowInquiry if there are any {America's Got Talent|Show} on the media server
-NewShowInquiry if there are any {America's Got Talent|Show} on the server
-NewShowInquiry if there are any {America's Got Talent|Show} recorded
-NewShowInquiry if there are any {America's Got Talent|Show} to watch
 NewShowInquiry if there are any {Arrow|Show}
-NewShowInquiry if there are any {Arrow|Show} on the media server
-NewShowInquiry if there are any {Arrow|Show} on the server
-NewShowInquiry if there are any {Arrow|Show} recorded
-NewShowInquiry if there are any {Arrow|Show} to watch
 NewShowInquiry if there are any {Big Bang Theory|Show}
-NewShowInquiry if there are any {Big Bang Theory|Show} on the media server
-NewShowInquiry if there are any {Big Bang Theory|Show} on the server
-NewShowInquiry if there are any {Big Bang Theory|Show} recorded
-NewShowInquiry if there are any {Big Bang Theory|Show} to watch
 NewShowInquiry if there are any {Blacklist|Show}
-NewShowInquiry if there are any {Blacklist|Show} on the media server
-NewShowInquiry if there are any {Blacklist|Show} on the server
-NewShowInquiry if there are any {Blacklist|Show} recorded
-NewShowInquiry if there are any {Blacklist|Show} to watch
 NewShowInquiry if there are any {Gotham|Show}
-NewShowInquiry if there are any {Gotham|Show} on the media server
-NewShowInquiry if there are any {Gotham|Show} on the server
-NewShowInquiry if there are any {Gotham|Show} recorded
-NewShowInquiry if there are any {Gotham|Show} to watch
 NewShowInquiry if there are any {How To Get Away With Murder|Show}
-NewShowInquiry if there are any {How To Get Away With Murder|Show} on the media server
-NewShowInquiry if there are any {How To Get Away With Murder|Show} on the server
-NewShowInquiry if there are any {How To Get Away With Murder|Show} recorded
-NewShowInquiry if there are any {How To Get Away With Murder|Show} to watch
 NewShowInquiry if there are any {It's Always sunny in philadelphia|Show}
-NewShowInquiry if there are any {It's Always sunny in philadelphia|Show} on the media server
-NewShowInquiry if there are any {It's Always sunny in philadelphia|Show} on the server
-NewShowInquiry if there are any {It's Always sunny in philadelphia|Show} recorded
-NewShowInquiry if there are any {It's Always sunny in philadelphia|Show} to watch
 NewShowInquiry if there are any {Person of Interest|Show}
-NewShowInquiry if there are any {Person of Interest|Show} on the media server
-NewShowInquiry if there are any {Person of Interest|Show} on the server
-NewShowInquiry if there are any {Person of Interest|Show} recorded
-NewShowInquiry if there are any {Person of Interest|Show} to watch
 NewShowInquiry if there are any {Scandal|Show}
-NewShowInquiry if there are any {Scandal|Show} on the media server
-NewShowInquiry if there are any {Scandal|Show} on the server
-NewShowInquiry if there are any {Scandal|Show} recorded
-NewShowInquiry if there are any {Scandal|Show} to watch
 NewShowInquiry if there are any {The Amazing Race|Show}
-NewShowInquiry if there are any {The Amazing Race|Show} on the media server
-NewShowInquiry if there are any {The Amazing Race|Show} on the server
-NewShowInquiry if there are any {The Amazing Race|Show} recorded
-NewShowInquiry if there are any {The Amazing Race|Show} to watch
 NewShowInquiry if there are any {The Big Bang Theory|Show}
-NewShowInquiry if there are any {The Big Bang Theory|Show} on the media server
-NewShowInquiry if there are any {The Big Bang Theory|Show} on the server
-NewShowInquiry if there are any {The Big Bang Theory|Show} recorded
-NewShowInquiry if there are any {The Big Bang Theory|Show} to watch
 NewShowInquiry if there are any {The Blacklist|Show}
-NewShowInquiry if there are any {The Blacklist|Show} on the media server
-NewShowInquiry if there are any {The Blacklist|Show} on the server
-NewShowInquiry if there are any {The Blacklist|Show} recorded
-NewShowInquiry if there are any {The Blacklist|Show} to watch
 NewShowInquiry if there are any {The Flash|Show}
-NewShowInquiry if there are any {The Flash|Show} on the media server
-NewShowInquiry if there are any {The Flash|Show} on the server
-NewShowInquiry if there are any {The Flash|Show} recorded
-NewShowInquiry if there are any {The Flash|Show} to watch
 NewShowInquiry if there are any {The man in the high castle|Show}
-NewShowInquiry if there are any {The man in the high castle|Show} on the media server
-NewShowInquiry if there are any {The man in the high castle|Show} on the server
-NewShowInquiry if there are any {The man in the high castle|Show} recorded
-NewShowInquiry if there are any {The man in the high castle|Show} to watch
 NewShowInquiry if there are any {The office|Show}
-NewShowInquiry if there are any {The office|Show} on the media server
-NewShowInquiry if there are any {The office|Show} on the server
-NewShowInquiry if there are any {The office|Show} recorded
-NewShowInquiry if there are any {The office|Show} to watch
 NewShowInquiry if there is a new episode of {Amazing Race|Show}
-NewShowInquiry if there is a new episode of {Amazing Race|Show} on the media server
-NewShowInquiry if there is a new episode of {Amazing Race|Show} on the server
-NewShowInquiry if there is a new episode of {Amazing Race|Show} recorded
-NewShowInquiry if there is a new episode of {Amazing Race|Show} to watch
 NewShowInquiry if there is a new episode of {America's Got Talent|Show}
-NewShowInquiry if there is a new episode of {America's Got Talent|Show} on the media server
-NewShowInquiry if there is a new episode of {America's Got Talent|Show} on the server
-NewShowInquiry if there is a new episode of {America's Got Talent|Show} recorded
-NewShowInquiry if there is a new episode of {America's Got Talent|Show} to watch
 NewShowInquiry if there is a new episode of {Arrow|Show}
-NewShowInquiry if there is a new episode of {Arrow|Show} on the media server
-NewShowInquiry if there is a new episode of {Arrow|Show} on the server
-NewShowInquiry if there is a new episode of {Arrow|Show} recorded
-NewShowInquiry if there is a new episode of {Arrow|Show} to watch
 NewShowInquiry if there is a new episode of {Big Bang Theory|Show}
-NewShowInquiry if there is a new episode of {Big Bang Theory|Show} on the media server
-NewShowInquiry if there is a new episode of {Big Bang Theory|Show} on the server
-NewShowInquiry if there is a new episode of {Big Bang Theory|Show} recorded
-NewShowInquiry if there is a new episode of {Big Bang Theory|Show} to watch
 NewShowInquiry if there is a new episode of {Blackish|Show}
-NewShowInquiry if there is a new episode of {Blackish|Show} on the media server
-NewShowInquiry if there is a new episode of {Blackish|Show} on the server
-NewShowInquiry if there is a new episode of {Blackish|Show} recorded
-NewShowInquiry if there is a new episode of {Blackish|Show} to watch
 NewShowInquiry if there is a new episode of {Blacklist|Show}
-NewShowInquiry if there is a new episode of {Blacklist|Show} on the media server
-NewShowInquiry if there is a new episode of {Blacklist|Show} on the server
-NewShowInquiry if there is a new episode of {Blacklist|Show} recorded
-NewShowInquiry if there is a new episode of {Blacklist|Show} to watch
 NewShowInquiry if there is a new episode of {Brooklyn Nine Nine|Show}
-NewShowInquiry if there is a new episode of {Brooklyn Nine Nine|Show} on the media server
-NewShowInquiry if there is a new episode of {Brooklyn Nine Nine|Show} on the server
-NewShowInquiry if there is a new episode of {Brooklyn Nine Nine|Show} recorded
-NewShowInquiry if there is a new episode of {Brooklyn Nine Nine|Show} to watch
 NewShowInquiry if there is a new episode of {Doctor Who|Show}
-NewShowInquiry if there is a new episode of {Doctor Who|Show} on the media server
-NewShowInquiry if there is a new episode of {Doctor Who|Show} on the server
-NewShowInquiry if there is a new episode of {Doctor Who|Show} recorded
-NewShowInquiry if there is a new episode of {Doctor Who|Show} to watch
 NewShowInquiry if there is a new episode of {Downton Abbey|Show}
-NewShowInquiry if there is a new episode of {Downton Abbey|Show} on the media server
-NewShowInquiry if there is a new episode of {Downton Abbey|Show} on the server
-NewShowInquiry if there is a new episode of {Downton Abbey|Show} recorded
-NewShowInquiry if there is a new episode of {Downton Abbey|Show} to watch
 NewShowInquiry if there is a new episode of {Gotham|Show}
-NewShowInquiry if there is a new episode of {Gotham|Show} on the media server
-NewShowInquiry if there is a new episode of {Gotham|Show} on the server
-NewShowInquiry if there is a new episode of {Gotham|Show} recorded
-NewShowInquiry if there is a new episode of {Gotham|Show} to watch
 NewShowInquiry if there is a new episode of {How To Get Away With Murder|Show}
-NewShowInquiry if there is a new episode of {How To Get Away With Murder|Show} on the media server
-NewShowInquiry if there is a new episode of {How To Get Away With Murder|Show} on the server
-NewShowInquiry if there is a new episode of {How To Get Away With Murder|Show} recorded
-NewShowInquiry if there is a new episode of {How To Get Away With Murder|Show} to watch
 NewShowInquiry if there is a new episode of {Modern Family|Show}
-NewShowInquiry if there is a new episode of {Modern Family|Show} on the media server
-NewShowInquiry if there is a new episode of {Modern Family|Show} on the server
-NewShowInquiry if there is a new episode of {Modern Family|Show} recorded
-NewShowInquiry if there is a new episode of {Modern Family|Show} to watch
 NewShowInquiry if there is a new episode of {Person of Interest|Show}
-NewShowInquiry if there is a new episode of {Person of Interest|Show} on the media server
-NewShowInquiry if there is a new episode of {Person of Interest|Show} on the server
-NewShowInquiry if there is a new episode of {Person of Interest|Show} recorded
-NewShowInquiry if there is a new episode of {Person of Interest|Show} to watch
 NewShowInquiry if there is a new episode of {Scandal|Show}
-NewShowInquiry if there is a new episode of {Scandal|Show} on the media server
-NewShowInquiry if there is a new episode of {Scandal|Show} on the server
-NewShowInquiry if there is a new episode of {Scandal|Show} recorded
-NewShowInquiry if there is a new episode of {Scandal|Show} to watch
 NewShowInquiry if there is a new episode of {The Amazing Race|Show}
-NewShowInquiry if there is a new episode of {The Amazing Race|Show} on the media server
-NewShowInquiry if there is a new episode of {The Amazing Race|Show} on the server
-NewShowInquiry if there is a new episode of {The Amazing Race|Show} recorded
-NewShowInquiry if there is a new episode of {The Amazing Race|Show} to watch
 NewShowInquiry if there is a new episode of {The Big Bang Theory|Show}
-NewShowInquiry if there is a new episode of {The Big Bang Theory|Show} on the media server
-NewShowInquiry if there is a new episode of {The Big Bang Theory|Show} on the server
-NewShowInquiry if there is a new episode of {The Big Bang Theory|Show} recorded
-NewShowInquiry if there is a new episode of {The Big Bang Theory|Show} to watch
 NewShowInquiry if there is a new episode of {The Blacklist|Show}
-NewShowInquiry if there is a new episode of {The Blacklist|Show} on the media server
-NewShowInquiry if there is a new episode of {The Blacklist|Show} on the server
-NewShowInquiry if there is a new episode of {The Blacklist|Show} recorded
-NewShowInquiry if there is a new episode of {The Blacklist|Show} to watch
 NewShowInquiry if there is a new episode of {The Flash|Show}
-NewShowInquiry if there is a new episode of {The Flash|Show} on the media server
-NewShowInquiry if there is a new episode of {The Flash|Show} on the server
-NewShowInquiry if there is a new episode of {The Flash|Show} recorded
-NewShowInquiry if there is a new episode of {The Flash|Show} to watch
 NewShowInquiry if there is a new {Amazing Race|Show}
-NewShowInquiry if there is a new {Amazing Race|Show} on the media server
-NewShowInquiry if there is a new {Amazing Race|Show} on the server
-NewShowInquiry if there is a new {Amazing Race|Show} recorded
-NewShowInquiry if there is a new {Amazing Race|Show} to watch
 NewShowInquiry if there is a new {America's Got Talent|Show}
-NewShowInquiry if there is a new {America's Got Talent|Show} on the media server
-NewShowInquiry if there is a new {America's Got Talent|Show} on the server
-NewShowInquiry if there is a new {America's Got Talent|Show} recorded
-NewShowInquiry if there is a new {America's Got Talent|Show} to watch
 NewShowInquiry if there is a new {Arrow|Show}
-NewShowInquiry if there is a new {Arrow|Show} on the media server
-NewShowInquiry if there is a new {Arrow|Show} on the server
-NewShowInquiry if there is a new {Arrow|Show} recorded
-NewShowInquiry if there is a new {Arrow|Show} to watch
 NewShowInquiry if there is a new {Big Bang Theory|Show}
-NewShowInquiry if there is a new {Big Bang Theory|Show} on the media server
-NewShowInquiry if there is a new {Big Bang Theory|Show} on the server
-NewShowInquiry if there is a new {Big Bang Theory|Show} recorded
-NewShowInquiry if there is a new {Big Bang Theory|Show} to watch
 NewShowInquiry if there is a new {Blackish|Show}
-NewShowInquiry if there is a new {Blackish|Show} on the media server
-NewShowInquiry if there is a new {Blackish|Show} on the server
-NewShowInquiry if there is a new {Blackish|Show} recorded
-NewShowInquiry if there is a new {Blackish|Show} to watch
 NewShowInquiry if there is a new {Blacklist|Show}
-NewShowInquiry if there is a new {Blacklist|Show} on the media server
-NewShowInquiry if there is a new {Blacklist|Show} on the server
-NewShowInquiry if there is a new {Blacklist|Show} recorded
-NewShowInquiry if there is a new {Blacklist|Show} to watch
 NewShowInquiry if there is a new {Brooklyn Nine Nine|Show}
-NewShowInquiry if there is a new {Brooklyn Nine Nine|Show} on the media server
-NewShowInquiry if there is a new {Brooklyn Nine Nine|Show} on the server
-NewShowInquiry if there is a new {Brooklyn Nine Nine|Show} recorded
-NewShowInquiry if there is a new {Brooklyn Nine Nine|Show} to watch
 NewShowInquiry if there is a new {Doctor Who|Show}
-NewShowInquiry if there is a new {Doctor Who|Show} on the media server
-NewShowInquiry if there is a new {Doctor Who|Show} on the server
-NewShowInquiry if there is a new {Doctor Who|Show} recorded
-NewShowInquiry if there is a new {Doctor Who|Show} to watch
 NewShowInquiry if there is a new {Downton Abbey|Show}
-NewShowInquiry if there is a new {Downton Abbey|Show} on the media server
-NewShowInquiry if there is a new {Downton Abbey|Show} on the server
-NewShowInquiry if there is a new {Downton Abbey|Show} recorded
-NewShowInquiry if there is a new {Downton Abbey|Show} to watch
 NewShowInquiry if there is a new {Gotham|Show}
-NewShowInquiry if there is a new {Gotham|Show} on the media server
-NewShowInquiry if there is a new {Gotham|Show} on the server
-NewShowInquiry if there is a new {Gotham|Show} recorded
-NewShowInquiry if there is a new {Gotham|Show} to watch
 NewShowInquiry if there is a new {How To Get Away With Murder|Show}
-NewShowInquiry if there is a new {How To Get Away With Murder|Show} on the media server
-NewShowInquiry if there is a new {How To Get Away With Murder|Show} on the server
-NewShowInquiry if there is a new {How To Get Away With Murder|Show} recorded
-NewShowInquiry if there is a new {How To Get Away With Murder|Show} to watch
 NewShowInquiry if there is a new {Modern Family|Show}
-NewShowInquiry if there is a new {Modern Family|Show} on the media server
-NewShowInquiry if there is a new {Modern Family|Show} on the server
-NewShowInquiry if there is a new {Modern Family|Show} recorded
-NewShowInquiry if there is a new {Modern Family|Show} to watch
 NewShowInquiry if there is a new {Person of Interest|Show}
-NewShowInquiry if there is a new {Person of Interest|Show} on the media server
-NewShowInquiry if there is a new {Person of Interest|Show} on the server
-NewShowInquiry if there is a new {Person of Interest|Show} recorded
-NewShowInquiry if there is a new {Person of Interest|Show} to watch
 NewShowInquiry if there is a new {Scandal|Show}
-NewShowInquiry if there is a new {Scandal|Show} on the media server
-NewShowInquiry if there is a new {Scandal|Show} on the server
-NewShowInquiry if there is a new {Scandal|Show} recorded
-NewShowInquiry if there is a new {Scandal|Show} to watch
 NewShowInquiry if there is a new {The Amazing Race|Show}
-NewShowInquiry if there is a new {The Amazing Race|Show} on the media server
-NewShowInquiry if there is a new {The Amazing Race|Show} on the server
-NewShowInquiry if there is a new {The Amazing Race|Show} recorded
-NewShowInquiry if there is a new {The Amazing Race|Show} to watch
 NewShowInquiry if there is a new {The Big Bang Theory|Show}
-NewShowInquiry if there is a new {The Big Bang Theory|Show} on the media server
-NewShowInquiry if there is a new {The Big Bang Theory|Show} on the server
-NewShowInquiry if there is a new {The Big Bang Theory|Show} recorded
-NewShowInquiry if there is a new {The Big Bang Theory|Show} to watch
 NewShowInquiry if there is a new {The Blacklist|Show}
-NewShowInquiry if there is a new {The Blacklist|Show} on the media server
-NewShowInquiry if there is a new {The Blacklist|Show} on the server
-NewShowInquiry if there is a new {The Blacklist|Show} recorded
-NewShowInquiry if there is a new {The Blacklist|Show} to watch
 NewShowInquiry if there is a new {The Flash|Show}
-NewShowInquiry if there is a new {The Flash|Show} on the media server
-NewShowInquiry if there is a new {The Flash|Show} on the server
-NewShowInquiry if there is a new {The Flash|Show} recorded
-NewShowInquiry if there is a new {The Flash|Show} to watch
 NewShowInquiry if there is {Amazing Race|Show}
-NewShowInquiry if there is {Amazing Race|Show} on the media server
-NewShowInquiry if there is {Amazing Race|Show} on the server
-NewShowInquiry if there is {Amazing Race|Show} recorded
-NewShowInquiry if there is {Amazing Race|Show} to watch
 NewShowInquiry if there is {America's Got Talent|Show}
-NewShowInquiry if there is {America's Got Talent|Show} on the media server
-NewShowInquiry if there is {America's Got Talent|Show} on the server
-NewShowInquiry if there is {America's Got Talent|Show} recorded
-NewShowInquiry if there is {America's Got Talent|Show} to watch
 NewShowInquiry if there is {Arrow|Show}
-NewShowInquiry if there is {Arrow|Show} on the media server
-NewShowInquiry if there is {Arrow|Show} on the server
-NewShowInquiry if there is {Arrow|Show} recorded
-NewShowInquiry if there is {Arrow|Show} to watch
 NewShowInquiry if there is {Big Bang Theory|Show}
-NewShowInquiry if there is {Big Bang Theory|Show} on the media server
-NewShowInquiry if there is {Big Bang Theory|Show} on the server
-NewShowInquiry if there is {Big Bang Theory|Show} recorded
-NewShowInquiry if there is {Big Bang Theory|Show} to watch
 NewShowInquiry if there is {Blacklist|Show}
-NewShowInquiry if there is {Blacklist|Show} on the media server
-NewShowInquiry if there is {Blacklist|Show} on the server
-NewShowInquiry if there is {Blacklist|Show} recorded
-NewShowInquiry if there is {Blacklist|Show} to watch
 NewShowInquiry if there is {Gotham|Show}
-NewShowInquiry if there is {Gotham|Show} on the media server
-NewShowInquiry if there is {Gotham|Show} on the server
-NewShowInquiry if there is {Gotham|Show} recorded
-NewShowInquiry if there is {Gotham|Show} to watch
 NewShowInquiry if there is {How To Get Away With Murder|Show}
-NewShowInquiry if there is {How To Get Away With Murder|Show} on the media server
-NewShowInquiry if there is {How To Get Away With Murder|Show} on the server
-NewShowInquiry if there is {How To Get Away With Murder|Show} recorded
-NewShowInquiry if there is {How To Get Away With Murder|Show} to watch
 NewShowInquiry if there is {It's Always sunny in philadelphia|Show}
-NewShowInquiry if there is {It's Always sunny in philadelphia|Show} on the media server
-NewShowInquiry if there is {It's Always sunny in philadelphia|Show} on the server
-NewShowInquiry if there is {It's Always sunny in philadelphia|Show} recorded
-NewShowInquiry if there is {It's Always sunny in philadelphia|Show} to watch
 NewShowInquiry if there is {Person of Interest|Show}
-NewShowInquiry if there is {Person of Interest|Show} on the media server
-NewShowInquiry if there is {Person of Interest|Show} on the server
-NewShowInquiry if there is {Person of Interest|Show} recorded
-NewShowInquiry if there is {Person of Interest|Show} to watch
 NewShowInquiry if there is {Scandal|Show}
-NewShowInquiry if there is {Scandal|Show} on the media server
-NewShowInquiry if there is {Scandal|Show} on the server
-NewShowInquiry if there is {Scandal|Show} recorded
-NewShowInquiry if there is {Scandal|Show} to watch
 NewShowInquiry if there is {The Amazing Race|Show}
-NewShowInquiry if there is {The Amazing Race|Show} on the media server
-NewShowInquiry if there is {The Amazing Race|Show} on the server
-NewShowInquiry if there is {The Amazing Race|Show} recorded
-NewShowInquiry if there is {The Amazing Race|Show} to watch
 NewShowInquiry if there is {The Big Bang Theory|Show}
-NewShowInquiry if there is {The Big Bang Theory|Show} on the media server
-NewShowInquiry if there is {The Big Bang Theory|Show} on the server
-NewShowInquiry if there is {The Big Bang Theory|Show} recorded
-NewShowInquiry if there is {The Big Bang Theory|Show} to watch
 NewShowInquiry if there is {The Blacklist|Show}
-NewShowInquiry if there is {The Blacklist|Show} on the media server
-NewShowInquiry if there is {The Blacklist|Show} on the server
-NewShowInquiry if there is {The Blacklist|Show} recorded
-NewShowInquiry if there is {The Blacklist|Show} to watch
 NewShowInquiry if there is {The Flash|Show}
-NewShowInquiry if there is {The Flash|Show} on the media server
-NewShowInquiry if there is {The Flash|Show} on the server
-NewShowInquiry if there is {The Flash|Show} recorded
-NewShowInquiry if there is {The Flash|Show} to watch
 NewShowInquiry if there is {The man in the high castle|Show}
-NewShowInquiry if there is {The man in the high castle|Show} on the media server
-NewShowInquiry if there is {The man in the high castle|Show} on the server
-NewShowInquiry if there is {The man in the high castle|Show} recorded
-NewShowInquiry if there is {The man in the high castle|Show} to watch
 NewShowInquiry if there is {The office|Show}
-NewShowInquiry if there is {The office|Show} on the media server
-NewShowInquiry if there is {The office|Show} on the server
-NewShowInquiry if there is {The office|Show} recorded
-NewShowInquiry if there is {The office|Show} to watch
 NewShowInquiry if we have a new episode of {Amazing Race|Show}
-NewShowInquiry if we have a new episode of {Amazing Race|Show} on the media server
-NewShowInquiry if we have a new episode of {Amazing Race|Show} on the server
-NewShowInquiry if we have a new episode of {Amazing Race|Show} recorded
-NewShowInquiry if we have a new episode of {Amazing Race|Show} to watch
 NewShowInquiry if we have a new episode of {America's Got Talent|Show}
-NewShowInquiry if we have a new episode of {America's Got Talent|Show} on the media server
-NewShowInquiry if we have a new episode of {America's Got Talent|Show} on the server
-NewShowInquiry if we have a new episode of {America's Got Talent|Show} recorded
-NewShowInquiry if we have a new episode of {America's Got Talent|Show} to watch
 NewShowInquiry if we have a new episode of {Arrow|Show}
-NewShowInquiry if we have a new episode of {Arrow|Show} on the media server
-NewShowInquiry if we have a new episode of {Arrow|Show} on the server
-NewShowInquiry if we have a new episode of {Arrow|Show} recorded
-NewShowInquiry if we have a new episode of {Arrow|Show} to watch
 NewShowInquiry if we have a new episode of {Big Bang Theory|Show}
-NewShowInquiry if we have a new episode of {Big Bang Theory|Show} on the media server
-NewShowInquiry if we have a new episode of {Big Bang Theory|Show} on the server
-NewShowInquiry if we have a new episode of {Big Bang Theory|Show} recorded
-NewShowInquiry if we have a new episode of {Big Bang Theory|Show} to watch
 NewShowInquiry if we have a new episode of {Blackish|Show}
-NewShowInquiry if we have a new episode of {Blackish|Show} on the media server
-NewShowInquiry if we have a new episode of {Blackish|Show} on the server
-NewShowInquiry if we have a new episode of {Blackish|Show} recorded
-NewShowInquiry if we have a new episode of {Blackish|Show} to watch
 NewShowInquiry if we have a new episode of {Blacklist|Show}
-NewShowInquiry if we have a new episode of {Blacklist|Show} on the media server
-NewShowInquiry if we have a new episode of {Blacklist|Show} on the server
-NewShowInquiry if we have a new episode of {Blacklist|Show} recorded
-NewShowInquiry if we have a new episode of {Blacklist|Show} to watch
 NewShowInquiry if we have a new episode of {Brooklyn Nine Nine|Show}
-NewShowInquiry if we have a new episode of {Brooklyn Nine Nine|Show} on the media server
-NewShowInquiry if we have a new episode of {Brooklyn Nine Nine|Show} on the server
-NewShowInquiry if we have a new episode of {Brooklyn Nine Nine|Show} recorded
-NewShowInquiry if we have a new episode of {Brooklyn Nine Nine|Show} to watch
 NewShowInquiry if we have a new episode of {Doctor Who|Show}
-NewShowInquiry if we have a new episode of {Doctor Who|Show} on the media server
-NewShowInquiry if we have a new episode of {Doctor Who|Show} on the server
-NewShowInquiry if we have a new episode of {Doctor Who|Show} recorded
-NewShowInquiry if we have a new episode of {Doctor Who|Show} to watch
 NewShowInquiry if we have a new episode of {Downton Abbey|Show}
-NewShowInquiry if we have a new episode of {Downton Abbey|Show} on the media server
-NewShowInquiry if we have a new episode of {Downton Abbey|Show} on the server
-NewShowInquiry if we have a new episode of {Downton Abbey|Show} recorded
-NewShowInquiry if we have a new episode of {Downton Abbey|Show} to watch
 NewShowInquiry if we have a new episode of {Gotham|Show}
-NewShowInquiry if we have a new episode of {Gotham|Show} on the media server
-NewShowInquiry if we have a new episode of {Gotham|Show} on the server
-NewShowInquiry if we have a new episode of {Gotham|Show} recorded
-NewShowInquiry if we have a new episode of {Gotham|Show} to watch
 NewShowInquiry if we have a new episode of {How To Get Away With Murder|Show}
-NewShowInquiry if we have a new episode of {How To Get Away With Murder|Show} on the media server
-NewShowInquiry if we have a new episode of {How To Get Away With Murder|Show} on the server
-NewShowInquiry if we have a new episode of {How To Get Away With Murder|Show} recorded
-NewShowInquiry if we have a new episode of {How To Get Away With Murder|Show} to watch
 NewShowInquiry if we have a new episode of {Modern Family|Show}
-NewShowInquiry if we have a new episode of {Modern Family|Show} on the media server
-NewShowInquiry if we have a new episode of {Modern Family|Show} on the server
-NewShowInquiry if we have a new episode of {Modern Family|Show} recorded
-NewShowInquiry if we have a new episode of {Modern Family|Show} to watch
 NewShowInquiry if we have a new episode of {Person of Interest|Show}
-NewShowInquiry if we have a new episode of {Person of Interest|Show} on the media server
-NewShowInquiry if we have a new episode of {Person of Interest|Show} on the server
-NewShowInquiry if we have a new episode of {Person of Interest|Show} recorded
-NewShowInquiry if we have a new episode of {Person of Interest|Show} to watch
 NewShowInquiry if we have a new episode of {Scandal|Show}
-NewShowInquiry if we have a new episode of {Scandal|Show} on the media server
-NewShowInquiry if we have a new episode of {Scandal|Show} on the server
-NewShowInquiry if we have a new episode of {Scandal|Show} recorded
-NewShowInquiry if we have a new episode of {Scandal|Show} to watch
 NewShowInquiry if we have a new episode of {The Amazing Race|Show}
-NewShowInquiry if we have a new episode of {The Amazing Race|Show} on the media server
-NewShowInquiry if we have a new episode of {The Amazing Race|Show} on the server
-NewShowInquiry if we have a new episode of {The Amazing Race|Show} recorded
-NewShowInquiry if we have a new episode of {The Amazing Race|Show} to watch
 NewShowInquiry if we have a new episode of {The Big Bang Theory|Show}
-NewShowInquiry if we have a new episode of {The Big Bang Theory|Show} on the media server
-NewShowInquiry if we have a new episode of {The Big Bang Theory|Show} on the server
-NewShowInquiry if we have a new episode of {The Big Bang Theory|Show} recorded
-NewShowInquiry if we have a new episode of {The Big Bang Theory|Show} to watch
 NewShowInquiry if we have a new episode of {The Blacklist|Show}
-NewShowInquiry if we have a new episode of {The Blacklist|Show} on the media server
-NewShowInquiry if we have a new episode of {The Blacklist|Show} on the server
-NewShowInquiry if we have a new episode of {The Blacklist|Show} recorded
-NewShowInquiry if we have a new episode of {The Blacklist|Show} to watch
 NewShowInquiry if we have a new episode of {The Flash|Show}
-NewShowInquiry if we have a new episode of {The Flash|Show} on the media server
-NewShowInquiry if we have a new episode of {The Flash|Show} on the server
-NewShowInquiry if we have a new episode of {The Flash|Show} recorded
-NewShowInquiry if we have a new episode of {The Flash|Show} to watch
 NewShowInquiry if we have a new {Amazing Race|Show}
-NewShowInquiry if we have a new {Amazing Race|Show} on the media server
-NewShowInquiry if we have a new {Amazing Race|Show} on the server
-NewShowInquiry if we have a new {Amazing Race|Show} recorded
-NewShowInquiry if we have a new {Amazing Race|Show} to watch
 NewShowInquiry if we have a new {America's Got Talent|Show}
-NewShowInquiry if we have a new {America's Got Talent|Show} on the media server
-NewShowInquiry if we have a new {America's Got Talent|Show} on the server
-NewShowInquiry if we have a new {America's Got Talent|Show} recorded
-NewShowInquiry if we have a new {America's Got Talent|Show} to watch
 NewShowInquiry if we have a new {Arrow|Show}
-NewShowInquiry if we have a new {Arrow|Show} on the media server
-NewShowInquiry if we have a new {Arrow|Show} on the server
-NewShowInquiry if we have a new {Arrow|Show} recorded
-NewShowInquiry if we have a new {Arrow|Show} to watch
 NewShowInquiry if we have a new {Big Bang Theory|Show}
-NewShowInquiry if we have a new {Big Bang Theory|Show} on the media server
-NewShowInquiry if we have a new {Big Bang Theory|Show} on the server
-NewShowInquiry if we have a new {Big Bang Theory|Show} recorded
-NewShowInquiry if we have a new {Big Bang Theory|Show} to watch
 NewShowInquiry if we have a new {Blackish|Show}
-NewShowInquiry if we have a new {Blackish|Show} on the media server
-NewShowInquiry if we have a new {Blackish|Show} on the server
-NewShowInquiry if we have a new {Blackish|Show} recorded
-NewShowInquiry if we have a new {Blackish|Show} to watch
 NewShowInquiry if we have a new {Blacklist|Show}
-NewShowInquiry if we have a new {Blacklist|Show} on the media server
-NewShowInquiry if we have a new {Blacklist|Show} on the server
-NewShowInquiry if we have a new {Blacklist|Show} recorded
-NewShowInquiry if we have a new {Blacklist|Show} to watch
 NewShowInquiry if we have a new {Brooklyn Nine Nine|Show}
-NewShowInquiry if we have a new {Brooklyn Nine Nine|Show} on the media server
-NewShowInquiry if we have a new {Brooklyn Nine Nine|Show} on the server
-NewShowInquiry if we have a new {Brooklyn Nine Nine|Show} recorded
-NewShowInquiry if we have a new {Brooklyn Nine Nine|Show} to watch
 NewShowInquiry if we have a new {Doctor Who|Show}
-NewShowInquiry if we have a new {Doctor Who|Show} on the media server
-NewShowInquiry if we have a new {Doctor Who|Show} on the server
-NewShowInquiry if we have a new {Doctor Who|Show} recorded
-NewShowInquiry if we have a new {Doctor Who|Show} to watch
 NewShowInquiry if we have a new {Downton Abbey|Show}
-NewShowInquiry if we have a new {Downton Abbey|Show} on the media server
-NewShowInquiry if we have a new {Downton Abbey|Show} on the server
-NewShowInquiry if we have a new {Downton Abbey|Show} recorded
-NewShowInquiry if we have a new {Downton Abbey|Show} to watch
 NewShowInquiry if we have a new {Gotham|Show}
-NewShowInquiry if we have a new {Gotham|Show} on the media server
-NewShowInquiry if we have a new {Gotham|Show} on the server
-NewShowInquiry if we have a new {Gotham|Show} recorded
-NewShowInquiry if we have a new {Gotham|Show} to watch
 NewShowInquiry if we have a new {How To Get Away With Murder|Show}
-NewShowInquiry if we have a new {How To Get Away With Murder|Show} on the media server
-NewShowInquiry if we have a new {How To Get Away With Murder|Show} on the server
-NewShowInquiry if we have a new {How To Get Away With Murder|Show} recorded
-NewShowInquiry if we have a new {How To Get Away With Murder|Show} to watch
 NewShowInquiry if we have a new {Modern Family|Show}
-NewShowInquiry if we have a new {Modern Family|Show} on the media server
-NewShowInquiry if we have a new {Modern Family|Show} on the server
-NewShowInquiry if we have a new {Modern Family|Show} recorded
-NewShowInquiry if we have a new {Modern Family|Show} to watch
 NewShowInquiry if we have a new {Person of Interest|Show}
-NewShowInquiry if we have a new {Person of Interest|Show} on the media server
-NewShowInquiry if we have a new {Person of Interest|Show} on the server
-NewShowInquiry if we have a new {Person of Interest|Show} recorded
-NewShowInquiry if we have a new {Person of Interest|Show} to watch
 NewShowInquiry if we have a new {Scandal|Show}
-NewShowInquiry if we have a new {Scandal|Show} on the media server
-NewShowInquiry if we have a new {Scandal|Show} on the server
-NewShowInquiry if we have a new {Scandal|Show} recorded
-NewShowInquiry if we have a new {Scandal|Show} to watch
 NewShowInquiry if we have a new {The Amazing Race|Show}
-NewShowInquiry if we have a new {The Amazing Race|Show} on the media server
-NewShowInquiry if we have a new {The Amazing Race|Show} on the server
-NewShowInquiry if we have a new {The Amazing Race|Show} recorded
-NewShowInquiry if we have a new {The Amazing Race|Show} to watch
 NewShowInquiry if we have a new {The Big Bang Theory|Show}
-NewShowInquiry if we have a new {The Big Bang Theory|Show} on the media server
-NewShowInquiry if we have a new {The Big Bang Theory|Show} on the server
-NewShowInquiry if we have a new {The Big Bang Theory|Show} recorded
-NewShowInquiry if we have a new {The Big Bang Theory|Show} to watch
 NewShowInquiry if we have a new {The Blacklist|Show}
-NewShowInquiry if we have a new {The Blacklist|Show} on the media server
-NewShowInquiry if we have a new {The Blacklist|Show} on the server
-NewShowInquiry if we have a new {The Blacklist|Show} recorded
-NewShowInquiry if we have a new {The Blacklist|Show} to watch
 NewShowInquiry if we have a new {The Flash|Show}
-NewShowInquiry if we have a new {The Flash|Show} on the media server
-NewShowInquiry if we have a new {The Flash|Show} on the server
-NewShowInquiry if we have a new {The Flash|Show} recorded
-NewShowInquiry if we have a new {The Flash|Show} to watch
 NewShowInquiry if we have any episodes of {Amazing Race|Show}
-NewShowInquiry if we have any episodes of {Amazing Race|Show} on the media server
-NewShowInquiry if we have any episodes of {Amazing Race|Show} on the server
-NewShowInquiry if we have any episodes of {Amazing Race|Show} recorded
-NewShowInquiry if we have any episodes of {Amazing Race|Show} to watch
 NewShowInquiry if we have any episodes of {America's Got Talent|Show}
-NewShowInquiry if we have any episodes of {America's Got Talent|Show} on the media server
-NewShowInquiry if we have any episodes of {America's Got Talent|Show} on the server
-NewShowInquiry if we have any episodes of {America's Got Talent|Show} recorded
-NewShowInquiry if we have any episodes of {America's Got Talent|Show} to watch
 NewShowInquiry if we have any episodes of {Arrow|Show}
-NewShowInquiry if we have any episodes of {Arrow|Show} on the media server
-NewShowInquiry if we have any episodes of {Arrow|Show} on the server
-NewShowInquiry if we have any episodes of {Arrow|Show} recorded
-NewShowInquiry if we have any episodes of {Arrow|Show} to watch
 NewShowInquiry if we have any episodes of {Big Bang Theory|Show}
-NewShowInquiry if we have any episodes of {Big Bang Theory|Show} on the media server
-NewShowInquiry if we have any episodes of {Big Bang Theory|Show} on the server
-NewShowInquiry if we have any episodes of {Big Bang Theory|Show} recorded
-NewShowInquiry if we have any episodes of {Big Bang Theory|Show} to watch
 NewShowInquiry if we have any episodes of {Blacklist|Show}
-NewShowInquiry if we have any episodes of {Blacklist|Show} on the media server
-NewShowInquiry if we have any episodes of {Blacklist|Show} on the server
-NewShowInquiry if we have any episodes of {Blacklist|Show} recorded
-NewShowInquiry if we have any episodes of {Blacklist|Show} to watch
 NewShowInquiry if we have any episodes of {Gotham|Show}
-NewShowInquiry if we have any episodes of {Gotham|Show} on the media server
-NewShowInquiry if we have any episodes of {Gotham|Show} on the server
-NewShowInquiry if we have any episodes of {Gotham|Show} recorded
-NewShowInquiry if we have any episodes of {Gotham|Show} to watch
 NewShowInquiry if we have any episodes of {How To Get Away With Murder|Show}
-NewShowInquiry if we have any episodes of {How To Get Away With Murder|Show} on the media server
-NewShowInquiry if we have any episodes of {How To Get Away With Murder|Show} on the server
-NewShowInquiry if we have any episodes of {How To Get Away With Murder|Show} recorded
-NewShowInquiry if we have any episodes of {How To Get Away With Murder|Show} to watch
 NewShowInquiry if we have any episodes of {It's Always sunny in philadelphia|Show}
-NewShowInquiry if we have any episodes of {It's Always sunny in philadelphia|Show} on the media server
-NewShowInquiry if we have any episodes of {It's Always sunny in philadelphia|Show} on the server
-NewShowInquiry if we have any episodes of {It's Always sunny in philadelphia|Show} recorded
-NewShowInquiry if we have any episodes of {It's Always sunny in philadelphia|Show} to watch
 NewShowInquiry if we have any episodes of {Person of Interest|Show}
-NewShowInquiry if we have any episodes of {Person of Interest|Show} on the media server
-NewShowInquiry if we have any episodes of {Person of Interest|Show} on the server
-NewShowInquiry if we have any episodes of {Person of Interest|Show} recorded
-NewShowInquiry if we have any episodes of {Person of Interest|Show} to watch
 NewShowInquiry if we have any episodes of {Scandal|Show}
-NewShowInquiry if we have any episodes of {Scandal|Show} on the media server
-NewShowInquiry if we have any episodes of {Scandal|Show} on the server
-NewShowInquiry if we have any episodes of {Scandal|Show} recorded
-NewShowInquiry if we have any episodes of {Scandal|Show} to watch
 NewShowInquiry if we have any episodes of {The Amazing Race|Show}
-NewShowInquiry if we have any episodes of {The Amazing Race|Show} on the media server
-NewShowInquiry if we have any episodes of {The Amazing Race|Show} on the server
-NewShowInquiry if we have any episodes of {The Amazing Race|Show} recorded
-NewShowInquiry if we have any episodes of {The Amazing Race|Show} to watch
 NewShowInquiry if we have any episodes of {The Big Bang Theory|Show}
-NewShowInquiry if we have any episodes of {The Big Bang Theory|Show} on the media server
-NewShowInquiry if we have any episodes of {The Big Bang Theory|Show} on the server
-NewShowInquiry if we have any episodes of {The Big Bang Theory|Show} recorded
-NewShowInquiry if we have any episodes of {The Big Bang Theory|Show} to watch
 NewShowInquiry if we have any episodes of {The Blacklist|Show}
-NewShowInquiry if we have any episodes of {The Blacklist|Show} on the media server
-NewShowInquiry if we have any episodes of {The Blacklist|Show} on the server
-NewShowInquiry if we have any episodes of {The Blacklist|Show} recorded
-NewShowInquiry if we have any episodes of {The Blacklist|Show} to watch
 NewShowInquiry if we have any episodes of {The Flash|Show}
-NewShowInquiry if we have any episodes of {The Flash|Show} on the media server
-NewShowInquiry if we have any episodes of {The Flash|Show} on the server
-NewShowInquiry if we have any episodes of {The Flash|Show} recorded
-NewShowInquiry if we have any episodes of {The Flash|Show} to watch
 NewShowInquiry if we have any episodes of {The man in the high castle|Show}
-NewShowInquiry if we have any episodes of {The man in the high castle|Show} on the media server
-NewShowInquiry if we have any episodes of {The man in the high castle|Show} on the server
-NewShowInquiry if we have any episodes of {The man in the high castle|Show} recorded
-NewShowInquiry if we have any episodes of {The man in the high castle|Show} to watch
 NewShowInquiry if we have any episodes of {The office|Show}
-NewShowInquiry if we have any episodes of {The office|Show} on the media server
-NewShowInquiry if we have any episodes of {The office|Show} on the server
-NewShowInquiry if we have any episodes of {The office|Show} recorded
-NewShowInquiry if we have any episodes of {The office|Show} to watch
 NewShowInquiry if we have any new episodes of {Amazing Race|Show}
-NewShowInquiry if we have any new episodes of {Amazing Race|Show} on the media server
-NewShowInquiry if we have any new episodes of {Amazing Race|Show} on the server
-NewShowInquiry if we have any new episodes of {Amazing Race|Show} recorded
-NewShowInquiry if we have any new episodes of {Amazing Race|Show} to watch
 NewShowInquiry if we have any new episodes of {America's Got Talent|Show}
-NewShowInquiry if we have any new episodes of {America's Got Talent|Show} on the media server
-NewShowInquiry if we have any new episodes of {America's Got Talent|Show} on the server
-NewShowInquiry if we have any new episodes of {America's Got Talent|Show} recorded
-NewShowInquiry if we have any new episodes of {America's Got Talent|Show} to watch
 NewShowInquiry if we have any new episodes of {Arrow|Show}
-NewShowInquiry if we have any new episodes of {Arrow|Show} on the media server
-NewShowInquiry if we have any new episodes of {Arrow|Show} on the server
-NewShowInquiry if we have any new episodes of {Arrow|Show} recorded
-NewShowInquiry if we have any new episodes of {Arrow|Show} to watch
 NewShowInquiry if we have any new episodes of {Big Bang Theory|Show}
-NewShowInquiry if we have any new episodes of {Big Bang Theory|Show} on the media server
-NewShowInquiry if we have any new episodes of {Big Bang Theory|Show} on the server
-NewShowInquiry if we have any new episodes of {Big Bang Theory|Show} recorded
-NewShowInquiry if we have any new episodes of {Big Bang Theory|Show} to watch
 NewShowInquiry if we have any new episodes of {Blacklist|Show}
-NewShowInquiry if we have any new episodes of {Blacklist|Show} on the media server
-NewShowInquiry if we have any new episodes of {Blacklist|Show} on the server
-NewShowInquiry if we have any new episodes of {Blacklist|Show} recorded
-NewShowInquiry if we have any new episodes of {Blacklist|Show} to watch
 NewShowInquiry if we have any new episodes of {Gotham|Show}
-NewShowInquiry if we have any new episodes of {Gotham|Show} on the media server
-NewShowInquiry if we have any new episodes of {Gotham|Show} on the server
-NewShowInquiry if we have any new episodes of {Gotham|Show} recorded
-NewShowInquiry if we have any new episodes of {Gotham|Show} to watch
 NewShowInquiry if we have any new episodes of {How To Get Away With Murder|Show}
-NewShowInquiry if we have any new episodes of {How To Get Away With Murder|Show} on the media server
-NewShowInquiry if we have any new episodes of {How To Get Away With Murder|Show} on the server
-NewShowInquiry if we have any new episodes of {How To Get Away With Murder|Show} recorded
-NewShowInquiry if we have any new episodes of {How To Get Away With Murder|Show} to watch
 NewShowInquiry if we have any new episodes of {It's Always sunny in philadelphia|Show}
-NewShowInquiry if we have any new episodes of {It's Always sunny in philadelphia|Show} on the media server
-NewShowInquiry if we have any new episodes of {It's Always sunny in philadelphia|Show} on the server
-NewShowInquiry if we have any new episodes of {It's Always sunny in philadelphia|Show} recorded
-NewShowInquiry if we have any new episodes of {It's Always sunny in philadelphia|Show} to watch
 NewShowInquiry if we have any new episodes of {Person of Interest|Show}
-NewShowInquiry if we have any new episodes of {Person of Interest|Show} on the media server
-NewShowInquiry if we have any new episodes of {Person of Interest|Show} on the server
-NewShowInquiry if we have any new episodes of {Person of Interest|Show} recorded
-NewShowInquiry if we have any new episodes of {Person of Interest|Show} to watch
 NewShowInquiry if we have any new episodes of {Scandal|Show}
-NewShowInquiry if we have any new episodes of {Scandal|Show} on the media server
-NewShowInquiry if we have any new episodes of {Scandal|Show} on the server
-NewShowInquiry if we have any new episodes of {Scandal|Show} recorded
-NewShowInquiry if we have any new episodes of {Scandal|Show} to watch
 NewShowInquiry if we have any new episodes of {The Amazing Race|Show}
-NewShowInquiry if we have any new episodes of {The Amazing Race|Show} on the media server
-NewShowInquiry if we have any new episodes of {The Amazing Race|Show} on the server
-NewShowInquiry if we have any new episodes of {The Amazing Race|Show} recorded
-NewShowInquiry if we have any new episodes of {The Amazing Race|Show} to watch
 NewShowInquiry if we have any new episodes of {The Big Bang Theory|Show}
-NewShowInquiry if we have any new episodes of {The Big Bang Theory|Show} on the media server
-NewShowInquiry if we have any new episodes of {The Big Bang Theory|Show} on the server
-NewShowInquiry if we have any new episodes of {The Big Bang Theory|Show} recorded
-NewShowInquiry if we have any new episodes of {The Big Bang Theory|Show} to watch
 NewShowInquiry if we have any new episodes of {The Blacklist|Show}
-NewShowInquiry if we have any new episodes of {The Blacklist|Show} on the media server
-NewShowInquiry if we have any new episodes of {The Blacklist|Show} on the server
-NewShowInquiry if we have any new episodes of {The Blacklist|Show} recorded
-NewShowInquiry if we have any new episodes of {The Blacklist|Show} to watch
 NewShowInquiry if we have any new episodes of {The Flash|Show}
-NewShowInquiry if we have any new episodes of {The Flash|Show} on the media server
-NewShowInquiry if we have any new episodes of {The Flash|Show} on the server
-NewShowInquiry if we have any new episodes of {The Flash|Show} recorded
-NewShowInquiry if we have any new episodes of {The Flash|Show} to watch
 NewShowInquiry if we have any new episodes of {The man in the high castle|Show}
-NewShowInquiry if we have any new episodes of {The man in the high castle|Show} on the media server
-NewShowInquiry if we have any new episodes of {The man in the high castle|Show} on the server
-NewShowInquiry if we have any new episodes of {The man in the high castle|Show} recorded
-NewShowInquiry if we have any new episodes of {The man in the high castle|Show} to watch
 NewShowInquiry if we have any new episodes of {The office|Show}
-NewShowInquiry if we have any new episodes of {The office|Show} on the media server
-NewShowInquiry if we have any new episodes of {The office|Show} on the server
-NewShowInquiry if we have any new episodes of {The office|Show} recorded
-NewShowInquiry if we have any new episodes of {The office|Show} to watch
 NewShowInquiry if we have any {Amazing Race|Show}
-NewShowInquiry if we have any {Amazing Race|Show} on the media server
-NewShowInquiry if we have any {Amazing Race|Show} on the server
-NewShowInquiry if we have any {Amazing Race|Show} recorded
-NewShowInquiry if we have any {Amazing Race|Show} to watch
 NewShowInquiry if we have any {America's Got Talent|Show}
-NewShowInquiry if we have any {America's Got Talent|Show} on the media server
-NewShowInquiry if we have any {America's Got Talent|Show} on the server
-NewShowInquiry if we have any {America's Got Talent|Show} recorded
-NewShowInquiry if we have any {America's Got Talent|Show} to watch
 NewShowInquiry if we have any {Arrow|Show}
-NewShowInquiry if we have any {Arrow|Show} on the media server
-NewShowInquiry if we have any {Arrow|Show} on the server
-NewShowInquiry if we have any {Arrow|Show} recorded
-NewShowInquiry if we have any {Arrow|Show} to watch
 NewShowInquiry if we have any {Big Bang Theory|Show}
-NewShowInquiry if we have any {Big Bang Theory|Show} on the media server
-NewShowInquiry if we have any {Big Bang Theory|Show} on the server
-NewShowInquiry if we have any {Big Bang Theory|Show} recorded
-NewShowInquiry if we have any {Big Bang Theory|Show} to watch
 NewShowInquiry if we have any {Blacklist|Show}
-NewShowInquiry if we have any {Blacklist|Show} on the media server
-NewShowInquiry if we have any {Blacklist|Show} on the server
-NewShowInquiry if we have any {Blacklist|Show} recorded
-NewShowInquiry if we have any {Blacklist|Show} to watch
 NewShowInquiry if we have any {Gotham|Show}
-NewShowInquiry if we have any {Gotham|Show} on the media server
-NewShowInquiry if we have any {Gotham|Show} on the server
-NewShowInquiry if we have any {Gotham|Show} recorded
-NewShowInquiry if we have any {Gotham|Show} to watch
 NewShowInquiry if we have any {How To Get Away With Murder|Show}
-NewShowInquiry if we have any {How To Get Away With Murder|Show} on the media server
-NewShowInquiry if we have any {How To Get Away With Murder|Show} on the server
-NewShowInquiry if we have any {How To Get Away With Murder|Show} recorded
-NewShowInquiry if we have any {How To Get Away With Murder|Show} to watch
 NewShowInquiry if we have any {It's Always sunny in philadelphia|Show}
-NewShowInquiry if we have any {It's Always sunny in philadelphia|Show} on the media server
-NewShowInquiry if we have any {It's Always sunny in philadelphia|Show} on the server
-NewShowInquiry if we have any {It's Always sunny in philadelphia|Show} recorded
-NewShowInquiry if we have any {It's Always sunny in philadelphia|Show} to watch
 NewShowInquiry if we have any {Person of Interest|Show}
-NewShowInquiry if we have any {Person of Interest|Show} on the media server
-NewShowInquiry if we have any {Person of Interest|Show} on the server
-NewShowInquiry if we have any {Person of Interest|Show} recorded
-NewShowInquiry if we have any {Person of Interest|Show} to watch
 NewShowInquiry if we have any {Scandal|Show}
-NewShowInquiry if we have any {Scandal|Show} on the media server
-NewShowInquiry if we have any {Scandal|Show} on the server
-NewShowInquiry if we have any {Scandal|Show} recorded
-NewShowInquiry if we have any {Scandal|Show} to watch
 NewShowInquiry if we have any {The Amazing Race|Show}
-NewShowInquiry if we have any {The Amazing Race|Show} on the media server
-NewShowInquiry if we have any {The Amazing Race|Show} on the server
-NewShowInquiry if we have any {The Amazing Race|Show} recorded
-NewShowInquiry if we have any {The Amazing Race|Show} to watch
 NewShowInquiry if we have any {The Big Bang Theory|Show}
-NewShowInquiry if we have any {The Big Bang Theory|Show} on the media server
-NewShowInquiry if we have any {The Big Bang Theory|Show} on the server
-NewShowInquiry if we have any {The Big Bang Theory|Show} recorded
-NewShowInquiry if we have any {The Big Bang Theory|Show} to watch
 NewShowInquiry if we have any {The Blacklist|Show}
-NewShowInquiry if we have any {The Blacklist|Show} on the media server
-NewShowInquiry if we have any {The Blacklist|Show} on the server
-NewShowInquiry if we have any {The Blacklist|Show} recorded
-NewShowInquiry if we have any {The Blacklist|Show} to watch
 NewShowInquiry if we have any {The Flash|Show}
-NewShowInquiry if we have any {The Flash|Show} on the media server
-NewShowInquiry if we have any {The Flash|Show} on the server
-NewShowInquiry if we have any {The Flash|Show} recorded
-NewShowInquiry if we have any {The Flash|Show} to watch
 NewShowInquiry if we have any {The man in the high castle|Show}
-NewShowInquiry if we have any {The man in the high castle|Show} on the media server
-NewShowInquiry if we have any {The man in the high castle|Show} on the server
-NewShowInquiry if we have any {The man in the high castle|Show} recorded
-NewShowInquiry if we have any {The man in the high castle|Show} to watch
 NewShowInquiry if we have any {The office|Show}
-NewShowInquiry if we have any {The office|Show} on the media server
-NewShowInquiry if we have any {The office|Show} on the server
-NewShowInquiry if we have any {The office|Show} recorded
-NewShowInquiry if we have any {The office|Show} to watch
 NewShowInquiry if we have {Amazing Race|Show}
-NewShowInquiry if we have {Amazing Race|Show} on the media server
-NewShowInquiry if we have {Amazing Race|Show} on the server
-NewShowInquiry if we have {Amazing Race|Show} recorded
-NewShowInquiry if we have {Amazing Race|Show} to watch
 NewShowInquiry if we have {America's Got Talent|Show}
-NewShowInquiry if we have {America's Got Talent|Show} on the media server
-NewShowInquiry if we have {America's Got Talent|Show} on the server
-NewShowInquiry if we have {America's Got Talent|Show} recorded
-NewShowInquiry if we have {America's Got Talent|Show} to watch
 NewShowInquiry if we have {Arrow|Show}
-NewShowInquiry if we have {Arrow|Show} on the media server
-NewShowInquiry if we have {Arrow|Show} on the server
-NewShowInquiry if we have {Arrow|Show} recorded
-NewShowInquiry if we have {Arrow|Show} to watch
 NewShowInquiry if we have {Big Bang Theory|Show}
-NewShowInquiry if we have {Big Bang Theory|Show} on the media server
-NewShowInquiry if we have {Big Bang Theory|Show} on the server
-NewShowInquiry if we have {Big Bang Theory|Show} recorded
-NewShowInquiry if we have {Big Bang Theory|Show} to watch
 NewShowInquiry if we have {Blacklist|Show}
-NewShowInquiry if we have {Blacklist|Show} on the media server
-NewShowInquiry if we have {Blacklist|Show} on the server
-NewShowInquiry if we have {Blacklist|Show} recorded
-NewShowInquiry if we have {Blacklist|Show} to watch
 NewShowInquiry if we have {Gotham|Show}
-NewShowInquiry if we have {Gotham|Show} on the media server
-NewShowInquiry if we have {Gotham|Show} on the server
-NewShowInquiry if we have {Gotham|Show} recorded
-NewShowInquiry if we have {Gotham|Show} to watch
 NewShowInquiry if we have {How To Get Away With Murder|Show}
-NewShowInquiry if we have {How To Get Away With Murder|Show} on the media server
-NewShowInquiry if we have {How To Get Away With Murder|Show} on the server
-NewShowInquiry if we have {How To Get Away With Murder|Show} recorded
-NewShowInquiry if we have {How To Get Away With Murder|Show} to watch
 NewShowInquiry if we have {It's Always sunny in philadelphia|Show}
-NewShowInquiry if we have {It's Always sunny in philadelphia|Show} on the media server
-NewShowInquiry if we have {It's Always sunny in philadelphia|Show} on the server
-NewShowInquiry if we have {It's Always sunny in philadelphia|Show} recorded
-NewShowInquiry if we have {It's Always sunny in philadelphia|Show} to watch
 NewShowInquiry if we have {Person of Interest|Show}
-NewShowInquiry if we have {Person of Interest|Show} on the media server
-NewShowInquiry if we have {Person of Interest|Show} on the server
-NewShowInquiry if we have {Person of Interest|Show} recorded
-NewShowInquiry if we have {Person of Interest|Show} to watch
 NewShowInquiry if we have {Scandal|Show}
-NewShowInquiry if we have {Scandal|Show} on the media server
-NewShowInquiry if we have {Scandal|Show} on the server
-NewShowInquiry if we have {Scandal|Show} recorded
-NewShowInquiry if we have {Scandal|Show} to watch
 NewShowInquiry if we have {The Amazing Race|Show}
-NewShowInquiry if we have {The Amazing Race|Show} on the media server
-NewShowInquiry if we have {The Amazing Race|Show} on the server
-NewShowInquiry if we have {The Amazing Race|Show} recorded
-NewShowInquiry if we have {The Amazing Race|Show} to watch
 NewShowInquiry if we have {The Big Bang Theory|Show}
-NewShowInquiry if we have {The Big Bang Theory|Show} on the media server
-NewShowInquiry if we have {The Big Bang Theory|Show} on the server
-NewShowInquiry if we have {The Big Bang Theory|Show} recorded
-NewShowInquiry if we have {The Big Bang Theory|Show} to watch
 NewShowInquiry if we have {The Blacklist|Show}
-NewShowInquiry if we have {The Blacklist|Show} on the media server
-NewShowInquiry if we have {The Blacklist|Show} on the server
-NewShowInquiry if we have {The Blacklist|Show} recorded
-NewShowInquiry if we have {The Blacklist|Show} to watch
 NewShowInquiry if we have {The Flash|Show}
-NewShowInquiry if we have {The Flash|Show} on the media server
-NewShowInquiry if we have {The Flash|Show} on the server
-NewShowInquiry if we have {The Flash|Show} recorded
-NewShowInquiry if we have {The Flash|Show} to watch
 NewShowInquiry if we have {The man in the high castle|Show}
-NewShowInquiry if we have {The man in the high castle|Show} on the media server
-NewShowInquiry if we have {The man in the high castle|Show} on the server
-NewShowInquiry if we have {The man in the high castle|Show} recorded
-NewShowInquiry if we have {The man in the high castle|Show} to watch
 NewShowInquiry if we have {The office|Show}
-NewShowInquiry if we have {The office|Show} on the media server
-NewShowInquiry if we have {The office|Show} on the server
-NewShowInquiry if we have {The office|Show} recorded
-NewShowInquiry if we have {The office|Show} to watch
 PageDown navigate page down
 PageUp navigate page up
 PlayEpisode play season {Season} episode {Episode} of {Amazing Race|Show}
@@ -1290,6 +494,134 @@ PlayEpisode watch series {Season} episode {Episode} of {The Blacklist|Show}
 PlayEpisode watch series {Season} episode {Episode} of {The Flash|Show}
 PlayEpisode watch series {Season} episode {Episode} of {The man in the high castle|Show}
 PlayEpisode watch series {Season} episode {Episode} of {The office|Show}
+PlayLatestEpisode play latest episode of {Amazing Race|Show}
+PlayLatestEpisode play latest episode of {America's Got Talent|Show}
+PlayLatestEpisode play latest episode of {Arrow|Show}
+PlayLatestEpisode play latest episode of {Big Bang Theory|Show}
+PlayLatestEpisode play latest episode of {Blacklist|Show}
+PlayLatestEpisode play latest episode of {Gotham|Show}
+PlayLatestEpisode play latest episode of {How To Get Away With Murder|Show}
+PlayLatestEpisode play latest episode of {It's Always sunny in philadelphia|Show}
+PlayLatestEpisode play latest episode of {Person of Interest|Show}
+PlayLatestEpisode play latest episode of {Scandal|Show}
+PlayLatestEpisode play latest episode of {The Amazing Race|Show}
+PlayLatestEpisode play latest episode of {The Big Bang Theory|Show}
+PlayLatestEpisode play latest episode of {The Blacklist|Show}
+PlayLatestEpisode play latest episode of {The Flash|Show}
+PlayLatestEpisode play latest episode of {The man in the high castle|Show}
+PlayLatestEpisode play latest episode of {The office|Show}
+PlayLatestEpisode play newest episode of {Amazing Race|Show}
+PlayLatestEpisode play newest episode of {America's Got Talent|Show}
+PlayLatestEpisode play newest episode of {Arrow|Show}
+PlayLatestEpisode play newest episode of {Big Bang Theory|Show}
+PlayLatestEpisode play newest episode of {Blacklist|Show}
+PlayLatestEpisode play newest episode of {Gotham|Show}
+PlayLatestEpisode play newest episode of {How To Get Away With Murder|Show}
+PlayLatestEpisode play newest episode of {It's Always sunny in philadelphia|Show}
+PlayLatestEpisode play newest episode of {Person of Interest|Show}
+PlayLatestEpisode play newest episode of {Scandal|Show}
+PlayLatestEpisode play newest episode of {The Amazing Race|Show}
+PlayLatestEpisode play newest episode of {The Big Bang Theory|Show}
+PlayLatestEpisode play newest episode of {The Blacklist|Show}
+PlayLatestEpisode play newest episode of {The Flash|Show}
+PlayLatestEpisode play newest episode of {The man in the high castle|Show}
+PlayLatestEpisode play newest episode of {The office|Show}
+PlayLatestEpisode play the latest episode of {Amazing Race|Show}
+PlayLatestEpisode play the latest episode of {America's Got Talent|Show}
+PlayLatestEpisode play the latest episode of {Arrow|Show}
+PlayLatestEpisode play the latest episode of {Big Bang Theory|Show}
+PlayLatestEpisode play the latest episode of {Blacklist|Show}
+PlayLatestEpisode play the latest episode of {Gotham|Show}
+PlayLatestEpisode play the latest episode of {How To Get Away With Murder|Show}
+PlayLatestEpisode play the latest episode of {It's Always sunny in philadelphia|Show}
+PlayLatestEpisode play the latest episode of {Person of Interest|Show}
+PlayLatestEpisode play the latest episode of {Scandal|Show}
+PlayLatestEpisode play the latest episode of {The Amazing Race|Show}
+PlayLatestEpisode play the latest episode of {The Big Bang Theory|Show}
+PlayLatestEpisode play the latest episode of {The Blacklist|Show}
+PlayLatestEpisode play the latest episode of {The Flash|Show}
+PlayLatestEpisode play the latest episode of {The man in the high castle|Show}
+PlayLatestEpisode play the latest episode of {The office|Show}
+PlayLatestEpisode play the newest episode of {Amazing Race|Show}
+PlayLatestEpisode play the newest episode of {America's Got Talent|Show}
+PlayLatestEpisode play the newest episode of {Arrow|Show}
+PlayLatestEpisode play the newest episode of {Big Bang Theory|Show}
+PlayLatestEpisode play the newest episode of {Blacklist|Show}
+PlayLatestEpisode play the newest episode of {Gotham|Show}
+PlayLatestEpisode play the newest episode of {How To Get Away With Murder|Show}
+PlayLatestEpisode play the newest episode of {It's Always sunny in philadelphia|Show}
+PlayLatestEpisode play the newest episode of {Person of Interest|Show}
+PlayLatestEpisode play the newest episode of {Scandal|Show}
+PlayLatestEpisode play the newest episode of {The Amazing Race|Show}
+PlayLatestEpisode play the newest episode of {The Big Bang Theory|Show}
+PlayLatestEpisode play the newest episode of {The Blacklist|Show}
+PlayLatestEpisode play the newest episode of {The Flash|Show}
+PlayLatestEpisode play the newest episode of {The man in the high castle|Show}
+PlayLatestEpisode play the newest episode of {The office|Show}
+PlayLatestEpisode watch latest episode of {Amazing Race|Show}
+PlayLatestEpisode watch latest episode of {America's Got Talent|Show}
+PlayLatestEpisode watch latest episode of {Arrow|Show}
+PlayLatestEpisode watch latest episode of {Big Bang Theory|Show}
+PlayLatestEpisode watch latest episode of {Blacklist|Show}
+PlayLatestEpisode watch latest episode of {Gotham|Show}
+PlayLatestEpisode watch latest episode of {How To Get Away With Murder|Show}
+PlayLatestEpisode watch latest episode of {It's Always sunny in philadelphia|Show}
+PlayLatestEpisode watch latest episode of {Person of Interest|Show}
+PlayLatestEpisode watch latest episode of {Scandal|Show}
+PlayLatestEpisode watch latest episode of {The Amazing Race|Show}
+PlayLatestEpisode watch latest episode of {The Big Bang Theory|Show}
+PlayLatestEpisode watch latest episode of {The Blacklist|Show}
+PlayLatestEpisode watch latest episode of {The Flash|Show}
+PlayLatestEpisode watch latest episode of {The man in the high castle|Show}
+PlayLatestEpisode watch latest episode of {The office|Show}
+PlayLatestEpisode watch newest episode of {Amazing Race|Show}
+PlayLatestEpisode watch newest episode of {America's Got Talent|Show}
+PlayLatestEpisode watch newest episode of {Arrow|Show}
+PlayLatestEpisode watch newest episode of {Big Bang Theory|Show}
+PlayLatestEpisode watch newest episode of {Blacklist|Show}
+PlayLatestEpisode watch newest episode of {Gotham|Show}
+PlayLatestEpisode watch newest episode of {How To Get Away With Murder|Show}
+PlayLatestEpisode watch newest episode of {It's Always sunny in philadelphia|Show}
+PlayLatestEpisode watch newest episode of {Person of Interest|Show}
+PlayLatestEpisode watch newest episode of {Scandal|Show}
+PlayLatestEpisode watch newest episode of {The Amazing Race|Show}
+PlayLatestEpisode watch newest episode of {The Big Bang Theory|Show}
+PlayLatestEpisode watch newest episode of {The Blacklist|Show}
+PlayLatestEpisode watch newest episode of {The Flash|Show}
+PlayLatestEpisode watch newest episode of {The man in the high castle|Show}
+PlayLatestEpisode watch newest episode of {The office|Show}
+PlayLatestEpisode watch the latest episode of {Amazing Race|Show}
+PlayLatestEpisode watch the latest episode of {America's Got Talent|Show}
+PlayLatestEpisode watch the latest episode of {Arrow|Show}
+PlayLatestEpisode watch the latest episode of {Big Bang Theory|Show}
+PlayLatestEpisode watch the latest episode of {Blacklist|Show}
+PlayLatestEpisode watch the latest episode of {Gotham|Show}
+PlayLatestEpisode watch the latest episode of {How To Get Away With Murder|Show}
+PlayLatestEpisode watch the latest episode of {It's Always sunny in philadelphia|Show}
+PlayLatestEpisode watch the latest episode of {Person of Interest|Show}
+PlayLatestEpisode watch the latest episode of {Scandal|Show}
+PlayLatestEpisode watch the latest episode of {The Amazing Race|Show}
+PlayLatestEpisode watch the latest episode of {The Big Bang Theory|Show}
+PlayLatestEpisode watch the latest episode of {The Blacklist|Show}
+PlayLatestEpisode watch the latest episode of {The Flash|Show}
+PlayLatestEpisode watch the latest episode of {The man in the high castle|Show}
+PlayLatestEpisode watch the latest episode of {The office|Show}
+PlayLatestEpisode watch the newest episode of {Amazing Race|Show}
+PlayLatestEpisode watch the newest episode of {America's Got Talent|Show}
+PlayLatestEpisode watch the newest episode of {Arrow|Show}
+PlayLatestEpisode watch the newest episode of {Big Bang Theory|Show}
+PlayLatestEpisode watch the newest episode of {Blacklist|Show}
+PlayLatestEpisode watch the newest episode of {Gotham|Show}
+PlayLatestEpisode watch the newest episode of {How To Get Away With Murder|Show}
+PlayLatestEpisode watch the newest episode of {It's Always sunny in philadelphia|Show}
+PlayLatestEpisode watch the newest episode of {Person of Interest|Show}
+PlayLatestEpisode watch the newest episode of {Scandal|Show}
+PlayLatestEpisode watch the newest episode of {The Amazing Race|Show}
+PlayLatestEpisode watch the newest episode of {The Big Bang Theory|Show}
+PlayLatestEpisode watch the newest episode of {The Blacklist|Show}
+PlayLatestEpisode watch the newest episode of {The Flash|Show}
+PlayLatestEpisode watch the newest episode of {The man in the high castle|Show}
+PlayLatestEpisode watch the newest episode of {The office|Show}
 PlayMovie play movie {A Few Good Men|Movie}
 PlayMovie play movie {Back to the future|Movie}
 PlayMovie play movie {Die Hard|Movie}
@@ -1531,6 +863,10 @@ Stop cancel
 Stop shut up
 Stop stop
 Up navigate up
+UpdateAudio update audio library
+UpdateAudio update music library
+UpdateVideo update library
+UpdateVideo update video library
 WhatNewShows what new shows are on the media server
 WhatNewShows what new shows are on the server
 WhatNewShows what new shows are ready
