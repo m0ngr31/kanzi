@@ -353,6 +353,7 @@ def alexa_play_newest_episode(slots):
   
   if located:
     episode_result = kodi.GetNewestEpisodeFromShow(located['tvshowid'])
+    print episode_result
 
     if episode_result:
       kodi.ClearVideoPlaylist()
