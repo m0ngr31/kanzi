@@ -319,7 +319,11 @@ def GetUnwatchedEpisodesFromShow(show_id):
   
 def GetNewestEpisodeFromShow(show_id):
   data = SendCommand(RPCString("VideoLibrary.GetEpisodes", {"limits":{"end":1},"tvshowid": int(show_id), "sort":{"method":"dateadded", "order":"descending"}}))
-  return data
+  if 'episodes' in data['result']:
+    episode = data['result']['episodes'][0]
+    return episode['episodeid']
+  else:
+    return None
   
 def GetNextUnwatchedEpisode(show_id):
   data = SendCommand(RPCString("VideoLibrary.GetEpisodes", {"limits":{"end":1},"tvshowid": int(show_id), "filter":{"field":"lastplayed", "operator":"greaterthan", "value":"0"}, "properties":["season", "episode", "lastplayed", "firstaired"], "sort":{"method":"lastplayed", "order":"descending"}}))
