@@ -353,11 +353,11 @@ def alexa_play_newest_episode(slots):
   
   if located:
     episode_result = kodi.GetNewestEpisodeFromShow(located['tvshowid'])
-    print episode_result
+    episode = episode_result['episodes'][0]
 
-    if episode_result:
+    if episode:
       kodi.ClearVideoPlaylist()
-      kodi.PrepEpisodePlayList(episode_result['episodeid'])
+      kodi.PrepEpisodePlayList(episode['episodeid'])
       kodi.StartVideoPlaylist()
       
       return build_alexa_response('Playing lastest episode of %s' % (heard_show))
