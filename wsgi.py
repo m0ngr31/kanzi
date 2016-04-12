@@ -309,7 +309,7 @@ def alexa_play_episode(slots):
 
     if episode_result:
       kodi.ClearVideoPlaylist()
-      kodi.PrepEpisodePlayList(episode_result)
+      kodi.PrepEpisodePlayList(episode_result['episodeid'])
       kodi.StartVideoPlaylist()
       
       return build_alexa_response('Playing season %s episode %s of %s' % (heard_season, heard_episode, heard_show))
@@ -333,7 +333,7 @@ def alexa_play_next_episode(slots):
     
     if next_episode:
       kodi.ClearVideoPlaylist()
-      kodi.PrepEpisodePlayList(next_episode)
+      kodi.PrepEpisodePlayList(next_episode['episodeid'])
 
       kodi.StartVideoPlaylist()
       return build_alexa_response('Playing next episode of %s' % (heard_show))
@@ -356,7 +356,7 @@ def alexa_play_newest_episode(slots):
 
     if episode_result:
       kodi.ClearVideoPlaylist()
-      kodi.PrepEpisodePlayList(episode_result)
+      kodi.PrepEpisodePlayList(episode_result['episodeid'])
       kodi.StartVideoPlaylist()
       
       return build_alexa_response('Playing lastest episode of %s' % (heard_show))
@@ -376,7 +376,7 @@ def alexa_continue_show(slots):
     
     if next_episode:
       kodi.ClearVideoPlaylist()
-      kodi.PrepEpisodePlayList(next_episode)
+      kodi.PrepEpisodePlayList(next_episode['episodeid'])
 
       kodi.StartVideoPlaylist()
       return build_alexa_response('Playing next episode')
