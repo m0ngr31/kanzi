@@ -101,6 +101,7 @@ def matchHeard(heard, results, lookingFor='label'):
   located = None
   
   heard_minus_the = remove_the(heard)
+  print heard
   heard_list = set([x for x in heard.split() if x not in STOPWORDS])
   
   for result in results:
@@ -125,12 +126,15 @@ def matchHeard(heard, results, lookingFor='label'):
       break
       
   if not located:
+    print 'not located on the first round of checks'
     # Loop through results again and be a little more liberal with what is accepted
     for result in results:
       # Strip out non-ascii symbols and lowercase it
       ascii_name = result[lookingFor].encode('ascii', 'replace')
       result_name = str(ascii_name).lower().translate(None, string.punctuation)
       
+      print(heard_minus_the)
+      print result_name
       # Just look for substring
       if result_name.find(heard_minus_the) != -1:
         located = result
@@ -140,6 +144,7 @@ def matchHeard(heard, results, lookingFor='label'):
       # >= 60% of the heard phrase
       result_list = set([x for x in result_name.split() if x not in STOPWORDS])
       matched_words = [x for x in heard_list if x in result_list]
+      print matched_words
       if len(matched_words) > 0:
         percentage = float(len(matched_words)) / float(len(heard_list))
         if percentage > float(0.6):
