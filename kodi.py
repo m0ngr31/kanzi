@@ -35,6 +35,7 @@ import os
 import random
 import re
 import string
+import sys
 
 # These are words that we ignore when doing a non-exact match on show names
 STOPWORDS = [
