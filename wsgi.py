@@ -140,28 +140,31 @@ def alexa_stop(slots):
 # Suffle all music by an artist
 def alexa_play_artist(slots):
   artists = kodi.GetMusicArtists()
-  artists_list = artists['result']['artists']
-  
-  heard_artist =  str(slots['Artist']['value']).lower().translate(None, string.punctuation)
-  
-  located = kodi.matchHeard(heard_artist, artists_list, 'artist')
-  
-  if located:
-    songs_result = kodi.GetArtistSongs(located['artistid'])
-    songs = songs_result['result']['songs']
+  if 'results' in data and 'episodes' in data['result']:
+    artists_list = artists['result']['artists']
     
-    kodi.Stop()
-    kodi.ClearPlaylist()
+    heard_artist =  str(slots['Artist']['value']).lower().translate(None, string.punctuation)
     
-    songs_array = []
+    located = kodi.matchHeard(heard_artist, artists_list, 'artist')
     
-    for song in songs:
-      songs_array.append(song['songid'])
+    if located:
+      songs_result = kodi.GetArtistSongs(located['artistid'])
+      songs = songs_result['result']['songs']
       
-    kodi.AddSongsToPlaylist(songs_array)
-    
-    kodi.StartPlaylist()
-    return build_alexa_response('Playing %s' % (heard_artist))
+      kodi.Stop()
+      kodi.ClearPlaylist()
+      
+      songs_array = []
+      
+      for song in songs:
+        songs_array.append(song['songid'])
+        
+      kodi.AddSongsToPlaylist(songs_array)
+      
+      kodi.StartPlaylist()
+      return build_alexa_response('Playing %s' % (heard_artist))
+    else:
+      return build_alexa_response('Could not find %s' % (heard_artist))
   else:
     return build_alexa_response('Could not find %s' % (heard_artist))
   
