@@ -140,7 +140,7 @@ def alexa_stop(slots):
 # Suffle all music by an artist
 def alexa_play_artist(slots):
   artists = kodi.GetMusicArtists()
-  if 'results' in artists and 'artists' in artists['result']:
+  if 'result' in artists and 'artists' in artists['result']:
     artists_list = artists['result']['artists']
     
     heard_artist =  str(slots['Artist']['value']).lower().translate(None, string.punctuation)
