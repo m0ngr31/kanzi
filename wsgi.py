@@ -41,6 +41,14 @@ import kodi
 
 # This utility function constructs the required JSON for a full Alexa Skills Kit response
 
+RE_SHOW_WITH_PARAM = re.compile(r"(.*) \([^)]+\)$")
+
+def sanitize_show(show_name):
+  m = RE_SHOW_WITH_PARAM.match(show_name)
+  if m:
+    return m.group(1)
+  return show_name
+
 def build_alexa_response(speech = None, session_attrs = None, card = None, reprompt = None, end_session = True):
   reply = {"version" : "1.0"}
   if session_attrs:
