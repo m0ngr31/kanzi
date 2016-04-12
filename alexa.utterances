@@ -625,6 +625,7 @@ PlayLatestEpisode watch the newest episode of {The office|Show}
 PlayMovie play movie {A Few Good Men|Movie}
 PlayMovie play movie {Back to the future|Movie}
 PlayMovie play movie {Die Hard|Movie}
+PlayMovie play movie {Empire of the Sun|Movie}
 PlayMovie play movie {Godfather|Movie}
 PlayMovie play movie {Hunt for Red October|Movie}
 PlayMovie play movie {Interstellar|Movie}
@@ -633,6 +634,7 @@ PlayMovie play movie {The Hunt for Red October|Movie}
 PlayMovie watch movie {A Few Good Men|Movie}
 PlayMovie watch movie {Back to the future|Movie}
 PlayMovie watch movie {Die Hard|Movie}
+PlayMovie watch movie {Empire of the Sun|Movie}
 PlayMovie watch movie {Godfather|Movie}
 PlayMovie watch movie {Hunt for Red October|Movie}
 PlayMovie watch movie {Interstellar|Movie}
@@ -833,20 +835,12 @@ PlayRandomEpisode watch random episode of {The Blacklist|Show}
 PlayRandomEpisode watch random episode of {The Flash|Show}
 PlayRandomEpisode watch random episode of {The man in the high castle|Show}
 PlayRandomEpisode watch random episode of {The office|Show}
-PlayRandomMovie play a film
-PlayRandomMovie play a movie
 PlayRandomMovie play a random film
 PlayRandomMovie play a random movie
-PlayRandomMovie play film
-PlayRandomMovie play movie
 PlayRandomMovie play random film
 PlayRandomMovie play random movie
-PlayRandomMovie watch a film
-PlayRandomMovie watch a movie
 PlayRandomMovie watch a random film
 PlayRandomMovie watch a random movie
-PlayRandomMovie watch film
-PlayRandomMovie watch movie
 PlayRandomMovie watch random film
 PlayRandomMovie watch random movie
 Prev previous

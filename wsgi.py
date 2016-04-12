@@ -98,30 +98,32 @@ def alexa_check_new_episodes(slots):
 # Handle the NewShowInquiry intent.
 
 def alexa_new_show_inquiry(slots):
+  heard_show = str(slots['Show']['value']).lower().translate(None, string.punctuation)
   shows = kodi.GetTvShows()
-  shows_array = shows['result']['tvshows']
-  
-  heard_show =  str(slots['Show']['value']).lower().translate(None, string.punctuation)
-  
-  located = kodi.matchHeard(heard_show, shows_array)
-  
-  if located:
-    episodes_result = kodi.GetUnwatchedEpisodesFromShow(located['tvshowid'])
-    
-    if not 'episodes' in episodes_result['result']:
-      num_of_unwatched = 0
+  if 'result' in shows and 'tvshows' in shows['result']:
+    shows_array = shows['result']['tvshows']
 
-    else:
-      num_of_unwatched = len(episodes_result['result']['episodes'])
-      
-    if num_of_unwatched > 0:
-      if num_of_unwatched == 1:
-        return build_alexa_response("There is one unseen episode of %(real_show)s." % {'real_show': heard_show})
-      else:
-        return build_alexa_response("There are %(num)d episodes of  %(real_show)s." % {'real_show': heard_show, 'num': num_of_unwatched})
+    located = kodi.matchHeard(heard_show, shows_array)
     
+    if located:
+      episodes_result = kodi.GetUnwatchedEpisodesFromShow(located['tvshowid'])
+      
+      if not 'episodes' in episodes_result['result']:
+        num_of_unwatched = 0
+
+      else:
+        num_of_unwatched = len(episodes_result['result']['episodes'])
+        
+      if num_of_unwatched > 0:
+        if num_of_unwatched == 1:
+          return build_alexa_response("There is one unseen episode of %(real_show)s." % {'real_show': heard_show})
+        else:
+          return build_alexa_response("There are %(num)d episodes of  %(real_show)s." % {'real_show': heard_show, 'num': num_of_unwatched})
+      
+      else:
+        return build_alexa_response("There are no unseen episodes of %(real_show)s." % {'real_show': heard_show})
     else:
-      return build_alexa_response("There are no unseen episodes of %(real_show)s." % {'real_show': heard_show})
+      return build_alexa_response('Could not find %s' % (heard_show))
   else:
     return build_alexa_response('Could not find %s' % (heard_show))
 
@@ -139,7 +141,7 @@ def alexa_stop(slots):
 
 # Suffle all music by an artist
 def alexa_play_artist(slots):
-  heard_artist =  str(slots['Artist']['value']).lower().translate(None, string.punctuation)
+  heard_artist = str(slots['Artist']['value']).lower().translate(None, string.punctuation)
   artists = kodi.GetMusicArtists()
   if 'result' in artists and 'artists' in artists['result']:
     artists_list = artists['result']['artists']    
@@ -238,132 +240,144 @@ def alexa_update_audio(slots):
 
 def alexa_pick_random_movie(slots):
   movies_response = kodi.GetUnwatchedMovies()
-  movies = movies_response['result']['movies']
-  random_movie = random.choice(movies)
+  if 'result' in movies_response and 'movies' in movies_response['result']:
+    movies = movies_response['result']['movies']
+    random_movie = random.choice(movies)
 
-  kodi.ClearVideoPlaylist()
-  kodi.PrepMoviePlaylist(random_movie['movieid'])
-  kodi.StartVideoPlaylist()
-  
-  return build_alexa_response('Playing %s' % (random_movie['label']))
-  
-def alexa_play_movie(slots):
-  movies_response = kodi.GetMovies()
-  movies = movies_response['result']['movies']
-  
-  heard_movie =  str(slots['Movie']['value']).lower().translate(None, string.punctuation)
-  
-  located = kodi.matchHeard(heard_movie, movies)
-  
-  if located:
     kodi.ClearVideoPlaylist()
-    kodi.PrepMoviePlaylist(located['movieid'])
+    kodi.PrepMoviePlaylist(random_movie['movieid'])
     kodi.StartVideoPlaylist()
     
-    return build_alexa_response('Playing %s' % (heard_movie))
+    return build_alexa_response('Playing %s' % (random_movie['label']))
+  else:
+    return build_alexa_response("Couldn't find any movies")
+  
+def alexa_play_movie(slots):
+  heard_movie = str(slots['Movie']['value']).lower().translate(None, string.punctuation)
+  movies_response = kodi.GetMovies()
+  if 'result' in movies_response and 'movies' in movies_response['result']:
+    movies = movies_response['result']['movies']
+    
+    located = kodi.matchHeard(heard_movie, movies)
+    
+    if located:
+      kodi.ClearVideoPlaylist()
+      kodi.PrepMoviePlaylist(located['movieid'])
+      kodi.StartVideoPlaylist()
+      
+      return build_alexa_response('Playing %s' % (heard_movie))
+    else:
+      return build_alexa_response('Could not find a movie called %s' % (heard_movie))
   else:
     return build_alexa_response('Could not find a movie called %s' % (heard_movie))
   
-  return build_alexa_response('This feature is not added yet')
-  
 def alexa_pick_random_episode(slots):
+  heard_show = str(slots['Show']['value']).lower().translate(None, string.punctuation)
   shows = kodi.GetTvShows()
-  shows_array = shows['result']['tvshows']
-  
-  heard_show =  str(slots['Show']['value']).lower().translate(None, string.punctuation)
-  
-  located = kodi.matchHeard(heard_show, shows_array)
-  
-  if located:
-    episodes_result = kodi.GetUnwatchedEpisodesFromShow(located['tvshowid'])
+  if 'result' in shows and 'tvshows' in shows['result']:
+    shows_array = shows['result']['tvshows']
     
-    if not 'episodes' in episodes_result['result']:
-      episodes_result = kodi.GetEpisodesFromShow(located['tvshowid'])
-
-    episodes_array = []
-
-    for episode in episodes_result['result']['episodes']:
-      episodes_array.append(episode['episodeid'])
-
-    kodi.ClearVideoPlaylist()
-    kodi.PrepEpisodePlayList(random.choice(episodes_array))
-
-    kodi.StartVideoPlaylist()
+    located = kodi.matchHeard(heard_show, shows_array)
     
-    return build_alexa_response('Playing a random episode of %s' % (heard_show))
+    if located:
+      episodes_result = kodi.GetUnwatchedEpisodesFromShow(located['tvshowid'])
+      
+      if not 'episodes' in episodes_result['result']:
+        episodes_result = kodi.GetEpisodesFromShow(located['tvshowid'])
+
+      episodes_array = []
+
+      for episode in episodes_result['result']['episodes']:
+        episodes_array.append(episode['episodeid'])
+
+      kodi.ClearVideoPlaylist()
+      kodi.PrepEpisodePlayList(random.choice(episodes_array))
+
+      kodi.StartVideoPlaylist()
+      
+      return build_alexa_response('Playing a random episode of %s' % (heard_show))
+    else:
+      return build_alexa_response('Could not find %s' % (heard_show))
   else:
     return build_alexa_response('Could not find %s' % (heard_show))
 
   
 def alexa_play_episode(slots):
+  heard_show = str(slots['Show']['value']).lower().translate(None, string.punctuation)
   shows = kodi.GetTvShows()
-  shows_array = shows['result']['tvshows']
-  
-  heard_show =  str(slots['Show']['value']).lower().translate(None, string.punctuation)
-  heard_season = slots['Season']['value']
-  heard_episode = slots['Episode']['value']
-  
-  located = kodi.matchHeard(heard_show, shows_array)
-  
-  if located:
-    episode_result = kodi.GetSpecificEpisode(located['tvshowid'], heard_season, heard_episode)
+  if 'result' in shows and 'tvshows' in shows['result']:
+    shows_array = shows['result']['tvshows']
+    
+    heard_season = slots['Season']['value']
+    heard_episode = slots['Episode']['value']
+    
+    located = kodi.matchHeard(heard_show, shows_array)
+    
+    if located:
+      episode_result = kodi.GetSpecificEpisode(located['tvshowid'], heard_season, heard_episode)
 
-    if episode_result:
-      kodi.ClearVideoPlaylist()
-      kodi.PrepEpisodePlayList(episode_result)
-      kodi.StartVideoPlaylist()
-      
-      return build_alexa_response('Playing season %s episode %s of %s' % (heard_season, heard_episode, heard_show))
-      
+      if episode_result:
+        kodi.ClearVideoPlaylist()
+        kodi.PrepEpisodePlayList(episode_result)
+        kodi.StartVideoPlaylist()
+        
+        return build_alexa_response('Playing season %s episode %s of %s' % (heard_season, heard_episode, heard_show))
+        
+      else:
+        return build_alexa_response('Could not find season %s episode %s of %s' % (heard_season, heard_episode, heard_show))
     else:
-      return build_alexa_response('Could not find season %s episode %s of %s' % (heard_season, heard_episode, heard_show))
+      return build_alexa_response('Could not find %s' % (heard_show))
   else:
     return build_alexa_response('Could not find %s' % (heard_show))
     
 
 def alexa_play_next_episode(slots):
+  heard_show = str(slots['Show']['value']).lower().translate(None, string.punctuation)
   shows = kodi.GetTvShows()
-  shows_array = shows['result']['tvshows']
-  
-  heard_show =  str(slots['Show']['value']).lower().translate(None, string.punctuation)
-  
-  located = kodi.matchHeard(heard_show, shows_array)
-  
-  if located:
-    next_episode = kodi.GetNextUnwatchedEpisode(located['tvshowid'])
+  if 'result' in shows and 'tvshows' in shows['result']:
+    shows_array = shows['result']['tvshows']
     
-    if next_episode:
-      kodi.ClearVideoPlaylist()
-      kodi.PrepEpisodePlayList(next_episode)
+    located = kodi.matchHeard(heard_show, shows_array)
+    
+    if located:
+      next_episode = kodi.GetNextUnwatchedEpisode(located['tvshowid'])
+      
+      if next_episode:
+        kodi.ClearVideoPlaylist()
+        kodi.PrepEpisodePlayList(next_episode)
 
-      kodi.StartVideoPlaylist()
-      return build_alexa_response('Playing next episode of %s' % (heard_show))
+        kodi.StartVideoPlaylist()
+        return build_alexa_response('Playing next episode of %s' % (heard_show))
+      else:
+        return build_alexa_response('No new episodes for %s' % (heard_show))      
     else:
-      return build_alexa_response('No new episodes for %s' % (heard_show))      
+      return build_alexa_response('Could not find %s' % (heard_show))
   else:
     return build_alexa_response('Could not find %s' % (heard_show))
     
 
 def alexa_play_newest_episode(slots):
-  shows = kodi.GetTvShows()
-  shows_array = shows['result']['tvshows']
-  
   heard_show =  str(slots['Show']['value']).lower().translate(None, string.punctuation)
-  
-  located = kodi.matchHeard(heard_show, shows_array)
-  
-  if located:
-    episode_result = kodi.GetNewestEpisodeFromShow(located['tvshowid'])
+  shows = kodi.GetTvShows()
+  if 'result' in shows and 'tvshows' in shows['result']:
+    shows_array = shows['result']['tvshows']
+    
+    located = kodi.matchHeard(heard_show, shows_array)
+    
+    if located:
+      episode_result = kodi.GetNewestEpisodeFromShow(located['tvshowid'])
 
-    if episode_result:
-      kodi.ClearVideoPlaylist()
-      kodi.PrepEpisodePlayList(episode_result)
-      kodi.StartVideoPlaylist()
-      
-      return build_alexa_response('Playing lastest episode of %s' % (heard_show))
-      
+      if episode_result:
+        kodi.ClearVideoPlaylist()
+        kodi.PrepEpisodePlayList(episode_result)
+        kodi.StartVideoPlaylist()
+        
+        return build_alexa_response('Playing lastest episode of %s' % (heard_show))
+        
+      else:
+        return build_alexa_response('Could not find newest episode of %s' % (heard_show))
     else:
-      return build_alexa_response('Could not find newest episode of %s' % (heard_show))
+      return build_alexa_response('Could not find %s' % (heard_show))
   else:
     return build_alexa_response('Could not find %s' % (heard_show))
 

@@ -38,7 +38,7 @@ UpdateAudio update (audio/music) library
 
 ListenToArtist (listen to/shuffle) (/music by/artist) {(Radiohead/Muse/The XX/Explosions in the Sky)|Artist}
 
-PlayRandomMovie (play/watch) (/a) (random) (movie/film)
+PlayRandomMovie (play/watch) (/a) random (movie/film)
 
 PlayRandomEpisode (play/watch) (/a) (/random) episode of {((/The )Amazing Race/America's Got Talent/Arrow/(/The )Big Bang Theory/(/The )Blacklist/The Flash/Gotham/How To Get Away With Murder/Person of Interest/Scandal/It's Always sunny in philadelphia/The man in the high castle/The office)|Show}
 
