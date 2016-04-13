@@ -56,9 +56,15 @@ Here's what it'll look like:
 You'll just need to stick the URL from your app in the Endpoint field
 
 On the next tab, you'll have to paste the `alexa.intents` file into the first field, and paste the `alexa.utterances` file in the second field.
+
 ![2nd tab](http://i.imgur.com/UcXVqSO.png)
 
+You'll also have to upload the text from the SHOWS, MOVIES, and MUSIC txt files into custom slots:
+
+![2nd tab alt](http://i.imgur.com/SkGcyPQ.png)
+
 The next tab has info about the SSL cert, if you are using OpenShift, select the middle option.
+
 ![3rd tab](http://i.imgur.com/moGJQrx.png)
 
 After that is pretty much just information that you can just put whatever into. Don't submit it for certification since only you will be using your server.

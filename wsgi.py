@@ -372,7 +372,7 @@ def alexa_play_newest_episode(slots):
         kodi.PrepEpisodePlayList(episode_result)
         kodi.StartVideoPlaylist()
         
-        return build_alexa_response('Playing lastest episode of %s' % (heard_show))
+        return build_alexa_response('Playing latest episode of %s' % (heard_show))
         
       else:
         return build_alexa_response('Could not find newest episode of %s' % (heard_show))

@@ -13,7 +13,7 @@
       "slots": [
         {
           "name": "Show",
-          "type": "AMAZON.LITERAL"
+          "type": "SHOWS"
         }
       ]
     },
@@ -46,7 +46,7 @@
       "slots": [
         {
           "name": "Artist",
-          "type": "AMAZON.LITERAL"
+          "type": "MUSIC"
         }
       ]
     },
@@ -55,7 +55,7 @@
       "slots": [
         {
           "name": "Show",
-          "type": "AMAZON.LITERAL"
+          "type": "SHOWS"
         }
       ]
     },
@@ -64,7 +64,7 @@
       "slots": [
         {
           "name": "Show",
-          "type": "AMAZON.LITERAL"
+          "type": "SHOWS"
         }
       ]
     },
@@ -73,7 +73,7 @@
       "slots": [
         {
           "name": "Show",
-          "type": "AMAZON.LITERAL"
+          "type": "SHOWS"
         }
       ]
     },
@@ -82,7 +82,7 @@
       "slots": [
         {
           "name": "Movie",
-          "type": "AMAZON.LITERAL"
+          "type": "MOVIES"
         }
       ]
     },
@@ -151,7 +151,7 @@
       "slots": [
         {
           "name": "Show",
-          "type": "AMAZON.LITERAL"
+          "type": "SHOWS"
         },
         {
           "name": "Episode",

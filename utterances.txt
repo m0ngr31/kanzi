@@ -36,17 +36,17 @@ CleanAudio clean (audio/music) library
 
 UpdateAudio update (audio/music) library
 
-ListenToArtist (listen to/shuffle) (/music by/artist) {(Radiohead/Muse/The XX/Explosions in the Sky)|Artist}
+ListenToArtist (listen to/shuffle) (/music by/artist) {Artist}
 
 PlayRandomMovie (play/watch) (/a) random (movie/film)
 
-PlayRandomEpisode (play/watch) (/a) (/random) episode of {((/The )Amazing Race/America's Got Talent/Arrow/(/The )Big Bang Theory/(/The )Blacklist/The Flash/Gotham/How To Get Away With Murder/Person of Interest/Scandal/It's Always sunny in philadelphia/The man in the high castle/The office)|Show}
+PlayRandomEpisode (play/watch) (/a) (/random) episode of {Show}
 
-PlayNextEpisode (play/watch) (/the) next episode of {((/The )Amazing Race/America's Got Talent/Arrow/(/The )Big Bang Theory/(/The )Blacklist/The Flash/Gotham/How To Get Away With Murder/Person of Interest/Scandal/It's Always sunny in philadelphia/The man in the high castle/The office)|Show}
+PlayNextEpisode (play/watch) (/the) next episode of {Show}
 
-PlayEpisode (play/watch) (season/series) {Season} episode {Episode} of {((/The )Amazing Race/America's Got Talent/Arrow/(/The )Big Bang Theory/(/The )Blacklist/The Flash/Gotham/How To Get Away With Murder/Person of Interest/Scandal/It's Always sunny in philadelphia/The man in the high castle/The office)|Show}
+PlayEpisode (play/watch) (season/series) {Season} episode {Episode} of {Show}
 
-PlayMovie (play/watch) movie {((/The )Godfather/Die Hard/Interstellar/A Few Good Men/(/The )Hunt for Red October/Back to the future/Empire of the Sun)|Movie}
+PlayMovie (play/watch) movie {Movie}
 
 ContinueShow continue (/watching) (/last) show
 
@@ -55,8 +55,8 @@ CheckNewShows (if there is/is there/do (we/i) have) a new show (/recorded) (/to 
 
 WhatNewShows what (/new) shows ((/do) (we/i/you) have/are (ready/waiting/recorded/there/on the (/media) server))
 
-NewShowInquiry if (there is/we have) a new (/episode of) {((/The )Amazing Race/America's Got Talent/Arrow/(/The )Big Bang Theory/Blackish/(/The )Blacklist/Brooklyn Nine Nine/Doctor Who/Downton Abbey/The Flash/Gotham/How To Get Away With Murder/Modern Family/Person of Interest/Scandal)|Show}
-NewShowInquiry if (there are/we have) any (/(/new )episodes of) {((/The )Amazing Race/America's Got Talent/Arrow/(/The )Big Bang Theory/(/The )Blacklist/The Flash/Gotham/How To Get Away With Murder/Person of Interest/Scandal/It's Always sunny in philadelphia/The man in the high castle/The office)|Show}
-NewShowInquiry if (there is/we have) {((/The )Amazing Race/America's Got Talent/Arrow/(/The )Big Bang Theory/(/The )Blacklist/The Flash/Gotham/How To Get Away With Murder/Person of Interest/Scandal/It's Always sunny in philadelphia/The man in the high castle/The office)|Show}
+NewShowInquiry if (there is/we have) a new (/episode of) {Show}
+NewShowInquiry if (there are/we have) any (/(/new )episodes of) {Show}
+NewShowInquiry if (there is/we have) {Show}
 
-PlayLatestEpisode (play/watch) (/the) (newest/latest) episode of {((/The )Amazing Race/America's Got Talent/Arrow/(/The )Big Bang Theory/(/The )Blacklist/The Flash/Gotham/How To Get Away With Murder/Person of Interest/Scandal/It's Always sunny in philadelphia/The man in the high castle/The office)|Show}
+PlayLatestEpisode (play/watch) (/the) (newest/latest) episode of {Show}
