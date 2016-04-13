@@ -68,6 +68,8 @@ def build_alexa_response(speech = None, session_attrs = None, card = None, repro
 # Handle the CheckNewShows intent
 
 def alexa_check_new_episodes(slots):
+  print 'Checking if there are new shows to watch'
+  sys.stdout.flush()
   # Responds to the question, "Are there any new shows to watch?"
 
   # Get the list of unwatched EPISODES from Kodi
@@ -99,6 +101,10 @@ def alexa_check_new_episodes(slots):
 
 def alexa_new_show_inquiry(slots):
   heard_show = str(slots['Show']['value']).lower().translate(None, string.punctuation)
+  
+  print('Checking if there are new episodes to watch of %s' % (heard_show))
+  sys.stdout.flush()
+  
   shows = kodi.GetTvShows()
   if 'result' in shows and 'tvshows' in shows['result']:
     shows_array = shows['result']['tvshows']
@@ -129,12 +135,18 @@ def alexa_new_show_inquiry(slots):
 
 #Pause Kodi
 def alexa_play_pause(slots):
+  print('Playing or Pausing')
+  sys.stdout.flush()
+  
   kodi.PlayPause()
   answer = ""
   return build_alexa_response(answer)
 
 # Stop Playback
 def alexa_stop(slots):
+  print('Stopping Playback')
+  sys.stdout.flush()
+  
   kodi.Stop()
   answer = "Playback Stopped"
   return build_alexa_response(answer)
@@ -142,6 +154,10 @@ def alexa_stop(slots):
 # Suffle all music by an artist
 def alexa_play_artist(slots):
   heard_artist = str(slots['Artist']['value']).lower().translate(None, string.punctuation)
+  
+  print('Trying to play music by %s' % (heard_artist))
+  sys.stdout.flush()
+  
   artists = kodi.GetMusicArtists()
   if 'result' in artists and 'artists' in artists['result']:
     artists_list = artists['result']['artists']    
@@ -169,76 +185,130 @@ def alexa_play_artist(slots):
     return build_alexa_response('Could not find %s' % (heard_artist))
   
 def alexa_start_over(slots):
+  print('Starting current item over')
+  sys.stdout.flush()
+  
   kodi.PlayStartOver()
   return build_alexa_response('Starting over')
   
 def alexa_skip(slots):
+  print('Skipping')
+  sys.stdout.flush()
+  
   kodi.PlaySkip()
   return build_alexa_response('Skipping item')
   
 def alexa_pageup(slots):
+  print('Going PageUp')
+  sys.stdout.flush()
+  
   kodi.PageUp()
   return build_alexa_response('')
   
 def alexa_pagedown(slots):
+  print('Going PageDown')
+  sys.stdout.flush()
+
   kodi.PageDown()
   return build_alexa_response('')
   
 def alexa_context_menu(slots):
+  print('Opening context menu')
+  sys.stdout.flush()
+
   kodi.Menu()
   return build_alexa_response('Opening menu')
   
 def alexa_go_home(slots):
+  print('Returning to home')
+  sys.stdout.flush()
+
   kodi.Home()
   return build_alexa_response('Going home')
   
 def alexa_select(slots):
+  print('Selecting')
+  sys.stdout.flush()
+
   kodi.Select()
   return build_alexa_response('')
   
 def alexa_left(slots):
+  print('Going left')
+  sys.stdout.flush()
+
   kodi.Left()
   return build_alexa_response('')
   
 def alexa_right(slots):
+  print('Going right')
+  sys.stdout.flush()
+
   kodi.Right()
   return build_alexa_response('')
   
 def alexa_up(slots):
+  print('Going up')
+  sys.stdout.flush()
+
   kodi.Up()
   return build_alexa_response('')
   
 def alexa_down(slots):
+  print('Going down')
+  sys.stdout.flush()
+
   kodi.Down()
   return build_alexa_response('')
   
 def alexa_back(slots):
+  print('Going back')
+  sys.stdout.flush()
+
   kodi.Back()
   return build_alexa_response('')
 
 def alexa_prev(slots):
+  print('Playing previous item')
+  sys.stdout.flush()
+
   kodi.PlayPrev()
   return build_alexa_response('Playing previous item')
   
 def alexa_clean_video(slots):
+  print('Cleaning video library')
+  sys.stdout.flush()
+
   kodi.CleanVideo()
   kodi.UpdateVideo()
   return build_alexa_response('Cleaning and updating video library')
 
 def alexa_update_video(slots):
+  print('Updating video library')
+  sys.stdout.flush()
+
   kodi.UpdateVideo()
   return build_alexa_response('Updating video library')
 
 def alexa_clean_audio(slots):
+  print('Cleaning audio library')
+  sys.stdout.flush()
+
   kodi.CleanMusic()
   kodi.UpdateMusic()
   return build_alexa_response('Cleaning and updating audio library')
   
 def alexa_update_audio(slots):
+  print('Updating audio library')
+  sys.stdout.flush()
+
   kodi.UpdateMusic()
   return build_alexa_response('Updating audio library')
 
 def alexa_pick_random_movie(slots):
+  print('Trying to play a random movie')
+  sys.stdout.flush()
+
   movies_response = kodi.GetUnwatchedMovies()
   if 'result' in movies_response and 'movies' in movies_response['result']:
     movies = movies_response['result']['movies']
@@ -254,6 +324,10 @@ def alexa_pick_random_movie(slots):
   
 def alexa_play_movie(slots):
   heard_movie = str(slots['Movie']['value']).lower().translate(None, string.punctuation)
+  
+  print('Trying to play the movie %s' % (heard_movie))
+  sys.stdout.flush()
+  
   movies_response = kodi.GetMovies()
   if 'result' in movies_response and 'movies' in movies_response['result']:
     movies = movies_response['result']['movies']
@@ -273,6 +347,10 @@ def alexa_play_movie(slots):
   
 def alexa_pick_random_episode(slots):
   heard_show = str(slots['Show']['value']).lower().translate(None, string.punctuation)
+  
+  print('Trying to play a random episode of %s' % (heard_show))
+  sys.stdout.flush()
+  
   shows = kodi.GetTvShows()
   if 'result' in shows and 'tvshows' in shows['result']:
     shows_array = shows['result']['tvshows']
@@ -304,6 +382,10 @@ def alexa_pick_random_episode(slots):
   
 def alexa_play_episode(slots):
   heard_show = str(slots['Show']['value']).lower().translate(None, string.punctuation)
+  
+  print('Trying to play a specific episode of %s' % (heard_show))
+  sys.stdout.flush()
+  
   shows = kodi.GetTvShows()
   if 'result' in shows and 'tvshows' in shows['result']:
     shows_array = shows['result']['tvshows']
@@ -333,6 +415,10 @@ def alexa_play_episode(slots):
 
 def alexa_play_next_episode(slots):
   heard_show = str(slots['Show']['value']).lower().translate(None, string.punctuation)
+  
+  print('Trying to play the next episode of %s' % (heard_show))
+  sys.stdout.flush()
+  
   shows = kodi.GetTvShows()
   if 'result' in shows and 'tvshows' in shows['result']:
     shows_array = shows['result']['tvshows']
@@ -358,6 +444,10 @@ def alexa_play_next_episode(slots):
 
 def alexa_play_newest_episode(slots):
   heard_show =  str(slots['Show']['value']).lower().translate(None, string.punctuation)
+  
+  print('Trying to play the newest episode of %s' % (heard_show))
+  sys.stdout.flush()
+  
   shows = kodi.GetTvShows()
   if 'result' in shows and 'tvshows' in shows['result']:
     shows_array = shows['result']['tvshows']
@@ -383,6 +473,9 @@ def alexa_play_newest_episode(slots):
 
 
 def alexa_continue_show(slots):
+  print('Trying to continue watching the last show')
+  sys.stdout.flush()
+  
   last_show_obj = kodi.GetLastWatchedShow()
   
   try:
@@ -404,6 +497,9 @@ def alexa_continue_show(slots):
 # Handle the WhatNewShows intent.
 
 def alexa_what_new_episodes(slots):
+  print('Trying to get a list of unwatched shows')
+  sys.stdout.flush()
+  
   # Lists the shows that have had new episodes added to Kodi in the last 5 days
 
   # Get the list of unwatched EPISODES from Kodi
@@ -532,6 +628,9 @@ def do_alexa(environ, start_response):
       intent_name = alexa_request['intent']['name']
       intent_slots = alexa_request['intent'].get('slots', {})
       response = None
+  
+      print('Requested intent: %s' % (intent_name))
+      sys.stdout.flush()
 
       # Run the function associated with the intent
       for one_intent in INTENTS:
