@@ -52,14 +52,18 @@ Heroku doesn't just fire up the server automatically, so you have to tell it to:
 Once you have this all setup, you'll need to setup an Amazon developer account and start setting up a new Alexa skill.
 
 Here's what it'll look like:
+
 ![1st tab](http://i.imgur.com/q0Wqld1.png)
-You'll just need to stick the URL from your app in the Endpoint field
+
+You'll just need to stick the URL from your app in the Endpoint field. *If you run into problems, try changing the 'Invocation Name' from `Kodi` to something like `living room` or `media center` and see if that helps.
 
 On the next tab, you'll have to paste the `alexa.intents` file into the first field, and paste the `alexa.utterances` file in the second field.
 
 ![2nd tab](http://i.imgur.com/UcXVqSO.png)
 
-You'll also have to upload the text from the SHOWS, MOVIES, and MUSIC txt files into custom slots:
+Now, let's setup the custom slot types. To make it as easy as possible, I wrote a little webapp that will give you the information you need: [here.](https://sleepy-wave-26412.herokuapp.com/)
+
+Just enter in the information about your Kodi box into the form and it'll pull the data you need. There are 3 custom slots that you'll create. SHOWS, MOVIES, MUSIC. Just copy the data from the webapp into your Alexa skill page.
 
 ![2nd tab alt](http://i.imgur.com/SkGcyPQ.png)
 
