@@ -183,7 +183,28 @@ def alexa_play_artist(slots):
       return build_alexa_response('Could not find %s' % (heard_artist))
   else:
     return build_alexa_response('Could not find %s' % (heard_artist))
-  
+
+def alexa_play_playlist(slots):
+  heard_playlist = str(slots['Playlist']['value']).lower().translate(None, string.punctuation)
+
+  print('Trying to play playlist "%s"' % (heard_playlist))
+  sys.stdout.flush()
+
+  playlists = kodi.GetMusicPlaylists()
+  if 'result' in playlists and 'files' in playlists['result']:
+    playlists_list = playlists['result']['files']
+    located = kodi.matchHeard(heard_playlist, playlists_list, 'label')
+
+    if located:
+      print 'Playing playlist "%s"' % (located['file'])
+      sys.stdout.flush()
+      kodi.StartPlaylist(located['file'])
+      return build_alexa_response('Playing playlist %s' % (heard_playlist))
+    else:
+      return build_alexa_response('Could not find %s' % (heard_playlist))
+  else:
+    return build_alexa_response('Could not find %s' % (heard_playlist))
+
 def alexa_start_over(slots):
   print('Starting current item over')
   sys.stdout.flush()
@@ -576,6 +597,7 @@ INTENTS = [
   ['PlayPause', alexa_play_pause],
   ['Stop', alexa_stop],
   ['ListenToArtist', alexa_play_artist],
+  ['ListenToPlaylist', alexa_play_playlist],
   ['Skip', alexa_skip],
   ['Prev', alexa_prev],
   ['StartOver', alexa_start_over],

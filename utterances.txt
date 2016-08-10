@@ -38,6 +38,8 @@ UpdateAudio update (audio/music) library
 
 ListenToArtist (listen to/shuffle) (/music by/artist) {Artist}
 
+ListenToPlaylist (play/listen to/shuffle) playlist {Playlist}
+
 PlayRandomMovie (play/watch) (/a) random (movie/film)
 
 PlayRandomEpisode (play/watch) (/a) (/random) episode of {Show}
