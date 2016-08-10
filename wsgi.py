@@ -133,6 +133,61 @@ def alexa_new_show_inquiry(slots):
   else:
     return build_alexa_response('Error parsing results.')
 
+# Handle the CurrentPlayItemInquiry intent.
+
+def alexa_current_playitem_inquiry(slots):
+  print('Trying to get info about current player item')
+  sys.stdout.flush()
+
+  speech_output = 'The current'
+  speech_output_append = 'ly playing item is unknown'
+
+  try:
+    curitem = kodi.GetActivePlayItem()
+  except:
+    speech_output = 'There is nothing current'
+    speech_output_append = 'ly playing'
+  else:
+    if curitem is not None:
+      if curitem['type'] == 'episode':
+        # is a tv show
+        speech_output += ' TV show is'
+        speech_output_append = ' unknown'
+        if curitem['showtitle']:
+          speech_output += ' %s,' % (curitem['showtitle'])
+          speech_output_append = ''
+        if curitem['season']:
+          speech_output += ' season %s,' % (curitem['season'])
+          speech_output_append = ''
+        if curitem['episode']:
+          speech_output += ' episode %s,' % (curitem['episode'])
+          speech_output_append = ''
+        if curitem['title']:
+          speech_output += ' %s' % (curitem['title'])
+          speech_output_append = ''
+      elif curitem['type'] == 'song' or curitem['type'] == 'musicvideo':
+        # is a song (music video or audio)
+        speech_output += ' song is'
+        speech_output_append = ' unknown'
+        if curitem['title']:
+          speech_output += ' %s,' % (curitem['title'])
+          speech_output_append = ''
+        if curitem['artist']:
+          speech_output += ' by %s,' % (curitem['artist'][0])
+          speech_output_append = ''
+        if curitem['album']:
+          speech_output += ' on the album %s' % (curitem['album'])
+          speech_output_append = ''
+      elif curitem['type'] == 'movie':
+        # is a video
+        speech_output += ' movie is'
+        speech_output_append = ' unknown'
+        if curitem['title']:
+          speech_output += ' %s' % (curitem['title'])
+          speech_output_append = ''
+
+    return build_alexa_response('%s%s.' % (speech_output, speech_output_append))
+
 #Pause Kodi
 def alexa_play_pause(slots):
   print('Playing or Pausing')
@@ -642,6 +697,7 @@ def prepare_help_message():
 INTENTS = [
   ['CheckNewShows', alexa_check_new_episodes],
   ['NewShowInquiry', alexa_new_show_inquiry],
+  ['CurrentPlayItemInquiry', alexa_current_playitem_inquiry],
   ['WhatNewShows', alexa_what_new_episodes],
   ['PlayPause', alexa_play_pause],
   ['Stop', alexa_stop],

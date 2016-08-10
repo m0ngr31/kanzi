@@ -440,13 +440,13 @@ def GetShowDetails(show=0):
   return data['result']['tvshowdetails']
 
 
-# Information about the video that's currently playing
+# Information about the video or audio that's currently playing
 
-def GetVideoPlayItem():
+def GetActivePlayItem():
   playerid = GetPlayerID()
-  if playerid:
-    data = SendCommand(RPCString("Player.GetItem", {"playerid":playerid, "properties":["episode","showtitle", "tvshowid", "season", "description"]}))
-    return data["result"]["item"]
+  if playerid is not None:
+    data = SendCommand(RPCString("Player.GetItem", {"playerid":playerid, "properties":["title", "album", "artist", "season", "episode", "showtitle", "tvshowid", "description"]}))
+    return data['result']['item']
 
 
 # Returns information useful for building a progress bar to show a video's play time

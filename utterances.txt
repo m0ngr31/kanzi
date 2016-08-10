@@ -74,3 +74,5 @@ PartyMode listen to random music
 DoSearch search for {Show}
 DoSearch search for {Movie}
 DoSearch search for {Artist}
+
+CurrentPlayItemInquiry what (/song/audio/video/movie/episode/show) is (this/playing/currently playing)
