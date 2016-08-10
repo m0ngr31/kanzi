@@ -247,6 +247,8 @@ ListenToArtist listen to {Artist}
 ListenToArtist shuffle artist {Artist}
 ListenToArtist shuffle music by {Artist}
 ListenToArtist shuffle {Artist}
+ListenToArtist play artist {Artist}
+ListenToArtist play music by {Artist}
 ListenToPlaylist listen to playlist {Playlist}
 ListenToPlaylist listen to {Playlist} playlist
 ListenToPlaylist play playlist {Playlist}
@@ -353,12 +355,18 @@ Prev previous
 Prev previous song
 Reboot reboot
 Reboot reboot system
+Prev play previous song
+Prev listen to previous song
 Right navigate right
 Select select
 Shutdown shut down
 Shutdown shut down system
 Skip next
 Skip next song
+Skip play next
+Skip play next song
+Skip listen to next
+Skip listen to next song
 Skip skip
 Skip skip song
 StartOver replay
