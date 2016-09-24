@@ -190,9 +190,9 @@ def alexa_play_recently_added_songs(slots):
   sys.stdout.flush()
 
   songs_result = kodi.GetRecentlyAddedSongs()
-  songs = songs_result['result']['songs']
+  if songs_result:
+    songs = songs_result['result']['songs']
 
-  if songs:
     kodi.Stop()
     kodi.ClearPlaylist()
 
