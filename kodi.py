@@ -315,6 +315,10 @@ def GetArtistSongs(artist_id):
   data = SendCommand(RPCString("AudioLibrary.GetSongs", {"filter": {"artistid": int(artist_id)}}))
   return data
 
+def GetRecentlyAddedSongs():
+  data = SendCommand(RPCString("AudioLibrary.GetRecentlyAddedSongs"))
+  return data
+
 def GetTvShows():
   data = SendCommand(RPCString("VideoLibrary.GetTVShows"))
   return data

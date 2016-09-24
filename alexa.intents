@@ -60,6 +60,10 @@
       ]
     },
     {
+      "intent": "ListenToPlaylistRecent",
+      "slots": []
+    },
+    {
       "intent": "PlayRandomEpisode",
       "slots": [
         {

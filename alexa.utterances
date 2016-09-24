@@ -215,6 +215,30 @@ ListenToPlaylist shuffle playlist {Playlist}
 ListenToPlaylist shuffle {Playlist} playlist
 ListenToPlaylist play playlist {Playlist}
 ListenToPlaylist play {Playlist} playlist
+ListenToPlaylistRecent listen to playlist recent
+ListenToPlaylistRecent listen to playlist recently added
+ListenToPlaylistRecent listen to recent playlist
+ListenToPlaylistRecent listen to recent songs
+ListenToPlaylistRecent listen to recent music
+ListenToPlaylistRecent listen to recently added playlist
+ListenToPlaylistRecent listen to recently added songs
+ListenToPlaylistRecent listen to recently added music
+ListenToPlaylistRecent shuffle playlist recent
+ListenToPlaylistRecent shuffle playlist recently added
+ListenToPlaylistRecent shuffle recent playlist
+ListenToPlaylistRecent shuffle recent songs
+ListenToPlaylistRecent shuffle recent music
+ListenToPlaylistRecent shuffle recently added playlist
+ListenToPlaylistRecent shuffle recently added songs
+ListenToPlaylistRecent shuffle recently added music
+ListenToPlaylistRecent play playlist recent
+ListenToPlaylistRecent play playlist recently added
+ListenToPlaylistRecent play recent playlist
+ListenToPlaylistRecent play recent songs
+ListenToPlaylistRecent play recent music
+ListenToPlaylistRecent play recently added playlist
+ListenToPlaylistRecent play recently added songs
+ListenToPlaylistRecent play recently added music
 Menu open menu
 NewShowInquiry if there are any episodes of {Show}
 NewShowInquiry if there are any new episodes of {Show}

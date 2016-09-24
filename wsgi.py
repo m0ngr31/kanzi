@@ -151,7 +151,7 @@ def alexa_stop(slots):
   answer = "Playback Stopped"
   return build_alexa_response(answer)
 
-# Suffle all music by an artist
+# Shuffle all music by an artist
 def alexa_play_artist(slots):
   heard_artist = str(slots['Artist']['value']).lower().translate(None, string.punctuation)
   
@@ -183,6 +183,29 @@ def alexa_play_artist(slots):
       return build_alexa_response('Could not find %s' % (heard_artist))
   else:
     return build_alexa_response('Could not find %s' % (heard_artist))
+
+# Shuffle all recently added songs
+def alexa_play_recently_added_songs(slots):
+  print('Trying to play recently added songs')
+  sys.stdout.flush()
+
+  songs_result = kodi.GetRecentlyAddedSongs()
+  songs = songs_result['result']['songs']
+
+  if songs:
+    kodi.Stop()
+    kodi.ClearPlaylist()
+
+    songs_array = []
+
+    for song in songs:
+      songs_array.append(song['songid'])
+
+    kodi.AddSongsToPlaylist(songs_array)
+
+    kodi.StartPlaylist()
+    return build_alexa_response('Playing recently added songs')
+  return build_alexa_response('No recently added songs found')
 
 def alexa_play_playlist(slots):
   heard_playlist = str(slots['Playlist']['value']).lower().translate(None, string.punctuation)
@@ -598,6 +621,7 @@ INTENTS = [
   ['Stop', alexa_stop],
   ['ListenToArtist', alexa_play_artist],
   ['ListenToPlaylist', alexa_play_playlist],
+  ['ListenToPlaylistRecent', alexa_play_recently_added_songs],
   ['Skip', alexa_skip],
   ['Prev', alexa_prev],
   ['StartOver', alexa_start_over],
