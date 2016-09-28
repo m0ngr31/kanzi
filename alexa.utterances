@@ -200,6 +200,9 @@ ContinueShow continue last show
 ContinueShow continue show
 ContinueShow continue watching last show
 ContinueShow continue watching show
+DoSearch search for {Artist}
+DoSearch search for {Movie}
+DoSearch search for {Show}
 Down navigate down
 Home navigate home
 Left navigate left
@@ -210,35 +213,44 @@ ListenToArtist shuffle artist {Artist}
 ListenToArtist shuffle music by {Artist}
 ListenToArtist shuffle {Artist}
 ListenToPlaylist listen to playlist {Playlist}
-ListenToPlaylist listen to {Playlist} playlist
-ListenToPlaylist shuffle playlist {Playlist}
-ListenToPlaylist shuffle {Playlist} playlist
 ListenToPlaylist play playlist {Playlist}
-ListenToPlaylist play {Playlist} playlist
+ListenToPlaylist shuffle playlist {Playlist}
 ListenToPlaylistRecent listen to playlist recent
 ListenToPlaylistRecent listen to playlist recently added
+ListenToPlaylistRecent listen to recent
+ListenToPlaylistRecent listen to recent
+ListenToPlaylistRecent listen to recent music
 ListenToPlaylistRecent listen to recent playlist
 ListenToPlaylistRecent listen to recent songs
-ListenToPlaylistRecent listen to recent music
+ListenToPlaylistRecent listen to recently added
+ListenToPlaylistRecent listen to recently added
+ListenToPlaylistRecent listen to recently added music
 ListenToPlaylistRecent listen to recently added playlist
 ListenToPlaylistRecent listen to recently added songs
-ListenToPlaylistRecent listen to recently added music
-ListenToPlaylistRecent shuffle playlist recent
-ListenToPlaylistRecent shuffle playlist recently added
-ListenToPlaylistRecent shuffle recent playlist
-ListenToPlaylistRecent shuffle recent songs
-ListenToPlaylistRecent shuffle recent music
-ListenToPlaylistRecent shuffle recently added playlist
-ListenToPlaylistRecent shuffle recently added songs
-ListenToPlaylistRecent shuffle recently added music
 ListenToPlaylistRecent play playlist recent
 ListenToPlaylistRecent play playlist recently added
+ListenToPlaylistRecent play recent
+ListenToPlaylistRecent play recent
+ListenToPlaylistRecent play recent music
 ListenToPlaylistRecent play recent playlist
 ListenToPlaylistRecent play recent songs
-ListenToPlaylistRecent play recent music
+ListenToPlaylistRecent play recently added
+ListenToPlaylistRecent play recently added
+ListenToPlaylistRecent play recently added music
 ListenToPlaylistRecent play recently added playlist
 ListenToPlaylistRecent play recently added songs
-ListenToPlaylistRecent play recently added music
+ListenToPlaylistRecent shuffle playlist recent
+ListenToPlaylistRecent shuffle playlist recently added
+ListenToPlaylistRecent shuffle recent
+ListenToPlaylistRecent shuffle recent
+ListenToPlaylistRecent shuffle recent music
+ListenToPlaylistRecent shuffle recent playlist
+ListenToPlaylistRecent shuffle recent songs
+ListenToPlaylistRecent shuffle recently added
+ListenToPlaylistRecent shuffle recently added
+ListenToPlaylistRecent shuffle recently added music
+ListenToPlaylistRecent shuffle recently added playlist
+ListenToPlaylistRecent shuffle recently added songs
 Menu open menu
 NewShowInquiry if there are any episodes of {Show}
 NewShowInquiry if there are any new episodes of {Show}
@@ -254,6 +266,7 @@ NewShowInquiry if we have any {Show}
 NewShowInquiry if we have {Show}
 PageDown navigate page down
 PageUp navigate page up
+PartyMode listen to random music
 PlayEpisode play season {Season} episode {Episode} of {Show}
 PlayEpisode play series {Season} episode {Episode} of {Show}
 PlayEpisode watch season {Season} episode {Episode} of {Show}
