@@ -63,7 +63,7 @@ On the next tab, you'll have to paste the `alexa.intents` file into the first fi
 
 Now, let's setup the custom slot types. To make it as easy as possible, I wrote a little webapp that will give you the information you need: [here.](https://sleepy-wave-26412.herokuapp.com/)
 
-Just enter in the information about your Kodi box into the form and it'll pull the data you need. There are 3 custom slots that you'll create. SHOWS, MOVIES, MUSIC. Just copy the data from the webapp into your Alexa skill page.
+Just enter in the information about your Kodi box into the form and it'll pull the data you need. There are 4 custom slots that you'll create. SHOWS, MOVIES, MUSICARTISTS, MUSICPLAYLISTS. Just copy the data from the webapp into your Alexa skill page.
 
 ![2nd tab alt](http://i.imgur.com/SkGcyPQ.png)
 

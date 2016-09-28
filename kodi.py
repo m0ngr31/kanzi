@@ -160,26 +160,30 @@ def matchHeard(heard, results, lookingFor='label'):
   return located
 
 
-# This is a little weak because if there are multiple active players,
-# it only returns the first one and assumes it's the one you want.
-# In practice, this works OK in common cases.
+# Get the first active Audio or Video player, since all we deal with
+# currently.
 
-def GetPlayerID():
+def GetPlayerID(playertype=['audio', 'video']):
   info = SendCommand(RPCString("Player.GetActivePlayers"))
   result = info.get("result", [])
   if len(result) > 0:
-    return result[0].get("playerid")
-  else:
-    return None
-    
+    for curitem in result:
+      if curitem.get("type") in playertype:
+        return curitem.get("playerid")
+  return None
+
+
 def ClearPlaylist():
   return SendCommand(RPCString("Playlist.Clear", {"playlistid": 0}))
   
 def ClearVideoPlaylist():
   return SendCommand(RPCString("Playlist.Clear", {"playlistid": 1}))
 
-def StartPlaylist():
-  return SendCommand(RPCString("Player.Open", {"item": {"playlistid": 0}}))
+def StartPlaylist(playlist_file=None):
+  if playlist_file is not None and playlist_file != '':
+    return SendCommand(RPCString("Player.Open", {"item": {"file": playlist_file}}))
+  else:
+    return SendCommand(RPCString("Player.Open", {"item": {"playlistid": 0}}))
   
 def AddSongToPlaylist(song_id):
   return SendCommand(RPCString("Playlist.Add", {"playlistid": 0, "item": {"songid": int(song_id)}}))
@@ -296,6 +300,9 @@ def Replay():
   if playerid:
     return SendCommand(RPCString("Player.Seek", {"playerid":playerid, "value":"smallbackward"}))
     
+def GetMusicPlaylists():
+  return SendCommand(RPCString("Files.GetDirectory", {"directory": "special://musicplaylists"}))
+
 def GetMusicArtists():
   data = SendCommand(RPCString("AudioLibrary.GetArtists"))
   return data
@@ -306,6 +313,10 @@ def GetArtistAlbums(artist_id):
   
 def GetArtistSongs(artist_id):
   data = SendCommand(RPCString("AudioLibrary.GetSongs", {"filter": {"artistid": int(artist_id)}}))
+  return data
+
+def GetRecentlyAddedSongs():
+  data = SendCommand(RPCString("AudioLibrary.GetRecentlyAddedSongs"))
   return data
 
 def GetTvShows():

@@ -46,9 +46,22 @@
       "slots": [
         {
           "name": "Artist",
-          "type": "MUSIC"
+          "type": "MUSICARTISTS"
         }
       ]
+    },
+    {
+      "intent": "ListenToPlaylist",
+      "slots": [
+        {
+          "name": "Playlist",
+          "type": "MUSICPLAYLISTS"
+        }
+      ]
+    },
+    {
+      "intent": "ListenToPlaylistRecent",
+      "slots": []
     },
     {
       "intent": "PlayRandomEpisode",
