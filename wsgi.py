@@ -131,7 +131,7 @@ def alexa_new_show_inquiry(slots):
     else:
       return build_alexa_response('Could not find %s' % (heard_show))
   else:
-    return build_alexa_response('Could not find %s' % (heard_show))
+    return build_alexa_response('Error parsing results.')
 
 #Pause Kodi
 def alexa_play_pause(slots):
@@ -182,8 +182,30 @@ def alexa_play_artist(slots):
     else:
       return build_alexa_response('Could not find %s' % (heard_artist))
   else:
-    return build_alexa_response('Could not find %s' % (heard_artist))
+    return build_alexa_response('Error parsing results.')
+    
+
+def alexa_party_play(slots):
+  songs = kodi.GetAllSongs()
   
+  if 'result' in songs and 'songs' in songs['result']:
+    kodi.Stop()
+    kodi.ClearPlaylist()
+    
+    songs_array = []
+    
+    for song in songs['result']['songs']:
+      songs_array.append(song['songid'])
+      
+    random.shuffle(songs_array)
+    print songs_array
+    
+    kodi.AddSongsToPlaylist(songs_array)
+    kodi.StartPlaylist()
+    return build_alexa_response('Starting Party play')
+  else:
+    return build_alexa_response('Error parsing results.')
+   
 def alexa_start_over(slots):
   print('Starting current item over')
   sys.stdout.flush()
@@ -304,6 +326,11 @@ def alexa_update_audio(slots):
 
   kodi.UpdateMusic()
   return build_alexa_response('Updating audio library')
+  
+def alexa_do_search(slots):
+  heard_search = str(slots['Search']['value']).lower().translate(None, string.punctuation)
+  kodi.Home()
+  kodi.call_kodi_search()
 
 def alexa_pick_random_movie(slots):
   print('Trying to play a random movie')
@@ -320,7 +347,7 @@ def alexa_pick_random_movie(slots):
     
     return build_alexa_response('Playing %s' % (random_movie['label']))
   else:
-    return build_alexa_response("Couldn't find any movies")
+    return build_alexa_response('Error parsing results.')
   
 def alexa_play_movie(slots):
   heard_movie = str(slots['Movie']['value']).lower().translate(None, string.punctuation)
@@ -343,7 +370,7 @@ def alexa_play_movie(slots):
     else:
       return build_alexa_response('Could not find a movie called %s' % (heard_movie))
   else:
-    return build_alexa_response('Could not find a movie called %s' % (heard_movie))
+    return build_alexa_response('Error parsing results.')
   
 def alexa_pick_random_episode(slots):
   heard_show = str(slots['Show']['value']).lower().translate(None, string.punctuation)
@@ -377,7 +404,7 @@ def alexa_pick_random_episode(slots):
     else:
       return build_alexa_response('Could not find %s' % (heard_show))
   else:
-    return build_alexa_response('Could not find %s' % (heard_show))
+    return build_alexa_response('Error parsing results.')
 
   
 def alexa_play_episode(slots):
@@ -410,7 +437,7 @@ def alexa_play_episode(slots):
     else:
       return build_alexa_response('Could not find %s' % (heard_show))
   else:
-    return build_alexa_response('Could not find %s' % (heard_show))
+    return build_alexa_response('Error parsing results.')
     
 
 def alexa_play_next_episode(slots):
@@ -439,7 +466,7 @@ def alexa_play_next_episode(slots):
     else:
       return build_alexa_response('Could not find %s' % (heard_show))
   else:
-    return build_alexa_response('Could not find %s' % (heard_show))
+    return build_alexa_response('Error parsing results.')
     
 
 def alexa_play_newest_episode(slots):
@@ -469,7 +496,7 @@ def alexa_play_newest_episode(slots):
     else:
       return build_alexa_response('Could not find %s' % (heard_show))
   else:
-    return build_alexa_response('Could not find %s' % (heard_show))
+    return build_alexa_response('Error parsing results.')
 
 
 def alexa_continue_show(slots):
@@ -599,7 +626,9 @@ INTENTS = [
   ['UpdateVideo', alexa_update_video],
   ['CleanAudio', alexa_clean_audio],
   ['UpdateAudio', alexa_update_audio],
-  ['PlayLatestEpisode', alexa_play_newest_episode]
+  ['PlayLatestEpisode', alexa_play_newest_episode],
+  ['PartyMode', alexa_party_play],
+  ['DoSearch', alexa_do_search]
 ]
 
 

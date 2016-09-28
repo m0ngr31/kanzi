@@ -60,3 +60,9 @@ NewShowInquiry if (there are/we have) any (/(/new )episodes of) {Show}
 NewShowInquiry if (there is/we have) {Show}
 
 PlayLatestEpisode (play/watch) (/the) (newest/latest) episode of {Show}
+
+PartyMode listen to random music
+
+DoSearch search for {Show}
+DoSearch search for {Movie}
+DoSearch search for {Artist}

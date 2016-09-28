@@ -82,7 +82,7 @@ def SendCommand(command):
   KODI = os.getenv('KODI_ADDRESS', '127.0.0.1')
   PORT = int(os.getenv('KODI_PORT', 8089))
   USER = os.getenv('KODI_USERNAME', 'kodi')
-  PASS = os.getenv('KODI_PASSWORD', '')
+  PASS = os.getenv('KODI_PASSWORD', 'kodi')
   
   url = "http://%s:%d/jsonrpc" % (KODI, PORT)
   try:
@@ -136,10 +136,10 @@ def matchHeard(heard, results, lookingFor='label'):
       ascii_name = result[lookingFor].encode('ascii', 'replace')
       result_name = str(ascii_name).lower().translate(None, string.punctuation)
       
-      print(heard_minus_the)
-      sys.stdout.flush()
-      print result_name
-      sys.stdout.flush()
+      #print(heard_minus_the)
+      #sys.stdout.flush()
+      #print result_name
+      #sys.stdout.flush()
       # Just look for substring
       if result_name.find(heard_minus_the) != -1:
         located = result
@@ -149,16 +149,20 @@ def matchHeard(heard, results, lookingFor='label'):
       # >= 60% of the heard phrase
       result_list = set([x for x in result_name.split() if x not in STOPWORDS])
       matched_words = [x for x in heard_list if x in result_list]
-      print matched_words
-      sys.stdout.flush()
+      #print 'matched words: '
+      #sys.stdout.flush()
       if len(matched_words) > 0:
+        print matched_words
+        sys.stdout.flush()
         percentage = float(len(matched_words)) / float(len(heard_list))
         if percentage > float(0.6):
           located = result
           break
         
   return located
-
+  
+def CinemaVision():
+  return SendCommand(RPCString("Addons.ExecuteAddon", { "addonid": "script.cinemavision", "params": ["experience"]}))
 
 # This is a little weak because if there are multiple active players,
 # it only returns the first one and assumes it's the one you want.
@@ -296,12 +300,23 @@ def Replay():
   if playerid:
     return SendCommand(RPCString("Player.Seek", {"playerid":playerid, "value":"smallbackward"}))
     
+def call_kodi_search(name=''):
+  return SendCommand(RPCString("Addons.ExecuteAddon", {"addonid": "script.globalsearch", "params":{"searchstring":name}}))
+    
 def GetMusicArtists():
   data = SendCommand(RPCString("AudioLibrary.GetArtists"))
+  return data
+    
+def GetMusicGenres():
+  data = SendCommand(RPCString("AudioLibrary.GetGenres"))
   return data
 
 def GetArtistAlbums(artist_id):
   data = SendCommand(RPCString("AudioLibrary.GetAlbums", {"filter": {"artistid": int(artist_id)}}))
+  return data
+  
+def GetAllSongs():
+  data = SendCommand(RPCString("AudioLibrary.GetSongs"))
   return data
   
 def GetArtistSongs(artist_id):
@@ -314,6 +329,10 @@ def GetTvShows():
   
 def GetMovies():
   data = SendCommand(RPCString("VideoLibrary.GetMovies"))
+  return data
+  
+def GetMovieGenres():
+  data = SendCommand(RPCString("VideoLibrary.GetGenres", {"type": "movie"}))
   return data
   
 def GetUnwatchedMovies():
