@@ -160,6 +160,10 @@
       "slots": []
     },
     {
+      "intent": "PartyMode",
+      "slots": []
+    },
+    {
       "intent": "PlayEpisode",
       "slots": [
         {
