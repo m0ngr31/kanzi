@@ -213,8 +213,11 @@ ListenToArtist shuffle artist {Artist}
 ListenToArtist shuffle music by {Artist}
 ListenToArtist shuffle {Artist}
 ListenToPlaylist listen to playlist {Playlist}
+ListenToPlaylist listen to {Playlist} playlist
 ListenToPlaylist play playlist {Playlist}
+ListenToPlaylist play {Playlist} playlist
 ListenToPlaylist shuffle playlist {Playlist}
+ListenToPlaylist shuffle {Playlist} playlist
 ListenToPlaylistRecent listen to playlist recent
 ListenToPlaylistRecent listen to playlist recently added
 ListenToPlaylistRecent listen to recent
