@@ -11,7 +11,20 @@ for v in retrieved['result']['artists']:
 
 deduped = list(set(all))
 
-gfile = open('MUSIC', 'w')
+gfile = open('MUSICARTISTS', 'w')
+for a in deduped:
+    gfile.write("%s\n" % a)
+gfile.close()
+
+retrieved = kodi.GetMusicPlaylists()
+print retrieved
+all = []
+for v in retrieved['result']['files']:
+    all.append(v['label'].encode('utf-8').strip())
+
+deduped = list(set(all))
+
+gfile = open('MUSICPLAYLISTS', 'w')
 for a in deduped:
     gfile.write("%s\n" % a)
 gfile.close()
