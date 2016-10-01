@@ -164,6 +164,23 @@
       "slots": []
     },
     {
+      "intent": "DoSearch",
+      "slots": [
+        {
+          "name": "Artist",
+          "type": "MUSICARTISTS"
+        },
+        {
+          "name": "Movie",
+          "type": "MOVIES"
+        },
+        {
+          "name": "Show",
+          "type": "SHOWS"
+        }
+      ]
+    },
+    {
       "intent": "PlayEpisode",
       "slots": [
         {
