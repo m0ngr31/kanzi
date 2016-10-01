@@ -7,7 +7,7 @@ import string
 
 # Generate MUSICARTISTS Slot
 retrieved = kodi.GetMusicArtists()
-print retrieved
+
 all = []
 
 if 'result' in retrieved and 'artists' in retrieved['result']:
@@ -26,7 +26,7 @@ gfile.close()
 
 # Generate MUSICPLAYLISTS Slot
 retrieved = kodi.GetMusicPlaylists()
-print retrieved
+
 all = []
 
 if 'result' in retrieved and 'files' in retrieved['result']:
@@ -80,4 +80,3 @@ gfile = open('SHOWS', 'w')
 for a in deduped:
   gfile.write("%s\n" % a)
 gfile.close()
-
