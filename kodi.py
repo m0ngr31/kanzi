@@ -80,7 +80,7 @@ def remove_the(name):
 def SendCommand(command):
   # Change this to the IP address of your Kodi server or always pass in an address
   KODI = os.getenv('KODI_ADDRESS', '127.0.0.1')
-  PORT = int(os.getenv('KODI_PORT', 8089))
+  PORT = int(os.getenv('KODI_PORT', 8080))
   USER = os.getenv('KODI_USERNAME', 'kodi')
   PASS = os.getenv('KODI_PASSWORD', 'kodi')
   

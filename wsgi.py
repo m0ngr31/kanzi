@@ -34,6 +34,7 @@ import random
 import re
 import string
 import sys
+import threading
 
 # Load the kodi.py file from the same directory where this wsgi file is located
 sys.path += [os.path.dirname(__file__)]
@@ -399,30 +400,52 @@ def alexa_clean_video(slots):
   print('Cleaning video library')
   sys.stdout.flush()
 
-  kodi.CleanVideo()
-  kodi.UpdateVideo()
+  #Use threading to solve the call from returing too late
+  u = threading.Thread(target=kodi.UpdateVideo)
+  u.setDaemon(True)
+  u.start()
+
+  c = threading.Thread(target=kodi.CleanVideo)
+  c.setDaemon(True)
+  c.start()
+
   return build_alexa_response('Cleaning and updating video library')
 
 def alexa_update_video(slots):
   print('Updating video library')
   sys.stdout.flush()
 
-  kodi.UpdateVideo()
+  #Use threading to solve the call from returing too late
+  u = threading.Thread(target=kodi.UpdateVideo)
+  u.setDaemon(True)
+  u.start()
+  
   return build_alexa_response('Updating video library')
 
 def alexa_clean_audio(slots):
   print('Cleaning audio library')
   sys.stdout.flush()
 
-  kodi.CleanMusic()
-  kodi.UpdateMusic()
+  #Use threading to solve the call from returing too late
+  u = threading.Thread(target=kodi.UpdateMusic)
+  u.setDaemon(True)
+  u.start()
+
+  c = threading.Thread(target=kodi.CleanMusic)
+  c.setDaemon(True)
+  c.start()
+  
   return build_alexa_response('Cleaning and updating audio library')
   
 def alexa_update_audio(slots):
   print('Updating audio library')
   sys.stdout.flush()
 
-  kodi.UpdateMusic()
+  #Use threading to solve the call from returing too late
+  u = threading.Thread(target=kodi.UpdateMusic)
+  u.setDaemon(True)
+  u.start()
+
   return build_alexa_response('Updating audio library')
   
 def alexa_do_search(slots):
