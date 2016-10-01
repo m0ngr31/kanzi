@@ -39,6 +39,7 @@ UpdateAudio update (audio/music) library
 ListenToArtist (listen to/shuffle) (/music by/artist) {Artist}
 
 ListenToPlaylist (play/listen to/shuffle) playlist {Playlist}
+ListenToPlaylist (play/listen to/shuffle) {Playlist} playlist
 
 ListenToPlaylistRecent (play/listen to/shuffle) (/playlist) recent
 ListenToPlaylistRecent (play/listen to/shuffle) (/playlist) recently added
