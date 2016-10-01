@@ -789,8 +789,47 @@ HANDLERS = [
 ]
 
 
-# The main entry point for WSGI scripts
+# The main entry point for lambda
+def lambda_handler(event, context):
+  if event['session']['new']:
+    on_session_started({'requestId': event['request']['requestId']}, event['session'])
 
+  if event['request']['type'] == "LaunchRequest":
+    return on_launch(event['request'], event['session'])
+  elif event['request']['type'] == "IntentRequest":
+    return on_intent(event['request'], event['session'])
+
+def on_session_started(session_started_request, session):
+    """ Called when the session starts """
+
+    print("on_session_started requestId=" + session_started_request['requestId']
+          + ", sessionId=" + session['sessionId'])
+
+def on_launch(launch_request, session):
+    return prepare_help_message()
+
+def on_intent(intent_request, session):
+    intent = intent_request['intent']
+    intent_name = intent_request['intent']['name']
+    intent_slots = intent_request['intent'].get('slots',{})
+
+    # Dispatch to your skill's intent handlers
+    response = None
+  
+    print('Requested intent: %s' % (intent_name))
+    sys.stdout.flush()
+
+    # Run the function associated with the intent
+    for one_intent in INTENTS:
+      if intent_name == one_intent[0]:
+        return one_intent[1](intent_slots)
+        break
+    if not response:
+      # This should not happen if your Intent Schema and your INTENTS list above are in sync.
+      return prepare_help_message()
+
+
+# The main entry point for WSGI scripts
 def application(environ, start_response):
   # Execute the handler that matches the URL
   for h in HANDLERS:
