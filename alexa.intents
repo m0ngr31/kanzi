@@ -179,6 +179,10 @@
           "type": "AMAZON.NUMBER"
         }
       ]
+    },
+    {
+      "intent": "CurrentPlayItemInquiry",
+      "slots": []
     }
   ]
 }
