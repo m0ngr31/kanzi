@@ -388,12 +388,15 @@ def alexa_clean_video(slots):
   print('Cleaning video library')
   sys.stdout.flush()
 
-  #Use threading to solve the call from returing too late
-  u = threading.Thread(target=kodi.UpdateVideo)
-  u.start()
+  kodi.UpdateVideo()
 
+  #Use threading to solve the call from returing too late
   c = threading.Thread(target=kodi.CleanVideo)
+  c.daemon = True
   c.start()
+
+  #Calling this because for some reason it won't fire until the next command happens?
+  kodi.Home()
 
   return build_alexa_response('Cleaning and updating video library')
 
@@ -401,9 +404,7 @@ def alexa_update_video(slots):
   print('Updating video library')
   sys.stdout.flush()
 
-  #Use threading to solve the call from returing too late
-  u = threading.Thread(target=kodi.UpdateVideo)
-  u.start()
+  kodi.UpdateVideo()
 
   return build_alexa_response('Updating video library')
 
@@ -411,12 +412,15 @@ def alexa_clean_audio(slots):
   print('Cleaning audio library')
   sys.stdout.flush()
 
-  #Use threading to solve the call from returing too late
-  u = threading.Thread(target=kodi.UpdateMusic)
-  u.start()
+  kodi.UpdateMusic()
 
+  #Use threading to solve the call from returing too late
   c = threading.Thread(target=kodi.CleanMusic)
+  c.daemon = True
   c.start()
+
+  #Calling this because for some reason it won't fire until the next command happens?
+  kodi.Home()
   
   return build_alexa_response('Cleaning and updating audio library')
   
@@ -424,9 +428,7 @@ def alexa_update_audio(slots):
   print('Updating audio library')
   sys.stdout.flush()
 
-  #Use threading to solve the call from returing too late
-  u = threading.Thread(target=kodi.UpdateMusic)
-  u.start()
+  kodi.UpdateMusic()
 
   return build_alexa_response('Updating audio library')
   
