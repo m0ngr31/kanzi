@@ -200,6 +200,27 @@ ContinueShow continue last show
 ContinueShow continue show
 ContinueShow continue watching last show
 ContinueShow continue watching show
+CurrentPlayItemInquiry what audio is currently playing
+CurrentPlayItemInquiry what audio is playing
+CurrentPlayItemInquiry what audio is this
+CurrentPlayItemInquiry what episode is currently playing
+CurrentPlayItemInquiry what episode is playing
+CurrentPlayItemInquiry what episode is this
+CurrentPlayItemInquiry what is currently playing
+CurrentPlayItemInquiry what is playing
+CurrentPlayItemInquiry what is this
+CurrentPlayItemInquiry what movie is currently playing
+CurrentPlayItemInquiry what movie is playing
+CurrentPlayItemInquiry what movie is this
+CurrentPlayItemInquiry what show is currently playing
+CurrentPlayItemInquiry what show is playing
+CurrentPlayItemInquiry what show is this
+CurrentPlayItemInquiry what song is currently playing
+CurrentPlayItemInquiry what song is playing
+CurrentPlayItemInquiry what song is this
+CurrentPlayItemInquiry what video is currently playing
+CurrentPlayItemInquiry what video is playing
+CurrentPlayItemInquiry what video is this
 DoSearch search for {Artist}
 DoSearch search for {Movie}
 DoSearch search for {Show}
@@ -269,7 +290,11 @@ NewShowInquiry if we have any {Show}
 NewShowInquiry if we have {Show}
 PageDown navigate page down
 PageUp navigate page up
+PartyMode listen to all music
 PartyMode listen to random music
+PartyMode play all music
+PartyMode play random music
+PartyMode shuffle all music
 PlayEpisode play season {Season} episode {Episode} of {Show}
 PlayEpisode play series {Season} episode {Episode} of {Show}
 PlayEpisode watch season {Season} episode {Episode} of {Show}
@@ -349,24 +374,3 @@ WhatNewShows what shows do you have
 WhatNewShows what shows i have
 WhatNewShows what shows we have
 WhatNewShows what shows you have
-CurrentPlayItemInquiry what is this
-CurrentPlayItemInquiry what song is this
-CurrentPlayItemInquiry what audio is this
-CurrentPlayItemInquiry what video is this
-CurrentPlayItemInquiry what movie is this
-CurrentPlayItemInquiry what episode is this
-CurrentPlayItemInquiry what show is this
-CurrentPlayItemInquiry what is playing
-CurrentPlayItemInquiry what song is playing
-CurrentPlayItemInquiry what audio is playing
-CurrentPlayItemInquiry what video is playing
-CurrentPlayItemInquiry what movie is playing
-CurrentPlayItemInquiry what episode is playing
-CurrentPlayItemInquiry what show is playing
-CurrentPlayItemInquiry what is currently playing
-CurrentPlayItemInquiry what song is currently playing
-CurrentPlayItemInquiry what audio is currently playing
-CurrentPlayItemInquiry what video is currently playing
-CurrentPlayItemInquiry what movie is currently playing
-CurrentPlayItemInquiry what episode is currently playing
-CurrentPlayItemInquiry what show is currently playing

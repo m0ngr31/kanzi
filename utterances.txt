@@ -70,6 +70,10 @@ NewShowInquiry if (there is/we have) {Show}
 PlayLatestEpisode (play/watch) (/the) (newest/latest) episode of {Show}
 
 PartyMode listen to random music
+PartyMode listen to all music
+PartyMode play random music
+PartyMode play all music
+PartyMode shuffle all music
 
 DoSearch search for {Show}
 DoSearch search for {Movie}
