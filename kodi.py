@@ -36,6 +36,7 @@ import random
 import re
 import string
 import sys
+from yaep import populate_env
 
 # These are words that we ignore when doing a non-exact match on show names
 STOPWORDS = [
@@ -79,6 +80,7 @@ def remove_the(name):
 # These two methods construct the JSON-RPC message and send it to the Kodi player
 def SendCommand(command):
   # Change this to the IP address of your Kodi server or always pass in an address
+  populate_env()
   KODI = os.getenv('KODI_ADDRESS', '127.0.0.1')
   PORT = int(os.getenv('KODI_PORT', 8080))
   USER = os.getenv('KODI_USERNAME', 'kodi')

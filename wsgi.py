@@ -51,19 +51,7 @@ def sanitize_show(show_name):
   return show_name
 
 def build_alexa_response(speech = None, session_attrs = None, card = None, reprompt = None, end_session = True):
-  reply = {"version" : "1.0"}
-  if session_attrs:
-    reply['sessionAttributes'] = session_attrs
-  response = {}
-  if speech:
-    response['outputSpeech'] = {'type':'PlainText', 'text':speech}
-  if card:
-    response['card'] = card
-  if reprompt:
-    response['reprompt'] = {'outputSpeech':{'type':'PlainText','text':reprompt}}
-  response['shouldEndSession'] = end_session
-  reply['response'] = response
-  return json.dumps(reply)
+  return build_response(session_attrs, build_speechlet_response("", speech, "", end_session))
 
 
 # Handle the CheckNewShows intent
@@ -402,11 +390,9 @@ def alexa_clean_video(slots):
 
   #Use threading to solve the call from returing too late
   u = threading.Thread(target=kodi.UpdateVideo)
-  u.setDaemon(True)
   u.start()
 
   c = threading.Thread(target=kodi.CleanVideo)
-  c.setDaemon(True)
   c.start()
 
   return build_alexa_response('Cleaning and updating video library')
@@ -417,9 +403,8 @@ def alexa_update_video(slots):
 
   #Use threading to solve the call from returing too late
   u = threading.Thread(target=kodi.UpdateVideo)
-  u.setDaemon(True)
   u.start()
-  
+
   return build_alexa_response('Updating video library')
 
 def alexa_clean_audio(slots):
@@ -428,11 +413,9 @@ def alexa_clean_audio(slots):
 
   #Use threading to solve the call from returing too late
   u = threading.Thread(target=kodi.UpdateMusic)
-  u.setDaemon(True)
   u.start()
 
   c = threading.Thread(target=kodi.CleanMusic)
-  c.setDaemon(True)
   c.start()
   
   return build_alexa_response('Cleaning and updating audio library')
@@ -443,15 +426,27 @@ def alexa_update_audio(slots):
 
   #Use threading to solve the call from returing too late
   u = threading.Thread(target=kodi.UpdateMusic)
-  u.setDaemon(True)
   u.start()
 
   return build_alexa_response('Updating audio library')
   
 def alexa_do_search(slots):
-  heard_search = str(slots['Search']['value']).lower().translate(None, string.punctuation)
-  kodi.Home()
-  kodi.CallKodiSearch()
+  heard_search = ''
+
+  if 'value' in slots['Movie']:
+    heard_search = str(slots['Movie']['value']).lower().translate(None, string.punctuation)
+  elif 'value' in slots['Show']:
+    heard_search = str(slots['Show']['value']).lower().translate(None, string.punctuation)
+  elif 'value' in slots['Artist']:
+    heard_search = str(slots['Artist']['value']).lower().translate(None, string.punctuation)
+
+  if(len(heard_search) > 0):
+    kodi.Home()
+    kodi.CallKodiSearch(heard_search)
+
+    return build_alexa_response('Searching for %s' % (heard_search))
+  else:
+    return build_alexa_response("Couldn't find anything matching that phrase")
 
 def alexa_pick_random_movie(slots):
   print('Trying to play a random movie')
@@ -755,10 +750,6 @@ INTENTS = [
   ['DoSearch', alexa_do_search]
 ]
 
-
-# Handle the requests that arrive from the Alexa Skills Kit when your app
-# is invoked.
-
 def do_alexa(environ, start_response):
   # Alexa requests come as POST messages with a request body
   try:
@@ -803,7 +794,6 @@ def do_alexa(environ, start_response):
     start_response('502 No content', [])
     return ['']
 
-
 # Map the URL to the WSGI function that should handle it.
 
 HANDLERS = [
@@ -811,36 +801,43 @@ HANDLERS = [
   ['', do_alexa],
 ]
 
-
 # The main entry point for lambda
 def lambda_handler(event, context):
+  print("event.session.application.applicationId=" + event['session']['application']['applicationId'])
+
+  if event['session']['new']:
+    on_session_started({'requestId': event['request']['requestId']}, event['session'])
+
   if event['request']['type'] == "LaunchRequest":
-    return on_launch(event['request'], event['session'])
+    return prepare_help_message()
   elif event['request']['type'] == "IntentRequest":
     return on_intent(event['request'], event['session'])
+  else:
+    return build_alexa_response("I received an unexpected request type.")
 
-def on_launch(launch_request, session):
-    return prepare_help_message()
+def on_session_started(session_started_request, session):
+  print("on_session_started requestId=" + session_started_request['requestId'] + ", sessionId=" + session['sessionId'])
 
 def on_intent(intent_request, session):
-    intent = intent_request['intent']
-    intent_name = intent_request['intent']['name']
-    intent_slots = intent_request['intent'].get('slots',{})
+  print("on_intent requestId=" + intent_request['requestId'] + ", sessionId=" + session['sessionId'])
 
-    # Dispatch to your skill's intent handlers
-    response = None
-  
-    print('Requested intent: %s' % (intent_name))
-    sys.stdout.flush()
+  intent = intent_request['intent']
+  intent_name = intent_request['intent']['name']
+  intent_slots = intent_request['intent'].get('slots',{})
 
-    # Run the function associated with the intent
-    for one_intent in INTENTS:
-      if intent_name == one_intent[0]:
-        return one_intent[1](intent_slots)
-        break
-    if not response:
-      # This should not happen if your Intent Schema and your INTENTS list above are in sync.
-      return prepare_help_message()
+  # Dispatch to your skill's intent handlers
+  response = None
+
+  print('Requested intent: %s' % (intent_name))
+  sys.stdout.flush()
+
+  # Run the function associated with the intent
+  for one_intent in INTENTS:
+    if intent_name == one_intent[0]:
+      return one_intent[1](intent_slots)
+      break
+  if not response:
+    return prepare_help_message()
 
 
 # The main entry point for WSGI scripts
@@ -873,3 +870,30 @@ def application(environ, start_response):
 """ % {'url':environ['PATH_INFO'], 'address':environ['SERVER_SIGNATURE'], 'details':details}
   start_response('404 Not Found', [('Content-type', 'text/html')])
   return [output]
+
+def build_response(session_attributes, speechlet_response):
+  return {
+    'version': '1.0',
+    'sessionAttributes': session_attributes,
+    'response': speechlet_response
+  }
+
+def build_speechlet_response(title, output, reprompt_text, should_end_session):
+  return {
+    'outputSpeech': {
+      'type': 'PlainText',
+      'text': output
+    },
+    'card': {
+      'type': 'Simple',
+      'title': 'SessionSpeechlet - ' + title,
+      'content': 'SessionSpeechlet - ' + output
+    },
+    'reprompt': {
+      'outputSpeech': {
+        'type': 'PlainText',
+        'text': reprompt_text
+      }
+    },
+    'shouldEndSession': should_end_session
+  }
