@@ -788,8 +788,8 @@ def do_alexa(environ, start_response):
         response = prepare_help_message()
     else:
       response = build_alexa_response("I received an unexpected request type.")
-    start_response('200 OK', [('Content-Type', 'application/json'), ('Content-Length', str(len(response)))])
-    return [response]
+    start_response('200 OK', [('Content-Type', 'application/json'), ('Content-Length', str(len(json.dumps(response))))])
+    return [json.dumps(response)]
   else:
     # This should never happen with a real Echo request but could happen
     # if your URL is accessed by a browser or otherwise.
