@@ -1,3 +1,9 @@
+v2.0.0 (10/02/2016)
+* Merged in a bunch of good PRs dealing with playing playlists
+* Added in 'Search' and 'Party mode' intents
+* Reversed order of Update/Clean functions and threaded them so now the skill won't timeout
+* Updated documentation
+
 v1.5.0 (04/13/2016)
 * Updated utterances to use custom slots instead of AMAZON.LITERALs
 * Re-wrote how the phrases get parsed to be as good as possible

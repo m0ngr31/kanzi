@@ -807,6 +807,8 @@ HANDLERS = [
 def lambda_handler(event, context):
   print("event.session.application.applicationId=" + event['session']['application']['applicationId'])
 
+  kodi.SetupEnvVars()
+
   if event['session']['new']:
     on_session_started({'requestId': event['request']['requestId']}, event['session'])
 
