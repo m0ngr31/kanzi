@@ -156,6 +156,22 @@
       "slots": []
     },
     {
+      "intent": "Hibernate",
+      "slots": []
+    },
+    {
+      "intent": "Reboot",
+      "slots": []
+    },
+    {
+      "intent": "Shutdown",
+      "slots": []
+    },
+    {
+      "intent": "Suspend",
+      "slots": []
+    },
+    {
       "intent": "ContinueShow",
       "slots": []
     },

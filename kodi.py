@@ -438,6 +438,24 @@ def GetUnwatchedEpisodes(max=90):
   return answer
 
 
+# Power commands
+
+def ApplicationQuit():
+  return SendCommand(RPCString("Application.Quit"))
+
+def SystemHibernate():
+  return SendCommand(RPCString("System.Hibernate"))
+
+def SystemReboot():
+  return SendCommand(RPCString("System.Reboot"))
+
+def SystemShutdown():
+  return SendCommand(RPCString("System.Shutdown"))
+
+def SystemSuspend():
+  return SendCommand(RPCString("System.Suspend"))
+
+
 # Misc helpers
 
 # Grabs the artwork for the specified show. Could be modified to return other interesting data.

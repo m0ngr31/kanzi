@@ -384,6 +384,46 @@ def alexa_prev(slots):
   kodi.PlayPrev()
   return build_alexa_response('Playing previous item')
   
+# Handle the Hibernate intent.
+
+def alexa_hibernate(slots):
+  print('Trying to hibernate system')
+  sys.stdout.flush()
+
+  kodi.SystemHibernate()
+  answer = "Hibernating system"
+  return build_alexa_response(answer)
+
+# Handle the Reboot intent.
+
+def alexa_reboot(slots):
+  print('Trying to reboot system')
+  sys.stdout.flush()
+
+  kodi.SystemReboot()
+  answer = "Rebooting system"
+  return build_alexa_response(answer)
+
+# Handle the Shutdown intent.
+
+def alexa_shutdown(slots):
+  print('Trying to shut down system')
+  sys.stdout.flush()
+
+  kodi.SystemShutdown()
+  answer = "Shutting down system"
+  return build_alexa_response(answer)
+
+# Handle the Suspend intent.
+
+def alexa_suspend(slots):
+  print('Trying to suspend system')
+  sys.stdout.flush()
+
+  kodi.SystemSuspend()
+  answer = "Suspending system"
+  return build_alexa_response(answer)
+
 def alexa_clean_video(slots):
   print('Cleaning video library')
   sys.stdout.flush()
@@ -749,7 +789,11 @@ INTENTS = [
   ['UpdateAudio', alexa_update_audio],
   ['PlayLatestEpisode', alexa_play_newest_episode],
   ['PartyMode', alexa_party_play],
-  ['DoSearch', alexa_do_search]
+  ['DoSearch', alexa_do_search],
+  ['Hibernate', alexa_hibernate],
+  ['Reboot', alexa_reboot],
+  ['Shutdown', alexa_shutdown],
+  ['Suspend', alexa_suspend]
 ]
 
 def do_alexa(environ, start_response):

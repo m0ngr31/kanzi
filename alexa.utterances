@@ -226,6 +226,10 @@ DoSearch search for {Movie}
 DoSearch search for {Show}
 Down navigate down
 Home navigate home
+Hibernate hibernate
+Hibernate hibernate system
+Hibernate deep sleep
+Hibernate deep sleep system
 Left navigate left
 ListenToArtist listen to artist {Artist}
 ListenToArtist listen to music by {Artist}
@@ -334,8 +338,12 @@ PlayRandomMovie watch random film
 PlayRandomMovie watch random movie
 Prev previous
 Prev previous song
+Reboot reboot
+Reboot reboot system
 Right navigate right
 Select select
+Shutdown shut down
+Shutdown shut down system
 Skip next
 Skip next song
 Skip skip
@@ -345,6 +353,12 @@ StartOver start over
 Stop cancel
 Stop shut up
 Stop stop
+Suspend suspend
+Suspend suspend system
+Suspend sleep
+Suspend sleep system
+Suspend put system to sleep
+Suspend go to sleep
 Up navigate up
 UpdateAudio update audio library
 UpdateAudio update music library

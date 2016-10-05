@@ -80,3 +80,10 @@ DoSearch search for {Movie}
 DoSearch search for {Artist}
 
 CurrentPlayItemInquiry what (/song/audio/video/movie/episode/show) is (this/playing/currently playing)
+
+Hibernate (hibernate/deep sleep) (/system)
+Reboot reboot (/system)
+Shutdown shut down (/system)
+Suspend (suspend/sleep) (/system)
+Suspend put system to sleep
+Suspend go to sleep
