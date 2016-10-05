@@ -164,6 +164,22 @@
       "slots": []
     },
     {
+      "intent": "SubtitlesOn",
+      "slots": []
+    },
+    {
+      "intent": "SubtitlesOff",
+      "slots": []
+    },
+    {
+      "intent": "SubtitlesNext",
+      "slots": []
+    },
+    {
+      "intent": "SubtitlesPrevious",
+      "slots": []
+    },
+    {
       "intent": "Hibernate",
       "slots": []
     },

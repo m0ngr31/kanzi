@@ -306,6 +306,26 @@ def Replay():
   if playerid:
     return SendCommand(RPCString("Player.Seek", {"playerid":playerid, "value":"smallbackward"}))
 
+def SubtitlesOn():
+  playerid = GetPlayerID()
+  if playerid:
+    return SendCommand(RPCString("Player.SetSubtitle", {"playerid":playerid, "subtitle":"on"}))
+
+def SubtitlesOff():
+  playerid = GetPlayerID()
+  if playerid:
+    return SendCommand(RPCString("Player.SetSubtitle", {"playerid":playerid, "subtitle":"off"}))
+
+def SubtitlesNext():
+  playerid = GetPlayerID()
+  if playerid:
+    return SendCommand(RPCString("Player.SetSubtitle", {"playerid":playerid, "subtitle":"next", "enable":True}))
+
+def SubtitlesPrevious():
+  playerid = GetPlayerID()
+  if playerid:
+    return SendCommand(RPCString("Player.SetSubtitle", {"playerid":playerid, "subtitle":"previous", "enable":True}))
+
 
 # Addons
 

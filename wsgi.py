@@ -90,31 +90,31 @@ def alexa_check_new_episodes(slots):
 
 def alexa_new_show_inquiry(slots):
   heard_show = str(slots['Show']['value']).lower().translate(None, string.punctuation)
-  
+
   print('Checking if there are new episodes to watch of %s' % (heard_show))
   sys.stdout.flush()
-  
+
   shows = kodi.GetTvShows()
   if 'result' in shows and 'tvshows' in shows['result']:
     shows_array = shows['result']['tvshows']
 
     located = kodi.matchHeard(heard_show, shows_array)
-    
+
     if located:
       episodes_result = kodi.GetUnwatchedEpisodesFromShow(located['tvshowid'])
-      
+
       if not 'episodes' in episodes_result['result']:
         num_of_unwatched = 0
 
       else:
         num_of_unwatched = len(episodes_result['result']['episodes'])
-        
+
       if num_of_unwatched > 0:
         if num_of_unwatched == 1:
           return build_alexa_response("There is one unseen episode of %(real_show)s." % {'real_show': heard_show})
         else:
           return build_alexa_response("There are %(num)d episodes of  %(real_show)s." % {'real_show': heard_show, 'num': num_of_unwatched})
-      
+
       else:
         return build_alexa_response("There are no unseen episodes of %(real_show)s." % {'real_show': heard_show})
     else:
@@ -177,11 +177,11 @@ def alexa_current_playitem_inquiry(slots):
 
     return build_alexa_response('%s%s.' % (speech_output, speech_output_append))
 
-#Pause Kodi
+# Pause Kodi
 def alexa_play_pause(slots):
   print('Playing or Pausing')
   sys.stdout.flush()
-  
+
   kodi.PlayPause()
   answer = ""
   return build_alexa_response(answer)
@@ -190,7 +190,7 @@ def alexa_play_pause(slots):
 def alexa_stop(slots):
   print('Stopping Playback')
   sys.stdout.flush()
-  
+
   kodi.Stop()
   answer = "Playback Stopped"
   return build_alexa_response(answer)
@@ -201,26 +201,26 @@ def alexa_play_artist(slots):
   
   print('Trying to play music by %s' % (heard_artist))
   sys.stdout.flush()
-  
+
   artists = kodi.GetMusicArtists()
   if 'result' in artists and 'artists' in artists['result']:
-    artists_list = artists['result']['artists']    
+    artists_list = artists['result']['artists']
     located = kodi.matchHeard(heard_artist, artists_list, 'artist')
-    
+
     if located:
       songs_result = kodi.GetArtistSongs(located['artistid'])
       songs = songs_result['result']['songs']
-      
+
       kodi.Stop()
       kodi.ClearPlaylist()
-      
+
       songs_array = []
-      
+
       for song in songs:
         songs_array.append(song['songid'])
-        
+
       kodi.AddSongsToPlaylist(songs_array)
-      
+
       kodi.StartPlaylist()
       return build_alexa_response('Playing %s' % (heard_artist))
     else:
@@ -274,19 +274,19 @@ def alexa_play_playlist(slots):
 
 def alexa_party_play(slots):
   songs = kodi.GetAllSongs()
-  
+
   if 'result' in songs and 'songs' in songs['result']:
     kodi.Stop()
     kodi.ClearPlaylist()
-    
+
     songs_array = []
-    
+
     for song in songs['result']['songs']:
       songs_array.append(song['songid'])
-      
+
     random.shuffle(songs_array)
     print songs_array
-    
+
     kodi.AddSongsToPlaylist(songs_array)
     kodi.StartPlaylist()
     return build_alexa_response('Starting Party play')
@@ -296,31 +296,31 @@ def alexa_party_play(slots):
 def alexa_start_over(slots):
   print('Starting current item over')
   sys.stdout.flush()
-  
+
   kodi.PlayStartOver()
   return build_alexa_response('Starting over')
-  
+
 def alexa_skip(slots):
   print('Skipping')
   sys.stdout.flush()
-  
+
   kodi.PlaySkip()
   return build_alexa_response('Skipping item')
-  
+
 def alexa_pageup(slots):
   print('Going PageUp')
   sys.stdout.flush()
-  
+
   kodi.PageUp()
   return build_alexa_response('')
-  
+
 def alexa_pagedown(slots):
   print('Going PageDown')
   sys.stdout.flush()
 
   kodi.PageDown()
   return build_alexa_response('')
-  
+
 def alexa_fullscreen(slots):
   print('Toggling fullscreen')
   sys.stdout.flush()
@@ -337,55 +337,87 @@ def alexa_mute(slots):
   answer = ""
   return build_alexa_response(answer)
 
+def alexa_subtitles_on(slots):
+  print('Enabling subtitles')
+  sys.stdout.flush()
+
+  kodi.SubtitlesOn()
+  answer = ""
+  return build_alexa_response(answer)
+
+def alexa_subtitles_off(slots):
+  print('Disabling subtitles')
+  sys.stdout.flush()
+
+  kodi.SubtitlesOff()
+  answer = ""
+  return build_alexa_response(answer)
+
+def alexa_subtitles_next(slots):
+  print('Switching to next subtitles')
+  sys.stdout.flush()
+
+  kodi.SubtitlesNext()
+  answer = ""
+  return build_alexa_response(answer)
+
+def alexa_subtitles_previous(slots):
+  print('Switching to previous subtitles')
+  sys.stdout.flush()
+
+  kodi.SubtitlesPrevious()
+  answer = ""
+  return build_alexa_response(answer)
+
 def alexa_context_menu(slots):
   print('Opening context menu')
   sys.stdout.flush()
 
   kodi.Menu()
   return build_alexa_response('Opening menu')
-  
+
 def alexa_go_home(slots):
   print('Returning to home')
   sys.stdout.flush()
 
   kodi.Home()
   return build_alexa_response('Going home')
-  
+
 def alexa_select(slots):
   print('Selecting')
   sys.stdout.flush()
 
   kodi.Select()
   return build_alexa_response('')
-  
+
 def alexa_left(slots):
   print('Going left')
   sys.stdout.flush()
 
   kodi.Left()
   return build_alexa_response('')
-  
+
 def alexa_right(slots):
   print('Going right')
   sys.stdout.flush()
 
   kodi.Right()
   return build_alexa_response('')
-  
+
 def alexa_up(slots):
   print('Going up')
   sys.stdout.flush()
 
   kodi.Up()
   return build_alexa_response('')
-  
+
 def alexa_down(slots):
   print('Going down')
   sys.stdout.flush()
 
   kodi.Down()
   return build_alexa_response('')
-  
+
 def alexa_back(slots):
   print('Going back')
   sys.stdout.flush()
@@ -399,7 +431,7 @@ def alexa_prev(slots):
 
   kodi.PlayPrev()
   return build_alexa_response('Playing previous item')
-  
+
 # Handle the Hibernate intent.
 
 def alexa_hibernate(slots):
@@ -487,9 +519,9 @@ def alexa_clean_audio(slots):
 
   #Calling this because for some reason it won't fire until the next command happens?
   kodi.Home()
-  
+
   return build_alexa_response('Cleaning and updating audio library')
-  
+
 def alexa_update_audio(slots):
   print('Updating audio library')
   sys.stdout.flush()
@@ -497,7 +529,7 @@ def alexa_update_audio(slots):
   kodi.UpdateMusic()
 
   return build_alexa_response('Updating audio library')
-  
+
 def alexa_do_search(slots):
   heard_search = ''
 
@@ -528,49 +560,49 @@ def alexa_pick_random_movie(slots):
     kodi.ClearVideoPlaylist()
     kodi.PrepMoviePlaylist(random_movie['movieid'])
     kodi.StartVideoPlaylist()
-    
+
     return build_alexa_response('Playing %s' % (random_movie['label']))
   else:
     return build_alexa_response('Error parsing results.')
-  
+
 def alexa_play_movie(slots):
   heard_movie = str(slots['Movie']['value']).lower().translate(None, string.punctuation)
-  
+
   print('Trying to play the movie %s' % (heard_movie))
   sys.stdout.flush()
-  
+
   movies_response = kodi.GetMovies()
   if 'result' in movies_response and 'movies' in movies_response['result']:
     movies = movies_response['result']['movies']
-    
+
     located = kodi.matchHeard(heard_movie, movies)
-    
+
     if located:
       kodi.ClearVideoPlaylist()
       kodi.PrepMoviePlaylist(located['movieid'])
       kodi.StartVideoPlaylist()
-      
+
       return build_alexa_response('Playing %s' % (heard_movie))
     else:
       return build_alexa_response('Could not find a movie called %s' % (heard_movie))
   else:
     return build_alexa_response('Error parsing results.')
-  
+
 def alexa_pick_random_episode(slots):
   heard_show = str(slots['Show']['value']).lower().translate(None, string.punctuation)
-  
+
   print('Trying to play a random episode of %s' % (heard_show))
   sys.stdout.flush()
-  
+
   shows = kodi.GetTvShows()
   if 'result' in shows and 'tvshows' in shows['result']:
     shows_array = shows['result']['tvshows']
-    
+
     located = kodi.matchHeard(heard_show, shows_array)
-    
+
     if located:
       episodes_result = kodi.GetUnwatchedEpisodesFromShow(located['tvshowid'])
-      
+
       if not 'episodes' in episodes_result['result']:
         episodes_result = kodi.GetEpisodesFromShow(located['tvshowid'])
 
@@ -583,29 +615,29 @@ def alexa_pick_random_episode(slots):
       kodi.PrepEpisodePlayList(random.choice(episodes_array))
 
       kodi.StartVideoPlaylist()
-      
+
       return build_alexa_response('Playing a random episode of %s' % (heard_show))
     else:
       return build_alexa_response('Could not find %s' % (heard_show))
   else:
     return build_alexa_response('Error parsing results.')
 
-  
+
 def alexa_play_episode(slots):
   heard_show = str(slots['Show']['value']).lower().translate(None, string.punctuation)
-  
+
   print('Trying to play a specific episode of %s' % (heard_show))
   sys.stdout.flush()
-  
+
   shows = kodi.GetTvShows()
   if 'result' in shows and 'tvshows' in shows['result']:
     shows_array = shows['result']['tvshows']
-    
+
     heard_season = slots['Season']['value']
     heard_episode = slots['Episode']['value']
-    
+
     located = kodi.matchHeard(heard_show, shows_array)
-    
+
     if located:
       episode_result = kodi.GetSpecificEpisode(located['tvshowid'], heard_season, heard_episode)
 
@@ -613,32 +645,32 @@ def alexa_play_episode(slots):
         kodi.ClearVideoPlaylist()
         kodi.PrepEpisodePlayList(episode_result)
         kodi.StartVideoPlaylist()
-        
+
         return build_alexa_response('Playing season %s episode %s of %s' % (heard_season, heard_episode, heard_show))
-        
+
       else:
         return build_alexa_response('Could not find season %s episode %s of %s' % (heard_season, heard_episode, heard_show))
     else:
       return build_alexa_response('Could not find %s' % (heard_show))
   else:
     return build_alexa_response('Error parsing results.')
-    
+
 
 def alexa_play_next_episode(slots):
   heard_show = str(slots['Show']['value']).lower().translate(None, string.punctuation)
-  
+
   print('Trying to play the next episode of %s' % (heard_show))
   sys.stdout.flush()
-  
+
   shows = kodi.GetTvShows()
   if 'result' in shows and 'tvshows' in shows['result']:
     shows_array = shows['result']['tvshows']
-    
+
     located = kodi.matchHeard(heard_show, shows_array)
-    
+
     if located:
       next_episode = kodi.GetNextUnwatchedEpisode(located['tvshowid'])
-      
+
       if next_episode:
         kodi.ClearVideoPlaylist()
         kodi.PrepEpisodePlayList(next_episode)
@@ -646,25 +678,25 @@ def alexa_play_next_episode(slots):
         kodi.StartVideoPlaylist()
         return build_alexa_response('Playing next episode of %s' % (heard_show))
       else:
-        return build_alexa_response('No new episodes for %s' % (heard_show))      
+        return build_alexa_response('No new episodes for %s' % (heard_show))
     else:
       return build_alexa_response('Could not find %s' % (heard_show))
   else:
     return build_alexa_response('Error parsing results.')
-    
+
 
 def alexa_play_newest_episode(slots):
   heard_show =  str(slots['Show']['value']).lower().translate(None, string.punctuation)
-  
+
   print('Trying to play the newest episode of %s' % (heard_show))
   sys.stdout.flush()
-  
+
   shows = kodi.GetTvShows()
   if 'result' in shows and 'tvshows' in shows['result']:
     shows_array = shows['result']['tvshows']
-    
+
     located = kodi.matchHeard(heard_show, shows_array)
-    
+
     if located:
       episode_result = kodi.GetNewestEpisodeFromShow(located['tvshowid'])
 
@@ -672,9 +704,9 @@ def alexa_play_newest_episode(slots):
         kodi.ClearVideoPlaylist()
         kodi.PrepEpisodePlayList(episode_result)
         kodi.StartVideoPlaylist()
-        
+
         return build_alexa_response('Playing latest episode of %s' % (heard_show))
-        
+
       else:
         return build_alexa_response('Could not find newest episode of %s' % (heard_show))
     else:
@@ -686,13 +718,13 @@ def alexa_play_newest_episode(slots):
 def alexa_continue_show(slots):
   print('Trying to continue watching the last show')
   sys.stdout.flush()
-  
+
   last_show_obj = kodi.GetLastWatchedShow()
-  
+
   try:
     last_show_id = last_show_obj['result']['episodes'][0]['tvshowid']
     next_episode = kodi.GetNextUnwatchedEpisode(last_show_id)
-    
+
     if next_episode:
       kodi.ClearVideoPlaylist()
       kodi.PrepEpisodePlayList(next_episode)
@@ -700,7 +732,7 @@ def alexa_continue_show(slots):
       kodi.StartVideoPlaylist()
       return build_alexa_response('Playing next episode')
     else:
-      return build_alexa_response('No new episodes') 
+      return build_alexa_response('No new episodes')
 
   except:
     return build_alexa_response('Could not continue show')
@@ -710,7 +742,7 @@ def alexa_continue_show(slots):
 def alexa_what_new_episodes(slots):
   print('Trying to get a list of unwatched shows')
   sys.stdout.flush()
-  
+
   # Lists the shows that have had new episodes added to Kodi in the last 5 days
 
   # Get the list of unwatched EPISODES from Kodi
@@ -808,6 +840,10 @@ INTENTS = [
   ['PageDown', alexa_pagedown],
   ['Fullscreen', alexa_fullscreen],
   ['Mute', alexa_mute],
+  ['SubtitlesOn', alexa_subtitles_on],
+  ['SubtitlesOff', alexa_subtitles_off],
+  ['SubtitlesNext', alexa_subtitles_next],
+  ['SubtitlesPrevious', alexa_subtitles_previous],
   ['PlayEpisode', alexa_play_episode],
   ['PlayNextEpisode', alexa_play_next_episode],
   ['ContinueShow', alexa_continue_show],
@@ -847,7 +883,7 @@ def do_alexa(environ, start_response):
       intent_name = alexa_request['intent']['name']
       intent_slots = alexa_request['intent'].get('slots', {})
       response = None
-  
+
       print('Requested intent: %s' % (intent_name))
       sys.stdout.flush()
 

@@ -374,6 +374,12 @@ StartOver start over
 Stop cancel
 Stop shut up
 Stop stop
+SubtitlesOn enable subtitles
+SubtitlesOn turn on subtitles
+SubtitlesOff disable subtitles
+SubtitlesOff turn off subtitles
+SubtitlesNext next subtitles
+SubtitlesPrevious previous subtitles
 Suspend suspend
 Suspend suspend system
 Suspend sleep

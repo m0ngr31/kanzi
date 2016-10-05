@@ -33,6 +33,11 @@ Fullscreen (/toggle) fullscreen
 
 Mute (/toggle) (mute/unmute)
 
+SubtitlesOn (enable/turn on) subtitles
+SubtitlesOff (disable/turn off) subtitles
+SubtitlesNext next subtitles
+SubtitlesPrevious previous subtitles
+
 CleanVideo clean (/video) library
 
 UpdateVideo update (/video) library
