@@ -321,6 +321,14 @@ def alexa_pagedown(slots):
   kodi.PageDown()
   return build_alexa_response('')
   
+def alexa_fullscreen(slots):
+  print('Toggling fullscreen')
+  sys.stdout.flush()
+
+  kodi.ToggleFullscreen()
+  answer = ""
+  return build_alexa_response(answer)
+
 def alexa_context_menu(slots):
   print('Opening context menu')
   sys.stdout.flush()
@@ -790,6 +798,7 @@ INTENTS = [
   ['Menu', alexa_context_menu],
   ['PageUp', alexa_pageup],
   ['PageDown', alexa_pagedown],
+  ['Fullscreen', alexa_fullscreen],
   ['PlayEpisode', alexa_play_episode],
   ['PlayNextEpisode', alexa_play_next_episode],
   ['ContinueShow', alexa_continue_show],

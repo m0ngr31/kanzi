@@ -156,6 +156,10 @@
       "slots": []
     },
     {
+      "intent": "Fullscreen",
+      "slots": []
+    },
+    {
       "intent": "Hibernate",
       "slots": []
     },

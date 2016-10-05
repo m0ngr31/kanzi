@@ -266,6 +266,9 @@ def Right():
 def Back():
   return SendCommand(RPCString("Input.Back"))
 
+def ToggleFullscreen():
+  return SendCommand(RPCString("GUI.SetFullscreen", {"fullscreen":"toggle"}))
+
 
 # Player controls
 

@@ -28,6 +28,8 @@ PageUp navigate page up
 
 PageDown navigate page down
 
+Fullscreen (/toggle) fullscreen
+
 CleanVideo clean (/video) library
 
 UpdateVideo update (/video) library

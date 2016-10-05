@@ -233,6 +233,8 @@ EjectMedia eject cd
 EjectMedia eject disc
 EjectMedia eject dvd
 EjectMedia eject media
+Fullscreen fullscreen
+Fullscreen toggle fullscreen
 Home navigate home
 Hibernate hibernate
 Hibernate hibernate system
