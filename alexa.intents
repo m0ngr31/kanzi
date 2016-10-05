@@ -160,6 +160,10 @@
       "slots": []
     },
     {
+      "intent": "Mute",
+      "slots": []
+    },
+    {
       "intent": "Hibernate",
       "slots": []
     },

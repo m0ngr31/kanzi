@@ -269,6 +269,9 @@ def Back():
 def ToggleFullscreen():
   return SendCommand(RPCString("GUI.SetFullscreen", {"fullscreen":"toggle"}))
 
+def ToggleMute():
+  return SendCommand(RPCString("Application.SetMute", {"mute":"toggle"}))
+
 
 # Player controls
 

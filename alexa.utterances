@@ -290,6 +290,9 @@ ListenToPlaylistRecent shuffle recently added music
 ListenToPlaylistRecent shuffle recently added playlist
 ListenToPlaylistRecent shuffle recently added songs
 Menu open menu
+Mute mute
+Mute unmute
+Mute toggle mute
 NewShowInquiry if there are any episodes of {Show}
 NewShowInquiry if there are any new episodes of {Show}
 NewShowInquiry if there are any {Show}

@@ -30,6 +30,8 @@ PageDown navigate page down
 
 Fullscreen (/toggle) fullscreen
 
+Mute (/toggle) (mute/unmute)
+
 CleanVideo clean (/video) library
 
 UpdateVideo update (/video) library
