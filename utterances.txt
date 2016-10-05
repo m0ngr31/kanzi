@@ -87,3 +87,5 @@ Shutdown shut down (/system)
 Suspend (suspend/sleep) (/system)
 Suspend put system to sleep
 Suspend go to sleep
+
+EjectMedia eject (/media/disc/audio disc/bluray/bluray disc/cd/dvd)

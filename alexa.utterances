@@ -225,6 +225,14 @@ DoSearch search for {Artist}
 DoSearch search for {Movie}
 DoSearch search for {Show}
 Down navigate down
+EjectMedia eject
+EjectMedia eject audio disc
+EjectMedia eject bluray
+EjectMedia eject bluray disc
+EjectMedia eject cd
+EjectMedia eject disc
+EjectMedia eject dvd
+EjectMedia eject media
 Home navigate home
 Hibernate hibernate
 Hibernate hibernate system

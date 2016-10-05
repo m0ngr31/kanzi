@@ -172,6 +172,10 @@
       "slots": []
     },
     {
+      "intent": "EjectMedia",
+      "slots": []
+    },
+    {
       "intent": "ContinueShow",
       "slots": []
     },

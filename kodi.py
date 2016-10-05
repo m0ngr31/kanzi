@@ -438,7 +438,7 @@ def GetUnwatchedEpisodes(max=90):
   return answer
 
 
-# Power commands
+# System commands
 
 def ApplicationQuit():
   return SendCommand(RPCString("Application.Quit"))
@@ -454,6 +454,9 @@ def SystemShutdown():
 
 def SystemSuspend():
   return SendCommand(RPCString("System.Suspend"))
+
+def SystemEjectMedia():
+  return SendCommand(RPCString("System.EjectOpticalDrive"))
 
 
 # Misc helpers

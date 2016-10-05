@@ -424,6 +424,16 @@ def alexa_suspend(slots):
   answer = "Suspending system"
   return build_alexa_response(answer)
 
+# Handle the EjectMedia intent.
+
+def alexa_ejectmedia(slots):
+  print('Trying to eject disc')
+  sys.stdout.flush()
+
+  kodi.SystemEjectMedia()
+  answer = "Ejecting"
+  return build_alexa_response(answer)
+
 def alexa_clean_video(slots):
   print('Cleaning video library')
   sys.stdout.flush()
@@ -793,7 +803,8 @@ INTENTS = [
   ['Hibernate', alexa_hibernate],
   ['Reboot', alexa_reboot],
   ['Shutdown', alexa_shutdown],
-  ['Suspend', alexa_suspend]
+  ['Suspend', alexa_suspend],
+  ['EjectMedia', alexa_ejectmedia]
 ]
 
 def do_alexa(environ, start_response):
