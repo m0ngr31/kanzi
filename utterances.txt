@@ -3,8 +3,9 @@ PlayPause (play/pause/resume)
 Stop (stop/cancel/shut up)
 
 Skip (skip/next) (/song)
+Skip (listen to/play) next (/song)
 
-Prev previous (/song)
+Prev (/listen to/play) previous (/song)
 
 StartOver (replay/start over)
 
@@ -40,7 +41,7 @@ CleanAudio clean (audio/music) library
 
 UpdateAudio update (audio/music) library
 
-ListenToArtist (listen to/shuffle) (/music by/artist) {Artist}
+ListenToArtist (play/listen to/shuffle) (/music by/artist) {Artist}
 
 ListenToPlaylist (play/listen to/shuffle) playlist {Playlist}
 ListenToPlaylist (play/listen to/shuffle) {Playlist} playlist
