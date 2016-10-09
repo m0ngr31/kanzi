@@ -36,6 +36,7 @@ import random
 import re
 import string
 import sys
+import pycountry
 from yaep import populate_env
 
 # These are words that we ignore when doing a non-exact match on show names
@@ -522,6 +523,46 @@ def GetActivePlayItem():
   if playerid is not None:
     data = SendCommand(RPCString("Player.GetItem", {"playerid":playerid, "properties":["title", "album", "artist", "season", "episode", "showtitle", "tvshowid", "description"]}))
     return data['result']['item']
+
+def GetActivePlayProperties():
+  playerid = GetPlayerID()
+  if playerid is not None:
+    data = SendCommand(RPCString("Player.GetProperties", {"playerid":playerid, "properties":["currentaudiostream", "currentsubtitle", "shuffled", "repeat"]}))
+    return data['result']
+
+# Returns current subtitles as a speakable string
+
+def GetCurrentSubtitles():
+  subs = ""
+  curprops = GetActivePlayProperties()
+  #print curprops
+  if curprops is not None:
+    try:
+      lang = curprops['currentsubtitle']['language']
+      subs = pycountry.languages.get(bibliographic=lang).name
+      name = curprops['currentsubtitle']['name']
+      if name:
+        subs += " " + name
+    except:
+      pass
+  return subs
+
+# Returns current audio stream as a speakable string
+
+def GetCurrentAudioStream():
+  stream = ""
+  curprops = GetActivePlayProperties()
+  #print curprops
+  if curprops is not None:
+    try:
+      lang = curprops['currentaudiostream']['language']
+      stream = pycountry.languages.get(bibliographic=lang).name
+      name = curprops['currentaudiostream']['name']
+      if name:
+        stream += " " + name
+    except:
+      pass
+  return stream
 
 # Returns information useful for building a progress bar to show a video's play time
 

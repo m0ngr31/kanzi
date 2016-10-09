@@ -342,7 +342,7 @@ def alexa_subtitles_on(slots):
   sys.stdout.flush()
 
   kodi.SubtitlesOn()
-  answer = ""
+  answer = kodi.GetCurrentSubtitles()
   return build_alexa_response(answer)
 
 def alexa_subtitles_off(slots):
@@ -350,7 +350,7 @@ def alexa_subtitles_off(slots):
   sys.stdout.flush()
 
   kodi.SubtitlesOff()
-  answer = ""
+  answer = kodi.GetCurrentSubtitles()
   return build_alexa_response(answer)
 
 def alexa_subtitles_next(slots):
@@ -358,7 +358,7 @@ def alexa_subtitles_next(slots):
   sys.stdout.flush()
 
   kodi.SubtitlesNext()
-  answer = ""
+  answer = kodi.GetCurrentSubtitles()
   return build_alexa_response(answer)
 
 def alexa_subtitles_previous(slots):
@@ -366,7 +366,7 @@ def alexa_subtitles_previous(slots):
   sys.stdout.flush()
 
   kodi.SubtitlesPrevious()
-  answer = ""
+  answer = kodi.GetCurrentSubtitles()
   return build_alexa_response(answer)
 
 def alexa_audiostream_next(slots):
@@ -374,7 +374,7 @@ def alexa_audiostream_next(slots):
   sys.stdout.flush()
 
   kodi.AudioStreamNext()
-  answer = ""
+  answer = kodi.GetCurrentAudioStream()
   return build_alexa_response(answer)
 
 def alexa_audiostream_previous(slots):
@@ -382,7 +382,7 @@ def alexa_audiostream_previous(slots):
   sys.stdout.flush()
 
   kodi.AudioStreamPrevious()
-  answer = ""
+  answer = kodi.GetCurrentAudioStream()
   return build_alexa_response(answer)
 
 def alexa_context_menu(slots):
