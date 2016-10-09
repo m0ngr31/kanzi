@@ -35,11 +35,11 @@ Mute (/toggle) (mute/unmute)
 
 SubtitlesOn (enable/turn on) subtitles
 SubtitlesOff (disable/turn off) subtitles
-SubtitlesNext next (subtitles/subtitle language)
+SubtitlesNext (next/switch) (subtitles/subtitle language)
 SubtitlesPrevious previous (subtitles/subtitle language)
 
-AudioStreamNext next audio (/stream)
-AudioStreamNext next (/audio) language
+AudioStreamNext (next/switch) audio (/stream)
+AudioStreamNext (next/switch) (/audio) language
 AudioStreamPrevious previous audio (/stream)
 AudioStreamPrevious previous (/audio) language
 
