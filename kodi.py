@@ -326,6 +326,16 @@ def SubtitlesPrevious():
   if playerid:
     return SendCommand(RPCString("Player.SetSubtitle", {"playerid":playerid, "subtitle":"previous", "enable":True}))
 
+def AudioStreamNext():
+  playerid = GetPlayerID()
+  if playerid:
+    return SendCommand(RPCString("Player.SetAudioStream", {"playerid":playerid, "stream":"next"}))
+
+def AudioStreamPrevious():
+  playerid = GetPlayerID()
+  if playerid:
+    return SendCommand(RPCString("Player.SetAudioStream", {"playerid":playerid, "stream":"previous"}))
+
 
 # Addons
 

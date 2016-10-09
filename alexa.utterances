@@ -1,3 +1,11 @@
+AudioStreamNext next audio
+AudioStreamNext next audio language
+AudioStreamNext next audio stream
+AudioStreamNext next language
+AudioStreamPrevious previous audio
+AudioStreamPrevious previous audio language
+AudioStreamPrevious previous audio stream
+AudioStreamPrevious previous language
 Back go back
 Back navigate
 CheckNewShows are there any new shows
@@ -379,7 +387,9 @@ SubtitlesOn turn on subtitles
 SubtitlesOff disable subtitles
 SubtitlesOff turn off subtitles
 SubtitlesNext next subtitles
+SubtitlesNext next subtitle language
 SubtitlesPrevious previous subtitles
+SubtitlesPrevious previous subtitle language
 Suspend suspend
 Suspend suspend system
 Suspend sleep

@@ -35,8 +35,13 @@ Mute (/toggle) (mute/unmute)
 
 SubtitlesOn (enable/turn on) subtitles
 SubtitlesOff (disable/turn off) subtitles
-SubtitlesNext next subtitles
-SubtitlesPrevious previous subtitles
+SubtitlesNext next (subtitles/subtitle language)
+SubtitlesPrevious previous (subtitles/subtitle language)
+
+AudioStreamNext next audio (/stream)
+AudioStreamNext next (/audio) language
+AudioStreamPrevious previous audio (/stream)
+AudioStreamPrevious previous (/audio) language
 
 CleanVideo clean (/video) library
 

@@ -369,6 +369,22 @@ def alexa_subtitles_previous(slots):
   answer = ""
   return build_alexa_response(answer)
 
+def alexa_audiostream_next(slots):
+  print('Switching to next audio stream')
+  sys.stdout.flush()
+
+  kodi.AudioStreamNext()
+  answer = ""
+  return build_alexa_response(answer)
+
+def alexa_audiostream_previous(slots):
+  print('Switching to previous audio stream')
+  sys.stdout.flush()
+
+  kodi.AudioStreamPrevious()
+  answer = ""
+  return build_alexa_response(answer)
+
 def alexa_context_menu(slots):
   print('Opening context menu')
   sys.stdout.flush()
@@ -844,6 +860,8 @@ INTENTS = [
   ['SubtitlesOff', alexa_subtitles_off],
   ['SubtitlesNext', alexa_subtitles_next],
   ['SubtitlesPrevious', alexa_subtitles_previous],
+  ['AudioStreamNext', alexa_audiostream_next],
+  ['AudioStreamPrevious', alexa_audiostream_previous],
   ['PlayEpisode', alexa_play_episode],
   ['PlayNextEpisode', alexa_play_next_episode],
   ['ContinueShow', alexa_continue_show],

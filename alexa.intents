@@ -180,6 +180,14 @@
       "slots": []
     },
     {
+      "intent": "AudioStreamNext",
+      "slots": []
+    },
+    {
+      "intent": "AudioStreamPrevious",
+      "slots": []
+    },
+    {
       "intent": "Hibernate",
       "slots": []
     },
