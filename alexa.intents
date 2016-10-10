@@ -188,6 +188,78 @@
       "slots": []
     },
     {
+      "intent": "PlayerMoveUp",
+      "slots": []
+    },
+    {
+      "intent": "PlayerMoveDown",
+      "slots": []
+    },
+    {
+      "intent": "PlayerMoveLeft",
+      "slots": []
+    },
+    {
+      "intent": "PlayerMoveRight",
+      "slots": []
+    },
+    {
+      "intent": "PlayerRotateClockwise",
+      "slots": []
+    },
+    {
+      "intent": "PlayerRotateCounterClockwise",
+      "slots": []
+    },
+    {
+      "intent": "PlayerZoomHold",
+      "slots": []
+    },
+    {
+      "intent": "PlayerZoomIn",
+      "slots": []
+    },
+    {
+      "intent": "PlayerZoomInMoveUp",
+      "slots": []
+    },
+    {
+      "intent": "PlayerZoomInMoveDown",
+      "slots": []
+    },
+    {
+      "intent": "PlayerZoomInMoveLeft",
+      "slots": []
+    },
+    {
+      "intent": "PlayerZoomInMoveRight",
+      "slots": []
+    },
+    {
+      "intent": "PlayerZoomOut",
+      "slots": []
+    },
+    {
+      "intent": "PlayerZoomOutMoveUp",
+      "slots": []
+    },
+    {
+      "intent": "PlayerZoomOutMoveDown",
+      "slots": []
+    },
+    {
+      "intent": "PlayerZoomOutMoveLeft",
+      "slots": []
+    },
+    {
+      "intent": "PlayerZoomOutMoveRight",
+      "slots": []
+    },
+    {
+      "intent": "PlayerZoomReset",
+      "slots": []
+    },
+    {
       "intent": "Hibernate",
       "slots": []
     },

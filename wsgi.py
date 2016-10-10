@@ -385,6 +385,158 @@ def alexa_audiostream_previous(slots):
   answer = kodi.GetCurrentAudioStream()
   return build_alexa_response(answer)
 
+def alexa_player_move_up(slots):
+  print('Player move up')
+  sys.stdout.flush()
+
+  kodi.PlayerMoveUp()
+  answer = ""
+  return build_alexa_response(answer)
+
+def alexa_player_move_down(slots):
+  print('Player move down')
+  sys.stdout.flush()
+
+  kodi.PlayerMoveDown()
+  answer = ""
+  return build_alexa_response(answer)
+
+def alexa_player_move_left(slots):
+  print('Player move left')
+  sys.stdout.flush()
+
+  kodi.PlayerMoveLeft()
+  answer = ""
+  return build_alexa_response(answer)
+
+def alexa_player_move_right(slots):
+  print('Player move right')
+  sys.stdout.flush()
+
+  kodi.PlayerMoveRight()
+  answer = ""
+  return build_alexa_response(answer)
+
+def alexa_player_rotate_clockwise(slots):
+  print('Player rotate clockwise')
+  sys.stdout.flush()
+
+  kodi.PlayerRotateClockwise()
+  answer = ""
+  return build_alexa_response(answer)
+
+def alexa_player_rotate_counterclockwise(slots):
+  print('Player rotate counter clockwise')
+  sys.stdout.flush()
+
+  kodi.PlayerRotateCounterClockwise()
+  answer = ""
+  return build_alexa_response(answer)
+
+def alexa_player_zoom_hold(slots):
+  print('Taking screenshot')
+  sys.stdout.flush()
+
+  #kodi.Screenshot()
+  answer = ""
+  return build_alexa_response(answer)
+
+def alexa_player_zoom_in(slots):
+  print('Player zoom in')
+  sys.stdout.flush()
+
+  kodi.PlayerZoomIn()
+  answer = ""
+  return build_alexa_response(answer)
+
+def alexa_player_zoom_in_move_up(slots):
+  print('Player zoom in and move up')
+  sys.stdout.flush()
+
+  kodi.PlayerZoomIn()
+  kodi.PlayerMoveUp()
+  answer = ""
+  return build_alexa_response(answer)
+
+def alexa_player_zoom_in_move_down(slots):
+  print('Player zoom in and move down')
+  sys.stdout.flush()
+
+  kodi.PlayerZoomIn()
+  kodi.PlayerMoveDown()
+  answer = ""
+  return build_alexa_response(answer)
+
+def alexa_player_zoom_in_move_left(slots):
+  print('Player zoom in and move left')
+  sys.stdout.flush()
+
+  kodi.PlayerZoomIn()
+  kodi.PlayerMoveLeft()
+  answer = ""
+  return build_alexa_response(answer)
+
+def alexa_player_zoom_in_move_right(slots):
+  print('Player zoom in and move right')
+  sys.stdout.flush()
+
+  kodi.PlayerZoomIn()
+  kodi.PlayerMoveRight()
+  answer = ""
+  return build_alexa_response(answer)
+
+def alexa_player_zoom_out(slots):
+  print('Player zoom out')
+  sys.stdout.flush()
+
+  kodi.PlayerZoomOut()
+  answer = ""
+  return build_alexa_response(answer)
+
+def alexa_player_zoom_out_move_up(slots):
+  print('Player zoom out and move up')
+  sys.stdout.flush()
+
+  kodi.PlayerZoomOut()
+  kodi.PlayerMoveUp()
+  answer = ""
+  return build_alexa_response(answer)
+
+def alexa_player_zoom_out_move_down(slots):
+  print('Player zoom out and move down')
+  sys.stdout.flush()
+
+  kodi.PlayerZoomOut()
+  kodi.PlayerMoveDown()
+  answer = ""
+  return build_alexa_response(answer)
+
+def alexa_player_zoom_out_move_left(slots):
+  print('Player zoom out and move left')
+  sys.stdout.flush()
+
+  kodi.PlayerZoomOut()
+  kodi.PlayerMoveLeft()
+  answer = ""
+  return build_alexa_response(answer)
+
+def alexa_player_zoom_out_move_right(slots):
+  print('Player zoom out and move right')
+  sys.stdout.flush()
+
+  kodi.PlayerZoomOut()
+  kodi.PlayerMoveRight()
+  answer = ""
+  return build_alexa_response(answer)
+
+def alexa_player_zoom_reset(slots):
+  print('Player zoom normal')
+  sys.stdout.flush()
+
+  kodi.PlayerZoom(1)
+  answer = ""
+  return build_alexa_response(answer)
+
 def alexa_context_menu(slots):
   print('Opening context menu')
   sys.stdout.flush()
@@ -862,6 +1014,24 @@ INTENTS = [
   ['SubtitlesPrevious', alexa_subtitles_previous],
   ['AudioStreamNext', alexa_audiostream_next],
   ['AudioStreamPrevious', alexa_audiostream_previous],
+  ['PlayerMoveUp', alexa_player_move_up],
+  ['PlayerMoveDown', alexa_player_move_down],
+  ['PlayerMoveLeft', alexa_player_move_left],
+  ['PlayerMoveRight', alexa_player_move_right],
+  ['PlayerRotateClockwise', alexa_player_rotate_clockwise],
+  ['PlayerRotateCounterClockwise', alexa_player_rotate_counterclockwise],
+  ['PlayerZoomHold', alexa_player_zoom_hold],
+  ['PlayerZoomIn', alexa_player_zoom_in],
+  ['PlayerZoomInMoveUp', alexa_player_zoom_in_move_up],
+  ['PlayerZoomInMoveDown', alexa_player_zoom_in_move_down],
+  ['PlayerZoomInMoveLeft', alexa_player_zoom_in_move_left],
+  ['PlayerZoomInMoveRight', alexa_player_zoom_in_move_right],
+  ['PlayerZoomOut', alexa_player_zoom_out],
+  ['PlayerZoomOutMoveUp', alexa_player_zoom_out_move_up],
+  ['PlayerZoomOutMoveDown', alexa_player_zoom_out_move_down],
+  ['PlayerZoomOutMoveLeft', alexa_player_zoom_out_move_left],
+  ['PlayerZoomOutMoveRight', alexa_player_zoom_out_move_right],
+  ['PlayerZoomReset', alexa_player_zoom_reset],
   ['PlayEpisode', alexa_play_episode],
   ['PlayNextEpisode', alexa_play_next_episode],
   ['ContinueShow', alexa_continue_show],

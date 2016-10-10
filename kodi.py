@@ -308,34 +308,79 @@ def Replay():
     return SendCommand(RPCString("Player.Seek", {"playerid":playerid, "value":"smallbackward"}))
 
 def SubtitlesOn():
-  playerid = GetPlayerID()
+  playerid = GetVideoPlayerID()
   if playerid:
     return SendCommand(RPCString("Player.SetSubtitle", {"playerid":playerid, "subtitle":"on"}))
 
 def SubtitlesOff():
-  playerid = GetPlayerID()
+  playerid = GetVideoPlayerID()
   if playerid:
     return SendCommand(RPCString("Player.SetSubtitle", {"playerid":playerid, "subtitle":"off"}))
 
 def SubtitlesNext():
-  playerid = GetPlayerID()
+  playerid = GetVideoPlayerID()
   if playerid:
     return SendCommand(RPCString("Player.SetSubtitle", {"playerid":playerid, "subtitle":"next", "enable":True}))
 
 def SubtitlesPrevious():
-  playerid = GetPlayerID()
+  playerid = GetVideoPlayerID()
   if playerid:
     return SendCommand(RPCString("Player.SetSubtitle", {"playerid":playerid, "subtitle":"previous", "enable":True}))
 
 def AudioStreamNext():
-  playerid = GetPlayerID()
+  playerid = GetVideoPlayerID()
   if playerid:
     return SendCommand(RPCString("Player.SetAudioStream", {"playerid":playerid, "stream":"next"}))
 
 def AudioStreamPrevious():
-  playerid = GetPlayerID()
+  playerid = GetVideoPlayerID()
   if playerid:
     return SendCommand(RPCString("Player.SetAudioStream", {"playerid":playerid, "stream":"previous"}))
+
+def PlayerMoveUp():
+  playerid = GetPicturePlayerID()
+  if playerid:
+    return SendCommand(RPCString("Player.Move", {"playerid":playerid, "direction":"up"}))
+
+def PlayerMoveDown():
+  playerid = GetPicturePlayerID()
+  if playerid:
+    return SendCommand(RPCString("Player.Move", {"playerid":playerid, "direction":"down"}))
+
+def PlayerMoveLeft():
+  playerid = GetPicturePlayerID()
+  if playerid:
+    return SendCommand(RPCString("Player.Move", {"playerid":playerid, "direction":"left"}))
+
+def PlayerMoveRight():
+  playerid = GetPicturePlayerID()
+  if playerid:
+    return SendCommand(RPCString("Player.Move", {"playerid":playerid, "direction":"right"}))
+
+def PlayerZoom(lvl=0):
+  playerid = GetPicturePlayerID()
+  if playerid and lvl > 0 and lvl < 11:
+    return SendCommand(RPCString("Player.Zoom", {"playerid":playerid, "zoom":lvl}))
+
+def PlayerZoomIn():
+  playerid = GetPicturePlayerID()
+  if playerid:
+    return SendCommand(RPCString("Player.Zoom", {"playerid":playerid, "zoom":"in"}))
+
+def PlayerZoomOut():
+  playerid = GetPicturePlayerID()
+  if playerid:
+    return SendCommand(RPCString("Player.Zoom", {"playerid":playerid, "zoom":"out"}))
+
+def PlayerRotateClockwise():
+  playerid = GetPicturePlayerID()
+  if playerid:
+    return SendCommand(RPCString("Player.Rotate", {"playerid":playerid, "value":"clockwise"}))
+
+def PlayerRotateCounterClockwise():
+  playerid = GetPicturePlayerID()
+  if playerid:
+    return SendCommand(RPCString("Player.Rotate", {"playerid":playerid, "value":"counterclockwise"}))
 
 
 # Addons
@@ -504,10 +549,42 @@ def GetShowDetails(show=0):
   data = SendCommand(RPCString("VideoLibrary.GetTVShowDetails", {'tvshowid':show, 'properties':['art']}))
   return data['result']['tvshowdetails']
 
-# Get the first active Audio or Video player, since all we deal with
-# currently.
+# Get the first active player.
 
-def GetPlayerID(playertype=['audio', 'video']):
+def GetPlayerID(playertype=['audio', 'video', 'picture']):
+  info = SendCommand(RPCString("Player.GetActivePlayers"))
+  result = info.get("result", [])
+  if len(result) > 0:
+    for curitem in result:
+      if curitem.get("type") in playertype:
+        return curitem.get("playerid")
+  return None
+
+# Get the first active Video player.
+
+def GetVideoPlayerID(playertype=['video']):
+  info = SendCommand(RPCString("Player.GetActivePlayers"))
+  result = info.get("result", [])
+  if len(result) > 0:
+    for curitem in result:
+      if curitem.get("type") in playertype:
+        return curitem.get("playerid")
+  return None
+
+# Get the first active Audio player.
+
+def GetVideoPlayerID(playertype=['audio']):
+  info = SendCommand(RPCString("Player.GetActivePlayers"))
+  result = info.get("result", [])
+  if len(result) > 0:
+    for curitem in result:
+      if curitem.get("type") in playertype:
+        return curitem.get("playerid")
+  return None
+
+# Get the first active Picture player.
+
+def GetPicturePlayerID(playertype=['picture']):
   info = SendCommand(RPCString("Player.GetActivePlayers"))
   result = info.get("result", [])
   if len(result) > 0:
@@ -522,12 +599,14 @@ def GetActivePlayItem():
   playerid = GetPlayerID()
   if playerid is not None:
     data = SendCommand(RPCString("Player.GetItem", {"playerid":playerid, "properties":["title", "album", "artist", "season", "episode", "showtitle", "tvshowid", "description"]}))
+    #print data['result']['item']
     return data['result']['item']
 
 def GetActivePlayProperties():
   playerid = GetPlayerID()
   if playerid is not None:
-    data = SendCommand(RPCString("Player.GetProperties", {"playerid":playerid, "properties":["currentaudiostream", "currentsubtitle", "shuffled", "repeat"]}))
+    data = SendCommand(RPCString("Player.GetProperties", {"playerid":playerid, "properties":["currentaudiostream", "currentsubtitle", "canshuffle", "shuffled", "canrepeat", "repeat", "canzoom", "canrotate", "canmove"]}))
+    #print data['result']
     return data['result']
 
 # Returns current subtitles as a speakable string
@@ -535,7 +614,6 @@ def GetActivePlayProperties():
 def GetCurrentSubtitles():
   subs = ""
   curprops = GetActivePlayProperties()
-  #print curprops
   if curprops is not None:
     try:
       lang = curprops['currentsubtitle']['language']
@@ -552,7 +630,6 @@ def GetCurrentSubtitles():
 def GetCurrentAudioStream():
   stream = ""
   curprops = GetActivePlayProperties()
-  #print curprops
   if curprops is not None:
     try:
       lang = curprops['currentaudiostream']['language']
@@ -567,7 +644,7 @@ def GetCurrentAudioStream():
 # Returns information useful for building a progress bar to show a video's play time
 
 def GetVideoPlayStatus():
-  playerid = GetPlayerID()
+  playerid = GetVideoPlayerID()
   if playerid:
     data = SendCommand(RPCString("Player.GetProperties", {"playerid":playerid, "properties":["percentage","speed","time","totaltime"]}))
     if 'result' in data:
