@@ -495,6 +495,34 @@ PlayNextEpisode watch the next episode of {Show}
 PlayPause pause
 PlayPause play
 PlayPause resume
+StepForward step forward
+StepForward forward step
+StepForward step forwards
+StepForward forwards step
+StepForward small forwards step
+StepForward small step forwards
+BigStepForward big step forward
+BigStepForward big forward step
+BigStepForward big step forwards
+BigStepForward big forwards step
+BigStepForward large step forward
+BigStepForward large forward step
+BigStepForward large step forwards
+BigStepForward large forwards step
+StepBackward step backward
+StepBackward backward step
+StepBackward step backwards
+StepBackward backwards step
+StepBackward small backwards step
+StepBackward small step backwards
+BigStepBackward big step backward
+BigStepBackward big backward step
+BigStepBackward big step backwards
+BigStepBackward big backwards step
+BigStepBackward large step backward
+BigStepBackward large backward step
+BigStepBackward large step backwards
+BigStepBackward large backwards step
 PlayRandomEpisode play a episode of {Show}
 PlayRandomEpisode play a random episode of {Show}
 PlayRandomEpisode play episode of {Show}
