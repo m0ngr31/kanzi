@@ -92,6 +92,7 @@ def SendCommand(command):
   print KODI
   
   url = "http://%s:%d/jsonrpc" % (KODI, PORT)
+
   try:
     r = requests.post(url, data=command, auth=(USER, PASS))
   except:
@@ -301,6 +302,26 @@ def Stop():
   playerid = GetPlayerID()
   if playerid is not None:
     return SendCommand(RPCString("Player.Stop", {"playerid":playerid}))
+
+def StepForward():
+  playerid = GetPlayerID()
+  if playerid:
+    return SendCommand(RPCString("Player.Seek", {"playerid":playerid, "value":"smallforward"}))
+
+def StepBackward():
+  playerid = GetPlayerID()
+  if playerid:
+    return SendCommand(RPCString("Player.Seek", {"playerid":playerid, "value":"smallbackward"}))
+
+def BigStepForward():
+  playerid = GetPlayerID()
+  if playerid:
+    return SendCommand(RPCString("Player.Seek", {"playerid":playerid, "value":"bigforward"}))
+
+def BigStepBackward():
+  playerid = GetPlayerID()
+  if playerid:
+    return SendCommand(RPCString("Player.Seek", {"playerid":playerid, "value":"bigbackward"}))
 
 def Replay():
   playerid = GetPlayerID()
