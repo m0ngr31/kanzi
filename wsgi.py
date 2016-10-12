@@ -51,7 +51,44 @@ import kodi
 INI_FILE = os.path.join(os.path.dirname(__file__), "wsgi.ini")
 
 
-# This utility function constructs the required JSON for a full Alexa Skills Kit response
+# These utility functions construct the required JSON for a full Alexa Skills Kit response
+
+def build_response(session_attributes, speechlet_response):
+  return {
+    'version': '1.0',
+    'sessionAttributes': session_attributes,
+    'response': speechlet_response
+  }
+
+def build_speechlet_response(title, output, reprompt_text, should_end_session):
+  response = {}
+  if output:
+    response['outputSpeech'] = {
+      'type': 'PlainText',
+      'text': output
+    }
+    if title:
+      response['card'] = {
+        'type': 'Simple',
+        'title': title,
+        'content': output
+      }
+  if reprompt_text:
+    response['reprompt'] = {
+      'outputSpeech': {
+        'type': 'PlainText',
+        'text': reprompt_text
+      }
+    }
+  response['shouldEndSession'] = should_end_session
+
+  return response
+
+def build_alexa_response(speech = None, session_attrs = None, card_title = None, reprompt_text = None, end_session = True):
+  return build_response(session_attrs, build_speechlet_response(card_title, speech, reprompt_text, end_session))
+
+
+# Utility function to sanitize a TV Show name (e.g., strip out symbols)
 
 RE_SHOW_WITH_PARAM = re.compile(r"(.*) \([^)]+\)$")
 
@@ -60,9 +97,6 @@ def sanitize_show(show_name):
   if m:
     return m.group(1)
   return show_name
-
-def build_alexa_response(speech = None, session_attrs = None, card = None, reprompt = None, end_session = True):
-  return build_response(session_attrs, build_speechlet_response("", speech, "", end_session))
 
 
 # Handle the CheckNewShows intent
@@ -1100,74 +1134,6 @@ INTENTS = [
   ['EjectMedia', alexa_ejectmedia]
 ]
 
-def do_alexa(environ, start_response):
-  # Alexa requests come as POST messages with a request body
-  try:
-    length = int(environ.get('CONTENT_LENGTH', '0'))
-  except ValueError:
-    length = 0
-
-  if length > 0:
-    # Get the request body and parse out the Alexa JSON request
-    body = environ['wsgi.input'].read(length)
-    alexa_msg = json.loads(body)
-    alexa_request = alexa_msg['request']
-
-    # verify the request is coming from Amazon and includes the correct
-    # Application ID and a valid signature.
-    try:
-      if int(environ.get('KODI_VERIFY_CERT', '0')):
-        print "Verifying certificate is valid..."
-        cert_url = environ['HTTP_SIGNATURECERTCHAINURL']
-        signature = environ['HTTP_SIGNATURE']
-        cert = verifier.load_certificate(cert_url)
-        verifier.verify_signature(cert, signature, body)
-        timestamp = aniso8601.parse_datetime(alexa_request['timestamp'])
-        verifier.verify_timestamp(timestamp)
-      if environ.get('KODI_APPID', ''):
-        print "Verifying application ID..."
-        verifier.verify_application_id(alexa_msg['session']['application']['applicationId'], environ['KODI_APPID'])
-    except verifier.VerificationError as e:
-      print e.args[0]
-      raise
-
-    if alexa_request['type'] == 'LaunchRequest':
-      # This is the type when you just say "Open <app>"
-      response = prepare_help_message()
-
-    elif alexa_request['type'] == 'IntentRequest':
-      # Get the intent being invoked and any slot values sent with it
-      intent_name = alexa_request['intent']['name']
-      intent_slots = alexa_request['intent'].get('slots', {})
-      response = None
-
-      print('Requested intent: %s' % (intent_name))
-      sys.stdout.flush()
-
-      # Run the function associated with the intent
-      for one_intent in INTENTS:
-        if intent_name == one_intent[0]:
-          response = one_intent[1](intent_slots)
-          break
-      if not response:
-        # This should not happen if your Intent Schema and your INTENTS list above are in sync.
-        response = prepare_help_message()
-    else:
-      response = build_alexa_response("I received an unexpected request type.")
-    start_response('200 OK', [('Content-Type', 'application/json'), ('Content-Length', str(len(json.dumps(response))))])
-    return [json.dumps(response)]
-  else:
-    # This should never happen with a real Echo request but could happen
-    # if your URL is accessed by a browser or otherwise.
-    start_response('502 No content', [])
-    return ['']
-
-# Map the URL to the WSGI function that should handle it.
-
-HANDLERS = [
-  ['/', do_alexa],
-  ['', do_alexa],
-]
 
 # The main entry point for lambda
 def lambda_handler(event, context):
@@ -1209,6 +1175,65 @@ def on_intent(intent_request, session):
   if not response:
     return prepare_help_message()
 
+
+def wsgi_main_handler(environ, start_response):
+  # Alexa requests come as POST messages with a request body
+  try:
+    length = int(environ.get('CONTENT_LENGTH', '0'))
+  except ValueError:
+    length = 0
+
+  if length > 0:
+    # Get the request body and parse out the Alexa JSON request
+    body = environ['wsgi.input'].read(length)
+    alexa_msg = json.loads(body)
+    alexa_session = alexa_msg['session']
+    alexa_request = alexa_msg['request']
+
+    # verify the request is coming from Amazon and includes the correct
+    # Application ID and a valid signature.
+    try:
+      if int(environ.get('KODI_VERIFY_CERT', '0')):
+        print "Verifying certificate is valid..."
+        cert_url = environ['HTTP_SIGNATURECERTCHAINURL']
+        signature = environ['HTTP_SIGNATURE']
+        cert = verifier.load_certificate(cert_url)
+        verifier.verify_signature(cert, signature, body)
+        timestamp = aniso8601.parse_datetime(alexa_request['timestamp'])
+        verifier.verify_timestamp(timestamp)
+      if environ.get('KODI_APPID', ''):
+        print "Verifying application ID..."
+        verifier.verify_application_id(alexa_msg['session']['application']['applicationId'], environ['KODI_APPID'])
+    except verifier.VerificationError as e:
+      print e.args[0]
+      raise
+
+    if alexa_session['new']:
+      on_session_started({'requestId': alexa_request['requestId']}, alexa_session)
+
+    if alexa_request['type'] == 'LaunchRequest':
+      # This is the type when you just say "Open <app>"
+      response = prepare_help_message()
+
+    elif alexa_request['type'] == 'IntentRequest':
+      response = on_intent(alexa_request, alexa_session)
+
+    else:
+      response = build_alexa_response("I received an unexpected request type.")
+
+    start_response('200 OK', [('Content-Type', 'application/json'), ('Content-Length', str(len(json.dumps(response))))])
+    return [json.dumps(response)]
+  else:
+    # This should never happen with a real Echo request but could happen
+    # if your URL is accessed by a browser or otherwise.
+    start_response('502 No content', [])
+    return ['']
+
+# Map the URL to the WSGI function that should handle it.
+WSGI_HANDLERS = [
+  ['/', wsgi_main_handler],
+  ['', wsgi_main_handler],
+]
 
 # The main entry point for WSGI scripts
 def application(environ, start_response):
@@ -1258,7 +1283,7 @@ def application(environ, start_response):
     os.environ['KODI_PASSWORD'] = kodi_password
 
   # Execute the handler that matches the URL
-  for h in HANDLERS:
+  for h in WSGI_HANDLERS:
     if environ['PATH_INFO'] == h[0]:
       output = h[1](environ, start_response)
       return output
@@ -1285,30 +1310,3 @@ def application(environ, start_response):
 """ % {'url':environ['PATH_INFO'], 'address':environ['SERVER_SIGNATURE'], 'details':details}
   start_response('404 Not Found', [('Content-type', 'text/html')])
   return [output]
-
-def build_response(session_attributes, speechlet_response):
-  return {
-    'version': '1.0',
-    'sessionAttributes': session_attributes,
-    'response': speechlet_response
-  }
-
-def build_speechlet_response(title, output, reprompt_text, should_end_session):
-  return {
-    'outputSpeech': {
-      'type': 'PlainText',
-      'text': output
-    },
-    'card': {
-      'type': 'Simple',
-      'title': 'SessionSpeechlet - ' + title,
-      'content': 'SessionSpeechlet - ' + output
-    },
-    'reprompt': {
-      'outputSpeech': {
-        'type': 'PlainText',
-        'text': reprompt_text
-      }
-    },
-    'shouldEndSession': should_end_session
-  }
