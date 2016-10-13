@@ -35,10 +35,14 @@ import re
 import string
 import sys
 import threading
+import ConfigParser
 
 # Load the kodi.py file from the same directory where this wsgi file is located
 sys.path += [os.path.dirname(__file__)]
 import kodi
+
+INI_FILE = os.path.join(os.path.dirname(__file__), "wsgi.ini")
+
 
 # This utility function constructs the required JSON for a full Alexa Skills Kit response
 
@@ -234,7 +238,7 @@ def alexa_big_step_backward(slots):
 # Shuffle all music by an artist
 def alexa_play_artist(slots):
   heard_artist = str(slots['Artist']['value']).lower().translate(None, string.punctuation)
-  
+
   print('Trying to play music by %s' % (heard_artist))
   sys.stdout.flush()
 
@@ -1183,6 +1187,13 @@ def on_intent(intent_request, session):
 
 # The main entry point for WSGI scripts
 def application(environ, start_response):
+  cfg = ConfigParser.SafeConfigParser()
+  cfg.read(INI_FILE)
+  os.environ['KODI_ADDRESS'] = cfg.get('kodi', 'address')
+  os.environ['KODI_PORT'] = cfg.get('kodi', 'port')
+  os.environ['KODI_USERNAME'] = cfg.get('kodi', 'username')
+  os.environ['KODI_PASSWORD'] = cfg.get('kodi', 'password')
+
   # Execute the handler that matches the URL
   for h in HANDLERS:
     if environ['PATH_INFO'] == h[0]:
