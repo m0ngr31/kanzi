@@ -67,3 +67,4 @@ test.py
 .vscode
 
 .env
+*.ini

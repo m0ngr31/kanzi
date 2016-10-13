@@ -89,8 +89,8 @@ def SendCommand(command):
   USER = os.getenv('KODI_USERNAME', 'kodi')
   PASS = os.getenv('KODI_PASSWORD', 'kodi')
 
-  print KODI
-  
+  print "Sending request to %s:%d" % (KODI, PORT)
+
   url = "http://%s:%d/jsonrpc" % (KODI, PORT)
 
   try:
