@@ -37,8 +37,11 @@ import sys
 import threading
 import ConfigParser
 
+import aniso8601
+
 # Load the kodi.py file from the same directory where this wsgi file is located
 sys.path += [os.path.dirname(__file__)]
+import verifier
 import kodi
 
 INI_FILE = os.path.join(os.path.dirname(__file__), "wsgi.ini")
@@ -1093,7 +1096,7 @@ INTENTS = [
   ['EjectMedia', alexa_ejectmedia]
 ]
 
-def do_alexa(environ, start_response):
+def do_alexa(app_id, environ, start_response):
   # Alexa requests come as POST messages with a request body
   try:
     length = int(environ.get('CONTENT_LENGTH', '0'))
@@ -1105,6 +1108,21 @@ def do_alexa(environ, start_response):
     body = environ['wsgi.input'].read(length)
     alexa_msg = json.loads(body)
     alexa_request = alexa_msg['request']
+
+    # verify the request is coming from Amazon and includes the correct
+    # Application ID and a valid signature.
+    try:
+      cert_url = environ['HTTP_SIGNATURECERTCHAINURL']
+      signature = environ['HTTP_SIGNATURE']
+      cert = verifier.load_certificate(cert_url)
+      verifier.verify_signature(cert, signature, body)
+      timestamp = aniso8601.parse_datetime(alexa_request['timestamp'])
+      verifier.verify_timestamp(timestamp)
+      verifier.verify_application_id(alexa_msg['session']['application']['applicationId'], app_id)
+    except verifier.VerificationError as e:
+      print e.args
+      start_response('502 No content', [])
+      return ['']
 
     if alexa_request['type'] == 'LaunchRequest':
       # This is the type when you just say "Open <app>"
@@ -1189,6 +1207,7 @@ def on_intent(intent_request, session):
 def application(environ, start_response):
   cfg = ConfigParser.SafeConfigParser()
   cfg.read(INI_FILE)
+  APPID = cfg.get('general', 'app_id')
   os.environ['KODI_ADDRESS'] = cfg.get('kodi', 'address')
   os.environ['KODI_PORT'] = cfg.get('kodi', 'port')
   os.environ['KODI_USERNAME'] = cfg.get('kodi', 'username')
@@ -1197,7 +1216,7 @@ def application(environ, start_response):
   # Execute the handler that matches the URL
   for h in HANDLERS:
     if environ['PATH_INFO'] == h[0]:
-      output = h[1](environ, start_response)
+      output = h[1](APPID, environ, start_response)
       return output
 
   # If we don't have a handler for the URL, return a 404 error

@@ -2,4 +2,7 @@ requests
 gunicorn
 pycountry
 ConfigParser
+aniso8601
+six
+OpenSSL
 yaep
