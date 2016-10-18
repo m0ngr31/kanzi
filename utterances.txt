@@ -125,3 +125,35 @@ Suspend put system to sleep
 Suspend go to sleep
 
 EjectMedia eject (/media/disc/audio disc/bluray/bluray disc/cd/dvd)
+
+WatchPVRBroadcast watch the program called {Broadcast}
+WatchPVRBroadcast play the program called {Broadcast}
+WatchPVRBroadcast find the broadcast called {Broadcast}
+WatchPVRBroadcast watch the broadcast called {Broadcast}
+WatchPVRBroadcast play the broadcast called {Broadcast}
+WatchPVRBroadcast look for the program called {Broadcast}
+WatchPVRBroadcast look for the broadcast called {Broadcast}
+WatchPVRBroadcast look for {Broadcast}
+WatchPVRBroadcast where is the program called {Broadcast}
+WatchPVRBroadcast where is the broadcast called {Broadcast}
+WatchPVRBroadcast where is {Broadcast}
+WatchPVRBroadcast find the program called {Broadcast}
+WatchPVRBroadcast find the broadcast called {Broadcast}
+WatchPVRBroadcast find {Broadcast}
+WatchPVRBroadcast switch to {Broadcast}
+WatchPVRBroadcast switch to the program called {Broadcast}
+WatchPVRBroadcast switch to the broadcast called {Broadcast}
+WatchPVRBroadcast show me {Broadcast}
+WatchPVRBroadcast show me something called {Broadcast}
+WatchPVRBroadcast show me anything called {Broadcast}
+WatchPVRBroadcast watch something called {Broadcast}
+WatchPVRBroadcast watch anything called {Broadcast}
+WatchPVRBroadcast show me the program called {Broadcast}
+WatchPVRBroadcast show me the broadcast called {Broadcast}
+WatchPVRBroadcast jump to {Broadcast}
+WatchPVRBroadcast change channel to {Broadcast}
+WatchPVRBroadcast change channel to watch {Broadcast}
+WatchPVRBroadcast change channel to play {Broadcast}
+
+WatchPVRChannel watch {Channel}
+WatchPVRChannel play {Channel}

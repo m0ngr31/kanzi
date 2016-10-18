@@ -1,5 +1,8 @@
 #!/usr/bin/python
 import os
+from fuzzywuzzy import fuzz
+from fuzzywuzzy import process
+import pvr
 
 """
 The MIT License (MIT)
@@ -970,6 +973,75 @@ def alexa_what_new_episodes(slots):
     answer = "There are new episodes of %(show_list)s." % {"show_list":show_list}
   return build_alexa_response(answer)
 
+def alexa_watch_pvr_channel(slots):
+  heard_pvr_channel = str(slots['Channel']['value']).lower()
+
+  print('Trying to play the PVR channel %s' % (heard_pvr_channel))
+  sys.stdout.flush()
+
+  try:
+    pvr_channels_by_label = pvr.get_pvr_channels_by_label()
+  except IOError:
+      return build_alexa_response('Error parsing results.')
+
+  #print(channel['label'] for channel in pvr_channels_by_label)
+  located = process.extract(heard_pvr_channel, pvr_channels_by_label.keys(), scorer=fuzz.QRatio, limit=1)
+  channel, score = located[0]
+
+  if score > 75:
+    kodi.WatchPVRChannel(pvr_channels_by_label[channel.lower()])
+    #kodi.ClearVideoPlaylist()
+    #kodi.PrepMoviePlaylist(located['movieid'])
+    #kodi.StartVideoPlaylist()
+
+    return build_alexa_response('Playing PVR channel %s' % (channel))
+  else:
+    return build_alexa_response('Could not find a PVR channel called %s' % (heard_pvr_channel))
+
+
+def alexa_watch_pvr_broadcast(slots):
+  heard_pvr_broadcast = str(slots['Broadcast']['value'])
+
+  print('Trying to play the PVR broadcast %s' % (heard_pvr_broadcast))
+  sys.stdout.flush()
+
+  try:
+    pvr_channels_by_id = pvr.get_pvr_channels_by_id()
+    pvr_broadcasts = pvr.get_pvr_broadcasts()
+  except IOError:
+    return build_alexa_response('Error parsing results.')
+
+  #print(pvr_broadcasts)
+  candidate_broadcasts = []
+  for channelid, broadcasts in pvr_broadcasts.items():
+    response = process.extract(heard_pvr_broadcast, [broadcast['label'] for broadcast in broadcasts], scorer=fuzz.QRatio, limit=1)
+
+    if len(response) != 0 and response[0][1] > 75:
+      for broadcast in broadcasts:
+        if broadcast['label'] == response[0][0]:
+          candidate_broadcasts.append({"channel":channelid, "broadcast":broadcast})
+
+  best_candidate = None
+
+  if len(candidate_broadcasts) > 0:
+    #print(candidate_broadcasts)
+    for candidate in candidate_broadcasts:
+      # all dates in the response appear to be UTC
+      candidate_endtime = datetime.datetime.strptime(candidate['broadcast']['endtime'], "%Y-%m-%d %H:%M:%S",)
+      if candidate_endtime > datetime.datetime.utcnow() and (best_candidate is None or candidate_endtime < best_candidate_endtime):
+        best_candidate = candidate
+        best_candidate_endtime = candidate_endtime
+
+  if best_candidate:
+    #print(best_candidate)
+    kodi.WatchPVRChannel(best_candidate['channel'])
+    # kodi.ClearVideoPlaylist()
+    # kodi.PrepMoviePlaylist(located['movieid'])
+    # kodi.StartVideoPlaylist()
+
+    return build_alexa_response('Playing %s on %s' % (best_candidate['broadcast']['label'], pvr_channels_by_id[best_candidate['channel']]))
+  else:
+    return build_alexa_response('Could not find a PVR broadcast called %s' % (heard_pvr_broadcast))
 
 # What should the Echo say when you just open your app instead of invoking an intent?
 

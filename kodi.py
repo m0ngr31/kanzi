@@ -84,6 +84,7 @@ def SetupEnvVars():
 # These two methods construct the JSON-RPC message and send it to the Kodi player
 def SendCommand(command):
   # Change this to the IP address of your Kodi server or always pass in an address
+  PROTOCOL = os.getenv('KODI_PROTOCOL', 'http')
   KODI = os.getenv('KODI_ADDRESS', '127.0.0.1')
   PORT = int(os.getenv('KODI_PORT', 8080))
   USER = os.getenv('KODI_USERNAME', 'kodi')
@@ -91,7 +92,7 @@ def SendCommand(command):
 
   print KODI
   
-  url = "http://%s:%d/jsonrpc" % (KODI, PORT)
+  url = "%s://%s:%d/jsonrpc" % (PROTOCOL, KODI, PORT)
   try:
     r = requests.post(url, data=command, auth=(USER, PASS))
   except:
@@ -658,3 +659,15 @@ def GetVideoPlayStatus():
         cur = '%02d:%02d' % (data['result']['time']['minutes'], data['result']['time']['seconds'])
       return {'state':'play' if speed > 0 else 'pause', 'time':cur, 'total':total, 'pct':data['result']['percentage']}
   return {'state':'stop'}
+
+def GetPVRChannels():
+  data = SendCommand(RPCString("PVR.GetChannels", {"channelgroupid":"alltv"}))
+  return data
+
+def GetPVRBroadcasts(channelid):
+  data = SendCommand(RPCString("PVR.GetBroadcasts", {"channelid": int(channelid), "properties" : ["endtime"]}))
+  return data
+
+def WatchPVRChannel(channelid):
+  return SendCommand(RPCString("Player.Open", {"item": {"channelid": int(channelid)}}))
+
