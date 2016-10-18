@@ -85,13 +85,13 @@ def SetupEnvVars():
 def SendCommand(command):
   # Change this to the IP address of your Kodi server or always pass in an address
   KODI = os.getenv('KODI_ADDRESS', '127.0.0.1')
-  PORT = int(os.getenv('KODI_PORT', 8080))
+  PORT = os.getenv('KODI_PORT', '8080')
   USER = os.getenv('KODI_USERNAME', 'kodi')
   PASS = os.getenv('KODI_PASSWORD', 'kodi')
 
   print KODI
   
-  url = "http://%s:%d/jsonrpc" % (KODI, PORT)
+  url = "http://%s:%s/jsonrpc" % (KODI, PORT)
   try:
     r = requests.post(url, data=command, auth=(USER, PASS))
   except:
