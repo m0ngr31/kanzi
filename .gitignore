@@ -65,3 +65,5 @@ target/
 test.py
 
 .vscode
+
+.env
