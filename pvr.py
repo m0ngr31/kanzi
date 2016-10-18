@@ -150,7 +150,7 @@ def search_pvr_broadcast(heard_pvr_broadcast, pvr_broadcasts, timeout_seconds = 
             if len(response) != 0 and response[0][1] > 75:
                 for broadcast in broadcasts:
                     if broadcast['label'] == response[0][0]:
-                        print(broadcast)
+                        #print(broadcast)
                         candidate_broadcasts.append({"channel": channelid, "broadcast": broadcast, "score": response[0][1]})
 
     best_candidate = None
