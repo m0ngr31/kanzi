@@ -53,6 +53,7 @@ def get_pvr_channels_by_label():
                     print('added alias for %s' % (channel_label))
                 except:
                     pass
+
         else:
             raise IOError('Error parsing results.')
     return PVR_CHANNELS_BY_LABEL
@@ -69,16 +70,7 @@ def get_pvr_channels_by_id():
 
         pvr_channels_response = kodi.GetPVRChannels()
         if 'result' in pvr_channels_response and 'channels' in pvr_channels_response['result']:
-            for channel in pvr_channels_response['result']['channels']:
-                channel_label = channel['label']
-                PVR_CHANNELS_BY_ID[channel['channelid']] = word_to_number(channel_label).lower()
-                try:
-                    # add alias channels as 'real' channels for easy of lookup
-                    pvr_channel_alias = PVR_CHANNEL_ALIAS[channel_label]
-                    PVR_CHANNELS_BY_ID[channel['channelid']] = word_to_number(pvr_channel_alias).lower()
-                    print('added alias for %s' % (channel_label))
-                except:
-                    pass
+            PVR_CHANNELS_BY_ID = {channel['channelid']: word_to_number(channel['label']).lower() for channel in pvr_channels_response['result']['channels']}
         else:
             raise IOError('Error parsing results.')
     return PVR_CHANNELS_BY_ID
