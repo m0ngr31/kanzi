@@ -1002,10 +1002,12 @@ def alexa_watch_pvr_broadcast(slots):
   print('Searching for %s' % (heard_pvr_broadcast))
   sys.stdout.flush()
 
+  pvr.watch_pvr_broadcast(heard_pvr_broadcast)
+
   #Use threading to solve the call from returing too late
-  c = threading.Thread(target=pvr.watch_pvr_broadcast(heard_pvr_broadcast))
-  c.daemon = True
-  c.start()
+  #c = threading.Thread(target=pvr.watch_pvr_broadcast(heard_pvr_broadcast))
+  #c.daemon = True
+  #c.start()
 
   #Calling this because for some reason it won't fire until the next command happens?
   kodi.Home()
