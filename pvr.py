@@ -6,6 +6,11 @@ import sys
 from pvr_channel_alias import PVR_CHANNEL_ALIAS
 from pvr_search_channels import PVR_SEARCH_CHANNELS
 
+PVR_CHANNELS_BY_LABEL = {}
+PVR_CHANNELS_BY_ID = {}
+PVR_BROADCASTS = {}
+
+
 def word_to_number(input):
   input = re.sub(r'1', ' 1 ', input, flags=re.IGNORECASE)
   input = re.sub(r'2', ' 2 ', input, flags=re.IGNORECASE)
@@ -38,16 +43,19 @@ def get_pvr_channels_by_label():
 
         pvr_channels_response = kodi.GetPVRChannels()
         if 'result' in pvr_channels_response and 'channels' in pvr_channels_response['result']:
-            PVR_CHANNELS_BY_LABEL = {word_to_number(channel['label']).lower(): channel['channelid'] for channel in pvr_channels_response['result']['channels']}
-            # add alias channels as 'real' channels for easy of lookup
-            for channel_label, channel_alias in PVR_CHANNEL_ALIAS:
+            for channel in pvr_channels_response['result']['channels']:
+                channel_label = channel['label']
+                PVR_CHANNELS_BY_LABEL[word_to_number(channel_label).lower()] = channel['channelid']
                 try:
-                    channel = PVR_CHANNELS_BY_LABEL[channel_label]
-                    PVR_CHANNELS_BY_LABEL[channel_alias] = channel
-                except KeyError:
-                    print('the alias for %s will be ignored.' % (channel_label))
+                    # add alias channels as 'real' channels for easy of lookup
+                    pvr_channel_alias = PVR_CHANNEL_ALIAS[channel_label]
+                    PVR_CHANNELS_BY_LABEL[word_to_number(pvr_channel_alias).lower()] = channel
+                    print('added alias for %s' % (channel_label))
+                except:
+                    pass
         else:
             raise IOError('Error parsing results.')
+    return PVR_CHANNELS_BY_LABEL
 
 
 def get_pvr_channels_by_id():
@@ -61,17 +69,19 @@ def get_pvr_channels_by_id():
 
         pvr_channels_response = kodi.GetPVRChannels()
         if 'result' in pvr_channels_response and 'channels' in pvr_channels_response['result']:
-            PVR_CHANNELS_BY_ID = {channel['channelid']: word_to_number(channel['label']) for channel in
-                                  pvr_channels_response['result']['channels']}
-            # add alias channels as 'real' channels for easy of lookup
-            for channel_id, channel_label in PVR_CHANNELS_BY_ID:
+            for channel in pvr_channels_response['result']['channels']:
+                channel_label = channel['label']
+                PVR_CHANNELS_BY_ID[channel['channelid']] = word_to_number(channel_label).lower()
                 try:
-                    channel_alias = PVR_CHANNEL_ALIAS[channel_label]
-                    PVR_CHANNELS_BY_ID[channel_id] = channel_alias
-                except KeyError:
-                    print('the alias for %s will be ignored.' % (channel_label))
+                    # add alias channels as 'real' channels for easy of lookup
+                    pvr_channel_alias = PVR_CHANNEL_ALIAS[channel_label]
+                    PVR_CHANNELS_BY_ID[channel['channelid']] = word_to_number(pvr_channel_alias).lower()
+                    print('added alias for %s' % (channel_label))
+                except:
+                    pass
         else:
             raise IOError('Error parsing results.')
+    return PVR_CHANNELS_BY_ID
 
 
 def get_pvr_broadcasts():
@@ -97,3 +107,4 @@ def get_pvr_broadcasts():
                     raise IOError('Error parsing broadcast results.')
             except ValueError:
                 pass
+    return PVR_BROADCASTS
