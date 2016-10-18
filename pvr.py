@@ -103,6 +103,7 @@ def get_pvr_broadcasts():
                     if 'broadcasts' in pvr_broadcasts_response['result']:
                         pvr_broadcasts = pvr_broadcasts_response['result']['broadcasts']
                         PVR_BROADCASTS[id] = pvr_broadcasts
+                        print('Added broadcasts for %s' % (channel))
                 else:
                     raise IOError('Error parsing broadcast results.')
             except ValueError:
