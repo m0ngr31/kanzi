@@ -9,8 +9,9 @@ import sys
 import threading
 from pvr_channel_alias import PVR_CHANNEL_ALIAS
 from pvr_favourite_channels import PVR_SEARCH_CHANNELS
+from collections import OrderedDict
 
-PVR_CHANNELS_BY_LABEL = {}
+PVR_CHANNELS_BY_LABEL = OrderedDict()
 PVR_BROADCASTS = {}
 PVR_FAVOURITE_BROADCASTS = {}
 
@@ -149,7 +150,8 @@ def search_pvr_broadcast(heard_pvr_broadcast, pvr_broadcasts, timeout_seconds = 
             if len(response) != 0 and response[0][1] > 75:
                 for broadcast in broadcasts:
                     if broadcast['label'] == response[0][0]:
-                        candidate_broadcasts.append({"channel": channelid, "broadcast": broadcast})
+                        print(broadcast)
+                        candidate_broadcasts.append({"channel": channelid, "broadcast": broadcast, "score": response[0][1]})
 
     best_candidate = None
 
@@ -160,7 +162,7 @@ def search_pvr_broadcast(heard_pvr_broadcast, pvr_broadcasts, timeout_seconds = 
             # all dates in the response appear to be UTC
             candidate_endtime = datetime.datetime.strptime(candidate['broadcast']['endtime'], "%Y-%m-%d %H:%M:%S", )
             if candidate_endtime > now and (
-                    best_candidate is None or candidate_endtime < best_candidate_endtime):
+                    best_candidate is None or candidate_endtime < best_candidate_endtime or candidate['score'] > best_candidate['score']):
                 best_candidate = candidate
                 best_candidate_endtime = candidate_endtime
 
