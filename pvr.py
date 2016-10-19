@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 
+import os
 import datetime
 from fuzzywuzzy import fuzz
 from fuzzywuzzy import process
@@ -9,6 +10,9 @@ import sys
 import threading
 from pvr_channel_alias import PVR_CHANNEL_ALIAS
 from collections import OrderedDict
+
+BROADCAST_LOAD_TIMEOUT = int(os.getenv('BROADCAST_LOAD_TIMEOUT', '15'))
+BROADCAST_SCAN_TIMEOUT = int(os.getenv('BROADCAST_SCAN_TIMEOUT', '15'))
 
 PVR_CHANNELS_BY_LABEL = OrderedDict()
 PVR_BROADCASTS = OrderedDict()
@@ -68,7 +72,7 @@ def get_pvr_channels_by_label(force_load = True):
     return PVR_CHANNELS_BY_LABEL
 
 
-def get_pvr_broadcasts(force_load = False, timeout_seconds = 15):
+def get_pvr_broadcasts(force_load = False, timeout_seconds = BROADCAST_LOAD_TIMEOUT):
     global PVR_BROADCASTS
     if PVR_BROADCASTS and not force_load:
         print('Using pre-loaded broadcasts data')

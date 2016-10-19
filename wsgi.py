@@ -998,7 +998,7 @@ def alexa_watch_pvr_channel(slots):
 
 def alexa_watch_pvr_broadcast(slots):
   heard_pvr_broadcast = str(slots['Broadcast']['value'])
-  timeout_seconds = 15
+  timeout_seconds = pvr.BROADCAST_SCAN_TIMEOUT
 
   print('Searching for %s' % (heard_pvr_broadcast))
   sys.stdout.flush()
