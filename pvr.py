@@ -8,11 +8,10 @@ import re
 import sys
 import threading
 from pvr_channel_alias import PVR_CHANNEL_ALIAS
-from pvr_favourite_channels import PVR_SEARCH_CHANNELS
 from collections import OrderedDict
 
 PVR_CHANNELS_BY_LABEL = OrderedDict()
-PVR_BROADCASTS = {}
+PVR_BROADCASTS = OrderedDict()
 PVR_FAVOURITE_BROADCASTS = {}
 
 
@@ -81,91 +80,22 @@ def get_pvr_broadcasts(force_load = False, timeout_seconds = 15):
         PVR_BROADCASTS = {}
         stop_time = datetime.datetime.utcnow() + datetime.timedelta(0, timeout_seconds)
         for channel, id in get_pvr_channels_by_label().iteritems():
-            if datetime.datetime.utcnow() <= stop_time:
-                pvr_broadcasts_response = kodi.GetPVRBroadcasts(id)
+            if datetime.datetime.utcnow() > stop_time:
+                print('timed out after %s seconds' % (timeout_seconds))
+                break
 
-                if 'result' in pvr_broadcasts_response:
-                    if 'broadcasts' in pvr_broadcasts_response['result']:
-                        pvr_broadcasts = pvr_broadcasts_response['result']['broadcasts']
-                        PVR_BROADCASTS[id] = pvr_broadcasts
-                        print('Added broadcasts for %s' % (channel))
-                else:
-                    raise IOError('Error parsing broadcast results.')
+            pvr_broadcasts_response = kodi.GetPVRBroadcasts(id)
+
+            if 'result' in pvr_broadcasts_response:
+                if 'broadcasts' in pvr_broadcasts_response['result']:
+                    pvr_broadcasts = pvr_broadcasts_response['result']['broadcasts']
+                    PVR_BROADCASTS[id] = pvr_broadcasts
+                    print('Added broadcasts for %s' % (channel))
+            else:
+                raise IOError('Error parsing broadcast results.')
 
         # reload the broadcasts in a hour
         c = threading.Timer(3600.0, get_pvr_broadcasts, [True, 60])
         c.daemon = True
         c.start()
     return PVR_BROADCASTS
-
-def get_pvr_favourite_broadcasts(force_load = False):
-    global PVR_FAVOURITE_BROADCASTS
-    if PVR_FAVOURITE_BROADCASTS and not force_load:
-        print('Using pre-loaded broadcasts data')
-        sys.stdout.flush()
-    else:
-        print('Loading favourite broadcasts data...')
-        sys.stdout.flush()
-
-        PVR_FAVOURITE_BROADCASTS = {}
-        for channel, id in get_pvr_channels_by_label().iteritems():
-            try:
-                PVR_SEARCH_CHANNELS.index(channel)
-                pvr_broadcasts_response = kodi.GetPVRBroadcasts(id)
-
-                if 'result' in pvr_broadcasts_response:
-                    if 'broadcasts' in pvr_broadcasts_response['result']:
-                        pvr_broadcasts = pvr_broadcasts_response['result']['broadcasts']
-                        PVR_FAVOURITE_BROADCASTS[id] = pvr_broadcasts
-                        print('Added favourite broadcasts for %s' % (channel))
-                else:
-                    raise IOError('Error parsing broadcast results.')
-            except ValueError:
-                pass
-
-        # reload broadcasts in just under and hour
-        c = threading.Timer(3000.0, get_pvr_favourite_broadcasts, [True])
-        c.daemon = True
-        c.start()
-    return PVR_FAVOURITE_BROADCASTS
-
-def watch_pvr_broadcast(heard_pvr_broadcast):
-    try:
-        #pvr_broadcasts = get_pvr_favourite_broadcasts()
-        pvr_broadcasts = get_pvr_broadcasts()
-        search_pvr_broadcast(heard_pvr_broadcast, pvr_broadcasts)
-    except IOError:
-        raise IOError('Error parsing results.')
-
-def search_pvr_broadcast(heard_pvr_broadcast, pvr_broadcasts, timeout_seconds = 15):
-    print('start search')
-    # print(pvr_broadcasts)
-    candidate_broadcasts = []
-    stop_time = datetime.datetime.utcnow() + datetime.timedelta(0, timeout_seconds)
-    for channelid, broadcasts in pvr_broadcasts.items():
-        if datetime.datetime.utcnow() <= stop_time:
-            response = process.extract(heard_pvr_broadcast, [broadcast['label'] for broadcast in broadcasts],
-                                   scorer=fuzz.WRatio, limit=1)
-
-            if len(response) != 0 and response[0][1] > 75:
-                for broadcast in broadcasts:
-                    if broadcast['label'] == response[0][0]:
-                        #print(broadcast)
-                        candidate_broadcasts.append({"channel": channelid, "broadcast": broadcast, "score": response[0][1]})
-
-    best_candidate = None
-
-    if len(candidate_broadcasts) > 0:
-        # print(candidate_broadcasts)
-        now = datetime.datetime.utcnow()
-        for candidate in candidate_broadcasts:
-            # all dates in the response appear to be UTC
-            candidate_endtime = datetime.datetime.strptime(candidate['broadcast']['endtime'], "%Y-%m-%d %H:%M:%S", )
-            if candidate_endtime > now and (
-                    best_candidate is None or candidate_endtime < best_candidate_endtime or candidate['score'] > best_candidate['score']):
-                best_candidate = candidate
-                best_candidate_endtime = candidate_endtime
-
-    print('end search')
-    if best_candidate:
-        kodi.WatchPVRChannel(best_candidate['channel'])

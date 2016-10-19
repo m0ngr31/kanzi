@@ -998,21 +998,57 @@ def alexa_watch_pvr_channel(slots):
 
 def alexa_watch_pvr_broadcast(slots):
   heard_pvr_broadcast = str(slots['Broadcast']['value'])
+  timeout_seconds = 15
 
   print('Searching for %s' % (heard_pvr_broadcast))
   sys.stdout.flush()
 
-  pvr.watch_pvr_broadcast(heard_pvr_broadcast)
+  try:
+    # pvr_broadcasts = pvr.get_pvr_favourite_broadcasts()
+    pvr_broadcasts = pvr.get_pvr_broadcasts()
+  except IOError:
+    return build_alexa_response('Error parsing results.')
 
-  #Use threading to solve the call from returing too late
-  #c = threading.Thread(target=pvr.watch_pvr_broadcast(heard_pvr_broadcast))
-  #c.daemon = True
-  #c.start()
+  print('start search')
+  # print(pvr_broadcasts)
+  best_candidate = None
+  stop_time = datetime.datetime.utcnow() + datetime.timedelta(0, timeout_seconds)
+  for channelid, broadcasts in pvr_broadcasts.items():
+    if datetime.datetime.utcnow() >= stop_time:
+      print('timed out after %n seconds' % (timeout_seconds))
+      break
 
-  #Calling this because for some reason it won't fire until the next command happens?
-  kodi.Home()
+    candidate = None
+    now = datetime.datetime.utcnow()
+    for broadcast in broadcasts:
+      # all dates in the response appear to be UTC
+      if datetime.datetime.strptime(broadcast['endtime'], "%Y-%m-%d %H:%M:%S", ) < now:
+        continue
+      score = fuzz.QRatio(heard_pvr_broadcast, broadcast['label'])
+      if score < 75:
+        continue
+      if candidate is None or score > candidate['score']:
+        candidate = {'channel': channelid, 'score': score, 'broadcast': broadcast}
+      if score == 100:
+        break
 
-  return build_alexa_response('Searching for %s' % (heard_pvr_broadcast))
+    if candidate:
+      # all dates in the response appear to be UTC
+      candidate_endtime = datetime.datetime.strptime(candidate['broadcast']['endtime'], "%Y-%m-%d %H:%M:%S", )
+      if best_candidate is None or (
+          candidate_endtime < best_candidate_endtime and candidate['score'] >= best_candidate['score']):
+        # print(candidate)
+        best_candidate = candidate
+        best_candidate_endtime = candidate_endtime
+
+  print('end search')
+  if best_candidate:
+    print(best_candidate)
+    kodi.WatchPVRChannel(best_candidate['channel'])
+
+    return build_alexa_response('Playing %s' % (best_candidate['broadcast']['label']))
+  else:
+    return build_alexa_response('Could not find a PVR broadcast called %s' % (heard_pvr_broadcast))
 
 # What should the Echo say when you just open your app instead of invoking an intent?
 
