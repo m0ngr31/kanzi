@@ -1018,35 +1018,45 @@ def alexa_watch_pvr_broadcast(slots):
       print('timed out after %n seconds' % (timeout_seconds))
       break
 
+    #print(channelid)
+    #print(best_candidate)
+
     candidate = None
     now = datetime.datetime.utcnow()
     for broadcast in broadcasts:
       # all dates in the response appear to be UTC
-      if datetime.datetime.strptime(broadcast['endtime'], "%Y-%m-%d %H:%M:%S", ) < now:
+      endtime = datetime.datetime.strptime(broadcast['endtime'], "%Y-%m-%d %H:%M:%S", )
+      if endtime < now:
         continue
-      score = fuzz.QRatio(heard_pvr_broadcast, broadcast['label'])
-      if score < 75:
-        continue
+      if best_candidate and best_candidate['score'] == 100:
+        if endtime > best_candidate['endtime']:
+          #no point looking further ahead when we already have a perfect match that ends earlier
+          break
+        #we already have a perfect match so now we don't need to use the expensive fuzzywuzzy search
+        score = 100 if best_candidate['label'] == broadcast['label'] else 0
+        #print('%s score %d' % (broadcast['label'], score))
+      else:
+        score = fuzz.QRatio(heard_pvr_broadcast, broadcast['label'])
+        if score < 75:
+          continue
       if candidate is None or score > candidate['score']:
-        candidate = {'channel': channelid, 'score': score, 'broadcast': broadcast}
+        candidate = {'channel': channelid, 'score': score, 'label': broadcast['label'], 'endtime': endtime}
       if score == 100:
         break
 
     if candidate:
-      # all dates in the response appear to be UTC
-      candidate_endtime = datetime.datetime.strptime(candidate['broadcast']['endtime'], "%Y-%m-%d %H:%M:%S", )
       if best_candidate is None or (
-          candidate_endtime < best_candidate_endtime and candidate['score'] >= best_candidate['score']):
-        # print(candidate)
+          candidate['score'] > best_candidate['score'] or
+                (candidate['endtime'] < best_candidate['endtime' ] and candidate['score'] == best_candidate['score'])):
+        #print(candidate)
         best_candidate = candidate
-        best_candidate_endtime = candidate_endtime
 
   print('end search')
   if best_candidate:
     print(best_candidate)
     kodi.WatchPVRChannel(best_candidate['channel'])
 
-    return build_alexa_response('Playing %s' % (best_candidate['broadcast']['label']))
+    return build_alexa_response('Playing %s' % (best_candidate['label']))
   else:
     return build_alexa_response('Could not find a PVR broadcast called %s' % (heard_pvr_broadcast))
 
