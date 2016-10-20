@@ -49,21 +49,24 @@ def get_pvr_channels_by_label(force_load = True):
         print('Loading list of PVR channels...')
         sys.stdout.flush()
 
+        pvr_channels_by_label = {}
         pvr_channels_response = kodi.GetPVRChannels()
         if 'result' in pvr_channels_response and 'channels' in pvr_channels_response['result']:
             for channel in pvr_channels_response['result']['channels']:
                 channel_label = channel['label']
-                PVR_CHANNELS_BY_LABEL[word_to_number(channel_label).lower()] = channel['channelid']
+                pvr_channels_by_label[word_to_number(channel_label).lower()] = channel['channelid']
                 try:
                     # add alias channels as 'real' channels for easy of lookup
                     pvr_channel_alias = PVR_CHANNEL_ALIAS[channel_label]
-                    PVR_CHANNELS_BY_LABEL[word_to_number(pvr_channel_alias).lower()] = channel['channelid']
+                    pvr_channels_by_label[word_to_number(pvr_channel_alias).lower()] = channel['channelid']
                     print('added alias for %s' % (channel_label))
                 except:
                     pass
 
         else:
             raise IOError('Error parsing results.')
+
+        PVR_CHANNELS_BY_LABEL = pvr_channels_by_label
 
         # reload the channels list in around 2 hours time
         c = threading.Timer(7000.0, get_pvr_channels_by_label, [True])
@@ -81,7 +84,7 @@ def get_pvr_broadcasts(force_load = False, timeout_seconds = BROADCAST_LOAD_TIME
         print('Loading broadcasts data...')
         sys.stdout.flush()
 
-        PVR_BROADCASTS = {}
+        pvr_broadcasts = {}
         stop_time = datetime.datetime.utcnow() + datetime.timedelta(0, timeout_seconds)
         for channel, id in get_pvr_channels_by_label().iteritems():
             if datetime.datetime.utcnow() > stop_time:
@@ -92,11 +95,12 @@ def get_pvr_broadcasts(force_load = False, timeout_seconds = BROADCAST_LOAD_TIME
 
             if 'result' in pvr_broadcasts_response:
                 if 'broadcasts' in pvr_broadcasts_response['result']:
-                    pvr_broadcasts = pvr_broadcasts_response['result']['broadcasts']
-                    PVR_BROADCASTS[id] = pvr_broadcasts
+                    pvr_broadcasts[id] = pvr_broadcasts_response['result']['broadcasts']
                     print('Added broadcasts for %s' % (channel))
             else:
                 raise IOError('Error parsing broadcast results.')
+
+        PVR_BROADCASTS = pvr_broadcasts
 
         # reload the broadcasts in a hour
         c = threading.Timer(3600.0, get_pvr_broadcasts, [True, 60])
