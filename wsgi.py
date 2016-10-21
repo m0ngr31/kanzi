@@ -195,6 +195,42 @@ def alexa_stop(slots):
   answer = "Playback Stopped"
   return build_alexa_response(answer)
 
+# Step Forward
+def alexa_step_forward(slots):
+  print('Stepping Forward')
+  sys.stdout.flush()
+
+  kodi.StepForward()
+  answer = ""
+  return build_alexa_response(answer)
+
+# Step Backward
+def alexa_step_backward(slots):
+  print('Stepping Backward')
+  sys.stdout.flush()
+
+  kodi.StepBackward()
+  answer = ""
+  return build_alexa_response(answer)
+
+# Big Step Forward
+def alexa_big_step_forward(slots):
+  print('Big Step Forward')
+  sys.stdout.flush()
+
+  kodi.BigStepForward()
+  answer = ""
+  return build_alexa_response(answer)
+
+# Big Step Backward
+def alexa_big_step_backward(slots):
+  print('Big Step Backward')
+  sys.stdout.flush()
+
+  kodi.BigStepBackward()
+  answer = ""
+  return build_alexa_response(answer)
+
 # Shuffle all music by an artist
 def alexa_play_artist(slots):
   heard_artist = str(slots['Artist']['value']).lower().translate(None, string.punctuation)
@@ -986,6 +1022,10 @@ INTENTS = [
   ['CurrentPlayItemInquiry', alexa_current_playitem_inquiry],
   ['WhatNewShows', alexa_what_new_episodes],
   ['PlayPause', alexa_play_pause],
+  ['StepForward', alexa_step_forward],
+  ['BigStepForward', alexa_big_step_forward],
+  ['StepBackward', alexa_step_backward],
+  ['BigStepBackward', alexa_big_step_backward],
   ['Stop', alexa_stop],
   ['ListenToArtist', alexa_play_artist],
   ['ListenToPlaylist', alexa_play_playlist],

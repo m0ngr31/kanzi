@@ -38,6 +38,22 @@
       "slots": []
     },
     {
+      "intent": "StepForward",
+      "slots": []
+    },
+    {
+      "intent": "StepBackward",
+      "slots": []
+    },
+    {
+      "intent": "BigStepForward",
+      "slots": []
+    },
+    {
+      "intent": "BigStepBackward",
+      "slots": []
+    },
+    {
       "intent": "Stop",
       "slots": []
     },
