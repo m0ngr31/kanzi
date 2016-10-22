@@ -797,7 +797,7 @@ def alexa_do_search(slots):
   else:
     return build_alexa_response("Couldn't find anything matching that phrase")
 
-def alexa_pick_random_movie(slots):
+def alexa_play_random_movie(slots):
   print('Trying to play a random movie')
   sys.stdout.flush()
 
@@ -837,7 +837,7 @@ def alexa_play_movie(slots):
   else:
     return build_alexa_response('Error parsing results.')
 
-def alexa_pick_random_episode(slots):
+def alexa_play_random_episode(slots):
   heard_show = str(slots['Show']['value']).lower().translate(None, string.punctuation)
 
   print('Trying to play a random episode of %s' % (heard_show))
@@ -1078,8 +1078,8 @@ INTENTS = [
   ['Skip', alexa_skip],
   ['Prev', alexa_prev],
   ['StartOver', alexa_start_over],
-  ['PlayRandomEpisode', alexa_pick_random_episode],
-  ['PlayRandomMovie', alexa_pick_random_movie],
+  ['PlayRandomEpisode', alexa_play_random_episode],
+  ['PlayRandomMovie', alexa_play_random_movie],
   ['PlayMovie', alexa_play_movie],
   ['Home', alexa_go_home],
   ['Back', alexa_back],
@@ -1293,7 +1293,7 @@ def application(environ, start_response):
   # in a real production environment.
 
   details = ''
-  if False:  # Change to False for productioN!
+  if False:  # Change to False for production!
     for k in sorted(environ.keys()):
       details += '%s = %s<br/>\n' % (k, environ[k])
   output = """<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">

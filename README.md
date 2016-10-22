@@ -4,7 +4,7 @@ I'm forking the base code off of [this project from Maker Musings](http://www.ma
 
 I've expanded it to support the following features:
 
-- Basic navigation (Up/Down, Left/Right, Page Up/Down, Select, Back, Open Menu) 
+- Basic navigation (Up/Down, Left/Right, Page Up/Down, Select, Back, Open Menu)
 - Playback control (Play/Pause, Skip, Previous, Stop)
 - Shuffle music by artist
 - Play random unwatched episode of TV show
@@ -47,7 +47,7 @@ After you've setup an Heroku account, go ahead and [install the command line too
 To create a new app, just run this from the command line: `heroku apps:create`. If that runs successfully, you'll see something like this:
 ![Create app](http://i.imgur.com/C17Ts7L.png)
 
-Now, clone my repo: `git clone https://github.com/m0ngr31/kodi-alexa.git` and `cd kodi-alexa`. 
+Now, clone my repo: `git clone https://github.com/m0ngr31/kodi-alexa.git` and `cd kodi-alexa`.
 
 Once you have my repo cloned and you are in the directory, you can setup the following environment variables to talk to your Kodi box:
 
@@ -55,7 +55,7 @@ Once you have my repo cloned and you are in the directory, you can setup the fol
 - KODI_PORT
 - KODI_USERNAME
 - KODI_PASSWORD
-  
+
 You can do this easily from the command line: `heroku config:set KODI_ADDRESS='your_ip_or_dynamic_address' KODI_PORT='kodi_port' KODI_USERNAME='kodi_username' KODI_PASSWORD='kodi_password' --app app-name-and-number`. Changing of course for your settings. You can also use the settings page on your Heroku app to add these.
 
 Now run `git remote add heroku https://git.heroku.com/your_apps_name_and_number.git`. This command will allow heroku to deploy new code based on what is in your directory.
@@ -70,7 +70,7 @@ Now skip ahead to the [Skill setup section](#skill-setup).
 
 ## AWS Lambda
 
-I'm not going to talk about what Lambda is, I'll let you [search for that on your own](http://lmgtfy.com/?q=What+is+AWS+Lambda%3F#). On Lambda, the first 1,000,000 requests/month are free, so I doubt you'll ever hit it's limit talking to your Echo. 
+I'm not going to talk about what Lambda is, I'll let you [search for that on your own](http://lmgtfy.com/?q=What+is+AWS+Lambda%3F#). On Lambda, the first 1,000,000 requests/month are free, so I doubt you'll ever hit it's limit talking to your Echo.
 
 To deploy to Lambda, we're going to use a great little Python package called [`lambda-deploy`](https://github.com/jimjkelly/lambda-deploy), so you'll have to have Python 2.7 (and pip) installed. If you don't have it installed on your computer already, just install it and come back. There are plenty of guides online to install it on whatever system you're using.
 
@@ -89,7 +89,7 @@ And several AWS environment variables so we can upload the code to Lambda:
 - AWS_SECRET_ACCESS_KEY
 - LAMBDA_ROLE
 
-The environment variables are stored in an `.env` file which you need to create yourself from a copy of `.env.sample` 
+The environment variables are stored in an `.env` file which you need to create yourself from a copy of `.env.sample`
 
 **Take care with your `.env` file, it contains access details that you do not want to be uploaded to any public repositories (or pasted in a forum)**
 
@@ -97,13 +97,13 @@ You do not need to change the options that already have values.
 
 If using **eu-west-1** AWS region to host your Lambda function then you can adjust `AWS_DEFAULT_REGION` accordingly.
 
-#### About AWS regions 
+#### About AWS regions
 
 The AWS documentation ["Creating an AWS Lambda Function for a Custom Skill"](https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/developing-an-alexa-skill-as-a-lambda-function) states:
 
 >  _Lambda functions for Alexa skills must be hosted in the US East (N. Virginia) region. Currently, this is the only Lambda region the Alexa Skills Kit supports_.
 
-The above statement is repeated many times throughout the docs. 
+The above statement is repeated many times throughout the docs.
 
 However it is **outdated information** as now you can also use Ireland (eu-west-1). This has been confirmed by one of our users.
 
