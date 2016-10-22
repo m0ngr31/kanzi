@@ -35,10 +35,21 @@ import re
 import string
 import sys
 import threading
+import ConfigParser
 
-# Load the kodi.py file from the same directory where this wsgi file is located
 sys.path += [os.path.dirname(__file__)]
+
+try:
+  import aniso8601
+  import verifier
+except:
+  # cert/appid verification dependencies are optional installs
+  pass
+
 import kodi
+
+INI_FILE = os.path.join(os.path.dirname(__file__), "wsgi.ini")
+
 
 # This utility function constructs the required JSON for a full Alexa Skills Kit response
 
@@ -234,7 +245,7 @@ def alexa_big_step_backward(slots):
 # Shuffle all music by an artist
 def alexa_play_artist(slots):
   heard_artist = str(slots['Artist']['value']).lower().translate(None, string.punctuation)
-  
+
   print('Trying to play music by %s' % (heard_artist))
   sys.stdout.flush()
 
@@ -1102,6 +1113,24 @@ def do_alexa(environ, start_response):
     alexa_msg = json.loads(body)
     alexa_request = alexa_msg['request']
 
+    # verify the request is coming from Amazon and includes the correct
+    # Application ID and a valid signature.
+    try:
+      if int(environ.get('KODI_VERIFY_CERT', '0')):
+        print "Verifying certificate is valid..."
+        cert_url = environ['HTTP_SIGNATURECERTCHAINURL']
+        signature = environ['HTTP_SIGNATURE']
+        cert = verifier.load_certificate(cert_url)
+        verifier.verify_signature(cert, signature, body)
+        timestamp = aniso8601.parse_datetime(alexa_request['timestamp'])
+        verifier.verify_timestamp(timestamp)
+      if environ.get('KODI_APPID', ''):
+        print "Verifying application ID..."
+        verifier.verify_application_id(alexa_msg['session']['application']['applicationId'], environ['KODI_APPID'])
+    except verifier.VerificationError as e:
+      print e.args[0]
+      raise
+
     if alexa_request['type'] == 'LaunchRequest':
       # This is the type when you just say "Open <app>"
       response = prepare_help_message()
@@ -1183,6 +1212,51 @@ def on_intent(intent_request, session):
 
 # The main entry point for WSGI scripts
 def application(environ, start_response):
+  try:
+    cfg = ConfigParser.SafeConfigParser()
+    cfg.read(INI_FILE)
+  except:
+    # config file doesn't exist, assume user set environment variables already
+    pass
+  else:
+    # Python 2.x ConfigParser is so ridiculously limited..
+    try:
+      app_id = cfg.get('general', 'app_id')
+    except:
+      app_id = environ.get('KODI_APPID', '')
+    try:
+      verify_cert = cfg.getboolean('general', 'verify_cert')
+    except:
+      verify_cert = environ.get('KODI_VERIFY_CERT', False)
+    try:
+      kodi_address = cfg.get('kodi', 'address')
+    except:
+      kodi_address = environ.get('KODI_ADDRESS', '127.0.0.1')
+    try:
+      kodi_port = cfg.get('kodi', 'port')
+    except:
+      kodi_port = environ.get('KODI_PORT', '8080')
+    try:
+      kodi_username = cfg.get('kodi', 'username')
+    except:
+      kodi_username = environ.get('KODI_USERNAME', 'kodi')
+    try:
+      kodi_password = cfg.get('kodi', 'password')
+    except:
+      kodi_password = environ.get('KODI_PASSWORD', 'kodi')
+
+    environ['KODI_APPID'] = app_id
+    if verify_cert:
+      environ['KODI_VERIFY_CERT'] = '1'
+    else:
+      environ['KODI_VERIFY_CERT'] = '0'
+
+    # for use in kodi.py
+    os.environ['KODI_ADDRESS'] = kodi_address
+    os.environ['KODI_PORT'] = kodi_port
+    os.environ['KODI_USERNAME'] = kodi_username
+    os.environ['KODI_PASSWORD'] = kodi_password
+
   # Execute the handler that matches the URL
   for h in HANDLERS:
     if environ['PATH_INFO'] == h[0]:
