@@ -35,12 +35,17 @@ import re
 import string
 import sys
 import threading
-import aniso8601
 import ConfigParser
 
-# Load the kodi.py file from the same directory where this wsgi file is located
 sys.path += [os.path.dirname(__file__)]
-import verifier
+
+try:
+  import aniso8601
+  import verifier
+except:
+  # cert/appid verification dependencies are optional installs
+  pass
+
 import kodi
 
 INI_FILE = os.path.join(os.path.dirname(__file__), "wsgi.ini")
@@ -1124,8 +1129,7 @@ def do_alexa(environ, start_response):
         verifier.verify_application_id(alexa_msg['session']['application']['applicationId'], environ['KODI_APPID'])
     except verifier.VerificationError as e:
       print e.args[0]
-      start_response('502 No content', [])
-      return ['']
+      raise
 
     if alexa_request['type'] == 'LaunchRequest':
       # This is the type when you just say "Open <app>"

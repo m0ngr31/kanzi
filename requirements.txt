@@ -1,8 +1,5 @@
 requests
 gunicorn
+yaep
 pycountry
 ConfigParser
-aniso8601
-six
-OpenSSL
-yaep
