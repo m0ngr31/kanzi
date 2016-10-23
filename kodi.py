@@ -575,7 +575,7 @@ def GetVideoPlayerID(playertype=['video']):
 
 # Get the first active Audio player.
 
-def GetVideoPlayerID(playertype=['audio']):
+def GetAudioPlayerID(playertype=['audio']):
   data = SendCommand(RPCString("Player.GetActivePlayers"))
   result = data.get("result", [])
   if len(result) > 0:
