@@ -888,11 +888,14 @@ def alexa_play_random_movie(slots):
   print card_title
   sys.stdout.flush()
 
-  # XXX: Should fall back to all movies if no unwatched, like play_random_episode does
-  movies_response = kodi.GetUnwatchedMovies()
-  if 'result' in movies_response and 'movies' in movies_response['result']:
-    movies = movies_response['result']['movies']
-    random_movie = random.choice(movies)
+  movies = kodi.GetUnwatchedMovies()
+  if not 'movies' in movies['result']:
+    # Fall back to all movies if no unwatched available
+    movies = kodi.GetMovies()
+
+  if 'result' in movies and 'movies' in movies['result']:
+    movies_array = movies['result']['movies']
+    random_movie = random.choice(movies_array)
 
     kodi.ClearVideoPlaylist()
     kodi.PrepMoviePlaylist(random_movie['movieid'])
@@ -909,11 +912,11 @@ def alexa_play_movie(slots):
   print card_title
   sys.stdout.flush()
 
-  movies_response = kodi.GetMovies()
-  if 'result' in movies_response and 'movies' in movies_response['result']:
-    movies = movies_response['result']['movies']
+  movies = kodi.GetMovies()
+  if 'result' in movies and 'movies' in movies['result']:
+    movies_array = movies['result']['movies']
 
-    located = kodi.matchHeard(heard_movie, movies)
+    located = kodi.matchHeard(heard_movie, movies_array)
 
     if located:
       kodi.ClearVideoPlaylist()
@@ -943,6 +946,7 @@ def alexa_play_random_episode(slots):
       episodes_result = kodi.GetUnwatchedEpisodesFromShow(located['tvshowid'])
 
       if not 'episodes' in episodes_result['result']:
+        # Fall back to all episodes if no unwatched available
         episodes_result = kodi.GetEpisodesFromShow(located['tvshowid'])
 
       episodes_array = []
