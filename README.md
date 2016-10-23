@@ -58,6 +58,8 @@ Once you have my repo cloned and you are in the directory, you can setup the fol
 
 You can do this easily from the command line: `heroku config:set KODI_ADDRESS='your_ip_or_dynamic_address' KODI_PORT='kodi_port' KODI_USERNAME='kodi_username' KODI_PASSWORD='kodi_password' --app app-name-and-number`. Changing of course for your settings. You can also use the settings page on your Heroku app to add these.
 
+You can also alternatively store configuration in a file called `.env` which you need to create yourself from a copy of `.env.wsgi`
+
 Now run `git remote add heroku https://git.heroku.com/your_apps_name_and_number.git`. This command will allow heroku to deploy new code based on what is in your directory.
 
 Next, run `git push heroku master`. This will push the code to Heroku and deploy the server!
@@ -89,7 +91,7 @@ And several AWS environment variables so we can upload the code to Lambda:
 - AWS_SECRET_ACCESS_KEY
 - LAMBDA_ROLE
 
-The environment variables are stored in an `.env` file which you need to create yourself from a copy of `.env.sample`
+The environment variables are stored in an `.env` file which you need to create yourself from a copy of `.env.lambda`
 
 **Take care with your `.env` file, it contains access details that you do not want to be uploaded to any public repositories (or pasted in a forum)**
 
@@ -167,7 +169,20 @@ And now you should be set! Go ahead and try speaking a few commands to it and se
 
 Thanks!
 
-## Performing voice commands
+
+# Additional validation of requests
+
+To verify that incoming requests are only allowed from your own copy of the skill, you can set the `SKILL_APPID` environment variable to your own Application ID; e.g., `amzn1.ask.skill.deadbeef-4e4f-ad61-fe42-aee7d2de083d`
+
+You can also enable some extra verification of the SSL certificate by setting `SKILL_VERIFY_CERT` to `true`.  This will perform the following checks on the certificate:
+
+* Incoming request is from Amazon,
+* Certificate URL is from Amazon,
+* Timestamp of certificate is valid/not expired,
+* Signature can be verified.
+
+
+# Performing voice commands
 
 Here are a few demo videos showing how to use it. Other commands you can do are in the utterances file.
 
