@@ -1259,12 +1259,28 @@ def on_intent(intent_request, session):
   if not response:
     return prepare_help_message()
 
+def verify_appid(appid=None):
+  if env('SKILL_APPID') and appid:
+    try:
+      print "Verifying application ID..."
+      verifier.verify_application_id(appid, env('SKILL_APPID'))
+    except verifier.VerificationError as e:
+      print e.args[0]
+      raise
+
 
 # The main entry point for lambda
 def lambda_handler(event, context):
   print("event.session.application.applicationId=" + event['session']['application']['applicationId'])
 
   setup_env()
+
+  # Verify the request is coming from Amazon and includes a valid signature.
+  if env('SKILL_VERIFY_CERT'):
+    print "Warning: certificate verification not yet enabled for lambda handler"
+
+  # Verify the application ID is what the user expects
+  verify_appid(event['session']['application']['applicationId'])
 
   if event['session']['new']:
     on_session_started({'requestId': event['request']['requestId']}, event['session'])
@@ -1291,8 +1307,7 @@ def wsgi_handler(environ, start_response):
     alexa_session = alexa_msg['session']
     alexa_request = alexa_msg['request']
 
-    # verify the request is coming from Amazon and includes the correct
-    # Application ID and a valid signature.
+    # Verify the request is coming from Amazon and includes a valid signature.
     try:
       if env('SKILL_VERIFY_CERT'):
         print "Verifying certificate is valid..."
@@ -1302,12 +1317,12 @@ def wsgi_handler(environ, start_response):
         verifier.verify_signature(cert, signature, body)
         timestamp = aniso8601.parse_datetime(alexa_request['timestamp'])
         verifier.verify_timestamp(timestamp)
-      if env('SKILL_APPID'):
-        print "Verifying application ID..."
-        verifier.verify_application_id(alexa_msg['session']['application']['applicationId'], env('SKILL_APPID'))
     except verifier.VerificationError as e:
       print e.args[0]
       raise
+
+    # Verify the application ID is what the user expects
+    verify_appid(alexa_msg['session']['application']['applicationId'])
 
     if alexa_session['new']:
       on_session_started({'requestId': alexa_request['requestId']}, alexa_session)
