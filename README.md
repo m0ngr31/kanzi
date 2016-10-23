@@ -181,6 +181,8 @@ You can also enable some extra verification of the SSL certificate by setting `S
 * Timestamp of certificate is valid/not expired,
 * Signature can be verified.
 
+Note that you will need to manually install the dependencies in `requirements_verify.txt` if you want this additional validation.  Depending on your host environment, something like `pip install -r requirements_verify.txt` might work.
+
 
 # Performing voice commands
 
