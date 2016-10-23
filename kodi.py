@@ -444,6 +444,9 @@ def GetMovieGenres():
 def GetUnwatchedMovies():
   return SendCommand(RPCString("VideoLibrary.GetMovies", {"filter":{"field":"playcount", "operator":"lessthan", "value":"1"}}))
 
+def GetEpisodeDetails(ep_id):
+  return SendCommand(RPCString("VideoLibrary.GetEpisodeDetails", {"episodeid": int(ep_id), "properties":["season", "episode"]}))
+
 def GetEpisodesFromShow(show_id):
   return SendCommand(RPCString("VideoLibrary.GetEpisodes", {"tvshowid": int(show_id)}))
 
@@ -480,7 +483,7 @@ def GetNextUnwatchedEpisode(show_id):
     return None
 
 def GetLastWatchedShow():
-  return SendCommand(RPCString("VideoLibrary.GetEpisodes", {"limits":{"end":1}, "filter":{"field":"playcount", "operator":"greaterthan", "value":"0"}, "filter":{"field":"lastplayed", "operator":"greaterthan", "value":"0"}, "sort":{"method":"lastplayed", "order":"descending"}, "properties":["tvshowid"]}))
+  return SendCommand(RPCString("VideoLibrary.GetEpisodes", {"limits":{"end":1}, "filter":{"field":"playcount", "operator":"greaterthan", "value":"0"}, "filter":{"field":"lastplayed", "operator":"greaterthan", "value":"0"}, "sort":{"method":"lastplayed", "order":"descending"}, "properties":["tvshowid", "showtitle"]}))
 
 def GetSpecificEpisode(show_id, season, episode):
   data = SendCommand(RPCString("VideoLibrary.GetEpisodes", {"tvshowid": int(show_id), "season": int(season), "properties": ["season", "episode"]}))

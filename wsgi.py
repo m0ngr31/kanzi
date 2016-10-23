@@ -173,7 +173,7 @@ def alexa_new_show_inquiry(slots):
     else:
       return build_alexa_response('Could not find %s' % (heard_show), card_title)
   else:
-    return build_alexa_response('Error parsing results.', card_title)
+    return build_alexa_response('Error parsing results', card_title)
 
 # Handle the CurrentPlayItemInquiry intent.
 
@@ -362,14 +362,14 @@ def alexa_play_playlist(slots):
     located = kodi.matchHeard(heard_playlist, playlists_list, 'label')
 
     if located:
-      print 'Playing playlist "%s"' % (located['file'])
+      print 'Located playlist "%s"' % (located['file'])
       sys.stdout.flush()
       kodi.StartPlaylist(located['file'])
       return build_alexa_response('Playing playlist %s' % (heard_playlist), card_title)
     else:
       return build_alexa_response('I Could not find a playlist named %s' % (heard_playlist), card_title)
   else:
-    return build_alexa_response('Error parsing results.', card_title)
+    return build_alexa_response('Error parsing results', card_title)
 
 def alexa_party_play(slots):
   card_title = 'Party Mode'
@@ -391,7 +391,7 @@ def alexa_party_play(slots):
     kodi.StartPlaylist()
     return build_alexa_response('Starting party play', card_title)
   else:
-    return build_alexa_response('Error parsing results.', card_title)
+    return build_alexa_response('Error parsing results', card_title)
 
 def alexa_start_over(slots):
   card_title = 'Starting current item over'
@@ -903,7 +903,7 @@ def alexa_play_random_movie(slots):
 
     return build_alexa_response('Playing %s' % (random_movie['label']), card_title)
   else:
-    return build_alexa_response('Error parsing results.', card_title)
+    return build_alexa_response('Error parsing results', card_title)
 
 def alexa_play_movie(slots):
   heard_movie = str(slots['Movie']['value']).lower().translate(None, string.punctuation)
@@ -927,7 +927,7 @@ def alexa_play_movie(slots):
     else:
       return build_alexa_response('Could not find a movie called %s' % (heard_movie), card_title)
   else:
-    return build_alexa_response('Error parsing results.', card_title)
+    return build_alexa_response('Error parsing results', card_title)
 
 def alexa_play_random_episode(slots):
   heard_show = str(slots['Show']['value']).lower().translate(None, string.punctuation)
@@ -954,17 +954,18 @@ def alexa_play_random_episode(slots):
       for episode in episodes_result['result']['episodes']:
         episodes_array.append(episode['episodeid'])
 
-      kodi.ClearVideoPlaylist()
-      kodi.PrepEpisodePlayList(random.choice(episodes_array))
+      episode_id = random.choice(episodes_array)
+      episode_details = kodi.GetEpisodeDetails(episode_id)['result']['episodedetails']
 
+      kodi.ClearVideoPlaylist()
+      kodi.PrepEpisodePlayList(episode_id)
       kodi.StartVideoPlaylist()
 
-      # XXX: Should speak the show title, season, and episode it chose
-      return build_alexa_response('Playing a random episode of %s' % (heard_show), card_title)
+      return build_alexa_response('Playing season %d episode %d of %s' % (episode_details['season'], episode_details['episode'], heard_show), card_title)
     else:
       return build_alexa_response('Could not find a show named %s' % (heard_show), card_title)
   else:
-    return build_alexa_response('Error parsing results.', card_title)
+    return build_alexa_response('Error parsing results', card_title)
 
 
 def alexa_play_episode(slots):
@@ -998,7 +999,7 @@ def alexa_play_episode(slots):
     else:
       return build_alexa_response('Could not find a show named %s' % (heard_show), card_title)
   else:
-    return build_alexa_response('Error parsing results.', card_title)
+    return build_alexa_response('Error parsing results', card_title)
 
 
 def alexa_play_next_episode(slots):
@@ -1018,23 +1019,23 @@ def alexa_play_next_episode(slots):
       next_episode = kodi.GetNextUnwatchedEpisode(located['tvshowid'])
 
       if next_episode:
+        episode_details = kodi.GetEpisodeDetails(next_episode)['result']['episodedetails']
+
         kodi.ClearVideoPlaylist()
         kodi.PrepEpisodePlayList(next_episode)
-
         kodi.StartVideoPlaylist()
 
-        # XXX: Should speak the show title, season, and episode it chose
-        return build_alexa_response('Playing the next episode of %s' % (heard_show), card_title)
+        return build_alexa_response('Playing season %d episode %d of %s' % (episode_details['season'], episode_details['episode'], heard_show), card_title)
       else:
         return build_alexa_response('No new episodes for %s' % (heard_show), card_title)
     else:
       return build_alexa_response('Could not find a show named %s' % (heard_show), card_title)
   else:
-    return build_alexa_response('Error parsing results.', card_title)
+    return build_alexa_response('Error parsing results', card_title)
 
 
 def alexa_play_newest_episode(slots):
-  heard_show =  str(slots['Show']['value']).lower().translate(None, string.punctuation)
+  heard_show = str(slots['Show']['value']).lower().translate(None, string.punctuation)
 
   card_title = 'Playing the newest episode of %s' % (heard_show)
   print card_title
@@ -1047,21 +1048,22 @@ def alexa_play_newest_episode(slots):
     located = kodi.matchHeard(heard_show, shows_array)
 
     if located:
-      episode_result = kodi.GetNewestEpisodeFromShow(located['tvshowid'])
+      episode = kodi.GetNewestEpisodeFromShow(located['tvshowid'])
 
-      if episode_result:
+      if episode:
+        episode_details = kodi.GetEpisodeDetails(episode)['result']['episodedetails']
+
         kodi.ClearVideoPlaylist()
-        kodi.PrepEpisodePlayList(episode_result)
+        kodi.PrepEpisodePlayList(episode)
         kodi.StartVideoPlaylist()
 
-        # XXX: Should speak the show title, season, and episode it chose
-        return build_alexa_response('Playing the latest episode of %s' % (heard_show), card_title)
+        return build_alexa_response('Playing season %d episode %d of %s' % (episode_details['season'], episode_details['episode'], heard_show), card_title)
       else:
         return build_alexa_response('No new episodes for %s' % (heard_show), card_title)
     else:
       return build_alexa_response('Could not find %s' % (heard_show), card_title)
   else:
-    return build_alexa_response('Error parsing results.', card_title)
+    return build_alexa_response('Error parsing results', card_title)
 
 
 def alexa_continue_show(slots):
@@ -1076,18 +1078,17 @@ def alexa_continue_show(slots):
     next_episode = kodi.GetNextUnwatchedEpisode(last_show_id)
 
     if next_episode:
+      episode_details = kodi.GetEpisodeDetails(next_episode)['result']['episodedetails']
+
       kodi.ClearVideoPlaylist()
       kodi.PrepEpisodePlayList(next_episode)
-
       kodi.StartVideoPlaylist()
-      # XXX: Should speak the show title, season, and episode it chose
-      return build_alexa_response('Playing next episode', card_title)
+
+      return build_alexa_response('Playing season %d episode %d of %s' % (episode_details['season'], episode_details['episode'], last_show_obj['result']['episodes'][0]['showtitle']), card_title)
     else:
-      # XXX: Should speak the show title in question
-      return build_alexa_response('No new episodes', card_title)
+      return build_alexa_response('No new episodes for %s' % last_show_obj['result']['episodes'][0]['showtitle'], card_title)
   except:
-    # XXX: Should speak the show title in question
-    return build_alexa_response('Could not continue show', card_title)
+    return build_alexa_response('Error parsing results', card_title)
 
 # Handle the WhatNewShows intent.
 
