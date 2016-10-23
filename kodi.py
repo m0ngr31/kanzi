@@ -37,7 +37,6 @@ import re
 import string
 import sys
 import pycountry
-from yaep import populate_env
 
 # These are words that we ignore when doing a non-exact match on show names
 STOPWORDS = [
@@ -77,9 +76,6 @@ def remove_the(name):
     return name[4:]
   else:
     return name
-
-def SetupEnvVars():
-  populate_env()
 
 # These two methods construct the JSON-RPC message and send it to the Kodi player
 def SendCommand(command):

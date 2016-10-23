@@ -2,4 +2,3 @@ requests
 gunicorn
 yaep
 pycountry
-ConfigParser

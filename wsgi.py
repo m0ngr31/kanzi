@@ -35,7 +35,8 @@ import re
 import string
 import sys
 import threading
-import ConfigParser
+from yaep import populate_env
+from yaep import env
 
 sys.path += [os.path.dirname(__file__)]
 
@@ -48,7 +49,13 @@ except:
 
 import kodi
 
-INI_FILE = os.path.join(os.path.dirname(__file__), "wsgi.ini")
+
+ENV_FILE = os.path.join(os.path.dirname(__file__), ".env")
+
+def setup_env():
+  os.environ['ENV_FILE'] = ENV_FILE
+  populate_env()
+  #print os.environ
 
 
 # These utility functions construct the required JSON for a full Alexa Skills Kit response
@@ -1228,22 +1235,6 @@ INTENTS = [
 ]
 
 
-# The main entry point for lambda
-def lambda_handler(event, context):
-  print("event.session.application.applicationId=" + event['session']['application']['applicationId'])
-
-  kodi.SetupEnvVars()
-
-  if event['session']['new']:
-    on_session_started({'requestId': event['request']['requestId']}, event['session'])
-
-  if event['request']['type'] == "LaunchRequest":
-    return prepare_help_message()
-  elif event['request']['type'] == "IntentRequest":
-    return on_intent(event['request'], event['session'])
-  else:
-    return build_alexa_response("I received an unexpected request type.")
-
 def on_session_started(session_started_request, session):
   print("on_session_started requestId=" + session_started_request['requestId'] + ", sessionId=" + session['sessionId'])
 
@@ -1269,7 +1260,24 @@ def on_intent(intent_request, session):
     return prepare_help_message()
 
 
-def wsgi_main_handler(environ, start_response):
+# The main entry point for lambda
+def lambda_handler(event, context):
+  print("event.session.application.applicationId=" + event['session']['application']['applicationId'])
+
+  setup_env()
+
+  if event['session']['new']:
+    on_session_started({'requestId': event['request']['requestId']}, event['session'])
+
+  if event['request']['type'] == "LaunchRequest":
+    return prepare_help_message()
+  elif event['request']['type'] == "IntentRequest":
+    return on_intent(event['request'], event['session'])
+  else:
+    return build_alexa_response("I received an unexpected request type.")
+
+
+def wsgi_handler(environ, start_response):
   # Alexa requests come as POST messages with a request body
   try:
     length = int(environ.get('CONTENT_LENGTH', '0'))
@@ -1286,7 +1294,7 @@ def wsgi_main_handler(environ, start_response):
     # verify the request is coming from Amazon and includes the correct
     # Application ID and a valid signature.
     try:
-      if int(environ.get('KODI_VERIFY_CERT', '0')):
+      if env('SKILL_VERIFY_CERT'):
         print "Verifying certificate is valid..."
         cert_url = environ['HTTP_SIGNATURECERTCHAINURL']
         signature = environ['HTTP_SIGNATURE']
@@ -1294,9 +1302,9 @@ def wsgi_main_handler(environ, start_response):
         verifier.verify_signature(cert, signature, body)
         timestamp = aniso8601.parse_datetime(alexa_request['timestamp'])
         verifier.verify_timestamp(timestamp)
-      if environ.get('KODI_APPID', ''):
+      if env('SKILL_APPID'):
         print "Verifying application ID..."
-        verifier.verify_application_id(alexa_msg['session']['application']['applicationId'], environ['KODI_APPID'])
+        verifier.verify_application_id(alexa_msg['session']['application']['applicationId'], env('SKILL_APPID'))
     except verifier.VerificationError as e:
       print e.args[0]
       raise
@@ -1324,56 +1332,13 @@ def wsgi_main_handler(environ, start_response):
 
 # Map the URL to the WSGI function that should handle it.
 WSGI_HANDLERS = [
-  ['/', wsgi_main_handler],
-  ['', wsgi_main_handler],
+  ['/', wsgi_handler],
+  ['', wsgi_handler],
 ]
 
 # The main entry point for WSGI scripts
 def application(environ, start_response):
-  try:
-    cfg = ConfigParser.SafeConfigParser()
-    cfg.read(INI_FILE)
-  except:
-    # config file doesn't exist, assume user set environment variables already
-    pass
-  else:
-    # Python 2.x ConfigParser is so ridiculously limited..
-    try:
-      app_id = cfg.get('general', 'app_id')
-    except:
-      app_id = environ.get('KODI_APPID', '')
-    try:
-      verify_cert = cfg.getboolean('general', 'verify_cert')
-    except:
-      verify_cert = environ.get('KODI_VERIFY_CERT', False)
-    try:
-      kodi_address = cfg.get('kodi', 'address')
-    except:
-      kodi_address = environ.get('KODI_ADDRESS', '127.0.0.1')
-    try:
-      kodi_port = cfg.get('kodi', 'port')
-    except:
-      kodi_port = environ.get('KODI_PORT', '8080')
-    try:
-      kodi_username = cfg.get('kodi', 'username')
-    except:
-      kodi_username = environ.get('KODI_USERNAME', 'kodi')
-    try:
-      kodi_password = cfg.get('kodi', 'password')
-    except:
-      kodi_password = environ.get('KODI_PASSWORD', 'kodi')
-
-    environ['KODI_APPID'] = app_id
-    if verify_cert:
-      environ['KODI_VERIFY_CERT'] = '1'
-    else:
-      environ['KODI_VERIFY_CERT'] = '0'
-
-    # for use in kodi.py
-    os.environ['KODI_ADDRESS'] = kodi_address
-    os.environ['KODI_PORT'] = kodi_port
-    os.environ['KODI_USERNAME'] = kodi_username
-    os.environ['KODI_PASSWORD'] = kodi_password
+  setup_env()
 
   # Execute the handler that matches the URL
   for h in WSGI_HANDLERS:
