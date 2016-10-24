@@ -148,11 +148,12 @@ You'll just need to stick the URL from your app in the Endpoint field. If you ar
 
 On the next tab, you'll have to paste the `alexa.intents` file into the "Intent Schema" field, and paste the `alexa.utterances` file in the "Sample Utterances" field.
 
-The tricky part is generating the Slots in the middle section. You need to create 4 different slots:
+The tricky part is generating the Slots in the middle section. You need to create 5 different slots:
 
 - MOVIES
 - SHOWS
 - MUSICARTISTS
+- MUSICALBUMS
 - MUSICPLAYLISTS
 
 To make it as easy as possible, I wrote a little webapp that will give you the information you need: [here.](https://slot-generator.herokuapp.com/). You can also get the information from running `python generate_custom_slots.py` in the repo directory if you have python installed. This will create txt files with the relevant information. If one of your slots is empty, you can just enter the word 'Empty' or something so that it'll save.
