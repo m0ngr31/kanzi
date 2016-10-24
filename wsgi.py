@@ -1264,12 +1264,13 @@ def on_intent(intent_request, session):
   if not response:
     return prepare_help_message()
 
-def verify_appid(appid=None):
-  if env('SKILL_APPID') and appid:
+def verify_application_id(candidate):
+  if env('SKILL_APPID'):
     try:
       print "Verifying application ID..."
-      verifier.verify_application_id(appid, env('SKILL_APPID'))
-    except verifier.VerificationError as e:
+      if candidate not in env('SKILL_APPID'):
+        raise ValueError("Application ID verification failed")
+    except ValueError as e:
       print e.args[0]
       raise
 
@@ -1282,7 +1283,7 @@ def lambda_handler(event, context):
   setup_env()
 
   # Verify the application ID is what the user expects
-  verify_appid(appid)
+  verify_application_id(appid)
 
   if event['session']['new']:
     on_session_started({'requestId': event['request']['requestId']}, event['session'])
@@ -1327,7 +1328,7 @@ def wsgi_handler(environ, start_response):
       raise
 
     # Verify the application ID is what the user expects
-    verify_appid(appid)
+    verify_application_id(appid)
 
     if alexa_session['new']:
       on_session_started({'requestId': alexa_request['requestId']}, alexa_session)

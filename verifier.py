@@ -35,11 +35,6 @@ def verify_timestamp(timestamp):
     raise VerificationError("Timestamp verification failed")
 
 
-def verify_application_id(candidate, records):
-  if candidate not in records:
-    raise VerificationError("Application ID verification failed")
-
-
 def _valid_certificate_url(cert_url):
   parsed_url = urlparse(cert_url)
   if parsed_url.scheme == 'https':
