@@ -1281,10 +1281,6 @@ def lambda_handler(event, context):
 
   setup_env()
 
-  # Verify the request is coming from Amazon and includes a valid signature.
-  if env('SKILL_VERIFY_CERT'):
-    print "Warning: certificate verification not yet enabled for lambda handler"
-
   # Verify the application ID is what the user expects
   verify_appid(appid)
 

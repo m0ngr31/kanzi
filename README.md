@@ -174,6 +174,8 @@ Thanks!
 
 To verify that incoming requests are only allowed from your own copy of the skill, you can set the `SKILL_APPID` environment variable to your own Application ID; e.g., `amzn1.ask.skill.deadbeef-4e4f-ad61-fe42-aee7d2de083d`
 
+*NOTE: The rest of this is unsupported on AWS Lambda as Amazon performs these checks for you.*
+
 You can also enable some extra verification of the SSL certificate by setting `SKILL_VERIFY_CERT` to `true`.  This will perform the following checks on the certificate:
 
 * Incoming request is from Amazon,
