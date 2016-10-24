@@ -58,6 +58,19 @@
       "slots": []
     },
     {
+      "intent": "ListenToAlbum",
+      "slots": [
+        {
+          "name": "Artist",
+          "type": "MUSICARTISTS"
+        },
+        {
+          "name": "Album",
+          "type": "MUSICALBUMS"
+        }
+      ]
+    },
+    {
       "intent": "ListenToArtist",
       "slots": [
         {
