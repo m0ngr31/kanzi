@@ -37,7 +37,6 @@ import re
 import string
 import sys
 import pycountry
-from yaep import populate_env
 
 # These are words that we ignore when doing a non-exact match on show names
 STOPWORDS = [
@@ -78,21 +77,18 @@ def remove_the(name):
   else:
     return name
 
-def SetupEnvVars():
-  populate_env()
-
 # These two methods construct the JSON-RPC message and send it to the Kodi player
 def SendCommand(command):
   # Change this to the IP address of your Kodi server or always pass in an address
-  PROTOCOL = os.getenv('KODI_PROTOCOL', 'http')
   KODI = os.getenv('KODI_ADDRESS', 'localhost')
   PORT = int(os.getenv('KODI_PORT', 8080))
   USER = os.getenv('KODI_USERNAME', 'kodi')
   PASS = os.getenv('KODI_PASSWORD', 'kodi')
 
-  #print KODI
-  
-  url = "%s://%s:%d/jsonrpc" % (PROTOCOL, KODI, PORT)
+  print "Sending request to %s:%d" % (KODI, PORT)
+
+  url = "http://%s:%d/jsonrpc" % (KODI, PORT)
+
   try:
     r = requests.post(url, data=command, auth=(USER, PASS), verify=False)
   except IOError as e:
@@ -304,6 +300,26 @@ def Stop():
   if playerid is not None:
     return SendCommand(RPCString("Player.Stop", {"playerid":playerid}))
 
+def StepForward():
+  playerid = GetPlayerID()
+  if playerid:
+    return SendCommand(RPCString("Player.Seek", {"playerid":playerid, "value":"smallforward"}))
+
+def StepBackward():
+  playerid = GetPlayerID()
+  if playerid:
+    return SendCommand(RPCString("Player.Seek", {"playerid":playerid, "value":"smallbackward"}))
+
+def BigStepForward():
+  playerid = GetPlayerID()
+  if playerid:
+    return SendCommand(RPCString("Player.Seek", {"playerid":playerid, "value":"bigforward"}))
+
+def BigStepBackward():
+  playerid = GetPlayerID()
+  if playerid:
+    return SendCommand(RPCString("Player.Seek", {"playerid":playerid, "value":"bigbackward"}))
+
 def Replay():
   playerid = GetPlayerID()
   if playerid:
@@ -400,52 +416,43 @@ def GetMusicPlaylists():
   return SendCommand(RPCString("Files.GetDirectory", {"directory": "special://musicplaylists"}))
 
 def GetMusicArtists():
-  data = SendCommand(RPCString("AudioLibrary.GetArtists"))
-  return data
+  return SendCommand(RPCString("AudioLibrary.GetArtists"))
 
 def GetMusicGenres():
-  data = SendCommand(RPCString("AudioLibrary.GetGenres"))
-  return data
+  return SendCommand(RPCString("AudioLibrary.GetGenres"))
 
 def GetArtistAlbums(artist_id):
-  data = SendCommand(RPCString("AudioLibrary.GetAlbums", {"filter": {"artistid": int(artist_id)}}))
-  return data
+  return SendCommand(RPCString("AudioLibrary.GetAlbums", {"filter": {"artistid": int(artist_id)}}))
 
 def GetAllSongs():
-  data = SendCommand(RPCString("AudioLibrary.GetSongs"))
-  return data
+  return SendCommand(RPCString("AudioLibrary.GetSongs"))
 
 def GetArtistSongs(artist_id):
-  data = SendCommand(RPCString("AudioLibrary.GetSongs", {"filter": {"artistid": int(artist_id)}}))
-  return data
+  return SendCommand(RPCString("AudioLibrary.GetSongs", {"filter": {"artistid": int(artist_id)}}))
 
 def GetRecentlyAddedSongs():
-  data = SendCommand(RPCString("AudioLibrary.GetRecentlyAddedSongs"))
-  return data
+  return SendCommand(RPCString("AudioLibrary.GetRecentlyAddedSongs"))
 
 def GetTvShows():
-  data = SendCommand(RPCString("VideoLibrary.GetTVShows"))
-  return data
+  return SendCommand(RPCString("VideoLibrary.GetTVShows"))
 
 def GetMovies():
-  data = SendCommand(RPCString("VideoLibrary.GetMovies"))
-  return data
+  return SendCommand(RPCString("VideoLibrary.GetMovies"))
 
 def GetMovieGenres():
-  data = SendCommand(RPCString("VideoLibrary.GetGenres", {"type": "movie"}))
-  return data
+  return SendCommand(RPCString("VideoLibrary.GetGenres", {"type": "movie"}))
 
 def GetUnwatchedMovies():
-  data = SendCommand(RPCString("VideoLibrary.GetMovies", {"filter":{"field":"playcount", "operator":"lessthan", "value":"1"}}))
-  return data
+  return SendCommand(RPCString("VideoLibrary.GetMovies", {"filter":{"field":"playcount", "operator":"lessthan", "value":"1"}}))
+
+def GetEpisodeDetails(ep_id):
+  return SendCommand(RPCString("VideoLibrary.GetEpisodeDetails", {"episodeid": int(ep_id), "properties":["season", "episode"]}))
 
 def GetEpisodesFromShow(show_id):
-  data = SendCommand(RPCString("VideoLibrary.GetEpisodes", {"tvshowid": int(show_id)}))
-  return data
+  return SendCommand(RPCString("VideoLibrary.GetEpisodes", {"tvshowid": int(show_id)}))
 
 def GetUnwatchedEpisodesFromShow(show_id):
-  data = SendCommand(RPCString("VideoLibrary.GetEpisodes", {"tvshowid": int(show_id), "filter":{"field":"playcount", "operator":"lessthan", "value":"1"}}))
-  return data
+  return SendCommand(RPCString("VideoLibrary.GetEpisodes", {"tvshowid": int(show_id), "filter":{"field":"playcount", "operator":"lessthan", "value":"1"}}))
 
 def GetNewestEpisodeFromShow(show_id):
   data = SendCommand(RPCString("VideoLibrary.GetEpisodes", {"limits":{"end":1},"tvshowid": int(show_id), "sort":{"method":"dateadded", "order":"descending"}}))
@@ -477,8 +484,7 @@ def GetNextUnwatchedEpisode(show_id):
     return None
 
 def GetLastWatchedShow():
-  data = SendCommand(RPCString("VideoLibrary.GetEpisodes", {"limits":{"end":1}, "filter":{"field":"playcount", "operator":"greaterthan", "value":"0"}, "filter":{"field":"lastplayed", "operator":"greaterthan", "value":"0"}, "sort":{"method":"lastplayed", "order":"descending"}, "properties":["tvshowid"]}))
-  return data
+  return SendCommand(RPCString("VideoLibrary.GetEpisodes", {"limits":{"end":1}, "filter":{"field":"playcount", "operator":"greaterthan", "value":"0"}, "filter":{"field":"lastplayed", "operator":"greaterthan", "value":"0"}, "sort":{"method":"lastplayed", "order":"descending"}, "properties":["tvshowid", "showtitle"]}))
 
 def GetSpecificEpisode(show_id, season, episode):
   data = SendCommand(RPCString("VideoLibrary.GetEpisodes", {"tvshowid": int(show_id), "season": int(season), "properties": ["season", "episode"]}))
@@ -494,15 +500,13 @@ def GetSpecificEpisode(show_id, season, episode):
     return None
 
 def GetEpisodesFromShowDetails(show_id):
-  data = SendCommand(RPCString("VideoLibrary.GetEpisodes", {"tvshowid": int(show_id), "properties": ["season", "episode"]}))
-  return data
+  return SendCommand(RPCString("VideoLibrary.GetEpisodes", {"tvshowid": int(show_id), "properties": ["season", "episode"]}))
 
 # Returns a list of dictionaries with information about episodes that have been watched.
 # May take a long time if you have lots of shows and you set max to a big number
 
 def GetWatchedEpisodes(max=90):
-  data = SendCommand(RPCString("VideoLibrary.GetEpisodes", {"limits":{"end":max}, "filter":{"field":"playcount", "operator":"greaterthan", "value":"0"}, "properties":["playcount", "showtitle", "season", "episode", "lastplayed" ]}))
-  return data['result']['episodes']
+  return SendCommand(RPCString("VideoLibrary.GetEpisodes", {"limits":{"end":max}, "filter":{"field":"playcount", "operator":"greaterthan", "value":"0"}, "properties":["playcount", "showtitle", "season", "episode", "lastplayed" ]}))
 
 
 # Returns a list of dictionaries with information about unwatched episodes. Useful for
@@ -554,8 +558,8 @@ def GetShowDetails(show=0):
 # Get the first active player.
 
 def GetPlayerID(playertype=['audio', 'video', 'picture']):
-  info = SendCommand(RPCString("Player.GetActivePlayers"))
-  result = info.get("result", [])
+  data = SendCommand(RPCString("Player.GetActivePlayers"))
+  result = data.get("result", [])
   if len(result) > 0:
     for curitem in result:
       if curitem.get("type") in playertype:
@@ -565,8 +569,8 @@ def GetPlayerID(playertype=['audio', 'video', 'picture']):
 # Get the first active Video player.
 
 def GetVideoPlayerID(playertype=['video']):
-  info = SendCommand(RPCString("Player.GetActivePlayers"))
-  result = info.get("result", [])
+  data = SendCommand(RPCString("Player.GetActivePlayers"))
+  result = data.get("result", [])
   if len(result) > 0:
     for curitem in result:
       if curitem.get("type") in playertype:
@@ -575,9 +579,9 @@ def GetVideoPlayerID(playertype=['video']):
 
 # Get the first active Audio player.
 
-def GetVideoPlayerID(playertype=['audio']):
-  info = SendCommand(RPCString("Player.GetActivePlayers"))
-  result = info.get("result", [])
+def GetAudioPlayerID(playertype=['audio']):
+  data = SendCommand(RPCString("Player.GetActivePlayers"))
+  result = data.get("result", [])
   if len(result) > 0:
     for curitem in result:
       if curitem.get("type") in playertype:
@@ -587,8 +591,8 @@ def GetVideoPlayerID(playertype=['audio']):
 # Get the first active Picture player.
 
 def GetPicturePlayerID(playertype=['picture']):
-  info = SendCommand(RPCString("Player.GetActivePlayers"))
-  result = info.get("result", [])
+  data = SendCommand(RPCString("Player.GetActivePlayers"))
+  result = data.get("result", [])
   if len(result) > 0:
     for curitem in result:
       if curitem.get("type") in playertype:

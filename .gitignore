@@ -88,3 +88,6 @@ yaep-0.0.6.dist-info/
 yaep/
 zope.interface-4.3.2-py2.7-nspkg.pth
 zope/
+
+.env
+*.ini

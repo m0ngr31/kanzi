@@ -1,3 +1,12 @@
+# A list of utterance variations written in a shorthand syntax
+
+# Syntax and information
+# http://www.makermusings.com/2015/07/21/defining-utterances-for-the-alexa-skills-kit/ 
+
+# Tool to expand the single line into the usable list of utterances
+# http://www.makermusings.com/amazon-echo-utterance-expander/
+
+
 PlayPause (play/pause/resume)
 
 Stop (stop/cancel/shut up)
@@ -125,6 +134,15 @@ Suspend put system to sleep
 Suspend go to sleep
 
 EjectMedia eject (/media/disc/audio disc/bluray/bluray disc/cd/dvd)
+
+StepForward (/small) (step/jump) forward
+StepForward (/small) forward (step/jump)
+BigStepForward (large/big/long) (step/jump) forward
+BigStepForward (large/big/long) forward (step/jump)
+StepBackward (/small) (step/jump) (backward/back)
+StepBackward (/small) (backward/back) (step/jump)
+BigStepBackward (large/big/long) (step/jump) (backward/back)
+BigStepBackward (large/big/long) (backward/back) (step/jump)
 
 WatchPVRBroadcast watch the program called {Broadcast}
 WatchPVRBroadcast play the program called {Broadcast}

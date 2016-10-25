@@ -495,6 +495,66 @@ PlayNextEpisode watch the next episode of {Show}
 PlayPause pause
 PlayPause play
 PlayPause resume
+BigStepBackward big back jump
+BigStepBackward big back step
+BigStepBackward big backward jump
+BigStepBackward big backward step
+BigStepBackward big jump back
+BigStepBackward big jump backward
+BigStepBackward big step back
+BigStepBackward big step backward
+BigStepBackward large back jump
+BigStepBackward large back step
+BigStepBackward large backward jump
+BigStepBackward large backward step
+BigStepBackward large jump back
+BigStepBackward large jump backward
+BigStepBackward large step back
+BigStepBackward large step backward
+BigStepBackward long back jump
+BigStepBackward long back step
+BigStepBackward long backward jump
+BigStepBackward long backward step
+BigStepBackward long jump back
+BigStepBackward long jump backward
+BigStepBackward long step back
+BigStepBackward long step backward
+BigStepForward big forward jump
+BigStepForward big forward step
+BigStepForward big jump forward
+BigStepForward big step forward
+BigStepForward large forward jump
+BigStepForward large forward step
+BigStepForward large jump forward
+BigStepForward large step forward
+BigStepForward long forward jump
+BigStepForward long forward step
+BigStepForward long jump forward
+BigStepForward long step forward
+StepBackward back jump
+StepBackward back step
+StepBackward backward jump
+StepBackward backward step
+StepBackward jump back
+StepBackward jump backward
+StepBackward small back jump
+StepBackward small back step
+StepBackward small backward jump
+StepBackward small backward step
+StepBackward small jump back
+StepBackward small jump backward
+StepBackward small step back
+StepBackward small step backward
+StepBackward step back
+StepBackward step backward
+StepForward forward jump
+StepForward forward step
+StepForward jump forward
+StepForward small forward jump
+StepForward small forward step
+StepForward small jump forward
+StepForward small step forward
+StepForward step forward
 PlayRandomEpisode play a episode of {Show}
 PlayRandomEpisode play a random episode of {Show}
 PlayRandomEpisode play episode of {Show}

@@ -1,7 +1,7 @@
 requests
 gunicorn
-pycountry
 yaep
+pycountry
 fuzzywuzzy
 pytz
 datetime
