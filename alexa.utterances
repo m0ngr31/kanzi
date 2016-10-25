@@ -653,16 +653,8 @@ WatchPVRBroadcast where is {Broadcast}
 WatchPVRBroadcast find the program called {Broadcast}
 WatchPVRBroadcast find the broadcast called {Broadcast}
 WatchPVRBroadcast find {Broadcast}
-WatchPVRBroadcast switch to {Broadcast}
-WatchPVRBroadcast switch to the program called {Broadcast}
-WatchPVRBroadcast switch to the broadcast called {Broadcast}
-WatchPVRBroadcast show me {Broadcast}
-WatchPVRBroadcast show me something called {Broadcast}
-WatchPVRBroadcast show me anything called {Broadcast}
 WatchPVRBroadcast watch something called {Broadcast}
 WatchPVRBroadcast watch anything called {Broadcast}
-WatchPVRBroadcast show me the program called {Broadcast}
-WatchPVRBroadcast show me the broadcast called {Broadcast}
 WatchPVRBroadcast jump to {Broadcast}
 WatchPVRBroadcast change channel to {Broadcast}
 WatchPVRBroadcast change channel to watch {Broadcast}

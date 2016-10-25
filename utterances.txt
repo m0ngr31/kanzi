@@ -144,34 +144,18 @@ StepBackward (/small) (backward/back) (step/jump)
 BigStepBackward (large/big/long) (step/jump) (backward/back)
 BigStepBackward (large/big/long) (backward/back) (step/jump)
 
-WatchPVRBroadcast watch the program called {Broadcast}
-WatchPVRBroadcast play the program called {Broadcast}
-WatchPVRBroadcast find the broadcast called {Broadcast}
-WatchPVRBroadcast watch the broadcast called {Broadcast}
-WatchPVRBroadcast play the broadcast called {Broadcast}
-WatchPVRBroadcast look for the program called {Broadcast}
-WatchPVRBroadcast look for the broadcast called {Broadcast}
-WatchPVRBroadcast look for {Broadcast}
-WatchPVRBroadcast where is the program called {Broadcast}
-WatchPVRBroadcast where is the broadcast called {Broadcast}
+WatchPVRBroadcast (watch/play/find) (/for) the (program/broadcast) called {Broadcast}
+WatchPVRBroadcast where is the (program/broadcast) called {Broadcast}
 WatchPVRBroadcast where is {Broadcast}
-WatchPVRBroadcast find the program called {Broadcast}
-WatchPVRBroadcast find the broadcast called {Broadcast}
+WatchPVRBroadcast find the (program/broadcast) called {Broadcast}
 WatchPVRBroadcast find {Broadcast}
 WatchPVRBroadcast switch to {Broadcast}
-WatchPVRBroadcast switch to the program called {Broadcast}
-WatchPVRBroadcast switch to the broadcast called {Broadcast}
-WatchPVRBroadcast show me {Broadcast}
-WatchPVRBroadcast show me something called {Broadcast}
-WatchPVRBroadcast show me anything called {Broadcast}
-WatchPVRBroadcast watch something called {Broadcast}
-WatchPVRBroadcast watch anything called {Broadcast}
-WatchPVRBroadcast show me the program called {Broadcast}
-WatchPVRBroadcast show me the broadcast called {Broadcast}
+WatchPVRBroadcast switch to the (program/broadcast) called {Broadcast}
+WatchPVRBroadcast show me) {Broadcast}
+WatchPVRBroadcast (show me/watch) (something/anything) called {Broadcast}
+WatchPVRBroadcast show me the (program/broadcast) called {Broadcast}
 WatchPVRBroadcast jump to {Broadcast}
 WatchPVRBroadcast change channel to {Broadcast}
-WatchPVRBroadcast change channel to watch {Broadcast}
-WatchPVRBroadcast change channel to play {Broadcast}
+WatchPVRBroadcast change channel to (watch/play) {Broadcast}
 
-WatchPVRChannel watch {Channel}
-WatchPVRChannel play {Channel}
+WatchPVRChannel (watch/play) {Channel}
