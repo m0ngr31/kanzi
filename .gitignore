@@ -66,11 +66,7 @@ test.py
 
 .vscode
 .DS_Store
-.idea/kodi-alexa.iml
-.idea/misc.xml
-.idea/modules.xml
-.idea/vcs.xml
-.idea/workspace.xml
+.idea
 DateTime/
 fuzzywuzzy-0.12.0.dist-info/
 fuzzywuzzy/
