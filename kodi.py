@@ -80,7 +80,7 @@ def remove_the(name):
 # These two methods construct the JSON-RPC message and send it to the Kodi player
 def SendCommand(command):
   # Change this to the IP address of your Kodi server or always pass in an address
-  KODI = os.getenv('KODI_ADDRESS', 'localhost')
+  KODI = os.getenv('KODI_ADDRESS', '127.0.0.1')
   PORT = int(os.getenv('KODI_PORT', 8080))
   USER = os.getenv('KODI_USERNAME', 'kodi')
   PASS = os.getenv('KODI_PASSWORD', 'kodi')
@@ -90,9 +90,8 @@ def SendCommand(command):
   url = "http://%s:%d/jsonrpc" % (KODI, PORT)
 
   try:
-    r = requests.post(url, data=command, auth=(USER, PASS), verify=False)
-  except IOError as e:
-    print(e.message)
+    r = requests.post(url, data=command, auth=(USER, PASS))
+  except:
     return {}
   return json.loads(r.text)
 
