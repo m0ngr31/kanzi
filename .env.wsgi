@@ -28,3 +28,6 @@ SKILL_VERIFY_CERT=
 # end.  If you have SKILL_TZ defined, it will also tell you the wall-clock
 # time when the item will conclude.
 SKILL_TZ=
+
+BROADCAST_LOAD_TIMEOUT=
+BROADCAST_SCAN_TIMEOUT=
