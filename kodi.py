@@ -192,6 +192,12 @@ def PrepMoviePlaylist(movie_id):
 def StartVideoPlaylist():
   return SendCommand(RPCString("Player.Open", {"item": {"playlistid": 1}}))
 
+def PlayEpisode(ep_id, resume=True):
+  return SendCommand(RPCString("Player.Open", {"item": {"episodeid": ep_id}, "options": {"resume": resume}}))
+
+def PlayMovie(movie_id, resume=True):
+  return SendCommand(RPCString("Player.Open", {"item": {"movieid": movie_id}, "options": {"resume": resume}}))
+
 def AddSongsToPlaylist(song_ids):
   songs_array = []
 
@@ -462,13 +468,17 @@ def GetNewestEpisodeFromShow(show_id):
     return None
 
 def GetNextUnwatchedEpisode(show_id):
-  data = SendCommand(RPCString("VideoLibrary.GetEpisodes", {"limits":{"end":1},"tvshowid": int(show_id), "filter":{"field":"lastplayed", "operator":"greaterthan", "value":"0"}, "properties":["season", "episode", "lastplayed", "firstaired"], "sort":{"method":"lastplayed", "order":"descending"}}))
+  data = SendCommand(RPCString("VideoLibrary.GetEpisodes", {"limits":{"end":1},"tvshowid": int(show_id), "filter":{"field":"lastplayed", "operator":"greaterthan", "value":"0"}, "properties":["season", "episode", "lastplayed", "firstaired", "resume"], "sort":{"method":"lastplayed", "order":"descending"}}))
   if 'episodes' in data['result']:
     episode = data['result']['episodes'][0]
     episode_season = episode['season']
     episode_number = episode['episode']
 
-    next_episode = GetSpecificEpisode(show_id, episode_season, int(episode_number) + 1)
+    resume = episode['resume']['position']
+    if resume > 0:
+      next_episode = episode['episodeid']
+    else:
+      next_episode = GetSpecificEpisode(show_id, episode_season, int(episode_number) + 1)
 
     if next_episode:
       return next_episode
