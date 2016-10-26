@@ -340,6 +340,24 @@
     {
       "intent": "CurrentPlayItemInquiry",
       "slots": []
+    },
+    {
+      "intent": "WatchPVRChannel",
+      "slots": [
+        {
+          "name": "Channel",
+          "type": "CHANNELS"
+        }
+      ]
+    },
+    {
+      "intent": "WatchPVRBroadcast",
+      "slots": [
+        {
+          "name": "Broadcast",
+          "type": "BROADCASTS"
+        }
+      ]
     }
   ]
 }
