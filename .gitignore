@@ -68,3 +68,5 @@ test.py
 
 .env
 *.ini
+
+kodi-alexa/
