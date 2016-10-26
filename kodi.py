@@ -964,3 +964,15 @@ def GetPlayerStatus():
         cur = '%02d:%02d' % (data['result']['time']['minutes'], data['result']['time']['seconds'])
       return {'state':'play' if speed > 0 else 'pause', 'time':cur, 'time_hours':hours_cur, 'time_mins':mins_cur, 'totaltime':total, 'total_hours':hours_total, 'total_mins':mins_total, 'pct':data['result']['percentage']}
   return {'state':'stop'}
+
+def GetPVRChannels():
+  data = SendCommand(RPCString("PVR.GetChannels", {"channelgroupid":"alltv"}))
+  return data
+
+def GetPVRBroadcasts(channelid):
+  data = SendCommand(RPCString("PVR.GetBroadcasts", {"channelid": int(channelid), "properties" : ["endtime"]}))
+  return data
+
+def WatchPVRChannel(channelid):
+  return SendCommand(RPCString("Player.Open", {"item": {"channelid": int(channelid)}}))
+
