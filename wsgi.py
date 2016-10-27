@@ -291,6 +291,65 @@ def alexa_big_step_backward(slots):
   answer = ""
   return build_alexa_response(answer, card_title)
 
+
+# Play whole album , or whole album by a specific artist
+def alexa_play_album(slots):
+  heard_album = str(slots['Album']['value']).lower().translate(None, string.punctuation)
+  if 'value' in slots['Artist']:
+    heard_artist = str(slots['Artist']['value']).lower().translate(None, string.punctuation)
+    card_title = 'Playing %s by %s' % (heard_album, heard_artist)
+  else:
+    card_title = 'Playing %s' % (heard_album)
+  print card_title
+  sys.stdout.flush()
+
+  if 'value' in slots['Artist']:
+    artists = kodi.GetMusicArtists()
+    if 'result' in artists and 'artists' in artists['result']:
+      artists_list = artists['result']['artists']
+      located = kodi.matchHeard(heard_artist, artists_list, 'artist')
+
+      if located:
+        albums = kodi.GetArtistAlbums(located['artistid'])
+        if 'result' in albums and 'albums' in albums['result']:
+          albums_list = albums['result']['albums']
+          album_located = kodi.matchHeard(heard_album, albums_list, 'label')
+
+          if album_located:
+            album_result = album_located['albumid']
+            kodi.Stop()
+            kodi.ClearPlaylist()
+            kodi.AddAlbumToPlaylist(album_result)
+            kodi.StartPlaylist()
+          else:
+            return build_alexa_response('Could not find %s by %s' % (heard_album, heard_artist), card_title)
+          return build_alexa_response('Playing %s by %s' % (heard_album, heard_artist), card_title)
+        else:
+          return build_alexa_response('Could not find %s by %s' % (heard_album, heard_artist), card_title)
+  
+      else:
+        return build_alexa_response('Could not find %s by %s' % (heard_album, heard_artist), card_title)
+    else:
+      return build_alexa_response('Could not find %s by %s' % (heard_artist), card_title)
+  else:
+    albums = kodi.GetAlbums()
+    if 'result' in albums and 'albums' in albums['result']:
+      albums_list = albums['result']['albums']
+      album_located = kodi.matchHeard(heard_album, albums_list, 'label')
+
+      if album_located:
+        album_result = album_located['albumid']
+        kodi.Stop()
+        kodi.ClearPlaylist()
+        kodi.AddAlbumToPlaylist(album_result)
+        kodi.StartPlaylist()
+      else:
+        return build_alexa_response('Could not find %s' % (heard_album), card_title)
+      return build_alexa_response('Playing %s' % (heard_album), card_title)
+    else:
+      return build_alexa_response('Could not find %s' % (heard_album), card_title)
+
+
 # Shuffle all music by an artist
 def alexa_play_artist(slots):
   heard_artist = str(slots['Artist']['value']).lower().translate(None, string.punctuation)
@@ -1189,6 +1248,7 @@ INTENTS = [
   ['BigStepBackward', alexa_big_step_backward],
   ['Stop', alexa_stop],
   ['ListenToArtist', alexa_play_artist],
+  ['ListenToAlbum', alexa_play_album],
   ['ListenToPlaylist', alexa_play_playlist],
   ['ListenToPlaylistRecent', alexa_play_recently_added_songs],
   ['Skip', alexa_skip],

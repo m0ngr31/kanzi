@@ -183,6 +183,9 @@ def StartPlaylist(playlist_file=None):
 def AddSongToPlaylist(song_id):
   return SendCommand(RPCString("Playlist.Add", {"playlistid": 0, "item": {"songid": int(song_id)}}))
 
+def AddAlbumToPlaylist(album_id):
+  return SendCommand(RPCString("Playlist.Add", {"playlistid": 0, "item": {"albumid": int(album_id)}}))
+
 def PrepEpisodePlayList(ep_id):
   return SendCommand(RPCString("Playlist.Add", {"playlistid": 1, "item": {"episodeid": int(ep_id)}}))
 
@@ -428,6 +431,9 @@ def GetMusicGenres():
 
 def GetArtistAlbums(artist_id):
   return SendCommand(RPCString("AudioLibrary.GetAlbums", {"filter": {"artistid": int(artist_id)}}))
+
+def GetAlbums():
+  return SendCommand(RPCString("AudioLibrary.GetAlbums"))
 
 def GetAllSongs():
   return SendCommand(RPCString("AudioLibrary.GetSongs"))

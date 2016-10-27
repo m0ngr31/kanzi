@@ -261,6 +261,12 @@ ListenToArtist shuffle music by {Artist}
 ListenToArtist shuffle {Artist}
 ListenToArtist play artist {Artist}
 ListenToArtist play music by {Artist}
+ListenToAlbum listen to album {Album}
+ListenToAlbum listen to album {Album} by {Artist}
+ListenToAlbum listen to {Album} by {Artist}
+ListenToAlbum play album {Album}
+ListenToAlbum play album {Album} by {Artist}
+ListenToAlbum play {Album} by {Artist}
 ListenToPlaylist listen to playlist {Playlist}
 ListenToPlaylist listen to {Playlist} playlist
 ListenToPlaylist play playlist {Playlist}
