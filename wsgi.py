@@ -1093,7 +1093,7 @@ def alexa_continue_show(slots):
       else:
         action = 'Playing'
 
-      kodi.PlayEpisode(episode)
+      kodi.PlayEpisode(next_episode_id)
 
       return build_alexa_response('%s season %d episode %d of %s' % (action, episode_details['season'], episode_details['episode'], last_show_obj['result']['episodes'][0]['showtitle']), card_title)
     else:
