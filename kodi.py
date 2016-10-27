@@ -187,7 +187,7 @@ def PrepEpisodePlayList(ep_id):
   return SendCommand(RPCString("Playlist.Add", {"playlistid": 1, "item": {"episodeid": int(ep_id)}}))
 
 def PrepMoviePlaylist(movie_id):
-   return SendCommand(RPCString("Playlist.Add", {"playlistid": 1, "item": {"movieid": int(movie_id)}}))
+  return SendCommand(RPCString("Playlist.Add", {"playlistid": 1, "item": {"movieid": int(movie_id)}}))
 
 def StartVideoPlaylist():
   return SendCommand(RPCString("Player.Open", {"item": {"playlistid": 1}}))
@@ -438,8 +438,16 @@ def GetArtistSongs(artist_id):
 def GetRecentlyAddedSongs():
   return SendCommand(RPCString("AudioLibrary.GetRecentlyAddedSongs"))
 
+def GetTvShowDetails(show_id):
+  data = SendCommand(RPCString("VideoLibrary.GetTVShowDetails", {'tvshowid':show_id, 'properties':['art']}))
+  return data['result']['tvshowdetails']
+
 def GetTvShows():
   return SendCommand(RPCString("VideoLibrary.GetTVShows"))
+
+def GetMovieDetails(movie_id):
+  data = SendCommand(RPCString("VideoLibrary.GetMovieDetails", {'movieid':movie_id, 'properties':['resume']}))
+  return data['result']['moviedetails']
 
 def GetMovies():
   return SendCommand(RPCString("VideoLibrary.GetMovies"))
@@ -451,7 +459,8 @@ def GetUnwatchedMovies():
   return SendCommand(RPCString("VideoLibrary.GetMovies", {"filter":{"field":"playcount", "operator":"lessthan", "value":"1"}}))
 
 def GetEpisodeDetails(ep_id):
-  return SendCommand(RPCString("VideoLibrary.GetEpisodeDetails", {"episodeid": int(ep_id), "properties":["season", "episode"]}))
+  data = SendCommand(RPCString("VideoLibrary.GetEpisodeDetails", {"episodeid": int(ep_id), "properties":["season", "episode", "resume"]}))
+  return data['result']['episodedetails']
 
 def GetEpisodesFromShow(show_id):
   return SendCommand(RPCString("VideoLibrary.GetEpisodes", {"tvshowid": int(show_id)}))
@@ -476,17 +485,17 @@ def GetNextUnwatchedEpisode(show_id):
 
     resume = episode['resume']['position']
     if resume > 0:
-      next_episode = episode['episodeid']
+      next_episode_id = episode['episodeid']
     else:
-      next_episode = GetSpecificEpisode(show_id, episode_season, int(episode_number) + 1)
+      next_episode_id = GetSpecificEpisode(show_id, episode_season, int(episode_number) + 1)
 
-    if next_episode:
-      return next_episode
+    if next_episode_id:
+      return next_episode_id
     else:
-      next_episode = GetSpecificEpisode(show_id, int(episode_season) + 1, 1)
+      next_episode_id = GetSpecificEpisode(show_id, int(episode_season) + 1, 1)
 
-      if next_episode:
-        return next_episode
+      if next_episode_id:
+        return next_episode_id
       else:
         return None
   else:
@@ -528,7 +537,7 @@ def GetUnwatchedEpisodes(max=90):
   shows = set([d['tvshowid'] for d in data['result']['episodes']])
   show_info = {}
   for show in shows:
-    show_info[show] = GetShowDetails(show=show)
+    show_info[show] = GetTvShowDetails(show=show)
   for d in data['result']['episodes']:
     showinfo = show_info[d['tvshowid']]
     answer.append({'title':d['title'], 'episodeid':d['episodeid'], 'show':d['showtitle'], 'label':d['label'], 'dateadded':datetime.datetime.strptime(d['dateadded'], "%Y-%m-%d %H:%M:%S")})
@@ -557,12 +566,6 @@ def SystemEjectMedia():
 
 
 # Misc helpers
-
-# Grabs the artwork for the specified show. Could be modified to return other interesting data.
-
-def GetShowDetails(show=0):
-  data = SendCommand(RPCString("VideoLibrary.GetTVShowDetails", {'tvshowid':show, 'properties':['art']}))
-  return data['result']['tvshowdetails']
 
 # Get the first active player.
 

@@ -917,9 +917,14 @@ def alexa_play_movie(slots):
     located = kodi.matchHeard(heard_movie, movies_array)
 
     if located:
+      if kodi.GetMovieDetails(located['movieid'])['resume']['position'] > 0:
+        action = 'Resuming'
+      else:
+        action = 'Playing'
+
       kodi.PlayMovie(located['movieid'])
 
-      return build_alexa_response('Playing %s' % (heard_movie), card_title)
+      return build_alexa_response('%s %s' % (action, heard_movie), card_title)
     else:
       return build_alexa_response('Could not find a movie called %s' % (heard_movie), card_title)
   else:
@@ -951,7 +956,7 @@ def alexa_play_random_episode(slots):
         episodes_array.append(episode['episodeid'])
 
       episode_id = random.choice(episodes_array)
-      episode_details = kodi.GetEpisodeDetails(episode_id)['result']['episodedetails']
+      episode_details = kodi.GetEpisodeDetails(episode_id)
 
       kodi.PlayEpisode(episode_id, False)
 
@@ -979,12 +984,17 @@ def alexa_play_episode(slots):
     located = kodi.matchHeard(heard_show, shows_array)
 
     if located:
-      episode_result = kodi.GetSpecificEpisode(located['tvshowid'], heard_season, heard_episode)
+      episode_id = kodi.GetSpecificEpisode(located['tvshowid'], heard_season, heard_episode)
 
-      if episode_result:
-        kodi.PlayEpisode(episode_result, False)
+      if episode_id:
+        if kodi.GetEpisodeDetails(episode_id)['resume']['position'] > 0:
+          action = 'Resuming'
+        else:
+          action = 'Playing'
 
-        return build_alexa_response('Playing season %s episode %s of %s' % (heard_season, heard_episode, heard_show), card_title)
+        kodi.PlayEpisode(episode_id)
+
+        return build_alexa_response('%s season %s episode %s of %s' % (action, heard_season, heard_episode, heard_show), card_title)
 
       else:
         return build_alexa_response('Could not find season %s episode %s of %s' % (heard_season, heard_episode, heard_show), card_title)
@@ -1008,14 +1018,19 @@ def alexa_play_next_episode(slots):
     located = kodi.matchHeard(heard_show, shows_array)
 
     if located:
-      next_episode = kodi.GetNextUnwatchedEpisode(located['tvshowid'])
+      next_episode_id = kodi.GetNextUnwatchedEpisode(located['tvshowid'])
 
-      if next_episode:
-        episode_details = kodi.GetEpisodeDetails(next_episode)['result']['episodedetails']
+      if next_episode_id:
+        episode_details = kodi.GetEpisodeDetails(next_episode_id)
 
-        kodi.PlayEpisode(next_episode)
+        if episode_details['resume']['position'] > 0:
+          action = 'Resuming'
+        else:
+          action = 'Playing'
 
-        return build_alexa_response('Playing season %d episode %d of %s' % (episode_details['season'], episode_details['episode'], heard_show), card_title)
+        kodi.PlayEpisode(next_episode_id)
+
+        return build_alexa_response('%s season %d episode %d of %s' % (action, episode_details['season'], episode_details['episode'], heard_show), card_title)
       else:
         return build_alexa_response('No new episodes for %s' % (heard_show), card_title)
     else:
@@ -1038,14 +1053,19 @@ def alexa_play_newest_episode(slots):
     located = kodi.matchHeard(heard_show, shows_array)
 
     if located:
-      episode = kodi.GetNewestEpisodeFromShow(located['tvshowid'])
+      episode_id = kodi.GetNewestEpisodeFromShow(located['tvshowid'])
 
-      if episode:
-        episode_details = kodi.GetEpisodeDetails(episode)['result']['episodedetails']
+      if episode_id:
+        episode_details = kodi.GetEpisodeDetails(episode_id)
 
-        kodi.PlayEpisode(episode)
+        if episode_details['resume']['position'] > 0:
+          action = 'Resuming'
+        else:
+          action = 'Playing'
 
-        return build_alexa_response('Playing season %d episode %d of %s' % (episode_details['season'], episode_details['episode'], heard_show), card_title)
+        kodi.PlayEpisode(episode_id)
+
+        return build_alexa_response('%s season %d episode %d of %s' % (action, episode_details['season'], episode_details['episode'], heard_show), card_title)
       else:
         return build_alexa_response('No new episodes for %s' % (heard_show), card_title)
     else:
@@ -1063,14 +1083,19 @@ def alexa_continue_show(slots):
 
   try:
     last_show_id = last_show_obj['result']['episodes'][0]['tvshowid']
-    next_episode = kodi.GetNextUnwatchedEpisode(last_show_id)
+    next_episode_id = kodi.GetNextUnwatchedEpisode(last_show_id)
 
-    if next_episode:
-      episode_details = kodi.GetEpisodeDetails(next_episode)['result']['episodedetails']
+    if next_episode_id:
+      episode_details = kodi.GetEpisodeDetails(next_episode_id)
+
+      if episode_details['resume']['position'] > 0:
+        action = 'Resuming'
+      else:
+        action = 'Playing'
 
       kodi.PlayEpisode(episode)
 
-      return build_alexa_response('Playing season %d episode %d of %s' % (episode_details['season'], episode_details['episode'], last_show_obj['result']['episodes'][0]['showtitle']), card_title)
+      return build_alexa_response('%s season %d episode %d of %s' % (action, episode_details['season'], episode_details['episode'], last_show_obj['result']['episodes'][0]['showtitle']), card_title)
     else:
       return build_alexa_response('No new episodes for %s' % last_show_obj['result']['episodes'][0]['showtitle'], card_title)
   except:
