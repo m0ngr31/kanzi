@@ -77,17 +77,39 @@ def remove_the(name):
   else:
     return name
 
+# Remove extra slashes
+def http_normalize_slashes(url):
+    url = str(url)
+    segments = url.split('/')
+    correct_segments = []
+    for segment in segments:
+        if segment != '':
+            correct_segments.append(segment)
+    first_segment = str(correct_segments[0])
+    if first_segment.find('http') == -1:
+        correct_segments = ['http:'] + correct_segments
+    correct_segments[0] = correct_segments[0] + '/'
+    normalized_url = '/'.join(correct_segments)
+    return normalized_url
+
 # These two methods construct the JSON-RPC message and send it to the Kodi player
 def SendCommand(command):
-  # Change this to the IP address of your Kodi server or always pass in an address
+  # Do not use below for your own settings, use the .env file
   KODI = os.getenv('KODI_ADDRESS', '127.0.0.1')
   PORT = int(os.getenv('KODI_PORT', 8080))
   USER = os.getenv('KODI_USERNAME', 'kodi')
   PASS = os.getenv('KODI_PASSWORD', 'kodi')
 
-  print "Sending request to %s:%d" % (KODI, PORT)
+  SCHEME = os.getenv('KODI_SCHEME', 'http')     
+  SUBPATH = os.getenv('KODI_SUBPATH', '')
 
-  url = "http://%s:%d/jsonrpc" % (KODI, PORT)
+  # Join the environment variables into a url
+  url = "%s://%s:%d/%s/%s" % (SCHEME, KODI, PORT, SUBPATH, 'jsonrpc')
+
+  # Remove any double slashes in the url
+  url = http_normalize_slashes(url)
+
+  print "Sending request to %s" % (url)
 
   try:
     r = requests.post(url, data=command, auth=(USER, PASS))
