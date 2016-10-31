@@ -87,3 +87,10 @@ zope/
 
 .env
 *.ini
+MUSICALBUMS
+MUSICARTISTS
+MOVIES
+SHOWS
+MUSICPLAYLISTS
+
+kodi-alexa/

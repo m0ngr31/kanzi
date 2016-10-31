@@ -1,3 +1,15 @@
+v2.0.4 (10/27/2016)
+* Wrote python script to handle deploying to lambda
+* Added power intents
+* Added EjectMedia intents
+* Added Fullscreen (Toggle) intent
+* Added Mute (Toggle) intent
+* Added support for selecting/toggling subtitles
+* Added support for cycling audio streams
+* Added basic step forward and step backwards commands
+* Added check for verifying requests come from Alexa for WSGI servers
+* Added the capability to resume movies and TV-Shows
+
 v2.0.0 (10/02/2016)
 * Merged in a bunch of good PRs dealing with playing playlists
 * Added in 'Search' and 'Party mode' intents

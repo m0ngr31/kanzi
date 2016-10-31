@@ -294,6 +294,65 @@ def alexa_big_step_backward(slots):
   answer = ""
   return build_alexa_response(answer, card_title)
 
+
+# Play whole album, or whole album by a specific artist
+def alexa_play_album(slots):
+  heard_album = str(slots['Album']['value']).lower().translate(None, string.punctuation)
+  if 'value' in slots['Artist']:
+    heard_artist = str(slots['Artist']['value']).lower().translate(None, string.punctuation)
+    card_title = 'Playing %s by %s' % (heard_album, heard_artist)
+  else:
+    card_title = 'Playing %s' % (heard_album)
+  print card_title
+  sys.stdout.flush()
+
+  if 'value' in slots['Artist']:
+    artists = kodi.GetMusicArtists()
+    if 'result' in artists and 'artists' in artists['result']:
+      artists_list = artists['result']['artists']
+      located = kodi.matchHeard(heard_artist, artists_list, 'artist')
+
+      if located:
+        albums = kodi.GetArtistAlbums(located['artistid'])
+        if 'result' in albums and 'albums' in albums['result']:
+          albums_list = albums['result']['albums']
+          album_located = kodi.matchHeard(heard_album, albums_list, 'label')
+
+          if album_located:
+            album_result = album_located['albumid']
+            kodi.Stop()
+            kodi.ClearPlaylist()
+            kodi.AddAlbumToPlaylist(album_result)
+            kodi.StartPlaylist()
+          else:
+            return build_alexa_response('Could not find %s by %s' % (heard_album, heard_artist), card_title)
+          return build_alexa_response('Playing %s by %s' % (heard_album, heard_artist), card_title)
+        else:
+          return build_alexa_response('Could not find %s by %s' % (heard_album, heard_artist), card_title)
+
+      else:
+        return build_alexa_response('Could not find %s by %s' % (heard_album, heard_artist), card_title)
+    else:
+      return build_alexa_response('Could not find %s by %s' % (heard_artist), card_title)
+  else:
+    albums = kodi.GetAlbums()
+    if 'result' in albums and 'albums' in albums['result']:
+      albums_list = albums['result']['albums']
+      album_located = kodi.matchHeard(heard_album, albums_list, 'label')
+
+      if album_located:
+        album_result = album_located['albumid']
+        kodi.Stop()
+        kodi.ClearPlaylist()
+        kodi.AddAlbumToPlaylist(album_result)
+        kodi.StartPlaylist()
+      else:
+        return build_alexa_response('Could not find %s' % (heard_album), card_title)
+      return build_alexa_response('Playing %s' % (heard_album), card_title)
+    else:
+      return build_alexa_response('Could not find %s' % (heard_album), card_title)
+
+
 # Shuffle all music by an artist
 def alexa_play_artist(slots):
   heard_artist = str(slots['Artist']['value']).lower().translate(None, string.punctuation)
@@ -900,9 +959,7 @@ def alexa_play_random_movie(slots):
     movies_array = movies['result']['movies']
     random_movie = random.choice(movies_array)
 
-    kodi.ClearVideoPlaylist()
-    kodi.PrepMoviePlaylist(random_movie['movieid'])
-    kodi.StartVideoPlaylist()
+    kodi.PlayMovie(random_movie['movieid'], False)
 
     return build_alexa_response('Playing %s' % (random_movie['label']), card_title)
   else:
@@ -922,11 +979,14 @@ def alexa_play_movie(slots):
     located = kodi.matchHeard(heard_movie, movies_array)
 
     if located:
-      kodi.ClearVideoPlaylist()
-      kodi.PrepMoviePlaylist(located['movieid'])
-      kodi.StartVideoPlaylist()
+      if kodi.GetMovieDetails(located['movieid'])['resume']['position'] > 0:
+        action = 'Resuming'
+      else:
+        action = 'Playing'
 
-      return build_alexa_response('Playing %s' % (heard_movie), card_title)
+      kodi.PlayMovie(located['movieid'])
+
+      return build_alexa_response('%s %s' % (action, heard_movie), card_title)
     else:
       return build_alexa_response('Could not find a movie called %s' % (heard_movie), card_title)
   else:
@@ -958,11 +1018,9 @@ def alexa_play_random_episode(slots):
         episodes_array.append(episode['episodeid'])
 
       episode_id = random.choice(episodes_array)
-      episode_details = kodi.GetEpisodeDetails(episode_id)['result']['episodedetails']
+      episode_details = kodi.GetEpisodeDetails(episode_id)
 
-      kodi.ClearVideoPlaylist()
-      kodi.PrepEpisodePlayList(episode_id)
-      kodi.StartVideoPlaylist()
+      kodi.PlayEpisode(episode_id, False)
 
       return build_alexa_response('Playing season %d episode %d of %s' % (episode_details['season'], episode_details['episode'], heard_show), card_title)
     else:
@@ -988,14 +1046,17 @@ def alexa_play_episode(slots):
     located = kodi.matchHeard(heard_show, shows_array)
 
     if located:
-      episode_result = kodi.GetSpecificEpisode(located['tvshowid'], heard_season, heard_episode)
+      episode_id = kodi.GetSpecificEpisode(located['tvshowid'], heard_season, heard_episode)
 
-      if episode_result:
-        kodi.ClearVideoPlaylist()
-        kodi.PrepEpisodePlayList(episode_result)
-        kodi.StartVideoPlaylist()
+      if episode_id:
+        if kodi.GetEpisodeDetails(episode_id)['resume']['position'] > 0:
+          action = 'Resuming'
+        else:
+          action = 'Playing'
 
-        return build_alexa_response('Playing season %s episode %s of %s' % (heard_season, heard_episode, heard_show), card_title)
+        kodi.PlayEpisode(episode_id)
+
+        return build_alexa_response('%s season %s episode %s of %s' % (action, heard_season, heard_episode, heard_show), card_title)
 
       else:
         return build_alexa_response('Could not find season %s episode %s of %s' % (heard_season, heard_episode, heard_show), card_title)
@@ -1019,16 +1080,19 @@ def alexa_play_next_episode(slots):
     located = kodi.matchHeard(heard_show, shows_array)
 
     if located:
-      next_episode = kodi.GetNextUnwatchedEpisode(located['tvshowid'])
+      next_episode_id = kodi.GetNextUnwatchedEpisode(located['tvshowid'])
 
-      if next_episode:
-        episode_details = kodi.GetEpisodeDetails(next_episode)['result']['episodedetails']
+      if next_episode_id:
+        episode_details = kodi.GetEpisodeDetails(next_episode_id)
 
-        kodi.ClearVideoPlaylist()
-        kodi.PrepEpisodePlayList(next_episode)
-        kodi.StartVideoPlaylist()
+        if episode_details['resume']['position'] > 0:
+          action = 'Resuming'
+        else:
+          action = 'Playing'
 
-        return build_alexa_response('Playing season %d episode %d of %s' % (episode_details['season'], episode_details['episode'], heard_show), card_title)
+        kodi.PlayEpisode(next_episode_id)
+
+        return build_alexa_response('%s season %d episode %d of %s' % (action, episode_details['season'], episode_details['episode'], heard_show), card_title)
       else:
         return build_alexa_response('No new episodes for %s' % (heard_show), card_title)
     else:
@@ -1051,16 +1115,19 @@ def alexa_play_newest_episode(slots):
     located = kodi.matchHeard(heard_show, shows_array)
 
     if located:
-      episode = kodi.GetNewestEpisodeFromShow(located['tvshowid'])
+      episode_id = kodi.GetNewestEpisodeFromShow(located['tvshowid'])
 
-      if episode:
-        episode_details = kodi.GetEpisodeDetails(episode)['result']['episodedetails']
+      if episode_id:
+        episode_details = kodi.GetEpisodeDetails(episode_id)
 
-        kodi.ClearVideoPlaylist()
-        kodi.PrepEpisodePlayList(episode)
-        kodi.StartVideoPlaylist()
+        if episode_details['resume']['position'] > 0:
+          action = 'Resuming'
+        else:
+          action = 'Playing'
 
-        return build_alexa_response('Playing season %d episode %d of %s' % (episode_details['season'], episode_details['episode'], heard_show), card_title)
+        kodi.PlayEpisode(episode_id)
+
+        return build_alexa_response('%s season %d episode %d of %s' % (action, episode_details['season'], episode_details['episode'], heard_show), card_title)
       else:
         return build_alexa_response('No new episodes for %s' % (heard_show), card_title)
     else:
@@ -1078,16 +1145,19 @@ def alexa_continue_show(slots):
 
   try:
     last_show_id = last_show_obj['result']['episodes'][0]['tvshowid']
-    next_episode = kodi.GetNextUnwatchedEpisode(last_show_id)
+    next_episode_id = kodi.GetNextUnwatchedEpisode(last_show_id)
 
-    if next_episode:
-      episode_details = kodi.GetEpisodeDetails(next_episode)['result']['episodedetails']
+    if next_episode_id:
+      episode_details = kodi.GetEpisodeDetails(next_episode_id)
 
-      kodi.ClearVideoPlaylist()
-      kodi.PrepEpisodePlayList(next_episode)
-      kodi.StartVideoPlaylist()
+      if episode_details['resume']['position'] > 0:
+        action = 'Resuming'
+      else:
+        action = 'Playing'
 
-      return build_alexa_response('Playing season %d episode %d of %s' % (episode_details['season'], episode_details['episode'], last_show_obj['result']['episodes'][0]['showtitle']), card_title)
+      kodi.PlayEpisode(next_episode_id)
+
+      return build_alexa_response('%s season %d episode %d of %s' % (action, episode_details['season'], episode_details['episode'], last_show_obj['result']['episodes'][0]['showtitle']), card_title)
     else:
       return build_alexa_response('No new episodes for %s' % last_show_obj['result']['episodes'][0]['showtitle'], card_title)
   except:
@@ -1267,6 +1337,7 @@ INTENTS = [
   ['BigStepBackward', alexa_big_step_backward],
   ['Stop', alexa_stop],
   ['ListenToArtist', alexa_play_artist],
+  ['ListenToAlbum', alexa_play_album],
   ['ListenToPlaylist', alexa_play_playlist],
   ['ListenToPlaylistRecent', alexa_play_recently_added_songs],
   ['Skip', alexa_skip],

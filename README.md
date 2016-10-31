@@ -123,9 +123,9 @@ Now, go back to the console and make sure you are in the directory with this cod
 
 `pip install lambda-deploy`
 
-`lambda-deploy deploy`
+`python deploy-to-lambda.py`
 
-If you editing the `.env` file correctly, this should have successfully sent the code to AWS. Let's go look at your Lambda functions and finish setting up the function. [Browse back to the AWS console and click on Lambda](https://console.aws.amazon.com/lambda/home?region=us-east-1#/functions?display=list). There you should see your function. Click on it and go to the triggers tab. Click on "Add Trigger" and select "Alexa Skills Kit". At the top right of this page, you'll see text that will say something like "ARN - arn:aws:lambda:us-east-1:11111111111:function:kodi-alexa". Copy this, as we'll need it in when you setup the skill.
+If you edited the `.env` file correctly, this should have successfully sent the code to AWS. Let's go look at your Lambda functions and finish setting up the function. [Browse back to the AWS console and click on Lambda](https://console.aws.amazon.com/lambda/home?region=us-east-1#/functions?display=list). There you should see your function. Click on it and go to the triggers tab. Click on "Add Trigger" and select "Alexa Skills Kit". At the top right of this page, you'll see text that will say something like "ARN - arn:aws:lambda:us-east-1:11111111111:function:kodi-alexa". Copy this, as we'll need it in when you setup the skill.
 
 Now skip ahead to the [Skill setup section](#skill-setup).
 
@@ -148,11 +148,12 @@ You'll just need to stick the URL from your app in the Endpoint field. If you ar
 
 On the next tab, you'll have to paste the `alexa.intents` file into the "Intent Schema" field, and paste the `alexa.utterances` file in the "Sample Utterances" field.
 
-The tricky part is generating the Slots in the middle section. You need to create 4 different slots:
+The tricky part is generating the Slots in the middle section. You need to create 5 different slots:
 
 - MOVIES
 - SHOWS
 - MUSICARTISTS
+- MUSICALBUMS
 - MUSICPLAYLISTS
 
 To make it as easy as possible, I wrote a little webapp that will give you the information you need: [here.](https://slot-generator.herokuapp.com/). You can also get the information from running `python generate_custom_slots.py` in the repo directory if you have python installed. This will create txt files with the relevant information. If one of your slots is empty, you can just enter the word 'Empty' or something so that it'll save.
@@ -195,3 +196,8 @@ Here are a few demo videos showing how to use it. Other commands you can do are 
 [![Amazon Echo - Kodi integration (demo 2) ](http://i.imgur.com/gOCYnmE.png)](https://www.youtube.com/watch?v=vAYUWaP3EXA "Amazon Echo - Kodi integration (demo 2) ")
 
 [![Amazon Echo - Kodi integration (demo 3) ](http://i.imgur.com/8UZbRMh.png)](https://www.youtube.com/watch?v=4xrrEkimPV4 "Amazon Echo - Kodi integration (demo 3) ")
+
+
+# Getting Help
+
+If you run into an actual issue with the code, please open an Issue here on Github. If you need help getting a server going or configuring the Skill, pleas visit the [support thread on the Kodi forum.](https://forum.kodi.tv/showthread.php?tid=254502)

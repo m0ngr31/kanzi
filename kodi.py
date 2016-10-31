@@ -77,17 +77,38 @@ def remove_the(name):
   else:
     return name
 
+# Remove extra slashes
+def http_normalize_slashes(url):
+  url = str(url)
+  segments = url.split('/')
+  correct_segments = []
+  for segment in segments:
+    if segment != '':
+      correct_segments.append(segment)
+  first_segment = str(correct_segments[0])
+  if first_segment.find('http') == -1:
+    correct_segments = ['http:'] + correct_segments
+  correct_segments[0] = correct_segments[0] + '/'
+  normalized_url = '/'.join(correct_segments)
+  return normalized_url
+
 # These two methods construct the JSON-RPC message and send it to the Kodi player
 def SendCommand(command):
-  # Change this to the IP address of your Kodi server or always pass in an address
+  # Do not use below for your own settings, use the .env file
+  SCHEME = os.getenv('KODI_SCHEME', 'http')
+  SUBPATH = os.getenv('KODI_SUBPATH', '')
   KODI = os.getenv('KODI_ADDRESS', '127.0.0.1')
   PORT = int(os.getenv('KODI_PORT', 8080))
   USER = os.getenv('KODI_USERNAME', 'kodi')
   PASS = os.getenv('KODI_PASSWORD', 'kodi')
 
-  print "Sending request to %s:%d" % (KODI, PORT)
+  # Join the environment variables into a url
+  url = "%s://%s:%d/%s/%s" % (SCHEME, KODI, PORT, SUBPATH, 'jsonrpc')
 
-  url = "http://%s:%d/jsonrpc" % (KODI, PORT)
+  # Remove any double slashes in the url
+  url = http_normalize_slashes(url)
+
+  print "Sending request to %s" % (url)
 
   try:
     r = requests.post(url, data=command, auth=(USER, PASS))
@@ -183,14 +204,23 @@ def StartPlaylist(playlist_file=None):
 def AddSongToPlaylist(song_id):
   return SendCommand(RPCString("Playlist.Add", {"playlistid": 0, "item": {"songid": int(song_id)}}))
 
+def AddAlbumToPlaylist(album_id):
+  return SendCommand(RPCString("Playlist.Add", {"playlistid": 0, "item": {"albumid": int(album_id)}}))
+
 def PrepEpisodePlayList(ep_id):
   return SendCommand(RPCString("Playlist.Add", {"playlistid": 1, "item": {"episodeid": int(ep_id)}}))
 
 def PrepMoviePlaylist(movie_id):
-   return SendCommand(RPCString("Playlist.Add", {"playlistid": 1, "item": {"movieid": int(movie_id)}}))
+  return SendCommand(RPCString("Playlist.Add", {"playlistid": 1, "item": {"movieid": int(movie_id)}}))
 
 def StartVideoPlaylist():
   return SendCommand(RPCString("Player.Open", {"item": {"playlistid": 1}}))
+
+def PlayEpisode(ep_id, resume=True):
+  return SendCommand(RPCString("Player.Open", {"item": {"episodeid": ep_id}, "options": {"resume": resume}}))
+
+def PlayMovie(movie_id, resume=True):
+  return SendCommand(RPCString("Player.Open", {"item": {"movieid": movie_id}, "options": {"resume": resume}}))
 
 def AddSongsToPlaylist(song_ids):
   songs_array = []
@@ -423,6 +453,9 @@ def GetMusicGenres():
 def GetArtistAlbums(artist_id):
   return SendCommand(RPCString("AudioLibrary.GetAlbums", {"filter": {"artistid": int(artist_id)}}))
 
+def GetAlbums():
+  return SendCommand(RPCString("AudioLibrary.GetAlbums"))
+
 def GetAllSongs():
   return SendCommand(RPCString("AudioLibrary.GetSongs"))
 
@@ -432,8 +465,16 @@ def GetArtistSongs(artist_id):
 def GetRecentlyAddedSongs():
   return SendCommand(RPCString("AudioLibrary.GetRecentlyAddedSongs"))
 
+def GetTvShowDetails(show_id):
+  data = SendCommand(RPCString("VideoLibrary.GetTVShowDetails", {'tvshowid':show_id, 'properties':['art']}))
+  return data['result']['tvshowdetails']
+
 def GetTvShows():
   return SendCommand(RPCString("VideoLibrary.GetTVShows"))
+
+def GetMovieDetails(movie_id):
+  data = SendCommand(RPCString("VideoLibrary.GetMovieDetails", {'movieid':movie_id, 'properties':['resume']}))
+  return data['result']['moviedetails']
 
 def GetMovies():
   return SendCommand(RPCString("VideoLibrary.GetMovies"))
@@ -445,7 +486,8 @@ def GetUnwatchedMovies():
   return SendCommand(RPCString("VideoLibrary.GetMovies", {"filter":{"field":"playcount", "operator":"lessthan", "value":"1"}}))
 
 def GetEpisodeDetails(ep_id):
-  return SendCommand(RPCString("VideoLibrary.GetEpisodeDetails", {"episodeid": int(ep_id), "properties":["season", "episode"]}))
+  data = SendCommand(RPCString("VideoLibrary.GetEpisodeDetails", {"episodeid": int(ep_id), "properties":["season", "episode", "resume"]}))
+  return data['result']['episodedetails']
 
 def GetEpisodesFromShow(show_id):
   return SendCommand(RPCString("VideoLibrary.GetEpisodes", {"tvshowid": int(show_id)}))
@@ -462,21 +504,25 @@ def GetNewestEpisodeFromShow(show_id):
     return None
 
 def GetNextUnwatchedEpisode(show_id):
-  data = SendCommand(RPCString("VideoLibrary.GetEpisodes", {"limits":{"end":1},"tvshowid": int(show_id), "filter":{"field":"lastplayed", "operator":"greaterthan", "value":"0"}, "properties":["season", "episode", "lastplayed", "firstaired"], "sort":{"method":"lastplayed", "order":"descending"}}))
+  data = SendCommand(RPCString("VideoLibrary.GetEpisodes", {"limits":{"end":1},"tvshowid": int(show_id), "filter":{"field":"lastplayed", "operator":"greaterthan", "value":"0"}, "properties":["season", "episode", "lastplayed", "firstaired", "resume"], "sort":{"method":"lastplayed", "order":"descending"}}))
   if 'episodes' in data['result']:
     episode = data['result']['episodes'][0]
     episode_season = episode['season']
     episode_number = episode['episode']
 
-    next_episode = GetSpecificEpisode(show_id, episode_season, int(episode_number) + 1)
-
-    if next_episode:
-      return next_episode
+    resume = episode['resume']['position']
+    if resume > 0:
+      next_episode_id = episode['episodeid']
     else:
-      next_episode = GetSpecificEpisode(show_id, int(episode_season) + 1, 1)
+      next_episode_id = GetSpecificEpisode(show_id, episode_season, int(episode_number) + 1)
 
-      if next_episode:
-        return next_episode
+    if next_episode_id:
+      return next_episode_id
+    else:
+      next_episode_id = GetSpecificEpisode(show_id, int(episode_season) + 1, 1)
+
+      if next_episode_id:
+        return next_episode_id
       else:
         return None
   else:
@@ -518,7 +564,7 @@ def GetUnwatchedEpisodes(max=90):
   shows = set([d['tvshowid'] for d in data['result']['episodes']])
   show_info = {}
   for show in shows:
-    show_info[show] = GetShowDetails(show=show)
+    show_info[show] = GetTvShowDetails(show_id=show)
   for d in data['result']['episodes']:
     showinfo = show_info[d['tvshowid']]
     answer.append({'title':d['title'], 'episodeid':d['episodeid'], 'show':d['showtitle'], 'label':d['label'], 'dateadded':datetime.datetime.strptime(d['dateadded'], "%Y-%m-%d %H:%M:%S")})
@@ -547,12 +593,6 @@ def SystemEjectMedia():
 
 
 # Misc helpers
-
-# Grabs the artwork for the specified show. Could be modified to return other interesting data.
-
-def GetShowDetails(show=0):
-  data = SendCommand(RPCString("VideoLibrary.GetTVShowDetails", {'tvshowid':show, 'properties':['art']}))
-  return data['result']['tvshowdetails']
 
 # Get the first active player.
 
