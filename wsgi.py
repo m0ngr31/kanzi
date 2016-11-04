@@ -95,15 +95,15 @@ def build_alexa_response(speech = None, card_title = None, session_attrs = None,
   return build_response(session_attrs, build_speechlet_response(card_title, speech, reprompt_text, end_session))
 
 
-# Utility function to sanitize a TV Show name (e.g., strip out symbols)
+# Utility function to sanitize name of media (e.g., strip out symbols)
 
-RE_SHOW_WITH_PARAM = re.compile(r"(.*) \([^)]+\)$")
+RE_NAME_WITH_PARAM = re.compile(r"(.*) \([^)]+\)$")
 
-def sanitize_show(show_name):
-  m = RE_SHOW_WITH_PARAM.match(show_name)
+def sanitize_name(media_name):
+  m = RE_NAME_WITH_PARAM.match(media_name)
   if m:
     return m.group(1)
-  return show_name
+  return media_name
 
 
 # Handle the CheckNewShows intent
@@ -118,7 +118,7 @@ def alexa_check_new_episodes(slots):
 
   # Find out how many EPISODES were recently added and get the names of the SHOWS
   really_new_episodes = [x for x in new_episodes if x['dateadded'] >= datetime.datetime.today() - datetime.timedelta(5)]
-  really_new_show_names = list(set([sanitize_show(x['show']) for x in really_new_episodes]))
+  really_new_show_names = list(set([sanitize_name(x['show']) for x in really_new_episodes]))
 
   if len(really_new_episodes) == 0:
     answer = "There isn't anything new to watch."
@@ -1164,6 +1164,7 @@ def alexa_continue_show(slots):
 
 def alexa_what_new_episodes(slots):
   card_title = 'Newly added shows'
+  print card_title
   sys.stdout.flush()
 
   # Lists the shows that have had new episodes added to Kodi in the last 5 days
@@ -1173,7 +1174,7 @@ def alexa_what_new_episodes(slots):
 
   # Find out how many EPISODES were recently added and get the names of the SHOWS
   really_new_episodes = [x for x in new_episodes if x['dateadded'] >= datetime.datetime.today() - datetime.timedelta(5)]
-  really_new_show_names = list(set([sanitize_show(x['show']) for x in really_new_episodes]))
+  really_new_show_names = list(set([sanitize_name(x['show']) for x in really_new_episodes]))
   num_shows = len(really_new_show_names)
 
   if num_shows == 0:
