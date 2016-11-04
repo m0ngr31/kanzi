@@ -1227,6 +1227,41 @@ def alexa_what_new_episodes(slots):
   return build_alexa_response(answer, card_title)
 
 
+# Handle the WhatAlbums intent.
+
+def alexa_what_albums(slots):
+  heard_artist = str(slots['Artist']['value']).lower().translate(None, string.punctuation)
+
+  card_title = 'Albums by %s' % (heard_artist)
+  print card_title
+  sys.stdout.flush()
+
+  artists = kodi.GetMusicArtists()
+  if 'result' in artists and 'artists' in artists['result']:
+    artists_list = artists['result']['artists']
+    located = kodi.matchHeard(heard_artist, artists_list, 'artist')
+
+    if located:
+      albums_result = kodi.GetArtistAlbums(located['artistid'])
+      albums = albums_result['result']['albums']
+      num_albums = len(albums)
+
+      if num_albums > 0:
+        really_albums = list(set([sanitize_name(x['label']) for x in albums]))
+        album_list = really_albums[0]
+        if num_albums > 1:
+          for one_album in really_albums[1:-1]:
+            album_list += ", " + one_album
+          album_list += ", and " + really_albums[-1]
+        return build_alexa_response('You have %s' % (album_list), card_title)
+      else:
+        return build_alexa_response('You have no albums by %s' % (heard_artist), card_title)
+    else:
+      return build_alexa_response('Could not find %s' % (heard_artist), card_title)
+  else:
+    return build_alexa_response('Could not find %s' % (heard_artist), card_title)
+
+
 # What should the Echo say when you just open your app instead of invoking an intent?
 
 def prepare_help_message():
@@ -1248,6 +1283,7 @@ INTENTS = [
   ['StepBackward', alexa_step_backward],
   ['BigStepBackward', alexa_big_step_backward],
   ['Stop', alexa_stop],
+  ['WhatAlbums', alexa_what_albums],
   ['ListenToArtist', alexa_play_artist],
   ['ListenToAlbum', alexa_play_album],
   ['ListenToPlaylist', alexa_play_playlist],

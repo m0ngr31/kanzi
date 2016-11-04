@@ -81,6 +81,8 @@ CleanAudio clean (audio/music) library
 
 UpdateAudio update (audio/music) library
 
+WhatAlbum what albums do (we/i/you) have by {Artist}
+
 ListenToArtist (play/listen to/shuffle) (/music by/artist) {Artist}
 
 ListenToAlbum (play/listen to) (/album) {Album} by {Artist}

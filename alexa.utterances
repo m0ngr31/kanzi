@@ -621,6 +621,9 @@ UpdateAudio update audio library
 UpdateAudio update music library
 UpdateVideo update library
 UpdateVideo update video library
+WhatAlbums what albums do i have by {Artist}
+WhatAlbums what albums do we have by {Artist}
+WhatAlbums what albums do you have by {Artist}
 WhatNewShows what new shows are on the media server
 WhatNewShows what new shows are on the server
 WhatNewShows what new shows are ready
