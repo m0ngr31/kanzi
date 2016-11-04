@@ -474,6 +474,8 @@ PlayerZoomOutMoveRight zoom out and move right
 PlayerZoomOutMoveRight zoom out and go right
 PlayerZoomReset normal zoom
 PlayerZoomReset reset zoom
+PlayTvChannel play channel {Channel}
+PlayTvChannel watch channel {Channel}
 PlayEpisode play season {Season} episode {Episode} of {Show}
 PlayEpisode play series {Season} episode {Episode} of {Show}
 PlayEpisode watch season {Season} episode {Episode} of {Show}

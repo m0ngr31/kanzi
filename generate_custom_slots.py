@@ -3,7 +3,7 @@ import re
 import string
 
 # to use put the Kodi details into environment variables
-# KODI_ADDRESS=localhost KODI_PORT=8088 KODI_USERNAME=kodi KODI_PASSWORD=kodi python generate_custom_types.py
+# KODI_ADDRESS=localhost KODI_PORT=8088 KODI_USERNAME=kodi KODI_PASSWORD=kodi python generate_custom_slots.py
 
 # Generate MUSICARTISTS Slot
 retrieved = kodi.GetMusicArtists()
@@ -77,6 +77,24 @@ if 'result' in retrieved and 'tvshows' in retrieved['result']:
 deduped = list(set(all))
 
 gfile = open('SHOWS', 'w')
+for a in deduped:
+  gfile.write("%s\n" % a)
+gfile.close()
+
+# Generetate CHANNELS Slot
+retrieved = kodi.GetTvChannels()
+
+all = []
+
+if 'result' in retrieved and 'channels' in retrieved['result']:
+  for v in retrieved['result']['channels']:
+    ascii_name = v['label'].encode('ascii', 'replace')
+    removed_paren = re.sub(r'\([^)]*\)', '', ascii_name).rstrip().lower().translate(None, string.punctuation)
+    all.append(removed_paren.encode('utf-8').strip())
+
+deduped = list(set(all))
+
+gfile = open('CHANNELS', 'w')
 for a in deduped:
   gfile.write("%s\n" % a)
 gfile.close()

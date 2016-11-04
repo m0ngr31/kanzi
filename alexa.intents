@@ -18,6 +18,15 @@
       ]
     },
     {
+      "intent": "PlayTvChannel",
+      "slots": [
+        {
+          "name": "Channel",
+          "type": "CHANNELS"
+        }
+      ]
+    },
+    {
       "intent": "CleanVideo",
       "slots": []
     },

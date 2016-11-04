@@ -90,7 +90,6 @@ def SendCommand(command):
   PASS = os.getenv('KODI_PASSWORD', 'kodi')
 
   print KODI
-  
   url = "http://%s:%d/jsonrpc" % (KODI, PORT)
   try:
     r = requests.post(url, data=command, auth=(USER, PASS))
@@ -423,6 +422,14 @@ def GetRecentlyAddedSongs():
 
 def GetTvShows():
   data = SendCommand(RPCString("VideoLibrary.GetTVShows"))
+  return data
+
+def GetTvChannels():
+  data = SendCommand(RPCString("PVR.GetChannels", {"channelgroupid": 1}))
+  return data
+
+def PlayTvChannel(channel_id):
+  data = SendCommand(RPCString("Player.Open", {"item": {"channelid": int(channel_id)}}))
   return data
 
 def GetMovies():

@@ -198,7 +198,7 @@ def alexa_stop(slots):
 # Shuffle all music by an artist
 def alexa_play_artist(slots):
   heard_artist = str(slots['Artist']['value']).lower().translate(None, string.punctuation)
-  
+
   print('Trying to play music by %s' % (heard_artist))
   sys.stdout.flush()
 
@@ -970,6 +970,24 @@ def alexa_what_new_episodes(slots):
     answer = "There are new episodes of %(show_list)s." % {"show_list":show_list}
   return build_alexa_response(answer)
 
+def alexa_play_tv_channel(slots):
+    print slots
+    print('Trying to play tv channel')
+    sys.stdout.flush()
+    heard_channel =  str(slots['Channel']['value']).lower().translate(None, string.punctuation)
+
+    # Get the list of tv channels from the PVR
+    channels = kodi.GetTvChannels()
+    if 'result' in channels and 'channels' in channels['result']:
+
+      channel_array = channels['result']['channels']
+      located = kodi.matchHeard(heard_channel, channel_array)
+      if located:
+        kodi.PlayTvChannel(located['channelid'])
+        answer = 'Playing channel %s' % (heard_channel)
+
+    return build_alexa_response(answer)
+
 
 # What should the Echo say when you just open your app instead of invoking an intent?
 
@@ -1032,6 +1050,7 @@ INTENTS = [
   ['PlayerZoomOutMoveLeft', alexa_player_zoom_out_move_left],
   ['PlayerZoomOutMoveRight', alexa_player_zoom_out_move_right],
   ['PlayerZoomReset', alexa_player_zoom_reset],
+  ['PlayTvChannel', alexa_play_tv_channel],
   ['PlayEpisode', alexa_play_episode],
   ['PlayNextEpisode', alexa_play_next_episode],
   ['ContinueShow', alexa_continue_show],
