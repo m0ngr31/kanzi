@@ -37,6 +37,9 @@ import re
 import string
 import sys
 import pycountry
+from fuzzywuzzy import fuzz
+from fuzzywuzzy import process
+
 
 # These are words that we ignore when doing a non-exact match on show names
 STOPWORDS = [
@@ -134,6 +137,61 @@ def RPCString(method, params=None):
     j["params"] = params
   return json.dumps(j)
 
+# Function to convert numbers to words
+def word_form(number):
+    # based on stackoverflow answer from https://github.com/ralphembree/Loquitor
+    leading_zero=0
+    ones = ("", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine")
+    tens = ("", "", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety")
+    teens = ("ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen")
+    levels = ("", "thousand", "million", "billion", "trillion", "quadrillion", "quintillion", "sextillion", "septillion", "octillion", "nonillion")
+
+    word = ""
+    if number[0] == "0":
+      leading_zero=1
+    #number will now be the reverse of the string form of itself.
+    num = reversed(str(number))
+    number = ""
+    for x in num:
+        number += x
+    del num
+    if len(number) % 3 == 1: number += "0"
+    x = 0
+    for digit in number:
+        if x % 3 == 0:
+            word = levels[x / 3] + " " + word
+            n = int(digit)
+        elif x % 3 == 1:
+            if digit == "1":
+                num = teens[n]
+            else:
+                num = tens[int(digit)]
+                if n:
+                    if num:
+                        num += " " + ones[n]
+                    else:
+                        num = ones[n]
+            word = num + " " + word
+        elif x % 3 == 2:
+            if digit != "0":
+                word = ones[int(digit)] + " hundred and " + word
+        x += 1
+    reply = word.strip(", ")
+    if leading_zero:
+      reply = "zero " +reply
+    return reply
+
+# Function to replace the digits in the Alexa heard term to words
+def replaceDigits(phrase):
+  # all word variant of the heard phrase if it contains digits
+  wordified = ''
+  for word in phrase.split():
+    word = word.decode('utf-8')
+    if word.isnumeric():
+      word = word_form(word)
+    wordified = wordified + word + " "
+  return wordified[:-1]
+
 # Match heard string to something in the results
 def matchHeard(heard, results, lookingFor='label'):
   located = None
@@ -195,6 +253,26 @@ def matchHeard(heard, results, lookingFor='label'):
         if percentage > float(0.6):
           located = result
           break
+
+    if not located:
+      print 'not located on the second round of checks'
+      sys.stdout.flush()
+      fuzzy_result = process.extract(str(heard), [d['label'] for d in results], limit=1, scorer=fuzz.QRatio)
+      if fuzzy_result[0][1] > 75:
+         located = (item for item in results if item['label'] == fuzzy_result[0][0]).next()
+      else:
+        fuzzy_result = process.extract(str(heard), [d['label'] for d in results], limit=1, scorer=fuzz.partial_ratio)
+        if fuzzy_result[0][1] > 75:
+          located = (item for item in results if item['label'] == fuzzy_result[0][0]).next()
+        else:
+          heard = replaceDigits(heard)
+          fuzzy_result = process.extract(str(heard), [d['label'] for d in results], limit=1, scorer=fuzz.QRatio)
+          if fuzzy_result[0][1] > 75:
+             located = (item for item in results if item['label'] == fuzzy_result[0][0]).next()
+          else:
+            fuzzy_result = process.extract(str(heard), [d['label'] for d in results], scorer=fuzz.partial_ratio)
+            if fuzzy_result[0][1] > 75:
+              located = (item for item in results if item['label'] == fuzzy_result[0][0]).next()
 
   return located
 
