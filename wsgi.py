@@ -98,15 +98,15 @@ def build_alexa_response(speech = None, card_title = None, session_attrs = None,
   return build_response(session_attrs, build_speechlet_response(card_title, speech, reprompt_text, end_session))
 
 
-# Utility function to sanitize a TV Show name (e.g., strip out symbols)
+# Utility function to sanitize name of media (e.g., strip out symbols)
 
-RE_SHOW_WITH_PARAM = re.compile(r"(.*) \([^)]+\)$")
+RE_NAME_WITH_PARAM = re.compile(r"(.*) \([^)]+\)$")
 
-def sanitize_show(show_name):
-  m = RE_SHOW_WITH_PARAM.match(show_name)
+def sanitize_name(media_name):
+  m = RE_NAME_WITH_PARAM.match(media_name)
   if m:
     return m.group(1)
-  return show_name
+  return media_name
 
 
 # Handle the CheckNewShows intent
@@ -121,7 +121,7 @@ def alexa_check_new_episodes(slots):
 
   # Find out how many EPISODES were recently added and get the names of the SHOWS
   really_new_episodes = [x for x in new_episodes if x['dateadded'] >= datetime.datetime.today() - datetime.timedelta(5)]
-  really_new_show_names = list(set([sanitize_show(x['show']) for x in really_new_episodes]))
+  really_new_show_names = list(set([sanitize_name(x['show']) for x in really_new_episodes]))
 
   if len(really_new_episodes) == 0:
     answer = "There isn't anything new to watch."
@@ -1167,6 +1167,7 @@ def alexa_continue_show(slots):
 
 def alexa_what_new_episodes(slots):
   card_title = 'Newly added shows'
+  print card_title
   sys.stdout.flush()
 
   # Lists the shows that have had new episodes added to Kodi in the last 5 days
@@ -1176,7 +1177,7 @@ def alexa_what_new_episodes(slots):
 
   # Find out how many EPISODES were recently added and get the names of the SHOWS
   really_new_episodes = [x for x in new_episodes if x['dateadded'] >= datetime.datetime.today() - datetime.timedelta(5)]
-  really_new_show_names = list(set([sanitize_show(x['show']) for x in really_new_episodes]))
+  really_new_show_names = list(set([sanitize_name(x['show']) for x in really_new_episodes]))
   num_shows = len(really_new_show_names)
 
   if num_shows == 0:
@@ -1315,6 +1316,41 @@ def alexa_watch_pvr_broadcast(slots):
   else:
     return build_alexa_response('Could not find a PVR broadcast called %s' % (heard_pvr_broadcast))
 
+# Handle the WhatAlbums intent.
+
+def alexa_what_albums(slots):
+  heard_artist = str(slots['Artist']['value']).lower().translate(None, string.punctuation)
+
+  card_title = 'Albums by %s' % (heard_artist)
+  print card_title
+  sys.stdout.flush()
+
+  artists = kodi.GetMusicArtists()
+  if 'result' in artists and 'artists' in artists['result']:
+    artists_list = artists['result']['artists']
+    located = kodi.matchHeard(heard_artist, artists_list, 'artist')
+
+    if located:
+      albums_result = kodi.GetArtistAlbums(located['artistid'])
+      albums = albums_result['result']['albums']
+      num_albums = len(albums)
+
+      if num_albums > 0:
+        really_albums = list(set([sanitize_name(x['label']) for x in albums]))
+        album_list = really_albums[0]
+        if num_albums > 1:
+          for one_album in really_albums[1:-1]:
+            album_list += ", " + one_album
+          album_list += ", and " + really_albums[-1]
+        return build_alexa_response('You have %s' % (album_list), card_title)
+      else:
+        return build_alexa_response('You have no albums by %s' % (heard_artist), card_title)
+    else:
+      return build_alexa_response('Could not find %s' % (heard_artist), card_title)
+  else:
+    return build_alexa_response('Could not find %s' % (heard_artist), card_title)
+
+
 # What should the Echo say when you just open your app instead of invoking an intent?
 
 def prepare_help_message():
@@ -1336,6 +1372,7 @@ INTENTS = [
   ['StepBackward', alexa_step_backward],
   ['BigStepBackward', alexa_big_step_backward],
   ['Stop', alexa_stop],
+  ['WhatAlbums', alexa_what_albums],
   ['ListenToArtist', alexa_play_artist],
   ['ListenToAlbum', alexa_play_album],
   ['ListenToPlaylist', alexa_play_playlist],

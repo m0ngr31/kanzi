@@ -95,15 +95,27 @@ def http_normalize_slashes(url):
 # These two methods construct the JSON-RPC message and send it to the Kodi player
 def SendCommand(command):
   # Do not use below for your own settings, use the .env file
-  SCHEME = os.getenv('KODI_SCHEME', 'http')
-  SUBPATH = os.getenv('KODI_SUBPATH', '')
-  KODI = os.getenv('KODI_ADDRESS', '127.0.0.1')
-  PORT = int(os.getenv('KODI_PORT', 8080))
-  USER = os.getenv('KODI_USERNAME', 'kodi')
-  PASS = os.getenv('KODI_PASSWORD', 'kodi')
+  SCHEME = os.getenv('KODI_SCHEME')
+  if not SCHEME:
+    SCHEME = 'http'
+  SUBPATH = os.getenv('KODI_SUBPATH')
+  if not SUBPATH:
+    SUBPATH = ''
+  KODI = os.getenv('KODI_ADDRESS')
+  if not KODI:
+    KODI = '127.0.0.1'
+  PORT = os.getenv('KODI_PORT')
+  if not PORT:
+    PORT = '8080'
+  USER = os.getenv('KODI_USERNAME')
+  if not USER:
+    USER = 'kodi'
+  PASS = os.getenv('KODI_PASSWORD')
+  if not PASS:
+    PASS = 'kodi'
 
   # Join the environment variables into a url
-  url = "%s://%s:%d/%s/%s" % (SCHEME, KODI, PORT, SUBPATH, 'jsonrpc')
+  url = "%s://%s:%s/%s/%s" % (SCHEME, KODI, PORT, SUBPATH, 'jsonrpc')
 
   # Remove any double slashes in the url
   url = http_normalize_slashes(url)
