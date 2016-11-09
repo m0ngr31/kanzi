@@ -1,3 +1,8 @@
+v2.0.x (xx/xx/2016)
+* Added ability to play a specific album
+* Added intent to query available albums by a specific artist
+* Added intent to query new (unwatched) movies
+
 v2.0.4 (10/27/2016)
 * Wrote python script to handle deploying to lambda
 * Added power intents
