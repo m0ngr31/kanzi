@@ -106,37 +106,6 @@ def sanitize_name(media_name):
   return media_name
 
 
-# Handle the CheckNewShows intent
-
-def alexa_check_new_episodes(slots):
-  card_title = 'Looking for new shows to watch'
-  print card_title
-  sys.stdout.flush()
-
-  # Get the list of unwatched EPISODES from Kodi
-  new_episodes = kodi.GetUnwatchedEpisodes()
-
-  # Find out how many EPISODES were recently added and get the names of the SHOWS
-  new_show_names = list(set([sanitize_name(x['show']) for x in new_episodes]))
-
-  if len(new_episodes) == 0:
-    answer = "There isn't anything new to watch."
-  elif len(new_show_names) == 1:
-    # Only one new show, so provide the number of episodes also.
-    count = len(new_episodes)
-    if count == 1:
-      answer = "There is one new episide of %(show)s to watch." % {"show":new_show_names[0]}
-    else:
-      answer = "You have %(count)d new episides of %(show)s." % {'count':count, 'show':new_show_names[0]}
-  elif len(new_show_names) == 2:
-    random.shuffle(new_show_names)
-    answer = "There are new episodes of %(show1)s and %(show2)s." % {'show1':new_show_names[0], 'show2':new_show_names[1]}
-  elif len(new_show_names) > 2:
-    show_sample = random.sample(new_show_names, 2)
-    answer = "You have %(show1)s, %(show2)s, and more waiting to be watched." % {'show1':show_sample[0], 'show2':show_sample[1]}
-  return build_alexa_response(answer, card_title)
-
-
 # Handle the NewShowInquiry intent.
 
 def alexa_new_show_inquiry(slots):
@@ -165,7 +134,7 @@ def alexa_new_show_inquiry(slots):
         if num_of_unwatched == 1:
           return build_alexa_response("There is one unseen episode of %(real_show)s." % {'real_show': heard_show}, card_title)
         else:
-          return build_alexa_response("There are %(num)d episodes of  %(real_show)s." % {'real_show': heard_show, 'num': num_of_unwatched}, card_title)
+          return build_alexa_response("There are %(num)d unseen episodes of %(real_show)s." % {'real_show': heard_show, 'num': num_of_unwatched}, card_title)
 
       else:
         return build_alexa_response("There are no unseen episodes of %(real_show)s." % {'real_show': heard_show}, card_title)
@@ -1316,7 +1285,6 @@ def prepare_help_message():
 # This maps the Intent names to the functions that provide the corresponding Alexa response.
 
 INTENTS = [
-  ['CheckNewShows', alexa_check_new_episodes],
   ['NewShowInquiry', alexa_new_show_inquiry],
   ['CurrentPlayItemInquiry', alexa_current_playitem_inquiry],
   ['WhatNewMovies', alexa_what_new_movies],

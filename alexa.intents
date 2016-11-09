@@ -1,10 +1,6 @@
 {
   "intents": [
     {
-      "intent": "CheckNewShows",
-      "slots": []
-    },
-    {
       "intent": "WhatNewMovies",
       "slots": []
     },

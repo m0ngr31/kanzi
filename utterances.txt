@@ -108,13 +108,12 @@ PlayMovie (play/watch) movie {Movie}
 
 ContinueShow continue (/watching) (/last) show
 
-CheckNewShows (if there are/are there/do (we/i) have) (/any/some) new shows (/recorded) (/to watch) (/today/tonight)
-CheckNewShows (if there is/is there/do (we/i) have) a new show (/recorded) (/to watch) (/today/tonight)
-
 WhatNewMovies (if there are/are there/do (we/i) have) (/any/some) new movies (/recorded) (/to watch) (/today/tonight)
 WhatNewMovies (if there is/is there/do (we/i) have) a new movie (/recorded) (/to watch) (/today/tonight)
 WhatNewMovies what (/new) movies ((/do) (we/i/you) have/are (ready/waiting/recorded/there/on the (/media) server))
 
+WhatNewShows (if there are/are there/do (we/i) have) (/any/some) new shows (/recorded) (/to watch) (/today/tonight)
+WhatNewShows (if there is/is there/do (we/i) have) a new show (/recorded) (/to watch) (/today/tonight)
 WhatNewShows what (/new) shows ((/do) (we/i/you) have/are (ready/waiting/recorded/there/on the (/media) server))
 
 NewShowInquiry if (there is/we have) a new (/episode of) {Show}
