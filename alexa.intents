@@ -5,6 +5,10 @@
       "slots": []
     },
     {
+      "intent": "WhatNewMovies",
+      "slots": []
+    },
+    {
       "intent": "WhatNewShows",
       "slots": []
     },

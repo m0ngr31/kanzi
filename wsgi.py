@@ -1160,6 +1160,54 @@ def alexa_continue_show(slots):
   except:
     return build_alexa_response('Error parsing results', card_title)
 
+
+def suggest_alternate_activity(chance=0.25):
+  if random.random() < chance:
+    comments = [
+      " Maybe you should go to the movies.",
+      " Maybe you'd like to read a book.",
+      " Time to go for a bike ride?",
+      " You probably have chores to do anyway.",
+    ]
+    return random.choice(comments)
+  else:
+    return ''
+
+# Handle the WhatNewMovies intent.
+
+def alexa_what_new_movies(slots):
+  card_title = 'Newly added movies'
+  print card_title
+  sys.stdout.flush()
+
+  # Get the list of unwatched movies from Kodi
+  new_movies = kodi.GetUnwatchedMovies()
+
+  new_movie_names = list(set([sanitize_name(x['title']) for x in new_movies]))
+  num_movies = len(new_movie_names)
+
+  if num_movies == 0:
+    # There's been nothing added to Kodi recently
+    answers = [
+      "You don't have any new movies to watch.",
+      "There are no new movies to watch.",
+    ]
+    answer = random.choice(answers)
+    answer += suggest_alternate_activity()
+  else:
+    random.shuffle(new_movie_names)
+    limited_new_movie_names = new_movie_names[0:5]
+    movie_list = limited_new_movie_names[0]
+    for one_movie in limited_new_movie_names[1:-1]:
+      movie_list += ", " + one_movie
+    if num_movies > 5:
+      movie_list += ", " + limited_new_movie_names[-1] + ", and more"
+    else:
+      movie_list += ", and" + limited_new_movie_names[-1]
+    answer = "You have %(movie_list)s." % {"movie_list":movie_list}
+  return build_alexa_response(answer, card_title)
+
+
 # Handle the WhatNewShows intent.
 
 def alexa_what_new_episodes(slots):
@@ -1184,14 +1232,7 @@ def alexa_what_new_episodes(slots):
       "There are no new shows to watch.",
     ]
     answer = random.choice(answers)
-    if random.random() < 0.25:
-      comments = [
-        " Maybe you should go to the movies.",
-        " Maybe you'd like to read a book.",
-        " Time to go for a bike ride?",
-        " You probably have chores to do anyway.",
-      ]
-      answer += random.choice(comments)
+    answer += suggest_alternate_activity()
   elif len(really_new_show_names) == 1:
     # There's only one new show, so provide information about the number of episodes, too.
     count = len(really_new_episodes)
@@ -1276,6 +1317,7 @@ INTENTS = [
   ['CheckNewShows', alexa_check_new_episodes],
   ['NewShowInquiry', alexa_new_show_inquiry],
   ['CurrentPlayItemInquiry', alexa_current_playitem_inquiry],
+  ['WhatNewMovies', alexa_what_new_movies],
   ['WhatNewShows', alexa_what_new_episodes],
   ['PlayPause', alexa_play_pause],
   ['StepForward', alexa_step_forward],
