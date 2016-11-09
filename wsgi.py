@@ -106,38 +106,6 @@ def sanitize_name(media_name):
   return media_name
 
 
-# Handle the CheckNewShows intent
-
-def alexa_check_new_episodes(slots):
-  card_title = 'Looking for new shows to watch'
-  print card_title
-  sys.stdout.flush()
-
-  # Get the list of unwatched EPISODES from Kodi
-  new_episodes = kodi.GetUnwatchedEpisodes()
-
-  # Find out how many EPISODES were recently added and get the names of the SHOWS
-  really_new_episodes = [x for x in new_episodes if x['dateadded'] >= datetime.datetime.today() - datetime.timedelta(5)]
-  really_new_show_names = list(set([sanitize_name(x['show']) for x in really_new_episodes]))
-
-  if len(really_new_episodes) == 0:
-    answer = "There isn't anything new to watch."
-  elif len(really_new_show_names) == 1:
-    # Only one new show, so provide the number of episodes also.
-    count = len(really_new_episodes)
-    if count == 1:
-      answer = "There is one new episide of %(show)s to watch." % {"show":really_new_show_names[0]}
-    else:
-      answer = "You have %(count)d new episides of %(show)s." % {'count':count, 'show':really_new_show_names[0]}
-  elif len(really_new_show_names) == 2:
-    random.shuffle(really_new_show_names)
-    answer = "There are new episodes of %(show1)s and %(show2)s." % {'show1':really_new_show_names[0], 'show2':really_new_show_names[1]}
-  elif len(really_new_show_names) > 2:
-    show_sample = random.sample(really_new_show_names, 2)
-    answer = "You have %(show1)s, %(show2)s, and more waiting to be watched." % {'show1':show_sample[0], 'show2':show_sample[1]}
-  return build_alexa_response(answer, card_title)
-
-
 # Handle the NewShowInquiry intent.
 
 def alexa_new_show_inquiry(slots):
@@ -166,7 +134,7 @@ def alexa_new_show_inquiry(slots):
         if num_of_unwatched == 1:
           return build_alexa_response("There is one unseen episode of %(real_show)s." % {'real_show': heard_show}, card_title)
         else:
-          return build_alexa_response("There are %(num)d episodes of  %(real_show)s." % {'real_show': heard_show, 'num': num_of_unwatched}, card_title)
+          return build_alexa_response("There are %(num)d unseen episodes of %(real_show)s." % {'real_show': heard_show, 'num': num_of_unwatched}, card_title)
 
       else:
         return build_alexa_response("There are no unseen episodes of %(real_show)s." % {'real_show': heard_show}, card_title)
@@ -1221,9 +1189,8 @@ def alexa_what_new_episodes(slots):
   new_episodes = kodi.GetUnwatchedEpisodes()
 
   # Find out how many EPISODES were recently added and get the names of the SHOWS
-  really_new_episodes = [x for x in new_episodes if x['dateadded'] >= datetime.datetime.today() - datetime.timedelta(5)]
-  really_new_show_names = list(set([sanitize_name(x['show']) for x in really_new_episodes]))
-  num_shows = len(really_new_show_names)
+  new_show_names = list(set([sanitize_name(x['show']) for x in new_episodes]))
+  num_shows = len(new_show_names)
 
   if num_shows == 0:
     # There's been nothing added to Kodi recently
@@ -1233,37 +1200,41 @@ def alexa_what_new_episodes(slots):
     ]
     answer = random.choice(answers)
     answer += suggest_alternate_activity()
-  elif len(really_new_show_names) == 1:
+  elif len(new_show_names) == 1:
     # There's only one new show, so provide information about the number of episodes, too.
-    count = len(really_new_episodes)
+    count = len(new_episodes)
     if count == 1:
       answers = [
-        "There is a single new episode of %(show)s." % {'show':really_new_show_names[0]},
-        "There is one new episode of %(show)s." % {'show':really_new_show_names[0]},
+        "There is a single new episode of %(show)s." % {'show':new_show_names[0]},
+        "There is one new episode of %(show)s." % {'show':new_show_names[0]},
       ]
     elif count == 2:
       answers = [
-        "There are a couple new episodes of %(show)s" % {'show':really_new_show_names[0]},
-        "There are two new episodes of %(show)s" % {'show':really_new_show_names[0]},
+        "There are a couple new episodes of %(show)s" % {'show':new_show_names[0]},
+        "There are two new episodes of %(show)s" % {'show':new_show_names[0]},
       ]
     elif count >= 5:
       answers = [
-        "There are lots and lots of new episodes of %(show)s" % {'show':really_new_show_names[0]},
-        "There are %(count)d new episodes of %(show)s" % {"count":count, "show":really_new_show_names[0]},
+        "There are lots and lots of new episodes of %(show)s" % {'show':new_show_names[0]},
+        "There are %(count)d new episodes of %(show)s" % {"count":count, "show":new_show_names[0]},
       ]
     else:
       answers = [
-        "You have a few new episodes of %(show)s" % {'show':really_new_show_names[0]},
-        "There are %(count)d new episodes of %(show)s" % {"count":count, "show":really_new_show_names[0]},
+        "You have a few new episodes of %(show)s" % {'show':new_show_names[0]},
+        "There are %(count)d new episodes of %(show)s" % {"count":count, "show":new_show_names[0]},
       ]
     answer = random.choice(answers)
   else:
     # More than one new show has new episodes ready
-    random.shuffle(really_new_show_names)
-    show_list = really_new_show_names[0]
-    for one_show in really_new_show_names[1:-1]:
+    random.shuffle(new_show_names)
+    limited_new_show_names = new_show_names[0:5]
+    show_list = limited_new_show_names[0]
+    for one_show in limited_new_show_names[1:-1]:
       show_list += ", " + one_show
-    show_list += ", and " + really_new_show_names[-1]
+    if num_shows > 5:
+      show_list += ", " + limited_new_show_names[-1] + ", and more"
+    else:
+      show_list += ", and" + limited_new_show_names[-1]
     answer = "There are new episodes of %(show_list)s." % {"show_list":show_list}
   return build_alexa_response(answer, card_title)
 
@@ -1314,7 +1285,6 @@ def prepare_help_message():
 # This maps the Intent names to the functions that provide the corresponding Alexa response.
 
 INTENTS = [
-  ['CheckNewShows', alexa_check_new_episodes],
   ['NewShowInquiry', alexa_new_show_inquiry],
   ['CurrentPlayItemInquiry', alexa_current_playitem_inquiry],
   ['WhatNewMovies', alexa_what_new_movies],
