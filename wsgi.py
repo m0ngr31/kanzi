@@ -1260,10 +1260,14 @@ def alexa_what_new_episodes(slots):
   else:
     # More than one new show has new episodes ready
     random.shuffle(really_new_show_names)
-    show_list = really_new_show_names[0]
-    for one_show in really_new_show_names[1:-1]:
+    limited_new_show_names = really_new_show_names[0:5]
+    show_list = limited_new_show_names[0]
+    for one_show in limited_new_show_names[1:-1]:
       show_list += ", " + one_show
-    show_list += ", and " + really_new_show_names[-1]
+    if num_shows > 5:
+      show_list += ", " + limited_new_show_names[-1] + ", and more"
+    else:
+      show_list += ", and" + limited_new_show_names[-1]
     answer = "There are new episodes of %(show_list)s." % {"show_list":show_list}
   return build_alexa_response(answer, card_title)
 
