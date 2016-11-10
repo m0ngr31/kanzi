@@ -1,7 +1,7 @@
 # A list of utterance variations written in a shorthand syntax
 
 # Syntax and information
-# http://www.makermusings.com/2015/07/21/defining-utterances-for-the-alexa-skills-kit/ 
+# http://www.makermusings.com/2015/07/21/defining-utterances-for-the-alexa-skills-kit/
 
 # Tool to expand the single line into the usable list of utterances
 # http://www.makermusings.com/amazon-echo-utterance-expander/
@@ -81,7 +81,7 @@ CleanAudio clean (audio/music) library
 
 UpdateAudio update (audio/music) library
 
-WhatAlbum what albums do (we/i/you) have by {Artist}
+WhatAlbums what albums do (we/i/you) have by {Artist}
 
 ListenToArtist (play/listen to/shuffle) (/music by/artist) {Artist}
 
@@ -104,13 +104,13 @@ PlayNextEpisode (play/watch) (/the) next episode of {Show}
 
 PlayEpisode (play/watch) (season/series) {Season} episode {Episode} of {Show}
 
-PlayMovie (play/watch) movie {Movie}
+PlayMovie (play/watch) (movie/film) {Movie}
 
 ContinueShow continue (/watching) (/last) show
 
-WhatNewMovies (if there are/are there/do (we/i) have) (/any/some) new movies (/recorded) (/to watch) (/today/tonight)
-WhatNewMovies (if there is/is there/do (we/i) have) a new movie (/recorded) (/to watch) (/today/tonight)
-WhatNewMovies what (/new) movies ((/do) (we/i/you) have/are (ready/waiting/recorded/there/on the (/media) server))
+WhatNewMovies (if there are/are there/do (we/i) have) (/any/some) new (movies/films) (/recorded) (/to watch) (/today/tonight)
+WhatNewMovies (if there is/is there/do (we/i) have) a new (movie/film) (/recorded) (/to watch) (/today/tonight)
+WhatNewMovies what (/new) (movies/films) ((/do) (we/i/you) have/are (ready/waiting/recorded/there/on the (/media) server))
 
 WhatNewShows (if there are/are there/do (we/i) have) (/any/some) new shows (/recorded) (/to watch) (/today/tonight)
 WhatNewShows (if there is/is there/do (we/i) have) a new show (/recorded) (/to watch) (/today/tonight)
@@ -132,7 +132,7 @@ DoSearch search for {Show}
 DoSearch search for {Movie}
 DoSearch search for {Artist}
 
-CurrentPlayItemInquiry what (/song/audio/video/movie/episode/show) is (this/playing/currently playing)
+CurrentPlayItemInquiry what (/song/audio/video/movie/film/episode/show) is (this/playing/currently playing)
 
 Hibernate (hibernate/deep sleep) (/system)
 Reboot reboot (/system)
