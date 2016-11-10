@@ -134,6 +134,15 @@ DoSearch search for {Artist}
 
 CurrentPlayItemInquiry what (/song/audio/video/movie/film/episode/show) is (this/playing/currently playing)
 
+CurrentPlayItemTimeRemaining how much (/time) is (left/remaining) on (my/this) (audio/video/movie/film/show/episode/song)
+CurrentPlayItemTimeRemaining how much (/time) is (left/remaining)
+CurrentPlayItemTimeRemaining how much longer is (/my/this) (audio/video/movie/film/show/episode/song)
+CurrentPlayItemTimeRemaining how much longer is this
+CurrentPlayItemTimeRemaining (when/what time) (will/does) (/my/this) (audio/video/movie/film/show/episode/song) end
+CurrentPlayItemTimeRemaining (when/what time) (will/does) this end
+CurrentPlayItemTimeRemaining (when/what time) this (ends/is over)
+CurrentPlayItemTimeRemaining (when/what time) is this over
+
 Hibernate (hibernate/deep sleep) (/system)
 Reboot reboot (/system)
 Shutdown shut down (/system)

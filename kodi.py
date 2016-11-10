@@ -863,20 +863,25 @@ def GetCurrentAudioStream():
       pass
   return stream
 
-# Returns information useful for building a progress bar to show a video's play time
 
-def GetVideoPlayStatus():
+# Returns information useful for building a progress bar to show an item's play time
+def GetPlayerStatus():
   playerid = GetVideoPlayerID()
-  if playerid:
-    data = SendCommand(RPCString("Player.GetProperties", {"playerid":playerid, "properties":["percentage","speed","time","totaltime"]}))
+  if playerid is None:
+    playerid = GetAudioPlayerID()
+  if playerid is not None:
+    data = SendCommand(RPCString("Player.GetProperties", {"playerid":playerid, "properties":["percentage", "speed", "time", "totaltime"]}))
     if 'result' in data:
-      hours = data['result']['totaltime']['hours']
+      hours_total = data['result']['totaltime']['hours']
+      hours_cur = data['result']['time']['hours']
+      mins_total = hours_total * 60 + data['result']['totaltime']['minutes']
+      mins_cur = hours_cur * 60 + data['result']['time']['minutes']
       speed = data['result']['speed']
-      if hours > 0:
-        total = '%d:%02d:%02d' % (hours, data['result']['totaltime']['minutes'], data['result']['totaltime']['seconds'])
+      if hours_total > 0:
+        total = '%d:%02d:%02d' % (hours_total, data['result']['totaltime']['minutes'], data['result']['totaltime']['seconds'])
         cur = '%d:%02d:%02d' % (data['result']['time']['hours'], data['result']['time']['minutes'], data['result']['time']['seconds'])
       else:
         total = '%02d:%02d' % (data['result']['totaltime']['minutes'], data['result']['totaltime']['seconds'])
         cur = '%02d:%02d' % (data['result']['time']['minutes'], data['result']['time']['seconds'])
-      return {'state':'play' if speed > 0 else 'pause', 'time':cur, 'total':total, 'pct':data['result']['percentage']}
+      return {'state':'play' if speed > 0 else 'pause', 'time':cur, 'time_hours':hours_cur, 'time_mins':mins_cur, 'totaltime':total, 'total_hours':hours_total, 'total_mins':mins_total, 'pct':data['result']['percentage']}
   return {'state':'stop'}

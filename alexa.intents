@@ -362,6 +362,10 @@
     {
       "intent": "CurrentPlayItemInquiry",
       "slots": []
+    },
+    {
+      "intent": "CurrentPlayItemTimeRemaining",
+      "slots": []
     }
   ]
 }

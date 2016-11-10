@@ -199,6 +199,29 @@ def alexa_current_playitem_inquiry(slots):
     return build_alexa_response('%s%s.' % (answer, answer_append), card_title)
 
 
+# Handle the CurrentPlayItemTimeRemaining intent.
+def alexa_current_playitem_time_remaining(slots):
+  card_title = "Time left on currently playing item"
+  print card_title
+  sys.stdout.flush()
+
+  answer = 'Playback is stopped.'
+
+  status = kodi.GetPlayerStatus()
+  if status['state'] is not 'stop':
+    minsleft = status['total_mins'] - status['time_mins']
+    if minsleft == 0:
+      answer = 'It is nearly over.'
+    elif minsleft == 1:
+      answer = 'There is one minute remaining.'
+    elif minsleft > 1:
+      answer = 'There are %d minutes remaining' % (minsleft)
+      if minsleft > 9:
+        answer += ', and it will end at %s.' % (datetime.datetime.now() + datetime.timedelta(minutes=minsleft)).strftime('%I:%M')
+
+  return build_alexa_response(answer, card_title)
+
+
 # Handle the PlayPause intent.
 def alexa_play_pause(slots):
   card_title = 'Playing or pausing'
@@ -1395,6 +1418,7 @@ def prepare_help_message():
 INTENTS = [
   ['NewShowInquiry', alexa_new_show_inquiry],
   ['CurrentPlayItemInquiry', alexa_current_playitem_inquiry],
+  ['CurrentPlayItemTimeRemaining', alexa_current_playitem_time_remaining],
   ['WhatNewMovies', alexa_what_new_movies],
   ['WhatNewShows', alexa_what_new_episodes],
   ['PlayPause', alexa_play_pause],
