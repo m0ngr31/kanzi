@@ -1,7 +1,9 @@
-v2.0.x (xx/xx/2016)
+v2.0.5 (11/09/2016)
 * Added ability to play a specific album
 * Added intent to query available albums by a specific artist
 * Added intent to query new (unwatched) movies
+* Better content matching
+* Added ability to request time remaining on currently playing item
 
 v2.0.4 (10/27/2016)
 * Wrote python script to handle deploying to lambda
@@ -17,6 +19,7 @@ v2.0.4 (10/27/2016)
 
 v2.0.0 (10/02/2016)
 * Merged in a bunch of good PRs dealing with playing playlists
+* Added ability to query information about currently playing item
 * Added in 'Search' and 'Party mode' intents
 * Reversed order of Update/Clean functions and threaded them so now the skill won't timeout
 * Updated documentation
