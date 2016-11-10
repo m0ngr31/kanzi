@@ -149,54 +149,54 @@ def alexa_current_playitem_inquiry(slots):
   print card_title
   sys.stdout.flush()
 
-  speech_output = 'The current'
-  speech_output_append = 'ly playing item is unknown'
+  answer = 'The current'
+  answer_append = 'ly playing item is unknown'
 
   try:
     curitem = kodi.GetActivePlayItem()
   except:
-    speech_output = 'There is nothing current'
-    speech_output_append = 'ly playing'
+    answer = 'There is nothing current'
+    answer_append = 'ly playing'
   else:
     if curitem is not None:
       if curitem['type'] == 'episode':
         # is a tv show
-        speech_output += ' TV show is'
-        speech_output_append = ' unknown'
+        answer += ' TV show is'
+        answer_append = ' unknown'
         if curitem['showtitle']:
-          speech_output += ' %s,' % (curitem['showtitle'])
-          speech_output_append = ''
+          answer += ' %s,' % (curitem['showtitle'])
+          answer_append = ''
         if curitem['season']:
-          speech_output += ' season %s,' % (curitem['season'])
-          speech_output_append = ''
+          answer += ' season %s,' % (curitem['season'])
+          answer_append = ''
         if curitem['episode']:
-          speech_output += ' episode %s,' % (curitem['episode'])
-          speech_output_append = ''
+          answer += ' episode %s,' % (curitem['episode'])
+          answer_append = ''
         if curitem['title']:
-          speech_output += ' %s' % (curitem['title'])
-          speech_output_append = ''
+          answer += ' %s' % (curitem['title'])
+          answer_append = ''
       elif curitem['type'] == 'song' or curitem['type'] == 'musicvideo':
         # is a song (music video or audio)
-        speech_output += ' song is'
-        speech_output_append = ' unknown'
+        answer += ' song is'
+        answer_append = ' unknown'
         if curitem['title']:
-          speech_output += ' %s,' % (curitem['title'])
-          speech_output_append = ''
+          answer += ' %s,' % (curitem['title'])
+          answer_append = ''
         if curitem['artist']:
-          speech_output += ' by %s,' % (curitem['artist'][0])
-          speech_output_append = ''
+          answer += ' by %s,' % (curitem['artist'][0])
+          answer_append = ''
         if curitem['album']:
-          speech_output += ' on the album %s' % (curitem['album'])
-          speech_output_append = ''
+          answer += ' on the album %s' % (curitem['album'])
+          answer_append = ''
       elif curitem['type'] == 'movie':
         # is a video
-        speech_output += ' movie is'
-        speech_output_append = ' unknown'
+        answer += ' movie is'
+        answer_append = ' unknown'
         if curitem['title']:
-          speech_output += ' %s' % (curitem['title'])
-          speech_output_append = ''
+          answer += ' %s' % (curitem['title'])
+          answer_append = ''
 
-    return build_alexa_response('%s%s.' % (speech_output, speech_output_append), card_title)
+    return build_alexa_response('%s%s.' % (answer, answer_append), card_title)
 
 
 # Handle the PlayPause intent.
