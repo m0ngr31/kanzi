@@ -54,6 +54,8 @@ CleanVideo clean library
 CleanVideo clean video library
 ContinueShow continue last show
 ContinueShow continue show
+ContinueShow continue playing last show
+ContinueShow continue playing show
 ContinueShow continue watching last show
 ContinueShow continue watching show
 CurrentPlayItemInquiry what audio is currently playing

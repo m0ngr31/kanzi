@@ -106,7 +106,7 @@ PlayEpisode (play/watch) (season/series) {Season} episode {Episode} of {Show}
 
 PlayMovie (play/watch) (movie/film) {Movie}
 
-ContinueShow continue (/watching) (/last) show
+ContinueShow continue (/watching/playing) (/last) show
 
 WhatNewMovies (if there are/are there/do (we/i) have) (/any/some) new (movies/films) (/recorded) (/to watch) (/today/tonight)
 WhatNewMovies (if there is/is there/do (we/i) have) a new (movie/film) (/recorded) (/to watch) (/today/tonight)
