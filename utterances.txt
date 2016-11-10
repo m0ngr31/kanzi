@@ -93,8 +93,8 @@ ListenToPlaylist (play/listen to/shuffle) {Playlist} playlist
 
 ListenToPlaylistRecent (play/listen to/shuffle) (/playlist) recent
 ListenToPlaylistRecent (play/listen to/shuffle) (/playlist) recently added
-ListenToPlaylistRecent (play/listen to/shuffle) recent (/songs/music/playlist)
-ListenToPlaylistRecent (play/listen to/shuffle) recently added (/songs/music/playlist)
+ListenToPlaylistRecent (play/listen to/shuffle) recent (songs/music/playlist)
+ListenToPlaylistRecent (play/listen to/shuffle) recently added (songs/music/playlist)
 
 PlayRandomMovie (play/watch) (/a) random (movie/film)
 
