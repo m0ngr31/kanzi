@@ -1018,13 +1018,14 @@ def alexa_play_random_movie(slots):
   print card_title
   sys.stdout.flush()
 
-  movies = kodi.GetUnwatchedMovies()
-  if not 'movies' in movies['result']:
+  movies_array = kodi.GetUnwatchedMovies()
+  if not len(movies_array):
     # Fall back to all movies if no unwatched available
     movies = kodi.GetMovies()
+    if 'result' in movies and 'movies' in movies['result']:
+      movies_array = movies['result']['movies']
 
-  if 'result' in movies and 'movies' in movies['result']:
-    movies_array = movies['result']['movies']
+  if len(movies_array):
     random_movie = random.choice(movies_array)
 
     kodi.PlayMovie(random_movie['movieid'], False)
