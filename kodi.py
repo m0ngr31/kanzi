@@ -642,6 +642,10 @@ def GetMovies():
   return SendCommand(RPCString("VideoLibrary.GetMovies"))
 
 
+def GetMoviesByGenre(genre):
+  return SendCommand(RPCString("VideoLibrary.GetMovies", {"filter":{"genre":genre}}))
+
+
 def GetMovieGenres():
   return SendCommand(RPCString("VideoLibrary.GetGenres", {"type": "movie"}))
 
@@ -727,6 +731,16 @@ def GetWatchedEpisodes(max=90):
 # can take a long time.
 def GetUnwatchedMovies(max=90):
   data = SendCommand(RPCString("VideoLibrary.GetMovies", {"limits":{"end":max}, "filter":{"field":"playcount", "operator":"lessthan", "value":"1"}, "sort":{"method":"dateadded", "order":"descending"}, "properties":["title", "playcount", "dateadded" ]}))
+  answer = []
+  for d in data['result']['movies']:
+    answer.append({'title':d['title'], 'movieid':d['movieid'], 'label':d['label'], 'dateadded':datetime.datetime.strptime(d['dateadded'], "%Y-%m-%d %H:%M:%S")})
+  return answer
+
+# Returns a list of dictionaries with information about unwatched movies in a particular genre. Useful for
+# telling/showing users what's ready to be watched. Setting max to very high values
+# can take a long time.
+def GetUnwatchedMoviesByGenre(genre, max=90):
+  data = SendCommand(RPCString("VideoLibrary.GetMovies", {"limits":{"end":max}, "filter":{"field":"playcount", "operator":"lessthan", "value":"1"}, "filter":{"genre":genre}, "sort":{"method":"dateadded", "order":"descending"}, "properties":["title", "playcount", "dateadded" ]}))
   answer = []
   for d in data['result']['movies']:
     answer.append({'title':d['title'], 'movieid':d['movieid'], 'label':d['label'], 'dateadded':datetime.datetime.strptime(d['dateadded'], "%Y-%m-%d %H:%M:%S")})

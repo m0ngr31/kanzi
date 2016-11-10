@@ -9,6 +9,7 @@ I've expanded it to support the following features:
 - Shuffle music by artist
 - Play random unwatched episode of TV show
 - Play random unwatched movie
+- Play random movie from a specific genre
 - Play specific episode of a TV show ('Play season 4 episode 10 of The Office')
 - Play specific movie
 - Continue watching next episode of last show that was watched
@@ -19,6 +20,7 @@ I've expanded it to support the following features:
 - Searching for something in your library
 - "Party mode" for music (shuffle all)
 - Play audio playlists
+- Play specific album
 
 ## Kodi Setup
 
@@ -146,11 +148,12 @@ Here's what it'll look like:
 
 You'll just need to stick the URL from your app in the Endpoint field. If you are using Lambda, you'll need to use the ARN you got earlier.
 
-On the next tab, you'll have to paste the `alexa.intents` file into the "Intent Schema" field, and paste the `alexa.utterances` file in the "Sample Utterances" field.
+On the next tab, you'll have to paste the `alexa.intents` file into the "Intent Schema" field, and paste the `alexa.utterances` file in the "Sample Utterances" field. Generate and save your Slots first before pasting the Intents and Utterances to avoid errors when attempting to save.
 
-The tricky part is generating the Slots in the middle section. You need to create 5 different slots:
+The tricky part is generating the Slots in the middle section. You need to create 6 different slots:
 
 - MOVIES
+- MOVIEGENRES
 - SHOWS
 - MUSICARTISTS
 - MUSICALBUMS

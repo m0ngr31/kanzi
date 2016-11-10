@@ -139,7 +139,12 @@
     },
     {
       "intent": "PlayRandomMovie",
-      "slots": []
+      "slots": [
+        {
+          "name": "Genre",
+          "type": "MOVIEGENRES"
+        }
+      ]
     },
     {
       "intent": "Prev",
