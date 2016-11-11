@@ -244,46 +244,46 @@ def alexa_stop(slots):
   return build_alexa_response(answer, card_title)
 
 
-# Handle the StepForward intent.
-def alexa_step_forward(slots):
+# Handle the PlayerSeekSmallForward intent.
+def alexa_player_seek_smallforward(slots):
   card_title = 'Stepping forward'
   print card_title
   sys.stdout.flush()
 
-  kodi.StepForward()
+  kodi.PlayerSeekSmallForward()
   answer = ""
   return build_alexa_response(answer, card_title)
 
 
-# Handle the StepBackward intent.
-def alexa_step_backward(slots):
+# Handle the PlayerSeekSmallBackward intent.
+def alexa_player_seek_smallbackward(slots):
   card_title = 'Stepping backward'
   print card_title
   sys.stdout.flush()
 
-  kodi.StepBackward()
+  kodi.PlayerSeekSmallBackward()
   answer = ""
   return build_alexa_response(answer, card_title)
 
 
-# Handle the BigStepForward intent.
-def alexa_big_step_forward(slots):
+# Handle the PlayerSeekBigForward intent.
+def alexa_player_seek_bigforward(slots):
   card_title = 'Big Step forward'
   print card_title
   sys.stdout.flush()
 
-  kodi.BigStepForward()
+  kodi.PlayerSeekBigForward()
   answer = ""
   return build_alexa_response(answer, card_title)
 
 
-# Handle the BigStepBackward intent.
-def alexa_big_step_backward(slots):
+# Handle the PlayerSeekBigBackward intent.
+def alexa_player_seek_bigforward(slots):
   card_title = 'Big Step backward'
   print card_title
   sys.stdout.flush()
 
-  kodi.BigStepBackward()
+  kodi.PlayerSeekBigBackward()
   answer = ""
   return build_alexa_response(answer, card_title)
 
@@ -1422,10 +1422,10 @@ INTENTS = [
   ['WhatNewMovies', alexa_what_new_movies],
   ['WhatNewShows', alexa_what_new_episodes],
   ['PlayPause', alexa_play_pause],
-  ['StepForward', alexa_step_forward],
-  ['BigStepForward', alexa_big_step_forward],
-  ['StepBackward', alexa_step_backward],
-  ['BigStepBackward', alexa_big_step_backward],
+  ['PlayerSeekSmallForward', alexa_player_seek_smallforward],
+  ['PlayerSeekBigForward', alexa_player_seek_bigforward],
+  ['PlayerSeekSmallBackward', alexa_player_seek_smallbackward],
+  ['PlayerSeekBigBackward', alexa_player_seek_bigforward],
   ['Stop', alexa_stop],
   ['WhatAlbums', alexa_what_albums],
   ['ListenToArtist', alexa_play_artist],

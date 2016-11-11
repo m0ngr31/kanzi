@@ -38,19 +38,19 @@
       "slots": []
     },
     {
-      "intent": "StepForward",
+      "intent": "PlayerSeekSmallForward",
       "slots": []
     },
     {
-      "intent": "StepBackward",
+      "intent": "PlayerSeekSmallBackward",
       "slots": []
     },
     {
-      "intent": "BigStepForward",
+      "intent": "PlayerSeekBigForward",
       "slots": []
     },
     {
-      "intent": "BigStepBackward",
+      "intent": "PlayerSeekBigBackward",
       "slots": []
     },
     {
