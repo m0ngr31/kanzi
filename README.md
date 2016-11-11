@@ -209,4 +209,4 @@ Here are a few demo videos showing how to use it. Other commands you can do are 
 
 # Getting Help
 
-If you run into an actual issue with the code, please open an Issue here on Github. If you need help getting a server going or configuring the Skill, pleas visit the [support thread on the Kodi forum.](https://forum.kodi.tv/showthread.php?tid=254502)
+If you run into an actual issue with the code, please open an Issue here on Github. If you need help getting a server going or configuring the Skill, pleas visit the [support thread on the Kodi forum.](http://forum.kodi.tv/showthread.php?tid=254502)
