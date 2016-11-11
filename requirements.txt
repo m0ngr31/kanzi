@@ -2,5 +2,4 @@ requests
 gunicorn
 yaep
 pycountry
-python-Levenshtein
 fuzzywuzzy

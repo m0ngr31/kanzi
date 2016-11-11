@@ -187,6 +187,15 @@ You can also enable some extra verification of the SSL certificate by setting `S
 Note that you will need to manually install the dependencies in `requirements_verify.txt` if you want this additional validation.  Depending on your host environment, something like `pip install -r requirements_verify.txt` might work.
 
 
+# Optimising search performance on large libraries (local installations only)
+
+Matching what Alexa heard with content in your library isn't an exact science, and kodi-alexa uses fuzzy matching to try and help to do this reliably. It's possible if your libary is large that this may be a little slower than you'd like. If this is the case it's possible to improve the performance of the fuzzy matching module by installing the python-Levenshtein library. As it's compiled C you'll need to ensure you have python headers available on your machine and the tools required on your OS to compile the module. Using the Levenshtein module has only been tested when running the skill locally as a WSGI script. If all of the above is applicable to your deployment, you can opt to use this optimisation.
+
+In order to include the optional module add the following line to `requirements.txt`:
+
+`python-Levenshtein`
+
+
 # Performing voice commands
 
 Here are a few demo videos showing how to use it. Other commands you can do are in the utterances file.
