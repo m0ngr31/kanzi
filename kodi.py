@@ -460,25 +460,25 @@ def Stop():
     return SendCommand(RPCString("Player.Stop", {"playerid":playerid}))
 
 
-def StepForward():
+def PlayerSeekSmallForward():
   playerid = GetPlayerID()
   if playerid:
     return SendCommand(RPCString("Player.Seek", {"playerid":playerid, "value":"smallforward"}))
 
 
-def StepBackward():
+def PlayerSeekSmallBackward():
   playerid = GetPlayerID()
   if playerid:
     return SendCommand(RPCString("Player.Seek", {"playerid":playerid, "value":"smallbackward"}))
 
 
-def BigStepForward():
+def PlayerSeekBigForward():
   playerid = GetPlayerID()
   if playerid:
     return SendCommand(RPCString("Player.Seek", {"playerid":playerid, "value":"bigforward"}))
 
 
-def BigStepBackward():
+def PlayerSeekBigBackward():
   playerid = GetPlayerID()
   if playerid:
     return SendCommand(RPCString("Player.Seek", {"playerid":playerid, "value":"bigbackward"}))

@@ -152,11 +152,11 @@ Suspend go to sleep
 
 EjectMedia eject (/media/disc/audio disc/bluray/bluray disc/cd/dvd)
 
-StepForward (/small) (step/jump) forward
-StepForward (/small) forward (step/jump)
-BigStepForward (large/big/long) (step/jump) forward
-BigStepForward (large/big/long) forward (step/jump)
-StepBackward (/small) (step/jump) (backward/back)
-StepBackward (/small) (backward/back) (step/jump)
-BigStepBackward (large/big/long) (step/jump) (backward/back)
-BigStepBackward (large/big/long) (backward/back) (step/jump)
+PlayerSeekSmallForward (/small) (step/jump) forward
+PlayerSeekSmallForward (/small) forward (step/jump)
+PlayerSeekBigForward (large/big/long) (step/jump) forward
+PlayerSeekBigForward (large/big/long) forward (step/jump)
+PlayerSeekSmallBackward (/small) (step/jump) (backward/back)
+PlayerSeekSmallBackward (/small) (backward/back) (step/jump)
+PlayerSeekBigBackward (large/big/long) (step/jump) (backward/back)
+PlayerSeekBigBackward (large/big/long) (backward/back) (step/jump)

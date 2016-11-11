@@ -12,50 +12,14 @@ AudioStreamPrevious previous audio stream
 AudioStreamPrevious previous language
 Back go back
 Back navigate
-BigStepBackward big back jump
-BigStepBackward big back step
-BigStepBackward big backward jump
-BigStepBackward big backward step
-BigStepBackward big jump back
-BigStepBackward big jump backward
-BigStepBackward big step back
-BigStepBackward big step backward
-BigStepBackward large back jump
-BigStepBackward large back step
-BigStepBackward large backward jump
-BigStepBackward large backward step
-BigStepBackward large jump back
-BigStepBackward large jump backward
-BigStepBackward large step back
-BigStepBackward large step backward
-BigStepBackward long back jump
-BigStepBackward long back step
-BigStepBackward long backward jump
-BigStepBackward long backward step
-BigStepBackward long jump back
-BigStepBackward long jump backward
-BigStepBackward long step back
-BigStepBackward long step backward
-BigStepForward big forward jump
-BigStepForward big forward step
-BigStepForward big jump forward
-BigStepForward big step forward
-BigStepForward large forward jump
-BigStepForward large forward step
-BigStepForward large jump forward
-BigStepForward large step forward
-BigStepForward long forward jump
-BigStepForward long forward step
-BigStepForward long jump forward
-BigStepForward long step forward
 CleanAudio clean audio library
 CleanAudio clean music library
 CleanVideo clean library
 CleanVideo clean video library
 ContinueShow continue last show
-ContinueShow continue show
 ContinueShow continue playing last show
 ContinueShow continue playing show
+ContinueShow continue show
 ContinueShow continue watching last show
 ContinueShow continue watching show
 CurrentPlayItemInquiry what audio is currently playing
@@ -189,6 +153,28 @@ CurrentPlayItemTimeRemaining what time does video end
 CurrentPlayItemTimeRemaining what time is this over
 CurrentPlayItemTimeRemaining what time this ends
 CurrentPlayItemTimeRemaining what time this is over
+CurrentPlayItemTimeRemaining what time will audio end
+CurrentPlayItemTimeRemaining what time will episode end
+CurrentPlayItemTimeRemaining what time will film end
+CurrentPlayItemTimeRemaining what time will movie end
+CurrentPlayItemTimeRemaining what time will my audio end
+CurrentPlayItemTimeRemaining what time will my episode end
+CurrentPlayItemTimeRemaining what time will my film end
+CurrentPlayItemTimeRemaining what time will my movie end
+CurrentPlayItemTimeRemaining what time will my show end
+CurrentPlayItemTimeRemaining what time will my song end
+CurrentPlayItemTimeRemaining what time will my video end
+CurrentPlayItemTimeRemaining what time will show end
+CurrentPlayItemTimeRemaining what time will song end
+CurrentPlayItemTimeRemaining what time will this audio end
+CurrentPlayItemTimeRemaining what time will this end
+CurrentPlayItemTimeRemaining what time will this episode end
+CurrentPlayItemTimeRemaining what time will this film end
+CurrentPlayItemTimeRemaining what time will this movie end
+CurrentPlayItemTimeRemaining what time will this show end
+CurrentPlayItemTimeRemaining what time will this song end
+CurrentPlayItemTimeRemaining what time will this video end
+CurrentPlayItemTimeRemaining what time will video end
 CurrentPlayItemTimeRemaining when does audio end
 CurrentPlayItemTimeRemaining when does episode end
 CurrentPlayItemTimeRemaining when does film end
@@ -390,6 +376,66 @@ PlayerRotateClockwise rotate
 PlayerRotateClockwise rotate clockwise
 PlayerRotateClockwise rotate ninety degrees
 PlayerRotateCounterClockwise rotate counter clockwise
+PlayerSeekBigBackward big back jump
+PlayerSeekBigBackward big back step
+PlayerSeekBigBackward big backward jump
+PlayerSeekBigBackward big backward step
+PlayerSeekBigBackward big jump back
+PlayerSeekBigBackward big jump backward
+PlayerSeekBigBackward big step back
+PlayerSeekBigBackward big step backward
+PlayerSeekBigBackward large back jump
+PlayerSeekBigBackward large back step
+PlayerSeekBigBackward large backward jump
+PlayerSeekBigBackward large backward step
+PlayerSeekBigBackward large jump back
+PlayerSeekBigBackward large jump backward
+PlayerSeekBigBackward large step back
+PlayerSeekBigBackward large step backward
+PlayerSeekBigBackward long back jump
+PlayerSeekBigBackward long back step
+PlayerSeekBigBackward long backward jump
+PlayerSeekBigBackward long backward step
+PlayerSeekBigBackward long jump back
+PlayerSeekBigBackward long jump backward
+PlayerSeekBigBackward long step back
+PlayerSeekBigBackward long step backward
+PlayerSeekBigForward big forward jump
+PlayerSeekBigForward big forward step
+PlayerSeekBigForward big jump forward
+PlayerSeekBigForward big step forward
+PlayerSeekBigForward large forward jump
+PlayerSeekBigForward large forward step
+PlayerSeekBigForward large jump forward
+PlayerSeekBigForward large step forward
+PlayerSeekBigForward long forward jump
+PlayerSeekBigForward long forward step
+PlayerSeekBigForward long jump forward
+PlayerSeekBigForward long step forward
+PlayerSeekSmallBackward back jump
+PlayerSeekSmallBackward back step
+PlayerSeekSmallBackward backward jump
+PlayerSeekSmallBackward backward step
+PlayerSeekSmallBackward jump back
+PlayerSeekSmallBackward jump backward
+PlayerSeekSmallBackward small back jump
+PlayerSeekSmallBackward small back step
+PlayerSeekSmallBackward small backward jump
+PlayerSeekSmallBackward small backward step
+PlayerSeekSmallBackward small jump back
+PlayerSeekSmallBackward small jump backward
+PlayerSeekSmallBackward small step back
+PlayerSeekSmallBackward small step backward
+PlayerSeekSmallBackward step back
+PlayerSeekSmallBackward step backward
+PlayerSeekSmallForward forward jump
+PlayerSeekSmallForward forward step
+PlayerSeekSmallForward jump forward
+PlayerSeekSmallForward small forward jump
+PlayerSeekSmallForward small forward step
+PlayerSeekSmallForward small jump forward
+PlayerSeekSmallForward small step forward
+PlayerSeekSmallForward step forward
 PlayerZoomHold give me a hard copy right there
 PlayerZoomHold give me a hard copy there
 PlayerZoomHold hold
@@ -541,30 +587,6 @@ Skip skip
 Skip skip song
 StartOver replay
 StartOver start over
-StepBackward back jump
-StepBackward back step
-StepBackward backward jump
-StepBackward backward step
-StepBackward jump back
-StepBackward jump backward
-StepBackward small back jump
-StepBackward small back step
-StepBackward small backward jump
-StepBackward small backward step
-StepBackward small jump back
-StepBackward small jump backward
-StepBackward small step back
-StepBackward small step backward
-StepBackward step back
-StepBackward step backward
-StepForward forward jump
-StepForward forward step
-StepForward jump forward
-StepForward small forward jump
-StepForward small forward step
-StepForward small jump forward
-StepForward small step forward
-StepForward step forward
 Stop cancel
 Stop shut up
 Stop stop
