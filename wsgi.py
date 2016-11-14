@@ -109,40 +109,7 @@ def sanitize_name(media_name):
   return media_name
 
 
-# Handle the CheckNewShows intent
-
-def alexa_check_new_episodes(slots):
-  card_title = 'Looking for new shows to watch'
-  print card_title
-  sys.stdout.flush()
-
-  # Get the list of unwatched EPISODES from Kodi
-  new_episodes = kodi.GetUnwatchedEpisodes()
-
-  # Find out how many EPISODES were recently added and get the names of the SHOWS
-  really_new_episodes = [x for x in new_episodes if x['dateadded'] >= datetime.datetime.today() - datetime.timedelta(5)]
-  really_new_show_names = list(set([sanitize_name(x['show']) for x in really_new_episodes]))
-
-  if len(really_new_episodes) == 0:
-    answer = "There isn't anything new to watch."
-  elif len(really_new_show_names) == 1:
-    # Only one new show, so provide the number of episodes also.
-    count = len(really_new_episodes)
-    if count == 1:
-      answer = "There is one new episide of %(show)s to watch." % {"show":really_new_show_names[0]}
-    else:
-      answer = "You have %(count)d new episides of %(show)s." % {'count':count, 'show':really_new_show_names[0]}
-  elif len(really_new_show_names) == 2:
-    random.shuffle(really_new_show_names)
-    answer = "There are new episodes of %(show1)s and %(show2)s." % {'show1':really_new_show_names[0], 'show2':really_new_show_names[1]}
-  elif len(really_new_show_names) > 2:
-    show_sample = random.sample(really_new_show_names, 2)
-    answer = "You have %(show1)s, %(show2)s, and more waiting to be watched." % {'show1':show_sample[0], 'show2':show_sample[1]}
-  return build_alexa_response(answer, card_title)
-
-
 # Handle the NewShowInquiry intent.
-
 def alexa_new_show_inquiry(slots):
   heard_show = str(slots['Show']['value']).lower().translate(None, string.punctuation)
 
@@ -169,7 +136,7 @@ def alexa_new_show_inquiry(slots):
         if num_of_unwatched == 1:
           return build_alexa_response("There is one unseen episode of %(real_show)s." % {'real_show': heard_show}, card_title)
         else:
-          return build_alexa_response("There are %(num)d episodes of  %(real_show)s." % {'real_show': heard_show, 'num': num_of_unwatched}, card_title)
+          return build_alexa_response("There are %(num)d unseen episodes of %(real_show)s." % {'real_show': heard_show, 'num': num_of_unwatched}, card_title)
 
       else:
         return build_alexa_response("There are no unseen episodes of %(real_show)s." % {'real_show': heard_show}, card_title)
@@ -178,63 +145,87 @@ def alexa_new_show_inquiry(slots):
   else:
     return build_alexa_response('Error parsing results', card_title)
 
-# Handle the CurrentPlayItemInquiry intent.
 
+# Handle the CurrentPlayItemInquiry intent.
 def alexa_current_playitem_inquiry(slots):
   card_title = "Currently playing item"
   print card_title
   sys.stdout.flush()
 
-  speech_output = 'The current'
-  speech_output_append = 'ly playing item is unknown'
+  answer = 'The current'
+  answer_append = 'ly playing item is unknown'
 
   try:
     curitem = kodi.GetActivePlayItem()
   except:
-    speech_output = 'There is nothing current'
-    speech_output_append = 'ly playing'
+    answer = 'There is nothing current'
+    answer_append = 'ly playing'
   else:
     if curitem is not None:
       if curitem['type'] == 'episode':
         # is a tv show
-        speech_output += ' TV show is'
-        speech_output_append = ' unknown'
+        answer += ' TV show is'
+        answer_append = ' unknown'
         if curitem['showtitle']:
-          speech_output += ' %s,' % (curitem['showtitle'])
-          speech_output_append = ''
+          answer += ' %s,' % (curitem['showtitle'])
+          answer_append = ''
         if curitem['season']:
-          speech_output += ' season %s,' % (curitem['season'])
-          speech_output_append = ''
+          answer += ' season %s,' % (curitem['season'])
+          answer_append = ''
         if curitem['episode']:
-          speech_output += ' episode %s,' % (curitem['episode'])
-          speech_output_append = ''
+          answer += ' episode %s,' % (curitem['episode'])
+          answer_append = ''
         if curitem['title']:
-          speech_output += ' %s' % (curitem['title'])
-          speech_output_append = ''
+          answer += ' %s' % (curitem['title'])
+          answer_append = ''
       elif curitem['type'] == 'song' or curitem['type'] == 'musicvideo':
         # is a song (music video or audio)
-        speech_output += ' song is'
-        speech_output_append = ' unknown'
+        answer += ' song is'
+        answer_append = ' unknown'
         if curitem['title']:
-          speech_output += ' %s,' % (curitem['title'])
-          speech_output_append = ''
+          answer += ' %s,' % (curitem['title'])
+          answer_append = ''
         if curitem['artist']:
-          speech_output += ' by %s,' % (curitem['artist'][0])
-          speech_output_append = ''
+          answer += ' by %s,' % (curitem['artist'][0])
+          answer_append = ''
         if curitem['album']:
-          speech_output += ' on the album %s' % (curitem['album'])
-          speech_output_append = ''
+          answer += ' on the album %s' % (curitem['album'])
+          answer_append = ''
       elif curitem['type'] == 'movie':
         # is a video
-        speech_output += ' movie is'
-        speech_output_append = ' unknown'
+        answer += ' movie is'
+        answer_append = ' unknown'
         if curitem['title']:
-          speech_output += ' %s' % (curitem['title'])
-          speech_output_append = ''
+          answer += ' %s' % (curitem['title'])
+          answer_append = ''
 
-    return build_alexa_response('%s%s.' % (speech_output, speech_output_append), card_title)
+    return build_alexa_response('%s%s.' % (answer, answer_append), card_title)
 
-# Pause Kodi
+
+# Handle the CurrentPlayItemTimeRemaining intent.
+def alexa_current_playitem_time_remaining(slots):
+  card_title = "Time left on currently playing item"
+  print card_title
+  sys.stdout.flush()
+
+  answer = 'Playback is stopped.'
+
+  status = kodi.GetPlayerStatus()
+  if status['state'] is not 'stop':
+    minsleft = status['total_mins'] - status['time_mins']
+    if minsleft == 0:
+      answer = 'It is nearly over.'
+    elif minsleft == 1:
+      answer = 'There is one minute remaining.'
+    elif minsleft > 1:
+      answer = 'There are %d minutes remaining' % (minsleft)
+      if minsleft > 9:
+        answer += ', and it will end at %s.' % (datetime.datetime.now() + datetime.timedelta(minutes=minsleft)).strftime('%I:%M')
+
+  return build_alexa_response(answer, card_title)
+
+
+# Handle the PlayPause intent.
 def alexa_play_pause(slots):
   card_title = 'Playing or pausing'
   print card_title
@@ -244,7 +235,8 @@ def alexa_play_pause(slots):
   answer = ""
   return build_alexa_response(answer, card_title)
 
-# Stop Playback
+
+# Handle the Stop intent.
 def alexa_stop(slots):
   card_title = 'Stopping playback'
   print card_title
@@ -254,48 +246,53 @@ def alexa_stop(slots):
   answer = "Playback stopped"
   return build_alexa_response(answer, card_title)
 
-# Step Forward
-def alexa_step_forward(slots):
+
+# Handle the PlayerSeekSmallForward intent.
+def alexa_player_seek_smallforward(slots):
   card_title = 'Stepping forward'
   print card_title
   sys.stdout.flush()
 
-  kodi.StepForward()
+  kodi.PlayerSeekSmallForward()
   answer = ""
   return build_alexa_response(answer, card_title)
 
-# Step Backward
-def alexa_step_backward(slots):
+
+# Handle the PlayerSeekSmallBackward intent.
+def alexa_player_seek_smallbackward(slots):
   card_title = 'Stepping backward'
   print card_title
   sys.stdout.flush()
 
-  kodi.StepBackward()
+  kodi.PlayerSeekSmallBackward()
   answer = ""
   return build_alexa_response(answer, card_title)
 
-# Big Step Forward
-def alexa_big_step_forward(slots):
+
+# Handle the PlayerSeekBigForward intent.
+def alexa_player_seek_bigforward(slots):
   card_title = 'Big Step forward'
   print card_title
   sys.stdout.flush()
 
-  kodi.BigStepForward()
+  kodi.PlayerSeekBigForward()
   answer = ""
   return build_alexa_response(answer, card_title)
 
-# Big Step Backward
-def alexa_big_step_backward(slots):
+
+# Handle the PlayerSeekBigBackward intent.
+def alexa_player_seek_bigforward(slots):
   card_title = 'Big Step backward'
   print card_title
   sys.stdout.flush()
 
-  kodi.BigStepBackward()
+  kodi.PlayerSeekBigBackward()
   answer = ""
   return build_alexa_response(answer, card_title)
 
 
-# Play whole album, or whole album by a specific artist
+# Handle the ListenToAlbum intent.
+# Play whole album, or whole album by a specific artist.
 def alexa_play_album(slots):
   heard_album = str(slots['Album']['value']).lower().translate(None, string.punctuation)
   if 'value' in slots['Artist']:
@@ -353,7 +350,8 @@ def alexa_play_album(slots):
       return build_alexa_response('Could not find %s' % (heard_album), card_title)
 
 
-# Shuffle all music by an artist
+# Handle the ListenToArtist intent.
+# Shuffle all music by an artist.
 def alexa_play_artist(slots):
   heard_artist = str(slots['Artist']['value']).lower().translate(None, string.punctuation)
 
@@ -387,7 +385,9 @@ def alexa_play_artist(slots):
   else:
     return build_alexa_response('Could not find %s' % (heard_artist), card_title)
 
-# Shuffle all recently added songs
+
+# Handle the ListenToPlaylistRecent intent.
+# Shuffle all recently added songs.
 def alexa_play_recently_added_songs(slots):
   card_title = 'Playing recently added songs'
   print card_title
@@ -411,6 +411,8 @@ def alexa_play_recently_added_songs(slots):
     return build_alexa_response('Playing recently added songs', card_title)
   return build_alexa_response('No recently added songs found', card_title)
 
+
+# Handle the ListenToPlaylist intent.
 def alexa_play_playlist(slots):
   heard_playlist = str(slots['Playlist']['value']).lower().translate(None, string.punctuation)
 
@@ -433,6 +435,8 @@ def alexa_play_playlist(slots):
   else:
     return build_alexa_response('Error parsing results', card_title)
 
+
+# Handle the PartyMode intent.
 def alexa_party_play(slots):
   card_title = 'Party Mode'
   songs = kodi.GetAllSongs()
@@ -455,6 +459,8 @@ def alexa_party_play(slots):
   else:
     return build_alexa_response('Error parsing results', card_title)
 
+
+# Handle the StartOver intent.
 def alexa_start_over(slots):
   card_title = 'Starting current item over'
   print card_title
@@ -464,6 +470,8 @@ def alexa_start_over(slots):
   answer = ""
   return build_alexa_response(answer, card_title)
 
+
+# Handle the Skip intent.
 def alexa_skip(slots):
   card_title = 'Playing next item'
   print card_title
@@ -473,6 +481,8 @@ def alexa_skip(slots):
   answer = ""
   return build_alexa_response(answer, card_title)
 
+
+# Handle the Prev intent.
 def alexa_prev(slots):
   card_title = 'Playing previous item'
   print card_title
@@ -482,6 +492,8 @@ def alexa_prev(slots):
   answer = ""
   return build_alexa_response(answer, card_title)
 
+
+# Handle the Fullscreen intent.
 def alexa_fullscreen(slots):
   card_title = 'Toggling fullscreen'
   print card_title
@@ -491,6 +503,8 @@ def alexa_fullscreen(slots):
   answer = ""
   return build_alexa_response(answer, card_title)
 
+
+# Handle the Mute intent.
 def alexa_mute(slots):
   card_title = 'Muting or unmuting'
   print card_title
@@ -500,6 +514,8 @@ def alexa_mute(slots):
   answer = ""
   return build_alexa_response(answer, card_title)
 
+
+# Handle the SubtitlesOn intent.
 def alexa_subtitles_on(slots):
   card_title = 'Enabling subtitles'
   print card_title
@@ -509,6 +525,8 @@ def alexa_subtitles_on(slots):
   answer = kodi.GetCurrentSubtitles()
   return build_alexa_response(answer, card_title)
 
+
+# Handle the SubtitlesOff intent.
 def alexa_subtitles_off(slots):
   card_title = 'Disabling subtitles'
   print card_title
@@ -518,6 +536,8 @@ def alexa_subtitles_off(slots):
   answer = kodi.GetCurrentSubtitles()
   return build_alexa_response(answer, card_title)
 
+
+# Handle the SubtitlesNext intent.
 def alexa_subtitles_next(slots):
   card_title = 'Switching to next subtitles'
   print card_title
@@ -527,6 +547,8 @@ def alexa_subtitles_next(slots):
   answer = kodi.GetCurrentSubtitles()
   return build_alexa_response(answer, card_title)
 
+
+# Handle the SubtitlesPrevious intent.
 def alexa_subtitles_previous(slots):
   card_title = 'Switching to previous subtitles'
   print card_title
@@ -536,6 +558,8 @@ def alexa_subtitles_previous(slots):
   answer = kodi.GetCurrentSubtitles()
   return build_alexa_response(answer, card_title)
 
+
+# Handle the AudioStreamNext intent.
 def alexa_audiostream_next(slots):
   card_title = 'Switching to next audio stream'
   print card_title
@@ -545,6 +569,8 @@ def alexa_audiostream_next(slots):
   answer = kodi.GetCurrentAudioStream()
   return build_alexa_response(answer, card_title)
 
+
+# Handle the AudioStreamPrevious intent.
 def alexa_audiostream_previous(slots):
   card_title = 'Switching to previous audio stream'
   print card_title
@@ -554,6 +580,8 @@ def alexa_audiostream_previous(slots):
   answer = kodi.GetCurrentAudioStream()
   return build_alexa_response(answer, card_title)
 
+
+# Handle the PlayerMoveUp intent.
 def alexa_player_move_up(slots):
   card_title = 'Player move up'
   print card_title
@@ -563,6 +591,8 @@ def alexa_player_move_up(slots):
   answer = ""
   return build_alexa_response(answer, card_title)
 
+
+# Handle the PlayerMoveDown intent.
 def alexa_player_move_down(slots):
   card_title = 'Player move down'
   print card_title
@@ -572,6 +602,8 @@ def alexa_player_move_down(slots):
   answer = ""
   return build_alexa_response(answer, card_title)
 
+
+# Handle the PlayerMoveLeft intent.
 def alexa_player_move_left(slots):
   card_title = 'Player move left'
   print card_title
@@ -581,6 +613,8 @@ def alexa_player_move_left(slots):
   answer = ""
   return build_alexa_response(answer, card_title)
 
+
+# Handle the PlayerMoveRight intent.
 def alexa_player_move_right(slots):
   card_title = 'Player move right'
   print card_title
@@ -590,6 +624,8 @@ def alexa_player_move_right(slots):
   answer = ""
   return build_alexa_response(answer, card_title)
 
+
+# Handle the PlayerRotateClockwise intent.
 def alexa_player_rotate_clockwise(slots):
   card_title = 'Player rotate clockwise'
   print card_title
@@ -599,6 +635,8 @@ def alexa_player_rotate_clockwise(slots):
   answer = ""
   return build_alexa_response(answer, card_title)
 
+
+# Handle the PlayerRotateCounterClockwise intent.
 def alexa_player_rotate_counterclockwise(slots):
   card_title = 'Player rotate counter clockwise'
   print card_title
@@ -608,6 +646,8 @@ def alexa_player_rotate_counterclockwise(slots):
   answer = ""
   return build_alexa_response(answer, card_title)
 
+
+# Handle the PlayerZoomHold intent.
 def alexa_player_zoom_hold(slots):
   card_title = 'Taking screenshot'
   print card_title
@@ -617,6 +657,8 @@ def alexa_player_zoom_hold(slots):
   answer = ""
   return build_alexa_response(answer, card_title)
 
+
+# Handle the PlayerZoomIn intent.
 def alexa_player_zoom_in(slots):
   card_title = 'Player zoom in'
   print card_title
@@ -626,6 +668,8 @@ def alexa_player_zoom_in(slots):
   answer = ""
   return build_alexa_response(answer, card_title)
 
+
+# Handle the PlayerZoomInMoveUp intent.
 def alexa_player_zoom_in_move_up(slots):
   card_title = 'Player zoom in and move up'
   print card_title
@@ -636,6 +680,8 @@ def alexa_player_zoom_in_move_up(slots):
   answer = ""
   return build_alexa_response(answer, card_title)
 
+
+# Handle the PlayerZoomInMoveDown intent.
 def alexa_player_zoom_in_move_down(slots):
   card_title = 'Player zoom in and move down'
   sys.stdout.flush()
@@ -645,6 +691,8 @@ def alexa_player_zoom_in_move_down(slots):
   answer = ""
   return build_alexa_response(answer, card_title)
 
+
+# Handle the PlayerZoomInMoveLeft intent.
 def alexa_player_zoom_in_move_left(slots):
   card_title = 'Player zoom in and move left'
   print card_title
@@ -655,6 +703,8 @@ def alexa_player_zoom_in_move_left(slots):
   answer = ""
   return build_alexa_response(answer, card_title)
 
+
+# Handle the PlayerZoomInMoveRight intent.
 def alexa_player_zoom_in_move_right(slots):
   card_title = 'Player zoom in and move right'
   print card_title
@@ -665,6 +715,8 @@ def alexa_player_zoom_in_move_right(slots):
   answer = ""
   return build_alexa_response(answer, card_title)
 
+
+# Handle the PlayerZoomOut intent.
 def alexa_player_zoom_out(slots):
   card_title = 'Player zoom out'
   print card_title
@@ -674,6 +726,8 @@ def alexa_player_zoom_out(slots):
   answer = ""
   return build_alexa_response(answer, card_title)
 
+
+# Handle the PlayerZoomOutMoveUp intent.
 def alexa_player_zoom_out_move_up(slots):
   card_title = 'Player zoom out and move up'
   print card_title
@@ -684,6 +738,8 @@ def alexa_player_zoom_out_move_up(slots):
   answer = ""
   return build_alexa_response(answer, card_title)
 
+
+# Handle the PlayerZoomOutMoveDown intent.
 def alexa_player_zoom_out_move_down(slots):
   card_title = 'Player zoom out and move down'
   print card_title
@@ -694,6 +750,8 @@ def alexa_player_zoom_out_move_down(slots):
   answer = ""
   return build_alexa_response(answer, card_title)
 
+
+# Handle the PlayerZoomOutMoveLeft intent.
 def alexa_player_zoom_out_move_left(slots):
   card_title = 'Player zoom out and move left'
   print card_title
@@ -704,6 +762,8 @@ def alexa_player_zoom_out_move_left(slots):
   answer = ""
   return build_alexa_response(answer, card_title)
 
+
+# Handle the PlayerZoomOutMoveRight intent.
 def alexa_player_zoom_out_move_right(slots):
   card_title = 'Player zoom out and move right'
   print card_title
@@ -714,6 +774,8 @@ def alexa_player_zoom_out_move_right(slots):
   answer = ""
   return build_alexa_response(answer, card_title)
 
+
+# Handle the PlayerZoomReset intent.
 def alexa_player_zoom_reset(slots):
   card_title = 'Player zoom normal'
   print card_title
@@ -723,6 +785,8 @@ def alexa_player_zoom_reset(slots):
   answer = ""
   return build_alexa_response(answer, card_title)
 
+
+# Handle the Menu intent.
 def alexa_context_menu(slots):
   card_title = 'Navigate: Context Menu'
   print card_title
@@ -732,6 +796,8 @@ def alexa_context_menu(slots):
   answer = ""
   return build_alexa_response(answer, card_title)
 
+
+# Handle the Home intent.
 def alexa_go_home(slots):
   card_title = 'Navigate: Home'
   print card_title
@@ -741,6 +807,8 @@ def alexa_go_home(slots):
   answer = ""
   return build_alexa_response(answer, card_title)
 
+
+# Handle the Select intent.
 def alexa_select(slots):
   card_title = 'Navigate: Select'
   print card_title
@@ -750,6 +818,8 @@ def alexa_select(slots):
   answer = ""
   return build_alexa_response(answer, card_title)
 
+
+# Handle the PageUp intent.
 def alexa_pageup(slots):
   card_title = 'Navigate: Page up'
   print card_title
@@ -759,6 +829,8 @@ def alexa_pageup(slots):
   answer = ""
   return build_alexa_response(answer, card_title)
 
+
+# Handle the PageDown intent.
 def alexa_pagedown(slots):
   card_title = 'Navigate: Page down'
   print card_title
@@ -768,6 +840,8 @@ def alexa_pagedown(slots):
   answer = ""
   return build_alexa_response(answer, card_title)
 
+
+# Handle the Left intent.
 def alexa_left(slots):
   card_title = 'Navigate: Left'
   print card_title
@@ -777,6 +851,8 @@ def alexa_left(slots):
   answer = ""
   return build_alexa_response(answer, card_title)
 
+
+# Handle the Right intent.
 def alexa_right(slots):
   card_title = 'Navigate: Right'
   print card_title
@@ -786,6 +862,8 @@ def alexa_right(slots):
   answer = ""
   return build_alexa_response(answer, card_title)
 
+
+# Handle the Up intent.
 def alexa_up(slots):
   card_title = 'Navigate: Up'
   print card_title
@@ -795,6 +873,8 @@ def alexa_up(slots):
   answer = ""
   return build_alexa_response(answer, card_title)
 
+
+# Handle the Down intent.
 def alexa_down(slots):
   card_title = 'Navigate: Down'
   print card_title
@@ -804,6 +884,8 @@ def alexa_down(slots):
   answer = ""
   return build_alexa_response(answer, card_title)
 
+
+# Handle the Back intent.
 def alexa_back(slots):
   card_title = 'Navigate: Back'
   print card_title
@@ -813,8 +895,8 @@ def alexa_back(slots):
   answer = ""
   return build_alexa_response(answer, card_title)
 
-# Handle the Hibernate intent.
 
+# Handle the Hibernate intent.
 def alexa_hibernate(slots):
   card_title = 'Hibernating'
   print card_title
@@ -824,8 +906,8 @@ def alexa_hibernate(slots):
   answer = "Hibernating system"
   return build_alexa_response(answer, card_title)
 
-# Handle the Reboot intent.
 
+# Handle the Reboot intent.
 def alexa_reboot(slots):
   card_title = 'Rebooting'
   print card_title
@@ -835,8 +917,8 @@ def alexa_reboot(slots):
   answer = "Rebooting system"
   return build_alexa_response(answer, card_title)
 
-# Handle the Shutdown intent.
 
+# Handle the Shutdown intent.
 def alexa_shutdown(slots):
   card_title = 'Shutting down'
   print card_title
@@ -846,8 +928,8 @@ def alexa_shutdown(slots):
   answer = "Shutting down system"
   return build_alexa_response(answer, card_title)
 
-# Handle the Suspend intent.
 
+# Handle the Suspend intent.
 def alexa_suspend(slots):
   card_title = 'Suspending'
   print card_title
@@ -857,8 +939,8 @@ def alexa_suspend(slots):
   answer = "Suspending system"
   return build_alexa_response(answer, card_title)
 
-# Handle the EjectMedia intent.
 
+# Handle the EjectMedia intent.
 def alexa_ejectmedia(slots):
   card_title = 'Ejecting media'
   print card_title
@@ -868,6 +950,8 @@ def alexa_ejectmedia(slots):
   answer = ""
   return build_alexa_response(answer, card_title)
 
+
+# Handle the CleanVideo intent.
 def alexa_clean_video(slots):
   card_title = 'Cleaning video library'
   print card_title
@@ -886,6 +970,8 @@ def alexa_clean_video(slots):
   answer = "Cleaning video library"
   return build_alexa_response(answer, card_title)
 
+
+# Handle the UpdateVideo intent.
 def alexa_update_video(slots):
   card_title = 'Updating video library'
   print card_title
@@ -896,6 +982,8 @@ def alexa_update_video(slots):
   answer = "Updating video library"
   return build_alexa_response(answer, card_title)
 
+
+# Handle the CleanAudio intent.
 def alexa_clean_audio(slots):
   card_title = 'Cleaning audio library'
   print card_title
@@ -914,6 +1002,8 @@ def alexa_clean_audio(slots):
   answer = "Cleaning audio library"
   return build_alexa_response(answer, card_title)
 
+
+# Handle the UpdateAudio intent.
 def alexa_update_audio(slots):
   card_title = 'Updating audio library'
   print card_title
@@ -924,6 +1014,8 @@ def alexa_update_audio(slots):
   answer = "Updating audio library"
   return build_alexa_response(answer, card_title)
 
+
+# Handle the DoSearch intent.
 def alexa_do_search(slots):
   card_title = 'Search'
   heard_search = ''
@@ -945,18 +1037,21 @@ def alexa_do_search(slots):
   else:
     return build_alexa_response("Couldn't find anything matching that phrase", card_title)
 
+
+# Handle the PlayRandomMovie intent.
 def alexa_play_random_movie(slots):
   card_title = 'Playing a random movie'
   print card_title
   sys.stdout.flush()
 
-  movies = kodi.GetUnwatchedMovies()
-  if not 'movies' in movies['result']:
+  movies_array = kodi.GetUnwatchedMovies()
+  if not len(movies_array):
     # Fall back to all movies if no unwatched available
     movies = kodi.GetMovies()
+    if 'result' in movies and 'movies' in movies['result']:
+      movies_array = movies['result']['movies']
 
-  if 'result' in movies and 'movies' in movies['result']:
-    movies_array = movies['result']['movies']
+  if len(movies_array):
     random_movie = random.choice(movies_array)
 
     kodi.PlayMovie(random_movie['movieid'], False)
@@ -965,6 +1060,8 @@ def alexa_play_random_movie(slots):
   else:
     return build_alexa_response('Error parsing results', card_title)
 
+
+# Handle the PlayMovie intent.
 def alexa_play_movie(slots):
   heard_movie = str(slots['Movie']['value']).lower().translate(None, string.punctuation)
 
@@ -992,6 +1089,8 @@ def alexa_play_movie(slots):
   else:
     return build_alexa_response('Error parsing results', card_title)
 
+
+# Handle the PlayRandomEpisode intent.
 def alexa_play_random_episode(slots):
   heard_show = str(slots['Show']['value']).lower().translate(None, string.punctuation)
 
@@ -1029,6 +1128,7 @@ def alexa_play_random_episode(slots):
     return build_alexa_response('Error parsing results', card_title)
 
 
+# Handle the PlayEpisode intent.
 def alexa_play_episode(slots):
   heard_show = str(slots['Show']['value']).lower().translate(None, string.punctuation)
 
@@ -1066,6 +1166,7 @@ def alexa_play_episode(slots):
     return build_alexa_response('Error parsing results', card_title)
 
 
+# Handle the PlayNextEpisode intent.
 def alexa_play_next_episode(slots):
   heard_show = str(slots['Show']['value']).lower().translate(None, string.punctuation)
 
@@ -1101,6 +1202,7 @@ def alexa_play_next_episode(slots):
     return build_alexa_response('Error parsing results', card_title)
 
 
+# Handle the PlayNewestEpisode intent.
 def alexa_play_newest_episode(slots):
   heard_show = str(slots['Show']['value']).lower().translate(None, string.punctuation)
 
@@ -1136,6 +1238,7 @@ def alexa_play_newest_episode(slots):
     return build_alexa_response('Error parsing results', card_title)
 
 
+# Handle the ContinueShow intent.
 def alexa_continue_show(slots):
   card_title = 'Playing the next unwatched episode of the last show watched'
   print card_title
@@ -1163,8 +1266,55 @@ def alexa_continue_show(slots):
   except:
     return build_alexa_response('Error parsing results', card_title)
 
-# Handle the WhatNewShows intent.
 
+def suggest_alternate_activity(chance=0.25):
+  if random.random() < chance:
+    comments = [
+      " Maybe you should go to the movies.",
+      " Maybe you'd like to read a book.",
+      " Time to go for a bike ride?",
+      " You probably have chores to do anyway.",
+    ]
+    return random.choice(comments)
+  else:
+    return ''
+
+
+# Handle the WhatNewMovies intent.
+def alexa_what_new_movies(slots):
+  card_title = 'Newly added movies'
+  print card_title
+  sys.stdout.flush()
+
+  # Get the list of unwatched movies from Kodi
+  new_movies = kodi.GetUnwatchedMovies()
+
+  new_movie_names = list(set([sanitize_name(x['title']) for x in new_movies]))
+  num_movies = len(new_movie_names)
+
+  if num_movies == 0:
+    # There's been nothing added to Kodi recently
+    answers = [
+      "You don't have any new movies to watch.",
+      "There are no new movies to watch.",
+    ]
+    answer = random.choice(answers)
+    answer += suggest_alternate_activity()
+  else:
+    random.shuffle(new_movie_names)
+    limited_new_movie_names = new_movie_names[0:5]
+    movie_list = limited_new_movie_names[0]
+    for one_movie in limited_new_movie_names[1:-1]:
+      movie_list += ", " + one_movie
+    if num_movies > 5:
+      movie_list += ", " + limited_new_movie_names[-1] + ", and more"
+    else:
+      movie_list += ", and" + limited_new_movie_names[-1]
+    answer = "You have %(movie_list)s." % {"movie_list":movie_list}
+  return build_alexa_response(answer, card_title)
+
+
+# Handle the WhatNewShows intent.
 def alexa_what_new_episodes(slots):
   card_title = 'Newly added shows'
   print card_title
@@ -1176,9 +1326,8 @@ def alexa_what_new_episodes(slots):
   new_episodes = kodi.GetUnwatchedEpisodes()
 
   # Find out how many EPISODES were recently added and get the names of the SHOWS
-  really_new_episodes = [x for x in new_episodes if x['dateadded'] >= datetime.datetime.today() - datetime.timedelta(5)]
-  really_new_show_names = list(set([sanitize_name(x['show']) for x in really_new_episodes]))
-  num_shows = len(really_new_show_names)
+  new_show_names = list(set([sanitize_name(x['show']) for x in new_episodes]))
+  num_shows = len(new_show_names)
 
   if num_shows == 0:
     # There's been nothing added to Kodi recently
@@ -1187,45 +1336,42 @@ def alexa_what_new_episodes(slots):
       "There are no new shows to watch.",
     ]
     answer = random.choice(answers)
-    if random.random() < 0.25:
-      comments = [
-        " Maybe you should go to the movies.",
-        " Maybe you'd like to read a book.",
-        " Time to go for a bike ride?",
-        " You probably have chores to do anyway.",
-      ]
-      answer += random.choice(comments)
-  elif len(really_new_show_names) == 1:
+    answer += suggest_alternate_activity()
+  elif len(new_show_names) == 1:
     # There's only one new show, so provide information about the number of episodes, too.
-    count = len(really_new_episodes)
+    count = len(new_episodes)
     if count == 1:
       answers = [
-        "There is a single new episode of %(show)s." % {'show':really_new_show_names[0]},
-        "There is one new episode of %(show)s." % {'show':really_new_show_names[0]},
+        "There is a single new episode of %(show)s." % {'show':new_show_names[0]},
+        "There is one new episode of %(show)s." % {'show':new_show_names[0]},
       ]
     elif count == 2:
       answers = [
-        "There are a couple new episodes of %(show)s" % {'show':really_new_show_names[0]},
-        "There are two new episodes of %(show)s" % {'show':really_new_show_names[0]},
+        "There are a couple new episodes of %(show)s" % {'show':new_show_names[0]},
+        "There are two new episodes of %(show)s" % {'show':new_show_names[0]},
       ]
     elif count >= 5:
       answers = [
-        "There are lots and lots of new episodes of %(show)s" % {'show':really_new_show_names[0]},
-        "There are %(count)d new episodes of %(show)s" % {"count":count, "show":really_new_show_names[0]},
+        "There are lots and lots of new episodes of %(show)s" % {'show':new_show_names[0]},
+        "There are %(count)d new episodes of %(show)s" % {"count":count, "show":new_show_names[0]},
       ]
     else:
       answers = [
-        "You have a few new episodes of %(show)s" % {'show':really_new_show_names[0]},
-        "There are %(count)d new episodes of %(show)s" % {"count":count, "show":really_new_show_names[0]},
+        "You have a few new episodes of %(show)s" % {'show':new_show_names[0]},
+        "There are %(count)d new episodes of %(show)s" % {"count":count, "show":new_show_names[0]},
       ]
     answer = random.choice(answers)
   else:
     # More than one new show has new episodes ready
-    random.shuffle(really_new_show_names)
-    show_list = really_new_show_names[0]
-    for one_show in really_new_show_names[1:-1]:
+    random.shuffle(new_show_names)
+    limited_new_show_names = new_show_names[0:5]
+    show_list = limited_new_show_names[0]
+    for one_show in limited_new_show_names[1:-1]:
       show_list += ", " + one_show
-    show_list += ", and " + really_new_show_names[-1]
+    if num_shows > 5:
+      show_list += ", " + limited_new_show_names[-1] + ", and more"
+    else:
+      show_list += ", and" + limited_new_show_names[-1]
     answer = "There are new episodes of %(show_list)s." % {"show_list":show_list}
   return build_alexa_response(answer, card_title)
 
@@ -1317,7 +1463,6 @@ def alexa_watch_pvr_broadcast(slots):
     return build_alexa_response('Could not find a PVR broadcast called %s' % (heard_pvr_broadcast))
 
 # Handle the WhatAlbums intent.
-
 def alexa_what_albums(slots):
   heard_artist = str(slots['Artist']['value']).lower().translate(None, string.punctuation)
 
@@ -1352,7 +1497,6 @@ def alexa_what_albums(slots):
 
 
 # What should the Echo say when you just open your app instead of invoking an intent?
-
 def prepare_help_message():
   help = "You can ask me whether there are any new shows, to play a movie, tv show, or artist, or control playback of media."
   card_title = "Help"
@@ -1360,17 +1504,17 @@ def prepare_help_message():
 
 
 # This maps the Intent names to the functions that provide the corresponding Alexa response.
-
 INTENTS = [
-  ['CheckNewShows', alexa_check_new_episodes],
   ['NewShowInquiry', alexa_new_show_inquiry],
   ['CurrentPlayItemInquiry', alexa_current_playitem_inquiry],
+  ['CurrentPlayItemTimeRemaining', alexa_current_playitem_time_remaining],
+  ['WhatNewMovies', alexa_what_new_movies],
   ['WhatNewShows', alexa_what_new_episodes],
   ['PlayPause', alexa_play_pause],
-  ['StepForward', alexa_step_forward],
-  ['BigStepForward', alexa_big_step_forward],
-  ['StepBackward', alexa_step_backward],
-  ['BigStepBackward', alexa_big_step_backward],
+  ['PlayerSeekSmallForward', alexa_player_seek_smallforward],
+  ['PlayerSeekBigForward', alexa_player_seek_bigforward],
+  ['PlayerSeekSmallBackward', alexa_player_seek_smallbackward],
+  ['PlayerSeekBigBackward', alexa_player_seek_bigforward],
   ['Stop', alexa_stop],
   ['WhatAlbums', alexa_what_albums],
   ['ListenToArtist', alexa_play_artist],
@@ -1442,6 +1586,7 @@ INTENTS = [
 def on_session_started(session_started_request, session):
   print("on_session_started: requestId=" + session_started_request['requestId'] + ", sessionId=" + session['sessionId'])
 
+
 def on_intent(intent_request, session):
   print("on_intent: requestId=" + intent_request['requestId'] + ", sessionId=" + session['sessionId'])
 
@@ -1462,6 +1607,7 @@ def on_intent(intent_request, session):
       break
   if not response:
     return prepare_help_message()
+
 
 def verify_application_id(candidate):
   if env('SKILL_APPID'):

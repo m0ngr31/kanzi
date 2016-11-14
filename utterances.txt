@@ -1,7 +1,7 @@
 # A list of utterance variations written in a shorthand syntax
 
 # Syntax and information
-# http://www.makermusings.com/2015/07/21/defining-utterances-for-the-alexa-skills-kit/ 
+# http://www.makermusings.com/2015/07/21/defining-utterances-for-the-alexa-skills-kit/
 
 # Tool to expand the single line into the usable list of utterances
 # http://www.makermusings.com/amazon-echo-utterance-expander/
@@ -81,7 +81,7 @@ CleanAudio clean (audio/music) library
 
 UpdateAudio update (audio/music) library
 
-WhatAlbum what albums do (we/i/you) have by {Artist}
+WhatAlbums what albums do (we/i/you) have by {Artist}
 
 ListenToArtist (play/listen to/shuffle) (/music by/artist) {Artist}
 
@@ -93,8 +93,8 @@ ListenToPlaylist (play/listen to/shuffle) {Playlist} playlist
 
 ListenToPlaylistRecent (play/listen to/shuffle) (/playlist) recent
 ListenToPlaylistRecent (play/listen to/shuffle) (/playlist) recently added
-ListenToPlaylistRecent (play/listen to/shuffle) recent (/songs/music/playlist)
-ListenToPlaylistRecent (play/listen to/shuffle) recently added (/songs/music/playlist)
+ListenToPlaylistRecent (play/listen to/shuffle) recent (songs/music/playlist)
+ListenToPlaylistRecent (play/listen to/shuffle) recently added (songs/music/playlist)
 
 PlayRandomMovie (play/watch) (/a) random (movie/film)
 
@@ -104,13 +104,16 @@ PlayNextEpisode (play/watch) (/the) next episode of {Show}
 
 PlayEpisode (play/watch) (season/series) {Season} episode {Episode} of {Show}
 
-PlayMovie (play/watch) movie {Movie}
+PlayMovie (play/watch) (movie/film) {Movie}
 
-ContinueShow continue (/watching) (/last) show
+ContinueShow continue (/watching/playing) (/last) show
 
-CheckNewShows (if there are/are there/do (we/i) have) (/any/some) new shows (/recorded) (/to watch) (/today/tonight)
-CheckNewShows (if there is/is there/do (we/i) have) a new show (/recorded) (/to watch) (/today/tonight)
+WhatNewMovies (if there are/are there/do (we/i) have) (/any/some) new (movies/films) (/recorded) (/to watch) (/today/tonight)
+WhatNewMovies (if there is/is there/do (we/i) have) a new (movie/film) (/recorded) (/to watch) (/today/tonight)
+WhatNewMovies what (/new) (movies/films) ((/do) (we/i/you) have/are (ready/waiting/recorded/there/on the (/media) server))
 
+WhatNewShows (if there are/are there/do (we/i) have) (/any/some) new shows (/recorded) (/to watch) (/today/tonight)
+WhatNewShows (if there is/is there/do (we/i) have) a new show (/recorded) (/to watch) (/today/tonight)
 WhatNewShows what (/new) shows ((/do) (we/i/you) have/are (ready/waiting/recorded/there/on the (/media) server))
 
 NewShowInquiry if (there is/we have) a new (/episode of) {Show}
@@ -129,7 +132,16 @@ DoSearch search for {Show}
 DoSearch search for {Movie}
 DoSearch search for {Artist}
 
-CurrentPlayItemInquiry what (/song/audio/video/movie/episode/show) is (this/playing/currently playing)
+CurrentPlayItemInquiry what (/song/audio/video/movie/film/episode/show) is (this/playing/currently playing)
+
+CurrentPlayItemTimeRemaining how much (/time) is (left/remaining) on (my/this) (audio/video/movie/film/show/episode/song)
+CurrentPlayItemTimeRemaining how much (/time) is (left/remaining)
+CurrentPlayItemTimeRemaining how much longer is (/my/this) (audio/video/movie/film/show/episode/song)
+CurrentPlayItemTimeRemaining how much longer is this
+CurrentPlayItemTimeRemaining (when/what time) (will/does) (/my/this) (audio/video/movie/film/show/episode/song) end
+CurrentPlayItemTimeRemaining (when/what time) (will/does) this end
+CurrentPlayItemTimeRemaining (when/what time) this (ends/is over)
+CurrentPlayItemTimeRemaining (when/what time) is this over
 
 Hibernate (hibernate/deep sleep) (/system)
 Reboot reboot (/system)
@@ -140,14 +152,14 @@ Suspend go to sleep
 
 EjectMedia eject (/media/disc/audio disc/bluray/bluray disc/cd/dvd)
 
-StepForward (/small) (step/jump) forward
-StepForward (/small) forward (step/jump)
-BigStepForward (large/big/long) (step/jump) forward
-BigStepForward (large/big/long) forward (step/jump)
-StepBackward (/small) (step/jump) (backward/back)
-StepBackward (/small) (backward/back) (step/jump)
-BigStepBackward (large/big/long) (step/jump) (backward/back)
-BigStepBackward (large/big/long) (backward/back) (step/jump)
+PlayerSeekSmallForward (/small) (step/jump) forward
+PlayerSeekSmallForward (/small) forward (step/jump)
+PlayerSeekBigForward (large/big/long) (step/jump) forward
+PlayerSeekBigForward (large/big/long) forward (step/jump)
+PlayerSeekSmallBackward (/small) (step/jump) (backward/back)
+PlayerSeekSmallBackward (/small) (backward/back) (step/jump)
+PlayerSeekBigBackward (large/big/long) (step/jump) (backward/back)
+PlayerSeekBigBackward (large/big/long) (backward/back) (step/jump)
 
 WatchPVRBroadcast (watch/play/find) (/for) the (program/broadcast) called {Broadcast}
 WatchPVRBroadcast where is the (program/broadcast) called {Broadcast}
