@@ -350,12 +350,20 @@ PlayRandomEpisode watch episode of {Show}
 PlayRandomEpisode watch random episode of {Show}
 PlayRandomMovie play a random film
 PlayRandomMovie play a random movie
+PlayRandomMovie play a random {Genre} film
+PlayRandomMovie play a random {Genre} movie
 PlayRandomMovie play random film
 PlayRandomMovie play random movie
+PlayRandomMovie play random {Genre} film
+PlayRandomMovie play random {Genre} movie
 PlayRandomMovie watch a random film
 PlayRandomMovie watch a random movie
+PlayRandomMovie watch a random {Genre} film
+PlayRandomMovie watch a random {Genre} movie
 PlayRandomMovie watch random film
 PlayRandomMovie watch random movie
+PlayRandomMovie watch random {Genre} film
+PlayRandomMovie watch random {Genre} movie
 PlayerMoveDown go down
 PlayerMoveDown move down
 PlayerMoveDown pan down

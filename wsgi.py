@@ -1037,14 +1037,31 @@ def alexa_do_search(slots):
 
 # Handle the PlayRandomMovie intent.
 def alexa_play_random_movie(slots):
-  card_title = 'Playing a random movie'
+  genre_located = None
+  # If a genre has been specified, match the genre for use in selecting a random film
+  if 'value' in slots['Genre']:
+    heard_genre = str(slots['Genre']['value']).lower().translate(None, string.punctuation)
+    card_title = 'Playing a random %s movie' % (heard_genre)
+    genres = kodi.GetMovieGenres()
+    if 'result' in genres and 'genres' in genres['result']:
+      genres_list = genres['result']['genres']
+      genre_located = kodi.matchHeard(heard_genre, genres_list, 'label')
+  else:
+    card_title = 'Playing a random movie'
   print card_title
   sys.stdout.flush()
 
-  movies_array = kodi.GetUnwatchedMovies()
+  # Select from specified genre if one was matched
+  if genre_located:
+    movies_array = kodi.GetUnwatchedMoviesByGenre(genre_located['label'])
+  else:
+    movies_array = kodi.GetUnwatchedMovies()
   if not len(movies_array):
     # Fall back to all movies if no unwatched available
-    movies = kodi.GetMovies()
+    if genre_located:
+      movies = kodi.GetMoviesByGenre(genre_located['label'])
+    else:
+      movies = kodi.GetMovies()
     if 'result' in movies and 'movies' in movies['result']:
       movies_array = movies['result']['movies']
 
@@ -1052,8 +1069,10 @@ def alexa_play_random_movie(slots):
     random_movie = random.choice(movies_array)
 
     kodi.PlayMovie(random_movie['movieid'], False)
-
-    return build_alexa_response('Playing %s' % (random_movie['label']), card_title)
+    if genre_located:
+      return build_alexa_response('Playing the %s movie, %s' % (genre_located['label'], random_movie['label']), card_title)
+    else:
+      return build_alexa_response('Playing %s' % (random_movie['label']), card_title)
   else:
     return build_alexa_response('Error parsing results', card_title)
 

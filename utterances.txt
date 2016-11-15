@@ -96,7 +96,7 @@ ListenToPlaylistRecent (play/listen to/shuffle) (/playlist) recently added
 ListenToPlaylistRecent (play/listen to/shuffle) recent (songs/music/playlist)
 ListenToPlaylistRecent (play/listen to/shuffle) recently added (songs/music/playlist)
 
-PlayRandomMovie (play/watch) (/a) random (movie/film)
+PlayRandomMovie (play/watch) (/a) random (/{Genre}) (movie/film)
 
 PlayRandomEpisode (play/watch) (/a) (/random) episode of {Show}
 
