@@ -134,6 +134,7 @@ PartyMode shuffle all music
 
 DoSearch search for {Show}
 DoSearch search for {Movie}
+DoSearch search for {Album}
 DoSearch search for {Artist}
 
 CurrentPlayItemInquiry what (/song/audio/video/movie/film/episode/show) is (this/playing/currently playing)

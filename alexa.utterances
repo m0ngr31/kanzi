@@ -223,6 +223,7 @@ CurrentPlayItemTimeRemaining when will this song end
 CurrentPlayItemTimeRemaining when will this video end
 CurrentPlayItemTimeRemaining when will video end
 DoSearch search for {Artist}
+DoSearch search for {Album}
 DoSearch search for {Movie}
 DoSearch search for {Show}
 Down navigate down

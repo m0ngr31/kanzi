@@ -1021,6 +1021,8 @@ def alexa_do_search(slots):
     heard_search = str(slots['Movie']['value']).lower().translate(None, string.punctuation)
   elif 'value' in slots['Show']:
     heard_search = str(slots['Show']['value']).lower().translate(None, string.punctuation)
+  elif 'value' in slots['Album']:
+    heard_search = str(slots['Album']['value']).lower().translate(None, string.punctuation)
   elif 'value' in slots['Artist']:
     heard_search = str(slots['Artist']['value']).lower().translate(None, string.punctuation)
 
