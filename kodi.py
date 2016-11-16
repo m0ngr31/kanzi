@@ -628,8 +628,12 @@ def GetArtistSongs(artist_id):
   return SendCommand(RPCString("AudioLibrary.GetSongs", {"filter": {"artistid": int(artist_id)}}))
 
 
+def GetRecentlyAddedAlbums():
+  return SendCommand(RPCString("AudioLibrary.GetRecentlyAddedAlbums", {'properties':['artist']}))
+
+
 def GetRecentlyAddedSongs():
-  return SendCommand(RPCString("AudioLibrary.GetRecentlyAddedSongs"))
+  return SendCommand(RPCString("AudioLibrary.GetRecentlyAddedSongs", {'properties':['artist']}))
 
 
 def GetTvShowDetails(show_id):

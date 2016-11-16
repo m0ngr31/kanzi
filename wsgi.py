@@ -1296,6 +1296,40 @@ def suggest_alternate_activity(chance=0.25):
     return ''
 
 
+# Handle the WhatNewAlbums intent.
+def alexa_what_new_albums(slots):
+  card_title = 'Newly added albums'
+  print card_title
+  sys.stdout.flush()
+
+  # Get the list of recently added albums from Kodi
+  new_albums = kodi.GetRecentlyAddedAlbums()['result']['albums']
+
+  new_album_names = list(set([sanitize_name('%s by %s' % (x['label'], x['artist'][0])) for x in new_albums]))
+  num_albums = len(new_album_names)
+
+  if num_albums == 0:
+    # There's been nothing added to Kodi recently
+    answers = [
+      "You don't have any new albums to listen to.",
+      "There are no new albums to listen to.",
+    ]
+    answer = random.choice(answers)
+    answer += suggest_alternate_activity()
+  else:
+    random.shuffle(new_album_names)
+    limited_new_album_names = new_album_names[0:5]
+    album_list = limited_new_album_names[0]
+    for one_album in limited_new_album_names[1:-1]:
+      album_list += ", " + one_album
+    if num_albums > 5:
+      album_list += ", " + limited_new_album_names[-1] + ", and more"
+    else:
+      album_list += ", and" + limited_new_album_names[-1]
+    answer = "You have %(album_list)s." % {"album_list":album_list}
+  return build_alexa_response(answer, card_title)
+
+
 # Handle the WhatNewMovies intent.
 def alexa_what_new_movies(slots):
   card_title = 'Newly added movies'
@@ -1438,6 +1472,7 @@ INTENTS = [
   ['NewShowInquiry', alexa_new_show_inquiry],
   ['CurrentPlayItemInquiry', alexa_current_playitem_inquiry],
   ['CurrentPlayItemTimeRemaining', alexa_current_playitem_time_remaining],
+  ['WhatNewAlbums', alexa_what_new_albums],
   ['WhatNewMovies', alexa_what_new_movies],
   ['WhatNewShows', alexa_what_new_episodes],
   ['PlayPause', alexa_play_pause],

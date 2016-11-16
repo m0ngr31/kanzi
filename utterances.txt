@@ -108,6 +108,10 @@ PlayMovie (play/watch) (movie/film) {Movie}
 
 ContinueShow continue (/watching/playing) (/last) show
 
+WhatNewAlbums (if there are/are there/do (we/i) have) (/any/some) new albums (/recorded) (/to listen to) (/today/tonight)
+WhatNewAlbums (if there is/is there/do (we/i) have) a new album (/recorded) (/to listen to) (/today/tonight)
+WhatNewAlbums what (/new) albums ((/do) (we/i/you) have/are (ready/waiting/recorded/there/on the (/media) server))
+
 WhatNewMovies (if there are/are there/do (we/i) have) (/any/some) new (movies/films) (/recorded) (/to watch) (/today/tonight)
 WhatNewMovies (if there is/is there/do (we/i) have) a new (movie/film) (/recorded) (/to watch) (/today/tonight)
 WhatNewMovies what (/new) (movies/films) ((/do) (we/i/you) have/are (ready/waiting/recorded/there/on the (/media) server))
