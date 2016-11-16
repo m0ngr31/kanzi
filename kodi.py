@@ -101,23 +101,31 @@ def http_normalize_slashes(url):
 # These two methods construct the JSON-RPC message and send it to the Kodi player
 def SendCommand(command):
   # Do not use below for your own settings, use the .env file
+
+  # We don't use the fallback param in os.getenv() because AWS Lambda actually
+  # sets any environment variables included in LAMBDA_ENV_VARS, regardless if
+  # it was unset before.
+  #
+  # Furthermore, os.getenv() under AWS Lambda returns 'None' as a string
+  # instead of None as NoneType as we'd normally expect, so we have to
+  # explicitly test for that.
   SCHEME = os.getenv('KODI_SCHEME')
-  if not SCHEME:
+  if not SCHEME or SCHEME == 'None':
     SCHEME = 'http'
   SUBPATH = os.getenv('KODI_SUBPATH')
-  if not SUBPATH:
+  if not SUBPATH or SUBPATH == 'None':
     SUBPATH = ''
   KODI = os.getenv('KODI_ADDRESS')
-  if not KODI:
+  if not KODI or KODI == 'None':
     KODI = '127.0.0.1'
   PORT = os.getenv('KODI_PORT')
-  if not PORT:
+  if not PORT or PORT == 'None':
     PORT = '8080'
   USER = os.getenv('KODI_USERNAME')
-  if not USER:
+  if not USER or USER == 'None':
     USER = 'kodi'
   PASS = os.getenv('KODI_PASSWORD')
-  if not PASS:
+  if not PASS or PASS == 'None':
     PASS = 'kodi'
 
   # Join the environment variables into a url
@@ -620,8 +628,12 @@ def GetArtistSongs(artist_id):
   return SendCommand(RPCString("AudioLibrary.GetSongs", {"filter": {"artistid": int(artist_id)}}))
 
 
+def GetRecentlyAddedAlbums():
+  return SendCommand(RPCString("AudioLibrary.GetRecentlyAddedAlbums", {'properties':['artist']}))
+
+
 def GetRecentlyAddedSongs():
-  return SendCommand(RPCString("AudioLibrary.GetRecentlyAddedSongs"))
+  return SendCommand(RPCString("AudioLibrary.GetRecentlyAddedSongs", {'properties':['artist']}))
 
 
 def GetTvShowDetails(show_id):
@@ -640,6 +652,10 @@ def GetMovieDetails(movie_id):
 
 def GetMovies():
   return SendCommand(RPCString("VideoLibrary.GetMovies"))
+
+
+def GetMoviesByGenre(genre):
+  return SendCommand(RPCString("VideoLibrary.GetMovies", {"filter":{"genre":genre}}))
 
 
 def GetMovieGenres():
@@ -727,6 +743,16 @@ def GetWatchedEpisodes(max=90):
 # can take a long time.
 def GetUnwatchedMovies(max=90):
   data = SendCommand(RPCString("VideoLibrary.GetMovies", {"limits":{"end":max}, "filter":{"field":"playcount", "operator":"lessthan", "value":"1"}, "sort":{"method":"dateadded", "order":"descending"}, "properties":["title", "playcount", "dateadded" ]}))
+  answer = []
+  for d in data['result']['movies']:
+    answer.append({'title':d['title'], 'movieid':d['movieid'], 'label':d['label'], 'dateadded':datetime.datetime.strptime(d['dateadded'], "%Y-%m-%d %H:%M:%S")})
+  return answer
+
+# Returns a list of dictionaries with information about unwatched movies in a particular genre. Useful for
+# telling/showing users what's ready to be watched. Setting max to very high values
+# can take a long time.
+def GetUnwatchedMoviesByGenre(genre, max=90):
+  data = SendCommand(RPCString("VideoLibrary.GetMovies", {"limits":{"end":max}, "filter":{"field":"playcount", "operator":"lessthan", "value":"1"}, "filter":{"genre":genre}, "sort":{"method":"dateadded", "order":"descending"}, "properties":["title", "playcount", "dateadded" ]}))
   answer = []
   for d in data['result']['movies']:
     answer.append({'title':d['title'], 'movieid':d['movieid'], 'label':d['label'], 'dateadded':datetime.datetime.strptime(d['dateadded'], "%Y-%m-%d %H:%M:%S")})

@@ -96,7 +96,7 @@ ListenToPlaylistRecent (play/listen to/shuffle) (/playlist) recently added
 ListenToPlaylistRecent (play/listen to/shuffle) recent (songs/music/playlist)
 ListenToPlaylistRecent (play/listen to/shuffle) recently added (songs/music/playlist)
 
-PlayRandomMovie (play/watch) (/a) random (movie/film)
+PlayRandomMovie (play/watch) (/a) random (/{Genre}) (movie/film)
 
 PlayRandomEpisode (play/watch) (/a) (/random) episode of {Show}
 
@@ -107,6 +107,10 @@ PlayEpisode (play/watch) (season/series) {Season} episode {Episode} of {Show}
 PlayMovie (play/watch) (movie/film) {Movie}
 
 ContinueShow continue (/watching/playing) (/last) show
+
+WhatNewAlbums (if there are/are there/do (we/i) have) (/any/some) new albums (/recorded) (/to listen to) (/today/tonight)
+WhatNewAlbums (if there is/is there/do (we/i) have) a new album (/recorded) (/to listen to) (/today/tonight)
+WhatNewAlbums what (/new) albums ((/do) (we/i/you) have/are (ready/waiting/recorded/there/on the (/media) server))
 
 WhatNewMovies (if there are/are there/do (we/i) have) (/any/some) new (movies/films) (/recorded) (/to watch) (/today/tonight)
 WhatNewMovies (if there is/is there/do (we/i) have) a new (movie/film) (/recorded) (/to watch) (/today/tonight)
@@ -130,6 +134,7 @@ PartyMode shuffle all music
 
 DoSearch search for {Show}
 DoSearch search for {Movie}
+DoSearch search for {Album}
 DoSearch search for {Artist}
 
 CurrentPlayItemInquiry what (/song/audio/video/movie/film/episode/show) is (this/playing/currently playing)

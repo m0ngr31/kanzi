@@ -1,6 +1,10 @@
 {
   "intents": [
     {
+      "intent": "WhatNewAlbums",
+      "slots": []
+    },
+    {
       "intent": "WhatNewMovies",
       "slots": []
     },
@@ -139,7 +143,12 @@
     },
     {
       "intent": "PlayRandomMovie",
-      "slots": []
+      "slots": [
+        {
+          "name": "Genre",
+          "type": "MOVIEGENRES"
+        }
+      ]
     },
     {
       "intent": "Prev",
@@ -331,6 +340,10 @@
         {
           "name": "Artist",
           "type": "MUSICARTISTS"
+        },
+        {
+          "name": "Album",
+          "type": "MUSICALBUMS"
         },
         {
           "name": "Movie",

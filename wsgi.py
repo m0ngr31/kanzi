@@ -1024,6 +1024,8 @@ def alexa_do_search(slots):
     heard_search = str(slots['Movie']['value']).lower().translate(None, string.punctuation)
   elif 'value' in slots['Show']:
     heard_search = str(slots['Show']['value']).lower().translate(None, string.punctuation)
+  elif 'value' in slots['Album']:
+    heard_search = str(slots['Album']['value']).lower().translate(None, string.punctuation)
   elif 'value' in slots['Artist']:
     heard_search = str(slots['Artist']['value']).lower().translate(None, string.punctuation)
 
@@ -1040,14 +1042,31 @@ def alexa_do_search(slots):
 
 # Handle the PlayRandomMovie intent.
 def alexa_play_random_movie(slots):
-  card_title = 'Playing a random movie'
+  genre_located = None
+  # If a genre has been specified, match the genre for use in selecting a random film
+  if 'value' in slots['Genre']:
+    heard_genre = str(slots['Genre']['value']).lower().translate(None, string.punctuation)
+    card_title = 'Playing a random %s movie' % (heard_genre)
+    genres = kodi.GetMovieGenres()
+    if 'result' in genres and 'genres' in genres['result']:
+      genres_list = genres['result']['genres']
+      genre_located = kodi.matchHeard(heard_genre, genres_list, 'label')
+  else:
+    card_title = 'Playing a random movie'
   print card_title
   sys.stdout.flush()
 
-  movies_array = kodi.GetUnwatchedMovies()
+  # Select from specified genre if one was matched
+  if genre_located:
+    movies_array = kodi.GetUnwatchedMoviesByGenre(genre_located['label'])
+  else:
+    movies_array = kodi.GetUnwatchedMovies()
   if not len(movies_array):
     # Fall back to all movies if no unwatched available
-    movies = kodi.GetMovies()
+    if genre_located:
+      movies = kodi.GetMoviesByGenre(genre_located['label'])
+    else:
+      movies = kodi.GetMovies()
     if 'result' in movies and 'movies' in movies['result']:
       movies_array = movies['result']['movies']
 
@@ -1055,8 +1074,10 @@ def alexa_play_random_movie(slots):
     random_movie = random.choice(movies_array)
 
     kodi.PlayMovie(random_movie['movieid'], False)
-
-    return build_alexa_response('Playing %s' % (random_movie['label']), card_title)
+    if genre_located:
+      return build_alexa_response('Playing the %s movie, %s' % (genre_located['label'], random_movie['label']), card_title)
+    else:
+      return build_alexa_response('Playing %s' % (random_movie['label']), card_title)
   else:
     return build_alexa_response('Error parsing results', card_title)
 
@@ -1278,6 +1299,40 @@ def suggest_alternate_activity(chance=0.25):
     return random.choice(comments)
   else:
     return ''
+
+
+# Handle the WhatNewAlbums intent.
+def alexa_what_new_albums(slots):
+  card_title = 'Newly added albums'
+  print card_title
+  sys.stdout.flush()
+
+  # Get the list of recently added albums from Kodi
+  new_albums = kodi.GetRecentlyAddedAlbums()['result']['albums']
+
+  new_album_names = list(set([sanitize_name('%s by %s' % (x['label'], x['artist'][0])) for x in new_albums]))
+  num_albums = len(new_album_names)
+
+  if num_albums == 0:
+    # There's been nothing added to Kodi recently
+    answers = [
+      "You don't have any new albums to listen to.",
+      "There are no new albums to listen to.",
+    ]
+    answer = random.choice(answers)
+    answer += suggest_alternate_activity()
+  else:
+    random.shuffle(new_album_names)
+    limited_new_album_names = new_album_names[0:5]
+    album_list = limited_new_album_names[0]
+    for one_album in limited_new_album_names[1:-1]:
+      album_list += ", " + one_album
+    if num_albums > 5:
+      album_list += ", " + limited_new_album_names[-1] + ", and more"
+    else:
+      album_list += ", and" + limited_new_album_names[-1]
+    answer = "You have %(album_list)s." % {"album_list":album_list}
+  return build_alexa_response(answer, card_title)
 
 
 # Handle the WhatNewMovies intent.
@@ -1508,6 +1563,7 @@ INTENTS = [
   ['NewShowInquiry', alexa_new_show_inquiry],
   ['CurrentPlayItemInquiry', alexa_current_playitem_inquiry],
   ['CurrentPlayItemTimeRemaining', alexa_current_playitem_time_remaining],
+  ['WhatNewAlbums', alexa_what_new_albums],
   ['WhatNewMovies', alexa_what_new_movies],
   ['WhatNewShows', alexa_what_new_episodes],
   ['PlayPause', alexa_play_pause],

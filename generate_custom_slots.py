@@ -64,6 +64,24 @@ for a in deduped:
 gfile.close()
 
 
+# Generate MOVIEGENRES Slot
+retrieved = kodi.GetMovieGenres()
+
+all = []
+
+if 'result' in retrieved and 'genres' in retrieved['result']:
+  for v in retrieved['result']['genres']:
+    ascii_name = v['label'].encode('ascii', 'replace')
+    removed_paren = re.sub(r'\([^)]*\)', '', ascii_name).rstrip().lower().translate(None, string.punctuation)
+    all.append(removed_paren.encode('utf-8').strip())
+
+deduped = list(set(all))
+
+gfile = open('MOVIEGENRES', 'w')
+for a in deduped:
+  gfile.write("%s\n" % a)
+gfile.close()
+
 # Generate MOVIES Slot
 retrieved = kodi.GetMovies()
 
