@@ -28,6 +28,7 @@ THE SOFTWARE.
 # For a complete discussion, see http://forum.kodi.tv/showthread.php?tid=254502
 
 import datetime
+import pytz
 import json
 import os.path
 import random
@@ -216,8 +217,15 @@ def alexa_current_playitem_time_remaining(slots):
       answer = 'There is one minute remaining.'
     elif minsleft > 1:
       answer = 'There are %d minutes remaining' % (minsleft)
+      utctime = datetime.datetime.now(pytz.utc)
+      tz = env('SKILL_TZ')
+      if tz and tz != 'None':
+        loctime = utctime.astimezone(pytz.timezone(tz))
+      else:
+        loctime = utctime
+      endtime = loctime + datetime.timedelta(minutes=minsleft)
       if minsleft > 9:
-        answer += ', and it will end at %s.' % (datetime.datetime.now() + datetime.timedelta(minutes=minsleft)).strftime('%I:%M')
+        answer += ', and it will end at %s.' % (endtime.strftime('%I:%M'))
 
   return build_alexa_response(answer, card_title)
 

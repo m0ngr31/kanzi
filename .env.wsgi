@@ -16,3 +16,12 @@ KODI_PASSWORD=
 
 SKILL_APPID=
 SKILL_VERIFY_CERT=
+
+# Your local time zone for responses that include absolute times.
+# See https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+#
+# For example, if you are in the Eastern US time zone, you would use:
+# SKILL_TZ=US/Eastern
+#
+# Leave empty or undefined if you wish to use UTC time.
+SKILL_TZ=
