@@ -519,6 +519,50 @@ def alexa_mute(slots):
   return build_alexa_response(answer, card_title)
 
 
+# Handle the VolumeUp intent.
+def alexa_volume_up(slots):
+  card_title = 'Turning volume up'
+  print card_title
+  sys.stdout.flush()
+
+  vol = kodi.VolumeUp()['result']
+  answer = "Volume set to %d%%." % (vol)
+  return build_alexa_response(answer, card_title)
+
+
+# Handle the VolumeDown intent.
+def alexa_volume_down(slots):
+  card_title = 'Turning volume down'
+  print card_title
+  sys.stdout.flush()
+
+  vol = kodi.VolumeDown()['result']
+  answer = "Volume set to %d%%." % (vol)
+  return build_alexa_response(answer, card_title)
+
+
+# Handle the VolumeSet intent.
+def alexa_volume_set(slots):
+  card_title = 'Adjusting volume'
+  print card_title
+  sys.stdout.flush()
+
+  vol = kodi.VolumeSet(int(slots['Volume']['value']), False)['result']
+  answer = "Volume set to %d%%." % (vol)
+  return build_alexa_response(answer, card_title)
+
+
+# Handle the VolumeSetPct intent.
+def alexa_volume_set_pct(slots):
+  card_title = 'Adjusting volume'
+  print card_title
+  sys.stdout.flush()
+
+  vol = kodi.VolumeSet(int(slots['Volume']['value']))['result']
+  answer = "Volume set to %d%%." % (vol)
+  return build_alexa_response(answer, card_title)
+
+
 # Handle the SubtitlesOn intent.
 def alexa_subtitles_on(slots):
   card_title = 'Enabling subtitles'
@@ -1513,6 +1557,10 @@ INTENTS = [
   ['PageDown', alexa_pagedown],
   ['Fullscreen', alexa_fullscreen],
   ['Mute', alexa_mute],
+  ['VolumeUp', alexa_volume_up],
+  ['VolumeDown', alexa_volume_down],
+  ['VolumeSet', alexa_volume_set],
+  ['VolumeSetPct', alexa_volume_set_pct],
   ['SubtitlesOn', alexa_subtitles_on],
   ['SubtitlesOff', alexa_subtitles_off],
   ['SubtitlesNext', alexa_subtitles_next],
