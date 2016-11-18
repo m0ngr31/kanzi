@@ -691,7 +691,7 @@ def GetNextUnwatchedEpisode(show_id):
     episode_season = episode['season']
     episode_number = episode['episode']
 
-    if episode['resume']['position'] > 0.0 or episode['resume']['total'] == 0.0:
+    if episode['resume']['position'] > 0.0:
       next_episode_id = episode['episodeid']
     else:
       next_episode_id = GetSpecificEpisode(show_id, episode_season, int(episode_number) + 1)
