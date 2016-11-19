@@ -217,15 +217,14 @@ def alexa_current_playitem_time_remaining(slots):
       answer = 'There is one minute remaining.'
     elif minsleft > 1:
       answer = 'There are %d minutes remaining' % (minsleft)
-      utctime = datetime.datetime.now(pytz.utc)
       tz = env('SKILL_TZ')
-      if tz and tz != 'None':
+      if minsleft > 9 and tz and tz != 'None':
+        utctime = datetime.datetime.now(pytz.utc)
         loctime = utctime.astimezone(pytz.timezone(tz))
-      else:
-        loctime = utctime
-      endtime = loctime + datetime.timedelta(minutes=minsleft)
-      if minsleft > 9:
+        endtime = loctime + datetime.timedelta(minutes=minsleft)
         answer += ', and it will end at %s.' % (endtime.strftime('%I:%M'))
+      else:
+        answer += '.'
 
   return build_alexa_response(answer, card_title)
 

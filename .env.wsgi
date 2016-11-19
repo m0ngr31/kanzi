@@ -23,5 +23,8 @@ SKILL_VERIFY_CERT=
 # For example, if you are in the Eastern US time zone, you would use:
 # SKILL_TZ=US/Eastern
 #
-# Leave empty or undefined if you wish to use UTC time.
+# Leave empty or undefined (commented out) if you don't need or want absolute
+# time responses.  An example is asking when the currently playing item will
+# end.  If you have SKILL_TZ defined, it will also tell you the wall-clock
+# time when the item will conclude.
 SKILL_TZ=
