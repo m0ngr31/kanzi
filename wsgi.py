@@ -31,6 +31,7 @@ THE SOFTWARE.
 # For a complete discussion, see http://forum.kodi.tv/showthread.php?tid=254502
 
 import datetime
+import pytz
 import json
 import os.path
 import random
@@ -219,8 +220,14 @@ def alexa_current_playitem_time_remaining(slots):
       answer = 'There is one minute remaining.'
     elif minsleft > 1:
       answer = 'There are %d minutes remaining' % (minsleft)
-      if minsleft > 9:
-        answer += ', and it will end at %s.' % (datetime.datetime.now() + datetime.timedelta(minutes=minsleft)).strftime('%I:%M')
+      tz = env('SKILL_TZ')
+      if minsleft > 9 and tz and tz != 'None':
+        utctime = datetime.datetime.now(pytz.utc)
+        loctime = utctime.astimezone(pytz.timezone(tz))
+        endtime = loctime + datetime.timedelta(minutes=minsleft)
+        answer += ', and it will end at %s.' % (endtime.strftime('%I:%M'))
+      else:
+        answer += '.'
 
   return build_alexa_response(answer, card_title)
 
@@ -512,6 +519,50 @@ def alexa_mute(slots):
 
   kodi.ToggleMute()
   answer = ""
+  return build_alexa_response(answer, card_title)
+
+
+# Handle the VolumeUp intent.
+def alexa_volume_up(slots):
+  card_title = 'Turning volume up'
+  print card_title
+  sys.stdout.flush()
+
+  vol = kodi.VolumeUp()['result']
+  answer = "Volume set to %d%%." % (vol)
+  return build_alexa_response(answer, card_title)
+
+
+# Handle the VolumeDown intent.
+def alexa_volume_down(slots):
+  card_title = 'Turning volume down'
+  print card_title
+  sys.stdout.flush()
+
+  vol = kodi.VolumeDown()['result']
+  answer = "Volume set to %d%%." % (vol)
+  return build_alexa_response(answer, card_title)
+
+
+# Handle the VolumeSet intent.
+def alexa_volume_set(slots):
+  card_title = 'Adjusting volume'
+  print card_title
+  sys.stdout.flush()
+
+  vol = kodi.VolumeSet(int(slots['Volume']['value']), False)['result']
+  answer = "Volume set to %d%%." % (vol)
+  return build_alexa_response(answer, card_title)
+
+
+# Handle the VolumeSetPct intent.
+def alexa_volume_set_pct(slots):
+  card_title = 'Adjusting volume'
+  print card_title
+  sys.stdout.flush()
+
+  vol = kodi.VolumeSet(int(slots['Volume']['value']))['result']
+  answer = "Volume set to %d%%." % (vol)
   return build_alexa_response(answer, card_title)
 
 
@@ -1595,6 +1646,10 @@ INTENTS = [
   ['PageDown', alexa_pagedown],
   ['Fullscreen', alexa_fullscreen],
   ['Mute', alexa_mute],
+  ['VolumeUp', alexa_volume_up],
+  ['VolumeDown', alexa_volume_down],
+  ['VolumeSet', alexa_volume_set],
+  ['VolumeSetPct', alexa_volume_set_pct],
   ['SubtitlesOn', alexa_subtitles_on],
   ['SubtitlesOff', alexa_subtitles_off],
   ['SubtitlesNext', alexa_subtitles_next],

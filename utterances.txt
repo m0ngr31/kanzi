@@ -40,7 +40,13 @@ PageDown navigate page down
 
 Fullscreen (/toggle) fullscreen
 
-Mute (/toggle) (mute/unmute)
+Mute (/toggle/set) (mute/unmute)
+VolumeUp (/turn) volume up
+VolumeUp (/turn) up volume
+VolumeDown (/turn) volume down
+VolumeDown (/turn) down volume
+VolumeSet (/set) volume {Volume}
+VolumeSetPct (/set) volume {Volume} percent
 
 SubtitlesOn (enable/turn on) subtitles
 SubtitlesOff (disable/turn off) subtitles

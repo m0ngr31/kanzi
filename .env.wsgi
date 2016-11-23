@@ -15,5 +15,18 @@ KODI_USERNAME=
 KODI_PASSWORD=
 SKILL_APPID=
 SKILL_VERIFY_CERT=
+
+# Your local time zone for responses that include absolute times.
+# See https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+#
+# For example, if you are in the Eastern US time zone, you would use:
+# SKILL_TZ=US/Eastern
+#
+# Leave empty or undefined (commented out) if you don't need or want absolute
+# time responses.  An example is asking when the currently playing item will
+# end.  If you have SKILL_TZ defined, it will also tell you the wall-clock
+# time when the item will conclude.
+SKILL_TZ=
+
 BROADCAST_LOAD_TIMEOUT=
 BROADCAST_SCAN_TIMEOUT=

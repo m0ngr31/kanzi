@@ -211,6 +211,32 @@
       "slots": []
     },
     {
+      "intent": "VolumeUp",
+      "slots": []
+    },
+    {
+      "intent": "VolumeDown",
+      "slots": []
+    },
+    {
+      "intent": "VolumeSet",
+      "slots": [
+        {
+          "name": "Volume",
+          "type": "AMAZON.NUMBER"
+        }
+      ]
+    },
+    {
+      "intent": "VolumeSetPct",
+      "slots": [
+        {
+          "name": "Volume",
+          "type": "AMAZON.NUMBER"
+        }
+      ]
+    },
+    {
       "intent": "SubtitlesOn",
       "slots": []
     },

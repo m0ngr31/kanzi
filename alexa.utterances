@@ -620,6 +620,18 @@ UpdateAudio update audio library
 UpdateAudio update music library
 UpdateVideo update library
 UpdateVideo update video library
+VolumeDown down volume
+VolumeDown turn down volume
+VolumeDown turn volume down
+VolumeDown volume down
+VolumeSet set volume {Volume}
+VolumeSet volume {Volume}
+VolumeSetPct set volume {Volume} percent
+VolumeSetPct volume {Volume} percent
+VolumeUp turn up volume
+VolumeUp turn volume up
+VolumeUp up volume
+VolumeUp volume up
 WhatAlbums what albums do i have by {Artist}
 WhatAlbums what albums do we have by {Artist}
 WhatAlbums what albums do you have by {Artist}

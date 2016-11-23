@@ -435,6 +435,46 @@ def ToggleMute():
   return SendCommand(RPCString("Application.SetMute", {"mute":"toggle"}))
 
 
+def GetCurrentVolume():
+  return SendCommand(RPCString("Application.GetProperties", {"properties":["volume", "muted"]}))
+
+def VolumeUp():
+  resp = GetCurrentVolume()
+  vol = resp['result']['volume']
+  if vol % 10 == 0:
+    # already modulo 10, so just add 10
+    vol += 10
+  else:
+    # round up to nearest 10
+    vol -= vol % -10
+  if vol > 100:
+    vol = 100
+  return SendCommand(RPCString("Application.SetVolume", {"volume":vol}))
+
+
+def VolumeDown():
+  resp = GetCurrentVolume()
+  vol = resp['result']['volume']
+  if vol % 10 != 0:
+    # round up to nearest 10 first
+    vol -= vol % -10
+  vol -= 10
+  if vol < 0:
+    vol = 0
+  return SendCommand(RPCString("Application.SetVolume", {"volume":vol}))
+
+
+def VolumeSet(vol, percent=True):
+  if vol < 0:
+    vol = 0
+  if not percent:
+    # specified with scale of 0 to 10
+    vol *= 10
+  if vol > 100:
+    vol = 100
+  return SendCommand(RPCString("Application.SetVolume", {"volume":vol}))
+
+
 # Player controls
 
 def PlayPause():
@@ -691,8 +731,7 @@ def GetNextUnwatchedEpisode(show_id):
     episode_season = episode['season']
     episode_number = episode['episode']
 
-    resume = episode['resume']['position']
-    if resume > 0:
+    if episode['resume']['position'] > 0.0:
       next_episode_id = episode['episodeid']
     else:
       next_episode_id = GetSpecificEpisode(show_id, episode_season, int(episode_number) + 1)
