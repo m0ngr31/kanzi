@@ -28,18 +28,16 @@ THE SOFTWARE.
 
 import datetime
 import json
-import requests
-import time
-import urllib
 import os
 import random
 import re
 import string
 import sys
+
 import pycountry
+import requests
 from fuzzywuzzy import fuzz
 from fuzzywuzzy import process
-
 
 # These are words that we ignore when doing a non-exact match on show names
 STOPWORDS = [
@@ -127,6 +125,9 @@ def SendCommand(command):
   PASS = os.getenv('KODI_PASSWORD')
   if not PASS or PASS == 'None':
     PASS = 'kodi'
+  TIMEOUT = os.getenv('KODI_RPC_TIMEOUT')
+  if not TIMEOUT or TIMEOUT == 'None':
+    TIMEOUT = 60
 
   # Join the environment variables into a url
   url = "%s://%s:%s/%s/%s" % (SCHEME, KODI, PORT, SUBPATH, 'jsonrpc')
@@ -137,7 +138,7 @@ def SendCommand(command):
   print "Sending request to %s" % (url)
 
   try:
-    r = requests.post(url, data=command, auth=(USER, PASS))
+    r = requests.post(url, data=command, auth=(USER, PASS), timeout=TIMEOUT)
   except:
     return {}
   return json.loads(r.text)
