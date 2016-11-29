@@ -35,7 +35,8 @@ import random
 import re
 import string
 import sys
-import threading
+import time
+from multiprocessing import Process
 from yaep import populate_env
 from yaep import env
 
@@ -1007,13 +1008,14 @@ def alexa_clean_video(slots):
 
   kodi.UpdateVideo()
 
+  time.sleep(5)
+
   # Use threading to solve the call from returing too late
-  c = threading.Thread(target=kodi.CleanVideo)
+  c = Process(target=kodi.CleanVideo)
   c.daemon = True
   c.start()
 
-  # Calling this because for some reason it won't fire until the next command happens?
-  kodi.Home()
+  time.sleep(1)
 
   answer = "Cleaning video library"
   return build_alexa_response(answer, card_title)
@@ -1039,13 +1041,14 @@ def alexa_clean_audio(slots):
 
   kodi.UpdateMusic()
 
+  time.sleep(5)
+
   #Use threading to solve the call from returing too late
-  c = threading.Thread(target=kodi.CleanMusic)
+  c = Process(target=kodi.CleanMusic)
   c.daemon = True
   c.start()
 
-  #Calling this because for some reason it won't fire until the next command happens?
-  kodi.Home()
+  time.sleep(1)
 
   answer = "Cleaning audio library"
   return build_alexa_response(answer, card_title)
