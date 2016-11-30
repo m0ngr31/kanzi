@@ -127,6 +127,9 @@ def SendCommand(command):
   PASS = os.getenv('KODI_PASSWORD')
   if not PASS or PASS == 'None':
     PASS = 'kodi'
+  KODI_RPC_TIMEOUT = os.getenv('KODI_RPC_TIMEOUT')
+  if not PASS or KODI_RPC_TIMEOUT == 'None':
+    KODI_RPC_TIMEOUT = '60'
 
   # Join the environment variables into a url
   url = "%s://%s:%s/%s/%s" % (SCHEME, KODI, PORT, SUBPATH, 'jsonrpc')
@@ -137,7 +140,7 @@ def SendCommand(command):
   print "Sending request to %s" % (url)
 
   try:
-    r = requests.post(url, data=command, auth=(USER, PASS))
+    r = requests.post(url, data=command, auth=(USER, PASS), timeout=KODI_RPC_TIMEOUT)
   except:
     return {}
   return json.loads(r.text)

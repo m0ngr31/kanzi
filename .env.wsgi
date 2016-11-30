@@ -28,3 +28,10 @@ SKILL_VERIFY_CERT=
 # end.  If you have SKILL_TZ defined, it will also tell you the wall-clock
 # time when the item will conclude.
 SKILL_TZ=
+
+# Requests post timeout in seconds.
+#
+# It's the time the requests library will wait for a response from Kodi before failing.
+# It is an helpful value in case is not run as lambda since there is no timeout and the webservice might
+# hang inefinetely waiting for a reponse.
+KODI_RPC_TIMEOUT = 60
