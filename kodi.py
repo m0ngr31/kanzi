@@ -106,13 +106,27 @@ def SendCommand(command):
   # Furthermore, os.getenv() under AWS Lambda returns 'None' as a string
   # instead of None as NoneType as we'd normally expect, so we have to
   # explicitly test for that.
-  SCHEME = os.getenv('KODI_SCHEME', 'http')
-  SUBPATH = os.getenv('KODI_SUBPATH', '')
-  KODI = os.getenv('KODI_ADDRESS', '127.0.0.1')
-  PORT = os.getenv('KODI_PORT', '8080')
-  USER = os.getenv('KODI_USERNAME', 'kodi')
-  PASS = os.getenv('KODI_PASSWORD', 'kodi')
-  KODI_RPC_TIMEOUT = os.getenv('KODI_RPC_TIMEOUT', '60')
+  SCHEME = os.getenv('KODI_SCHEME')
+  if not SCHEME or SCHEME == 'None':
+    SCHEME = 'http'
+  SUBPATH = os.getenv('KODI_SUBPATH')
+  if not SUBPATH or SUBPATH == 'None':
+    SUBPATH = ''
+  KODI = os.getenv('KODI_ADDRESS')
+  if not KODI or KODI == 'None':
+    KODI = '127.0.0.1'
+  PORT = os.getenv('KODI_PORT')
+  if not PORT or PORT == 'None':
+    PORT = '8080'
+  USER = os.getenv('KODI_USERNAME')
+  if not USER or USER == 'None':
+    USER = 'kodi'
+  PASS = os.getenv('KODI_PASSWORD')
+  if not PASS or PASS == 'None':
+    PASS = 'kodi'
+  KODI_RPC_TIMEOUT = os.getenv('KODI_RPC_TIMEOUT')
+  if not PASS or KODI_RPC_TIMEOUT == 'None':
+    KODI_RPC_TIMEOUT = '60'
 
   # Join the environment variables into a url
   url = "%s://%s:%s/%s/%s" % (SCHEME, KODI, PORT, SUBPATH, 'jsonrpc')
