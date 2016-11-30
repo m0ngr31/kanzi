@@ -31,7 +31,7 @@ SKILL_TZ=
 
 # Requests post timeout in seconds.
 #
-# It's the time the requests library will wait for a response from Kodi before failing.
-# It is an helpful value in case is not run as lambda since there is no timeout and the webservice might
-# hang inefinetely waiting for a reponse.
+# It's the time alexa waits for a response from Kodi before giving up.
+# It is an helpful value, especially if not run as lambda, since the Web Service might
+# hang indefinitely waiting for a response.
 KODI_RPC_TIMEOUT = 60
