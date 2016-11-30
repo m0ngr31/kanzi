@@ -31,3 +31,10 @@ SKILL_VERIFY_CERT=
 # end.  If you have SKILL_TZ defined, it will also tell you the wall-clock
 # time when the item will conclude.
 SKILL_TZ=
+
+# Requests post timeout in seconds.
+#
+# It's the time alexa waits for a response from Kodi before giving up.
+# It is an helpful value, especially if not run as lambda, since the Web Service might
+# hang indefinitely waiting for a response.
+KODI_RPC_TIMEOUT = 60
