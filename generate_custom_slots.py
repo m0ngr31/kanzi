@@ -82,6 +82,7 @@ for a in deduped:
   gfile.write("%s\n" % a)
 gfile.close()
 
+
 # Generate MOVIES Slot
 retrieved = kodi.GetMovies()
 
@@ -101,7 +102,7 @@ for a in deduped:
 gfile.close()
 
 
-# Generetate SHOWS Slot
+# Generate SHOWS Slot
 retrieved = kodi.GetTvShows()
 
 all = []
@@ -115,6 +116,26 @@ if 'result' in retrieved and 'tvshows' in retrieved['result']:
 deduped = list(set(all))
 
 gfile = open('SHOWS', 'w')
+for a in deduped:
+  gfile.write("%s\n" % a)
+gfile.close()
+
+
+# Generate ADDONS Slot
+all = []
+
+for content in ['video', 'audio', 'image', 'executable']:
+  retrieved = kodi.GetAddons(content)
+
+  if 'result' in retrieved and 'addons' in retrieved['result']:
+    for v in retrieved['result']['addons']:
+      ascii_name = v['name'].encode('ascii', 'replace')
+      removed_paren = re.sub(r'\([^)]*\)', '', ascii_name).rstrip().lower().translate(None, string.punctuation)
+      all.append(removed_paren.encode('utf-8').strip())
+
+deduped = list(set(all))
+
+gfile = open('ADDONS', 'w')
 for a in deduped:
   gfile.write("%s\n" % a)
 gfile.close()
