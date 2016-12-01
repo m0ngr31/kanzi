@@ -6,7 +6,11 @@ I've expanded it to support the following features:
 
 - Basic navigation (Up/Down, Left/Right, Page Up/Down, Select, Back, Open Menu)
 - Playback control (Play/Pause, Skip, Previous, Stop)
+- Adjust volume
 - Shuffle music by artist
+- Play specific album
+- Play audio playlists
+- "Party mode" for music (shuffle all)
 - Play random unwatched episode of TV show
 - Play random unwatched movie
 - Play random movie from a specific genre
@@ -15,13 +19,16 @@ I've expanded it to support the following features:
 - Continue watching next episode of last show that was watched
 - Play next episode of a show
 - Play newest episode of a show
+- List recently added media
+- List available albums by an artist
 - Clean/Update video and audio sources
-- "What's playing?" functionality for music, movies, and TV SHOWS
-- Searching for something in your library
-- "Party mode" for music (shuffle all)
-- Play audio playlists
-- Play specific album
+- "What's playing?" functionality for music, movies, and shows
+- Cycle through audio and subtitle streams
+- Search for something in your library
 - Execute addons
+- Shutdown/reboot/sleep/hibernate system
+- Toggle fullscreen
+- Eject disc
 
 ## Kodi Setup
 
