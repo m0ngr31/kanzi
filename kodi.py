@@ -630,16 +630,25 @@ def PlayerRotateCounterClockwise():
 
 # Addons
 
-def CallKodiSearch(name=''):
-  return SendCommand(RPCString("Addons.ExecuteAddon", {"addonid": "script.globalsearch", "params":{"searchstring":name}}))
+def AddonExecute(addon_id, params):
+  return SendCommand(RPCString("Addons.ExecuteAddon", {"addonid":addon_id, "params":params}))
 
-def AddonGlobalSearch(name=''):
+def AddonGlobalSearch(needle=''):
+  return AddonExecute("script.globalsearch", {"searchstring":needle})
 
-def CinemaVision():
-  return SendCommand(RPCString("Addons.ExecuteAddon", { "addonid": "script.cinemavision", "params": ["experience"]}))
+def AddonCinemaVision():
+  return AddonExecute("script.cinemavision", ["experience"])
 
 
 # Library queries
+
+def GetAddons():
+  return SendCommand(RPCString("Addons.GetAddons", {"properties":["name"]}))
+
+
+def GetAddonDetails(addon_id):
+  return SendCommand(RPCString("Addons.GetAddonDetails", {"addonid":addon_id, "properties":["name", "version", "description", "summary"]}))
+
 
 def GetMusicPlaylists():
   return SendCommand(RPCString("Files.GetDirectory", {"directory": "special://musicplaylists"}))
