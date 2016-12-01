@@ -361,27 +361,6 @@
       "slots": []
     },
     {
-      "intent": "DoSearch",
-      "slots": [
-        {
-          "name": "Artist",
-          "type": "MUSICARTISTS"
-        },
-        {
-          "name": "Album",
-          "type": "MUSICALBUMS"
-        },
-        {
-          "name": "Movie",
-          "type": "MOVIES"
-        },
-        {
-          "name": "Show",
-          "type": "SHOWS"
-        }
-      ]
-    },
-    {
       "intent": "PlayEpisode",
       "slots": [
         {
@@ -406,5 +385,26 @@
       "intent": "CurrentPlayItemTimeRemaining",
       "slots": []
     }
+    {
+      "intent": "AddonGlobalSearch",
+      "slots": [
+        {
+          "name": "Artist",
+          "type": "MUSICARTISTS"
+        },
+        {
+          "name": "Album",
+          "type": "MUSICALBUMS"
+        },
+        {
+          "name": "Movie",
+          "type": "MOVIES"
+        },
+        {
+          "name": "Show",
+          "type": "SHOWS"
+        }
+      ]
+    },
   ]
 }

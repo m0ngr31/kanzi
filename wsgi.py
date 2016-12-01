@@ -1066,8 +1066,8 @@ def alexa_update_audio(slots):
   return build_alexa_response(answer, card_title)
 
 
-# Handle the DoSearch intent.
-def alexa_do_search(slots):
+# Handle the AddonGlobalSearch intent.
+def alexa_addon_globalsearch(slots):
   card_title = 'Search'
   heard_search = ''
 
@@ -1084,7 +1084,7 @@ def alexa_do_search(slots):
     answer = 'Searching for %s' % (heard_search)
 
     kodi.Home()
-    kodi.CallKodiSearch(heard_search)
+    kodi.AddonGlobalSearch(heard_search)
 
     return build_alexa_response(answer, card_title)
   else:
@@ -1597,7 +1597,7 @@ INTENTS = [
   ['UpdateAudio', alexa_update_audio],
   ['PlayLatestEpisode', alexa_play_newest_episode],
   ['PartyMode', alexa_party_play],
-  ['DoSearch', alexa_do_search],
+  ['AddonGlobalSearch', alexa_addon_globalsearch],
   ['Hibernate', alexa_hibernate],
   ['Reboot', alexa_reboot],
   ['Shutdown', alexa_shutdown],

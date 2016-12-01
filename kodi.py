@@ -633,6 +633,7 @@ def PlayerRotateCounterClockwise():
 def CallKodiSearch(name=''):
   return SendCommand(RPCString("Addons.ExecuteAddon", {"addonid": "script.globalsearch", "params":{"searchstring":name}}))
 
+def AddonGlobalSearch(name=''):
 
 def CinemaVision():
   return SendCommand(RPCString("Addons.ExecuteAddon", { "addonid": "script.cinemavision", "params": ["experience"]}))

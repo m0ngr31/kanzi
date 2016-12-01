@@ -138,11 +138,6 @@ PartyMode play random music
 PartyMode play all music
 PartyMode shuffle all music
 
-DoSearch search for {Show}
-DoSearch search for {Movie}
-DoSearch search for {Album}
-DoSearch search for {Artist}
-
 CurrentPlayItemInquiry what (/song/audio/video/movie/film/episode/show) is (this/playing/currently playing)
 
 CurrentPlayItemTimeRemaining how much (/time) is (left/remaining) on (my/this) (audio/video/movie/film/show/episode/song)
@@ -171,3 +166,8 @@ PlayerSeekSmallBackward (/small) (step/jump) (backward/back)
 PlayerSeekSmallBackward (/small) (backward/back) (step/jump)
 PlayerSeekBigBackward (large/big/long) (step/jump) (backward/back)
 PlayerSeekBigBackward (large/big/long) (backward/back) (step/jump)
+
+AddonGlobalSearch search for {Show}
+AddonGlobalSearch search for {Movie}
+AddonGlobalSearch search for {Album}
+AddonGlobalSearch search for {Artist}

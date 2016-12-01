@@ -1,3 +1,7 @@
+AddonGlobalSearch search for {Artist}
+AddonGlobalSearch search for {Album}
+AddonGlobalSearch search for {Movie}
+AddonGlobalSearch search for {Show}
 AudioStreamNext next audio
 AudioStreamNext next audio language
 AudioStreamNext next audio stream
@@ -222,10 +226,6 @@ CurrentPlayItemTimeRemaining when will this show end
 CurrentPlayItemTimeRemaining when will this song end
 CurrentPlayItemTimeRemaining when will this video end
 CurrentPlayItemTimeRemaining when will video end
-DoSearch search for {Artist}
-DoSearch search for {Album}
-DoSearch search for {Movie}
-DoSearch search for {Show}
 Down navigate down
 EjectMedia eject
 EjectMedia eject audio disc
