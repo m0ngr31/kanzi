@@ -273,22 +273,22 @@ def matchHeard(heard, results, lookingFor='label'):
     if not located:
       print 'not located on the second round of checks'
       sys.stdout.flush()
-      fuzzy_result = process.extract(str(heard), [d['label'] for d in results], limit=1, scorer=fuzz.QRatio)
+      fuzzy_result = process.extract(str(heard), [d[lookingFor] for d in results], limit=1, scorer=fuzz.QRatio)
       if fuzzy_result[0][1] > 75:
-        located = (item for item in results if item['label'] == fuzzy_result[0][0]).next()
+        located = (item for item in results if item[lookingFor] == fuzzy_result[0][0]).next()
       else:
-        fuzzy_result = process.extract(str(heard), [d['label'] for d in results], limit=1, scorer=fuzz.partial_ratio)
+        fuzzy_result = process.extract(str(heard), [d[lookingFor] for d in results], limit=1, scorer=fuzz.partial_ratio)
         if fuzzy_result[0][1] > 75:
-          located = (item for item in results if item['label'] == fuzzy_result[0][0]).next()
+          located = (item for item in results if item[lookingFor] == fuzzy_result[0][0]).next()
         else:
           heard = replaceDigits(heard)
-          fuzzy_result = process.extract(str(heard), [d['label'] for d in results], limit=1, scorer=fuzz.QRatio)
+          fuzzy_result = process.extract(str(heard), [d[lookingFor] for d in results], limit=1, scorer=fuzz.QRatio)
           if fuzzy_result[0][1] > 75:
-            located = (item for item in results if item['label'] == fuzzy_result[0][0]).next()
+            located = (item for item in results if item[lookingFor] == fuzzy_result[0][0]).next()
           else:
-            fuzzy_result = process.extract(str(heard), [d['label'] for d in results], scorer=fuzz.partial_ratio)
+            fuzzy_result = process.extract(str(heard), [d[lookingFor] for d in results], scorer=fuzz.partial_ratio)
             if fuzzy_result[0][1] > 75:
-              located = (item for item in results if item['label'] == fuzzy_result[0][0]).next()
+              located = (item for item in results if item[lookingFor] == fuzzy_result[0][0]).next()
 
   return located
 
@@ -630,7 +630,7 @@ def PlayerRotateCounterClockwise():
 
 # Addons
 
-def AddonExecute(addon_id, params):
+def AddonExecute(addon_id, params={}):
   return SendCommand(RPCString("Addons.ExecuteAddon", {"addonid":addon_id, "params":params}))
 
 def AddonGlobalSearch(needle=''):
@@ -642,8 +642,12 @@ def AddonCinemaVision():
 
 # Library queries
 
-def GetAddons():
-  return SendCommand(RPCString("Addons.GetAddons", {"properties":["name"]}))
+# content can be: video, audio, image, executable, or unknown
+def GetAddons(content):
+  if content:
+    return SendCommand(RPCString("Addons.GetAddons", {"content":content, "properties":["name"]}))
+  else:
+    return SendCommand(RPCString("Addons.GetAddons", {"properties":["name"]}))
 
 
 def GetAddonDetails(addon_id):

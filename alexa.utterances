@@ -1,3 +1,15 @@
+AddonExecute execute addon {Addon}
+AddonExecute execute plugin {Addon}
+AddonExecute execute script {Addon}
+AddonExecute execute {Addon}
+AddonExecute open addon {Addon}
+AddonExecute open plugin {Addon}
+AddonExecute open script {Addon}
+AddonExecute open {Addon}
+AddonExecute run addon {Addon}
+AddonExecute run plugin {Addon}
+AddonExecute run script {Addon}
+AddonExecute run {Addon}
 AddonGlobalSearch search for {Artist}
 AddonGlobalSearch search for {Album}
 AddonGlobalSearch search for {Movie}

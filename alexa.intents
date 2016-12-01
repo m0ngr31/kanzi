@@ -384,7 +384,16 @@
     {
       "intent": "CurrentPlayItemTimeRemaining",
       "slots": []
-    }
+    },
+    {
+      "intent": "AddonExecute",
+      "slots": [
+        {
+          "name": "Addon",
+          "type": "ADDONS"
+        }
+      ]
+    },
     {
       "intent": "AddonGlobalSearch",
       "slots": [
@@ -405,6 +414,6 @@
           "type": "SHOWS"
         }
       ]
-    },
+    }
   ]
 }

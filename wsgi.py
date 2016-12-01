@@ -1066,6 +1066,31 @@ def alexa_update_audio(slots):
   return build_alexa_response(answer, card_title)
 
 
+# Handle the AddonExecute intent.
+def alexa_addon_execute(slots):
+  heard_addon = str(slots['Addon']['value']).lower().translate(None, string.punctuation)
+
+  card_title = 'Opening the addon %s' % (heard_addon)
+  print card_title
+  sys.stdout.flush()
+
+  for content in ['video', 'audio', 'image', 'executable']:
+    addons = kodi.GetAddons(content)
+    if 'result' in addons and 'addons' in addons['result']:
+      addons_array = addons['result']['addons']
+
+      located = kodi.matchHeard(heard_addon, addons_array, lookingFor='name')
+
+      if located:
+        kodi.Home()
+        kodi.AddonExecute(located['addonid'])
+
+        return build_alexa_response('Opening %s' % (located['name']), card_title)
+    else:
+      return build_alexa_response('Error parsing results', card_title)
+
+  return build_alexa_response('Could not find an addon called %s' % (heard_addon), card_title)
+
 # Handle the AddonGlobalSearch intent.
 def alexa_addon_globalsearch(slots):
   card_title = 'Search'
@@ -1597,6 +1622,7 @@ INTENTS = [
   ['UpdateAudio', alexa_update_audio],
   ['PlayLatestEpisode', alexa_play_newest_episode],
   ['PartyMode', alexa_party_play],
+  ['AddonExecute', alexa_addon_execute],
   ['AddonGlobalSearch', alexa_addon_globalsearch],
   ['Hibernate', alexa_hibernate],
   ['Reboot', alexa_reboot],
