@@ -177,3 +177,6 @@ if 'result' in retrieved and 'channels' in retrieved['result']:
 deduped = list(set(all))
 
 gfile = open('BROADCASTS', 'w')
+for a in deduped:
+  gfile.write("%s\n" % a)
+gfile.close()
