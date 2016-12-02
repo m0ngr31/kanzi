@@ -4,3 +4,4 @@ yaep
 pycountry
 pytz
 fuzzywuzzy
+wakeonlan

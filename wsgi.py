@@ -39,6 +39,7 @@ import time
 from multiprocessing import Process
 from yaep import populate_env
 from yaep import env
+from wakeonlan import wol
 
 sys.path += [os.path.dirname(__file__)]
 
@@ -988,6 +989,25 @@ def alexa_suspend(slots):
   answer = "Suspending system"
   return build_alexa_response(answer, card_title)
 
+# Handle the Wake intent.
+def alexa_wake(slots):
+  card_title = 'Powering on'
+  print card_title
+  sys.stdout.flush()
+
+  WOL_MAC = env('KODI_WOL_MAC')
+  if not WOL_MAC or WOL_MAC == 'None':
+    answer = "Wake on lan is not configured"
+    return build_alexa_response(answer, card_title)
+
+  WOL_PORT = env('KODI_WOL_PORT')
+  if not WOL_PORT or WOL_PORT == 'None':
+    wol.send_magic_packet(WOL_MAC)
+  else:
+    wol.send_magic_packet(WOL_MAC, ip_address=env('KODI_ADDRESS'), port=int(WOL_PORT))
+
+  answer = "Turning on kodi"
+  return build_alexa_response(answer, card_title)
 
 # Handle the EjectMedia intent.
 def alexa_ejectmedia(slots):
@@ -1628,6 +1648,7 @@ INTENTS = [
   ['Reboot', alexa_reboot],
   ['Shutdown', alexa_shutdown],
   ['Suspend', alexa_suspend],
+  ['Wake', alexa_wake],
   ['EjectMedia', alexa_ejectmedia]
 ]
 
