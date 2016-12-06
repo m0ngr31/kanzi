@@ -1406,7 +1406,7 @@ def alexa_what_new_albums(slots):
     if num_albums > 5:
       album_list += ", " + limited_new_album_names[-1] + ", and more"
     else:
-      album_list += ", and" + limited_new_album_names[-1]
+      album_list += ", and " + limited_new_album_names[-1]
     answer = "You have %(album_list)s." % {"album_list":album_list}
   return build_alexa_response(answer, card_title)
 
@@ -1453,7 +1453,7 @@ def alexa_what_new_movies(slots):
     if num_movies > 5:
       movie_list += ", " + limited_new_movie_names[-1] + ", and more"
     else:
-      movie_list += ", and" + limited_new_movie_names[-1]
+      movie_list += ", and " + limited_new_movie_names[-1]
     answer = "You have %(movie_list)s." % {"movie_list":movie_list}
   return build_alexa_response(answer, card_title)
 
@@ -1515,7 +1515,7 @@ def alexa_what_new_episodes(slots):
     if num_shows > 5:
       show_list += ", " + limited_new_show_names[-1] + ", and more"
     else:
-      show_list += ", and" + limited_new_show_names[-1]
+      show_list += ", and " + limited_new_show_names[-1]
     answer = "There are new episodes of %(show_list)s." % {"show_list":show_list}
   return build_alexa_response(answer, card_title)
 
