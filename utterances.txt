@@ -119,8 +119,10 @@ WhatNewAlbums (if there is/is there/do (we/i) have) a new album (/recorded) (/to
 WhatNewAlbums what (/new) albums ((/do) (we/i/you) have/are (ready/waiting/recorded/there/on the (/media) server))
 
 WhatNewMovies (if there are/are there/do (we/i) have) (/any/some) new (movies/films) (/recorded) (/to watch) (/today/tonight)
+WhatNewMovies (if there are/are there/do (we/i) have) (/any/some) new {Genre} (movies/films) (/recorded) (/to watch) (/today/tonight)
 WhatNewMovies (if there is/is there/do (we/i) have) a new (movie/film) (/recorded) (/to watch) (/today/tonight)
-WhatNewMovies what (/new) (movies/films) ((/do) (we/i/you) have/are (ready/waiting/recorded/there/on the (/media) server))
+WhatNewMovies (if there is/is there/do (we/i) have) a new {Genre} (movie/film) (/recorded) (/to watch) (/today/tonight)
+WhatNewMovies what (/new) {Genre} (movies/films) ((/do) (we/i/you) have/are (ready/waiting/recorded/there/on the (/media) server))
 
 WhatNewShows (if there are/are there/do (we/i) have) (/any/some) new shows (/recorded) (/to watch) (/today/tonight)
 WhatNewShows (if there is/is there/do (we/i) have) a new show (/recorded) (/to watch) (/today/tonight)

@@ -1413,12 +1413,25 @@ def alexa_what_new_albums(slots):
 
 # Handle the WhatNewMovies intent.
 def alexa_what_new_movies(slots):
-  card_title = 'Newly added movies'
+  genre_located = None
+  # If a genre has been specified, match the genre for use in selecting random films
+  if 'value' in slots['Genre']:
+    heard_genre = str(slots['Genre']['value']).lower().translate(None, string.punctuation)
+    card_title = 'Newly added %s movies' % (heard_genre)
+    genres = kodi.GetMovieGenres()
+    if 'result' in genres and 'genres' in genres['result']:
+      genres_list = genres['result']['genres']
+      genre_located = kodi.matchHeard(heard_genre, genres_list, 'label')
+  else:
+    card_title = 'Newly added movies'
   print card_title
   sys.stdout.flush()
 
-  # Get the list of unwatched movies from Kodi
-  new_movies = kodi.GetUnwatchedMovies()
+  # Select from specified genre if one was matched
+  if genre_located:
+    new_movies = kodi.GetUnwatchedMoviesByGenre(genre_located['label'])
+  else:
+    new_movies = kodi.GetUnwatchedMovies()
 
   new_movie_names = list(set([sanitize_name(x['title']) for x in new_movies]))
   num_movies = len(new_movie_names)
