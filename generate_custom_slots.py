@@ -7,6 +7,25 @@ from yaep import populate_env
 # KODI_ADDRESS=localhost KODI_PORT=8088 KODI_USERNAME=kodi KODI_PASSWORD=kodi python generate_custom_types.py
 populate_env()
 
+# Generate MUSICARTISTS Slot
+retrieved = kodi.GetMusicArtists()
+
+all = []
+
+if 'result' in retrieved and 'artists' in retrieved['result']:
+  for v in retrieved['result']['artists']:
+    ascii_name = v['artist'].encode('ascii', 'replace')
+    removed_paren = re.sub(r'\([^)]*\)', '', ascii_name).rstrip().lower().translate(None, string.punctuation)
+    all.append(removed_paren.encode('utf-8').strip())
+
+deduped = list(set(all))
+
+gfile = open('MUSICARTISTS', 'w')
+for a in deduped:
+  gfile.write("%s\n" % a)
+gfile.close()
+
+
 # Generate MUSICALBUMS Slot
 retrieved = kodi.GetAlbums()
 
@@ -25,20 +44,21 @@ for a in deduped:
   gfile.write("%s\n" % a)
 gfile.close()
 
-# Generate MUSICARTISTS Slot
-retrieved = kodi.GetMusicArtists()
+
+# Generate MUSICSONGS Slot
+retrieved = kodi.GetSongs()
 
 all = []
 
-if 'result' in retrieved and 'artists' in retrieved['result']:
-  for v in retrieved['result']['artists']:
-    ascii_name = v['artist'].encode('ascii', 'replace')
+if 'result' in retrieved and 'songs' in retrieved['result']:
+  for v in retrieved['result']['songs']:
+    ascii_name = v['label'].encode('ascii', 'replace')
     removed_paren = re.sub(r'\([^)]*\)', '', ascii_name).rstrip().lower().translate(None, string.punctuation)
     all.append(removed_paren.encode('utf-8').strip())
 
 deduped = list(set(all))
 
-gfile = open('MUSICARTISTS', 'w')
+gfile = open('MUSICSONGS', 'w')
 for a in deduped:
   gfile.write("%s\n" % a)
 gfile.close()

@@ -674,7 +674,11 @@ def GetAlbums():
   return SendCommand(RPCString("AudioLibrary.GetAlbums"))
 
 
-def GetAllSongs():
+def GetArtistSongs(artist_id):
+  return SendCommand(RPCString("AudioLibrary.GetSongs", {"filter": {"artistid": int(artist_id)}}))
+
+
+def GetSongs():
   return SendCommand(RPCString("AudioLibrary.GetSongs"))
 
 

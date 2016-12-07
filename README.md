@@ -158,13 +158,14 @@ You'll just need to stick the URL from your app in the Endpoint field. If you ar
 
 On the next tab, you'll have to paste the `alexa.intents` file into the "Intent Schema" field, and paste the `alexa.utterances` file in the "Sample Utterances" field. Generate and save your Slots first before pasting the Intents and Utterances to avoid errors when attempting to save.
 
-The tricky part is generating the Slots in the middle section. You need to create 7 different slots:
+The tricky part is generating the Slots in the middle section. You need to create 8 different slots:
 
 - MOVIES
 - MOVIEGENRES
 - SHOWS
 - MUSICARTISTS
 - MUSICALBUMS
+- MUSICSONGS
 - MUSICPLAYLISTS
 - ADDONS
 

@@ -307,6 +307,10 @@ ListenToMusicPlaylistRecent shuffle recently added albums
 ListenToMusicPlaylistRecent shuffle recently added audio
 ListenToMusicPlaylistRecent shuffle recently added music
 ListenToMusicPlaylistRecent shuffle recently added songs
+ListenToSong listen to song {Song}
+ListenToSong listen to song {Song} by {Artist}
+ListenToSong play song {Song}
+ListenToSong play song {Song} by {Artist}
 Menu open menu
 Mute mute
 Mute toggle mute

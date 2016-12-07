@@ -76,6 +76,15 @@
       ]
     },
     {
+      "intent": "ListenToArtist",
+      "slots": [
+        {
+          "name": "Artist",
+          "type": "MUSICARTISTS"
+        }
+      ]
+    },
+    {
       "intent": "ListenToAlbum",
       "slots": [
         {
@@ -89,11 +98,15 @@
       ]
     },
     {
-      "intent": "ListenToArtist",
+      "intent": "ListenToSong",
       "slots": [
         {
           "name": "Artist",
           "type": "MUSICARTISTS"
+        },
+        {
+          "name": "Song",
+          "type": "MUSICSONGS"
         }
       ]
     },
