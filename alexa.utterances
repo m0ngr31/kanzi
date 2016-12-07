@@ -356,14 +356,22 @@ PlayRandomEpisode play episode of {Show}
 PlayRandomEpisode play random episode of {Show}
 PlayRandomEpisode watch episode of {Show}
 PlayRandomEpisode watch random episode of {Show}
+PlayRandomMovie play film
+PlayRandomMovie play movie
 PlayRandomMovie play random film
 PlayRandomMovie play random movie
 PlayRandomMovie play random {Genre} film
 PlayRandomMovie play random {Genre} movie
+PlayRandomMovie play {Genre} film
+PlayRandomMovie play {Genre} movie
+PlayRandomMovie watch film
+PlayRandomMovie watch movie
 PlayRandomMovie watch random film
 PlayRandomMovie watch random movie
 PlayRandomMovie watch random {Genre} film
 PlayRandomMovie watch random {Genre} movie
+PlayRandomMovie watch {Genre} film
+PlayRandomMovie watch {Genre} movie
 PlayerMoveDown go down
 PlayerMoveDown move down
 PlayerMoveDown pan down
