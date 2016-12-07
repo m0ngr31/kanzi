@@ -341,43 +341,25 @@ PlayEpisode watch season {Season} episode {Episode} of {Show}
 PlayEpisode watch series {Season} episode {Episode} of {Show}
 PlayLatestEpisode play latest episode of {Show}
 PlayLatestEpisode play newest episode of {Show}
-PlayLatestEpisode play the latest episode of {Show}
-PlayLatestEpisode play the newest episode of {Show}
 PlayLatestEpisode watch latest episode of {Show}
 PlayLatestEpisode watch newest episode of {Show}
-PlayLatestEpisode watch the latest episode of {Show}
-PlayLatestEpisode watch the newest episode of {Show}
 PlayMovie play film {Movie}
 PlayMovie play movie {Movie}
 PlayMovie watch film {Movie}
 PlayMovie watch movie {Movie}
 PlayNextEpisode play next episode of {Show}
-PlayNextEpisode play the next episode of {Show}
 PlayNextEpisode watch next episode of {Show}
-PlayNextEpisode watch the next episode of {Show}
 PlayPause pause
 PlayPause play
 PlayPause resume
-PlayRandomEpisode play a episode of {Show}
-PlayRandomEpisode play a random episode of {Show}
 PlayRandomEpisode play episode of {Show}
 PlayRandomEpisode play random episode of {Show}
-PlayRandomEpisode watch a episode of {Show}
-PlayRandomEpisode watch a random episode of {Show}
 PlayRandomEpisode watch episode of {Show}
 PlayRandomEpisode watch random episode of {Show}
-PlayRandomMovie play a random film
-PlayRandomMovie play a random movie
-PlayRandomMovie play a random {Genre} film
-PlayRandomMovie play a random {Genre} movie
 PlayRandomMovie play random film
 PlayRandomMovie play random movie
 PlayRandomMovie play random {Genre} film
 PlayRandomMovie play random {Genre} movie
-PlayRandomMovie watch a random film
-PlayRandomMovie watch a random movie
-PlayRandomMovie watch a random {Genre} film
-PlayRandomMovie watch a random {Genre} movie
 PlayRandomMovie watch random film
 PlayRandomMovie watch random movie
 PlayRandomMovie watch random {Genre} film

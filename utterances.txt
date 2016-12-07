@@ -103,11 +103,11 @@ ListenToMusicPlaylist (play/listen to/shuffle) {Playlist} (song/music/audio) pla
 ListenToMusicPlaylistRecent (play/listen to/shuffle) recent (songs/music/audio/albums)
 ListenToMusicPlaylistRecent (play/listen to/shuffle) recently added (songs/music/audio/albums)
 
-PlayRandomMovie (play/watch) (/a) random (/{Genre}) (movie/film)
+PlayRandomMovie (play/watch) random (/{Genre}) (movie/film)
 
-PlayRandomEpisode (play/watch) (/a) (/random) episode of {Show}
+PlayRandomEpisode (play/watch) (/random) episode of {Show}
 
-PlayNextEpisode (play/watch) (/the) next episode of {Show}
+PlayNextEpisode (play/watch) next episode of {Show}
 
 PlayEpisode (play/watch) (season/series) {Season} episode {Episode} of {Show}
 
