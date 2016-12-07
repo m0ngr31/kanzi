@@ -98,7 +98,7 @@
       ]
     },
     {
-      "intent": "ListenToPlaylist",
+      "intent": "ListenToMusicPlaylist",
       "slots": [
         {
           "name": "Playlist",
@@ -107,7 +107,7 @@
       ]
     },
     {
-      "intent": "ListenToPlaylistRecent",
+      "intent": "ListenToMusicPlaylistRecent",
       "slots": []
     },
     {

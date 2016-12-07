@@ -89,18 +89,16 @@ UpdateAudio update (audio/music) library
 
 WhatAlbums what albums do (we/i/you) have by {Artist}
 
-ListenToArtist (play/listen to/shuffle) (/music by/artist) {Artist}
+ListenToArtist (play/listen to/shuffle) (music by/artist) {Artist}
 
-ListenToAlbum (play/listen to) (/album) {Album} by {Artist}
 ListenToAlbum (play/listen to) album {Album}
+ListenToAlbum (play/listen to) album {Album} by {Artist}
 
-ListenToPlaylist (play/listen to/shuffle) playlist {Playlist}
-ListenToPlaylist (play/listen to/shuffle) {Playlist} playlist
+ListenToMusicPlaylist (play/listen to/shuffle) (song/music/audio) playlist {Playlist}
+ListenToMusicPlaylist (play/listen to/shuffle) {Playlist} (song/music/audio) playlist
 
-ListenToPlaylistRecent (play/listen to/shuffle) (/playlist) recent
-ListenToPlaylistRecent (play/listen to/shuffle) (/playlist) recently added
-ListenToPlaylistRecent (play/listen to/shuffle) recent (songs/music/playlist)
-ListenToPlaylistRecent (play/listen to/shuffle) recently added (songs/music/playlist)
+ListenToMusicPlaylistRecent (play/listen to/shuffle) recent (songs/music/audio/albums)
+ListenToMusicPlaylistRecent (play/listen to/shuffle) recently added (songs/music/audio/albums)
 
 PlayRandomMovie (play/watch) (/a) random (/{Genre}) (movie/film)
 
