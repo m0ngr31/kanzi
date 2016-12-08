@@ -124,7 +124,24 @@
       "slots": []
     },
     {
-      "intent": "PlayRandomEpisode",
+      "intent": "WatchEpisode",
+      "slots": [
+        {
+          "name": "Show",
+          "type": "SHOWS"
+        },
+        {
+          "name": "Episode",
+          "type": "AMAZON.NUMBER"
+        },
+        {
+          "name": "Season",
+          "type": "AMAZON.NUMBER"
+        }
+      ]
+    },
+    {
+      "intent": "WatchRandomEpisode",
       "slots": [
         {
           "name": "Show",
@@ -133,7 +150,7 @@
       ]
     },
     {
-      "intent": "PlayLatestEpisode",
+      "intent": "WatchLatestEpisode",
       "slots": [
         {
           "name": "Show",
@@ -142,7 +159,7 @@
       ]
     },
     {
-      "intent": "PlayNextEpisode",
+      "intent": "WatchNextEpisode",
       "slots": [
         {
           "name": "Show",
@@ -151,7 +168,11 @@
       ]
     },
     {
-      "intent": "PlayMovie",
+      "intent": "WatchLastShow",
+      "slots": []
+    },
+    {
+      "intent": "WatchMovie",
       "slots": [
         {
           "name": "Movie",
@@ -160,7 +181,7 @@
       ]
     },
     {
-      "intent": "PlayRandomMovie",
+      "intent": "WatchRandomMovie",
       "slots": [
         {
           "name": "Genre",
@@ -371,29 +392,8 @@
       "slots": []
     },
     {
-      "intent": "ContinueShow",
-      "slots": []
-    },
-    {
       "intent": "PartyMode",
       "slots": []
-    },
-    {
-      "intent": "PlayEpisode",
-      "slots": [
-        {
-          "name": "Show",
-          "type": "SHOWS"
-        },
-        {
-          "name": "Episode",
-          "type": "AMAZON.NUMBER"
-        },
-        {
-          "name": "Season",
-          "type": "AMAZON.NUMBER"
-        }
-      ]
     },
     {
       "intent": "CurrentPlayItemInquiry",

@@ -10,8 +10,8 @@ AddonExecute run addon {Addon}
 AddonExecute run plugin {Addon}
 AddonExecute run script {Addon}
 AddonExecute run {Addon}
-AddonGlobalSearch search for {Artist}
 AddonGlobalSearch search for {Album}
+AddonGlobalSearch search for {Artist}
 AddonGlobalSearch search for {Movie}
 AddonGlobalSearch search for {Show}
 AudioStreamNext next audio
@@ -32,12 +32,6 @@ CleanAudio clean audio library
 CleanAudio clean music library
 CleanVideo clean library
 CleanVideo clean video library
-ContinueShow continue last show
-ContinueShow continue playing last show
-ContinueShow continue playing show
-ContinueShow continue show
-ContinueShow continue watching last show
-ContinueShow continue watching show
 CurrentPlayItemInquiry what audio is currently playing
 CurrentPlayItemInquiry what audio is playing
 CurrentPlayItemInquiry what audio is this
@@ -313,6 +307,8 @@ ListenToSong play song {Song}
 ListenToSong play song {Song} by {Artist}
 Menu open menu
 Mute mute
+Mute set mute
+Mute set unmute
 Mute toggle mute
 Mute toggle unmute
 Mute unmute
@@ -335,43 +331,9 @@ PartyMode listen to random music
 PartyMode play all music
 PartyMode play random music
 PartyMode shuffle all music
-PlayEpisode play season {Season} episode {Episode} of {Show}
-PlayEpisode play series {Season} episode {Episode} of {Show}
-PlayEpisode watch season {Season} episode {Episode} of {Show}
-PlayEpisode watch series {Season} episode {Episode} of {Show}
-PlayLatestEpisode play latest episode of {Show}
-PlayLatestEpisode play newest episode of {Show}
-PlayLatestEpisode watch latest episode of {Show}
-PlayLatestEpisode watch newest episode of {Show}
-PlayMovie play film {Movie}
-PlayMovie play movie {Movie}
-PlayMovie watch film {Movie}
-PlayMovie watch movie {Movie}
-PlayNextEpisode play next episode of {Show}
-PlayNextEpisode watch next episode of {Show}
 PlayPause pause
 PlayPause play
 PlayPause resume
-PlayRandomEpisode play episode of {Show}
-PlayRandomEpisode play random episode of {Show}
-PlayRandomEpisode watch episode of {Show}
-PlayRandomEpisode watch random episode of {Show}
-PlayRandomMovie play film
-PlayRandomMovie play movie
-PlayRandomMovie play random film
-PlayRandomMovie play random movie
-PlayRandomMovie play random {Genre} film
-PlayRandomMovie play random {Genre} movie
-PlayRandomMovie play {Genre} film
-PlayRandomMovie play {Genre} movie
-PlayRandomMovie watch film
-PlayRandomMovie watch movie
-PlayRandomMovie watch random film
-PlayRandomMovie watch random movie
-PlayRandomMovie watch random {Genre} film
-PlayRandomMovie watch random {Genre} movie
-PlayRandomMovie watch {Genre} film
-PlayRandomMovie watch {Genre} movie
 PlayerMoveDown go down
 PlayerMoveDown move down
 PlayerMoveDown pan down
@@ -639,6 +601,46 @@ VolumeUp turn up volume
 VolumeUp turn volume up
 VolumeUp up volume
 VolumeUp volume up
+WatchEpisode play season {Season} episode {Episode} of {Show}
+WatchEpisode play series {Season} episode {Episode} of {Show}
+WatchEpisode watch season {Season} episode {Episode} of {Show}
+WatchEpisode watch series {Season} episode {Episode} of {Show}
+WatchLastShow continue last show
+WatchLastShow continue playing last show
+WatchLastShow continue playing show
+WatchLastShow continue show
+WatchLastShow continue watching last show
+WatchLastShow continue watching show
+WatchLatestEpisode play latest episode of {Show}
+WatchLatestEpisode play newest episode of {Show}
+WatchLatestEpisode watch latest episode of {Show}
+WatchLatestEpisode watch newest episode of {Show}
+WatchMovie play film {Movie}
+WatchMovie play movie {Movie}
+WatchMovie watch film {Movie}
+WatchMovie watch movie {Movie}
+WatchNextEpisode play next episode of {Show}
+WatchNextEpisode watch next episode of {Show}
+WatchRandomEpisode play episode of {Show}
+WatchRandomEpisode play random episode of {Show}
+WatchRandomEpisode watch episode of {Show}
+WatchRandomEpisode watch random episode of {Show}
+WatchRandomMovie play film
+WatchRandomMovie play movie
+WatchRandomMovie play random film
+WatchRandomMovie play random movie
+WatchRandomMovie play random {Genre} film
+WatchRandomMovie play random {Genre} movie
+WatchRandomMovie play {Genre} film
+WatchRandomMovie play {Genre} movie
+WatchRandomMovie watch film
+WatchRandomMovie watch movie
+WatchRandomMovie watch random film
+WatchRandomMovie watch random movie
+WatchRandomMovie watch random {Genre} film
+WatchRandomMovie watch random {Genre} movie
+WatchRandomMovie watch {Genre} film
+WatchRandomMovie watch {Genre} movie
 WhatAlbums what albums do i have by {Artist}
 WhatAlbums what albums do we have by {Artist}
 WhatAlbums what albums do you have by {Artist}

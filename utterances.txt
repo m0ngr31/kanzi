@@ -103,17 +103,19 @@ ListenToMusicPlaylist (play/listen to/shuffle) {Playlist} (song/music/audio) pla
 ListenToMusicPlaylistRecent (play/listen to/shuffle) recent (songs/music/audio/albums)
 ListenToMusicPlaylistRecent (play/listen to/shuffle) recently added (songs/music/audio/albums)
 
-PlayRandomMovie (play/watch) (/random) (/{Genre}) (movie/film)
+WatchRandomMovie (play/watch) (/random) (/{Genre}) (movie/film)
 
-PlayRandomEpisode (play/watch) (/random) episode of {Show}
+WatchMovie (play/watch) (movie/film) {Movie}
 
-PlayNextEpisode (play/watch) next episode of {Show}
+WatchEpisode (play/watch) (season/series) {Season} episode {Episode} of {Show}
 
-PlayEpisode (play/watch) (season/series) {Season} episode {Episode} of {Show}
+WatchRandomEpisode (play/watch) (/random) episode of {Show}
 
-PlayMovie (play/watch) (movie/film) {Movie}
+WatchNextEpisode (play/watch) next episode of {Show}
 
-ContinueShow continue (/watching/playing) (/last) show
+WatchLastShow continue (/watching/playing) (/last) show
+
+WatchLatestEpisode (play/watch) (newest/latest) episode of {Show}
 
 WhatNewAlbums (if there are/are there/do (we/i) have) (/any/some) new albums (/recorded) (/to listen to) (/today/tonight)
 WhatNewAlbums (if there is/is there/do (we/i) have) a new album (/recorded) (/to listen to) (/today/tonight)
@@ -132,8 +134,6 @@ WhatNewShows what (/new) shows ((/do) (we/i/you) have/are (ready/waiting/recorde
 NewShowInquiry if (there is/we have) a new (/episode of) {Show}
 NewShowInquiry if (there are/we have) any (/(/new )episodes of) {Show}
 NewShowInquiry if (there is/we have) {Show}
-
-PlayLatestEpisode (play/watch) (/the) (newest/latest) episode of {Show}
 
 PartyMode listen to random music
 PartyMode listen to all music

@@ -298,7 +298,7 @@ def alexa_player_seek_bigforward(slots):
 
 # Handle the ListenToArtist intent.
 # Shuffle all music by an artist.
-def alexa_play_artist(slots):
+def alexa_listen_artist(slots):
   heard_artist = str(slots['Artist']['value']).lower().translate(None, string.punctuation)
 
   card_title = 'Playing music by %s' % (heard_artist)
@@ -334,7 +334,7 @@ def alexa_play_artist(slots):
 
 # Handle the ListenToAlbum intent.
 # Play whole album, or whole album by a specific artist.
-def alexa_play_album(slots):
+def alexa_listen_album(slots):
   heard_album = str(slots['Album']['value']).lower().translate(None, string.punctuation)
   if 'value' in slots['Artist']:
     heard_artist = str(slots['Artist']['value']).lower().translate(None, string.punctuation)
@@ -393,7 +393,7 @@ def alexa_play_album(slots):
 
 # Handle the ListenToSong intent.
 # Play a song, or song by a specific artist.
-def alexa_play_song(slots):
+def alexa_listen_song(slots):
   heard_song = str(slots['Song']['value']).lower().translate(None, string.punctuation)
   if 'value' in slots['Artist']:
     heard_artist = str(slots['Artist']['value']).lower().translate(None, string.punctuation)
@@ -452,7 +452,7 @@ def alexa_play_song(slots):
 
 # Handle the ListenToPlaylistRecent intent.
 # Shuffle all recently added songs.
-def alexa_play_recently_added_songs(slots):
+def alexa_listen_recently_added_songs(slots):
   card_title = 'Playing recently added songs'
   print card_title
   sys.stdout.flush()
@@ -477,7 +477,7 @@ def alexa_play_recently_added_songs(slots):
 
 
 # Handle the ListenToPlaylist intent.
-def alexa_play_playlist(slots):
+def alexa_listen_playlist(slots):
   heard_playlist = str(slots['Playlist']['value']).lower().translate(None, string.punctuation)
 
   card_title = 'Playing playlist "%s"' % (heard_playlist)
@@ -1175,8 +1175,8 @@ def alexa_addon_globalsearch(slots):
     return build_alexa_response("Couldn't find anything matching that phrase", card_title)
 
 
-# Handle the PlayRandomMovie intent.
-def alexa_play_random_movie(slots):
+# Handle the WatchRandomMovie intent.
+def alexa_watch_random_movie(slots):
   genre_located = None
   # If a genre has been specified, match the genre for use in selecting a random film
   if 'value' in slots['Genre']:
@@ -1217,8 +1217,8 @@ def alexa_play_random_movie(slots):
     return build_alexa_response('Error parsing results', card_title)
 
 
-# Handle the PlayMovie intent.
-def alexa_play_movie(slots):
+# Handle the WatchMovie intent.
+def alexa_watch_movie(slots):
   heard_movie = str(slots['Movie']['value']).lower().translate(None, string.punctuation)
 
   card_title = 'Playing the movie %s' % (heard_movie)
@@ -1246,8 +1246,8 @@ def alexa_play_movie(slots):
     return build_alexa_response('Error parsing results', card_title)
 
 
-# Handle the PlayRandomEpisode intent.
-def alexa_play_random_episode(slots):
+# Handle the WatchRandomEpisode intent.
+def alexa_watch_random_episode(slots):
   heard_show = str(slots['Show']['value']).lower().translate(None, string.punctuation)
 
   card_title = 'Playing a random episode of %s' % (heard_show)
@@ -1284,8 +1284,8 @@ def alexa_play_random_episode(slots):
     return build_alexa_response('Error parsing results', card_title)
 
 
-# Handle the PlayEpisode intent.
-def alexa_play_episode(slots):
+# Handle the WatchEpisode intent.
+def alexa_watch_episode(slots):
   heard_show = str(slots['Show']['value']).lower().translate(None, string.punctuation)
 
   card_title = 'Playing an episode of %s' % (heard_show)
@@ -1322,8 +1322,8 @@ def alexa_play_episode(slots):
     return build_alexa_response('Error parsing results', card_title)
 
 
-# Handle the PlayNextEpisode intent.
-def alexa_play_next_episode(slots):
+# Handle the WatchNextEpisode intent.
+def alexa_watch_next_episode(slots):
   heard_show = str(slots['Show']['value']).lower().translate(None, string.punctuation)
 
   card_title = 'Playing the next unwatched episode of %s' % (heard_show)
@@ -1358,8 +1358,8 @@ def alexa_play_next_episode(slots):
     return build_alexa_response('Error parsing results', card_title)
 
 
-# Handle the PlayNewestEpisode intent.
-def alexa_play_newest_episode(slots):
+# Handle the WatchNewestEpisode intent.
+def alexa_watch_newest_episode(slots):
   heard_show = str(slots['Show']['value']).lower().translate(None, string.punctuation)
 
   card_title = 'Playing the newest episode of %s' % (heard_show)
@@ -1394,8 +1394,8 @@ def alexa_play_newest_episode(slots):
     return build_alexa_response('Error parsing results', card_title)
 
 
-# Handle the ContinueShow intent.
-def alexa_continue_show(slots):
+# Handle the WatchLastShow intent.
+def alexa_watch_last_show(slots):
   card_title = 'Playing the next unwatched episode of the last show watched'
   print card_title
   sys.stdout.flush()
@@ -1628,24 +1628,28 @@ INTENTS = [
   ['WhatNewAlbums', alexa_what_new_albums],
   ['WhatNewMovies', alexa_what_new_movies],
   ['WhatNewShows', alexa_what_new_episodes],
+  ['WhatAlbums', alexa_what_albums],
+  ['ListenToArtist', alexa_listen_artist],
+  ['ListenToAlbum', alexa_listen_album],
+  ['ListenToSong', alexa_listen_song],
+  ['ListenToPlaylist', alexa_listen_playlist],
+  ['ListenToPlaylistRecent', alexa_listen_recently_added_songs],
+  ['WatchRandomMovie', alexa_watch_random_movie],
+  ['WatchRandomEpisode', alexa_watch_random_episode],
+  ['WatchMovie', alexa_watch_movie],
+  ['WatchEpisode', alexa_watch_episode],
+  ['WatchNextEpisode', alexa_watch_next_episode],
+  ['WatchLatestEpisode', alexa_watch_newest_episode],
+  ['WatchLastShow', alexa_watch_last_show],
   ['PlayPause', alexa_play_pause],
+  ['Stop', alexa_stop],
+  ['Skip', alexa_skip],
+  ['Prev', alexa_prev],
+  ['StartOver', alexa_start_over],
   ['PlayerSeekSmallForward', alexa_player_seek_smallforward],
   ['PlayerSeekBigForward', alexa_player_seek_bigforward],
   ['PlayerSeekSmallBackward', alexa_player_seek_smallbackward],
   ['PlayerSeekBigBackward', alexa_player_seek_bigforward],
-  ['Stop', alexa_stop],
-  ['WhatAlbums', alexa_what_albums],
-  ['ListenToArtist', alexa_play_artist],
-  ['ListenToAlbum', alexa_play_album],
-  ['ListenToSong', alexa_play_song],
-  ['ListenToPlaylist', alexa_play_playlist],
-  ['ListenToPlaylistRecent', alexa_play_recently_added_songs],
-  ['Skip', alexa_skip],
-  ['Prev', alexa_prev],
-  ['StartOver', alexa_start_over],
-  ['PlayRandomEpisode', alexa_play_random_episode],
-  ['PlayRandomMovie', alexa_play_random_movie],
-  ['PlayMovie', alexa_play_movie],
   ['Home', alexa_go_home],
   ['Back', alexa_back],
   ['Up', alexa_up],
@@ -1686,14 +1690,10 @@ INTENTS = [
   ['PlayerZoomOutMoveLeft', alexa_player_zoom_out_move_left],
   ['PlayerZoomOutMoveRight', alexa_player_zoom_out_move_right],
   ['PlayerZoomReset', alexa_player_zoom_reset],
-  ['PlayEpisode', alexa_play_episode],
-  ['PlayNextEpisode', alexa_play_next_episode],
-  ['ContinueShow', alexa_continue_show],
   ['CleanVideo', alexa_clean_video],
   ['UpdateVideo', alexa_update_video],
   ['CleanAudio', alexa_clean_audio],
   ['UpdateAudio', alexa_update_audio],
-  ['PlayLatestEpisode', alexa_play_newest_episode],
   ['PartyMode', alexa_party_play],
   ['AddonExecute', alexa_addon_execute],
   ['AddonGlobalSearch', alexa_addon_globalsearch],
