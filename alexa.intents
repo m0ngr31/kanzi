@@ -111,6 +111,23 @@
       ]
     },
     {
+      "intent": "ListenToAlbumOrSong",
+      "slots": [
+        {
+          "name": "Artist",
+          "type": "MUSICARTISTS"
+        },
+        {
+          "name": "Album",
+          "type": "MUSICALBUMS"
+        },
+        {
+          "name": "Song",
+          "type": "MUSICSONGS"
+        }
+      ]
+    },
+    {
       "intent": "ListenToMusicPlaylist",
       "slots": [
         {

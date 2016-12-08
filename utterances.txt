@@ -97,6 +97,9 @@ ListenToAlbum (play/listen to) album {Album} by {Artist}
 ListenToSong (play/listen to) song {Song}
 ListenToSong (play/listen to) song {Song} by {Artist}
 
+ListenToAlbumOrSong (play/listen to) {Album} by {Artist}
+ListenToAlbumOrSong (play/listen to) {Song} by {Artist}
+
 ListenToMusicPlaylist (play/listen to/shuffle) (song/music/audio) playlist {Playlist}
 ListenToMusicPlaylist (play/listen to/shuffle) {Playlist} (song/music/audio) playlist
 

@@ -450,7 +450,64 @@ def alexa_listen_song(slots):
       return build_alexa_response('Could not find song, %s' % (heard_song), card_title)
 
 
-# Handle the ListenToPlaylistRecent intent.
+# Handle the ListenToAlbumOrSong intent.
+# Play whole album or song by a specific artist.
+def alexa_listen_album_or_song(slots):
+  if 'value' in slots['Song']:
+    heard_search = str(slots['Song']['value']).lower().translate(None, string.punctuation)
+  elif 'value' in slots['Album']:
+    heard_search = str(slots['Album']['value']).lower().translate(None, string.punctuation)
+  if 'value' in slots['Artist']:
+    heard_artist = str(slots['Artist']['value']).lower().translate(None, string.punctuation)
+  card_title = 'Playing %s by %s' % (heard_search, heard_artist)
+  print card_title
+  sys.stdout.flush()
+
+  artists = kodi.GetMusicArtists()
+  if 'result' in artists and 'artists' in artists['result']:
+    artists_list = artists['result']['artists']
+    located = kodi.matchHeard(heard_artist, artists_list, 'artist')
+
+    if located:
+      albums = kodi.GetArtistAlbums(located['artistid'])
+      if 'result' in albums and 'albums' in albums['result']:
+        albums_list = albums['result']['albums']
+        album_located = kodi.matchHeard(heard_search, albums_list, 'label')
+
+        if album_located:
+          album_result = album_located['albumid']
+          kodi.Stop()
+          kodi.ClearPlaylist()
+          kodi.AddAlbumToPlaylist(album_result)
+          kodi.StartPlaylist()
+          return build_alexa_response('Playing album, %s by %s' % (heard_search, heard_artist), card_title)
+        else:
+          songs = kodi.GetArtistSongs(located['artistid'])
+          if 'result' in songs and 'songs' in songs['result']:
+            songs_list = songs['result']['songs']
+            song_located = kodi.matchHeard(heard_search, songs_list, 'label')
+
+            if song_located:
+              song_result = song_located['songid']
+              kodi.Stop()
+              kodi.ClearPlaylist()
+              kodi.AddSongToPlaylist(song_result)
+              kodi.StartPlaylist()
+              return build_alexa_response('Playing song, %s by %s' % (heard_search, heard_artist), card_title)
+            else:
+              return build_alexa_response('Could not find %s by %s' % (heard_search, heard_artist), card_title)
+          else:
+            return build_alexa_response('Could not find %s by %s' % (heard_search, heard_artist), card_title)
+      else:
+        return build_alexa_response('Could not find %s by %s' % (heard_search, heard_artist), card_title)
+
+    else:
+      return build_alexa_response('Could not find %s by %s' % (heard_search, heard_artist), card_title)
+  else:
+    return build_alexa_response('Could not find %s' % (heard_artist), card_title)
+
+
+# Handle the ListenToMusicPlaylistRecent intent.
 # Shuffle all recently added songs.
 def alexa_listen_recently_added_songs(slots):
   card_title = 'Playing recently added songs'
@@ -476,7 +533,7 @@ def alexa_listen_recently_added_songs(slots):
   return build_alexa_response('No recently added songs found', card_title)
 
 
-# Handle the ListenToPlaylist intent.
+# Handle the ListenToMusicPlaylist intent.
 def alexa_listen_playlist(slots):
   heard_playlist = str(slots['Playlist']['value']).lower().translate(None, string.punctuation)
 
@@ -1634,8 +1691,9 @@ INTENTS = [
   ['ListenToArtist', alexa_listen_artist],
   ['ListenToAlbum', alexa_listen_album],
   ['ListenToSong', alexa_listen_song],
-  ['ListenToPlaylist', alexa_listen_playlist],
-  ['ListenToPlaylistRecent', alexa_listen_recently_added_songs],
+  ['ListenToAlbumOrSong', alexa_listen_album_or_song],
+  ['ListenToMusicPlaylist', alexa_listen_playlist],
+  ['ListenToMusicPlaylistRecent', alexa_listen_recently_added_songs],
   ['WatchRandomMovie', alexa_watch_random_movie],
   ['WatchRandomEpisode', alexa_watch_random_episode],
   ['WatchMovie', alexa_watch_movie],
