@@ -1159,10 +1159,12 @@ def alexa_addon_globalsearch(slots):
     heard_search = str(slots['Movie']['value']).lower().translate(None, string.punctuation)
   elif 'value' in slots['Show']:
     heard_search = str(slots['Show']['value']).lower().translate(None, string.punctuation)
-  elif 'value' in slots['Album']:
-    heard_search = str(slots['Album']['value']).lower().translate(None, string.punctuation)
   elif 'value' in slots['Artist']:
     heard_search = str(slots['Artist']['value']).lower().translate(None, string.punctuation)
+  elif 'value' in slots['Album']:
+    heard_search = str(slots['Album']['value']).lower().translate(None, string.punctuation)
+  elif 'value' in slots['Song']:
+    heard_search = str(slots['Song']['value']).lower().translate(None, string.punctuation)
 
   if (len(heard_search) > 0):
     answer = 'Searching for %s' % (heard_search)

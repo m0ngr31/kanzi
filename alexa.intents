@@ -424,6 +424,10 @@
           "type": "MUSICALBUMS"
         },
         {
+          "name": "Song",
+          "type": "MUSICSONGS"
+        },
+        {
           "name": "Movie",
           "type": "MOVIES"
         },
