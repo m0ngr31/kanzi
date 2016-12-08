@@ -438,6 +438,14 @@
       ]
     },
     {
+      "intent": "CurrentPlayItemInquiry",
+      "slots": []
+    },
+    {
+      "intent": "CurrentPlayItemTimeRemaining",
+      "slots": []
+    },
+    {
       "intent": "WatchPVRChannel",
       "slots": [
         {
