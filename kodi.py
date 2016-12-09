@@ -346,8 +346,6 @@ def AddSongsToPlaylist(song_ids):
     temp_song['songid'] = song_id
     songs_array.append(temp_song)
 
-  random.shuffle(songs_array)
-
   return SendCommand(RPCString("Playlist.Add", {"playlistid": 0, "item": songs_array}))
 
 
