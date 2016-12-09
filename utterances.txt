@@ -38,7 +38,7 @@ PageUp navigate page up
 
 PageDown navigate page down
 
-Fullscreen (/toggle) fullscreen
+Fullscreen (/toggle) (fullscreen/visualizer)
 
 Mute (/toggle/set) (mute/unmute)
 VolumeUp (/turn) volume up

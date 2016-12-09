@@ -243,6 +243,8 @@ EjectMedia eject dvd
 EjectMedia eject media
 Fullscreen fullscreen
 Fullscreen toggle fullscreen
+Fullscreen toggle visualizer
+Fullscreen visualizer
 Hibernate deep sleep
 Hibernate deep sleep system
 Hibernate hibernate
