@@ -692,6 +692,10 @@ def GetRecentlyAddedSongs():
   return SendCommand(RPCString("AudioLibrary.GetRecentlyAddedSongs", {'properties':['artist']}))
 
 
+def GetVideoPlaylists():
+  return SendCommand(RPCString("Files.GetDirectory", {"directory": "special://videoplaylists"}))
+
+
 def GetTvShowDetails(show_id):
   data = SendCommand(RPCString("VideoLibrary.GetTVShowDetails", {'tvshowid':show_id, 'properties':['art']}))
   return data['result']['tvshowdetails']

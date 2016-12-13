@@ -647,6 +647,18 @@ WatchRandomMovie watch random {Genre} film
 WatchRandomMovie watch random {Genre} movie
 WatchRandomMovie watch {Genre} film
 WatchRandomMovie watch {Genre} movie
+WatchVideoPlaylist play movie playlist {VideoPlaylist}
+WatchVideoPlaylist play show playlist {VideoPlaylist}
+WatchVideoPlaylist play video playlist {VideoPlaylist}
+WatchVideoPlaylist play {VideoPlaylist} movie playlist
+WatchVideoPlaylist play {VideoPlaylist} show playlist
+WatchVideoPlaylist play {VideoPlaylist} video playlist
+WatchVideoPlaylist watch movie playlist {VideoPlaylist}
+WatchVideoPlaylist watch show playlist {VideoPlaylist}
+WatchVideoPlaylist watch video playlist {VideoPlaylist}
+WatchVideoPlaylist watch {VideoPlaylist} movie playlist
+WatchVideoPlaylist watch {VideoPlaylist} show playlist
+WatchVideoPlaylist watch {VideoPlaylist} video playlist
 WhatAlbums what albums do i have by {Artist}
 WhatAlbums what albums do we have by {Artist}
 WhatAlbums what albums do you have by {Artist}

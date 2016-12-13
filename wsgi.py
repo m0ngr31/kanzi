@@ -1480,6 +1480,30 @@ def alexa_watch_last_show(slots):
     return build_alexa_response('Error parsing results', card_title)
 
 
+# Handle the WatchVideoPlaylist intent.
+def alexa_watch_playlist(slots):
+  heard_playlist = str(slots['VideoPlaylist']['value']).lower().translate(None, string.punctuation)
+
+  card_title = 'Playing playlist "%s"' % (heard_playlist)
+  print card_title
+  sys.stdout.flush()
+
+  playlists = kodi.GetVideoPlaylists()
+  if 'result' in playlists and 'files' in playlists['result']:
+    playlists_list = playlists['result']['files']
+    located = kodi.matchHeard(heard_playlist, playlists_list, 'label')
+
+    if located:
+      print 'Located playlist "%s"' % (located['file'])
+      sys.stdout.flush()
+      kodi.StartPlaylist(located['file'])
+      return build_alexa_response('Playing playlist %s' % (heard_playlist), card_title)
+    else:
+      return build_alexa_response('I Could not find a playlist named %s' % (heard_playlist), card_title)
+  else:
+    return build_alexa_response('Error parsing results', card_title)
+
+
 def suggest_alternate_activity(chance=0.25):
   if random.random() < chance:
     comments = [
@@ -1699,6 +1723,7 @@ INTENTS = [
   ['WatchNextEpisode', alexa_watch_next_episode],
   ['WatchLatestEpisode', alexa_watch_newest_episode],
   ['WatchLastShow', alexa_watch_last_show],
+  ['WatchVideoPlaylist', alexa_watch_playlist],
   ['PlayPause', alexa_play_pause],
   ['Stop', alexa_stop],
   ['Skip', alexa_skip],

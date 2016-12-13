@@ -207,6 +207,15 @@
       ]
     },
     {
+      "intent": "WatchVideoPlaylist",
+      "slots": [
+        {
+          "name": "VideoPlaylist",
+          "type": "VIDEOPLAYLISTS"
+        }
+      ]
+    },
+    {
       "intent": "Prev",
       "slots": []
     },
