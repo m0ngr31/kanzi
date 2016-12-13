@@ -128,16 +128,16 @@
       ]
     },
     {
-      "intent": "ListenToMusicPlaylist",
+      "intent": "ListenToAudioPlaylist",
       "slots": [
         {
-          "name": "Playlist",
+          "name": "AudioPlaylist",
           "type": "MUSICPLAYLISTS"
         }
       ]
     },
     {
-      "intent": "ListenToMusicPlaylistRecent",
+      "intent": "ListenToAudioPlaylistRecent",
       "slots": []
     },
     {

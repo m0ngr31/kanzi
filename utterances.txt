@@ -100,11 +100,11 @@ ListenToSong (play/listen to) song {Song} by {Artist}
 ListenToAlbumOrSong (play/listen to) {Album} by {Artist}
 ListenToAlbumOrSong (play/listen to) {Song} by {Artist}
 
-ListenToMusicPlaylist (play/listen to/shuffle) (song/music/audio) playlist {Playlist}
-ListenToMusicPlaylist (play/listen to/shuffle) {Playlist} (song/music/audio) playlist
+ListenToAudioPlaylist (play/listen to/shuffle) (song/music/audio) playlist {AudioPlaylist}
+ListenToAudioPlaylist (play/listen to/shuffle) {AudioPlaylist} (song/music/audio) playlist
 
-ListenToMusicPlaylistRecent (play/listen to/shuffle) recent (songs/music/audio/albums)
-ListenToMusicPlaylistRecent (play/listen to/shuffle) recently added (songs/music/audio/albums)
+ListenToAudioPlaylistRecent (play/listen to/shuffle) recent (songs/music/audio/albums)
+ListenToAudioPlaylistRecent (play/listen to/shuffle) recently added (songs/music/audio/albums)
 
 WatchRandomMovie (play/watch) (/random) (/{Genre}) (movie/film)
 

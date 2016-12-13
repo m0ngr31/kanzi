@@ -507,7 +507,7 @@ def alexa_listen_album_or_song(slots):
     return build_alexa_response('Could not find %s' % (heard_artist), card_title)
 
 
-# Handle the ListenToMusicPlaylistRecent intent.
+# Handle the ListenToAudioPlaylistRecent intent.
 # Shuffle all recently added songs.
 def alexa_listen_recently_added_songs(slots):
   card_title = 'Playing recently added songs'
@@ -532,9 +532,9 @@ def alexa_listen_recently_added_songs(slots):
   return build_alexa_response('No recently added songs found', card_title)
 
 
-# Handle the ListenToMusicPlaylist intent.
+# Handle the ListenToAudioPlaylist intent.
 def alexa_listen_playlist(slots):
-  heard_playlist = str(slots['Playlist']['value']).lower().translate(None, string.punctuation)
+  heard_playlist = str(slots['AudioPlaylist']['value']).lower().translate(None, string.punctuation)
 
   card_title = 'Playing playlist "%s"' % (heard_playlist)
   print card_title
@@ -1690,8 +1690,8 @@ INTENTS = [
   ['ListenToAlbum', alexa_listen_album],
   ['ListenToSong', alexa_listen_song],
   ['ListenToAlbumOrSong', alexa_listen_album_or_song],
-  ['ListenToMusicPlaylist', alexa_listen_playlist],
-  ['ListenToMusicPlaylistRecent', alexa_listen_recently_added_songs],
+  ['ListenToAudioPlaylist', alexa_listen_playlist],
+  ['ListenToAudioPlaylistRecent', alexa_listen_recently_added_songs],
   ['WatchRandomMovie', alexa_watch_random_movie],
   ['WatchRandomEpisode', alexa_watch_random_episode],
   ['WatchMovie', alexa_watch_movie],

@@ -265,48 +265,48 @@ ListenToArtist play artist {Artist}
 ListenToArtist play music by {Artist}
 ListenToArtist shuffle artist {Artist}
 ListenToArtist shuffle music by {Artist}
-ListenToMusicPlaylist listen to audio playlist {Playlist}
-ListenToMusicPlaylist listen to music playlist {Playlist}
-ListenToMusicPlaylist listen to song playlist {Playlist}
-ListenToMusicPlaylist listen to {Playlist} audio playlist
-ListenToMusicPlaylist listen to {Playlist} music playlist
-ListenToMusicPlaylist listen to {Playlist} song playlist
-ListenToMusicPlaylist play audio playlist {Playlist}
-ListenToMusicPlaylist play music playlist {Playlist}
-ListenToMusicPlaylist play song playlist {Playlist}
-ListenToMusicPlaylist play {Playlist} audio playlist
-ListenToMusicPlaylist play {Playlist} music playlist
-ListenToMusicPlaylist play {Playlist} song playlist
-ListenToMusicPlaylist shuffle audio playlist {Playlist}
-ListenToMusicPlaylist shuffle music playlist {Playlist}
-ListenToMusicPlaylist shuffle song playlist {Playlist}
-ListenToMusicPlaylist shuffle {Playlist} audio playlist
-ListenToMusicPlaylist shuffle {Playlist} music playlist
-ListenToMusicPlaylist shuffle {Playlist} song playlist
-ListenToMusicPlaylistRecent listen to recent albums
-ListenToMusicPlaylistRecent listen to recent audio
-ListenToMusicPlaylistRecent listen to recent music
-ListenToMusicPlaylistRecent listen to recent songs
-ListenToMusicPlaylistRecent listen to recently added albums
-ListenToMusicPlaylistRecent listen to recently added audio
-ListenToMusicPlaylistRecent listen to recently added music
-ListenToMusicPlaylistRecent listen to recently added songs
-ListenToMusicPlaylistRecent play recent albums
-ListenToMusicPlaylistRecent play recent audio
-ListenToMusicPlaylistRecent play recent music
-ListenToMusicPlaylistRecent play recent songs
-ListenToMusicPlaylistRecent play recently added albums
-ListenToMusicPlaylistRecent play recently added audio
-ListenToMusicPlaylistRecent play recently added music
-ListenToMusicPlaylistRecent play recently added songs
-ListenToMusicPlaylistRecent shuffle recent albums
-ListenToMusicPlaylistRecent shuffle recent audio
-ListenToMusicPlaylistRecent shuffle recent music
-ListenToMusicPlaylistRecent shuffle recent songs
-ListenToMusicPlaylistRecent shuffle recently added albums
-ListenToMusicPlaylistRecent shuffle recently added audio
-ListenToMusicPlaylistRecent shuffle recently added music
-ListenToMusicPlaylistRecent shuffle recently added songs
+ListenToAudioPlaylist listen to audio playlist {AudioPlaylist}
+ListenToAudioPlaylist listen to music playlist {AudioPlaylist}
+ListenToAudioPlaylist listen to song playlist {AudioPlaylist}
+ListenToAudioPlaylist listen to {AudioPlaylist} audio playlist
+ListenToAudioPlaylist listen to {AudioPlaylist} music playlist
+ListenToAudioPlaylist listen to {AudioPlaylist} song playlist
+ListenToAudioPlaylist play audio playlist {AudioPlaylist}
+ListenToAudioPlaylist play music playlist {AudioPlaylist}
+ListenToAudioPlaylist play song playlist {AudioPlaylist}
+ListenToAudioPlaylist play {AudioPlaylist} audio playlist
+ListenToAudioPlaylist play {AudioPlaylist} music playlist
+ListenToAudioPlaylist play {AudioPlaylist} song playlist
+ListenToAudioPlaylist shuffle audio playlist {AudioPlaylist}
+ListenToAudioPlaylist shuffle music playlist {AudioPlaylist}
+ListenToAudioPlaylist shuffle song playlist {AudioPlaylist}
+ListenToAudioPlaylist shuffle {AudioPlaylist} audio playlist
+ListenToAudioPlaylist shuffle {AudioPlaylist} music playlist
+ListenToAudioPlaylist shuffle {AudioPlaylist} song playlist
+ListenToAudioPlaylistRecent listen to recent albums
+ListenToAudioPlaylistRecent listen to recent audio
+ListenToAudioPlaylistRecent listen to recent music
+ListenToAudioPlaylistRecent listen to recent songs
+ListenToAudioPlaylistRecent listen to recently added albums
+ListenToAudioPlaylistRecent listen to recently added audio
+ListenToAudioPlaylistRecent listen to recently added music
+ListenToAudioPlaylistRecent listen to recently added songs
+ListenToAudioPlaylistRecent play recent albums
+ListenToAudioPlaylistRecent play recent audio
+ListenToAudioPlaylistRecent play recent music
+ListenToAudioPlaylistRecent play recent songs
+ListenToAudioPlaylistRecent play recently added albums
+ListenToAudioPlaylistRecent play recently added audio
+ListenToAudioPlaylistRecent play recently added music
+ListenToAudioPlaylistRecent play recently added songs
+ListenToAudioPlaylistRecent shuffle recent albums
+ListenToAudioPlaylistRecent shuffle recent audio
+ListenToAudioPlaylistRecent shuffle recent music
+ListenToAudioPlaylistRecent shuffle recent songs
+ListenToAudioPlaylistRecent shuffle recently added albums
+ListenToAudioPlaylistRecent shuffle recently added audio
+ListenToAudioPlaylistRecent shuffle recently added music
+ListenToAudioPlaylistRecent shuffle recently added songs
 ListenToSong listen to song {Song}
 ListenToSong listen to song {Song} by {Artist}
 ListenToSong play song {Song}
