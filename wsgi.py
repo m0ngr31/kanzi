@@ -526,6 +526,8 @@ def alexa_listen_recently_added_songs(slots):
     for song in songs:
       songs_array.append(song['songid'])
 
+    random.shuffle(songs_array)
+
     kodi.AddSongsToPlaylist(songs_array)
     kodi.StartPlaylist()
     return build_alexa_response('Playing recently added songs', card_title)
