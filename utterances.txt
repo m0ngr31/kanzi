@@ -100,8 +100,10 @@ ListenToSong (play/listen to) song {Song} by {Artist}
 ListenToAlbumOrSong (play/listen to) {Album} by {Artist}
 ListenToAlbumOrSong (play/listen to) {Song} by {Artist}
 
-ListenToAudioPlaylist (play/listen to/shuffle) (song/music/audio) playlist {AudioPlaylist}
-ListenToAudioPlaylist (play/listen to/shuffle) {AudioPlaylist} (song/music/audio) playlist
+ListenToAudioPlaylist (play/listen to) (song/music/audio) playlist {AudioPlaylist}
+ListenToAudioPlaylist (play/listen to) {AudioPlaylist} (song/music/audio) playlist
+ListenToAudioPlaylist listen to playlist {AudioPlaylist}
+ListenToAudioPlaylist listen to {AudioPlaylist} playlist
 
 ListenToAudioPlaylistRecent (play/listen to/shuffle) recent (songs/music/audio/albums)
 ListenToAudioPlaylistRecent (play/listen to/shuffle) recently added (songs/music/audio/albums)
@@ -122,6 +124,8 @@ WatchLatestEpisode (play/watch) (newest/latest) episode of {Show}
 
 WatchVideoPlaylist (play/watch) (movie/show/video) playlist {VideoPlaylist}
 WatchVideoPlaylist (play/watch) {VideoPlaylist} (movie/show/video) playlist
+WatchVideoPlaylist watch playlist {VideoPlaylist}
+WatchVideoPlaylist watch {VideoPlaylist} playlist
 
 WhatNewAlbums (if there are/are there/do (we/i) have) (/any/some) new albums (/recorded) (/to listen to) (/today/tonight)
 WhatNewAlbums (if there is/is there/do (we/i) have) a new album (/recorded) (/to listen to) (/today/tonight)

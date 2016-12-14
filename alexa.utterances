@@ -267,9 +267,11 @@ ListenToArtist shuffle artist {Artist}
 ListenToArtist shuffle music by {Artist}
 ListenToAudioPlaylist listen to audio playlist {AudioPlaylist}
 ListenToAudioPlaylist listen to music playlist {AudioPlaylist}
+ListenToAudioPlaylist listen to playlist {AudioPlaylist}
 ListenToAudioPlaylist listen to song playlist {AudioPlaylist}
 ListenToAudioPlaylist listen to {AudioPlaylist} audio playlist
 ListenToAudioPlaylist listen to {AudioPlaylist} music playlist
+ListenToAudioPlaylist listen to {AudioPlaylist} playlist
 ListenToAudioPlaylist listen to {AudioPlaylist} song playlist
 ListenToAudioPlaylist play audio playlist {AudioPlaylist}
 ListenToAudioPlaylist play music playlist {AudioPlaylist}
@@ -277,12 +279,6 @@ ListenToAudioPlaylist play song playlist {AudioPlaylist}
 ListenToAudioPlaylist play {AudioPlaylist} audio playlist
 ListenToAudioPlaylist play {AudioPlaylist} music playlist
 ListenToAudioPlaylist play {AudioPlaylist} song playlist
-ListenToAudioPlaylist shuffle audio playlist {AudioPlaylist}
-ListenToAudioPlaylist shuffle music playlist {AudioPlaylist}
-ListenToAudioPlaylist shuffle song playlist {AudioPlaylist}
-ListenToAudioPlaylist shuffle {AudioPlaylist} audio playlist
-ListenToAudioPlaylist shuffle {AudioPlaylist} music playlist
-ListenToAudioPlaylist shuffle {AudioPlaylist} song playlist
 ListenToAudioPlaylistRecent listen to recent albums
 ListenToAudioPlaylistRecent listen to recent audio
 ListenToAudioPlaylistRecent listen to recent music
@@ -654,9 +650,11 @@ WatchVideoPlaylist play {VideoPlaylist} movie playlist
 WatchVideoPlaylist play {VideoPlaylist} show playlist
 WatchVideoPlaylist play {VideoPlaylist} video playlist
 WatchVideoPlaylist watch movie playlist {VideoPlaylist}
+WatchVideoPlaylist watch playlist {VideoPlaylist}
 WatchVideoPlaylist watch show playlist {VideoPlaylist}
 WatchVideoPlaylist watch video playlist {VideoPlaylist}
 WatchVideoPlaylist watch {VideoPlaylist} movie playlist
+WatchVideoPlaylist watch {VideoPlaylist} playlist
 WatchVideoPlaylist watch {VideoPlaylist} show playlist
 WatchVideoPlaylist watch {VideoPlaylist} video playlist
 WhatAlbums what albums do i have by {Artist}
