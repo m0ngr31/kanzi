@@ -257,7 +257,7 @@ def matchHeard(heard, results, lookingFor='label'):
         break
 
       # Last resort -- take out some useless words and see if we have a match with
-      # >= 60% of the heard phrase
+      # >= 70% of the heard phrase
       result_list = set([x for x in result_name.split() if x not in STOPWORDS])
       matched_words = [x for x in heard_list if x in result_list]
       #print 'matched words: '
@@ -266,7 +266,7 @@ def matchHeard(heard, results, lookingFor='label'):
         print matched_words
         sys.stdout.flush()
         percentage = float(len(matched_words)) / float(len(heard_list))
-        if percentage > float(0.6):
+        if percentage > float(0.7):
           located = result
           break
 
