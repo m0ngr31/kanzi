@@ -555,6 +555,18 @@ Reboot reboot
 Reboot reboot system
 Right navigate right
 Select select
+ShuffleAudioPlaylist shuffle audio playlist {AudioPlaylist}
+ShuffleAudioPlaylist shuffle music playlist {AudioPlaylist}
+ShuffleAudioPlaylist shuffle song playlist {AudioPlaylist}
+ShuffleAudioPlaylist shuffle {AudioPlaylist} audio playlist
+ShuffleAudioPlaylist shuffle {AudioPlaylist} music playlist
+ShuffleAudioPlaylist shuffle {AudioPlaylist} song playlist
+ShuffleVideoPlaylist shuffle movie playlist {VideoPlaylist}
+ShuffleVideoPlaylist shuffle show playlist {VideoPlaylist}
+ShuffleVideoPlaylist shuffle video playlist {VideoPlaylist}
+ShuffleVideoPlaylist shuffle {VideoPlaylist} movie playlist
+ShuffleVideoPlaylist shuffle {VideoPlaylist} show playlist
+ShuffleVideoPlaylist shuffle {VideoPlaylist} video playlist
 Shutdown shut down
 Shutdown shut down system
 Skip listen to next

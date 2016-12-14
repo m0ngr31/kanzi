@@ -127,6 +127,11 @@ WatchVideoPlaylist (play/watch) {VideoPlaylist} (movie/show/video) playlist
 WatchVideoPlaylist watch playlist {VideoPlaylist}
 WatchVideoPlaylist watch {VideoPlaylist} playlist
 
+ShuffleAudioPlaylist shuffle (song/music/audio) playlist {AudioPlaylist}
+ShuffleAudioPlaylist shuffle {AudioPlaylist} (song/music/audio) playlist
+ShuffleVideoPlaylist shuffle (movie/show/video) playlist {VideoPlaylist}
+ShuffleVideoPlaylist shuffle {VideoPlaylist} (movie/show/video) playlist
+
 WhatNewAlbums (if there are/are there/do (we/i) have) (/any/some) new albums (/recorded) (/to listen to) (/today/tonight)
 WhatNewAlbums (if there is/is there/do (we/i) have) a new album (/recorded) (/to listen to) (/today/tonight)
 WhatNewAlbums what (/new) albums ((/do) (we/i/you) have/are (ready/waiting/recorded/there/on the (/media) server))

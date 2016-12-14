@@ -295,7 +295,7 @@ def matchHeard(heard, results, lookingFor='label'):
 
 # Playlists
 
-def ClearPlaylist():
+def ClearAudioPlaylist():
   return SendCommand(RPCString("Playlist.Clear", {"playlistid": 0}))
 
 
@@ -303,7 +303,7 @@ def ClearVideoPlaylist():
   return SendCommand(RPCString("Playlist.Clear", {"playlistid": 1}))
 
 
-def StartPlaylist(playlist_file=None):
+def StartAudioPlaylist(playlist_file=None):
   if playlist_file is not None and playlist_file != '':
     return SendCommand(RPCString("Player.Open", {"item": {"file": playlist_file}}))
   else:
@@ -326,8 +326,11 @@ def PrepMoviePlaylist(movie_id):
   return SendCommand(RPCString("Playlist.Add", {"playlistid": 1, "item": {"movieid": int(movie_id)}}))
 
 
-def StartVideoPlaylist():
-  return SendCommand(RPCString("Player.Open", {"item": {"playlistid": 1}}))
+def StartVideoPlaylist(playlist_file=None):
+  if playlist_file is not None and playlist_file != '':
+    return SendCommand(RPCString("Player.Open", {"item": {"file": playlist_file}}))
+  else:
+    return SendCommand(RPCString("Player.Open", {"item": {"playlistid": 1}}))
 
 
 def PlayEpisode(ep_id, resume=True):
@@ -336,6 +339,17 @@ def PlayEpisode(ep_id, resume=True):
 
 def PlayMovie(movie_id, resume=True):
   return SendCommand(RPCString("Player.Open", {"item": {"movieid": movie_id}, "options": {"resume": resume}}))
+
+
+def AddVideosToPlaylist(video_files):
+  videos_array = []
+
+  for video_file in video_files:
+    temp_video = {}
+    temp_video['file'] = video_file
+    videos_array.append(temp_video)
+
+  return SendCommand(RPCString("Playlist.Add", {"playlistid": 1, "item": videos_array}))
 
 
 def AddSongsToPlaylist(song_ids):
@@ -349,7 +363,7 @@ def AddSongsToPlaylist(song_ids):
   return SendCommand(RPCString("Playlist.Add", {"playlistid": 0, "item": songs_array}))
 
 
-def GetPlaylistItems():
+def GetAudioPlaylistItems():
   return SendCommand(RPCString("Playlist.GetItems", {"playlistid": 0}))
 
 
@@ -650,6 +664,10 @@ def GetAddons(content):
 
 def GetAddonDetails(addon_id):
   return SendCommand(RPCString("Addons.GetAddonDetails", {"addonid":addon_id, "properties":["name", "version", "description", "summary"]}))
+
+
+def GetPlaylistItems(playlist_file):
+  return SendCommand(RPCString("Files.GetDirectory", {"directory": playlist_file}))
 
 
 def GetMusicPlaylists():

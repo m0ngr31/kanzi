@@ -137,6 +137,15 @@
       ]
     },
     {
+      "intent": "ShuffleAudioPlaylist",
+      "slots": [
+        {
+          "name": "AudioPlaylist",
+          "type": "MUSICPLAYLISTS"
+        }
+      ]
+    },
+    {
       "intent": "ListenToAudioPlaylistRecent",
       "slots": []
     },
@@ -208,6 +217,15 @@
     },
     {
       "intent": "WatchVideoPlaylist",
+      "slots": [
+        {
+          "name": "VideoPlaylist",
+          "type": "VIDEOPLAYLISTS"
+        }
+      ]
+    },
+    {
+      "intent": "ShuffleVideoPlaylist",
       "slots": [
         {
           "name": "VideoPlaylist",
