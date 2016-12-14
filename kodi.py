@@ -303,11 +303,11 @@ def ClearVideoPlaylist():
   return SendCommand(RPCString("Playlist.Clear", {"playlistid": 1}))
 
 
-def StartAudioPlaylist(playlist_file=None):
+def StartAudioPlaylist(playlist_file=None, shuffle=False):
   if playlist_file is not None and playlist_file != '':
-    return SendCommand(RPCString("Player.Open", {"item": {"file": playlist_file}}))
+    return SendCommand(RPCString("Player.Open", {"item": {"file": playlist_file}, "options": {"shuffled": shuffle}}))
   else:
-    return SendCommand(RPCString("Player.Open", {"item": {"playlistid": 0}}))
+    return SendCommand(RPCString("Player.Open", {"item": {"playlistid": 0}, "options": {"shuffled": shuffle}}))
 
 
 def AddSongToPlaylist(song_id):
@@ -326,11 +326,11 @@ def PrepMoviePlaylist(movie_id):
   return SendCommand(RPCString("Playlist.Add", {"playlistid": 1, "item": {"movieid": int(movie_id)}}))
 
 
-def StartVideoPlaylist(playlist_file=None):
+def StartVideoPlaylist(playlist_file=None, shuffle=False):
   if playlist_file is not None and playlist_file != '':
-    return SendCommand(RPCString("Player.Open", {"item": {"file": playlist_file}}))
+    return SendCommand(RPCString("Player.Open", {"item": {"file": playlist_file}, "options": {"shuffled": shuffle}}))
   else:
-    return SendCommand(RPCString("Player.Open", {"item": {"playlistid": 1}}))
+    return SendCommand(RPCString("Player.Open", {"item": {"playlistid": 1}, "options": {"shuffled": shuffle}}))
 
 
 def PlayEpisode(ep_id, resume=True):

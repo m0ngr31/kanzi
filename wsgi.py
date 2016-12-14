@@ -554,24 +554,8 @@ def alexa_listen_audio_playlist(slots, shuffle=False):
       print 'Located playlist "%s"' % (located['file'])
       sys.stdout.flush()
       if shuffle:
-        songs = kodi.GetPlaylistItems(located['file'])
-
-        if 'result' in songs and 'files' in songs['result']:
-          kodi.Stop()
-          kodi.ClearAudioPlaylist()
-
-          songs_array = []
-
-          for song in songs['result']['files']:
-            songs_array.append(song['id'])
-
-          random.shuffle(songs_array)
-
-          kodi.AddSongsToPlaylist(songs_array)
-          kodi.StartAudioPlaylist()
-          return build_alexa_response('Shuffling playlist %s' % (heard_playlist), card_title)
-        else:
-          return build_alexa_response('I could not find a playlist named %s' % (heard_playlist), card_title)
+        kodi.StartAudioPlaylist(located['file'], True)
+        return build_alexa_response('Shuffling playlist %s' % (heard_playlist), card_title)
       else:
         kodi.StartAudioPlaylist(located['file'])
         return build_alexa_response('Playing playlist %s' % (heard_playlist), card_title)
@@ -1530,27 +1514,11 @@ def alexa_watch_video_playlist(slots, shuffle=False):
       print 'Located playlist "%s"' % (located['file'])
       sys.stdout.flush()
       if shuffle:
-        videos = kodi.GetPlaylistItems(located['file'])
-
-        if 'result' in videos and 'files' in videos['result']:
-          kodi.Stop()
-          kodi.ClearVideoPlaylist()
-
-          videos_array = []
-
-          for video in videos['result']['files']:
-            videos_array.append(video['file'])
-
-          random.shuffle(videos_array)
-
-          kodi.AddVideosToPlaylist(videos_array)
-          kodi.StartVideoPlaylist()
-          return build_alexa_response('Shuffling playlist %s' % (heard_playlist), card_title)
-        else:
-          return build_alexa_response('I could not find a playlist named %s' % (heard_playlist), card_title)
+        kodi.StartVideoPlaylist(located['file'], True)
+        return build_alexa_response('Shuffling playlist %s' % (heard_playlist), card_title)
       else:
         kodi.StartVideoPlaylist(located['file'])
-      return build_alexa_response('Playing playlist %s' % (heard_playlist), card_title)
+        return build_alexa_response('Playing playlist %s' % (heard_playlist), card_title)
     else:
       return build_alexa_response('I could not find a playlist named %s' % (heard_playlist), card_title)
   else:
