@@ -305,7 +305,7 @@ def ClearVideoPlaylist():
 
 def StartAudioPlaylist(playlist_file=None, shuffle=False):
   if playlist_file is not None and playlist_file != '':
-    return SendCommand(RPCString("Player.Open", {"item": {"path": playlist_file}, "options": {"shuffled": shuffle}}))
+    return SendCommand(RPCString("Player.Open", {"item": {"file": playlist_file}, "options": {"shuffled": shuffle}}))
   else:
     return SendCommand(RPCString("Player.Open", {"item": {"playlistid": 0}, "options": {"shuffled": shuffle}}))
 
@@ -328,7 +328,7 @@ def PrepMoviePlaylist(movie_id):
 
 def StartVideoPlaylist(playlist_file=None, shuffle=False):
   if playlist_file is not None and playlist_file != '':
-    return SendCommand(RPCString("Player.Open", {"item": {"path": playlist_file}, "options": {"shuffled": shuffle}}))
+    return SendCommand(RPCString("Player.Open", {"item": {"file": playlist_file}, "options": {"shuffled": shuffle}}))
   else:
     return SendCommand(RPCString("Player.Open", {"item": {"playlistid": 1}, "options": {"shuffled": shuffle}}))
 
