@@ -213,7 +213,7 @@ def matchHeard(heard, results, lookingFor='label'):
   located = None
 
   heard_minus_the = remove_the(heard)
-  print heard
+  print 'Trying to match: ' + heard
   sys.stdout.flush()
   heard_list = set([x for x in heard.split() if x not in STOPWORDS])
 
@@ -224,71 +224,36 @@ def matchHeard(heard, results, lookingFor='label'):
 
     # Direct comparison
     if heard == result_name:
+      print 'Simple match on direct comparison'
       located = result
       break
 
     # Remove 'the'
     if remove_the(result_name) == heard_minus_the:
+      print 'Simple match minus "the"'
       located = result
       break
 
     # Remove parentheses
     removed_paren = re.sub(r'\([^)]*\)', '', ascii_name).rstrip().lower().translate(None, string.punctuation)
     if heard == removed_paren:
+      print 'Simple match minus parentheses'
       located = result
       break
 
   if not located:
-    print 'not located on the first round of checks'
+    print 'Simple match failed, trying fuzzy match...'
     sys.stdout.flush()
-    # Loop through results again and be a little more liberal with what is accepted
-    for result in results:
-      # Strip out non-ascii symbols and lowercase it
-      ascii_name = result[lookingFor].encode('ascii', 'replace')
-      result_name = str(ascii_name).lower().translate(None, string.punctuation)
-
-      #print "trying '%s'" % (heard_minus_the)
-      #sys.stdout.flush()
-      #print result_name
-      #sys.stdout.flush()
-      # Just look for substring
-      if result_name.find(heard_minus_the) != -1:
-        located = result
-        break
-
-      # Last resort -- take out some useless words and see if we have a match with
-      # >= 70% of the heard phrase
-      result_list = set([x for x in result_name.split() if x not in STOPWORDS])
-      matched_words = [x for x in heard_list if x in result_list]
-      #print 'matched words: '
-      #sys.stdout.flush()
-      if len(matched_words) > 0:
-        print matched_words
-        sys.stdout.flush()
-        percentage = float(len(matched_words)) / float(len(heard_list))
-        if percentage > float(0.7):
-          located = result
-          break
-
-    if not located:
-      print 'not located on the second round of checks'
-      sys.stdout.flush()
+    fuzzy_result = process.extract(str(heard), [d[lookingFor] for d in results], limit=1, scorer=fuzz.QRatio)
+    if fuzzy_result[0][1] > 70:
+      print 'Fuzzy match %s%%' % (fuzzy_result[0][1])
+      located = (item for item in results if item[lookingFor] == fuzzy_result[0][0]).next()
+    else:
+      heard = replaceDigits(heard)
       fuzzy_result = process.extract(str(heard), [d[lookingFor] for d in results], limit=1, scorer=fuzz.QRatio)
-      if fuzzy_result[0][1] > 75:
+      if fuzzy_result[0][1] > 70:
+        print 'Fuzzy match %s%%' % (fuzzy_result[0][1])
         located = (item for item in results if item[lookingFor] == fuzzy_result[0][0]).next()
-      else:
-        fuzzy_result = process.extract(str(heard), [d[lookingFor] for d in results], limit=1, scorer=fuzz.partial_ratio)
-        if fuzzy_result[0][1] > 75:
-          located = (item for item in results if item[lookingFor] == fuzzy_result[0][0]).next()
-        else:
-          heard = replaceDigits(heard)
-          fuzzy_result = process.extract(str(heard), [d[lookingFor] for d in results], limit=1, scorer=fuzz.QRatio)
-          if fuzzy_result[0][1] > 75:
-            located = (item for item in results if item[lookingFor] == fuzzy_result[0][0]).next()
-          else:
-            fuzzy_result = process.extract(str(heard), [d[lookingFor] for d in results], scorer=fuzz.partial_ratio)
-            if fuzzy_result[0][1] > 75:
-              located = (item for item in results if item[lookingFor] == fuzzy_result[0][0]).next()
 
   return located
 
