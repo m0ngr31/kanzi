@@ -234,6 +234,19 @@
       ]
     },
     {
+      "intent": "ShufflePlaylist",
+      "slots": [
+        {
+          "name": "AudioPlaylist",
+          "type": "MUSICPLAYLISTS"
+        },
+        {
+          "name": "VideoPlaylist",
+          "type": "VIDEOPLAYLISTS"
+        }
+      ]
+    },
+    {
       "intent": "Prev",
       "slots": []
     },

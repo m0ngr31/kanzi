@@ -295,64 +295,29 @@ def matchHeard(heard, results, lookingFor='label'):
 
 # Playlists
 
+def FindAudioPlaylist(heard_search):
+  print 'Searching for audio playlist "%s"' % (heard_search)
+
+  playlists = GetMusicPlaylists()
+  if 'result' in playlists and 'files' in playlists['result']:
+    playlists_list = playlists['result']['files']
+    located = matchHeard(heard_search, playlists_list, 'label')
+
+    if located:
+      print 'Located audio playlist "%s"' % (located['file'])
+      sys.stdout.flush()
+      return located['file']
+
+
 def ClearAudioPlaylist():
   return SendCommand(RPCString("Playlist.Clear", {"playlistid": 0}))
-
-
-def ClearVideoPlaylist():
-  return SendCommand(RPCString("Playlist.Clear", {"playlistid": 1}))
-
-
-def StartAudioPlaylist(playlist_file=None, shuffle=False):
-  if playlist_file is not None and playlist_file != '':
-    return SendCommand(RPCString("Player.Open", {"item": {"file": playlist_file}, "options": {"shuffled": shuffle}}))
-  else:
-    return SendCommand(RPCString("Player.Open", {"item": {"playlistid": 0}, "options": {"shuffled": shuffle}}))
 
 
 def AddSongToPlaylist(song_id):
   return SendCommand(RPCString("Playlist.Add", {"playlistid": 0, "item": {"songid": int(song_id)}}))
 
 
-def AddAlbumToPlaylist(album_id):
-  return SendCommand(RPCString("Playlist.Add", {"playlistid": 0, "item": {"albumid": int(album_id)}}))
-
-
-def PrepEpisodePlayList(ep_id):
-  return SendCommand(RPCString("Playlist.Add", {"playlistid": 1, "item": {"episodeid": int(ep_id)}}))
-
-
-def PrepMoviePlaylist(movie_id):
-  return SendCommand(RPCString("Playlist.Add", {"playlistid": 1, "item": {"movieid": int(movie_id)}}))
-
-
-def StartVideoPlaylist(playlist_file=None, shuffle=False):
-  if playlist_file is not None and playlist_file != '':
-    return SendCommand(RPCString("Player.Open", {"item": {"file": playlist_file}, "options": {"shuffled": shuffle}}))
-  else:
-    return SendCommand(RPCString("Player.Open", {"item": {"playlistid": 1}, "options": {"shuffled": shuffle}}))
-
-
-def PlayEpisode(ep_id, resume=True):
-  return SendCommand(RPCString("Player.Open", {"item": {"episodeid": ep_id}, "options": {"resume": resume}}))
-
-
-def PlayMovie(movie_id, resume=True):
-  return SendCommand(RPCString("Player.Open", {"item": {"movieid": movie_id}, "options": {"resume": resume}}))
-
-
-def AddVideosToPlaylist(video_files):
-  videos_array = []
-
-  for video_file in video_files:
-    temp_video = {}
-    temp_video['file'] = video_file
-    videos_array.append(temp_video)
-
-  return SendCommand(RPCString("Playlist.Add", {"playlistid": 1, "item": videos_array}))
-
-
-def AddSongsToPlaylist(song_ids):
+def AddSongsToPlaylist(song_ids, shuffle=False):
   songs_array = []
 
   for song_id in song_ids:
@@ -360,15 +325,86 @@ def AddSongsToPlaylist(song_ids):
     temp_song['songid'] = song_id
     songs_array.append(temp_song)
 
+  if shuffle:
+    random.shuffle(songs_array)
+
   return SendCommand(RPCString("Playlist.Add", {"playlistid": 0, "item": songs_array}))
+
+
+def AddAlbumToPlaylist(album_id):
+  return SendCommand(RPCString("Playlist.Add", {"playlistid": 0, "item": {"albumid": int(album_id)}}))
 
 
 def GetAudioPlaylistItems():
   return SendCommand(RPCString("Playlist.GetItems", {"playlistid": 0}))
 
 
+def StartAudioPlaylist(playlist_file=None):
+  if playlist_file is not None and playlist_file != '':
+    return SendCommand(RPCString("Player.Open", {"item": {"file": playlist_file}}))
+  else:
+    return SendCommand(RPCString("Player.Open", {"item": {"playlistid": 0}}))
+
+
+def FindVideoPlaylist(heard_search):
+  print 'Searching for video playlist "%s"' % (heard_search)
+
+  playlists = GetVideoPlaylists()
+  if 'result' in playlists and 'files' in playlists['result']:
+    playlists_list = playlists['result']['files']
+    located = matchHeard(heard_search, playlists_list, 'label')
+
+    if located:
+      print 'Located video playlist "%s"' % (located['file'])
+      sys.stdout.flush()
+      return located['file']
+
+
+def ClearVideoPlaylist():
+  return SendCommand(RPCString("Playlist.Clear", {"playlistid": 1}))
+
+
+def AddEpisodeToPlayList(ep_id):
+  return SendCommand(RPCString("Playlist.Add", {"playlistid": 1, "item": {"episodeid": int(ep_id)}}))
+
+
+def AddMovieToPlaylist(movie_id):
+  return SendCommand(RPCString("Playlist.Add", {"playlistid": 1, "item": {"movieid": int(movie_id)}}))
+
+
+def AddVideosToPlaylist(video_files, shuffle=False):
+  videos_array = []
+
+  for video_file in video_files:
+    temp_video = {}
+    temp_video['file'] = video_file
+    videos_array.append(temp_video)
+
+  if shuffle:
+    random.shuffle(videos_array)
+
+  return SendCommand(RPCString("Playlist.Add", {"playlistid": 1, "item": videos_array}))
+
+
 def GetVideoPlaylistItems():
   return SendCommand(RPCString("Playlist.GetItems", {"playlistid": 1}))
+
+
+def StartVideoPlaylist(playlist_file=None):
+  if playlist_file is not None and playlist_file != '':
+    return SendCommand(RPCString("Player.Open", {"item": {"file": playlist_file}}))
+  else:
+    return SendCommand(RPCString("Player.Open", {"item": {"playlistid": 1}}))
+
+
+# Direct plays
+
+def PlayEpisode(ep_id, resume=True):
+  return SendCommand(RPCString("Player.Open", {"item": {"episodeid": ep_id}, "options": {"resume": resume}}))
+
+
+def PlayMovie(movie_id, resume=True):
+  return SendCommand(RPCString("Player.Open", {"item": {"movieid": movie_id}, "options": {"resume": resume}}))
 
 
 # Tell Kodi to update its video or music libraries

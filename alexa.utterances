@@ -561,6 +561,10 @@ ShuffleAudioPlaylist shuffle song playlist {AudioPlaylist}
 ShuffleAudioPlaylist shuffle {AudioPlaylist} audio playlist
 ShuffleAudioPlaylist shuffle {AudioPlaylist} music playlist
 ShuffleAudioPlaylist shuffle {AudioPlaylist} song playlist
+ShufflePlaylist shuffle playlist {AudioPlaylist}
+ShufflePlaylist shuffle playlist {VideoPlaylist}
+ShufflePlaylist shuffle {AudioPlaylist} playlist
+ShufflePlaylist shuffle {VideoPlaylist} playlist
 ShuffleVideoPlaylist shuffle movie playlist {VideoPlaylist}
 ShuffleVideoPlaylist shuffle show playlist {VideoPlaylist}
 ShuffleVideoPlaylist shuffle video playlist {VideoPlaylist}

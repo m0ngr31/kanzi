@@ -314,16 +314,14 @@ def alexa_listen_artist(slots):
       songs_result = kodi.GetArtistSongs(located['artistid'])
       songs = songs_result['result']['songs']
 
-      kodi.Stop()
-      kodi.ClearAudioPlaylist()
-
       songs_array = []
 
       for song in songs:
         songs_array.append(song['songid'])
 
-      kodi.AddSongsToPlaylist(songs_array)
-
+      kodi.Stop()
+      kodi.ClearAudioPlaylist()
+      kodi.AddSongsToPlaylist(songs_array, True)
       kodi.StartAudioPlaylist()
       return build_alexa_response('Playing %s' % (heard_artist), card_title)
     else:
@@ -518,17 +516,14 @@ def alexa_listen_recently_added_songs(slots):
   if songs_result:
     songs = songs_result['result']['songs']
 
-    kodi.Stop()
-    kodi.ClearAudioPlaylist()
-
     songs_array = []
 
     for song in songs:
       songs_array.append(song['songid'])
 
-    random.shuffle(songs_array)
-
-    kodi.AddSongsToPlaylist(songs_array)
+    kodi.Stop()
+    kodi.ClearAudioPlaylist()
+    kodi.AddSongsToPlaylist(songs_array, True)
     kodi.StartAudioPlaylist()
     return build_alexa_response('Playing recently added songs', card_title)
   return build_alexa_response('No recently added songs found', card_title)
@@ -536,33 +531,37 @@ def alexa_listen_recently_added_songs(slots):
 
 # Handle the ListenToAudioPlaylist intent.
 def alexa_listen_audio_playlist(slots, shuffle=False):
-  heard_playlist = str(slots['AudioPlaylist']['value']).lower().translate(None, string.punctuation)
+  heard_search = str(slots['AudioPlaylist']['value']).lower().translate(None, string.punctuation)
 
   if shuffle:
-    card_title = 'Shuffling audio playlist "%s"' % (heard_playlist)
+    op = 'Shuffling'
   else:
-    card_title = 'Playing audio playlist "%s"' % (heard_playlist)
+    op = 'Playing'
+
+  card_title = '%s audio playlist "%s"' % (op, heard_search)
   print card_title
   sys.stdout.flush()
 
-  playlists = kodi.GetMusicPlaylists()
-  if 'result' in playlists and 'files' in playlists['result']:
-    playlists_list = playlists['result']['files']
-    located = kodi.matchHeard(heard_playlist, playlists_list, 'label')
+  playlist = kodi.FindAudioPlaylist(heard_search)
+  if playlist:
+    if shuffle:
+      songs = kodi.GetPlaylistItems(playlist)['result']['files']
 
-    if located:
-      print 'Located playlist "%s"' % (located['file'])
-      sys.stdout.flush()
-      if shuffle:
-        kodi.StartAudioPlaylist(located['file'], True)
-        return build_alexa_response('Shuffling playlist %s' % (heard_playlist), card_title)
-      else:
-        kodi.StartAudioPlaylist(located['file'])
-        return build_alexa_response('Playing playlist %s' % (heard_playlist), card_title)
+      songs_array = []
+
+      for song in songs:
+        songs_array.append(song['id'])
+
+      kodi.Stop()
+      kodi.ClearAudioPlaylist()
+      kodi.AddSongsToPlaylist(songs_array, True)
+      kodi.StartAudioPlaylist()
     else:
-      return build_alexa_response('I could not find a playlist named %s' % (heard_playlist), card_title)
+      kodi.Stop()
+      kodi.StartAudioPlaylist(playlist)
+    return build_alexa_response('%s playlist %s' % (op, heard_search), card_title)
   else:
-    return build_alexa_response('Error parsing results', card_title)
+    return build_alexa_response('I could not find a playlist named %s' % (heard_search), card_title)
 
 
 # Handle the ShuffleAudioPlaylist intent.
@@ -576,17 +575,14 @@ def alexa_party_play(slots):
   songs = kodi.GetSongs()
 
   if 'result' in songs and 'songs' in songs['result']:
-    kodi.Stop()
-    kodi.ClearAudioPlaylist()
-
     songs_array = []
 
     for song in songs['result']['songs']:
       songs_array.append(song['songid'])
 
-    random.shuffle(songs_array)
-
-    kodi.AddSongsToPlaylist(songs_array)
+    kodi.Stop()
+    kodi.ClearAudioPlaylist()
+    kodi.AddSongsToPlaylist(songs_array, True)
     kodi.StartAudioPlaylist()
     return build_alexa_response('Starting party play', card_title)
   else:
@@ -1496,38 +1492,92 @@ def alexa_watch_last_show(slots):
 
 # Handle the WatchVideoPlaylist intent.
 def alexa_watch_video_playlist(slots, shuffle=False):
-  heard_playlist = str(slots['VideoPlaylist']['value']).lower().translate(None, string.punctuation)
+  heard_search = str(slots['VideoPlaylist']['value']).lower().translate(None, string.punctuation)
 
   if shuffle:
-    card_title = 'Shuffling video playlist "%s"' % (heard_playlist)
+    op = 'Shuffling'
   else:
-    card_title = 'Playing video playlist "%s"' % (heard_playlist)
+    op = 'Playing'
+
+  card_title = '%s video playlist "%s"' % (op, heard_search)
   print card_title
   sys.stdout.flush()
 
-  playlists = kodi.GetVideoPlaylists()
-  if 'result' in playlists and 'files' in playlists['result']:
-    playlists_list = playlists['result']['files']
-    located = kodi.matchHeard(heard_playlist, playlists_list, 'label')
+  playlist = kodi.FindVideoPlaylist(heard_search)
+  if playlist:
+    if shuffle:
+      videos = kodi.GetPlaylistItems(playlist)['result']['files']
 
-    if located:
-      print 'Located playlist "%s"' % (located['file'])
-      sys.stdout.flush()
-      if shuffle:
-        kodi.StartVideoPlaylist(located['file'], True)
-        return build_alexa_response('Shuffling playlist %s' % (heard_playlist), card_title)
-      else:
-        kodi.StartVideoPlaylist(located['file'])
-        return build_alexa_response('Playing playlist %s' % (heard_playlist), card_title)
+      videos_array = []
+
+      for video in videos:
+        videos_array.append(video['file'])
+
+      kodi.Stop()
+      kodi.ClearVideoPlaylist()
+      kodi.AddVideosToPlaylist(videos_array, True)
+      kodi.StartVideoPlaylist()
     else:
-      return build_alexa_response('I could not find a playlist named %s' % (heard_playlist), card_title)
+      kodi.Stop()
+      kodi.StartVideoPlaylist(playlist)
+    return build_alexa_response('%s playlist %s' % (op, heard_search), card_title)
   else:
-    return build_alexa_response('Error parsing results', card_title)
+    return build_alexa_response('I could not find a playlist named %s' % (heard_search), card_title)
 
 
 # Handle the ShuffleVideoPlaylist intent.
 def alexa_shuffle_video_playlist(slots):
   return alexa_watch_video_playlist(slots, True)
+
+
+# Handle the ShufflePlaylist intent.
+def alexa_shuffle_playlist(slots):
+  heard_search = ''
+  if 'value' in slots['VideoPlaylist']:
+    heard_search = str(slots['VideoPlaylist']['value']).lower().translate(None, string.punctuation)
+  elif 'value' in slots['AudioPlaylist']:
+    heard_search = str(slots['AudioPlaylist']['value']).lower().translate(None, string.punctuation)
+
+  card_title = 'Shuffling playlist "%s"' % (heard_search)
+  print card_title
+  sys.stdout.flush()
+
+  if (len(heard_search) > 0):
+    print 'Searching for playlist "%s"' % (heard_search)
+
+    playlist = kodi.FindVideoPlaylist(heard_search)
+    if playlist:
+      videos = kodi.GetPlaylistItems(playlist)['result']['files']
+
+      videos_array = []
+
+      for video in videos:
+        videos_array.append(video['file'])
+
+      kodi.Stop()
+      kodi.ClearVideoPlaylist()
+      kodi.AddVideosToPlaylist(videos_array, True)
+      kodi.StartVideoPlaylist()
+      return build_alexa_response('Shuffling video playlist %s' % (heard_search), card_title)
+    else:
+      playlist = kodi.FindAudioPlaylist(heard_search)
+      if playlist:
+        songs = kodi.GetPlaylistItems(playlist)['result']['files']
+
+        songs_array = []
+
+        for song in songs:
+          songs_array.append(song['id'])
+
+        kodi.Stop()
+        kodi.ClearAudioPlaylist()
+        kodi.AddSongsToPlaylist(songs_array, True)
+        kodi.StartAudioPlaylist()
+        return build_alexa_response('Shuffling audio playlist %s' % (heard_search), card_title)
+
+    return build_alexa_response('I could not find a playlist named %s' % (heard_search), card_title)
+  else:
+    return build_alexa_response('Error parsing results', card_title)
 
 
 def suggest_alternate_activity(chance=0.25):
@@ -1752,6 +1802,7 @@ INTENTS = [
   ['WatchVideoPlaylist', alexa_watch_video_playlist],
   ['ShuffleAudioPlaylist', alexa_shuffle_audio_playlist],
   ['ShuffleVideoPlaylist', alexa_shuffle_video_playlist],
+  ['ShufflePlaylist', alexa_shuffle_playlist],
   ['PlayPause', alexa_play_pause],
   ['Stop', alexa_stop],
   ['Skip', alexa_skip],
