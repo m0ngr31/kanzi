@@ -245,13 +245,13 @@ def matchHeard(heard, results, lookingFor='label'):
     print 'Simple match failed, trying fuzzy match...'
     sys.stdout.flush()
     fuzzy_result = process.extract(str(heard), [d[lookingFor] for d in results], limit=1, scorer=fuzz.QRatio)
-    if fuzzy_result[0][1] > 70:
+    if fuzzy_result[0][1] > 75:
       print 'Fuzzy match %s%%' % (fuzzy_result[0][1])
       located = (item for item in results if item[lookingFor] == fuzzy_result[0][0]).next()
     else:
       heard = replaceDigits(heard)
       fuzzy_result = process.extract(str(heard), [d[lookingFor] for d in results], limit=1, scorer=fuzz.QRatio)
-      if fuzzy_result[0][1] > 70:
+      if fuzzy_result[0][1] > 75:
         print 'Fuzzy match %s%%' % (fuzzy_result[0][1])
         located = (item for item in results if item[lookingFor] == fuzzy_result[0][0]).next()
 
