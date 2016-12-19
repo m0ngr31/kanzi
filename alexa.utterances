@@ -643,16 +643,12 @@ WatchRandomEpisode play episode of {Show}
 WatchRandomEpisode play random episode of {Show}
 WatchRandomEpisode watch episode of {Show}
 WatchRandomEpisode watch random episode of {Show}
-WatchRandomMovie play film
-WatchRandomMovie play movie
 WatchRandomMovie play random film
 WatchRandomMovie play random movie
 WatchRandomMovie play random {Genre} film
 WatchRandomMovie play random {Genre} movie
 WatchRandomMovie play {Genre} film
 WatchRandomMovie play {Genre} movie
-WatchRandomMovie watch film
-WatchRandomMovie watch movie
 WatchRandomMovie watch random film
 WatchRandomMovie watch random movie
 WatchRandomMovie watch random {Genre} film
