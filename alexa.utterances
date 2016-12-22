@@ -26,8 +26,9 @@ AudioStreamPrevious previous audio
 AudioStreamPrevious previous audio language
 AudioStreamPrevious previous audio stream
 AudioStreamPrevious previous language
+Back back
 Back go back
-Back navigate
+Back navigate back
 CleanAudio clean audio library
 CleanAudio clean music library
 CleanVideo clean library
@@ -232,6 +233,8 @@ CurrentPlayItemTimeRemaining when will this show end
 CurrentPlayItemTimeRemaining when will this song end
 CurrentPlayItemTimeRemaining when will this video end
 CurrentPlayItemTimeRemaining when will video end
+Down down
+Down go down
 Down navigate down
 EjectMedia eject
 EjectMedia eject audio disc
@@ -250,6 +253,8 @@ Hibernate deep sleep system
 Hibernate hibernate
 Hibernate hibernate system
 Home navigate home
+Left go left
+Left left
 Left navigate left
 ListenToAlbum listen to album {Album}
 ListenToAlbum listen to album {Album} by {Artist}
@@ -326,8 +331,12 @@ NewShowInquiry if we have any episodes of {Show}
 NewShowInquiry if we have any new episodes of {Show}
 NewShowInquiry if we have any {Show}
 NewShowInquiry if we have {Show}
+PageDown go page down
 PageDown navigate page down
+PageDown page down
+PageUp go page up
 PageUp navigate page up
+PageUp page up
 PartyMode listen to all music
 PartyMode listen to random music
 PartyMode play all music
@@ -553,7 +562,9 @@ Prev previous
 Prev previous song
 Reboot reboot
 Reboot reboot system
+Right go right
 Right navigate right
+Right right
 Select select
 ShuffleAudioPlaylist shuffle audio playlist {AudioPlaylist}
 ShuffleAudioPlaylist shuffle music playlist {AudioPlaylist}
@@ -602,7 +613,9 @@ Suspend sleep
 Suspend sleep system
 Suspend suspend
 Suspend suspend system
+Up go up
 Up navigate up
+Up up
 UpdateAudio update audio library
 UpdateAudio update music library
 UpdateVideo update library
@@ -647,14 +660,10 @@ WatchRandomMovie play random film
 WatchRandomMovie play random movie
 WatchRandomMovie play random {Genre} film
 WatchRandomMovie play random {Genre} movie
-WatchRandomMovie play {Genre} film
-WatchRandomMovie play {Genre} movie
 WatchRandomMovie watch random film
 WatchRandomMovie watch random movie
 WatchRandomMovie watch random {Genre} film
 WatchRandomMovie watch random {Genre} movie
-WatchRandomMovie watch {Genre} film
-WatchRandomMovie watch {Genre} movie
 WatchVideoPlaylist play movie playlist {VideoPlaylist}
 WatchVideoPlaylist play show playlist {VideoPlaylist}
 WatchVideoPlaylist play video playlist {VideoPlaylist}

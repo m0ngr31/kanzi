@@ -1130,16 +1130,12 @@ def alexa_clean_video(slots):
   print card_title
   sys.stdout.flush()
 
-  kodi.UpdateVideo()
-
-  time.sleep(5)
-
   # Use threading to solve the call from returing too late
   c = Process(target=kodi.CleanVideo)
   c.daemon = True
   c.start()
 
-  time.sleep(1)
+  time.sleep(2)
 
   answer = "Cleaning video library"
   return build_alexa_response(answer, card_title)
@@ -1163,16 +1159,12 @@ def alexa_clean_audio(slots):
   print card_title
   sys.stdout.flush()
 
-  kodi.UpdateMusic()
-
-  time.sleep(5)
-
   #Use threading to solve the call from returing too late
   c = Process(target=kodi.CleanMusic)
   c.daemon = True
   c.start()
 
-  time.sleep(1)
+  time.sleep(2)
 
   answer = "Cleaning audio library"
   return build_alexa_response(answer, card_title)

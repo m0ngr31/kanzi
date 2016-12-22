@@ -20,23 +20,17 @@ StartOver (replay/start over)
 
 Home navigate home
 
-Back (navigate/go back)
-
-Up navigate up
-
-Down navigate down
-
-Right navigate right
-
-Left navigate left
+Back (/navigate/go) back
+Up (/navigate/go) up
+Down (/navigate/go) down
+Right (/navigate/go) right
+Left (/navigate/go) left
+PageUp (/navigate/go) page up
+PageDown (/navigate/go) page down
 
 Select select
 
 Menu open menu
-
-PageUp navigate page up
-
-PageDown navigate page down
 
 Fullscreen (/toggle) (fullscreen/visualizer)
 
