@@ -63,14 +63,18 @@ def setup_env():
 # These utility functions construct the required JSON for a full Alexa Skills Kit response
 
 def build_response(session_attributes, speechlet_response):
-  return {
+  response = {
     'version': '1.0',
     'sessionAttributes': session_attributes,
     'response': speechlet_response
   }
 
+  print response
+  return response
+
 def build_speechlet_response(title, output, reprompt_text, should_end_session):
   response = {}
+
   if output:
     response['outputSpeech'] = {
       'type': 'PlainText',
@@ -82,6 +86,7 @@ def build_speechlet_response(title, output, reprompt_text, should_end_session):
         'title': title,
         'content': output
       }
+
   if reprompt_text:
     response['reprompt'] = {
       'outputSpeech': {
@@ -93,7 +98,19 @@ def build_speechlet_response(title, output, reprompt_text, should_end_session):
 
   return response
 
-def build_alexa_response(speech = None, card_title = None, session_attrs = None, reprompt_text = None, end_session = True):
+# def build_alexa_response(speech = " ", card_title = None, session_attrs = {}, reprompt_text = " ", end_session = True):
+def build_alexa_response(speech = " ", card_title = None, **kwargs):
+  session_attrs = {}
+  reprompt_text = " "
+  end_session = True
+
+  if 'session_attrs' in kwargs:
+    session_attrs = kwargs['session_attrs']
+  if 'reprompt_text' in kwargs:
+    reprompt_text = kwargs['reprompt_text']
+  if 'end_session' in kwargs:
+    end_session = kwargs['end_session']
+
   return build_response(session_attrs, build_speechlet_response(card_title, speech, reprompt_text, end_session))
 
 
@@ -966,8 +983,8 @@ def alexa_context_menu(slots):
   sys.stdout.flush()
 
   kodi.Menu()
-  answer = ""
-  return build_alexa_response(answer, card_title)
+  answer = " "
+  return build_alexa_response(answer, None, end_session = False)
 
 
 # Handle the Home intent.
@@ -977,8 +994,8 @@ def alexa_go_home(slots):
   sys.stdout.flush()
 
   kodi.Home()
-  answer = ""
-  return build_alexa_response(answer, card_title)
+  answer = " "
+  return build_alexa_response(answer, None, end_session = False)
 
 
 # Handle the Select intent.
@@ -988,8 +1005,8 @@ def alexa_select(slots):
   sys.stdout.flush()
 
   kodi.Select()
-  answer = ""
-  return build_alexa_response(answer, card_title)
+  answer = " "
+  return build_alexa_response(answer, None, end_session = False)
 
 
 # Handle the PageUp intent.
@@ -999,8 +1016,8 @@ def alexa_pageup(slots):
   sys.stdout.flush()
 
   kodi.PageUp()
-  answer = ""
-  return build_alexa_response(answer, card_title)
+  answer = " "
+  return build_alexa_response(answer, None, end_session = False)
 
 
 # Handle the PageDown intent.
@@ -1010,8 +1027,8 @@ def alexa_pagedown(slots):
   sys.stdout.flush()
 
   kodi.PageDown()
-  answer = ""
-  return build_alexa_response(answer, card_title)
+  answer = " "
+  return build_alexa_response(answer, None, end_session = False)
 
 
 # Handle the Left intent.
@@ -1021,8 +1038,8 @@ def alexa_left(slots):
   sys.stdout.flush()
 
   kodi.Left()
-  answer = ""
-  return build_alexa_response(answer, card_title)
+  answer = " "
+  return build_alexa_response(answer, None, end_session = False)
 
 
 # Handle the Right intent.
@@ -1032,8 +1049,8 @@ def alexa_right(slots):
   sys.stdout.flush()
 
   kodi.Right()
-  answer = ""
-  return build_alexa_response(answer, card_title)
+  answer = " "
+  return build_alexa_response(answer, None, end_session = False)
 
 
 # Handle the Up intent.
@@ -1043,8 +1060,8 @@ def alexa_up(slots):
   sys.stdout.flush()
 
   kodi.Up()
-  answer = ""
-  return build_alexa_response(answer, card_title)
+  answer = " "
+  return build_alexa_response(answer, None, end_session = False)
 
 
 # Handle the Down intent.
@@ -1054,8 +1071,8 @@ def alexa_down(slots):
   sys.stdout.flush()
 
   kodi.Down()
-  answer = ""
-  return build_alexa_response(answer, card_title)
+  answer = " "
+  return build_alexa_response(answer, None, end_session = False)
 
 
 # Handle the Back intent.
@@ -1065,8 +1082,8 @@ def alexa_back(slots):
   sys.stdout.flush()
 
   kodi.Back()
-  answer = ""
-  return build_alexa_response(answer, card_title)
+  answer = " "
+  return build_alexa_response(answer, None, end_session = False)
 
 
 # Handle the Hibernate intent.

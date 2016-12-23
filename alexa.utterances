@@ -345,7 +345,6 @@ PartyMode shuffle all music
 PlayPause pause
 PlayPause play
 PlayPause resume
-PlayerMoveDown go down
 PlayerMoveDown move down
 PlayerMoveDown pan down
 PlayerMoveDown track down
@@ -357,7 +356,6 @@ PlayerMoveRight go right
 PlayerMoveRight move right
 PlayerMoveRight pan right
 PlayerMoveRight track right
-PlayerMoveUp go up
 PlayerMoveUp move up
 PlayerMoveUp pan up
 PlayerMoveUp track up

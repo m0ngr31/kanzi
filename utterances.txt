@@ -52,8 +52,8 @@ AudioStreamNext (next/switch) (/audio) language
 AudioStreamPrevious previous audio (/stream)
 AudioStreamPrevious previous (/audio) language
 
-PlayerMoveUp (track/pan/move/go) up
-PlayerMoveDown (track/pan/move/go) down
+PlayerMoveUp (track/pan/move) up
+PlayerMoveDown (track/pan/move) down
 PlayerMoveLeft (track/pan/move/go) left
 PlayerMoveRight (track/pan/move/go) right
 PlayerRotateClockwise rotate (/clockwise/ninety degrees)
