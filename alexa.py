@@ -1448,8 +1448,8 @@ def alexa_watch_next_episode(Show):
   return statement(response_text).simple_card(card_title, response_text)
 
 
-# Handle the WatchNewestEpisode intent.
-@ask.intent('WatchNewestEpisode')
+# Handle the WatchLatestEpisode intent.
+@ask.intent('WatchLatestEpisode')
 def alexa_watch_newest_episode(Show):
   heard_show = str(Show).lower().translate(None, string.punctuation)
 
