@@ -79,3 +79,5 @@ SHOWS
 ADDONS
 
 kodi-alexa/
+run.sh
+zappa_settings.json

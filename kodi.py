@@ -3,8 +3,6 @@
 """
 The MIT License (MIT)
 
-Copyright (c) 2015 Maker Musings && m0ngr31
-
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
 in the Software without restriction, including without limitation the rights
@@ -37,8 +35,15 @@ import random
 import re
 import string
 import sys
-from fuzzywuzzy import fuzz
-from fuzzywuzzy import process
+import pycountry
+from fuzzywuzzy import fuzz, process
+from yaep import populate_env, env
+
+sys.path += [os.path.dirname(__file__)]
+
+ENV_FILE = os.path.join(os.path.dirname(__file__), ".env")
+os.environ['ENV_FILE'] = ENV_FILE
+populate_env()
 
 
 # These are words that we ignore when doing a non-exact match on show names
@@ -72,6 +77,15 @@ STOPWORDS = [
   "will",
   "with",
 ]
+
+# Utility function to sanitize name of media (e.g., strip out symbols)
+RE_NAME_WITH_PARAM = re.compile(r"(.*) \([^)]+\)$")
+
+def sanitize_name(media_name):
+  m = RE_NAME_WITH_PARAM.match(media_name)
+  if m:
+    return m.group(1)
+  return media_name
 
 
 # Very naive method to remove a leading "the" from the given string
@@ -261,16 +275,12 @@ def matchHeard(heard, results, lookingFor='label'):
 # Playlists
 
 def FindAudioPlaylist(heard_search):
-  print 'Searching for audio playlist "%s"' % (heard_search)
-
   playlists = GetMusicPlaylists()
   if 'result' in playlists and 'files' in playlists['result']:
     playlists_list = playlists['result']['files']
     located = matchHeard(heard_search, playlists_list, 'label')
 
     if located:
-      print 'Located audio playlist "%s"' % (located['file'])
-      sys.stdout.flush()
       return located['file']
 
 
@@ -312,16 +322,12 @@ def StartAudioPlaylist(playlist_file=None):
 
 
 def FindVideoPlaylist(heard_search):
-  print 'Searching for video playlist "%s"' % (heard_search)
-
   playlists = GetVideoPlaylists()
   if 'result' in playlists and 'files' in playlists['result']:
     playlists_list = playlists['result']['files']
     located = matchHeard(heard_search, playlists_list, 'label')
 
     if located:
-      print 'Located video playlist "%s"' % (located['file'])
-      sys.stdout.flush()
       return located['file']
 
 
