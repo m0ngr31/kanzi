@@ -10,4 +10,4 @@ RUN pip install json-logging-py \
 
 EXPOSE 8000
 
-CMD ["/usr/local/bin/gunicorn", "--config", "/gunicorn.conf", "--log-config", "/logging.conf", "-b", ":8000", "wsgi:application"]
+CMD ["/usr/local/bin/gunicorn", "--config", "/gunicorn.conf", "--log-config", "/logging.conf", "-b", ":8000", "alexa:app"]

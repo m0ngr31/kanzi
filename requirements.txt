@@ -4,3 +4,5 @@ yaep
 pycountry
 pytz
 fuzzywuzzy
+flask-ask
+zappa
