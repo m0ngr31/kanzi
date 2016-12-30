@@ -601,9 +601,9 @@ Skip skip
 Skip skip song
 StartOver replay
 StartOver start over
-Stop cancel
-Stop shut up
-Stop stop
+AMAZON.StopIntent cancel
+AMAZON.StopIntent shut up
+AMAZON.StopIntent stop
 SubtitlesNext next subtitle language
 SubtitlesNext next subtitles
 SubtitlesNext switch subtitle language

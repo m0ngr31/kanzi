@@ -4,4 +4,3 @@ yaep
 pytz
 fuzzywuzzy
 flask-ask
-zappa

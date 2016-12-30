@@ -43,7 +43,6 @@ sys.path += [os.path.dirname(__file__)]
 
 ENV_FILE = os.path.join(os.path.dirname(__file__), ".env")
 os.environ['ENV_FILE'] = ENV_FILE
-populate_env()
 
 
 # These are words that we ignore when doing a non-exact match on show names
@@ -110,6 +109,9 @@ def http_normalize_slashes(url):
   correct_segments[0] = correct_segments[0] + '/'
   normalized_url = '/'.join(correct_segments)
   return normalized_url
+
+def PopulateEnv():
+  populate_env()
 
 
 # These two methods construct the JSON-RPC message and send it to the Kodi player

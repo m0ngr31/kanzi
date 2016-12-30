@@ -9,7 +9,7 @@
 
 PlayPause (play/pause/resume)
 
-Stop (stop/cancel/shut up)
+AMAZON.StopIntent (stop/cancel/shut up)
 
 Skip (skip/next) (/song)
 Skip (listen to/play) next (/song)

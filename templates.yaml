@@ -42,19 +42,19 @@ playing_song: Playing song {{ song_name }}
 
 playing_song_artist: Playing song, {{ song_name }} by {{ artist }}
 
-playing_playlist: <speak>{{ action }} playlist {{ playlist_name }}</speak>
+playing_playlist: "{{ action }} playlist {{ playlist_name }}"
 
 playing_party: Starting party play
 
 playing_genre: Playing the {{ genre }} movie, {{ movie_name }}
 
-playing_action: <speak>{{ action }} {{ movie_name }}</speak>
+playing_action: "{{ action }} {{ movie_name }}"
 
-playing_playlist_action: <speak>{{ action }} video playlist {{ playlist_name }}</speak>
+playing_playlist_action: "{{ action }} video playlist {{ playlist_name }}"
 
 playing_episode_number: Playing season {{ season }} episode {{ episode }} of {{ show_name }}
 
-playing_action_episode_number: <speak>{{ action }} season {{ season }} episode {{ episode }} of {{ show_name }}</speak>
+playing_action_episode_number: "{{ action }} season {{ season }} episode {{ episode }} of {{ show_name }}"
 
 playing_empty: Playing
 
@@ -99,7 +99,6 @@ you_have_episode_list: There are new episodes of {{ list }}
 volume_set: Volume set to {{ num }}
 
 help: You can ask me whether there are any new shows, to play a movie, tv show, or artist, or control playback of media.
-
 
 
 ############################
@@ -240,7 +239,7 @@ playing_song: Playing song
 
 playing_album_or_song: Playing album or song
 
-action_audio_playlist: <speak>{{ action }} audio playlist</speak>
+action_audio_playlist: "{{ action }} audio playlist"
 
 party_mode: Party Mode
 
@@ -257,8 +256,8 @@ help_card: Help
 ##   General Templates    ##
 ############################
 
-pause: <speak><break time="200ms"></speak>
+pause: " "
 
-and_more: <speak>, and more</speak>
+and_more: ", and more"
 
-and: <speak>, and  <break strength="medium"></speak>
+and: ", and  "
