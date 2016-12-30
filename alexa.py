@@ -30,23 +30,17 @@ import random
 import string
 import sys
 import time
-import logging
 import os
 from multiprocessing import Process
 from flask import Flask, json, render_template
 from flask_ask import Ask, request, session, question, statement
-from yaep import populate_env, env
-
-sys.path += [os.path.dirname(__file__)]
-
-ENV_FILE = os.path.join(os.path.dirname(__file__), ".env")
-os.environ['ENV_FILE'] = ENV_FILE
-populate_env()
 
 import kodi
 
 app = Flask(__name__)
 ask = Ask(app, "/")
+
+kodi.PopulateEnv()
 
 SKILL_ID = os.getenv('SKILL_APPID')
 if SKILL_ID:
@@ -65,7 +59,7 @@ def alexa_new_show_inquiry(Show):
   heard_show = str(Show).lower().translate(None, string.punctuation)
 
   card_title = render_template('looking_for_show', heard_show=heard_show)
-  logging.info(card_title)
+  print card_title
 
   shows = kodi.GetTvShows()
   if 'result' in shows and 'tvshows' in shows['result']:
@@ -102,7 +96,7 @@ def alexa_new_show_inquiry(Show):
 @ask.intent('CurrentPlayItemInquiry')
 def alexa_current_playitem_inquiry():
   card_title = render_template('current_playing_item')
-  logging.info(card_title)
+  print card_title
 
   answer = 'The current'
   answer_append = 'ly playing item is unknown'
@@ -159,7 +153,7 @@ def alexa_current_playitem_inquiry():
 @ask.intent('CurrentPlayItemTimeRemaining')
 def alexa_current_playitem_time_remaining():
   card_title = render_template('time_left_playing')
-  logging.info(card_title)
+  print card_title
 
   response_text = 'Playback is stopped.'
 
@@ -188,7 +182,7 @@ def alexa_current_playitem_time_remaining():
 @ask.intent('PlayPause')
 def alexa_play_pause():
   card_title = render_template('play_pause')
-  logging.info(card_title)
+  print card_title
 
   kodi.PlayPause()
   response_text = ""
@@ -196,23 +190,26 @@ def alexa_play_pause():
   return statement(response_text).simple_card(card_title, response_text)
 
 
-# Handle the Stop intent.
-@ask.intent('Stop')
+# Handle the AMAZON.StopIntent intent.
+@ask.intent('AMAZON.StopIntent')
 def alexa_stop():
-  card_title = render_template('stopping')
-  logging.info(card_title)
+  if not 'navigating' in session.attributes:
+    card_title = render_template('stopping')
+    print card_title
 
-  kodi.Stop()
-  response_text = "Playback stopped"
+    kodi.Stop()
+    response_text = "Playback stopped"
 
-  return statement(response_text).simple_card(card_title, response_text)
+    return statement(response_text).simple_card(card_title, response_text)
+  else:
+    return statement("")
 
 
 # Handle the PlayerSeekSmallForward intent.
 @ask.intent('PlayerSeekSmallForward')
 def alexa_player_seek_smallforward():
   card_title = render_template('step_forward')
-  logging.info(card_title)
+  print card_title
 
   kodi.PlayerSeekSmallForward()
   response_text = ""
@@ -224,7 +221,7 @@ def alexa_player_seek_smallforward():
 @ask.intent('PlayerSeekSmallBackward')
 def alexa_player_seek_smallbackward():
   card_title = render_template('step_backward')
-  logging.info(card_title)
+  print card_title
 
   kodi.PlayerSeekSmallBackward()
   response_text = ""
@@ -236,7 +233,7 @@ def alexa_player_seek_smallbackward():
 @ask.intent('PlayerSeekBigForward')
 def alexa_player_seek_bigforward():
   card_title = render_template('big_step_forward')
-  logging.info(card_title)
+  print card_title
 
   kodi.PlayerSeekBigForward()
   response_text = ""
@@ -248,7 +245,7 @@ def alexa_player_seek_bigforward():
 @ask.intent('PlayerSeekBigBackward')
 def alexa_player_seek_bigforward():
   card_title = render_template('big_step_backward')
-  logging.info(card_title)
+  print card_title
 
   kodi.PlayerSeekBigBackward()
   response_text = ""
@@ -262,7 +259,7 @@ def alexa_listen_artist(Artist):
   heard_artist = str(Artist).lower().translate(None, string.punctuation)
 
   card_title = render_template('listen_artist', heard_artist=heard_artist)
-  logging.info(card_title)
+  print card_title
 
   artists = kodi.GetMusicArtists()
   if 'result' in artists and 'artists' in artists['result']:
@@ -296,7 +293,7 @@ def alexa_listen_artist(Artist):
 def alexa_listen_album(Album, Artist):
   heard_album = str(Album).lower().translate(None, string.punctuation)
   card_title = render_template('playing_album_card')
-  logging.info(card_title)
+  print card_title
 
   if Artist:
     heard_artist = str(Artist).lower().translate(None, string.punctuation)
@@ -352,7 +349,7 @@ def alexa_listen_album(Album, Artist):
 def alexa_listen_song(Song, Artist):
   heard_song = str(Song).lower().translate(None, string.punctuation)
   card_title = render_template('playing_song')
-  logging.info(card_title)
+  print card_title
 
   if Artist:
     heard_artist = str(Artist).lower().translate(None, string.punctuation)
@@ -414,7 +411,7 @@ def alexa_listen_album_or_song(Song, Album, Artist):
     heard_artist = str(Artist).lower().translate(None, string.punctuation)
   
   card_title = render_template('playing_album_or_song')
-  logging.info(card_title)
+  print card_title
 
   artists = kodi.GetMusicArtists()
   if 'result' in artists and 'artists' in artists['result']:
@@ -466,7 +463,7 @@ def alexa_listen_album_or_song(Song, Album, Artist):
 def alexa_listen_recently_added_songs():
   card_title = render_template('playing_recent_songs')
   response_text = render_template('no_recent_songs')
-  logging.info(card_title)
+  print card_title
 
   songs_result = kodi.GetRecentlyAddedSongs()
   if songs_result:
@@ -497,7 +494,7 @@ def alexa_listen_audio_playlist(AudioPlaylist, shuffle=False):
     op = render_template('playing_empty')
 
   card_title = render_template('action_audio_playlist', action=op)
-  logging.info(card_title)
+  print card_title
 
   playlist = kodi.FindAudioPlaylist(heard_search)
   if playlist:
@@ -556,7 +553,7 @@ def alexa_party_play():
 @ask.intent('StartOver')
 def alexa_start_over():
   card_title = render_template('playing_same')
-  logging.info(card_title)
+  print card_title
 
   kodi.PlayStartOver()
   response_text = ""
@@ -568,7 +565,7 @@ def alexa_start_over():
 @ask.intent('Skip')
 def alexa_skip():
   card_title = render_template('playing_next')
-  logging.info(card_title)
+  print card_title
 
   kodi.PlaySkip()
   response_text = ""
@@ -580,7 +577,7 @@ def alexa_skip():
 @ask.intent('Prev')
 def alexa_prev():
   card_title = render_template('playing_previous')
-  logging.info(card_title)
+  print card_title
 
   kodi.PlayPrev()
   response_text = ""
@@ -592,7 +589,7 @@ def alexa_prev():
 @ask.intent('Fullscreen')
 def alexa_fullscreen():
   card_title = render_template('toggle_fullscreen')
-  logging.info(card_title)
+  print card_title
 
   kodi.ToggleFullscreen()
   response_text = ""
@@ -604,7 +601,7 @@ def alexa_fullscreen():
 @ask.intent('Mute')
 def alexa_mute():
   card_title = render_template('mute_unmute')
-  logging.info(card_title)
+  print card_title
 
   kodi.ToggleMute()
   response_text = ""
@@ -616,7 +613,7 @@ def alexa_mute():
 @ask.intent('VolumeUp')
 def alexa_volume_up():
   card_title = render_template('volume_up')
-  logging.info(card_title)
+  print card_title
 
   vol = kodi.VolumeUp()['result']
   response_text = render_template('volume_set', num=vol)
@@ -628,7 +625,7 @@ def alexa_volume_up():
 @ask.intent('VolumeDown')
 def alexa_volume_down():
   card_title = render_template('volume_down')
-  logging.info(card_title)
+  print card_title
 
   vol = kodi.VolumeDown()['result']
   response_text = render_template('volume_set', num=vol)
@@ -640,7 +637,7 @@ def alexa_volume_down():
 @ask.intent('VolumeSet')
 def alexa_volume_set(Volume):
   card_title = render_template('adjusting_volume')
-  logging.info(card_title)
+  print card_title
 
   vol = kodi.VolumeSet(int(Volume), False)['result']
   response_text = render_template('volume_set', num=vol)
@@ -652,7 +649,7 @@ def alexa_volume_set(Volume):
 @ask.intent('VolumeSetPct')
 def alexa_volume_set_pct(Volume):
   card_title = render_template('adjusting_volume')
-  logging.info(card_title)
+  print card_title
 
   vol = kodi.VolumeSet(int(Volume))['result']
   response_text = render_template('volume_set', num=vol)
@@ -664,7 +661,7 @@ def alexa_volume_set_pct(Volume):
 @ask.intent('SubtitlesOn')
 def alexa_subtitles_on():
   card_title = render_template('subtitles_enable')
-  logging.info(card_title)
+  print card_title
 
   kodi.SubtitlesOn()
   response_text = kodi.GetCurrentSubtitles()
@@ -676,7 +673,7 @@ def alexa_subtitles_on():
 @ask.intent('SubtitlesOff')
 def alexa_subtitles_off():
   card_title = render_template('subtitles_disable')
-  logging.info(card_title)
+  print card_title
 
   kodi.SubtitlesOff()
   response_text = kodi.GetCurrentSubtitles()
@@ -688,7 +685,7 @@ def alexa_subtitles_off():
 @ask.intent('SubtitlesNext')
 def alexa_subtitles_next():
   card_title = render_template('subtitles_next')
-  logging.info(card_title)
+  print card_title
 
   kodi.SubtitlesNext()
   response_text = kodi.GetCurrentSubtitles()
@@ -700,7 +697,7 @@ def alexa_subtitles_next():
 @ask.intent('SubtitlesPrevious')
 def alexa_subtitles_previous():
   card_title = render_template('subtitles_previous')
-  logging.info(card_title)
+  print card_title
 
   kodi.SubtitlesPrevious()
   response_text = kodi.GetCurrentSubtitles()
@@ -712,7 +709,7 @@ def alexa_subtitles_previous():
 @ask.intent('AudioStreamNext')
 def alexa_audiostream_next():
   card_title = render_template('audio_stream_next')
-  logging.info(card_title)
+  print card_title
 
   kodi.AudioStreamNext()
   response_text = kodi.GetCurrentAudioStream()
@@ -724,7 +721,7 @@ def alexa_audiostream_next():
 @ask.intent('AudioStreamPrevious')
 def alexa_audiostream_previous():
   card_title = render_template('audio_stream_previous')
-  logging.info(card_title)
+  print card_title
 
   kodi.AudioStreamPrevious()
   response_text = kodi.GetCurrentAudioStream()
@@ -736,7 +733,7 @@ def alexa_audiostream_previous():
 @ask.intent('PlayerMoveUp')
 def alexa_player_move_up():
   card_title = render_template('player_move_up')
-  logging.info(card_title)
+  print card_title
 
   kodi.PlayerMoveUp()
   response_text = ""
@@ -748,7 +745,7 @@ def alexa_player_move_up():
 @ask.intent('PlayerMoveDown')
 def alexa_player_move_down():
   card_title = render_template('player_move_down')
-  logging.info(card_title)
+  print card_title
 
   kodi.PlayerMoveDown()
   response_text = ""
@@ -760,7 +757,7 @@ def alexa_player_move_down():
 @ask.intent('PlayerMoveLeft')
 def alexa_player_move_left():
   card_title = render_template('player_move_left')
-  logging.info(card_title)
+  print card_title
 
   kodi.PlayerMoveLeft()
   response_text = ""
@@ -772,7 +769,7 @@ def alexa_player_move_left():
 @ask.intent('PlayerMoveRight')
 def alexa_player_move_right():
   card_title = render_template('player_move_right')
-  logging.info(card_title)
+  print card_title
 
   kodi.PlayerMoveRight()
   response_text = ""
@@ -784,7 +781,7 @@ def alexa_player_move_right():
 @ask.intent('PlayerRotateClockwise')
 def alexa_player_rotate_clockwise():
   card_title = render_template('player_rotate')
-  logging.info(card_title)
+  print card_title
 
   kodi.PlayerRotateClockwise()
   response_text = ""
@@ -796,7 +793,7 @@ def alexa_player_rotate_clockwise():
 @ask.intent('PlayerRotateCounterClockwise')
 def alexa_player_rotate_counterclockwise():
   card_title = render_template('player_rotate_cc')
-  logging.info(card_title)
+  print card_title
 
   kodi.PlayerRotateCounterClockwise()
   response_text = ""
@@ -808,7 +805,7 @@ def alexa_player_rotate_counterclockwise():
 @ask.intent('PlayerZoomHold')
 def alexa_player_zoom_hold():
   card_title = render_template('player_zoom_hold')
-  logging.info(card_title)
+  print card_title
 
   response_text = ""
 
@@ -819,7 +816,7 @@ def alexa_player_zoom_hold():
 @ask.intent('PlayerZoomIn')
 def alexa_player_zoom_in():
   card_title = render_template('player_zoom_in')
-  logging.info(card_title)
+  print card_title
 
   kodi.PlayerZoomIn()
   response_text = ""
@@ -831,7 +828,7 @@ def alexa_player_zoom_in():
 @ask.intent('PlayerZoomInMoveUp')
 def alexa_player_zoom_in_move_up():
   card_title = render_template('player_zoom_in_up')
-  logging.info(card_title)
+  print card_title
 
   kodi.PlayerZoomIn()
   kodi.PlayerMoveUp()
@@ -856,7 +853,7 @@ def alexa_player_zoom_in_move_down():
 @ask.intent('PlayerZoomInMoveLeft')
 def alexa_player_zoom_in_move_left():
   card_title = render_template('player_zoom_in_left')
-  logging.info(card_title)
+  print card_title
 
   kodi.PlayerZoomIn()
   kodi.PlayerMoveLeft()
@@ -869,7 +866,7 @@ def alexa_player_zoom_in_move_left():
 @ask.intent('PlayerZoomInMoveRight')
 def alexa_player_zoom_in_move_right():
   card_title = render_template('player_zoom_in_right')
-  logging.info(card_title)
+  print card_title
 
   kodi.PlayerZoomIn()
   kodi.PlayerMoveRight()
@@ -882,7 +879,7 @@ def alexa_player_zoom_in_move_right():
 @ask.intent('PlayerZoomOut')
 def alexa_player_zoom_out():
   card_title = render_template('player_zoom_out')
-  logging.info(card_title)
+  print card_title
 
   kodi.PlayerZoomOut()
   response_text = ""
@@ -894,7 +891,7 @@ def alexa_player_zoom_out():
 @ask.intent('PlayerZoomOutMoveUp')
 def alexa_player_zoom_out_move_up():
   card_title = render_template('player_zoom_out_up')
-  logging.info(card_title)
+  print card_title
 
   kodi.PlayerZoomOut()
   kodi.PlayerMoveUp()
@@ -907,7 +904,7 @@ def alexa_player_zoom_out_move_up():
 @ask.intent('PlayerZoomOutMoveDown')
 def alexa_player_zoom_out_move_down():
   card_title = render_template('player_zoom_out_down')
-  logging.info(card_title)
+  print card_title
 
   kodi.PlayerZoomOut()
   kodi.PlayerMoveDown()
@@ -920,7 +917,7 @@ def alexa_player_zoom_out_move_down():
 @ask.intent('PlayerZoomOutMoveLeft')
 def alexa_player_zoom_out_move_left():
   card_title = render_template('player_zoom_out_left')
-  logging.info(card_title)
+  print card_title
 
   kodi.PlayerZoomOut()
   kodi.PlayerMoveLeft()
@@ -933,7 +930,7 @@ def alexa_player_zoom_out_move_left():
 @ask.intent('PlayerZoomOutMoveRight')
 def alexa_player_zoom_out_move_right():
   card_title = render_template('player_zoom_out_right')
-  logging.info(card_title)
+  print card_title
 
   kodi.PlayerZoomOut()
   kodi.PlayerMoveRight()
@@ -946,7 +943,7 @@ def alexa_player_zoom_out_move_right():
 @ask.intent('PlayerZoomReset')
 def alexa_player_zoom_reset():
   card_title = render_template('player_zoom_normal')
-  logging.info(card_title)
+  print card_title
 
   kodi.PlayerZoom(1)
   response_text = ""
@@ -958,7 +955,9 @@ def alexa_player_zoom_reset():
 @ask.intent('Menu')
 def alexa_context_menu():
   card_title = 'Navigate: Context Menu'
-  logging.info(card_title)
+  print card_title
+
+  session.attributes['navigating'] = True
 
   kodi.Menu()
   response_text = render_template('pause')
@@ -970,7 +969,9 @@ def alexa_context_menu():
 @ask.intent('Home')
 def alexa_go_home():
   card_title = 'Navigate: Home'
-  logging.info(card_title)
+  print card_title
+
+  session.attributes['navigating'] = True
 
   kodi.Home()
   response_text = render_template('pause')
@@ -982,7 +983,9 @@ def alexa_go_home():
 @ask.intent('Select')
 def alexa_select():
   card_title = 'Navigate: Select'
-  logging.info(card_title)
+  print card_title
+
+  session.attributes['navigating'] = True
 
   kodi.Select()
   response_text = render_template('pause')
@@ -994,7 +997,9 @@ def alexa_select():
 @ask.intent('PageUp')
 def alexa_pageup():
   card_title = 'Navigate: Page up'
-  logging.info(card_title)
+  print card_title
+
+  session.attributes['navigating'] = True
 
   kodi.PageUp()
   response_text = render_template('pause')
@@ -1006,7 +1011,9 @@ def alexa_pageup():
 @ask.intent('PageDown')
 def alexa_pagedown():
   card_title = 'Navigate: Page down'
-  logging.info(card_title)
+  print card_title
+
+  session.attributes['navigating'] = True
 
   kodi.PageDown()
   response_text = render_template('pause')
@@ -1018,7 +1025,9 @@ def alexa_pagedown():
 @ask.intent('Left')
 def alexa_left():
   card_title = 'Navigate: Left'
-  logging.info(card_title)
+  print card_title
+
+  session.attributes['navigating'] = True
 
   kodi.Left()
   response_text = render_template('pause')
@@ -1030,7 +1039,9 @@ def alexa_left():
 @ask.intent('Right')
 def alexa_right():
   card_title = 'Navigate: Right'
-  logging.info(card_title)
+  print card_title
+
+  session.attributes['navigating'] = True
 
   kodi.Right()
   response_text = render_template('pause')
@@ -1042,7 +1053,9 @@ def alexa_right():
 @ask.intent('Up')
 def alexa_up():
   card_title = 'Navigate: Up'
-  logging.info(card_title)
+  print card_title
+
+  session.attributes['navigating'] = True
 
   kodi.Up()
   response_text = render_template('pause')
@@ -1054,7 +1067,9 @@ def alexa_up():
 @ask.intent('Down')
 def alexa_down():
   card_title = 'Navigate: Down'
-  logging.info(card_title)
+  print card_title
+
+  session.attributes['navigating'] = True
 
   kodi.Down()
   response_text = render_template('pause')
@@ -1066,7 +1081,9 @@ def alexa_down():
 @ask.intent('Back')
 def alexa_back():
   card_title = 'Navigate: Back'
-  logging.info(card_title)
+  print card_title
+
+  session.attributes['navigating'] = True
 
   kodi.Back()
   response_text = render_template('pause')
@@ -1078,7 +1095,7 @@ def alexa_back():
 @ask.intent('Hibernate')
 def alexa_hibernate():
   card_title = render_template('hibernating')
-  logging.info(card_title)
+  print card_title
 
   kodi.SystemHibernate()
   
@@ -1089,7 +1106,7 @@ def alexa_hibernate():
 @ask.intent('Reboot')
 def alexa_reboot():
   card_title = render_template('rebooting')
-  logging.info(card_title)
+  print card_title
 
   kodi.SystemReboot()
   
@@ -1100,7 +1117,7 @@ def alexa_reboot():
 @ask.intent('Shutdown')
 def alexa_shutdown():
   card_title = render_template('shutting_down')
-  logging.info(card_title)
+  print card_title
 
   kodi.SystemShutdown()
 
@@ -1111,7 +1128,7 @@ def alexa_shutdown():
 @ask.intent('Suspend')
 def alexa_suspend():
   card_title = render_template('suspending_system')
-  logging.info(card_title)
+  print card_title
 
   kodi.SystemSuspend()
 
@@ -1122,7 +1139,7 @@ def alexa_suspend():
 @ask.intent('EjectMedia')
 def alexa_ejectmedia():
   card_title = render_template('ejecting_media')
-  logging.info(card_title)
+  print card_title
 
   kodi.SystemEjectMedia()
 
@@ -1133,7 +1150,7 @@ def alexa_ejectmedia():
 @ask.intent('CleanVideo')
 def alexa_clean_video():
   card_title = render_template('clean_video')
-  logging.info(card_title)
+  print card_title
 
   # Use threading to prevent timeouts
   c = Process(target=kodi.CleanVideo)
@@ -1149,7 +1166,7 @@ def alexa_clean_video():
 @ask.intent('UpdateVideo')
 def alexa_update_video():
   card_title = render_template('update_video')
-  logging.info(card_title)
+  print card_title
 
   kodi.UpdateVideo()
 
@@ -1160,7 +1177,7 @@ def alexa_update_video():
 @ask.intent('CleanAudio')
 def alexa_clean_audio():
   card_title = render_template('clean_audio')
-  logging.info(card_title)
+  print card_title
 
   # Use threading to prevent timeouts
   c = Process(target=kodi.CleanMusic)
@@ -1176,7 +1193,7 @@ def alexa_clean_audio():
 @ask.intent('UpdateAudio')
 def alexa_update_audio():
   card_title = render_template('update_audio')
-  logging.info(card_title)
+  print card_title
 
   kodi.UpdateMusic()
 
@@ -1189,7 +1206,7 @@ def alexa_addon_execute(Addon):
   heard_addon = str(Addon).lower().translate(None, string.punctuation)
 
   card_title = render_template('open_addon')
-  logging.info(card_title)
+  print card_title
 
   for content in ['video', 'audio', 'image', 'executable']:
     addons = kodi.GetAddons(content)
@@ -1252,7 +1269,7 @@ def alexa_watch_random_movie(Genre):
       genre_located = kodi.matchHeard(heard_genre, genres_list, 'label')
   else:
     card_title = render_template('playing_random_movie')
-  logging.info(card_title)
+  print card_title
 
   # Select from specified genre if one was matched
   if genre_located:
@@ -1288,7 +1305,7 @@ def alexa_watch_movie(Movie):
   heard_movie = str(Movie).lower().translate(None, string.punctuation)
 
   card_title = render_template('playing_movie')
-  logging.info(card_title)
+  print card_title
 
   movies = kodi.GetMovies()
   if 'result' in movies and 'movies' in movies['result']:
@@ -1319,7 +1336,7 @@ def alexa_watch_random_episode(Show):
   heard_show = str(Show).lower().translate(None, string.punctuation)
 
   card_title = render_template('playing_random_episode', heard_show=heard_show)
-  logging.info(card_title)
+  print card_title
 
   shows = kodi.GetTvShows()
   if 'result' in shows and 'tvshows' in shows['result']:
@@ -1359,7 +1376,7 @@ def alexa_watch_episode(Show, Season, Episode):
   heard_show = str(Show).lower().translate(None, string.punctuation)
 
   card_title = render_template('playing_an_episode', heard_show=heard_show)
-  logging.info(card_title)
+  print card_title
 
   shows = kodi.GetTvShows()
   if 'result' in shows and 'tvshows' in shows['result']:
@@ -1399,7 +1416,7 @@ def alexa_watch_next_episode(Show):
   heard_show = str(Show).lower().translate(None, string.punctuation)
 
   card_title = render_template('playing_next_unwatched_episode', heard_show=heard_show)
-  logging.info(card_title)
+  print card_title
 
   shows = kodi.GetTvShows()
   if 'result' in shows and 'tvshows' in shows['result']:
@@ -1437,7 +1454,7 @@ def alexa_watch_newest_episode(Show):
   heard_show = str(Show).lower().translate(None, string.punctuation)
 
   card_title = render_template('playing_newest_episode', heard_show=heard_show)
-  logging.info(card_title)
+  print card_title
 
   shows = kodi.GetTvShows()
   if 'result' in shows and 'tvshows' in shows['result']:
@@ -1473,7 +1490,7 @@ def alexa_watch_newest_episode(Show):
 @ask.intent('WatchLastShow')
 def alexa_watch_last_show():
   card_title = render_template('last_unwatched')
-  logging.info(card_title)
+  print card_title
 
   last_show_obj = kodi.GetLastWatchedShow()
 
@@ -1511,7 +1528,7 @@ def alexa_watch_video_playlist(VideoPlaylist, shuffle=False):
     op = render_template('playing_empty')
 
   card_title = render_template('playing_playlist_action', action=op, playlist_name=heard_search)
-  logging.info(card_title)
+  print card_title
 
   playlist = kodi.FindVideoPlaylist(heard_search)
   if playlist:
@@ -1553,7 +1570,7 @@ def alexa_shuffle_playlist(VideoPlaylist, AudioPlaylist):
     heard_search = str(AudioPlaylist).lower().translate(None, string.punctuation)
 
   card_title = render_template('shuffling_playlist', playlist_name=heard_search)
-  logging.info(card_title)
+  print card_title
 
   if (len(heard_search) > 0):
     playlist = kodi.FindVideoPlaylist(heard_search)
@@ -1598,7 +1615,7 @@ def alexa_shuffle_playlist(VideoPlaylist, AudioPlaylist):
 @ask.intent('WhatNewAlbums')
 def alexa_what_new_albums():
   card_title = render_template('newly_added_albums')
-  logging.info(card_title)
+  print card_title
 
   # Get the list of recently added albums from Kodi
   new_albums = kodi.GetRecentlyAddedAlbums()['result']['albums']
@@ -1638,7 +1655,7 @@ def alexa_what_new_movies(Genre):
       genre_located = kodi.matchHeard(heard_genre, genres_list, 'label')
   else:
     card_title = render_template('newly_added_movies')
-  logging.info(card_title)
+  print card_title
 
   # Select from specified genre if one was matched
   if genre_located:
@@ -1671,7 +1688,7 @@ def alexa_what_new_movies(Genre):
 @ask.intent('WhatNewShows')
 def alexa_what_new_episodes():
   card_title = render_template('newly_added_shows')
-  logging.info(card_title)
+  print card_title
 
   # Lists the shows that have had new episodes added to Kodi in the last 5 days
 
@@ -1716,7 +1733,7 @@ def alexa_what_albums(Artist):
   heard_artist = str(Artist).lower().translate(None, string.punctuation)
 
   card_title = render_template('albums_by', heard_artist=heard_artist)
-  logging.info(card_title)
+  print card_title
 
   artists = kodi.GetMusicArtists()
   if 'result' in artists and 'artists' in artists['result']:

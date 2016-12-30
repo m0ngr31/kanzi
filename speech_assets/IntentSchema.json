@@ -52,7 +52,7 @@
       "intent": "PlayerSeekBigBackward"
     },
     {
-      "intent": "Stop"
+      "intent": "AMAZON.StopIntent"
     },
     {
       "intent": "WhatAlbums",
