@@ -43,7 +43,7 @@ ask = Ask(app, "/")
 kodi.PopulateEnv()
 
 SKILL_ID = os.getenv('SKILL_APPID')
-if SKILL_ID:
+if SKILL_ID and SKILL_ID != 'None':
   app.config['ASK_APPLICATION_ID'] = SKILL_ID
 
 # According to this: https://alexatutorial.com/flask-ask/configuration.html
