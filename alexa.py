@@ -35,12 +35,13 @@ from multiprocessing import Process
 from flask import Flask, json, render_template
 from flask_ask import Ask, request, session, question, statement
 
+sys.path += [os.path.dirname(__file__)]
+
 import kodi
 
-app = Flask(__name__)
-ask = Ask(app, "/")
-
 kodi.PopulateEnv()
+
+app = Flask(__name__)
 
 SKILL_ID = os.getenv('SKILL_APPID')
 if SKILL_ID and SKILL_ID != 'None':
@@ -50,6 +51,8 @@ if SKILL_ID and SKILL_ID != 'None':
 # Timestamp based verification shouldn't be used in production. Use at own risk
 # app.config['ASK_VERIFY_TIMESTAMP_DEBUG'] = True
 
+# Needs to be instanced after app is configured
+ask = Ask(app, "/")
 
 # Start of intent methods
 
@@ -409,7 +412,7 @@ def alexa_listen_album_or_song(Song, Album, Artist):
     heard_search = str(Album).lower().translate(None, string.punctuation)
   if Artist:
     heard_artist = str(Artist).lower().translate(None, string.punctuation)
-  
+
   card_title = render_template('playing_album_or_song')
   print card_title
 
@@ -479,7 +482,7 @@ def alexa_listen_recently_added_songs():
     kodi.AddSongsToPlaylist(songs_array, True)
     kodi.StartAudioPlaylist()
     response_text = ""
-    
+
   return statement(response_text).simple_card(card_title, response_text)
 
 
@@ -516,7 +519,7 @@ def alexa_listen_audio_playlist(AudioPlaylist, shuffle=False):
     response_text = render_template('playing_playlist', action=op, playlist_name=heard_search)
   else:
     response_text = render_template('could_not_find_playlist', heard_name=heard_search)
-  
+
   return statement(response_text).simple_card(card_title, response_text)
 
 
@@ -1087,7 +1090,7 @@ def alexa_back():
 
   kodi.Back()
   response_text = render_template('pause')
-  
+
   return question(response_text).reprompt(response_text)
 
 
@@ -1098,7 +1101,7 @@ def alexa_hibernate():
   print card_title
 
   kodi.SystemHibernate()
-  
+
   return statement(card_title).simple_card(card_title, "")
 
 
@@ -1109,7 +1112,7 @@ def alexa_reboot():
   print card_title
 
   kodi.SystemReboot()
-  
+
   return statement(card_title).simple_card(card_title, "")
 
 
