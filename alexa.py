@@ -169,7 +169,7 @@ def alexa_current_playitem_time_remaining():
       response_text = 'There is one minute remaining.'
     elif minsleft > 1:
       response_text = 'There are %d minutes remaining' % (minsleft)
-      tz = env('SKILL_TZ')
+      tz = os.getenv('SKILL_TZ')
       if minsleft > 9 and tz and tz != 'None':
         utctime = datetime.datetime.now(pytz.utc)
         loctime = utctime.astimezone(pytz.timezone(tz))
