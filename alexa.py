@@ -1731,9 +1731,9 @@ def alexa_what_new_albums():
     limited_new_album_names = new_album_names[0:5]
     album_list = limited_new_album_names[0]
     for one_album in limited_new_album_names[1:-1]:
-      album_list += render_template('and').encode("utf-8") + one_album
+      album_list += ", " + one_album
     if num_albums > 5:
-      album_list += render_template('and').encode("utf-8") + limited_new_album_names[-1] + render_template('and_more').encode("utf-8")
+      album_list += ", " + limited_new_album_names[-1] + render_template('and_more').encode("utf-8")
     else:
       album_list += render_template('and').encode("utf-8") + limited_new_album_names[-1]
     response_text = render_template('you_have_list', list=album_list).encode("utf-8")
@@ -1774,9 +1774,9 @@ def alexa_what_new_movies(Genre):
     limited_new_movie_names = new_movie_names[0:5]
     movie_list = limited_new_movie_names[0]
     for one_movie in limited_new_movie_names[1:-1]:
-      movie_list += render_template('and').encode("utf-8") + one_movie
+      movie_list += ", " + one_movie
     if num_movies > 5:
-      movie_list += render_template('and').encode("utf-8") + limited_new_movie_names[-1] + render_template('and_more').encode("utf-8")
+      movie_list += ", " + limited_new_movie_names[-1] + render_template('and_more').encode("utf-8")
     else:
       movie_list += render_template('and').encode("utf-8") + limited_new_movie_names[-1]
     response_text = render_template('you_have_list', list=movie_list).encode("utf-8").encode("utf-8")
@@ -1817,9 +1817,9 @@ def alexa_what_new_episodes():
     limited_new_show_names = new_show_names[0:5]
     show_list = limited_new_show_names[0]
     for one_show in limited_new_show_names[1:-1]:
-      show_list += render_template('and').encode("utf-8") + one_show
+      show_list += ", " + one_show
     if num_shows > 5:
-      show_list += render_template('and').encode("utf-8") + limited_new_show_names[-1] + render_template('and_more').encode("utf-8")
+      show_list += ", " + limited_new_show_names[-1] + render_template('and_more').encode("utf-8")
     else:
       show_list += render_template('and').encode("utf-8") + limited_new_show_names[-1]
     response_text = render_template('you_have_episode_list', list=show_list).encode("utf-8")
@@ -1850,7 +1850,7 @@ def alexa_what_albums(Artist):
         album_list = really_albums[0]
         if num_albums > 1:
           for one_album in really_albums[1:-1]:
-            album_list += render_template('and').encode("utf-8") + one_album
+            album_list += ", " + one_album
           album_list += render_template('and').encode("utf-8") + really_albums[-1]
         response_text = render_template('you_have_list', list=album_list).encode("utf-8")
       else:
