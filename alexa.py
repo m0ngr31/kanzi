@@ -33,11 +33,12 @@ import time
 import os
 from multiprocessing import Process
 from flask import Flask, json, render_template
-from flask_ask import Ask, request, session, question, statement
+from flask_ask import Ask, request, session, question, statement, audio
 
 sys.path += [os.path.dirname(__file__)]
 
 import kodi
+import music
 
 kodi.PopulateEnv()
 
@@ -46,6 +47,8 @@ app = Flask(__name__)
 SKILL_ID = os.getenv('SKILL_APPID')
 if SKILL_ID and SKILL_ID != 'None':
   app.config['ASK_APPLICATION_ID'] = SKILL_ID
+
+CAN_STREAM = music.has_music_functionality()
 
 # According to this: https://alexatutorial.com/flask-ask/configuration.html
 # Timestamp based verification shouldn't be used in production. Use at own risk
@@ -291,6 +294,49 @@ def alexa_listen_artist(Artist):
   return statement(response_text).simple_card(card_title, response_text)
 
 
+# Handle the StreamArtist intent.
+@ask.intent('StreamArtist')
+def play_steam_test(Artist):
+  if CAN_STREAM:
+    heard_artist = str(Artist).lower().translate(None, string.punctuation)
+
+    card_title = render_template('stream_artist', heard_artist=heard_artist)
+    print card_title
+
+    artists = kodi.GetMusicArtists()
+    if 'result' in artists and 'artists' in artists['result']:
+      artists_list = artists['result']['artists']
+      located = kodi.matchHeard(heard_artist, artists_list, 'artist')
+
+      if located:
+        songs_result = kodi.GetArtistSongsPath(located['artistid'])
+        songs = songs_result['result']['songs']
+
+        songs_array = []
+
+        for song in songs:
+          songs_array.append(kodi.PrepareDownload(song['file']))
+
+        if len(songs_array) > 0:
+          random.shuffle(songs_array)
+          playlist_queue = music.MusicPlayer(songs_array)
+
+          response_text = render_template('streaming', heard_name=heard_artist)
+          audio('').stop()
+          return audio(response_text).play(songs_array[0])
+        else:
+          response_text = render_template('could_not_find', heard_name=heard_artist)
+      else:
+        response_text = render_template('could_not_find', heard_name=heard_artist)
+    else:
+      response_text = render_template('could_not_find', heard_name=heard_artist)
+
+    return statement(response_text).simple_card(card_title, response_text)
+  else:
+    response_text = render_template('cant_steam')
+    return statement(response_text)
+
+
 # Handle the ListenToAlbum intent (Play whole album, or whole album by a specific artist).
 @ask.intent('ListenToAlbum')
 def alexa_listen_album(Album, Artist):
@@ -533,21 +579,45 @@ def alexa_shuffle_audio_playlist(AudioPlaylist):
 @ask.intent('PartyMode')
 def alexa_party_play():
   card_title = render_template('party_mode')
-  songs = kodi.GetSongs()
 
-  if 'result' in songs and 'songs' in songs['result']:
-    songs_array = []
+  kodi.Stop()
+  kodi.ClearAudioPlaylist()
+  kodi.PartyPlayMusic()
+  response_text = render_template('playing_party')
 
-    for song in songs['result']['songs']:
-      songs_array.append(song['songid'])
+  return statement(response_text).simple_card(card_title, response_text)
 
-    kodi.Stop()
-    kodi.ClearAudioPlaylist()
-    kodi.AddSongsToPlaylist(songs_array, True)
-    kodi.StartAudioPlaylist()
-    response_text = render_template('playing_party')
+
+# Handle the StreamPartyMode intent.
+@ask.intent('StreamPartyMode')
+def alexa_stream_party():
+  if CAN_STREAM:
+    card_title = render_template('streaming_party_mode')
+
+    response_text = render_template('streaming_party')
+
+    songs = kodi.GetSongsPath()
+
+    if 'result' in songs and 'songs' in songs['result']:
+      songs_array = []
+
+      for song in songs['result']['songs']:
+        songs_array.append(kodi.PrepareDownload(song['file']))
+
+      if len(songs_array) > 0:
+        random.shuffle(songs_array)
+        playlist_queue = music.MusicPlayer(songs_array)
+
+        response_text = render_template('streaming_party')
+        audio('').stop()
+        return audio(response_text).play(songs_array[0])
+      else:
+        response_text = render_template('error_parsing_results')
+    else:
+      response_text = render_template('error_parsing_results')
   else:
-    response_text = render_template('error_parsing_results')
+    response_text = render_template('cant_steam')
+    return statement(response_text)
 
   return statement(response_text).simple_card(card_title, response_text)
 
@@ -1171,7 +1241,12 @@ def alexa_update_video():
   card_title = render_template('update_video')
   print card_title
 
-  kodi.UpdateVideo()
+  # Use threading to prevent timeouts
+  c = Process(target=kodi.UpdateVideo)
+  c.daemon = True
+  c.start()
+
+  time.sleep(2)
 
   return statement(card_title).simple_card(card_title, "")
 
@@ -1198,7 +1273,12 @@ def alexa_update_audio():
   card_title = render_template('update_audio')
   print card_title
 
-  kodi.UpdateMusic()
+  # Use threading to prevent timeouts
+  c = Process(target=kodi.UpdateMusic)
+  c.daemon = True
+  c.start()
+
+  time.sleep(2)
 
   return statement(card_title).simple_card(card_title, "")
 
@@ -1764,6 +1844,108 @@ def alexa_what_albums(Artist):
     response_text = render_template('could_not_find', heard_name=heard_artist)
 
   return statement(response_text).simple_card(card_title, response_text)
+
+
+@ask.intent('AMAZON.PauseIntent')
+def pause():
+  if CAN_STREAM:
+    return audio('').stop()
+  else:
+    response_text = render_template('cant_steam')
+    return audio(response_text)
+
+
+# NextIntent steps queue forward and clears enqueued streams that were already sent to Alexa
+# next_stream will match queue.up_next and enqueue Alexa with the correct subsequent stream.
+@ask.intent('AMAZON.NextIntent')
+def next_song():
+  if CAN_STREAM:
+    playlist_queue = music.MusicPlayer()
+
+    if playlist_queue.next_item:
+      playlist_queue.skip_song()
+      return audio('').play(playlist_queue.next_item)
+    else:
+      response_text = render_template('no_more_songs')
+      return audio(response_text)
+  else:
+    response_text = render_template('cant_steam')
+    return audio(response_text)
+
+
+@ask.intent('AMAZON.PreviousIntent')
+def previous_song():
+  if CAN_STREAM:
+    playlist_queue = music.MusicPlayer()
+
+    print playlist_queue.current_index
+
+    if playlist_queue.prev_item:
+      playlist_queue.prev_song()
+      return audio('').play(playlist_queue.prev_item)
+    else:
+      response_text = render_template('no_songs_history')
+      return audio(response_text)
+  else:
+    response_text = render_template('cant_steam')
+    return audio(response_text)
+
+
+@ask.intent('AMAZON.StartOverIntent')
+def restart_track():
+  if CAN_STREAM:
+    playlist_queue = music.MusicPlayer()
+
+    if playlist_queue.current_item:
+      return audio('').play(playlist_queue.current_item, offset=0)
+    else:
+      response_text = render_template('no_current_song')
+      return audio(response_text)
+  else:
+    response_text = render_template('cant_steam')
+    return audio(response_text)
+
+
+@ask.intent('AMAZON.ResumeIntent')
+def resume():
+  if CAN_STREAM:
+    return audio('').resume()
+  else:
+    response_text = render_template('cant_steam')
+    return audio(response_text)
+
+
+# This allows for Next Intents and on_playback_finished requests to trigger the step
+@ask.on_playback_nearly_finished()
+def nearly_finished():
+  playlist_queue = music.MusicPlayer()
+
+  if playlist_queue.next_item:
+    return audio().enqueue(playlist_queue.next_item)
+
+
+@ask.on_playback_finished()
+def play_back_finished():
+  playlist_queue = music.MusicPlayer()
+
+  if playlist_queue.next_item:
+    playlist_queue.skip_song()
+
+
+@ask.on_playback_started()
+def started(offset):
+  print 'Streaming started'
+
+
+@ask.on_playback_stopped()
+def stopped(offset):
+  playlist_queue = music.MusicPlayer()
+
+  print offset
+
+  playlist_queue.current_offset = offset
+  playlist_queue.save_to_mongo()
+  print 'Streaming stopped'
 
 
 # What should the Echo say when you just open your app instead of invoking an intent?

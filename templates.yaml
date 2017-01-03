@@ -56,6 +56,10 @@ playing_episode_number: Playing season {{ season }} episode {{ episode }} of {{ 
 
 playing_action_episode_number: "{{ action }} season {{ season }} episode {{ episode }} of {{ show_name }}"
 
+streaming: Streaming {{ heard_name }}
+
+streaming_party: Streaming party mode
+
 playing_empty: Playing
 
 resuming_empty: Resuming
@@ -98,6 +102,8 @@ you_have_episode_list: There are new episodes of {{ list }}
 
 volume_set: Volume set to {{ num }}
 
+cant_steam: You need to add database information to your environment variables for this to work
+
 help: You can ask me whether there are any new shows, to play a movie, tv show, or artist, or control playback of media.
 
 
@@ -124,6 +130,8 @@ big_step_forward: Big step forward
 big_step_backward: Big step backward
 
 listen_artist: Playing music by {{ heard_artist }}
+
+stream_artist: Streaming music by {{ heard_artist }}
 
 newly_added_shows: Newly added shows
 
@@ -243,6 +251,8 @@ action_audio_playlist: "{{ action }} audio playlist"
 
 party_mode: Party Mode
 
+streaming_party_mode: Streaming Party Mode
+
 albums_by: Albums by {{ heard_artist }}
 
 open_addon: Opening addon
@@ -261,3 +271,10 @@ pause: " "
 and_more: ", and more"
 
 and: ", and  "
+
+no_more_songs: There are no more songs in the queue
+
+no_songs_history: There are no songs in your playlist history.
+
+no_current_song: There is no current song
+
