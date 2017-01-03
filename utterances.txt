@@ -20,25 +20,19 @@ StartOver (replay/start over)
 
 Home navigate home
 
-Back (navigate/go back)
-
-Up navigate up
-
-Down navigate down
-
-Right navigate right
-
-Left navigate left
+Back (/navigate/go) back
+Up (/navigate/go) up
+Down (/navigate/go) down
+Right (/navigate/go) right
+Left (/navigate/go) left
+PageUp (/navigate/go) page up
+PageDown (/navigate/go) page down
 
 Select select
 
 Menu open menu
 
-PageUp navigate page up
-
-PageDown navigate page down
-
-Fullscreen (/toggle) fullscreen
+Fullscreen (/toggle) (fullscreen/visualizer)
 
 Mute (/toggle/set) (mute/unmute)
 VolumeUp (/turn) volume up
@@ -58,8 +52,8 @@ AudioStreamNext (next/switch) (/audio) language
 AudioStreamPrevious previous audio (/stream)
 AudioStreamPrevious previous (/audio) language
 
-PlayerMoveUp (track/pan/move/go) up
-PlayerMoveDown (track/pan/move/go) down
+PlayerMoveUp (track/pan/move) up
+PlayerMoveDown (track/pan/move) down
 PlayerMoveLeft (track/pan/move/go) left
 PlayerMoveRight (track/pan/move/go) right
 PlayerRotateClockwise rotate (/clockwise/ninety degrees)
@@ -97,13 +91,18 @@ ListenToAlbum (play/listen to) album {Album} by {Artist}
 ListenToSong (play/listen to) song {Song}
 ListenToSong (play/listen to) song {Song} by {Artist}
 
-ListenToMusicPlaylist (play/listen to/shuffle) (song/music/audio) playlist {Playlist}
-ListenToMusicPlaylist (play/listen to/shuffle) {Playlist} (song/music/audio) playlist
+ListenToAlbumOrSong (play/listen to) {Album} by {Artist}
+ListenToAlbumOrSong (play/listen to) {Song} by {Artist}
 
-ListenToMusicPlaylistRecent (play/listen to/shuffle) recent (songs/music/audio/albums)
-ListenToMusicPlaylistRecent (play/listen to/shuffle) recently added (songs/music/audio/albums)
+ListenToAudioPlaylist (play/listen to) (song/music/audio) playlist {AudioPlaylist}
+ListenToAudioPlaylist (play/listen to) {AudioPlaylist} (song/music/audio) playlist
+ListenToAudioPlaylist listen to playlist {AudioPlaylist}
+ListenToAudioPlaylist listen to {AudioPlaylist} playlist
 
-WatchRandomMovie (play/watch) (/random) (/{Genre}) (movie/film)
+ListenToAudioPlaylistRecent (play/listen to/shuffle) recent (songs/music/audio/albums)
+ListenToAudioPlaylistRecent (play/listen to/shuffle) recently added (songs/music/audio/albums)
+
+WatchRandomMovie (play/watch) random (/{Genre}) (movie/film)
 
 WatchMovie (play/watch) (movie/film) {Movie}
 
@@ -116,6 +115,22 @@ WatchNextEpisode (play/watch) next episode of {Show}
 WatchLastShow continue (/watching/playing) (/last) show
 
 WatchLatestEpisode (play/watch) (newest/latest) episode of {Show}
+
+WatchVideoPlaylist (play/watch) (movie/show/video) playlist {VideoPlaylist}
+WatchVideoPlaylist (play/watch) {VideoPlaylist} (movie/show/video) playlist
+WatchVideoPlaylist watch playlist {VideoPlaylist}
+WatchVideoPlaylist watch {VideoPlaylist} playlist
+
+ShuffleAudioPlaylist shuffle (song/music/audio) playlist {AudioPlaylist}
+ShuffleAudioPlaylist shuffle {AudioPlaylist} (song/music/audio) playlist
+
+ShuffleVideoPlaylist shuffle (movie/show/video) playlist {VideoPlaylist}
+ShuffleVideoPlaylist shuffle {VideoPlaylist} (movie/show/video) playlist
+
+ShufflePlaylist shuffle playlist {AudioPlaylist}
+ShufflePlaylist shuffle {AudioPlaylist} playlist
+ShufflePlaylist shuffle playlist {VideoPlaylist}
+ShufflePlaylist shuffle {VideoPlaylist} playlist
 
 WhatNewAlbums (if there are/are there/do (we/i) have) (/any/some) new albums (/recorded) (/to listen to) (/today/tonight)
 WhatNewAlbums (if there is/is there/do (we/i) have) a new album (/recorded) (/to listen to) (/today/tonight)

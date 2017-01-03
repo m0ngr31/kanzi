@@ -213,7 +213,7 @@ def matchHeard(heard, results, lookingFor='label'):
   located = None
 
   heard_minus_the = remove_the(heard)
-  print heard
+  print 'Trying to match: ' + heard
   sys.stdout.flush()
   heard_list = set([x for x in heard.split() if x not in STOPWORDS])
 
@@ -224,121 +224,65 @@ def matchHeard(heard, results, lookingFor='label'):
 
     # Direct comparison
     if heard == result_name:
+      print 'Simple match on direct comparison'
       located = result
       break
 
     # Remove 'the'
     if remove_the(result_name) == heard_minus_the:
+      print 'Simple match minus "the"'
       located = result
       break
 
     # Remove parentheses
     removed_paren = re.sub(r'\([^)]*\)', '', ascii_name).rstrip().lower().translate(None, string.punctuation)
     if heard == removed_paren:
+      print 'Simple match minus parentheses'
       located = result
       break
 
   if not located:
-    print 'not located on the first round of checks'
+    print 'Simple match failed, trying fuzzy match...'
     sys.stdout.flush()
-    # Loop through results again and be a little more liberal with what is accepted
-    for result in results:
-      # Strip out non-ascii symbols and lowercase it
-      ascii_name = result[lookingFor].encode('ascii', 'replace')
-      result_name = str(ascii_name).lower().translate(None, string.punctuation)
-
-      #print "trying '%s'" % (heard_minus_the)
-      #sys.stdout.flush()
-      #print result_name
-      #sys.stdout.flush()
-      # Just look for substring
-      if result_name.find(heard_minus_the) != -1:
-        located = result
-        break
-
-      # Last resort -- take out some useless words and see if we have a match with
-      # >= 60% of the heard phrase
-      result_list = set([x for x in result_name.split() if x not in STOPWORDS])
-      matched_words = [x for x in heard_list if x in result_list]
-      #print 'matched words: '
-      #sys.stdout.flush()
-      if len(matched_words) > 0:
-        print matched_words
-        sys.stdout.flush()
-        percentage = float(len(matched_words)) / float(len(heard_list))
-        if percentage > float(0.6):
-          located = result
-          break
-
-    if not located:
-      print 'not located on the second round of checks'
-      sys.stdout.flush()
+    fuzzy_result = process.extract(str(heard), [d[lookingFor] for d in results], limit=1, scorer=fuzz.QRatio)
+    if fuzzy_result[0][1] > 75:
+      print 'Fuzzy match %s%%' % (fuzzy_result[0][1])
+      located = (item for item in results if item[lookingFor] == fuzzy_result[0][0]).next()
+    else:
+      heard = replaceDigits(heard)
       fuzzy_result = process.extract(str(heard), [d[lookingFor] for d in results], limit=1, scorer=fuzz.QRatio)
       if fuzzy_result[0][1] > 75:
+        print 'Fuzzy match %s%%' % (fuzzy_result[0][1])
         located = (item for item in results if item[lookingFor] == fuzzy_result[0][0]).next()
-      else:
-        fuzzy_result = process.extract(str(heard), [d[lookingFor] for d in results], limit=1, scorer=fuzz.partial_ratio)
-        if fuzzy_result[0][1] > 75:
-          located = (item for item in results if item[lookingFor] == fuzzy_result[0][0]).next()
-        else:
-          heard = replaceDigits(heard)
-          fuzzy_result = process.extract(str(heard), [d[lookingFor] for d in results], limit=1, scorer=fuzz.QRatio)
-          if fuzzy_result[0][1] > 75:
-            located = (item for item in results if item[lookingFor] == fuzzy_result[0][0]).next()
-          else:
-            fuzzy_result = process.extract(str(heard), [d[lookingFor] for d in results], scorer=fuzz.partial_ratio)
-            if fuzzy_result[0][1] > 75:
-              located = (item for item in results if item[lookingFor] == fuzzy_result[0][0]).next()
 
   return located
 
 
 # Playlists
 
-def ClearPlaylist():
+def FindAudioPlaylist(heard_search):
+  print 'Searching for audio playlist "%s"' % (heard_search)
+
+  playlists = GetMusicPlaylists()
+  if 'result' in playlists and 'files' in playlists['result']:
+    playlists_list = playlists['result']['files']
+    located = matchHeard(heard_search, playlists_list, 'label')
+
+    if located:
+      print 'Located audio playlist "%s"' % (located['file'])
+      sys.stdout.flush()
+      return located['file']
+
+
+def ClearAudioPlaylist():
   return SendCommand(RPCString("Playlist.Clear", {"playlistid": 0}))
-
-
-def ClearVideoPlaylist():
-  return SendCommand(RPCString("Playlist.Clear", {"playlistid": 1}))
-
-
-def StartPlaylist(playlist_file=None):
-  if playlist_file is not None and playlist_file != '':
-    return SendCommand(RPCString("Player.Open", {"item": {"file": playlist_file}}))
-  else:
-    return SendCommand(RPCString("Player.Open", {"item": {"playlistid": 0}}))
 
 
 def AddSongToPlaylist(song_id):
   return SendCommand(RPCString("Playlist.Add", {"playlistid": 0, "item": {"songid": int(song_id)}}))
 
 
-def AddAlbumToPlaylist(album_id):
-  return SendCommand(RPCString("Playlist.Add", {"playlistid": 0, "item": {"albumid": int(album_id)}}))
-
-
-def PrepEpisodePlayList(ep_id):
-  return SendCommand(RPCString("Playlist.Add", {"playlistid": 1, "item": {"episodeid": int(ep_id)}}))
-
-
-def PrepMoviePlaylist(movie_id):
-  return SendCommand(RPCString("Playlist.Add", {"playlistid": 1, "item": {"movieid": int(movie_id)}}))
-
-
-def StartVideoPlaylist():
-  return SendCommand(RPCString("Player.Open", {"item": {"playlistid": 1}}))
-
-
-def PlayEpisode(ep_id, resume=True):
-  return SendCommand(RPCString("Player.Open", {"item": {"episodeid": ep_id}, "options": {"resume": resume}}))
-
-
-def PlayMovie(movie_id, resume=True):
-  return SendCommand(RPCString("Player.Open", {"item": {"movieid": movie_id}, "options": {"resume": resume}}))
-
-
-def AddSongsToPlaylist(song_ids):
+def AddSongsToPlaylist(song_ids, shuffle=False):
   songs_array = []
 
   for song_id in song_ids:
@@ -346,17 +290,86 @@ def AddSongsToPlaylist(song_ids):
     temp_song['songid'] = song_id
     songs_array.append(temp_song)
 
-  random.shuffle(songs_array)
+  if shuffle:
+    random.shuffle(songs_array)
 
   return SendCommand(RPCString("Playlist.Add", {"playlistid": 0, "item": songs_array}))
 
 
-def GetPlaylistItems():
+def AddAlbumToPlaylist(album_id):
+  return SendCommand(RPCString("Playlist.Add", {"playlistid": 0, "item": {"albumid": int(album_id)}}))
+
+
+def GetAudioPlaylistItems():
   return SendCommand(RPCString("Playlist.GetItems", {"playlistid": 0}))
+
+
+def StartAudioPlaylist(playlist_file=None):
+  if playlist_file is not None and playlist_file != '':
+    return SendCommand(RPCString("Player.Open", {"item": {"file": playlist_file}}))
+  else:
+    return SendCommand(RPCString("Player.Open", {"item": {"playlistid": 0}}))
+
+
+def FindVideoPlaylist(heard_search):
+  print 'Searching for video playlist "%s"' % (heard_search)
+
+  playlists = GetVideoPlaylists()
+  if 'result' in playlists and 'files' in playlists['result']:
+    playlists_list = playlists['result']['files']
+    located = matchHeard(heard_search, playlists_list, 'label')
+
+    if located:
+      print 'Located video playlist "%s"' % (located['file'])
+      sys.stdout.flush()
+      return located['file']
+
+
+def ClearVideoPlaylist():
+  return SendCommand(RPCString("Playlist.Clear", {"playlistid": 1}))
+
+
+def AddEpisodeToPlayList(ep_id):
+  return SendCommand(RPCString("Playlist.Add", {"playlistid": 1, "item": {"episodeid": int(ep_id)}}))
+
+
+def AddMovieToPlaylist(movie_id):
+  return SendCommand(RPCString("Playlist.Add", {"playlistid": 1, "item": {"movieid": int(movie_id)}}))
+
+
+def AddVideosToPlaylist(video_files, shuffle=False):
+  videos_array = []
+
+  for video_file in video_files:
+    temp_video = {}
+    temp_video['file'] = video_file
+    videos_array.append(temp_video)
+
+  if shuffle:
+    random.shuffle(videos_array)
+
+  return SendCommand(RPCString("Playlist.Add", {"playlistid": 1, "item": videos_array}))
 
 
 def GetVideoPlaylistItems():
   return SendCommand(RPCString("Playlist.GetItems", {"playlistid": 1}))
+
+
+def StartVideoPlaylist(playlist_file=None):
+  if playlist_file is not None and playlist_file != '':
+    return SendCommand(RPCString("Player.Open", {"item": {"file": playlist_file}}))
+  else:
+    return SendCommand(RPCString("Player.Open", {"item": {"playlistid": 1}}))
+
+
+# Direct plays
+
+def PlayEpisode(ep_id, resume=True):
+  return SendCommand(RPCString("Player.Open", {"item": {"episodeid": ep_id}, "options": {"resume": resume}}))
+
+
+def PlayMovie(movie_id, resume=True):
+  return SendCommand(RPCString("Player.Open", {"item": {"movieid": movie_id}, "options": {"resume": resume}}))
 
 
 # Tell Kodi to update its video or music libraries
@@ -654,6 +667,10 @@ def GetAddonDetails(addon_id):
   return SendCommand(RPCString("Addons.GetAddonDetails", {"addonid":addon_id, "properties":["name", "version", "description", "summary"]}))
 
 
+def GetPlaylistItems(playlist_file):
+  return SendCommand(RPCString("Files.GetDirectory", {"directory": playlist_file}))
+
+
 def GetMusicPlaylists():
   return SendCommand(RPCString("Files.GetDirectory", {"directory": "special://musicplaylists"}))
 
@@ -692,6 +709,10 @@ def GetRecentlyAddedAlbums():
 
 def GetRecentlyAddedSongs():
   return SendCommand(RPCString("AudioLibrary.GetRecentlyAddedSongs", {'properties':['artist']}))
+
+
+def GetVideoPlaylists():
+  return SendCommand(RPCString("Files.GetDirectory", {"directory": "special://videoplaylists"}))
 
 
 def GetTvShowDetails(show_id):

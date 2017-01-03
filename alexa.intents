@@ -111,16 +111,42 @@
       ]
     },
     {
-      "intent": "ListenToMusicPlaylist",
+      "intent": "ListenToAlbumOrSong",
       "slots": [
         {
-          "name": "Playlist",
+          "name": "Artist",
+          "type": "MUSICARTISTS"
+        },
+        {
+          "name": "Album",
+          "type": "MUSICALBUMS"
+        },
+        {
+          "name": "Song",
+          "type": "MUSICSONGS"
+        }
+      ]
+    },
+    {
+      "intent": "ListenToAudioPlaylist",
+      "slots": [
+        {
+          "name": "AudioPlaylist",
           "type": "MUSICPLAYLISTS"
         }
       ]
     },
     {
-      "intent": "ListenToMusicPlaylistRecent",
+      "intent": "ShuffleAudioPlaylist",
+      "slots": [
+        {
+          "name": "AudioPlaylist",
+          "type": "MUSICPLAYLISTS"
+        }
+      ]
+    },
+    {
+      "intent": "ListenToAudioPlaylistRecent",
       "slots": []
     },
     {
@@ -186,6 +212,37 @@
         {
           "name": "Genre",
           "type": "MOVIEGENRES"
+        }
+      ]
+    },
+    {
+      "intent": "WatchVideoPlaylist",
+      "slots": [
+        {
+          "name": "VideoPlaylist",
+          "type": "VIDEOPLAYLISTS"
+        }
+      ]
+    },
+    {
+      "intent": "ShuffleVideoPlaylist",
+      "slots": [
+        {
+          "name": "VideoPlaylist",
+          "type": "VIDEOPLAYLISTS"
+        }
+      ]
+    },
+    {
+      "intent": "ShufflePlaylist",
+      "slots": [
+        {
+          "name": "AudioPlaylist",
+          "type": "MUSICPLAYLISTS"
+        },
+        {
+          "name": "VideoPlaylist",
+          "type": "VIDEOPLAYLISTS"
         }
       ]
     },
