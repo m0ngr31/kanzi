@@ -1947,5 +1947,17 @@ WatchPVRBroadcast jump to {Broadcast}
 WatchPVRBroadcast change channel to {Broadcast}
 WatchPVRBroadcast change channel to watch {Broadcast}
 WatchPVRBroadcast change channel to play {Broadcast}
-WatchPVRChannel watch {Channel}
-WatchPVRChannel play {Channel}
+WatchPVRChannel watch p.v.r. {Channel}
+WatchPVRChannel watch p.v.r. channel {Channel}
+WatchPVRChannel watch t.v. {Channel}
+WatchPVRChannel watch t.v. channel {Channel}
+WatchPVRChannel watch live t.v. {Channel}
+WatchPVRChannel watch live t.v. channel {Channel}
+WatchPVRChannel watch channel {Channel}
+WatchPVRChannel play p.v.r. {Channel}
+WatchPVRChannel play p.v.r. channel {Channel}
+WatchPVRChannel play t.v. {Channel}
+WatchPVRChannel play t.v. channel {Channel}
+WatchPVRChannel play live t.v. {Channel}
+WatchPVRChannel play live t.v. channel {Channel}
+WatchPVRChannel play channel {Channel}

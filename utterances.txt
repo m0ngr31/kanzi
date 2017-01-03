@@ -198,11 +198,11 @@ WatchPVRBroadcast find the (program/broadcast) called {Broadcast}
 WatchPVRBroadcast find {Broadcast}
 WatchPVRBroadcast switch to {Broadcast}
 WatchPVRBroadcast switch to the (program/broadcast) called {Broadcast}
-WatchPVRBroadcast show me) {Broadcast}
+WatchPVRBroadcast show me {Broadcast}
 WatchPVRBroadcast (show me/watch) (something/anything) called {Broadcast}
 WatchPVRBroadcast show me the (program/broadcast) called {Broadcast}
 WatchPVRBroadcast jump to {Broadcast}
 WatchPVRBroadcast change channel to {Broadcast}
 WatchPVRBroadcast change channel to (watch/play) {Broadcast}
 
-WatchPVRChannel (watch/play) {Channel}
+WatchPVRChannel (watch/play) (p.v.r./t.v./live t.v.) (/channel) {Channel}
