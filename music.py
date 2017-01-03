@@ -33,7 +33,7 @@ class MusicPlayer:
       return self.urls[self.current_index + 1]
     else:
       return None
-  
+
   @property
   def prev_item(self):
     if self.current_index > 0:
@@ -58,7 +58,7 @@ class MusicPlayer:
     self.current_item = urls[0]
     self.current_index = 0
     self.current_offset = 0
-    
+
     self.save_to_mongo()
 
   def load_from_mongo(self):
