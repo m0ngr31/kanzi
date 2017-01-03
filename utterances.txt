@@ -85,6 +85,8 @@ WhatAlbums what albums do (we/i/you) have by {Artist}
 
 ListenToArtist (play/listen to/shuffle) (music by/artist) {Artist}
 
+StreamArtist stream (music by/artist) {Artist}
+
 ListenToAlbum (play/listen to) album {Album}
 ListenToAlbum (play/listen to) album {Album} by {Artist}
 
@@ -155,6 +157,8 @@ PartyMode listen to all music
 PartyMode play random music
 PartyMode play all music
 PartyMode shuffle all music
+
+StreamPartyMode stream (/random/all/) music
 
 CurrentPlayItemInquiry what (/song/audio/video/movie/film/episode/show) is (this/playing/currently playing)
 

@@ -1,3 +1,6 @@
+AMAZON.StopIntent cancel
+AMAZON.StopIntent shut up
+AMAZON.StopIntent stop
 AddonExecute execute addon {Addon}
 AddonExecute execute plugin {Addon}
 AddonExecute execute script {Addon}
@@ -601,9 +604,11 @@ Skip skip
 Skip skip song
 StartOver replay
 StartOver start over
-AMAZON.StopIntent cancel
-AMAZON.StopIntent shut up
-AMAZON.StopIntent stop
+StreamArtist stream artist {Artist}
+StreamArtist stream music by {Artist}
+StreamPartyMode stream all music
+StreamPartyMode stream music
+StreamPartyMode stream random music
 SubtitlesNext next subtitle language
 SubtitlesNext next subtitles
 SubtitlesNext switch subtitle language

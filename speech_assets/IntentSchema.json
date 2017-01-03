@@ -55,6 +55,21 @@
       "intent": "AMAZON.StopIntent"
     },
     {
+      "intent": "AMAZON.NextIntent"
+    },
+    {
+      "intent": "AMAZON.PauseIntent"
+    },
+    {
+      "intent": "AMAZON.PreviousIntent"
+    },
+    {
+      "intent": "AMAZON.ResumeIntent"
+    },
+    {
+      "intent": "AMAZON.StartOverIntent"
+    },
+    {
       "intent": "WhatAlbums",
       "slots": [
         {
@@ -65,6 +80,15 @@
     },
     {
       "intent": "ListenToArtist",
+      "slots": [
+        {
+          "name": "Artist",
+          "type": "MUSICARTISTS"
+        }
+      ]
+    },
+    {
+      "intent": "StreamArtist",
       "slots": [
         {
           "name": "Artist",
@@ -390,6 +414,9 @@
     },
     {
       "intent": "PartyMode"      
+    },
+    {
+      "intent": "StreamPartyMode"
     },
     {
       "intent": "CurrentPlayItemInquiry"

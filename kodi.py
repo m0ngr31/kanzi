@@ -36,6 +36,7 @@ import re
 import string
 import sys
 import pycountry
+import unicodedata
 from fuzzywuzzy import fuzz, process
 from yaep import populate_env, env
 
@@ -44,6 +45,36 @@ sys.path += [os.path.dirname(__file__)]
 ENV_FILE = os.path.join(os.path.dirname(__file__), ".env")
 os.environ['ENV_FILE'] = ENV_FILE
 
+populate_env()
+
+# Do not use below for your own settings, use the .env file
+
+# We don't use the fallback param in os.getenv() because AWS Lambda actually
+# sets any environment variables included in LAMBDA_ENV_VARS, regardless if
+# it was unset before.
+#
+# Furthermore, os.getenv() under AWS Lambda returns 'None' as a string
+# instead of None as NoneType as we'd normally expect, so we have to
+# explicitly test for that.
+
+SCHEME = os.getenv('KODI_SCHEME')
+if not SCHEME or SCHEME == 'None':
+  SCHEME = 'http'
+SUBPATH = os.getenv('KODI_SUBPATH')
+if not SUBPATH or SUBPATH == 'None':
+  SUBPATH = ''
+KODI = os.getenv('KODI_ADDRESS')
+if not KODI or KODI == 'None':
+  KODI = '127.0.0.1'
+PORT = os.getenv('KODI_PORT')
+if not PORT or PORT == 'None':
+  PORT = '8080'
+USER = os.getenv('KODI_USERNAME')
+if not USER or USER == 'None':
+  USER = 'kodi'
+PASS = os.getenv('KODI_PASSWORD')
+if not PASS or PASS == 'None':
+  PASS = 'kodi'
 
 # These are words that we ignore when doing a non-exact match on show names
 STOPWORDS = [
@@ -81,7 +112,10 @@ STOPWORDS = [
 RE_NAME_WITH_PARAM = re.compile(r"(.*) \([^)]+\)$")
 
 def sanitize_name(media_name):
-  m = RE_NAME_WITH_PARAM.match(media_name)
+  # Normalize string
+  normalized = unicodedata.normalize('NFKD', media_name).encode('ASCII', 'ignore')
+  # Strip symbols
+  m = RE_NAME_WITH_PARAM.match(normalized)
   if m:
     return m.group(1)
   return media_name
@@ -116,34 +150,6 @@ def PopulateEnv():
 
 # These two methods construct the JSON-RPC message and send it to the Kodi player
 def SendCommand(command):
-  # Do not use below for your own settings, use the .env file
-
-  # We don't use the fallback param in os.getenv() because AWS Lambda actually
-  # sets any environment variables included in LAMBDA_ENV_VARS, regardless if
-  # it was unset before.
-  #
-  # Furthermore, os.getenv() under AWS Lambda returns 'None' as a string
-  # instead of None as NoneType as we'd normally expect, so we have to
-  # explicitly test for that.
-  SCHEME = os.getenv('KODI_SCHEME')
-  if not SCHEME or SCHEME == 'None':
-    SCHEME = 'http'
-  SUBPATH = os.getenv('KODI_SUBPATH')
-  if not SUBPATH or SUBPATH == 'None':
-    SUBPATH = ''
-  KODI = os.getenv('KODI_ADDRESS')
-  if not KODI or KODI == 'None':
-    KODI = '127.0.0.1'
-  PORT = os.getenv('KODI_PORT')
-  if not PORT or PORT == 'None':
-    PORT = '8080'
-  USER = os.getenv('KODI_USERNAME')
-  if not USER or USER == 'None':
-    USER = 'kodi'
-  PASS = os.getenv('KODI_PASSWORD')
-  if not PASS or PASS == 'None':
-    PASS = 'kodi'
-
   # Join the environment variables into a url
   url = "%s://%s:%s/%s/%s" % (SCHEME, KODI, PORT, SUBPATH, 'jsonrpc')
 
@@ -378,6 +384,10 @@ def PlayEpisode(ep_id, resume=True):
 
 def PlayMovie(movie_id, resume=True):
   return SendCommand(RPCString("Player.Open", {"item": {"movieid": movie_id}, "options": {"resume": resume}}))
+
+
+def PartyPlayMusic():
+  return SendCommand(RPCString("Player.Open", {"item": {"partymode": "music"}}))
 
 
 # Tell Kodi to update its video or music libraries
@@ -703,12 +713,16 @@ def GetArtistSongs(artist_id):
   return SendCommand(RPCString("AudioLibrary.GetSongs", {"filter": {"artistid": int(artist_id)}}))
 
 
+def GetArtistSongsPath(artist_id):
+  return SendCommand(RPCString("AudioLibrary.GetSongs", {"filter": {"artistid": int(artist_id)}, "properties":["file"]}))
+
+
 def GetSongs():
   return SendCommand(RPCString("AudioLibrary.GetSongs"))
 
 
-def GetArtistSongs(artist_id):
-  return SendCommand(RPCString("AudioLibrary.GetSongs", {"filter": {"artistid": int(artist_id)}}))
+def GetSongsPath():
+  return SendCommand(RPCString("AudioLibrary.GetSongs", {"properties":["file"]}))
 
 
 def GetRecentlyAddedAlbums():
@@ -882,6 +896,30 @@ def SystemEjectMedia():
 
 
 # Misc helpers
+
+# Prepare file url for streaming
+def PrepareDownload(path=""):
+  path = urllib.quote(path.encode('utf-8')).decode('utf-8')
+  path = '/vfs/' + path
+
+  # Join the environment variables into a url
+  url = "%s://%s:%s@%s:%s/%s" % (SCHEME, USER, PASS, KODI, PORT, SUBPATH)
+
+  url = url + path
+
+  # Remove any double slashes in the url
+  url = http_normalize_slashes(url)
+
+  accepted_answers = ['y', 'yes', 'Y', 'Yes', 'YES', 'true', 'True']
+
+  if os.getenv('USE_PROXY') in accepted_answers:
+    stream_url = 'https://kodi-music-proxy.herokuapp.com/proxy?file=' + url
+  elif os.getenv('ALT_PROXY'):
+    stream_url = os.getenv('ALT_PROXY') + url
+  else:
+    stream_url = url
+
+  return stream_url
 
 # Get the first active player.
 def GetPlayerID(playertype=['audio', 'video', 'picture']):
