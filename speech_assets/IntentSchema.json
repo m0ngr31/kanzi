@@ -266,6 +266,9 @@
       "intent": "StartOver"
     },
     {
+      "intent": "OpenRemote"
+    },
+    {
       "intent": "Home"
     },
     {

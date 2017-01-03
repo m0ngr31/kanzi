@@ -194,3 +194,5 @@ AddonGlobalSearch search for {Show}
 AddonGlobalSearch search for {Movie}
 AddonGlobalSearch search for {Album}
 AddonGlobalSearch search for {Artist}
+
+OpenRemote open (remote/controls/controller)

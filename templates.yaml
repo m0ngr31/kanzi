@@ -104,6 +104,8 @@ volume_set: Volume set to {{ num }}
 
 cant_steam: You need to add database information to your environment variables for this to work
 
+open_remote: "Starting remote control mode, to use say 'go up', 'go back' as if you were pressing buttons, say 'stop' to exit control mode"
+
 help: You can ask me whether there are any new shows, to play a movie, tv show, or artist, or control playback of media.
 
 
@@ -260,6 +262,8 @@ open_addon: Opening addon
 search: Search
 
 help_card: Help
+
+open_remote_card: Opening remote
 
 
 ############################

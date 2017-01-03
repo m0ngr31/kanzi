@@ -1024,16 +1024,29 @@ def alexa_player_zoom_reset():
   return statement(response_text).simple_card(card_title, response_text)
 
 
+# Handle the OpenRemote intent.abs
+@ask.intent('OpenRemote')
+def alexa_open_remote():
+  card_title = render_template('open_remote_card')
+  print card_title
+
+  session.attributes['navigating'] = True
+
+  response_text = render_template('open_remote')
+  return statement(response_text).simple_card(card_title, response_text)
+
+
 # Handle the Menu intent.
 @ask.intent('Menu')
 def alexa_context_menu():
   card_title = 'Navigate: Context Menu'
   print card_title
 
-  session.attributes['navigating'] = True
-
   kodi.Menu()
   response_text = render_template('pause')
+  
+  if not 'navigating' in session.attributes:
+    return statement(response_text)
 
   return question(response_text).reprompt(response_text)
 
@@ -1044,10 +1057,11 @@ def alexa_go_home():
   card_title = 'Navigate: Home'
   print card_title
 
-  session.attributes['navigating'] = True
-
   kodi.Home()
   response_text = render_template('pause')
+  
+  if not 'navigating' in session.attributes:
+    return statement(response_text)
 
   return question(response_text).reprompt(response_text)
 
@@ -1058,10 +1072,11 @@ def alexa_select():
   card_title = 'Navigate: Select'
   print card_title
 
-  session.attributes['navigating'] = True
-
   kodi.Select()
   response_text = render_template('pause')
+  
+  if not 'navigating' in session.attributes:
+    return statement(response_text)
 
   return question(response_text).reprompt(response_text)
 
@@ -1072,10 +1087,11 @@ def alexa_pageup():
   card_title = 'Navigate: Page up'
   print card_title
 
-  session.attributes['navigating'] = True
-
   kodi.PageUp()
   response_text = render_template('pause')
+  
+  if not 'navigating' in session.attributes:
+    return statement(response_text)
 
   return question(response_text).reprompt(response_text)
 
@@ -1086,10 +1102,11 @@ def alexa_pagedown():
   card_title = 'Navigate: Page down'
   print card_title
 
-  session.attributes['navigating'] = True
-
   kodi.PageDown()
   response_text = render_template('pause')
+  
+  if not 'navigating' in session.attributes:
+    return statement(response_text)
 
   return question(response_text).reprompt(response_text)
 
@@ -1100,10 +1117,11 @@ def alexa_left():
   card_title = 'Navigate: Left'
   print card_title
 
-  session.attributes['navigating'] = True
-
   kodi.Left()
   response_text = render_template('pause')
+  
+  if not 'navigating' in session.attributes:
+    return statement(response_text)
 
   return question(response_text).reprompt(response_text)
 
@@ -1114,10 +1132,11 @@ def alexa_right():
   card_title = 'Navigate: Right'
   print card_title
 
-  session.attributes['navigating'] = True
-
   kodi.Right()
   response_text = render_template('pause')
+  
+  if not 'navigating' in session.attributes:
+    return statement(response_text)
 
   return question(response_text).reprompt(response_text)
 
@@ -1128,10 +1147,11 @@ def alexa_up():
   card_title = 'Navigate: Up'
   print card_title
 
-  session.attributes['navigating'] = True
-
   kodi.Up()
   response_text = render_template('pause')
+  
+  if not 'navigating' in session.attributes:
+    return statement(response_text)
 
   return question(response_text).reprompt(response_text)
 
@@ -1142,10 +1162,11 @@ def alexa_down():
   card_title = 'Navigate: Down'
   print card_title
 
-  session.attributes['navigating'] = True
-
   kodi.Down()
   response_text = render_template('pause')
+  
+  if not 'navigating' in session.attributes:
+    return statement(response_text)
 
   return question(response_text).reprompt(response_text)
 
@@ -1156,10 +1177,11 @@ def alexa_back():
   card_title = 'Navigate: Back'
   print card_title
 
-  session.attributes['navigating'] = True
-
   kodi.Back()
   response_text = render_template('pause')
+  
+  if not 'navigating' in session.attributes:
+    return statement(response_text)
 
   return question(response_text).reprompt(response_text)
 
