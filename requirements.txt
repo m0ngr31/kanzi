@@ -5,3 +5,4 @@ pytz
 fuzzywuzzy
 flask-ask
 PyMongo
+Flask-Babel
