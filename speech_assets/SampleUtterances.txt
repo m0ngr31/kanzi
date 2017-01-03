@@ -343,6 +343,9 @@ NewShowInquiry if we have any episodes of {Show}
 NewShowInquiry if we have any new episodes of {Show}
 NewShowInquiry if we have any {Show}
 NewShowInquiry if we have {Show}
+OpenRemote open controller
+OpenRemote open controls
+OpenRemote open remote
 PageDown go page down
 PageDown navigate page down
 PageDown page down
