@@ -1,18 +1,54 @@
 AMAZON.StopIntent cancel
 AMAZON.StopIntent shut up
 AMAZON.StopIntent stop
-AddonExecute execute addon {Addon}
-AddonExecute execute plugin {Addon}
+AddonExecute execute add-on {Addon}
+AddonExecute execute plug-in {Addon}
 AddonExecute execute script {Addon}
+AddonExecute execute the add-on {Addon}
+AddonExecute execute the plug-in {Addon}
+AddonExecute execute the script {Addon}
+AddonExecute execute the {Addon}
+AddonExecute execute the {Addon}
+AddonExecute execute the {Addon} add-on
+AddonExecute execute the {Addon} plug-in
+AddonExecute execute the {Addon} script
 AddonExecute execute {Addon}
-AddonExecute open addon {Addon}
-AddonExecute open plugin {Addon}
+AddonExecute execute {Addon}
+AddonExecute execute {Addon} add-on
+AddonExecute execute {Addon} plug-in
+AddonExecute execute {Addon} script
+AddonExecute open add-on {Addon}
+AddonExecute open plug-in {Addon}
 AddonExecute open script {Addon}
+AddonExecute open the add-on {Addon}
+AddonExecute open the plug-in {Addon}
+AddonExecute open the script {Addon}
+AddonExecute open the {Addon}
+AddonExecute open the {Addon}
+AddonExecute open the {Addon} add-on
+AddonExecute open the {Addon} plug-in
+AddonExecute open the {Addon} script
 AddonExecute open {Addon}
-AddonExecute run addon {Addon}
-AddonExecute run plugin {Addon}
+AddonExecute open {Addon}
+AddonExecute open {Addon} add-on
+AddonExecute open {Addon} plug-in
+AddonExecute open {Addon} script
+AddonExecute run add-on {Addon}
+AddonExecute run plug-in {Addon}
 AddonExecute run script {Addon}
+AddonExecute run the add-on {Addon}
+AddonExecute run the plug-in {Addon}
+AddonExecute run the script {Addon}
+AddonExecute run the {Addon}
+AddonExecute run the {Addon}
+AddonExecute run the {Addon} add-on
+AddonExecute run the {Addon} plug-in
+AddonExecute run the {Addon} script
 AddonExecute run {Addon}
+AddonExecute run {Addon}
+AddonExecute run {Addon} add-on
+AddonExecute run {Addon} plug-in
+AddonExecute run {Addon} script
 AddonGlobalSearch search for {Album}
 AddonGlobalSearch search for {Artist}
 AddonGlobalSearch search for {Movie}
@@ -57,6 +93,12 @@ CurrentPlayItemInquiry what show is this
 CurrentPlayItemInquiry what song is currently playing
 CurrentPlayItemInquiry what song is playing
 CurrentPlayItemInquiry what song is this
+CurrentPlayItemInquiry what track is currently playing
+CurrentPlayItemInquiry what track is playing
+CurrentPlayItemInquiry what track is this
+CurrentPlayItemInquiry what tv show is currently playing
+CurrentPlayItemInquiry what tv show is playing
+CurrentPlayItemInquiry what tv show is this
 CurrentPlayItemInquiry what video is currently playing
 CurrentPlayItemInquiry what video is playing
 CurrentPlayItemInquiry what video is this
@@ -255,7 +297,14 @@ Hibernate deep sleep
 Hibernate deep sleep system
 Hibernate hibernate
 Hibernate hibernate system
+Home go home
+Home go home menu
+Home go home screen
+Home go main menu
 Home navigate home
+Home navigate home menu
+Home navigate home screen
+Home navigate main menu
 Left go left
 Left left
 Left navigate left
@@ -315,7 +364,9 @@ ListenToSong listen to song {Song}
 ListenToSong listen to song {Song} by {Artist}
 ListenToSong play song {Song}
 ListenToSong play song {Song} by {Artist}
+Menu contextual menu
 Menu open menu
+Menu right click
 Mute mute
 Mute set mute
 Mute set unmute
@@ -334,9 +385,42 @@ NewShowInquiry if we have any episodes of {Show}
 NewShowInquiry if we have any new episodes of {Show}
 NewShowInquiry if we have any {Show}
 NewShowInquiry if we have {Show}
-OpenRemote open controller
-OpenRemote open controls
-OpenRemote open remote
+OpenRemote activate button mode
+OpenRemote activate buttons
+OpenRemote activate controller
+OpenRemote activate controls
+OpenRemote activate navigation
+OpenRemote activate navigation mode
+OpenRemote activate remote
+OpenRemote activate remote control
+OpenRemote activate remote controls
+OpenRemote button mode
+OpenRemote buttons
+OpenRemote controller
+OpenRemote controls
+OpenRemote enable button mode
+OpenRemote enable buttons
+OpenRemote enable controller
+OpenRemote enable controls
+OpenRemote enable navigation
+OpenRemote enable navigation mode
+OpenRemote enable remote
+OpenRemote enable remote control
+OpenRemote enable remote controls
+OpenRemote navigation
+OpenRemote navigation mode
+OpenRemote remote
+OpenRemote remote control
+OpenRemote remote controls
+OpenRemote start button mode
+OpenRemote start buttons
+OpenRemote start controller
+OpenRemote start controls
+OpenRemote start navigation
+OpenRemote start navigation mode
+OpenRemote start remote
+OpenRemote start remote control
+OpenRemote start remote controls
 PageDown go page down
 PageDown navigate page down
 PageDown page down
@@ -559,16 +643,29 @@ PlayerZoomOutMoveUp zoom out and track up
 PlayerZoomReset normal zoom
 PlayerZoomReset reset zoom
 Prev listen to previous
+Prev listen to previous episode
+Prev listen to previous movie
 Prev listen to previous song
+Prev listen to previous track
+Prev listen to previous video
 Prev play previous
+Prev play previous episode
+Prev play previous movie
 Prev play previous song
+Prev play previous track
+Prev play previous video
 Prev previous
+Prev previous episode
+Prev previous movie
 Prev previous song
+Prev previous track
+Prev previous video
 Reboot reboot
 Reboot reboot system
 Right go right
 Right navigate right
 Right right
+Select OK
 Select select
 ShuffleAudioPlaylist shuffle audio playlist {AudioPlaylist}
 ShuffleAudioPlaylist shuffle music playlist {AudioPlaylist}
@@ -589,14 +686,48 @@ ShuffleVideoPlaylist shuffle {VideoPlaylist} video playlist
 Shutdown shut down
 Shutdown shut down system
 Skip listen to next
+Skip listen to next episode
+Skip listen to next movie
 Skip listen to next song
+Skip listen to next track
+Skip listen to next video
 Skip next
+Skip next
+Skip next episode
+Skip next episode
+Skip next movie
+Skip next movie
 Skip next song
+Skip next song
+Skip next track
+Skip next track
+Skip next video
+Skip next video
 Skip play next
+Skip play next episode
+Skip play next movie
 Skip play next song
+Skip play next track
+Skip play next video
 Skip skip
+Skip skip episode
+Skip skip movie
 Skip skip song
+Skip skip track
+Skip skip video
+StartOver go back to the beginning
+StartOver play again
+StartOver play episode again
+StartOver play movie again
+StartOver play song again
+StartOver play track again
+StartOver play video again
 StartOver replay
+StartOver replay episode
+StartOver replay movie
+StartOver replay song
+StartOver replay track
+StartOver replay video
 StartOver start over
 StreamArtist stream artist {Artist}
 StreamArtist stream music by {Artist}
@@ -626,22 +757,60 @@ UpdateAudio update audio library
 UpdateAudio update music library
 UpdateVideo update library
 UpdateVideo update video library
+VolumeDown down the volume
 VolumeDown down volume
+VolumeDown turn down the volume
 VolumeDown turn down volume
+VolumeDown turn the volume down
 VolumeDown turn volume down
 VolumeDown volume down
+VolumeSet set volume as {Volume}
+VolumeSet set volume level as {Volume}
+VolumeSet set volume level to {Volume}
+VolumeSet set volume level {Volume}
+VolumeSet set volume to {Volume}
 VolumeSet set volume {Volume}
+VolumeSet volume as {Volume}
+VolumeSet volume level as {Volume}
+VolumeSet volume level to {Volume}
+VolumeSet volume level {Volume}
+VolumeSet volume to {Volume}
 VolumeSet volume {Volume}
+VolumeSetPct set volume as {Volume} percent
+VolumeSetPct set volume level as {Volume} percent
+VolumeSetPct set volume level to {Volume} percent
+VolumeSetPct set volume level {Volume} percent
+VolumeSetPct set volume to {Volume} percent
 VolumeSetPct set volume {Volume} percent
+VolumeSetPct volume as {Volume} percent
+VolumeSetPct volume level as {Volume} percent
+VolumeSetPct volume level to {Volume} percent
+VolumeSetPct volume level {Volume} percent
+VolumeSetPct volume to {Volume} percent
 VolumeSetPct volume {Volume} percent
+VolumeUp turn the volume up
+VolumeUp turn up the volume
 VolumeUp turn up volume
 VolumeUp turn volume up
+VolumeUp up the volume
 VolumeUp up volume
 VolumeUp volume up
+WatchEpisode play episode {Episode} season {Season} of {Show}
+WatchEpisode play episode {Episode} series {Season} of {Show}
 WatchEpisode play season {Season} episode {Episode} of {Show}
 WatchEpisode play series {Season} episode {Episode} of {Show}
+WatchEpisode play {Show} episode {Episode} season {Season}
+WatchEpisode play {Show} episode {Episode} series {Season}
+WatchEpisode play {Show} season {Season} episode {Episode}
+WatchEpisode play {Show} series {Season} episode {Episode}
+WatchEpisode watch episode {Episode} season {Season} of {Show}
+WatchEpisode watch episode {Episode} series {Season} of {Show}
 WatchEpisode watch season {Season} episode {Episode} of {Show}
 WatchEpisode watch series {Season} episode {Episode} of {Show}
+WatchEpisode watch {Show} episode {Episode} season {Season}
+WatchEpisode watch {Show} episode {Episode} series {Season}
+WatchEpisode watch {Show} season {Season} episode {Episode}
+WatchEpisode watch {Show} series {Season} episode {Episode}
 WatchLastShow continue last show
 WatchLastShow continue playing last show
 WatchLastShow continue playing show
@@ -657,10 +826,12 @@ WatchMovie play movie {Movie}
 WatchMovie watch film {Movie}
 WatchMovie watch movie {Movie}
 WatchNextEpisode play next episode of {Show}
+WatchNextEpisode play the next episode of {Show}
 WatchNextEpisode watch next episode of {Show}
-WatchRandomEpisode play episode of {Show}
+WatchNextEpisode watch the next episode of {Show}
+WatchRandomEpisode play a random episode of {Show}
 WatchRandomEpisode play random episode of {Show}
-WatchRandomEpisode watch episode of {Show}
+WatchRandomEpisode watch a random episode of {Show}
 WatchRandomEpisode watch random episode of {Show}
 WatchRandomMovie play random film
 WatchRandomMovie play random movie
@@ -684,7 +855,7 @@ WatchVideoPlaylist watch {VideoPlaylist} movie playlist
 WatchVideoPlaylist watch {VideoPlaylist} playlist
 WatchVideoPlaylist watch {VideoPlaylist} show playlist
 WatchVideoPlaylist watch {VideoPlaylist} video playlist
-WhatAlbums what albums do i have by {Artist}
+WhatAlbums what albums do I have by {Artist}
 WhatAlbums what albums do we have by {Artist}
 WhatAlbums what albums do you have by {Artist}
 WhatNewAlbums are there any new albums
@@ -723,54 +894,54 @@ WhatNewAlbums are there some new albums to listen to today
 WhatNewAlbums are there some new albums to listen to tonight
 WhatNewAlbums are there some new albums today
 WhatNewAlbums are there some new albums tonight
-WhatNewAlbums do i have a new album
-WhatNewAlbums do i have a new album recorded
-WhatNewAlbums do i have a new album recorded to listen to
-WhatNewAlbums do i have a new album recorded to listen to today
-WhatNewAlbums do i have a new album recorded to listen to tonight
-WhatNewAlbums do i have a new album recorded today
-WhatNewAlbums do i have a new album recorded tonight
-WhatNewAlbums do i have a new album to listen to
-WhatNewAlbums do i have a new album to listen to today
-WhatNewAlbums do i have a new album to listen to tonight
-WhatNewAlbums do i have a new album today
-WhatNewAlbums do i have a new album tonight
-WhatNewAlbums do i have any new albums
-WhatNewAlbums do i have any new albums recorded
-WhatNewAlbums do i have any new albums recorded to listen to
-WhatNewAlbums do i have any new albums recorded to listen to today
-WhatNewAlbums do i have any new albums recorded to listen to tonight
-WhatNewAlbums do i have any new albums recorded today
-WhatNewAlbums do i have any new albums recorded tonight
-WhatNewAlbums do i have any new albums to listen to
-WhatNewAlbums do i have any new albums to listen to today
-WhatNewAlbums do i have any new albums to listen to tonight
-WhatNewAlbums do i have any new albums today
-WhatNewAlbums do i have any new albums tonight
-WhatNewAlbums do i have new albums
-WhatNewAlbums do i have new albums recorded
-WhatNewAlbums do i have new albums recorded to listen to
-WhatNewAlbums do i have new albums recorded to listen to today
-WhatNewAlbums do i have new albums recorded to listen to tonight
-WhatNewAlbums do i have new albums recorded today
-WhatNewAlbums do i have new albums recorded tonight
-WhatNewAlbums do i have new albums to listen to
-WhatNewAlbums do i have new albums to listen to today
-WhatNewAlbums do i have new albums to listen to tonight
-WhatNewAlbums do i have new albums today
-WhatNewAlbums do i have new albums tonight
-WhatNewAlbums do i have some new albums
-WhatNewAlbums do i have some new albums recorded
-WhatNewAlbums do i have some new albums recorded to listen to
-WhatNewAlbums do i have some new albums recorded to listen to today
-WhatNewAlbums do i have some new albums recorded to listen to tonight
-WhatNewAlbums do i have some new albums recorded today
-WhatNewAlbums do i have some new albums recorded tonight
-WhatNewAlbums do i have some new albums to listen to
-WhatNewAlbums do i have some new albums to listen to today
-WhatNewAlbums do i have some new albums to listen to tonight
-WhatNewAlbums do i have some new albums today
-WhatNewAlbums do i have some new albums tonight
+WhatNewAlbums do I have a new album
+WhatNewAlbums do I have a new album recorded
+WhatNewAlbums do I have a new album recorded to listen to
+WhatNewAlbums do I have a new album recorded to listen to today
+WhatNewAlbums do I have a new album recorded to listen to tonight
+WhatNewAlbums do I have a new album recorded today
+WhatNewAlbums do I have a new album recorded tonight
+WhatNewAlbums do I have a new album to listen to
+WhatNewAlbums do I have a new album to listen to today
+WhatNewAlbums do I have a new album to listen to tonight
+WhatNewAlbums do I have a new album today
+WhatNewAlbums do I have a new album tonight
+WhatNewAlbums do I have any new albums
+WhatNewAlbums do I have any new albums recorded
+WhatNewAlbums do I have any new albums recorded to listen to
+WhatNewAlbums do I have any new albums recorded to listen to today
+WhatNewAlbums do I have any new albums recorded to listen to tonight
+WhatNewAlbums do I have any new albums recorded today
+WhatNewAlbums do I have any new albums recorded tonight
+WhatNewAlbums do I have any new albums to listen to
+WhatNewAlbums do I have any new albums to listen to today
+WhatNewAlbums do I have any new albums to listen to tonight
+WhatNewAlbums do I have any new albums today
+WhatNewAlbums do I have any new albums tonight
+WhatNewAlbums do I have new albums
+WhatNewAlbums do I have new albums recorded
+WhatNewAlbums do I have new albums recorded to listen to
+WhatNewAlbums do I have new albums recorded to listen to today
+WhatNewAlbums do I have new albums recorded to listen to tonight
+WhatNewAlbums do I have new albums recorded today
+WhatNewAlbums do I have new albums recorded tonight
+WhatNewAlbums do I have new albums to listen to
+WhatNewAlbums do I have new albums to listen to today
+WhatNewAlbums do I have new albums to listen to tonight
+WhatNewAlbums do I have new albums today
+WhatNewAlbums do I have new albums tonight
+WhatNewAlbums do I have some new albums
+WhatNewAlbums do I have some new albums recorded
+WhatNewAlbums do I have some new albums recorded to listen to
+WhatNewAlbums do I have some new albums recorded to listen to today
+WhatNewAlbums do I have some new albums recorded to listen to tonight
+WhatNewAlbums do I have some new albums recorded today
+WhatNewAlbums do I have some new albums recorded tonight
+WhatNewAlbums do I have some new albums to listen to
+WhatNewAlbums do I have some new albums to listen to today
+WhatNewAlbums do I have some new albums to listen to tonight
+WhatNewAlbums do I have some new albums today
+WhatNewAlbums do I have some new albums tonight
 WhatNewAlbums do we have a new album
 WhatNewAlbums do we have a new album recorded
 WhatNewAlbums do we have a new album recorded to listen to
@@ -879,28 +1050,28 @@ WhatNewAlbums is there a new album to listen to today
 WhatNewAlbums is there a new album to listen to tonight
 WhatNewAlbums is there a new album today
 WhatNewAlbums is there a new album tonight
+WhatNewAlbums what albums I have
 WhatNewAlbums what albums are on the media server
 WhatNewAlbums what albums are on the server
 WhatNewAlbums what albums are ready
 WhatNewAlbums what albums are recorded
 WhatNewAlbums what albums are there
 WhatNewAlbums what albums are waiting
-WhatNewAlbums what albums do i have
+WhatNewAlbums what albums do I have
 WhatNewAlbums what albums do we have
 WhatNewAlbums what albums do you have
-WhatNewAlbums what albums i have
 WhatNewAlbums what albums we have
 WhatNewAlbums what albums you have
+WhatNewAlbums what new albums I have
 WhatNewAlbums what new albums are on the media server
 WhatNewAlbums what new albums are on the server
 WhatNewAlbums what new albums are ready
 WhatNewAlbums what new albums are recorded
 WhatNewAlbums what new albums are there
 WhatNewAlbums what new albums are waiting
-WhatNewAlbums what new albums do i have
+WhatNewAlbums what new albums do I have
 WhatNewAlbums what new albums do we have
 WhatNewAlbums what new albums do you have
-WhatNewAlbums what new albums i have
 WhatNewAlbums what new albums we have
 WhatNewAlbums what new albums you have
 WhatNewMovies are there any new films
@@ -1047,198 +1218,198 @@ WhatNewMovies are there some new {Genre} movies to watch today
 WhatNewMovies are there some new {Genre} movies to watch tonight
 WhatNewMovies are there some new {Genre} movies today
 WhatNewMovies are there some new {Genre} movies tonight
-WhatNewMovies do i have a new film
-WhatNewMovies do i have a new film recorded
-WhatNewMovies do i have a new film recorded to watch
-WhatNewMovies do i have a new film recorded to watch today
-WhatNewMovies do i have a new film recorded to watch tonight
-WhatNewMovies do i have a new film recorded today
-WhatNewMovies do i have a new film recorded tonight
-WhatNewMovies do i have a new film to watch
-WhatNewMovies do i have a new film to watch today
-WhatNewMovies do i have a new film to watch tonight
-WhatNewMovies do i have a new film today
-WhatNewMovies do i have a new film tonight
-WhatNewMovies do i have a new movie
-WhatNewMovies do i have a new movie recorded
-WhatNewMovies do i have a new movie recorded to watch
-WhatNewMovies do i have a new movie recorded to watch today
-WhatNewMovies do i have a new movie recorded to watch tonight
-WhatNewMovies do i have a new movie recorded today
-WhatNewMovies do i have a new movie recorded tonight
-WhatNewMovies do i have a new movie to watch
-WhatNewMovies do i have a new movie to watch today
-WhatNewMovies do i have a new movie to watch tonight
-WhatNewMovies do i have a new movie today
-WhatNewMovies do i have a new movie tonight
-WhatNewMovies do i have a new {Genre} film
-WhatNewMovies do i have a new {Genre} film recorded
-WhatNewMovies do i have a new {Genre} film recorded to watch
-WhatNewMovies do i have a new {Genre} film recorded to watch today
-WhatNewMovies do i have a new {Genre} film recorded to watch tonight
-WhatNewMovies do i have a new {Genre} film recorded today
-WhatNewMovies do i have a new {Genre} film recorded tonight
-WhatNewMovies do i have a new {Genre} film to watch
-WhatNewMovies do i have a new {Genre} film to watch today
-WhatNewMovies do i have a new {Genre} film to watch tonight
-WhatNewMovies do i have a new {Genre} film today
-WhatNewMovies do i have a new {Genre} film tonight
-WhatNewMovies do i have a new {Genre} movie
-WhatNewMovies do i have a new {Genre} movie recorded
-WhatNewMovies do i have a new {Genre} movie recorded to watch
-WhatNewMovies do i have a new {Genre} movie recorded to watch today
-WhatNewMovies do i have a new {Genre} movie recorded to watch tonight
-WhatNewMovies do i have a new {Genre} movie recorded today
-WhatNewMovies do i have a new {Genre} movie recorded tonight
-WhatNewMovies do i have a new {Genre} movie to watch
-WhatNewMovies do i have a new {Genre} movie to watch today
-WhatNewMovies do i have a new {Genre} movie to watch tonight
-WhatNewMovies do i have a new {Genre} movie today
-WhatNewMovies do i have a new {Genre} movie tonight
-WhatNewMovies do i have any new films
-WhatNewMovies do i have any new films recorded
-WhatNewMovies do i have any new films recorded to watch
-WhatNewMovies do i have any new films recorded to watch today
-WhatNewMovies do i have any new films recorded to watch tonight
-WhatNewMovies do i have any new films recorded today
-WhatNewMovies do i have any new films recorded tonight
-WhatNewMovies do i have any new films to watch
-WhatNewMovies do i have any new films to watch today
-WhatNewMovies do i have any new films to watch tonight
-WhatNewMovies do i have any new films today
-WhatNewMovies do i have any new films tonight
-WhatNewMovies do i have any new movies
-WhatNewMovies do i have any new movies recorded
-WhatNewMovies do i have any new movies recorded to watch
-WhatNewMovies do i have any new movies recorded to watch today
-WhatNewMovies do i have any new movies recorded to watch tonight
-WhatNewMovies do i have any new movies recorded today
-WhatNewMovies do i have any new movies recorded tonight
-WhatNewMovies do i have any new movies to watch
-WhatNewMovies do i have any new movies to watch today
-WhatNewMovies do i have any new movies to watch tonight
-WhatNewMovies do i have any new movies today
-WhatNewMovies do i have any new movies tonight
-WhatNewMovies do i have any new {Genre} films
-WhatNewMovies do i have any new {Genre} films recorded
-WhatNewMovies do i have any new {Genre} films recorded to watch
-WhatNewMovies do i have any new {Genre} films recorded to watch today
-WhatNewMovies do i have any new {Genre} films recorded to watch tonight
-WhatNewMovies do i have any new {Genre} films recorded today
-WhatNewMovies do i have any new {Genre} films recorded tonight
-WhatNewMovies do i have any new {Genre} films to watch
-WhatNewMovies do i have any new {Genre} films to watch today
-WhatNewMovies do i have any new {Genre} films to watch tonight
-WhatNewMovies do i have any new {Genre} films today
-WhatNewMovies do i have any new {Genre} films tonight
-WhatNewMovies do i have any new {Genre} movies
-WhatNewMovies do i have any new {Genre} movies recorded
-WhatNewMovies do i have any new {Genre} movies recorded to watch
-WhatNewMovies do i have any new {Genre} movies recorded to watch today
-WhatNewMovies do i have any new {Genre} movies recorded to watch tonight
-WhatNewMovies do i have any new {Genre} movies recorded today
-WhatNewMovies do i have any new {Genre} movies recorded tonight
-WhatNewMovies do i have any new {Genre} movies to watch
-WhatNewMovies do i have any new {Genre} movies to watch today
-WhatNewMovies do i have any new {Genre} movies to watch tonight
-WhatNewMovies do i have any new {Genre} movies today
-WhatNewMovies do i have any new {Genre} movies tonight
-WhatNewMovies do i have new films
-WhatNewMovies do i have new films recorded
-WhatNewMovies do i have new films recorded to watch
-WhatNewMovies do i have new films recorded to watch today
-WhatNewMovies do i have new films recorded to watch tonight
-WhatNewMovies do i have new films recorded today
-WhatNewMovies do i have new films recorded tonight
-WhatNewMovies do i have new films to watch
-WhatNewMovies do i have new films to watch today
-WhatNewMovies do i have new films to watch tonight
-WhatNewMovies do i have new films today
-WhatNewMovies do i have new films tonight
-WhatNewMovies do i have new movies
-WhatNewMovies do i have new movies recorded
-WhatNewMovies do i have new movies recorded to watch
-WhatNewMovies do i have new movies recorded to watch today
-WhatNewMovies do i have new movies recorded to watch tonight
-WhatNewMovies do i have new movies recorded today
-WhatNewMovies do i have new movies recorded tonight
-WhatNewMovies do i have new movies to watch
-WhatNewMovies do i have new movies to watch today
-WhatNewMovies do i have new movies to watch tonight
-WhatNewMovies do i have new movies today
-WhatNewMovies do i have new movies tonight
-WhatNewMovies do i have new {Genre} films
-WhatNewMovies do i have new {Genre} films recorded
-WhatNewMovies do i have new {Genre} films recorded to watch
-WhatNewMovies do i have new {Genre} films recorded to watch today
-WhatNewMovies do i have new {Genre} films recorded to watch tonight
-WhatNewMovies do i have new {Genre} films recorded today
-WhatNewMovies do i have new {Genre} films recorded tonight
-WhatNewMovies do i have new {Genre} films to watch
-WhatNewMovies do i have new {Genre} films to watch today
-WhatNewMovies do i have new {Genre} films to watch tonight
-WhatNewMovies do i have new {Genre} films today
-WhatNewMovies do i have new {Genre} films tonight
-WhatNewMovies do i have new {Genre} movies
-WhatNewMovies do i have new {Genre} movies recorded
-WhatNewMovies do i have new {Genre} movies recorded to watch
-WhatNewMovies do i have new {Genre} movies recorded to watch today
-WhatNewMovies do i have new {Genre} movies recorded to watch tonight
-WhatNewMovies do i have new {Genre} movies recorded today
-WhatNewMovies do i have new {Genre} movies recorded tonight
-WhatNewMovies do i have new {Genre} movies to watch
-WhatNewMovies do i have new {Genre} movies to watch today
-WhatNewMovies do i have new {Genre} movies to watch tonight
-WhatNewMovies do i have new {Genre} movies today
-WhatNewMovies do i have new {Genre} movies tonight
-WhatNewMovies do i have some new films
-WhatNewMovies do i have some new films recorded
-WhatNewMovies do i have some new films recorded to watch
-WhatNewMovies do i have some new films recorded to watch today
-WhatNewMovies do i have some new films recorded to watch tonight
-WhatNewMovies do i have some new films recorded today
-WhatNewMovies do i have some new films recorded tonight
-WhatNewMovies do i have some new films to watch
-WhatNewMovies do i have some new films to watch today
-WhatNewMovies do i have some new films to watch tonight
-WhatNewMovies do i have some new films today
-WhatNewMovies do i have some new films tonight
-WhatNewMovies do i have some new movies
-WhatNewMovies do i have some new movies recorded
-WhatNewMovies do i have some new movies recorded to watch
-WhatNewMovies do i have some new movies recorded to watch today
-WhatNewMovies do i have some new movies recorded to watch tonight
-WhatNewMovies do i have some new movies recorded today
-WhatNewMovies do i have some new movies recorded tonight
-WhatNewMovies do i have some new movies to watch
-WhatNewMovies do i have some new movies to watch today
-WhatNewMovies do i have some new movies to watch tonight
-WhatNewMovies do i have some new movies today
-WhatNewMovies do i have some new movies tonight
-WhatNewMovies do i have some new {Genre} films
-WhatNewMovies do i have some new {Genre} films recorded
-WhatNewMovies do i have some new {Genre} films recorded to watch
-WhatNewMovies do i have some new {Genre} films recorded to watch today
-WhatNewMovies do i have some new {Genre} films recorded to watch tonight
-WhatNewMovies do i have some new {Genre} films recorded today
-WhatNewMovies do i have some new {Genre} films recorded tonight
-WhatNewMovies do i have some new {Genre} films to watch
-WhatNewMovies do i have some new {Genre} films to watch today
-WhatNewMovies do i have some new {Genre} films to watch tonight
-WhatNewMovies do i have some new {Genre} films today
-WhatNewMovies do i have some new {Genre} films tonight
-WhatNewMovies do i have some new {Genre} movies
-WhatNewMovies do i have some new {Genre} movies recorded
-WhatNewMovies do i have some new {Genre} movies recorded to watch
-WhatNewMovies do i have some new {Genre} movies recorded to watch today
-WhatNewMovies do i have some new {Genre} movies recorded to watch tonight
-WhatNewMovies do i have some new {Genre} movies recorded today
-WhatNewMovies do i have some new {Genre} movies recorded tonight
-WhatNewMovies do i have some new {Genre} movies to watch
-WhatNewMovies do i have some new {Genre} movies to watch today
-WhatNewMovies do i have some new {Genre} movies to watch tonight
-WhatNewMovies do i have some new {Genre} movies today
-WhatNewMovies do i have some new {Genre} movies tonight
+WhatNewMovies do I have a new film
+WhatNewMovies do I have a new film recorded
+WhatNewMovies do I have a new film recorded to watch
+WhatNewMovies do I have a new film recorded to watch today
+WhatNewMovies do I have a new film recorded to watch tonight
+WhatNewMovies do I have a new film recorded today
+WhatNewMovies do I have a new film recorded tonight
+WhatNewMovies do I have a new film to watch
+WhatNewMovies do I have a new film to watch today
+WhatNewMovies do I have a new film to watch tonight
+WhatNewMovies do I have a new film today
+WhatNewMovies do I have a new film tonight
+WhatNewMovies do I have a new movie
+WhatNewMovies do I have a new movie recorded
+WhatNewMovies do I have a new movie recorded to watch
+WhatNewMovies do I have a new movie recorded to watch today
+WhatNewMovies do I have a new movie recorded to watch tonight
+WhatNewMovies do I have a new movie recorded today
+WhatNewMovies do I have a new movie recorded tonight
+WhatNewMovies do I have a new movie to watch
+WhatNewMovies do I have a new movie to watch today
+WhatNewMovies do I have a new movie to watch tonight
+WhatNewMovies do I have a new movie today
+WhatNewMovies do I have a new movie tonight
+WhatNewMovies do I have a new {Genre} film
+WhatNewMovies do I have a new {Genre} film recorded
+WhatNewMovies do I have a new {Genre} film recorded to watch
+WhatNewMovies do I have a new {Genre} film recorded to watch today
+WhatNewMovies do I have a new {Genre} film recorded to watch tonight
+WhatNewMovies do I have a new {Genre} film recorded today
+WhatNewMovies do I have a new {Genre} film recorded tonight
+WhatNewMovies do I have a new {Genre} film to watch
+WhatNewMovies do I have a new {Genre} film to watch today
+WhatNewMovies do I have a new {Genre} film to watch tonight
+WhatNewMovies do I have a new {Genre} film today
+WhatNewMovies do I have a new {Genre} film tonight
+WhatNewMovies do I have a new {Genre} movie
+WhatNewMovies do I have a new {Genre} movie recorded
+WhatNewMovies do I have a new {Genre} movie recorded to watch
+WhatNewMovies do I have a new {Genre} movie recorded to watch today
+WhatNewMovies do I have a new {Genre} movie recorded to watch tonight
+WhatNewMovies do I have a new {Genre} movie recorded today
+WhatNewMovies do I have a new {Genre} movie recorded tonight
+WhatNewMovies do I have a new {Genre} movie to watch
+WhatNewMovies do I have a new {Genre} movie to watch today
+WhatNewMovies do I have a new {Genre} movie to watch tonight
+WhatNewMovies do I have a new {Genre} movie today
+WhatNewMovies do I have a new {Genre} movie tonight
+WhatNewMovies do I have any new films
+WhatNewMovies do I have any new films recorded
+WhatNewMovies do I have any new films recorded to watch
+WhatNewMovies do I have any new films recorded to watch today
+WhatNewMovies do I have any new films recorded to watch tonight
+WhatNewMovies do I have any new films recorded today
+WhatNewMovies do I have any new films recorded tonight
+WhatNewMovies do I have any new films to watch
+WhatNewMovies do I have any new films to watch today
+WhatNewMovies do I have any new films to watch tonight
+WhatNewMovies do I have any new films today
+WhatNewMovies do I have any new films tonight
+WhatNewMovies do I have any new movies
+WhatNewMovies do I have any new movies recorded
+WhatNewMovies do I have any new movies recorded to watch
+WhatNewMovies do I have any new movies recorded to watch today
+WhatNewMovies do I have any new movies recorded to watch tonight
+WhatNewMovies do I have any new movies recorded today
+WhatNewMovies do I have any new movies recorded tonight
+WhatNewMovies do I have any new movies to watch
+WhatNewMovies do I have any new movies to watch today
+WhatNewMovies do I have any new movies to watch tonight
+WhatNewMovies do I have any new movies today
+WhatNewMovies do I have any new movies tonight
+WhatNewMovies do I have any new {Genre} films
+WhatNewMovies do I have any new {Genre} films recorded
+WhatNewMovies do I have any new {Genre} films recorded to watch
+WhatNewMovies do I have any new {Genre} films recorded to watch today
+WhatNewMovies do I have any new {Genre} films recorded to watch tonight
+WhatNewMovies do I have any new {Genre} films recorded today
+WhatNewMovies do I have any new {Genre} films recorded tonight
+WhatNewMovies do I have any new {Genre} films to watch
+WhatNewMovies do I have any new {Genre} films to watch today
+WhatNewMovies do I have any new {Genre} films to watch tonight
+WhatNewMovies do I have any new {Genre} films today
+WhatNewMovies do I have any new {Genre} films tonight
+WhatNewMovies do I have any new {Genre} movies
+WhatNewMovies do I have any new {Genre} movies recorded
+WhatNewMovies do I have any new {Genre} movies recorded to watch
+WhatNewMovies do I have any new {Genre} movies recorded to watch today
+WhatNewMovies do I have any new {Genre} movies recorded to watch tonight
+WhatNewMovies do I have any new {Genre} movies recorded today
+WhatNewMovies do I have any new {Genre} movies recorded tonight
+WhatNewMovies do I have any new {Genre} movies to watch
+WhatNewMovies do I have any new {Genre} movies to watch today
+WhatNewMovies do I have any new {Genre} movies to watch tonight
+WhatNewMovies do I have any new {Genre} movies today
+WhatNewMovies do I have any new {Genre} movies tonight
+WhatNewMovies do I have new films
+WhatNewMovies do I have new films recorded
+WhatNewMovies do I have new films recorded to watch
+WhatNewMovies do I have new films recorded to watch today
+WhatNewMovies do I have new films recorded to watch tonight
+WhatNewMovies do I have new films recorded today
+WhatNewMovies do I have new films recorded tonight
+WhatNewMovies do I have new films to watch
+WhatNewMovies do I have new films to watch today
+WhatNewMovies do I have new films to watch tonight
+WhatNewMovies do I have new films today
+WhatNewMovies do I have new films tonight
+WhatNewMovies do I have new movies
+WhatNewMovies do I have new movies recorded
+WhatNewMovies do I have new movies recorded to watch
+WhatNewMovies do I have new movies recorded to watch today
+WhatNewMovies do I have new movies recorded to watch tonight
+WhatNewMovies do I have new movies recorded today
+WhatNewMovies do I have new movies recorded tonight
+WhatNewMovies do I have new movies to watch
+WhatNewMovies do I have new movies to watch today
+WhatNewMovies do I have new movies to watch tonight
+WhatNewMovies do I have new movies today
+WhatNewMovies do I have new movies tonight
+WhatNewMovies do I have new {Genre} films
+WhatNewMovies do I have new {Genre} films recorded
+WhatNewMovies do I have new {Genre} films recorded to watch
+WhatNewMovies do I have new {Genre} films recorded to watch today
+WhatNewMovies do I have new {Genre} films recorded to watch tonight
+WhatNewMovies do I have new {Genre} films recorded today
+WhatNewMovies do I have new {Genre} films recorded tonight
+WhatNewMovies do I have new {Genre} films to watch
+WhatNewMovies do I have new {Genre} films to watch today
+WhatNewMovies do I have new {Genre} films to watch tonight
+WhatNewMovies do I have new {Genre} films today
+WhatNewMovies do I have new {Genre} films tonight
+WhatNewMovies do I have new {Genre} movies
+WhatNewMovies do I have new {Genre} movies recorded
+WhatNewMovies do I have new {Genre} movies recorded to watch
+WhatNewMovies do I have new {Genre} movies recorded to watch today
+WhatNewMovies do I have new {Genre} movies recorded to watch tonight
+WhatNewMovies do I have new {Genre} movies recorded today
+WhatNewMovies do I have new {Genre} movies recorded tonight
+WhatNewMovies do I have new {Genre} movies to watch
+WhatNewMovies do I have new {Genre} movies to watch today
+WhatNewMovies do I have new {Genre} movies to watch tonight
+WhatNewMovies do I have new {Genre} movies today
+WhatNewMovies do I have new {Genre} movies tonight
+WhatNewMovies do I have some new films
+WhatNewMovies do I have some new films recorded
+WhatNewMovies do I have some new films recorded to watch
+WhatNewMovies do I have some new films recorded to watch today
+WhatNewMovies do I have some new films recorded to watch tonight
+WhatNewMovies do I have some new films recorded today
+WhatNewMovies do I have some new films recorded tonight
+WhatNewMovies do I have some new films to watch
+WhatNewMovies do I have some new films to watch today
+WhatNewMovies do I have some new films to watch tonight
+WhatNewMovies do I have some new films today
+WhatNewMovies do I have some new films tonight
+WhatNewMovies do I have some new movies
+WhatNewMovies do I have some new movies recorded
+WhatNewMovies do I have some new movies recorded to watch
+WhatNewMovies do I have some new movies recorded to watch today
+WhatNewMovies do I have some new movies recorded to watch tonight
+WhatNewMovies do I have some new movies recorded today
+WhatNewMovies do I have some new movies recorded tonight
+WhatNewMovies do I have some new movies to watch
+WhatNewMovies do I have some new movies to watch today
+WhatNewMovies do I have some new movies to watch tonight
+WhatNewMovies do I have some new movies today
+WhatNewMovies do I have some new movies tonight
+WhatNewMovies do I have some new {Genre} films
+WhatNewMovies do I have some new {Genre} films recorded
+WhatNewMovies do I have some new {Genre} films recorded to watch
+WhatNewMovies do I have some new {Genre} films recorded to watch today
+WhatNewMovies do I have some new {Genre} films recorded to watch tonight
+WhatNewMovies do I have some new {Genre} films recorded today
+WhatNewMovies do I have some new {Genre} films recorded tonight
+WhatNewMovies do I have some new {Genre} films to watch
+WhatNewMovies do I have some new {Genre} films to watch today
+WhatNewMovies do I have some new {Genre} films to watch tonight
+WhatNewMovies do I have some new {Genre} films today
+WhatNewMovies do I have some new {Genre} films tonight
+WhatNewMovies do I have some new {Genre} movies
+WhatNewMovies do I have some new {Genre} movies recorded
+WhatNewMovies do I have some new {Genre} movies recorded to watch
+WhatNewMovies do I have some new {Genre} movies recorded to watch today
+WhatNewMovies do I have some new {Genre} movies recorded to watch tonight
+WhatNewMovies do I have some new {Genre} movies recorded today
+WhatNewMovies do I have some new {Genre} movies recorded tonight
+WhatNewMovies do I have some new {Genre} movies to watch
+WhatNewMovies do I have some new {Genre} movies to watch today
+WhatNewMovies do I have some new {Genre} movies to watch tonight
+WhatNewMovies do I have some new {Genre} movies today
+WhatNewMovies do I have some new {Genre} movies tonight
 WhatNewMovies do we have a new film
 WhatNewMovies do we have a new film recorded
 WhatNewMovies do we have a new film recorded to watch
@@ -1671,52 +1842,52 @@ WhatNewMovies is there a new {Genre} movie to watch today
 WhatNewMovies is there a new {Genre} movie to watch tonight
 WhatNewMovies is there a new {Genre} movie today
 WhatNewMovies is there a new {Genre} movie tonight
+WhatNewMovies what new {Genre} films I have
 WhatNewMovies what new {Genre} films are on the media server
 WhatNewMovies what new {Genre} films are on the server
 WhatNewMovies what new {Genre} films are ready
 WhatNewMovies what new {Genre} films are recorded
 WhatNewMovies what new {Genre} films are there
 WhatNewMovies what new {Genre} films are waiting
-WhatNewMovies what new {Genre} films do i have
+WhatNewMovies what new {Genre} films do I have
 WhatNewMovies what new {Genre} films do we have
 WhatNewMovies what new {Genre} films do you have
-WhatNewMovies what new {Genre} films i have
 WhatNewMovies what new {Genre} films we have
 WhatNewMovies what new {Genre} films you have
+WhatNewMovies what new {Genre} movies I have
 WhatNewMovies what new {Genre} movies are on the media server
 WhatNewMovies what new {Genre} movies are on the server
 WhatNewMovies what new {Genre} movies are ready
 WhatNewMovies what new {Genre} movies are recorded
 WhatNewMovies what new {Genre} movies are there
 WhatNewMovies what new {Genre} movies are waiting
-WhatNewMovies what new {Genre} movies do i have
+WhatNewMovies what new {Genre} movies do I have
 WhatNewMovies what new {Genre} movies do we have
 WhatNewMovies what new {Genre} movies do you have
-WhatNewMovies what new {Genre} movies i have
 WhatNewMovies what new {Genre} movies we have
 WhatNewMovies what new {Genre} movies you have
+WhatNewMovies what {Genre} films I have
 WhatNewMovies what {Genre} films are on the media server
 WhatNewMovies what {Genre} films are on the server
 WhatNewMovies what {Genre} films are ready
 WhatNewMovies what {Genre} films are recorded
 WhatNewMovies what {Genre} films are there
 WhatNewMovies what {Genre} films are waiting
-WhatNewMovies what {Genre} films do i have
+WhatNewMovies what {Genre} films do I have
 WhatNewMovies what {Genre} films do we have
 WhatNewMovies what {Genre} films do you have
-WhatNewMovies what {Genre} films i have
 WhatNewMovies what {Genre} films we have
 WhatNewMovies what {Genre} films you have
+WhatNewMovies what {Genre} movies I have
 WhatNewMovies what {Genre} movies are on the media server
 WhatNewMovies what {Genre} movies are on the server
 WhatNewMovies what {Genre} movies are ready
 WhatNewMovies what {Genre} movies are recorded
 WhatNewMovies what {Genre} movies are there
 WhatNewMovies what {Genre} movies are waiting
-WhatNewMovies what {Genre} movies do i have
+WhatNewMovies what {Genre} movies do I have
 WhatNewMovies what {Genre} movies do we have
 WhatNewMovies what {Genre} movies do you have
-WhatNewMovies what {Genre} movies i have
 WhatNewMovies what {Genre} movies we have
 WhatNewMovies what {Genre} movies you have
 WhatNewShows are there any new shows
@@ -1755,54 +1926,54 @@ WhatNewShows are there some new shows to watch today
 WhatNewShows are there some new shows to watch tonight
 WhatNewShows are there some new shows today
 WhatNewShows are there some new shows tonight
-WhatNewShows do i have a new show
-WhatNewShows do i have a new show recorded
-WhatNewShows do i have a new show recorded to watch
-WhatNewShows do i have a new show recorded to watch today
-WhatNewShows do i have a new show recorded to watch tonight
-WhatNewShows do i have a new show recorded today
-WhatNewShows do i have a new show recorded tonight
-WhatNewShows do i have a new show to watch
-WhatNewShows do i have a new show to watch today
-WhatNewShows do i have a new show to watch tonight
-WhatNewShows do i have a new show today
-WhatNewShows do i have a new show tonight
-WhatNewShows do i have any new shows
-WhatNewShows do i have any new shows recorded
-WhatNewShows do i have any new shows recorded to watch
-WhatNewShows do i have any new shows recorded to watch today
-WhatNewShows do i have any new shows recorded to watch tonight
-WhatNewShows do i have any new shows recorded today
-WhatNewShows do i have any new shows recorded tonight
-WhatNewShows do i have any new shows to watch
-WhatNewShows do i have any new shows to watch today
-WhatNewShows do i have any new shows to watch tonight
-WhatNewShows do i have any new shows today
-WhatNewShows do i have any new shows tonight
-WhatNewShows do i have new shows
-WhatNewShows do i have new shows recorded
-WhatNewShows do i have new shows recorded to watch
-WhatNewShows do i have new shows recorded to watch today
-WhatNewShows do i have new shows recorded to watch tonight
-WhatNewShows do i have new shows recorded today
-WhatNewShows do i have new shows recorded tonight
-WhatNewShows do i have new shows to watch
-WhatNewShows do i have new shows to watch today
-WhatNewShows do i have new shows to watch tonight
-WhatNewShows do i have new shows today
-WhatNewShows do i have new shows tonight
-WhatNewShows do i have some new shows
-WhatNewShows do i have some new shows recorded
-WhatNewShows do i have some new shows recorded to watch
-WhatNewShows do i have some new shows recorded to watch today
-WhatNewShows do i have some new shows recorded to watch tonight
-WhatNewShows do i have some new shows recorded today
-WhatNewShows do i have some new shows recorded tonight
-WhatNewShows do i have some new shows to watch
-WhatNewShows do i have some new shows to watch today
-WhatNewShows do i have some new shows to watch tonight
-WhatNewShows do i have some new shows today
-WhatNewShows do i have some new shows tonight
+WhatNewShows do I have a new show
+WhatNewShows do I have a new show recorded
+WhatNewShows do I have a new show recorded to watch
+WhatNewShows do I have a new show recorded to watch today
+WhatNewShows do I have a new show recorded to watch tonight
+WhatNewShows do I have a new show recorded today
+WhatNewShows do I have a new show recorded tonight
+WhatNewShows do I have a new show to watch
+WhatNewShows do I have a new show to watch today
+WhatNewShows do I have a new show to watch tonight
+WhatNewShows do I have a new show today
+WhatNewShows do I have a new show tonight
+WhatNewShows do I have any new shows
+WhatNewShows do I have any new shows recorded
+WhatNewShows do I have any new shows recorded to watch
+WhatNewShows do I have any new shows recorded to watch today
+WhatNewShows do I have any new shows recorded to watch tonight
+WhatNewShows do I have any new shows recorded today
+WhatNewShows do I have any new shows recorded tonight
+WhatNewShows do I have any new shows to watch
+WhatNewShows do I have any new shows to watch today
+WhatNewShows do I have any new shows to watch tonight
+WhatNewShows do I have any new shows today
+WhatNewShows do I have any new shows tonight
+WhatNewShows do I have new shows
+WhatNewShows do I have new shows recorded
+WhatNewShows do I have new shows recorded to watch
+WhatNewShows do I have new shows recorded to watch today
+WhatNewShows do I have new shows recorded to watch tonight
+WhatNewShows do I have new shows recorded today
+WhatNewShows do I have new shows recorded tonight
+WhatNewShows do I have new shows to watch
+WhatNewShows do I have new shows to watch today
+WhatNewShows do I have new shows to watch tonight
+WhatNewShows do I have new shows today
+WhatNewShows do I have new shows tonight
+WhatNewShows do I have some new shows
+WhatNewShows do I have some new shows recorded
+WhatNewShows do I have some new shows recorded to watch
+WhatNewShows do I have some new shows recorded to watch today
+WhatNewShows do I have some new shows recorded to watch tonight
+WhatNewShows do I have some new shows recorded today
+WhatNewShows do I have some new shows recorded tonight
+WhatNewShows do I have some new shows to watch
+WhatNewShows do I have some new shows to watch today
+WhatNewShows do I have some new shows to watch tonight
+WhatNewShows do I have some new shows today
+WhatNewShows do I have some new shows tonight
 WhatNewShows do we have a new show
 WhatNewShows do we have a new show recorded
 WhatNewShows do we have a new show recorded to watch
@@ -1911,27 +2082,27 @@ WhatNewShows is there a new show to watch today
 WhatNewShows is there a new show to watch tonight
 WhatNewShows is there a new show today
 WhatNewShows is there a new show tonight
+WhatNewShows what new shows I have
 WhatNewShows what new shows are on the media server
 WhatNewShows what new shows are on the server
 WhatNewShows what new shows are ready
 WhatNewShows what new shows are recorded
 WhatNewShows what new shows are there
 WhatNewShows what new shows are waiting
-WhatNewShows what new shows do i have
+WhatNewShows what new shows do I have
 WhatNewShows what new shows do we have
 WhatNewShows what new shows do you have
-WhatNewShows what new shows i have
 WhatNewShows what new shows we have
 WhatNewShows what new shows you have
+WhatNewShows what shows I have
 WhatNewShows what shows are on the media server
 WhatNewShows what shows are on the server
 WhatNewShows what shows are ready
 WhatNewShows what shows are recorded
 WhatNewShows what shows are there
 WhatNewShows what shows are waiting
-WhatNewShows what shows do i have
+WhatNewShows what shows do I have
 WhatNewShows what shows do we have
 WhatNewShows what shows do you have
-WhatNewShows what shows i have
 WhatNewShows what shows we have
 WhatNewShows what shows you have
