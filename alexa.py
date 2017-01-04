@@ -574,6 +574,7 @@ def alexa_shuffle_audio_playlist(AudioPlaylist):
 @ask.intent('PartyMode')
 def alexa_party_play():
   card_title = render_template('party_mode').encode("utf-8")
+  print card_title
 
   kodi.Stop()
   kodi.ClearAudioPlaylist()
@@ -588,6 +589,7 @@ def alexa_party_play():
 def alexa_stream_party():
   if CAN_STREAM:
     card_title = render_template('streaming_party_mode').encode("utf-8")
+    print card_title
 
     response_text = render_template('streaming_party').encode("utf-8")
 
@@ -909,6 +911,7 @@ def alexa_player_zoom_in_move_up():
 @ask.intent('PlayerZoomInMoveDown')
 def alexa_player_zoom_in_move_down():
   card_title = render_template('player_zoom_in_down').encode("utf-8")
+  print card_title
 
   kodi.PlayerZoomIn()
   kodi.PlayerMoveDown()
@@ -1039,7 +1042,7 @@ def alexa_context_menu():
 
   kodi.Menu()
   response_text = render_template('pause').encode("utf-8")
-  
+
   if not 'navigating' in session.attributes:
     return statement(response_text)
 
@@ -1054,7 +1057,7 @@ def alexa_go_home():
 
   kodi.Home()
   response_text = render_template('pause').encode("utf-8")
-  
+
   if not 'navigating' in session.attributes:
     return statement(response_text)
 
@@ -1069,7 +1072,7 @@ def alexa_select():
 
   kodi.Select()
   response_text = render_template('pause').encode("utf-8")
-  
+
   if not 'navigating' in session.attributes:
     return statement(response_text)
 
@@ -1084,7 +1087,7 @@ def alexa_pageup():
 
   kodi.PageUp()
   response_text = render_template('pause').encode("utf-8")
-  
+
   if not 'navigating' in session.attributes:
     return statement(response_text)
 
@@ -1099,7 +1102,7 @@ def alexa_pagedown():
 
   kodi.PageDown()
   response_text = render_template('pause').encode("utf-8")
-  
+
   if not 'navigating' in session.attributes:
     return statement(response_text)
 
@@ -1114,7 +1117,7 @@ def alexa_left():
 
   kodi.Left()
   response_text = render_template('pause').encode("utf-8")
-  
+
   if not 'navigating' in session.attributes:
     return statement(response_text)
 
@@ -1129,7 +1132,7 @@ def alexa_right():
 
   kodi.Right()
   response_text = render_template('pause').encode("utf-8")
-  
+
   if not 'navigating' in session.attributes:
     return statement(response_text)
 
@@ -1144,7 +1147,7 @@ def alexa_up():
 
   kodi.Up()
   response_text = render_template('pause').encode("utf-8")
-  
+
   if not 'navigating' in session.attributes:
     return statement(response_text)
 
@@ -1159,7 +1162,7 @@ def alexa_down():
 
   kodi.Down()
   response_text = render_template('pause').encode("utf-8")
-  
+
   if not 'navigating' in session.attributes:
     return statement(response_text)
 
@@ -1174,7 +1177,7 @@ def alexa_back():
 
   kodi.Back()
   response_text = render_template('pause').encode("utf-8")
-  
+
   if not 'navigating' in session.attributes:
     return statement(response_text)
 
@@ -1331,6 +1334,7 @@ def alexa_addon_execute(Addon):
 @ask.intent('AddonGlobalSearch')
 def alexa_addon_globalsearch(Movie, Show, Artist, Album, Song):
   card_title = render_template('search').encode("utf-8")
+  print card_title
   heard_search = ''
 
   if Movie:
@@ -1970,6 +1974,7 @@ def stopped(offset):
 def prepare_help_message():
   response_text = render_template('help').encode("utf-8")
   card_title = render_template('help_card').encode("utf-8")
+  print card_title
 
   return statement(response_text).simple_card(card_title, response_text)
 
