@@ -1885,7 +1885,8 @@ def next_song():
 
     if playlist_queue.next_item:
       playlist_queue.skip_song()
-      return audio('').play(playlist_queue.next_item)
+      # current_item is now set as the next item from the playlist
+      return audio('').play(playlist_queue.current_item)
     else:
       response_text = render_template('no_more_songs').encode("utf-8")
       return audio(response_text)
@@ -1899,11 +1900,10 @@ def previous_song():
   if CAN_STREAM:
     playlist_queue = music.MusicPlayer()
 
-    print playlist_queue.current_index
-
     if playlist_queue.prev_item:
       playlist_queue.prev_song()
-      return audio('').play(playlist_queue.prev_item)
+      # current_item is now set as the previous item from the playlist
+      return audio('').play(playlist_queue.current_item)
     else:
       response_text = render_template('no_songs_history').encode("utf-8")
       return audio(response_text)
