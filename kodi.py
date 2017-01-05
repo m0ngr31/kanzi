@@ -92,11 +92,14 @@ RE_NAME_WITH_PARAM = re.compile(r"(.*) \([^)]+\)$")
 def sanitize_name(media_name):
   # Normalize string
   normalized = unicodedata.normalize('NFKD', media_name).encode('ASCII', 'ignore')
-  # Strip symbols
-  m = RE_NAME_WITH_PARAM.match(normalized)
-  if m:
-    return m.group(1)
-  return media_name
+
+  # Strip things between and including brackets and parenthesis
+  removed_paren = re.sub(r'\([^)]*\)', '', normalized)
+  removed_bracket = re.sub(r'\[[^)]*\]', '', removed_paren)
+
+  trimmed = removed_bracket.strip()
+
+  return trimmed
 
 
 # Very naive method to remove a leading "the" from the given string
