@@ -2,7 +2,13 @@
 
 ## Upgrade to v2.5
 
-For those of you doing an upgrade to the new version, please run the Slot generator again. There is a little bit of change to how it works. Users on Heroku should just be able to do a `git pull` and `git push heroku master` to upgrade. Just make sure you update the skill information as well. For Lambda users, the setup is completely different now, so please check the new documentaion.
+For those of you doing an upgrade to the new version, please run the Slot generator again and repopulate all of your slots with the output. If you don't do this, the skill might seem to successfully build and save, but those with large libraries may encounter issues at runtime.
+
+Besides the above, users on Heroku should just be able to do a `git pull` and `git push heroku master` to upgrade.
+
+For Lambda users, the setup is completely different now, so please check the new documentaion.
+
+When upgrading the code in general, remember to always update the Intents and Utterances in the skill.  If new slots were added, you will need to add those as well.
 
 ## About
 
