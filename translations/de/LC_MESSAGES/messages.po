@@ -7,16 +7,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2017-01-03 16:04-0700\n"
-"PO-Revision-Date: 2017-01-03 13:31-0700\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: de\n"
+"POT-Creation-Date: 2017-01-06 10:09+0100\n"
+"PO-Revision-Date: 2017-01-06 15:30+0100\n"
+"Last-Translator: Daniel Masur <ausweider@googlemail.com>\n"
 "Language-Team: de <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "Generated-By: Babel 2.3.4\n"
+"X-Generator: Poedit 1.8.7.1\n"
 
 #: templates.yaml:5
 msgid "Error parsing results"
@@ -37,7 +38,7 @@ msgstr "Album konnte nicht gefunden werden"
 #: templates.yaml:13 templates.yaml:17 templates.yaml:19 templates.yaml:39
 #: templates.yaml:43
 msgid "by"
-msgstr "durch"
+msgstr "von"
 
 #: templates.yaml:15 templates.yaml:17
 msgid "Could not find song"
@@ -49,23 +50,23 @@ msgstr "Ich konnte keine Playlist mit dem Namen finden"
 
 #: templates.yaml:23
 msgid "Could not find an addon called"
-msgstr "Konnte ein Addon nicht finden"
+msgstr "Konnte das Addon nicht finden"
 
 #: templates.yaml:25
 msgid "Could not find a movie called"
-msgstr "Konnte einen Film nicht finden"
+msgstr "Konnte den Film nicht finden"
 
 #: templates.yaml:27
 msgid "Could not find a show named"
-msgstr "Konnte eine Show nicht finden"
+msgstr "Konnte die Serie nicht finden"
 
 #: templates.yaml:29
 msgid "Could not find season"
-msgstr "Konnte Saison nicht finden"
+msgstr "Konnte die Staffel nicht finden"
 
 #: templates.yaml:29 templates.yaml:55 templates.yaml:57
 msgid "episode"
-msgstr "Folge"
+msgstr "Episode"
 
 #: templates.yaml:29 templates.yaml:55 templates.yaml:57
 msgid "of"
@@ -73,51 +74,51 @@ msgstr "von"
 
 #: templates.yaml:31
 msgid "Searching for"
-msgstr "Auf der Suche nach"
+msgstr "Suche nach"
 
 #: templates.yaml:33
 msgid "Opening"
-msgstr "Öffnung"
+msgstr "Öffne"
 
 #: templates.yaml:35 templates.yaml:63
 msgid "Playing"
-msgstr "Spielen"
+msgstr "Spiele"
 
 #: templates.yaml:37 templates.yaml:39 templates.yaml:246
 msgid "Playing album"
-msgstr "Wiedergabe von Album"
+msgstr "Spiele Album"
 
 #: templates.yaml:41 templates.yaml:43 templates.yaml:248
 msgid "Playing song"
-msgstr "Song abspielen"
+msgstr "Spiele Song"
 
 #: templates.yaml:45 templates.yaml:73
 msgid "playlist"
-msgstr "Wiedergabeliste"
+msgstr "Playlist"
 
 #: templates.yaml:47
 msgid "Starting party play"
-msgstr "Startspiel"
+msgstr "Starte Party Wiedergabe"
 
 #: templates.yaml:49
 msgid "Playing the"
-msgstr "Spielen"
+msgstr "Spiele"
 
 #: templates.yaml:49 templates.yaml:234
 msgid "movie"
-msgstr "Film"
+msgstr "den Film"
 
 #: templates.yaml:53 templates.yaml:69
 msgid "video playlist"
-msgstr "Video-Wiedergabeliste"
+msgstr "die Video Playlist"
 
 #: templates.yaml:55
 msgid "Playing season"
-msgstr "Spielsaison"
+msgstr "Spiele Staffel"
 
 #: templates.yaml:57
 msgid "season"
-msgstr "Jahreszeit"
+msgstr "Staffel"
 
 #: templates.yaml:59
 msgid "Streaming"
@@ -125,19 +126,19 @@ msgstr "Streaming"
 
 #: templates.yaml:61
 msgid "Streaming party mode"
-msgstr "Streaming-Party-Modus"
+msgstr "Streaming Party Modus"
 
 #: templates.yaml:65
 msgid "Resuming"
-msgstr "Wiederaufnahme"
+msgstr "Weiter"
 
 #: templates.yaml:67 templates.yaml:69 templates.yaml:71 templates.yaml:73
 msgid "Shuffling"
-msgstr "Schlurfen"
+msgstr "Zufallswiedergabe"
 
 #: templates.yaml:71 templates.yaml:252
 msgid "audio playlist"
-msgstr "Audio-Wiedergabeliste"
+msgstr "Audio Playlist"
 
 #: templates.yaml:75
 msgid "No new episodes for"
@@ -145,19 +146,19 @@ msgstr "Keine neuen Episoden für"
 
 #: templates.yaml:77
 msgid "You have no albums by"
-msgstr "Sie haben keine Alben von"
+msgstr "Du hast keine Alben von"
 
 #: templates.yaml:79
 msgid "You dont have any new albums to listen to"
-msgstr "Sie haben keine neuen Alben zu hören"
+msgstr "Du hast keine neuen Alben zu hören"
 
 #: templates.yaml:81
 msgid "You dont have any new movies to watch"
-msgstr "Sie haben keine neuen Filme zu sehen"
+msgstr "Du hast keine neuen Filme zum anschauen"
 
 #: templates.yaml:83
 msgid "You dont have any new shows to watch"
-msgstr "Sie haben keine neuen Shows zu sehen"
+msgstr "Du hast keine neuen Serien zum anschauen"
 
 #: templates.yaml:85
 msgid "No recently added songs found"
@@ -165,11 +166,11 @@ msgstr "Keine neuen Songs gefunden"
 
 #: templates.yaml:87
 msgid "There are no unseen episodes of"
-msgstr "Es gibt keine unsichtbaren Episoden von"
+msgstr "Es gibt keine ungesehenen Episoden von"
 
 #: templates.yaml:89
 msgid "There is one unseen episode of"
-msgstr "Es gibt eine unsichtbare Episode von"
+msgstr "Es gibt eine ungesehene Episode von"
 
 #: templates.yaml:91 templates.yaml:97
 msgid "There are"
@@ -177,7 +178,7 @@ msgstr "Es gibt"
 
 #: templates.yaml:91
 msgid "unseen episodes of"
-msgstr "Ungesehene Episoden von"
+msgstr "ungesehene Episoden von"
 
 #: templates.yaml:93
 msgid "There is one new episode of"
@@ -201,43 +202,43 @@ msgstr "Es gibt neue Episoden von"
 
 #: templates.yaml:105
 msgid ""
-"You need to add database information to your environment variables for "
-"this to work"
+"You need to add database information to your environment variables for this "
+"to work"
 msgstr ""
-"Sie müssen Datenbankinformationen zu den Umgebungsvariablen hinzufügen, "
-"damit diese funktionieren"
+"Du musst Datenbankinformationen zu den Umgebungsvariablen hinzufügen, damit "
+"diese funktionieren"
 
 #: templates.yaml:107
 msgid ""
 "Starting remote control mode, to use say go up, go back as if you were "
 "pressing buttons, say stop to exit control mode"
 msgstr ""
-"Start der Fernbedienung-Modus zu verwenden, sagen, go up, gehen Sie zurück, als ob Sie waren "
-"Drücken Sie die Tasten, sagen Stop, um den Steuerungsmodus zu verlassen"
+"Start des Fernbedienungs-Modus,  zum verwenden sage, geh hoch, gehe zurück, "
+"als ob du die Tasten drückst. Sage Stop, um den Steuerungsmodus zu verlassen"
 
 #: templates.yaml:109
 msgid ""
-"You can ask me whether there are any new shows, to play a movie, tv show,"
-" or artist, or control playback of media."
+"You can ask me whether there are any new shows, to play a movie, tv show, or "
+"artist, or control playback of media."
 msgstr ""
-"Sie können mich fragen, ob es neue Shows, einen Film, TV-Show oder "
-"Künstler zu spielen, oder Kontrolle der Wiedergabe von Medien."
+"Du kannst mich fragen, ob es neue Serien gibt, einen Film, eine TV-Show oder "
+"einen Künstler ab zu spielen, oder die Wiedergabe von Medien steuern."
 
 #: templates.yaml:116
 msgid "Looking for new episodes of"
-msgstr "Auf der Suche nach neuen Episoden von"
+msgstr "Suche nach neuen Episoden von"
 
 #: templates.yaml:118
 msgid "Currently playing item"
-msgstr "Momentan spielendes Einzelteil"
+msgstr "Momentan läuft"
 
 #: templates.yaml:120
 msgid "Time left on currently playing item"
-msgstr "Verbleibende Zeit auf aktuell abgespieltem Gegenstand"
+msgstr "Verbleibende Zeit"
 
 #: templates.yaml:122
 msgid "Play/Pause"
-msgstr "Spielpause"
+msgstr "Abspielen/Pause"
 
 #: templates.yaml:124
 msgid "Stopping playback"
@@ -249,7 +250,7 @@ msgstr "Vorwärts"
 
 #: templates.yaml:128
 msgid "Stepping backward"
-msgstr "Rückschritt"
+msgstr "Rückwärts"
 
 #: templates.yaml:130
 msgid "Big step forward"
@@ -261,15 +262,15 @@ msgstr "Großer Schritt rückwärts"
 
 #: templates.yaml:134
 msgid "Playing music by"
-msgstr "Musik abspielen"
+msgstr "Spiele Musik von"
 
 #: templates.yaml:136
 msgid "Streaming music by"
-msgstr "Streaming von Musik"
+msgstr "Streame Musik von"
 
 #: templates.yaml:138
 msgid "Newly added shows"
-msgstr "Neu hinzugefügte Shows"
+msgstr "Neu hinzugefügte Serien"
 
 #: templates.yaml:140
 msgid "Newly added albums"
@@ -289,7 +290,7 @@ msgstr "Filme"
 
 #: templates.yaml:146
 msgid "Playing the next unwatched episode of the last show watched"
-msgstr "Das Abspielen der nächsten unpatched Episode der letzten Show"
+msgstr "Spiele die nächste ungesehene Episode der zuletzt gesehenen Serie"
 
 #: templates.yaml:148
 msgid "Updating audio library"
@@ -301,23 +302,23 @@ msgstr "Aktualisieren der Videobibliothek"
 
 #: templates.yaml:152
 msgid "Cleaning audio library"
-msgstr "Reinigung der Audio-Bibliothek"
+msgstr "Reinigung der Audiobibliothek"
 
 #: templates.yaml:154
 msgid "Cleaning video library"
-msgstr "Reinigung der Videothek"
+msgstr "Reinigung der Videobibliothek"
 
 #: templates.yaml:156
 msgid "Ejecting media"
-msgstr "Auswerfen von Medien"
+msgstr "Medium auswerfen"
 
 #: templates.yaml:158
 msgid "Suspending system"
-msgstr "Abhängesystem"
+msgstr "System in den Standby versetzen"
 
 #: templates.yaml:160
 msgid "Shutting down system"
-msgstr "Herunterfahren"
+msgstr "System herunterfahren"
 
 #: templates.yaml:162
 msgid "Rebooting system"
@@ -325,79 +326,79 @@ msgstr "System neu starten"
 
 #: templates.yaml:164
 msgid "Hibernating system"
-msgstr "Überwinterungssystem"
+msgstr "System in den Tiefschlaf versetzen"
 
 #: templates.yaml:166
 msgid "Player zoom normal"
-msgstr "Player zoom normal"
+msgstr "Bild zoom normal"
 
 #: templates.yaml:168
 msgid "Player zoom out"
-msgstr "Player verkleinern"
+msgstr "Bild raus zoomen"
 
 #: templates.yaml:170
 msgid "Player zoom out and move right"
-msgstr "Player auszoomen und nach rechts bewegen"
+msgstr "Bild raus zoomen und nach rechts bewegen"
 
 #: templates.yaml:172
 msgid "Player zoom out and move left"
-msgstr "Player auszoomen und nach links bewegen"
+msgstr "Bild raus zoomen und nach links bewegen"
 
 #: templates.yaml:174
 msgid "Player zoom out and move down"
-msgstr "Player auszoomen und nach unten verschieben"
+msgstr "Bild raus zoomen und nach unten bewegen"
 
 #: templates.yaml:176
 msgid "Player zoom out and move up"
-msgstr "Player verkleinern und verschieben"
+msgstr "Bild raus zoomen und nach oben bewegen"
 
 #: templates.yaml:178
 msgid "Player zoom in"
-msgstr "Player vergrößern"
+msgstr "Bild rein zoomen"
 
 #: templates.yaml:180
 msgid "Player zoom in and move right"
-msgstr "Spieler vergrößern und bewegen sich nach rechts"
+msgstr "Bild rein zoomen und nach rechts bewegen"
 
 #: templates.yaml:182
 msgid "Player zoom in and move left"
-msgstr "Spieler vergrößern und bewegen sich nach links"
+msgstr "Bild rein zoomen und nach links bewegen"
 
 #: templates.yaml:184
 msgid "Player zoom in and move down"
-msgstr "Player vergrößern und nach unten verschieben"
+msgstr "Bild rein zoomen und nach unten bewegen"
 
 #: templates.yaml:186
 msgid "Player zoom in and move up"
-msgstr "Player vergrößern und verschieben"
+msgstr "Bild rein zoomen und nach oben bewegen"
 
 #: templates.yaml:188
 msgid "Player zoom hold"
-msgstr "Player Zoom zu halten"
+msgstr "Bild Zoom halten"
 
 #: templates.yaml:190
 msgid "Player rotate counter clockwise"
-msgstr "Player gegen den Uhrzeigersinn drehen"
+msgstr "Bild gegen den Uhrzeigersinn drehen"
 
 #: templates.yaml:192
 msgid "Player rotate clockwise"
-msgstr "Player im Uhrzeigersinn drehen"
+msgstr "Bild im Uhrzeigersinn drehen"
 
 #: templates.yaml:194
 msgid "Player move right"
-msgstr "Spieler nach rechts bewegen"
+msgstr "Bild nach rechts bewegen"
 
 #: templates.yaml:196
 msgid "Player move left"
-msgstr "Spieler nach links bewegen"
+msgstr "Bild nach links bewegen"
 
 #: templates.yaml:198
 msgid "Player move down"
-msgstr "Spieler nach unten"
+msgstr "Bild nach unten bewegen"
 
 #: templates.yaml:200
 msgid "Player move up"
-msgstr "Spieler nach oben"
+msgstr "Bild nach oben bewegen"
 
 #: templates.yaml:202
 msgid "Switching to next audio stream"
@@ -409,19 +410,19 @@ msgstr "Wechseln zum vorherigen Audiostream"
 
 #: templates.yaml:206
 msgid "Switching to next subtitles"
-msgstr "Wechseln zu den nächsten Untertiteln"
+msgstr "Wechseln zu den nächsten Untertitel"
 
 #: templates.yaml:208
 msgid "Switching to previous subtitles"
-msgstr "Umschalten auf vorherige Untertitel"
+msgstr "Wechseln auf vorherige Untertitel"
 
 #: templates.yaml:210
 msgid "Disabling subtitles"
-msgstr "Deaktivieren von Untertiteln"
+msgstr "Untertitel aus schalten"
 
 #: templates.yaml:212
 msgid "Enabling subtitles"
-msgstr "Untertitel aktivieren"
+msgstr "Untertitel an schalten"
 
 #: templates.yaml:214
 msgid "Adjusting volume"
@@ -429,15 +430,15 @@ msgstr "Einstellen der Lautstärke"
 
 #: templates.yaml:216
 msgid "Turning volume down"
-msgstr "Lautstärke verringern"
+msgstr "Verringere Lautstärke"
 
 #: templates.yaml:218
 msgid "Turning volume up"
-msgstr "Drehen Sie die Lautstärke"
+msgstr "Erhöhe Lautstärke"
 
 #: templates.yaml:220
 msgid "Toggling mute"
-msgstr "Umschalten stumm"
+msgstr "Stummschaltung"
 
 #: templates.yaml:222
 msgid "Toggling fullscreen"
@@ -445,7 +446,7 @@ msgstr "Vollbildschirm umschalten"
 
 #: templates.yaml:224
 msgid "Playing previous item"
-msgstr "Vorheriges Element wird abgespielt"
+msgstr "Wiedergabe des vorigen Elements"
 
 #: templates.yaml:226
 msgid "Playing next item"
@@ -453,39 +454,39 @@ msgstr "Wiedergabe des nächsten Elements"
 
 #: templates.yaml:228
 msgid "Starting current item over"
-msgstr "Start der aktuellen Position über"
+msgstr "Spiele nochmal von vorn"
 
 #: templates.yaml:230
 msgid "Playing recently added songs"
-msgstr "Wiedergabe von kürzlich hinzugefügten Songs"
+msgstr "Wiedergabe von kürzlich hinzugefügten Liedern"
 
 #: templates.yaml:232
 msgid "Playing a random movie"
-msgstr "Spielen eines zufälligen Films"
+msgstr "Spiele einen zufälligen Film"
 
 #: templates.yaml:234
 msgid "Playing a random"
-msgstr "Ein zufälliges Spiel"
+msgstr "Zufällige Wiedergabe"
 
 #: templates.yaml:236
 msgid "Playing Movie"
-msgstr "Film abspielen"
+msgstr "Spiele Film"
 
 #: templates.yaml:238
 msgid "Playing an episode of"
-msgstr "Eine Episode von"
+msgstr "Zeige eine Episode von"
 
 #: templates.yaml:240
 msgid "Playing a random episode of"
-msgstr "Spielen einer zufälligen Episode von"
+msgstr "Spiele eine zufällige Episode von"
 
 #: templates.yaml:242
 msgid "Playing the next unwatched episode of"
-msgstr "Die nächste unbeobachtete Episode von"
+msgstr "Spiele die nächste ungesehene Episode von"
 
 #: templates.yaml:244
 msgid "Playing the newest episode of"
-msgstr "Die neueste Episode von"
+msgstr "Spiele die neueste Episode von"
 
 #: templates.yaml:250
 msgid "Playing album or song"
@@ -505,7 +506,7 @@ msgstr "Alben von"
 
 #: templates.yaml:260
 msgid "Opening addon"
-msgstr "Öffnungs-Addon"
+msgstr "Öffne Addon"
 
 #: templates.yaml:262
 msgid "Search"
@@ -525,7 +526,7 @@ msgstr "Die Wiedergabe wurde gestoppt"
 
 #: templates.yaml:277
 msgid ", and more"
-msgstr ", und mehr"
+msgstr ", und weitere"
 
 #: templates.yaml:279
 msgid ", and  "
@@ -542,4 +543,3 @@ msgstr "Es gibt keine Songs in deiner Playlist"
 #: templates.yaml:285
 msgid "There is no current song"
 msgstr "Es gibt keinen aktuellen Song"
-
