@@ -350,7 +350,7 @@ def alexa_listen_album(Album, Artist):
         albums = kodi.GetArtistAlbums(located['artistid'])
         if 'result' in albums and 'albums' in albums['result']:
           albums_list = albums['result']['albums']
-          album_located = kodi.matchHeard(heard_album, albums_list, 'label')
+          album_located = kodi.matchHeard(heard_album, albums_list)
 
           if album_located:
             album_result = album_located['albumid']
@@ -371,7 +371,7 @@ def alexa_listen_album(Album, Artist):
     albums = kodi.GetAlbums()
     if 'result' in albums and 'albums' in albums['result']:
       albums_list = albums['result']['albums']
-      album_located = kodi.matchHeard(heard_album, albums_list, 'label')
+      album_located = kodi.matchHeard(heard_album, albums_list)
 
       if album_located:
         album_result = album_located['albumid']
@@ -406,7 +406,7 @@ def alexa_listen_song(Song, Artist):
         songs = kodi.GetArtistSongs(located['artistid'])
         if 'result' in songs and 'songs' in songs['result']:
           songs_list = songs['result']['songs']
-          song_located = kodi.matchHeard(heard_song, songs_list, 'label')
+          song_located = kodi.matchHeard(heard_song, songs_list)
 
           if song_located:
             song_result = song_located['songid']
@@ -427,7 +427,7 @@ def alexa_listen_song(Song, Artist):
     songs = kodi.GetSongs()
     if 'result' in songs and 'songs' in songs['result']:
       songs_list = songs['result']['songs']
-      song_located = kodi.matchHeard(heard_song, songs_list, 'label')
+      song_located = kodi.matchHeard(heard_song, songs_list)
 
       if song_located:
         song_result = song_located['songid']
@@ -466,7 +466,7 @@ def alexa_listen_album_or_song(Song, Album, Artist):
       albums = kodi.GetArtistAlbums(located['artistid'])
       if 'result' in albums and 'albums' in albums['result']:
         albums_list = albums['result']['albums']
-        album_located = kodi.matchHeard(heard_search, albums_list, 'label')
+        album_located = kodi.matchHeard(heard_search, albums_list)
 
         if album_located:
           album_result = album_located['albumid']
@@ -479,7 +479,7 @@ def alexa_listen_album_or_song(Song, Album, Artist):
           songs = kodi.GetArtistSongs(located['artistid'])
           if 'result' in songs and 'songs' in songs['result']:
             songs_list = songs['result']['songs']
-            song_located = kodi.matchHeard(heard_search, songs_list, 'label')
+            song_located = kodi.matchHeard(heard_search, songs_list)
 
             if song_located:
               song_result = song_located['songid']
@@ -1316,7 +1316,7 @@ def alexa_addon_execute(Addon):
     if 'result' in addons and 'addons' in addons['result']:
       addons_array = addons['result']['addons']
 
-      located = kodi.matchHeard(heard_addon, addons_array, lookingFor='name')
+      located = kodi.matchHeard(heard_addon, addons_array, 'name')
 
       if located:
         kodi.Home()
@@ -1370,7 +1370,7 @@ def alexa_watch_random_movie(Genre):
     genres = kodi.GetMovieGenres()
     if 'result' in genres and 'genres' in genres['result']:
       genres_list = genres['result']['genres']
-      genre_located = kodi.matchHeard(heard_genre, genres_list, 'label')
+      genre_located = kodi.matchHeard(heard_genre, genres_list)
   else:
     card_title = render_template('playing_random_movie').encode("utf-8")
   print card_title
@@ -1756,7 +1756,7 @@ def alexa_what_new_movies(Genre):
     genres = kodi.GetMovieGenres()
     if 'result' in genres and 'genres' in genres['result']:
       genres_list = genres['result']['genres']
-      genre_located = kodi.matchHeard(heard_genre, genres_list, 'label')
+      genre_located = kodi.matchHeard(heard_genre, genres_list)
   else:
     card_title = render_template('newly_added_movies').encode("utf-8")
   print card_title

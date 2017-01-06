@@ -85,16 +85,17 @@ STOPWORDS = [
   "with",
 ]
 
-# Utility function to sanitize name of media (e.g., strip out symbols)
-RE_NAME_WITH_PARAM = re.compile(r"(.*) \([^)]+\)$")
-
-def sanitize_name(media_name):
+def sanitize_name(media_name, remove_between=False):
   # Normalize string
   normalized = unicodedata.normalize('NFKD', media_name).encode('ASCII', 'ignore')
 
-  # Strip things between and including brackets and parenthesis
-  removed_paren = re.sub(r'\([^)]*\)', '', normalized)
-  removed_bracket = re.sub(r'\[[^)]*\]', '', removed_paren)
+  if remove_between:
+    # Strip things between and including brackets and parentheses
+    removed_paren = re.sub(r'\([^)]*\)', '', normalized)
+    removed_bracket = re.sub(r'\[[^)]*\]', '', removed_paren)
+  else:
+    # Just remove the actual brackets and parentheses
+    removed_bracket = normalized.translate(None, '[]()')
 
   trimmed = removed_bracket.strip()
 
@@ -216,13 +217,12 @@ def matchHeard(heard, results, lookingFor='label'):
 
   heard_minus_the = remove_the(heard)
   print 'Trying to match: ' + heard
-  sys.stdout.flush()
+
   heard_list = set([x for x in heard.split() if x not in STOPWORDS])
 
   for result in results:
     # Strip out non-ascii symbols and lowercase it
-    ascii_name = result[lookingFor].encode('ascii', 'replace')
-    result_name = str(ascii_name).lower().translate(None, string.punctuation)
+    result_name = sanitize_name(result[lookingFor]).lower()
 
     # Direct comparison
     if heard == result_name:
@@ -237,7 +237,7 @@ def matchHeard(heard, results, lookingFor='label'):
       break
 
     # Remove parentheses
-    removed_paren = re.sub(r'\([^)]*\)', '', ascii_name).rstrip().lower().translate(None, string.punctuation)
+    removed_paren = sanitize_name(result[lookingFor], True).lower()
     if heard == removed_paren:
       print 'Simple match minus parentheses'
       located = result
@@ -245,7 +245,7 @@ def matchHeard(heard, results, lookingFor='label'):
 
   if not located:
     print 'Simple match failed, trying fuzzy match...'
-    sys.stdout.flush()
+
     fuzzy_result = process.extract(str(heard), [d[lookingFor] for d in results], limit=1, scorer=fuzz.QRatio)
     if fuzzy_result[0][1] > 75:
       print 'Fuzzy match %s%%' % (fuzzy_result[0][1])

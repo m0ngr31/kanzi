@@ -16,7 +16,9 @@ all = []
 if 'result' in retrieved and 'artists' in retrieved['result']:
   for v in retrieved['result']['artists']:
     name = kodi.sanitize_name(v['artist'])
+    name_stripped = kodi.sanitize_name(v['artist'], True)
     all.append(name)
+    all.append(name_stripped)
 
 cleaned = list(set(all))
 cleaned = filter(None, cleaned)
@@ -37,7 +39,9 @@ all = []
 if 'result' in retrieved and 'albums' in retrieved['result']:
   for v in retrieved['result']['albums']:
     name = kodi.sanitize_name(v['label'])
+    name_stripped = kodi.sanitize_name(v['label'], True)
     all.append(name)
+    all.append(name_stripped)
 
 cleaned = list(set(all))
 cleaned = filter(None, cleaned)
@@ -58,7 +62,9 @@ all = []
 if 'result' in retrieved and 'songs' in retrieved['result']:
   for v in retrieved['result']['songs']:
     name = kodi.sanitize_name(v['label'])
+    name_stripped = kodi.sanitize_name(v['label'], True)
     all.append(name)
+    all.append(name_stripped)
 
 cleaned = list(set(all))
 cleaned = filter(None, cleaned)
@@ -79,7 +85,9 @@ all = []
 if 'result' in retrieved and 'files' in retrieved['result']:
   for v in retrieved['result']['files']:
     name = kodi.sanitize_name(v['label'])
+    name_stripped = kodi.sanitize_name(v['label'], True)
     all.append(name)
+    all.append(name_stripped)
 
 cleaned = list(set(all))
 cleaned = filter(None, cleaned)
@@ -100,7 +108,9 @@ all = []
 if 'result' in retrieved and 'files' in retrieved['result']:
   for v in retrieved['result']['files']:
     name = kodi.sanitize_name(v['label'])
+    name_stripped = kodi.sanitize_name(v['label'], True)
     all.append(name)
+    all.append(name_stripped)
 
 cleaned = list(set(all))
 cleaned = filter(None, cleaned)
@@ -121,7 +131,9 @@ all = []
 if 'result' in retrieved and 'genres' in retrieved['result']:
   for v in retrieved['result']['genres']:
     name = kodi.sanitize_name(v['label'])
+    name_stripped = kodi.sanitize_name(v['label'], True)
     all.append(name)
+    all.append(name_stripped)
 
 cleaned = list(set(all))
 cleaned = filter(None, cleaned)
@@ -142,7 +154,9 @@ all = []
 if 'result' in retrieved and 'movies' in retrieved['result']:
   for v in retrieved['result']['movies']:
     name = kodi.sanitize_name(v['label'])
+    name_stripped = kodi.sanitize_name(v['label'], True)
     all.append(name)
+    all.append(name_stripped)
 
 cleaned = list(set(all))
 cleaned = filter(None, cleaned)
@@ -163,7 +177,9 @@ all = []
 if 'result' in retrieved and 'tvshows' in retrieved['result']:
   for v in retrieved['result']['tvshows']:
     name = kodi.sanitize_name(v['label'])
+    name_stripped = kodi.sanitize_name(v['label'], True)
     all.append(name)
+    all.append(name_stripped)
 
 cleaned = list(set(all))
 cleaned = filter(None, cleaned)
@@ -185,7 +201,9 @@ for content in ['video', 'audio', 'image', 'executable']:
   if 'result' in retrieved and 'addons' in retrieved['result']:
     for v in retrieved['result']['addons']:
       name = kodi.sanitize_name(v['name'])
+      name_stripped = kodi.sanitize_name(v['name'], True)
       all.append(name)
+      all.append(name_stripped)
 
 cleaned = list(set(all))
 cleaned = filter(None, cleaned)
