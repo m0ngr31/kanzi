@@ -1,0 +1,207 @@
+# A list of utterance variations written in a shorthand syntax
+
+# Syntax and information
+# http://www.makermusings.com/2015/07/21/defining-utterances-for-the-alexa-skills-kit/
+
+# Tool to expand the single line into the usable list of utterances
+# http://www.makermusings.com/amazon-echo-utterance-expander/
+
+
+PlayPause (play/abspielen/pause/halt/anhalten)
+
+AMAZON.StopIntent (stop/anhalten/halt's maul/halt)
+
+Skip (/spiel(/e)) nächstes (/Lied)
+Skip weiter
+
+Prev (/spiel(/e)) (letztes/voriges) (/Lied)
+
+StartOver (nochmal/von vorn(/e)/wiederhol(/e)/wiederholen)
+
+Home startseite
+
+Back zurück
+Up (/navigier(/e)) (hoch/nach oben)
+Down (/navigier(/e)) (runter/nach unten)
+Right (/navigier(/e)) (/nach) rechts
+Left (/navigier(/e)) (/nach) links
+PageUp (/navigier(/e)) Seite (hoch/nach oben)
+PageDown (/navigier(/e)) Seite (runter/nach unten)
+
+Select auswählen
+
+Menu öffne Menü
+
+Fullscreen vollbild (/umschalten)
+
+Mute ton (aus/an)(/schalten)
+VolumeUp lauter
+VolumeDown leiser
+VolumeSet (/stelle) Lautstärke (/auf) {Volume}
+VolumeSetPct (/stelle) Lautstärke (/auf) {Volume} Prozent
+
+SubtitlesOn Untertitel (an/anschalten)
+SubtitlesOff Untertitel (aus/ausschalten)
+SubtitlesNext (nächster Untertitel/Untertitel umschalten)
+SubtitlesPrevious voriger Untertitel
+
+AudioStreamNext (audio Stream/Sprache) umschalten
+AudioStreamNext (nächster audio Stream/nächste Sprache)
+AudioStreamPrevious (voriger audio Stream/vorige Sprache)
+
+PlayerMoveUp (/geh(/e)) (hoch/nach oben)
+PlayerMoveDown (/geh(/e)) (runter/nach unten)
+PlayerMoveLeft (/geh(/e)) (/nach) links
+PlayerMoveRight (/geh(/e)) (/nach) rechts
+PlayerRotateClockwise (drehe/rotiere) (/im Uhrzeigersinn/neunzig grad)
+PlayerRotateCounterClockwise (drehe/rotiere) gegen den Uhrzeigersinn
+PlayerZoomHold halte (/es/(/den) Zoom) (/da/genau da)
+PlayerZoomIn (vergrößern/rein zoomen/zoom rein)
+PlayerZoomInMoveUp (vergrößern/rein zoomen/zoom rein) und (/geh(/e)) hoch
+PlayerZoomInMoveDown (vergrößern/rein zoomen/zoom rein) und (/geh(/e)) runter
+PlayerZoomInMoveLeft (vergrößern/rein zoomen/zoom rein) und (/geh(/e)) (/nach) links
+PlayerZoomInMoveRight (vergrößern/rein zoomen/zoom rein) und (/geh(/e)) (/nach) rechts
+PlayerZoomOut (verkleinern/raus zoomen/zoom raus)
+PlayerZoomOutMoveUp (verkleinern/raus zoomen/zoom raus) und (/geh(/e)) (nach oben/hoch/rauf)
+PlayerZoomOutMoveDown (verkleinern/raus zoomen/zoom raus) und (/geh(/e)) (nach unten/runter)
+PlayerZoomOutMoveLeft (verkleinern/raus zoomen/zoom raus) und (/geh(/e)) (/nach) links
+PlayerZoomOutMoveRight (verkleinern/raus zoomen/zoom raus) und (/geh(/e)) (/nach) rechts
+PlayerZoomReset (normal/kein/reset) zoom
+
+CleanVideo säuber(/e) Video Bibliothek
+CleanVideo Video Bibliothek säubern
+
+UpdateVideo (erneuer(/e)/refresh(/e)/update) Video Bibliothek
+UpdateVideo Video Bibliothek (erneuern/refreshen/updaten)
+
+CleanAudio säuber(/e) (Audio/Musik) Bibliothek
+CleanAudio (Audio/Musik) Bibliothek säubern
+
+UpdateAudio (erneuer(/e)/refresh(/e)/update) (Audio/Musik) Bibliothek
+UpdateVideo (Audio/Musik) Bibliothek (erneuern/refreshen/updaten)
+
+WhatAlbums (welches Album/welche (Alben/CD/CDs/Platte/Platten)) (ich von {Artist} habe/wir von {Artist} haben/du von {Artist} hast)
+
+ListenToArtist spiel(/e) (Musik/Lieder/Songs/Mucke) von (/dem Artist/der Artistin/dem Komponist/der Komponistin/dem Künstler/der Künstlerin/der Band/der Gruppe) {Artist}
+
+StreamArtist Stream (Musik/Lieder/Songs/Mucke) von (/dem Artist/der Artistin/dem Komponist/der Komponistin/dem Künstler/der Künstlerin/der Band/der Gruppe) {Artist}
+
+ListenToAlbum spiel(/e) (das Album/die CD/die Platte) {Album} (/von {Artist})
+
+ListenToSong spiel(/e) (das Lied/den Song) {Song}
+ListenToSong spiel(/e) (das Lied/den Song) {Song} von {Artist}
+
+ListenToAlbumOrSong spiel(/e) (/das Album/die CD/die Platte) {Album} von (/der Band/der Gruppe) {Artist}
+ListenToAlbumOrSong spiel(/e) (/das Lied/den Song) {Song} von {Artist}
+
+ListenToAudioPlaylist spiel(/e) (Musik/Lieder/Song) playlist {AudioPlaylist}
+ListenToAudioPlaylist spiel(/e) {AudioPlaylist} (Musik/Lieder/Song) playlist
+
+ListenToAudioPlaylistRecent spiel(/e) neue (Musik/Lieder/Songs)
+ListenToAudioPlaylistRecent spiel(/e) (zuletzt/kürzlich) hinzugefügte (Musik/Lieder/Songs)
+
+WatchRandomMovie zeige (/zufälligen) (/{Genre}) Film
+
+WatchMovie zeige Film {Movie}
+
+WatchEpisode zeige Staffel {Season} (Episode/Folge) {Episode} von {Show}
+
+WatchRandomEpisode zeige eine (/zufällige) (Episode/Folge) von {Show}
+
+WatchNextEpisode zeige nächste (Episode/Folge) von {Show}
+
+WatchLastShow weiter mit (/letzter) Serie
+
+WatchLatestEpisode zeige (neueste/letzte) (Episode/Folge) von {Show}
+
+WatchVideoPlaylist zeige (Film/Serie/Video) playlist {VideoPlaylist}
+WatchVideoPlaylist zeige {VideoPlaylist} (Film/Serie/Video) playlist
+WatchVideoPlaylist zeige playlist {VideoPlaylist}
+WatchVideoPlaylist zeige {VideoPlaylist} playlist
+
+ShuffleAudioPlaylist zufallswiedergabe (Musik/Lied(/er)/Song/Audio) playlist {AudioPlaylist}
+ShuffleAudioPlaylist zufallswiedergabe {AudioPlaylist} (Musik/Lied(/er)/Song/Audio) playlist
+
+ShuffleVideoPlaylist zufallswiedergabe (Film/Serie/Video) playlist {VideoPlaylist}
+ShuffleVideoPlaylist zufallswiedergabe {VideoPlaylist} (Film/Serie/Video) playlist
+
+ShufflePlaylist zufallswiedergabe playlist {AudioPlaylist}
+ShufflePlaylist zufallswiedergabe {AudioPlaylist} playlist
+
+ShufflePlaylist zufallswiedergabe playlist {VideoPlaylist}
+ShufflePlaylist zufallswiedergabe {VideoPlaylist} playlist
+
+WhatNewAlbums (welches (/neue) Album/welche (/neue) (CD/Platte)) (wartet/(fertig/auf dem (/media)server/aufgenommen worden) ist)
+WhatNewAlbums welche (/neuen) (Alben/CDs/Platten) (warten/(fertig/auf dem (/media)server/aufgenommen worden) sind)
+
+WhatNewMovies welcher (/neue) (/{Genre}) Film (wartet/(fertig/auf dem (/media)server/aufgenommen worden) ist)
+WhatNewMovies welche (/neuen) (/{Genre}) Filme (warten/(fertig/auf dem (/media)server/aufgenommen worden) sind)
+WhatNewMovies ob es einen neuen (/{Genre}) Film gibt
+WhatNewMovies ob wir einen neuen (/{Genre}) Film haben
+WhatNewMovies ob du einen neuen (/{Genre}) Film hast
+WhatNewMovies ob es neue (/{Genre}) Filme gibt
+WhatNewMovies ob wir neue (/{Genre}) Filme haben
+WhatNewMovies ob du neue (/{Genre}) Filme hast
+
+WhatNewShows welche (/neue) Serie (wartet/(fertig/auf dem (/media)server/aufgenommen worden) ist)
+WhatNewShows welche (/neuen) Serien (warten/(fertig/auf dem (/media)server/aufgenommen worden) sind)
+WhatNewShows welche ((/neue) Serie/(/neuen) Serien) (habe ich/hast du/haben wir/gibt es/ich habe/du hast/wir haben/es gibt)
+
+NewShowInquiry ob es eine neue (/Episode/Folge) (/von) {Show} gibt
+NewShowInquiry ob wir eine neue (/Episode/Folge) (/von) {Show} haben
+NewShowInquiry ob du eine neue (/Episode/Folge) (/von) {Show} hast
+NewShowInquiry ob es neue (/Episoden/Folgen) (/von) {Show} gibt
+NewShowInquiry ob wir neue (/Episoden/Folgen) (/von) {Show} haben
+NewShowInquiry ob du neue (/Episoden/Folgen) (/von) {Show} hast
+
+PartyMode spiel(/e) (/zufällige/irgendwelche) (Musik/Lieder/Songs/Mucke)
+PartyMode leg(/e) (/zufällige/irgendwelche) (Musik/Lieder/Songs/Mucke) auf
+PartyMode spiele irgend(/et)was
+PartyMode leg(/e) (/irgend(/et))was auf
+PartyMode Party (/Modus)
+
+StreamPartyMode stream (/zufällige/irgendwelche) (Musik/Lieder/Songs/Mucke)
+
+CurrentPlayItemInquiry (was/wer) (das ist/ist das)
+CurrentPlayItemInquiry was (/gerade/jetzt/gerade jetzt/jetzt gerade/in diesem Moment) (läuft/spielt)
+CurrentPlayItemInquiry welche (/Folge/Episode/Serie/Staffel) das ist
+CurrentPlayItemInquiry welche (/Folge/Episode/Serie/Staffel) (/gerade/jetzt/gerade jetzt/jetzt gerade/in diesem Moment) (läuft/spielt)
+CurrentPlayItemInquiry welcher (/Song) das ist
+CurrentPlayItemInquiry welcher (/Song) (/gerade/jetzt/gerade jetzt/jetzt gerade/in diesem Moment) (läuft/spielt)
+CurrentPlayItemInquiry welches (/Lied/Video) das ist
+CurrentPlayItemInquiry welches (/Lied/Video) (/gerade/jetzt/gerade jetzt/jetzt gerade/in diesem Moment) (läuft/spielt)
+
+CurrentPlayItemTimeRemaining wie viel (/zeit) von (dem/(diesem/meinem) (audio/video) /(dem/diesem/meinem) Film/(der/dieser/meiner) (Serie/Episode/Folge)/(dem/diesem/meinem) Lied) (/noch) verbleibt
+CurrentPlayItemTimeRemaining wie viel (/zeit) noch verbleibt
+CurrentPlayItemTimeRemaining wie viel länger (das/(dieses/mein) (audio/video) /(der/dieser/mein) Film/(die/diese/meine) (Serie/Episode/Folge)/(das/dieses/mein) Lied) (/noch) (ist/geht/läuft)
+CurrentPlayItemTimeRemaining wie lange das noch (ist/geht/läuft)
+CurrentPlayItemTimeRemaining (wann/welche Uhrzeit) (das/(dieses/mein) (audio/video) /(der/dieser/mein) Film/(die/diese/meine) (Serie/Episode/Folge)/(das/dieses/mein) Lied) (ende(t/n wird)/zu ende ist)
+
+Hibernate (/system) (tiefschlaf/hibernate)
+Reboot (/system) (neustarten/reboot)
+Shutdown (/system) (herunterfahren/shutdown)
+Suspend (/system) ((/geh/gehe) schlafen/suspend/standby)
+
+EjectMedia (/medium/disc/audio disc/bluray/bluray disc/cd/audio cd/dvd/Scheibe) auswerfen
+
+PlayerSeekSmallForward (/kleiner) (Schritt/Sprung) (vorwärts/vor)
+PlayerSeekSmallForward (/kleiner) vorwärts (Schritt/Sprung)
+PlayerSeekSmallForward (vorwärts/vor(/spulen))
+PlayerSeekBigForward (großer/langer/weiter) (Schritt/Sprung) (vorwärts/vor)
+PlayerSeekBigForward (großer/langer/weiter) vorwärts (Schritt/Sprung)
+PlayerSeekBigForward weiter vor(/spulen/springen)
+PlayerSeekSmallBackward (/kleiner) (Schritt/Sprung) (rückwärts/zurück)
+PlayerSeekSmallBackward (rückwärts/zurück(/spulen))
+PlayerSeekBigForward (großer/langer/weiter) (Schritt/Sprung) (rückwärts/zurück)
+PlayerSeekBigForward (großer/langer/weiter) rückwärts (Schritt/Sprung)
+PlayerSeekBigBackward weiter zurück(/spulen/springen)
+
+AddonExecute öffne {Addon}
+AddonExecute führe (/addon/plugin/script/erweiterung) {Addon} aus
+
+AddonGlobalSearch suche (/nach) {Show}
+AddonGlobalSearch suche (/nach) {Movie}
+AddonGlobalSearch suche (/nach) {Album}
+AddonGlobalSearch suche (/nach) {Artist}
+
+OpenRemote öffne (Fernbedienung/Controller)
