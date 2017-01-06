@@ -1,29 +1,5 @@
 #!/usr/bin/env python
 
-"""
-The MIT License (MIT)
-
-Copyright (c) 2015 Maker Musings && m0ngr31
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in
-all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-THE SOFTWARE.
-"""
-
 # For a complete discussion, see http://forum.kodi.tv/showthread.php?tid=254502
 
 import datetime
@@ -37,9 +13,45 @@ import re
 import string
 import sys
 import pycountry
-from fuzzywuzzy import fuzz
-from fuzzywuzzy import process
+import unicodedata
+from fuzzywuzzy import fuzz, process
+from yaep import populate_env, env
 
+sys.path += [os.path.dirname(__file__)]
+
+ENV_FILE = os.path.join(os.path.dirname(__file__), ".env")
+os.environ['ENV_FILE'] = ENV_FILE
+
+populate_env()
+
+# Do not use below for your own settings, use the .env file
+
+# We don't use the fallback param in os.getenv() because AWS Lambda actually
+# sets any environment variables included in LAMBDA_ENV_VARS, regardless if
+# it was unset before.
+#
+# Furthermore, os.getenv() under AWS Lambda returns 'None' as a string
+# instead of None as NoneType as we'd normally expect, so we have to
+# explicitly test for that.
+
+SCHEME = os.getenv('KODI_SCHEME')
+if not SCHEME or SCHEME == 'None':
+  SCHEME = 'http'
+SUBPATH = os.getenv('KODI_SUBPATH')
+if not SUBPATH or SUBPATH == 'None':
+  SUBPATH = ''
+KODI = os.getenv('KODI_ADDRESS')
+if not KODI or KODI == 'None':
+  KODI = '127.0.0.1'
+PORT = os.getenv('KODI_PORT')
+if not PORT or PORT == 'None':
+  PORT = '8080'
+USER = os.getenv('KODI_USERNAME')
+if not USER or USER == 'None':
+  USER = 'kodi'
+PASS = os.getenv('KODI_PASSWORD')
+if not PASS or PASS == 'None':
+  PASS = 'kodi'
 
 # These are words that we ignore when doing a non-exact match on show names
 STOPWORDS = [
@@ -73,6 +85,22 @@ STOPWORDS = [
   "with",
 ]
 
+def sanitize_name(media_name, remove_between=False):
+  # Normalize string
+  normalized = unicodedata.normalize('NFKD', media_name).encode('ASCII', 'ignore')
+
+  if remove_between:
+    # Strip things between and including brackets and parentheses
+    removed_paren = re.sub(r'\([^)]*\)', '', normalized)
+    removed_bracket = re.sub(r'\[[^)]*\]', '', removed_paren)
+  else:
+    # Just remove the actual brackets and parentheses
+    removed_bracket = normalized.translate(None, '[]()')
+
+  trimmed = removed_bracket.strip()
+
+  return trimmed
+
 
 # Very naive method to remove a leading "the" from the given string
 def remove_the(name):
@@ -97,37 +125,12 @@ def http_normalize_slashes(url):
   normalized_url = '/'.join(correct_segments)
   return normalized_url
 
+def PopulateEnv():
+  populate_env()
+
 
 # These two methods construct the JSON-RPC message and send it to the Kodi player
 def SendCommand(command):
-  # Do not use below for your own settings, use the .env file
-
-  # We don't use the fallback param in os.getenv() because AWS Lambda actually
-  # sets any environment variables included in LAMBDA_ENV_VARS, regardless if
-  # it was unset before.
-  #
-  # Furthermore, os.getenv() under AWS Lambda returns 'None' as a string
-  # instead of None as NoneType as we'd normally expect, so we have to
-  # explicitly test for that.
-  SCHEME = os.getenv('KODI_SCHEME')
-  if not SCHEME or SCHEME == 'None':
-    SCHEME = 'http'
-  SUBPATH = os.getenv('KODI_SUBPATH')
-  if not SUBPATH or SUBPATH == 'None':
-    SUBPATH = ''
-  KODI = os.getenv('KODI_ADDRESS')
-  if not KODI or KODI == 'None':
-    KODI = '127.0.0.1'
-  PORT = os.getenv('KODI_PORT')
-  if not PORT or PORT == 'None':
-    PORT = '8080'
-  USER = os.getenv('KODI_USERNAME')
-  if not USER or USER == 'None':
-    USER = 'kodi'
-  PASS = os.getenv('KODI_PASSWORD')
-  if not PASS or PASS == 'None':
-    PASS = 'kodi'
-
   # Join the environment variables into a url
   url = "%s://%s:%s/%s/%s" % (SCHEME, KODI, PORT, SUBPATH, 'jsonrpc')
 
@@ -214,13 +217,12 @@ def matchHeard(heard, results, lookingFor='label'):
 
   heard_minus_the = remove_the(heard)
   print 'Trying to match: ' + heard
-  sys.stdout.flush()
+
   heard_list = set([x for x in heard.split() if x not in STOPWORDS])
 
   for result in results:
     # Strip out non-ascii symbols and lowercase it
-    ascii_name = result[lookingFor].encode('ascii', 'replace')
-    result_name = str(ascii_name).lower().translate(None, string.punctuation)
+    result_name = sanitize_name(result[lookingFor]).lower()
 
     # Direct comparison
     if heard == result_name:
@@ -235,7 +237,7 @@ def matchHeard(heard, results, lookingFor='label'):
       break
 
     # Remove parentheses
-    removed_paren = re.sub(r'\([^)]*\)', '', ascii_name).rstrip().lower().translate(None, string.punctuation)
+    removed_paren = sanitize_name(result[lookingFor], True).lower()
     if heard == removed_paren:
       print 'Simple match minus parentheses'
       located = result
@@ -243,7 +245,7 @@ def matchHeard(heard, results, lookingFor='label'):
 
   if not located:
     print 'Simple match failed, trying fuzzy match...'
-    sys.stdout.flush()
+
     fuzzy_result = process.extract(str(heard), [d[lookingFor] for d in results], limit=1, scorer=fuzz.QRatio)
     if fuzzy_result[0][1] > 75:
       print 'Fuzzy match %s%%' % (fuzzy_result[0][1])
@@ -261,16 +263,12 @@ def matchHeard(heard, results, lookingFor='label'):
 # Playlists
 
 def FindAudioPlaylist(heard_search):
-  print 'Searching for audio playlist "%s"' % (heard_search)
-
   playlists = GetMusicPlaylists()
   if 'result' in playlists and 'files' in playlists['result']:
     playlists_list = playlists['result']['files']
     located = matchHeard(heard_search, playlists_list, 'label')
 
     if located:
-      print 'Located audio playlist "%s"' % (located['file'])
-      sys.stdout.flush()
       return located['file']
 
 
@@ -312,16 +310,12 @@ def StartAudioPlaylist(playlist_file=None):
 
 
 def FindVideoPlaylist(heard_search):
-  print 'Searching for video playlist "%s"' % (heard_search)
-
   playlists = GetVideoPlaylists()
   if 'result' in playlists and 'files' in playlists['result']:
     playlists_list = playlists['result']['files']
     located = matchHeard(heard_search, playlists_list, 'label')
 
     if located:
-      print 'Located video playlist "%s"' % (located['file'])
-      sys.stdout.flush()
       return located['file']
 
 
@@ -370,6 +364,10 @@ def PlayEpisode(ep_id, resume=True):
 
 def PlayMovie(movie_id, resume=True):
   return SendCommand(RPCString("Player.Open", {"item": {"movieid": movie_id}, "options": {"resume": resume}}))
+
+
+def PartyPlayMusic():
+  return SendCommand(RPCString("Player.Open", {"item": {"partymode": "music"}}))
 
 
 # Tell Kodi to update its video or music libraries
@@ -695,12 +693,16 @@ def GetArtistSongs(artist_id):
   return SendCommand(RPCString("AudioLibrary.GetSongs", {"filter": {"artistid": int(artist_id)}}))
 
 
+def GetArtistSongsPath(artist_id):
+  return SendCommand(RPCString("AudioLibrary.GetSongs", {"filter": {"artistid": int(artist_id)}, "properties":["file"]}))
+
+
 def GetSongs():
   return SendCommand(RPCString("AudioLibrary.GetSongs"))
 
 
-def GetArtistSongs(artist_id):
-  return SendCommand(RPCString("AudioLibrary.GetSongs", {"filter": {"artistid": int(artist_id)}}))
+def GetSongsPath():
+  return SendCommand(RPCString("AudioLibrary.GetSongs", {"properties":["file"]}))
 
 
 def GetRecentlyAddedAlbums():
@@ -874,6 +876,30 @@ def SystemEjectMedia():
 
 
 # Misc helpers
+
+# Prepare file url for streaming
+def PrepareDownload(path=""):
+  path = urllib.quote(path.encode('utf-8')).decode('utf-8')
+  path = '/vfs/' + path
+
+  # Join the environment variables into a url
+  url = "%s://%s:%s@%s:%s/%s" % (SCHEME, USER, PASS, KODI, PORT, SUBPATH)
+
+  url = url + path
+
+  # Remove any double slashes in the url
+  url = http_normalize_slashes(url)
+
+  accepted_answers = ['y', 'yes', 'Y', 'Yes', 'YES', 'true', 'True']
+
+  if os.getenv('USE_PROXY') in accepted_answers:
+    stream_url = 'https://kodi-music-proxy.herokuapp.com/proxy?file=' + url
+  elif os.getenv('ALT_PROXY'):
+    stream_url = os.getenv('ALT_PROXY') + url
+  else:
+    stream_url = url
+
+  return stream_url
 
 # Get the first active player.
 def GetPlayerID(playertype=['audio', 'video', 'picture']):

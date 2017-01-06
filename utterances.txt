@@ -9,7 +9,7 @@
 
 PlayPause (play/pause/resume)
 
-Stop (stop/cancel/shut up)
+AMAZON.StopIntent (stop/cancel/shut up)
 
 Skip (skip/next) (/song)
 Skip (listen to/play) next (/song)
@@ -85,6 +85,8 @@ WhatAlbums what albums do (we/i/you) have by {Artist}
 
 ListenToArtist (play/listen to/shuffle) (music by/artist) {Artist}
 
+StreamArtist stream (music by/artist) {Artist}
+
 ListenToAlbum (play/listen to) album {Album}
 ListenToAlbum (play/listen to) album {Album} by {Artist}
 
@@ -156,6 +158,8 @@ PartyMode play random music
 PartyMode play all music
 PartyMode shuffle all music
 
+StreamPartyMode stream (/random/all/) music
+
 CurrentPlayItemInquiry what (/song/audio/video/movie/film/episode/show) is (this/playing/currently playing)
 
 CurrentPlayItemTimeRemaining how much (/time) is (left/remaining) on (my/this) (audio/video/movie/film/show/episode/song)
@@ -190,3 +194,5 @@ AddonGlobalSearch search for {Show}
 AddonGlobalSearch search for {Movie}
 AddonGlobalSearch search for {Album}
 AddonGlobalSearch search for {Artist}
+
+OpenRemote open (remote/controls/controller)

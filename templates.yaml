@@ -1,0 +1,286 @@
+############################
+##   Response Templates   ##
+############################
+
+error_parsing_results: "{{ _('Error parsing results') }}"
+
+could_not_find: "{{ _('Could not find') }} {{ heard_name }}"
+
+could_not_find_generic: "{{ _('Could not find that phrase') }}"
+
+could_not_find_album: "{{ _('Could not find album') }} {{ album_name }}"
+
+could_not_find_album_artist: "{{ _('Could not find album') }}, {{ album_name }} {{ _('by') }} {{ artist }}"
+
+could_not_find_song: "{{ _('Could not find song') }} {{ song_name }}"
+
+could_not_find_song_artist: "{{ _('Could not find song') }}, {{ song_name }} {{ _('by') }} {{ artist }}"
+
+could_not_find_multi: "{{ _('Could not find') }}, {{ heard_name }} {{ _('by') }} {{ artist }}"
+
+could_not_find_playlist: "{{ _('I could not find a playlist named') }} {{ heard_name }}"
+
+could_not_find_addon: "{{ _('Could not find an addon called') }} {{ heard_addon }}"
+
+could_not_find_movie: "{{ _('Could not find a movie called') }} {{ heard_movie }}"
+
+could_not_find_show: "{{ _('Could not find a show named') }} {{ heard_show }}"
+
+could_not_find_episode_show: "{{ _('Could not find season') }} {{ season }} {{ _('episode') }} {{ episode }} {{ _('of') }} {{ show_name }}"
+
+searching: "{{ _('Searching for') }} {{ heard_name }}"
+
+opening: "{{ _('Opening') }} {{ heard_name }}"
+
+playing: "{{ _('Playing') }} {{ heard_name }}"
+
+playing_album: "{{ _('Playing album') }} {{ album_name }}"
+
+playing_album_artist: "{{ _('Playing album') }}, {{ album_name }} {{ _('by') }} {{ artist }}"
+
+playing_song: "{{ _('Playing song') }} {{ song_name }}"
+
+playing_song_artist: "{{ _('Playing song') }}, {{ song_name }} {{ _('by') }} {{ artist }}"
+
+playing_playlist: "{{ action }} {{ _('playlist') }} {{ playlist_name }}"
+
+playing_party: "{{ _('Starting party play') }}"
+
+playing_genre: "{{ _('Playing the') }} {{ genre }} {{ _('movie') }}, {{ movie_name }}"
+
+playing_action: "{{ action }} {{ movie_name }}"
+
+playing_playlist_action: "{{ action }} {{ _('video playlist') }} {{ playlist_name }}"
+
+playing_episode_number: "{{ _('Playing season') }} {{ season }} {{ _('episode') }} {{ episode }} {{ _('of') }} {{ show_name }}"
+
+playing_action_episode_number: "{{ action }} {{ _('season') }} {{ season }} {{ _('episode') }} {{ episode }} {{ _('of') }} {{ show_name }}"
+
+streaming: "{{ _('Streaming') }} {{ heard_name }}"
+
+streaming_party: "{{ _('Streaming party mode') }}"
+
+playing_empty: "{{ _('Playing') }}"
+
+resuming_empty: "{{ _('Resuming') }}"
+
+shuffling_empty: "{{ _('Shuffling') }}"
+
+shuffling_playlist_video: "{{ _('Shuffling') }} {{ _('video playlist') }} {{ playlist_name }}"
+
+shuffling_playlist_audio: "{{ _('Shuffling') }} {{ _('audio playlist') }} {{ playlist_name }}"
+
+shuffling_playlist: "{{ _('Shuffling') }} {{ _('playlist') }} {{ playlist_name }}"
+
+no_new_episodes_show: "{{ _('No new episodes for') }} {{ show_name }}"
+
+no_albums_artist: "{{ _('You have no albums by') }} {{ artist }}"
+
+no_new_albums: "{{ _('You dont have any new albums to listen to') }}"
+
+no_new_movies: "{{ _('You dont have any new movies to watch') }}"
+
+no_new_shows: "{{ _('You dont have any new shows to watch') }}"
+
+no_recent_songs: "{{ _('No recently added songs found') }}"
+
+no_unseen_show: "{{ _('There are no unseen episodes of') }} {{ show_name }}"
+
+one_unseen_show: "{{ _('There is one unseen episode of') }} {{ show_name }}"
+
+multiple_unseen_show: "{{ _('There are') }} {{ num }} {{ _('unseen episodes of') }} {{ show_name }}"
+
+one_new_episode: "{{ _('There is one new episode of') }} {{ show_name }}"
+
+two_new_episodes: "{{ _('There are two new episodes of') }} {{ show_name }}"
+
+multiple_new_episodes: "{{ _('There are') }} {{ count }} {{ _('new episodes of') }} {{ show_name }}"
+
+you_have_list: "{{ _('You have') }} {{ list }}"
+
+you_have_episode_list: "{{ _('There are new episodes of') }} {{ list }}"
+
+volume_set: "{ _{('Volume set to') }} {{ num }}"
+
+cant_steam: "{{ _('You need to add database information to your environment variables for this to work') }}"
+
+open_remote: "{{ _('Starting remote control mode, to use say go up, go back as if you were pressing buttons, say stop to exit control mode') }}"
+
+help: "{{ _('You can ask me whether there are any new shows, to play a movie, tv show, or artist, or control playback of media.') }}"
+
+
+############################
+##  Card Title Templates  ##
+############################
+
+looking_for_show: "{{ _('Looking for new episodes of') }} {{ heard_show }}"
+
+current_playing_item: "{{ _('Currently playing item') }}"
+
+time_left_playing: "{{ _('Time left on currently playing item') }}"
+
+play_pause: "{{ _('Play/Pause') }}"
+
+stopping: "{{ _('Stopping playback') }}"
+
+step_forward: "{{ _('Stepping forward') }}"
+
+step_backward: "{{ _('Stepping backward') }}"
+
+big_step_forward: "{{ _('Big step forward') }}"
+
+big_step_backward: "{{ _('Big step backward') }}"
+
+listen_artist: "{{ _('Playing music by') }} {{ heard_artist }}"
+
+stream_artist: "{{ _('Streaming music by') }} {{ heard_artist }}"
+
+newly_added_shows: "{{ _('Newly added shows') }}"
+
+newly_added_albums: "{{ _('Newly added albums') }}"
+
+newly_added_movies: "{{ _('Newly added movies') }}"
+
+newly_added_movies_genre: "{{ _('Newly added') }} {{ genre }} {{ _('movies') }}"
+
+last_unwatched: "{{ _('Playing the next unwatched episode of the last show watched') }}"
+
+update_audio: "{{ _('Updating audio library') }}"
+
+update_video: "{{ _('Updating video library') }}"
+
+clean_audio: "{{ _('Cleaning audio library') }}"
+
+clean_video: "{{ _('Cleaning video library') }}"
+
+ejecting_media: "{{ _('Ejecting media') }}"
+
+suspending_system: "{{ _('Suspending system') }}"
+
+shutting_down: "{{ _('Shutting down system') }}"
+
+rebooting: "{{ _('Rebooting system') }}"
+
+hibernating: "{{ _('Hibernating system') }}"
+
+player_zoom_normal: "{{ _('Player zoom normal') }}"
+
+player_zoom_out: "{{ _('Player zoom out') }}"
+
+player_zoom_out_right: "{{ _('Player zoom out and move right') }}"
+
+player_zoom_out_left: "{{ _('Player zoom out and move left') }}"
+
+player_zoom_out_down: "{{ _('Player zoom out and move down') }}"
+
+player_zoom_out_up: "{{ _('Player zoom out and move up') }}"
+
+player_zoom_in: "{{ _('Player zoom in') }}"
+
+player_zoom_in_right: "{{ _('Player zoom in and move right') }}"
+
+player_zoom_in_left: "{{ _('Player zoom in and move left') }}"
+
+player_zoom_in_down: "{{ _('Player zoom in and move down') }}"
+
+player_zoom_in_up: "{{ _('Player zoom in and move up') }}"
+
+player_zoom_hold: "{{ _('Player zoom hold') }}"
+
+player_rotate_cc: "{{ _('Player rotate counter clockwise') }}"
+
+player_rotate: "{{ _('Player rotate clockwise') }}"
+
+player_move_right: "{{ _('Player move right') }}"
+
+player_move_left: "{{ _('Player move left') }}"
+
+player_move_down: "{{ _('Player move down') }}"
+
+player_move_up: "{{ _('Player move up') }}"
+
+audio_stream_next: "{{ _('Switching to next audio stream') }}"
+
+audio_stream_previous: "{{ _('Switching to previous audio stream') }}"
+
+subtitles_next: "{{ _('Switching to next subtitles') }}"
+
+subtitles_previous: "{{ _('Switching to previous subtitles') }}"
+
+subtitles_disable: "{{ _('Disabling subtitles') }}"
+
+subtitles_enable: "{{ _('Enabling subtitles') }}"
+
+adjusting_volume: "{{ _('Adjusting volume') }}"
+
+volume_down: "{{ _('Turning volume down') }}"
+
+volume_up: "{{ _('Turning volume up') }}"
+
+mute_unmute: "{{ _('Toggling mute') }}"
+
+toggle_fullscreen: "{{ _('Toggling fullscreen') }}"
+
+playing_previous: "{{ _('Playing previous item') }}"
+
+playing_next: "{{ _('Playing next item') }}"
+
+playing_same: "{{ _('Starting current item over') }}"
+
+playing_recent_songs: "{{ _('Playing recently added songs') }}"
+
+playing_random_movie: "{{ _('Playing a random movie') }}"
+
+playing_random_movie_genre: "{{ _('Playing a random') }} {{ genre }} {{ _('movie') }}"
+
+playing_movie: "{{ _('Playing Movie') }}"
+
+playing_an_episode: "{{ _('Playing an episode of') }} {{ heard_show }}"
+
+playing_random_episode: "{{ _('Playing a random episode of') }} {{ heard_show }}"
+
+playing_next_unwatched_episode: "{{ _('Playing the next unwatched episode of') }} {{ heard_show }}"
+
+playing_newest_episode: "{{ _('Playing the newest episode of') }} {{ heard_show }}"
+
+playing_album_card: "{{ _('Playing album') }}"
+
+playing_song: "{{ _('Playing song') }}"
+
+playing_album_or_song: "{{ _('Playing album or song') }}"
+
+action_audio_playlist: "{{ action }} {{ _('audio playlist') }}"
+
+party_mode: "{{ _('Party Mode') }}"
+
+streaming_party_mode: "{{ _('Streaming Party Mode') }}"
+
+albums_by: "{{ _('Albums by') }} {{ heard_artist }}"
+
+open_addon: "{{ _('Opening addon') }}"
+
+search: "{{ _('Search') }}"
+
+help_card: "{{ _('Help') }}"
+
+open_remote_card: "{{ _('Opening remote') }}"
+
+playback_stopped: "{{ _('Playback stopped') }}"
+
+
+############################
+##   General Templates    ##
+############################
+
+pause: " "
+
+and_more: "{{ _(', and more') }}"
+
+and: "{{ _(', and  ') }}"
+
+no_more_songs: "{{ _('There are no more songs in the queue') }}"
+
+no_songs_history: "{{ _('There are no songs in your playlist history') }}"
+
+no_current_song: "{{ _('There is no current song') }}"
+

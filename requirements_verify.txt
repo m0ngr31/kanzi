@@ -1,3 +1,0 @@
-aniso8601
-six
-OpenSSL

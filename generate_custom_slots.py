@@ -1,11 +1,12 @@
 import kodi
 import re
 import string
+import random
 from yaep import populate_env
 
 # to use put the Kodi details into environment variables
 # KODI_ADDRESS=localhost KODI_PORT=8088 KODI_USERNAME=kodi KODI_PASSWORD=kodi python generate_custom_types.py
-populate_env()
+kodi.PopulateEnv()
 
 # Generate MUSICARTISTS Slot
 retrieved = kodi.GetMusicArtists()
@@ -14,14 +15,18 @@ all = []
 
 if 'result' in retrieved and 'artists' in retrieved['result']:
   for v in retrieved['result']['artists']:
-    ascii_name = v['artist'].encode('ascii', 'replace')
-    removed_paren = re.sub(r'\([^)]*\)', '', ascii_name).rstrip().lower().translate(None, string.punctuation)
-    all.append(removed_paren.encode('utf-8').strip())
+    name = kodi.sanitize_name(v['artist'])
+    name_stripped = kodi.sanitize_name(v['artist'], True)
+    all.append(name)
+    all.append(name_stripped)
 
-deduped = list(set(all))
+cleaned = list(set(all))
+cleaned = filter(None, cleaned)
+random.shuffle(cleaned)
+cleaned = cleaned[:2500]
 
 gfile = open('MUSICARTISTS', 'w')
-for a in deduped:
+for a in cleaned:
   gfile.write("%s\n" % a)
 gfile.close()
 
@@ -33,14 +38,18 @@ all = []
 
 if 'result' in retrieved and 'albums' in retrieved['result']:
   for v in retrieved['result']['albums']:
-    ascii_name = v['label'].encode('ascii', 'replace')
-    removed_paren = re.sub(r'\([^)]*\)', '', ascii_name).rstrip().lower().translate(None, string.punctuation)
-    all.append(removed_paren.encode('utf-8').strip())
+    name = kodi.sanitize_name(v['label'])
+    name_stripped = kodi.sanitize_name(v['label'], True)
+    all.append(name)
+    all.append(name_stripped)
 
-deduped = list(set(all))
+cleaned = list(set(all))
+cleaned = filter(None, cleaned)
+random.shuffle(cleaned)
+cleaned = cleaned[:2500]
 
 gfile = open('MUSICALBUMS', 'w')
-for a in deduped:
+for a in cleaned:
   gfile.write("%s\n" % a)
 gfile.close()
 
@@ -52,14 +61,18 @@ all = []
 
 if 'result' in retrieved and 'songs' in retrieved['result']:
   for v in retrieved['result']['songs']:
-    ascii_name = v['label'].encode('ascii', 'replace')
-    removed_paren = re.sub(r'\([^)]*\)', '', ascii_name).rstrip().lower().translate(None, string.punctuation)
-    all.append(removed_paren.encode('utf-8').strip())
+    name = kodi.sanitize_name(v['label'])
+    name_stripped = kodi.sanitize_name(v['label'], True)
+    all.append(name)
+    all.append(name_stripped)
 
-deduped = list(set(all))
+cleaned = list(set(all))
+cleaned = filter(None, cleaned)
+random.shuffle(cleaned)
+cleaned = cleaned[:2500]
 
 gfile = open('MUSICSONGS', 'w')
-for a in deduped:
+for a in cleaned:
   gfile.write("%s\n" % a)
 gfile.close()
 
@@ -71,15 +84,18 @@ all = []
 
 if 'result' in retrieved and 'files' in retrieved['result']:
   for v in retrieved['result']['files']:
-    # Strip characters and parentheses
-    ascii_name = v['label'].encode('ascii', 'replace')
-    removed_paren = re.sub(r'\([^)]*\)', '', ascii_name).rstrip().lower().translate(None, string.punctuation)
-    all.append(removed_paren.encode('utf-8').strip())
+    name = kodi.sanitize_name(v['label'])
+    name_stripped = kodi.sanitize_name(v['label'], True)
+    all.append(name)
+    all.append(name_stripped)
 
-deduped = list(set(all))
+cleaned = list(set(all))
+cleaned = filter(None, cleaned)
+random.shuffle(cleaned)
+cleaned = cleaned[:2500]
 
 gfile = open('MUSICPLAYLISTS', 'w')
-for a in deduped:
+for a in cleaned:
   gfile.write("%s\n" % a)
 gfile.close()
 
@@ -91,15 +107,18 @@ all = []
 
 if 'result' in retrieved and 'files' in retrieved['result']:
   for v in retrieved['result']['files']:
-    # Strip characters and parentheses
-    ascii_name = v['label'].encode('ascii', 'replace')
-    removed_paren = re.sub(r'\([^)]*\)', '', ascii_name).rstrip().lower().translate(None, string.punctuation)
-    all.append(removed_paren.encode('utf-8').strip())
+    name = kodi.sanitize_name(v['label'])
+    name_stripped = kodi.sanitize_name(v['label'], True)
+    all.append(name)
+    all.append(name_stripped)
 
-deduped = list(set(all))
+cleaned = list(set(all))
+cleaned = filter(None, cleaned)
+random.shuffle(cleaned)
+cleaned = cleaned[:2500]
 
 gfile = open('VIDEOPLAYLISTS', 'w')
-for a in deduped:
+for a in cleaned:
   gfile.write("%s\n" % a)
 gfile.close()
 
@@ -111,14 +130,18 @@ all = []
 
 if 'result' in retrieved and 'genres' in retrieved['result']:
   for v in retrieved['result']['genres']:
-    ascii_name = v['label'].encode('ascii', 'replace')
-    removed_paren = re.sub(r'\([^)]*\)', '', ascii_name).rstrip().lower().translate(None, string.punctuation)
-    all.append(removed_paren.encode('utf-8').strip())
+    name = kodi.sanitize_name(v['label'])
+    name_stripped = kodi.sanitize_name(v['label'], True)
+    all.append(name)
+    all.append(name_stripped)
 
-deduped = list(set(all))
+cleaned = list(set(all))
+cleaned = filter(None, cleaned)
+random.shuffle(cleaned)
+cleaned = cleaned[:2500]
 
 gfile = open('MOVIEGENRES', 'w')
-for a in deduped:
+for a in cleaned:
   gfile.write("%s\n" % a)
 gfile.close()
 
@@ -130,14 +153,18 @@ all = []
 
 if 'result' in retrieved and 'movies' in retrieved['result']:
   for v in retrieved['result']['movies']:
-    ascii_name = v['label'].encode('ascii', 'replace')
-    removed_paren = re.sub(r'\([^)]*\)', '', ascii_name).rstrip().lower().translate(None, string.punctuation)
-    all.append(removed_paren.encode('utf-8').strip())
+    name = kodi.sanitize_name(v['label'])
+    name_stripped = kodi.sanitize_name(v['label'], True)
+    all.append(name)
+    all.append(name_stripped)
 
-deduped = list(set(all))
+cleaned = list(set(all))
+cleaned = filter(None, cleaned)
+random.shuffle(cleaned)
+cleaned = cleaned[:2500]
 
 gfile = open('MOVIES', 'w')
-for a in deduped:
+for a in cleaned:
   gfile.write("%s\n" % a)
 gfile.close()
 
@@ -149,14 +176,18 @@ all = []
 
 if 'result' in retrieved and 'tvshows' in retrieved['result']:
   for v in retrieved['result']['tvshows']:
-    ascii_name = v['label'].encode('ascii', 'replace')
-    removed_paren = re.sub(r'\([^)]*\)', '', ascii_name).rstrip().lower().translate(None, string.punctuation)
-    all.append(removed_paren.encode('utf-8').strip())
+    name = kodi.sanitize_name(v['label'])
+    name_stripped = kodi.sanitize_name(v['label'], True)
+    all.append(name)
+    all.append(name_stripped)
 
-deduped = list(set(all))
+cleaned = list(set(all))
+cleaned = filter(None, cleaned)
+random.shuffle(cleaned)
+cleaned = cleaned[:2500]
 
 gfile = open('SHOWS', 'w')
-for a in deduped:
+for a in cleaned:
   gfile.write("%s\n" % a)
 gfile.close()
 
@@ -169,13 +200,17 @@ for content in ['video', 'audio', 'image', 'executable']:
 
   if 'result' in retrieved and 'addons' in retrieved['result']:
     for v in retrieved['result']['addons']:
-      ascii_name = v['name'].encode('ascii', 'replace')
-      removed_paren = re.sub(r'\([^)]*\)', '', ascii_name).rstrip().lower().translate(None, string.punctuation)
-      all.append(removed_paren.encode('utf-8').strip())
+      name = kodi.sanitize_name(v['name'])
+      name_stripped = kodi.sanitize_name(v['name'], True)
+      all.append(name)
+      all.append(name_stripped)
 
-deduped = list(set(all))
+cleaned = list(set(all))
+cleaned = filter(None, cleaned)
+random.shuffle(cleaned)
+cleaned = cleaned[:2500]
 
 gfile = open('ADDONS', 'w')
-for a in deduped:
+for a in cleaned:
   gfile.write("%s\n" % a)
 gfile.close()

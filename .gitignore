@@ -49,10 +49,6 @@ coverage.xml
 *,cover
 .hypothesis/
 
-# Translations
-*.mo
-*.pot
-
 # Django stuff:
 *.log
 
@@ -79,3 +75,4 @@ SHOWS
 ADDONS
 
 kodi-alexa/
+run.sh

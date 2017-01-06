@@ -1,3 +1,6 @@
+AMAZON.StopIntent cancel
+AMAZON.StopIntent shut up
+AMAZON.StopIntent stop
 AddonExecute execute addon {Addon}
 AddonExecute execute plugin {Addon}
 AddonExecute execute script {Addon}
@@ -331,6 +334,9 @@ NewShowInquiry if we have any episodes of {Show}
 NewShowInquiry if we have any new episodes of {Show}
 NewShowInquiry if we have any {Show}
 NewShowInquiry if we have {Show}
+OpenRemote open controller
+OpenRemote open controls
+OpenRemote open remote
 PageDown go page down
 PageDown navigate page down
 PageDown page down
@@ -592,9 +598,11 @@ Skip skip
 Skip skip song
 StartOver replay
 StartOver start over
-Stop cancel
-Stop shut up
-Stop stop
+StreamArtist stream artist {Artist}
+StreamArtist stream music by {Artist}
+StreamPartyMode stream all music
+StreamPartyMode stream music
+StreamPartyMode stream random music
 SubtitlesNext next subtitle language
 SubtitlesNext next subtitles
 SubtitlesNext switch subtitle language
