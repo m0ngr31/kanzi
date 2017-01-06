@@ -1,9 +1,12 @@
 import os
 import collections
 
-from pymongo import MongoClient
-
 def has_music_functionality():
+  try:
+    from pymongo import MongoClient
+  except:
+    return False
+
   accepted_answers = ['y', 'yes', 'Y', 'Yes', 'YES', 'true', 'True']
   accepted_warning = os.getenv('ACCEPT_MUSIC_WARNING')
 
@@ -79,6 +82,3 @@ class MusicPlayer:
     }
 
     self.playlists.insert_one(playlist_data)
-
-  def finished_playing(self):
-    print 'Clearing database'
