@@ -1,3 +1,19 @@
+v2.1.0 (01/05/2017)
+* Misc bug fixes
+* Added ability to execute addons
+* Added ability to specify genre in WhatNewMovies intent
+* No longer assumes music if no media type specified
+* Added ability to request a specific song from library
+* Added songs to DoSearch intent
+* Allow (play/listen to) ({Album}/{Song}) by {Artist}
+* Allow 'visualizer' as alias for 'fullscreen'
+* Added support for video playlists
+* Fix shuffling of recently added songs
+* Verbs "watch" and "listen" assume corresponding media type now
+* Defer to fuzzy matching earlier to get better matches
+* Added ability to shuffle playlists
+* Fixed Clean Library functionality
+
 v2.0.6 (11/30/2016)
 * Fixes for Lambda deployments
 * Support playing random movie by genre
