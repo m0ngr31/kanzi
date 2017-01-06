@@ -45,12 +45,14 @@ class MusicPlayer:
       return None
 
   def skip_song(self):
+    self.current_offset = 0
     self.current_index += 1
     self.current_item = self.urls[self.current_index]
 
     self.save_to_mongo()
 
   def prev_song(self):
+    self.current_offset = 0
     self.current_index -= 1
     self.current_item = self.urls[self.current_index]
 
