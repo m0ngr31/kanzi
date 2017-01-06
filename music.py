@@ -3,7 +3,7 @@ import collections
 
 def has_music_functionality():
   try:
-    from pymongo import MongoClient
+    import pymongo
   except:
     return False
 
