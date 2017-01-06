@@ -1,0 +1,1434 @@
+AMAZON.StopIntent anhalten
+AMAZON.StopIntent halt
+AMAZON.StopIntent halt's maul
+AMAZON.StopIntent stop
+AddonExecute führe addon {Addon} aus
+AddonExecute führe erweiterung {Addon} aus
+AddonExecute führe plugin {Addon} aus
+AddonExecute führe script {Addon} aus
+AddonExecute führe {Addon} aus
+AddonExecute öffne {Addon}
+AddonGlobalSearch suche nach {Album}
+AddonGlobalSearch suche nach {Artist}
+AddonGlobalSearch suche nach {Movie}
+AddonGlobalSearch suche nach {Show}
+AddonGlobalSearch suche {Album}
+AddonGlobalSearch suche {Artist}
+AddonGlobalSearch suche {Movie}
+AddonGlobalSearch suche {Show}
+AudioStreamNext Sprache umschalten
+AudioStreamNext audio Stream umschalten
+AudioStreamNext nächste Sprache
+AudioStreamNext nächster audio Stream
+AudioStreamPrevious vorige Sprache
+AudioStreamPrevious voriger audio Stream
+Back zurück
+CleanAudio Audio Bibliothek säubern
+CleanAudio Musik Bibliothek säubern
+CleanAudio säuber Audio Bibliothek
+CleanAudio säuber Musik Bibliothek
+CleanAudio säubere Audio Bibliothek
+CleanAudio säubere Musik Bibliothek
+CleanVideo Video Bibliothek säubern
+CleanVideo säuber Video Bibliothek
+CleanVideo säubere Video Bibliothek
+CurrentPlayItemInquiry was das ist
+CurrentPlayItemInquiry was gerade jetzt läuft
+CurrentPlayItemInquiry was gerade jetzt spielt
+CurrentPlayItemInquiry was gerade läuft
+CurrentPlayItemInquiry was gerade spielt
+CurrentPlayItemInquiry was in diesem Moment läuft
+CurrentPlayItemInquiry was in diesem Moment spielt
+CurrentPlayItemInquiry was ist das
+CurrentPlayItemInquiry was jetzt gerade läuft
+CurrentPlayItemInquiry was jetzt gerade spielt
+CurrentPlayItemInquiry was jetzt läuft
+CurrentPlayItemInquiry was jetzt spielt
+CurrentPlayItemInquiry was läuft
+CurrentPlayItemInquiry was spielt
+CurrentPlayItemInquiry welche Episode das ist
+CurrentPlayItemInquiry welche Episode gerade jetzt läuft
+CurrentPlayItemInquiry welche Episode gerade jetzt spielt
+CurrentPlayItemInquiry welche Episode gerade läuft
+CurrentPlayItemInquiry welche Episode gerade spielt
+CurrentPlayItemInquiry welche Episode in diesem Moment läuft
+CurrentPlayItemInquiry welche Episode in diesem Moment spielt
+CurrentPlayItemInquiry welche Episode jetzt gerade läuft
+CurrentPlayItemInquiry welche Episode jetzt gerade spielt
+CurrentPlayItemInquiry welche Episode jetzt läuft
+CurrentPlayItemInquiry welche Episode jetzt spielt
+CurrentPlayItemInquiry welche Episode läuft
+CurrentPlayItemInquiry welche Episode spielt
+CurrentPlayItemInquiry welche Folge das ist
+CurrentPlayItemInquiry welche Folge gerade jetzt läuft
+CurrentPlayItemInquiry welche Folge gerade jetzt spielt
+CurrentPlayItemInquiry welche Folge gerade läuft
+CurrentPlayItemInquiry welche Folge gerade spielt
+CurrentPlayItemInquiry welche Folge in diesem Moment läuft
+CurrentPlayItemInquiry welche Folge in diesem Moment spielt
+CurrentPlayItemInquiry welche Folge jetzt gerade läuft
+CurrentPlayItemInquiry welche Folge jetzt gerade spielt
+CurrentPlayItemInquiry welche Folge jetzt läuft
+CurrentPlayItemInquiry welche Folge jetzt spielt
+CurrentPlayItemInquiry welche Folge läuft
+CurrentPlayItemInquiry welche Folge spielt
+CurrentPlayItemInquiry welche Serie das ist
+CurrentPlayItemInquiry welche Serie gerade jetzt läuft
+CurrentPlayItemInquiry welche Serie gerade jetzt spielt
+CurrentPlayItemInquiry welche Serie gerade läuft
+CurrentPlayItemInquiry welche Serie gerade spielt
+CurrentPlayItemInquiry welche Serie in diesem Moment läuft
+CurrentPlayItemInquiry welche Serie in diesem Moment spielt
+CurrentPlayItemInquiry welche Serie jetzt gerade läuft
+CurrentPlayItemInquiry welche Serie jetzt gerade spielt
+CurrentPlayItemInquiry welche Serie jetzt läuft
+CurrentPlayItemInquiry welche Serie jetzt spielt
+CurrentPlayItemInquiry welche Serie läuft
+CurrentPlayItemInquiry welche Serie spielt
+CurrentPlayItemInquiry welche Staffel das ist
+CurrentPlayItemInquiry welche Staffel gerade jetzt läuft
+CurrentPlayItemInquiry welche Staffel gerade jetzt spielt
+CurrentPlayItemInquiry welche Staffel gerade läuft
+CurrentPlayItemInquiry welche Staffel gerade spielt
+CurrentPlayItemInquiry welche Staffel in diesem Moment läuft
+CurrentPlayItemInquiry welche Staffel in diesem Moment spielt
+CurrentPlayItemInquiry welche Staffel jetzt gerade läuft
+CurrentPlayItemInquiry welche Staffel jetzt gerade spielt
+CurrentPlayItemInquiry welche Staffel jetzt läuft
+CurrentPlayItemInquiry welche Staffel jetzt spielt
+CurrentPlayItemInquiry welche Staffel läuft
+CurrentPlayItemInquiry welche Staffel spielt
+CurrentPlayItemInquiry welche das ist
+CurrentPlayItemInquiry welche gerade jetzt läuft
+CurrentPlayItemInquiry welche gerade jetzt spielt
+CurrentPlayItemInquiry welche gerade läuft
+CurrentPlayItemInquiry welche gerade spielt
+CurrentPlayItemInquiry welche in diesem Moment läuft
+CurrentPlayItemInquiry welche in diesem Moment spielt
+CurrentPlayItemInquiry welche jetzt gerade läuft
+CurrentPlayItemInquiry welche jetzt gerade spielt
+CurrentPlayItemInquiry welche jetzt läuft
+CurrentPlayItemInquiry welche jetzt spielt
+CurrentPlayItemInquiry welche läuft
+CurrentPlayItemInquiry welche spielt
+CurrentPlayItemInquiry welcher Song das ist
+CurrentPlayItemInquiry welcher Song gerade jetzt läuft
+CurrentPlayItemInquiry welcher Song gerade jetzt spielt
+CurrentPlayItemInquiry welcher Song gerade läuft
+CurrentPlayItemInquiry welcher Song gerade spielt
+CurrentPlayItemInquiry welcher Song in diesem Moment läuft
+CurrentPlayItemInquiry welcher Song in diesem Moment spielt
+CurrentPlayItemInquiry welcher Song jetzt gerade läuft
+CurrentPlayItemInquiry welcher Song jetzt gerade spielt
+CurrentPlayItemInquiry welcher Song jetzt läuft
+CurrentPlayItemInquiry welcher Song jetzt spielt
+CurrentPlayItemInquiry welcher Song läuft
+CurrentPlayItemInquiry welcher Song spielt
+CurrentPlayItemInquiry welcher das ist
+CurrentPlayItemInquiry welcher gerade jetzt läuft
+CurrentPlayItemInquiry welcher gerade jetzt spielt
+CurrentPlayItemInquiry welcher gerade läuft
+CurrentPlayItemInquiry welcher gerade spielt
+CurrentPlayItemInquiry welcher in diesem Moment läuft
+CurrentPlayItemInquiry welcher in diesem Moment spielt
+CurrentPlayItemInquiry welcher jetzt gerade läuft
+CurrentPlayItemInquiry welcher jetzt gerade spielt
+CurrentPlayItemInquiry welcher jetzt läuft
+CurrentPlayItemInquiry welcher jetzt spielt
+CurrentPlayItemInquiry welcher läuft
+CurrentPlayItemInquiry welcher spielt
+CurrentPlayItemInquiry welches Lied das ist
+CurrentPlayItemInquiry welches Lied gerade jetzt läuft
+CurrentPlayItemInquiry welches Lied gerade jetzt spielt
+CurrentPlayItemInquiry welches Lied gerade läuft
+CurrentPlayItemInquiry welches Lied gerade spielt
+CurrentPlayItemInquiry welches Lied in diesem Moment läuft
+CurrentPlayItemInquiry welches Lied in diesem Moment spielt
+CurrentPlayItemInquiry welches Lied jetzt gerade läuft
+CurrentPlayItemInquiry welches Lied jetzt gerade spielt
+CurrentPlayItemInquiry welches Lied jetzt läuft
+CurrentPlayItemInquiry welches Lied jetzt spielt
+CurrentPlayItemInquiry welches Lied läuft
+CurrentPlayItemInquiry welches Lied spielt
+CurrentPlayItemInquiry welches Video das ist
+CurrentPlayItemInquiry welches Video gerade jetzt läuft
+CurrentPlayItemInquiry welches Video gerade jetzt spielt
+CurrentPlayItemInquiry welches Video gerade läuft
+CurrentPlayItemInquiry welches Video gerade spielt
+CurrentPlayItemInquiry welches Video in diesem Moment läuft
+CurrentPlayItemInquiry welches Video in diesem Moment spielt
+CurrentPlayItemInquiry welches Video jetzt gerade läuft
+CurrentPlayItemInquiry welches Video jetzt gerade spielt
+CurrentPlayItemInquiry welches Video jetzt läuft
+CurrentPlayItemInquiry welches Video jetzt spielt
+CurrentPlayItemInquiry welches Video läuft
+CurrentPlayItemInquiry welches Video spielt
+CurrentPlayItemInquiry welches das ist
+CurrentPlayItemInquiry welches gerade jetzt läuft
+CurrentPlayItemInquiry welches gerade jetzt spielt
+CurrentPlayItemInquiry welches gerade läuft
+CurrentPlayItemInquiry welches gerade spielt
+CurrentPlayItemInquiry welches in diesem Moment läuft
+CurrentPlayItemInquiry welches in diesem Moment spielt
+CurrentPlayItemInquiry welches jetzt gerade läuft
+CurrentPlayItemInquiry welches jetzt gerade spielt
+CurrentPlayItemInquiry welches jetzt läuft
+CurrentPlayItemInquiry welches jetzt spielt
+CurrentPlayItemInquiry welches läuft
+CurrentPlayItemInquiry welches spielt
+CurrentPlayItemInquiry wer das ist
+CurrentPlayItemInquiry wer ist das
+CurrentPlayItemTimeRemaining wann das Lied enden wird
+CurrentPlayItemTimeRemaining wann das Lied endet
+CurrentPlayItemTimeRemaining wann das Lied zu ende ist
+CurrentPlayItemTimeRemaining wann das enden wird
+CurrentPlayItemTimeRemaining wann das endet
+CurrentPlayItemTimeRemaining wann das zu ende ist
+CurrentPlayItemTimeRemaining wann der Film enden wird
+CurrentPlayItemTimeRemaining wann der Film endet
+CurrentPlayItemTimeRemaining wann der Film zu ende ist
+CurrentPlayItemTimeRemaining wann die Episode enden wird
+CurrentPlayItemTimeRemaining wann die Episode endet
+CurrentPlayItemTimeRemaining wann die Episode zu ende ist
+CurrentPlayItemTimeRemaining wann die Folge enden wird
+CurrentPlayItemTimeRemaining wann die Folge endet
+CurrentPlayItemTimeRemaining wann die Folge zu ende ist
+CurrentPlayItemTimeRemaining wann die Serie enden wird
+CurrentPlayItemTimeRemaining wann die Serie endet
+CurrentPlayItemTimeRemaining wann die Serie zu ende ist
+CurrentPlayItemTimeRemaining wann diese Episode enden wird
+CurrentPlayItemTimeRemaining wann diese Episode endet
+CurrentPlayItemTimeRemaining wann diese Episode zu ende ist
+CurrentPlayItemTimeRemaining wann diese Folge enden wird
+CurrentPlayItemTimeRemaining wann diese Folge endet
+CurrentPlayItemTimeRemaining wann diese Folge zu ende ist
+CurrentPlayItemTimeRemaining wann diese Serie enden wird
+CurrentPlayItemTimeRemaining wann diese Serie endet
+CurrentPlayItemTimeRemaining wann diese Serie zu ende ist
+CurrentPlayItemTimeRemaining wann dieser Film enden wird
+CurrentPlayItemTimeRemaining wann dieser Film endet
+CurrentPlayItemTimeRemaining wann dieser Film zu ende ist
+CurrentPlayItemTimeRemaining wann dieses Lied enden wird
+CurrentPlayItemTimeRemaining wann dieses Lied endet
+CurrentPlayItemTimeRemaining wann dieses Lied zu ende ist
+CurrentPlayItemTimeRemaining wann dieses audio enden wird
+CurrentPlayItemTimeRemaining wann dieses audio endet
+CurrentPlayItemTimeRemaining wann dieses audio zu ende ist
+CurrentPlayItemTimeRemaining wann dieses video enden wird
+CurrentPlayItemTimeRemaining wann dieses video endet
+CurrentPlayItemTimeRemaining wann dieses video zu ende ist
+CurrentPlayItemTimeRemaining wann mein Film enden wird
+CurrentPlayItemTimeRemaining wann mein Film endet
+CurrentPlayItemTimeRemaining wann mein Film zu ende ist
+CurrentPlayItemTimeRemaining wann mein Lied enden wird
+CurrentPlayItemTimeRemaining wann mein Lied endet
+CurrentPlayItemTimeRemaining wann mein Lied zu ende ist
+CurrentPlayItemTimeRemaining wann mein audio enden wird
+CurrentPlayItemTimeRemaining wann mein audio endet
+CurrentPlayItemTimeRemaining wann mein audio zu ende ist
+CurrentPlayItemTimeRemaining wann mein video enden wird
+CurrentPlayItemTimeRemaining wann mein video endet
+CurrentPlayItemTimeRemaining wann mein video zu ende ist
+CurrentPlayItemTimeRemaining wann meine Episode enden wird
+CurrentPlayItemTimeRemaining wann meine Episode endet
+CurrentPlayItemTimeRemaining wann meine Episode zu ende ist
+CurrentPlayItemTimeRemaining wann meine Folge enden wird
+CurrentPlayItemTimeRemaining wann meine Folge endet
+CurrentPlayItemTimeRemaining wann meine Folge zu ende ist
+CurrentPlayItemTimeRemaining wann meine Serie enden wird
+CurrentPlayItemTimeRemaining wann meine Serie endet
+CurrentPlayItemTimeRemaining wann meine Serie zu ende ist
+CurrentPlayItemTimeRemaining welche Uhrzeit das Lied enden wird
+CurrentPlayItemTimeRemaining welche Uhrzeit das Lied endet
+CurrentPlayItemTimeRemaining welche Uhrzeit das Lied zu ende ist
+CurrentPlayItemTimeRemaining welche Uhrzeit das enden wird
+CurrentPlayItemTimeRemaining welche Uhrzeit das endet
+CurrentPlayItemTimeRemaining welche Uhrzeit das zu ende ist
+CurrentPlayItemTimeRemaining welche Uhrzeit der Film enden wird
+CurrentPlayItemTimeRemaining welche Uhrzeit der Film endet
+CurrentPlayItemTimeRemaining welche Uhrzeit der Film zu ende ist
+CurrentPlayItemTimeRemaining welche Uhrzeit die Episode enden wird
+CurrentPlayItemTimeRemaining welche Uhrzeit die Episode endet
+CurrentPlayItemTimeRemaining welche Uhrzeit die Episode zu ende ist
+CurrentPlayItemTimeRemaining welche Uhrzeit die Folge enden wird
+CurrentPlayItemTimeRemaining welche Uhrzeit die Folge endet
+CurrentPlayItemTimeRemaining welche Uhrzeit die Folge zu ende ist
+CurrentPlayItemTimeRemaining welche Uhrzeit die Serie enden wird
+CurrentPlayItemTimeRemaining welche Uhrzeit die Serie endet
+CurrentPlayItemTimeRemaining welche Uhrzeit die Serie zu ende ist
+CurrentPlayItemTimeRemaining welche Uhrzeit diese Episode enden wird
+CurrentPlayItemTimeRemaining welche Uhrzeit diese Episode endet
+CurrentPlayItemTimeRemaining welche Uhrzeit diese Episode zu ende ist
+CurrentPlayItemTimeRemaining welche Uhrzeit diese Folge enden wird
+CurrentPlayItemTimeRemaining welche Uhrzeit diese Folge endet
+CurrentPlayItemTimeRemaining welche Uhrzeit diese Folge zu ende ist
+CurrentPlayItemTimeRemaining welche Uhrzeit diese Serie enden wird
+CurrentPlayItemTimeRemaining welche Uhrzeit diese Serie endet
+CurrentPlayItemTimeRemaining welche Uhrzeit diese Serie zu ende ist
+CurrentPlayItemTimeRemaining welche Uhrzeit dieser Film enden wird
+CurrentPlayItemTimeRemaining welche Uhrzeit dieser Film endet
+CurrentPlayItemTimeRemaining welche Uhrzeit dieser Film zu ende ist
+CurrentPlayItemTimeRemaining welche Uhrzeit dieses Lied enden wird
+CurrentPlayItemTimeRemaining welche Uhrzeit dieses Lied endet
+CurrentPlayItemTimeRemaining welche Uhrzeit dieses Lied zu ende ist
+CurrentPlayItemTimeRemaining welche Uhrzeit dieses audio enden wird
+CurrentPlayItemTimeRemaining welche Uhrzeit dieses audio endet
+CurrentPlayItemTimeRemaining welche Uhrzeit dieses audio zu ende ist
+CurrentPlayItemTimeRemaining welche Uhrzeit dieses video enden wird
+CurrentPlayItemTimeRemaining welche Uhrzeit dieses video endet
+CurrentPlayItemTimeRemaining welche Uhrzeit dieses video zu ende ist
+CurrentPlayItemTimeRemaining welche Uhrzeit mein Film enden wird
+CurrentPlayItemTimeRemaining welche Uhrzeit mein Film endet
+CurrentPlayItemTimeRemaining welche Uhrzeit mein Film zu ende ist
+CurrentPlayItemTimeRemaining welche Uhrzeit mein Lied enden wird
+CurrentPlayItemTimeRemaining welche Uhrzeit mein Lied endet
+CurrentPlayItemTimeRemaining welche Uhrzeit mein Lied zu ende ist
+CurrentPlayItemTimeRemaining welche Uhrzeit mein audio enden wird
+CurrentPlayItemTimeRemaining welche Uhrzeit mein audio endet
+CurrentPlayItemTimeRemaining welche Uhrzeit mein audio zu ende ist
+CurrentPlayItemTimeRemaining welche Uhrzeit mein video enden wird
+CurrentPlayItemTimeRemaining welche Uhrzeit mein video endet
+CurrentPlayItemTimeRemaining welche Uhrzeit mein video zu ende ist
+CurrentPlayItemTimeRemaining welche Uhrzeit meine Episode enden wird
+CurrentPlayItemTimeRemaining welche Uhrzeit meine Episode endet
+CurrentPlayItemTimeRemaining welche Uhrzeit meine Episode zu ende ist
+CurrentPlayItemTimeRemaining welche Uhrzeit meine Folge enden wird
+CurrentPlayItemTimeRemaining welche Uhrzeit meine Folge endet
+CurrentPlayItemTimeRemaining welche Uhrzeit meine Folge zu ende ist
+CurrentPlayItemTimeRemaining welche Uhrzeit meine Serie enden wird
+CurrentPlayItemTimeRemaining welche Uhrzeit meine Serie endet
+CurrentPlayItemTimeRemaining welche Uhrzeit meine Serie zu ende ist
+CurrentPlayItemTimeRemaining wie lange das noch geht
+CurrentPlayItemTimeRemaining wie lange das noch ist
+CurrentPlayItemTimeRemaining wie lange das noch läuft
+CurrentPlayItemTimeRemaining wie viel länger das Lied geht
+CurrentPlayItemTimeRemaining wie viel länger das Lied ist
+CurrentPlayItemTimeRemaining wie viel länger das Lied läuft
+CurrentPlayItemTimeRemaining wie viel länger das Lied noch geht
+CurrentPlayItemTimeRemaining wie viel länger das Lied noch ist
+CurrentPlayItemTimeRemaining wie viel länger das Lied noch läuft
+CurrentPlayItemTimeRemaining wie viel länger das geht
+CurrentPlayItemTimeRemaining wie viel länger das ist
+CurrentPlayItemTimeRemaining wie viel länger das läuft
+CurrentPlayItemTimeRemaining wie viel länger das noch geht
+CurrentPlayItemTimeRemaining wie viel länger das noch ist
+CurrentPlayItemTimeRemaining wie viel länger das noch läuft
+CurrentPlayItemTimeRemaining wie viel länger der Film geht
+CurrentPlayItemTimeRemaining wie viel länger der Film ist
+CurrentPlayItemTimeRemaining wie viel länger der Film läuft
+CurrentPlayItemTimeRemaining wie viel länger der Film noch geht
+CurrentPlayItemTimeRemaining wie viel länger der Film noch ist
+CurrentPlayItemTimeRemaining wie viel länger der Film noch läuft
+CurrentPlayItemTimeRemaining wie viel länger die Episode geht
+CurrentPlayItemTimeRemaining wie viel länger die Episode ist
+CurrentPlayItemTimeRemaining wie viel länger die Episode läuft
+CurrentPlayItemTimeRemaining wie viel länger die Episode noch geht
+CurrentPlayItemTimeRemaining wie viel länger die Episode noch ist
+CurrentPlayItemTimeRemaining wie viel länger die Episode noch läuft
+CurrentPlayItemTimeRemaining wie viel länger die Folge geht
+CurrentPlayItemTimeRemaining wie viel länger die Folge ist
+CurrentPlayItemTimeRemaining wie viel länger die Folge läuft
+CurrentPlayItemTimeRemaining wie viel länger die Folge noch geht
+CurrentPlayItemTimeRemaining wie viel länger die Folge noch ist
+CurrentPlayItemTimeRemaining wie viel länger die Folge noch läuft
+CurrentPlayItemTimeRemaining wie viel länger die Serie geht
+CurrentPlayItemTimeRemaining wie viel länger die Serie ist
+CurrentPlayItemTimeRemaining wie viel länger die Serie läuft
+CurrentPlayItemTimeRemaining wie viel länger die Serie noch geht
+CurrentPlayItemTimeRemaining wie viel länger die Serie noch ist
+CurrentPlayItemTimeRemaining wie viel länger die Serie noch läuft
+CurrentPlayItemTimeRemaining wie viel länger diese Episode geht
+CurrentPlayItemTimeRemaining wie viel länger diese Episode ist
+CurrentPlayItemTimeRemaining wie viel länger diese Episode läuft
+CurrentPlayItemTimeRemaining wie viel länger diese Episode noch geht
+CurrentPlayItemTimeRemaining wie viel länger diese Episode noch ist
+CurrentPlayItemTimeRemaining wie viel länger diese Episode noch läuft
+CurrentPlayItemTimeRemaining wie viel länger diese Folge geht
+CurrentPlayItemTimeRemaining wie viel länger diese Folge ist
+CurrentPlayItemTimeRemaining wie viel länger diese Folge läuft
+CurrentPlayItemTimeRemaining wie viel länger diese Folge noch geht
+CurrentPlayItemTimeRemaining wie viel länger diese Folge noch ist
+CurrentPlayItemTimeRemaining wie viel länger diese Folge noch läuft
+CurrentPlayItemTimeRemaining wie viel länger diese Serie geht
+CurrentPlayItemTimeRemaining wie viel länger diese Serie ist
+CurrentPlayItemTimeRemaining wie viel länger diese Serie läuft
+CurrentPlayItemTimeRemaining wie viel länger diese Serie noch geht
+CurrentPlayItemTimeRemaining wie viel länger diese Serie noch ist
+CurrentPlayItemTimeRemaining wie viel länger diese Serie noch läuft
+CurrentPlayItemTimeRemaining wie viel länger dieser Film geht
+CurrentPlayItemTimeRemaining wie viel länger dieser Film ist
+CurrentPlayItemTimeRemaining wie viel länger dieser Film läuft
+CurrentPlayItemTimeRemaining wie viel länger dieser Film noch geht
+CurrentPlayItemTimeRemaining wie viel länger dieser Film noch ist
+CurrentPlayItemTimeRemaining wie viel länger dieser Film noch läuft
+CurrentPlayItemTimeRemaining wie viel länger dieses Lied geht
+CurrentPlayItemTimeRemaining wie viel länger dieses Lied ist
+CurrentPlayItemTimeRemaining wie viel länger dieses Lied läuft
+CurrentPlayItemTimeRemaining wie viel länger dieses Lied noch geht
+CurrentPlayItemTimeRemaining wie viel länger dieses Lied noch ist
+CurrentPlayItemTimeRemaining wie viel länger dieses Lied noch läuft
+CurrentPlayItemTimeRemaining wie viel länger dieses audio geht
+CurrentPlayItemTimeRemaining wie viel länger dieses audio ist
+CurrentPlayItemTimeRemaining wie viel länger dieses audio läuft
+CurrentPlayItemTimeRemaining wie viel länger dieses audio noch geht
+CurrentPlayItemTimeRemaining wie viel länger dieses audio noch ist
+CurrentPlayItemTimeRemaining wie viel länger dieses audio noch läuft
+CurrentPlayItemTimeRemaining wie viel länger dieses video geht
+CurrentPlayItemTimeRemaining wie viel länger dieses video ist
+CurrentPlayItemTimeRemaining wie viel länger dieses video läuft
+CurrentPlayItemTimeRemaining wie viel länger dieses video noch geht
+CurrentPlayItemTimeRemaining wie viel länger dieses video noch ist
+CurrentPlayItemTimeRemaining wie viel länger dieses video noch läuft
+CurrentPlayItemTimeRemaining wie viel länger mein Film geht
+CurrentPlayItemTimeRemaining wie viel länger mein Film ist
+CurrentPlayItemTimeRemaining wie viel länger mein Film läuft
+CurrentPlayItemTimeRemaining wie viel länger mein Film noch geht
+CurrentPlayItemTimeRemaining wie viel länger mein Film noch ist
+CurrentPlayItemTimeRemaining wie viel länger mein Film noch läuft
+CurrentPlayItemTimeRemaining wie viel länger mein Lied geht
+CurrentPlayItemTimeRemaining wie viel länger mein Lied ist
+CurrentPlayItemTimeRemaining wie viel länger mein Lied läuft
+CurrentPlayItemTimeRemaining wie viel länger mein Lied noch geht
+CurrentPlayItemTimeRemaining wie viel länger mein Lied noch ist
+CurrentPlayItemTimeRemaining wie viel länger mein Lied noch läuft
+CurrentPlayItemTimeRemaining wie viel länger mein audio geht
+CurrentPlayItemTimeRemaining wie viel länger mein audio ist
+CurrentPlayItemTimeRemaining wie viel länger mein audio läuft
+CurrentPlayItemTimeRemaining wie viel länger mein audio noch geht
+CurrentPlayItemTimeRemaining wie viel länger mein audio noch ist
+CurrentPlayItemTimeRemaining wie viel länger mein audio noch läuft
+CurrentPlayItemTimeRemaining wie viel länger mein video geht
+CurrentPlayItemTimeRemaining wie viel länger mein video ist
+CurrentPlayItemTimeRemaining wie viel länger mein video läuft
+CurrentPlayItemTimeRemaining wie viel länger mein video noch geht
+CurrentPlayItemTimeRemaining wie viel länger mein video noch ist
+CurrentPlayItemTimeRemaining wie viel länger mein video noch läuft
+CurrentPlayItemTimeRemaining wie viel länger meine Episode geht
+CurrentPlayItemTimeRemaining wie viel länger meine Episode ist
+CurrentPlayItemTimeRemaining wie viel länger meine Episode läuft
+CurrentPlayItemTimeRemaining wie viel länger meine Episode noch geht
+CurrentPlayItemTimeRemaining wie viel länger meine Episode noch ist
+CurrentPlayItemTimeRemaining wie viel länger meine Episode noch läuft
+CurrentPlayItemTimeRemaining wie viel länger meine Folge geht
+CurrentPlayItemTimeRemaining wie viel länger meine Folge ist
+CurrentPlayItemTimeRemaining wie viel länger meine Folge läuft
+CurrentPlayItemTimeRemaining wie viel länger meine Folge noch geht
+CurrentPlayItemTimeRemaining wie viel länger meine Folge noch ist
+CurrentPlayItemTimeRemaining wie viel länger meine Folge noch läuft
+CurrentPlayItemTimeRemaining wie viel länger meine Serie geht
+CurrentPlayItemTimeRemaining wie viel länger meine Serie ist
+CurrentPlayItemTimeRemaining wie viel länger meine Serie läuft
+CurrentPlayItemTimeRemaining wie viel länger meine Serie noch geht
+CurrentPlayItemTimeRemaining wie viel länger meine Serie noch ist
+CurrentPlayItemTimeRemaining wie viel länger meine Serie noch läuft
+CurrentPlayItemTimeRemaining wie viel noch verbleibt
+CurrentPlayItemTimeRemaining wie viel von dem Film noch verbleibt
+CurrentPlayItemTimeRemaining wie viel von dem Film verbleibt
+CurrentPlayItemTimeRemaining wie viel von dem Lied noch verbleibt
+CurrentPlayItemTimeRemaining wie viel von dem Lied verbleibt
+CurrentPlayItemTimeRemaining wie viel von dem noch verbleibt
+CurrentPlayItemTimeRemaining wie viel von dem verbleibt
+CurrentPlayItemTimeRemaining wie viel von der Episode noch verbleibt
+CurrentPlayItemTimeRemaining wie viel von der Episode verbleibt
+CurrentPlayItemTimeRemaining wie viel von der Folge noch verbleibt
+CurrentPlayItemTimeRemaining wie viel von der Folge verbleibt
+CurrentPlayItemTimeRemaining wie viel von der Serie noch verbleibt
+CurrentPlayItemTimeRemaining wie viel von der Serie verbleibt
+CurrentPlayItemTimeRemaining wie viel von diesem Film noch verbleibt
+CurrentPlayItemTimeRemaining wie viel von diesem Film verbleibt
+CurrentPlayItemTimeRemaining wie viel von diesem Lied noch verbleibt
+CurrentPlayItemTimeRemaining wie viel von diesem Lied verbleibt
+CurrentPlayItemTimeRemaining wie viel von diesem audio noch verbleibt
+CurrentPlayItemTimeRemaining wie viel von diesem audio verbleibt
+CurrentPlayItemTimeRemaining wie viel von diesem video noch verbleibt
+CurrentPlayItemTimeRemaining wie viel von diesem video verbleibt
+CurrentPlayItemTimeRemaining wie viel von dieser Episode noch verbleibt
+CurrentPlayItemTimeRemaining wie viel von dieser Episode verbleibt
+CurrentPlayItemTimeRemaining wie viel von dieser Folge noch verbleibt
+CurrentPlayItemTimeRemaining wie viel von dieser Folge verbleibt
+CurrentPlayItemTimeRemaining wie viel von dieser Serie noch verbleibt
+CurrentPlayItemTimeRemaining wie viel von dieser Serie verbleibt
+CurrentPlayItemTimeRemaining wie viel von meinem Film noch verbleibt
+CurrentPlayItemTimeRemaining wie viel von meinem Film verbleibt
+CurrentPlayItemTimeRemaining wie viel von meinem Lied noch verbleibt
+CurrentPlayItemTimeRemaining wie viel von meinem Lied verbleibt
+CurrentPlayItemTimeRemaining wie viel von meinem audio noch verbleibt
+CurrentPlayItemTimeRemaining wie viel von meinem audio verbleibt
+CurrentPlayItemTimeRemaining wie viel von meinem video noch verbleibt
+CurrentPlayItemTimeRemaining wie viel von meinem video verbleibt
+CurrentPlayItemTimeRemaining wie viel von meiner Episode noch verbleibt
+CurrentPlayItemTimeRemaining wie viel von meiner Episode verbleibt
+CurrentPlayItemTimeRemaining wie viel von meiner Folge noch verbleibt
+CurrentPlayItemTimeRemaining wie viel von meiner Folge verbleibt
+CurrentPlayItemTimeRemaining wie viel von meiner Serie noch verbleibt
+CurrentPlayItemTimeRemaining wie viel von meiner Serie verbleibt
+CurrentPlayItemTimeRemaining wie viel zeit noch verbleibt
+CurrentPlayItemTimeRemaining wie viel zeit von dem Film noch verbleibt
+CurrentPlayItemTimeRemaining wie viel zeit von dem Film verbleibt
+CurrentPlayItemTimeRemaining wie viel zeit von dem Lied noch verbleibt
+CurrentPlayItemTimeRemaining wie viel zeit von dem Lied verbleibt
+CurrentPlayItemTimeRemaining wie viel zeit von dem noch verbleibt
+CurrentPlayItemTimeRemaining wie viel zeit von dem verbleibt
+CurrentPlayItemTimeRemaining wie viel zeit von der Episode noch verbleibt
+CurrentPlayItemTimeRemaining wie viel zeit von der Episode verbleibt
+CurrentPlayItemTimeRemaining wie viel zeit von der Folge noch verbleibt
+CurrentPlayItemTimeRemaining wie viel zeit von der Folge verbleibt
+CurrentPlayItemTimeRemaining wie viel zeit von der Serie noch verbleibt
+CurrentPlayItemTimeRemaining wie viel zeit von der Serie verbleibt
+CurrentPlayItemTimeRemaining wie viel zeit von diesem Film noch verbleibt
+CurrentPlayItemTimeRemaining wie viel zeit von diesem Film verbleibt
+CurrentPlayItemTimeRemaining wie viel zeit von diesem Lied noch verbleibt
+CurrentPlayItemTimeRemaining wie viel zeit von diesem Lied verbleibt
+CurrentPlayItemTimeRemaining wie viel zeit von diesem audio noch verbleibt
+CurrentPlayItemTimeRemaining wie viel zeit von diesem audio verbleibt
+CurrentPlayItemTimeRemaining wie viel zeit von diesem video noch verbleibt
+CurrentPlayItemTimeRemaining wie viel zeit von diesem video verbleibt
+CurrentPlayItemTimeRemaining wie viel zeit von dieser Episode noch verbleibt
+CurrentPlayItemTimeRemaining wie viel zeit von dieser Episode verbleibt
+CurrentPlayItemTimeRemaining wie viel zeit von dieser Folge noch verbleibt
+CurrentPlayItemTimeRemaining wie viel zeit von dieser Folge verbleibt
+CurrentPlayItemTimeRemaining wie viel zeit von dieser Serie noch verbleibt
+CurrentPlayItemTimeRemaining wie viel zeit von dieser Serie verbleibt
+CurrentPlayItemTimeRemaining wie viel zeit von meinem Film noch verbleibt
+CurrentPlayItemTimeRemaining wie viel zeit von meinem Film verbleibt
+CurrentPlayItemTimeRemaining wie viel zeit von meinem Lied noch verbleibt
+CurrentPlayItemTimeRemaining wie viel zeit von meinem Lied verbleibt
+CurrentPlayItemTimeRemaining wie viel zeit von meinem audio noch verbleibt
+CurrentPlayItemTimeRemaining wie viel zeit von meinem audio verbleibt
+CurrentPlayItemTimeRemaining wie viel zeit von meinem video noch verbleibt
+CurrentPlayItemTimeRemaining wie viel zeit von meinem video verbleibt
+CurrentPlayItemTimeRemaining wie viel zeit von meiner Episode noch verbleibt
+CurrentPlayItemTimeRemaining wie viel zeit von meiner Episode verbleibt
+CurrentPlayItemTimeRemaining wie viel zeit von meiner Folge noch verbleibt
+CurrentPlayItemTimeRemaining wie viel zeit von meiner Folge verbleibt
+CurrentPlayItemTimeRemaining wie viel zeit von meiner Serie noch verbleibt
+CurrentPlayItemTimeRemaining wie viel zeit von meiner Serie verbleibt
+Down nach unten
+Down navigier nach unten
+Down navigier runter
+Down navigiere nach unten
+Down navigiere runter
+Down runter
+EjectMedia Scheibe auswerfen
+EjectMedia audio cd auswerfen
+EjectMedia audio disc auswerfen
+EjectMedia auswerfen
+EjectMedia bluray auswerfen
+EjectMedia bluray disc auswerfen
+EjectMedia cd auswerfen
+EjectMedia disc auswerfen
+EjectMedia dvd auswerfen
+EjectMedia medium auswerfen
+Fullscreen vollbild
+Fullscreen vollbild umschalten
+Hibernate hibernate
+Hibernate system hibernate
+Hibernate system tiefschlaf
+Hibernate tiefschlaf
+Home startseite
+Left links
+Left nach links
+Left navigier links
+Left navigier nach links
+Left navigiere links
+Left navigiere nach links
+ListenToAlbum spiel das Album {Album}
+ListenToAlbum spiel das Album {Album} von {Artist}
+ListenToAlbum spiel die CD {Album}
+ListenToAlbum spiel die CD {Album} von {Artist}
+ListenToAlbum spiel die Platte {Album}
+ListenToAlbum spiel die Platte {Album} von {Artist}
+ListenToAlbum spiele das Album {Album}
+ListenToAlbum spiele das Album {Album} von {Artist}
+ListenToAlbum spiele die CD {Album}
+ListenToAlbum spiele die CD {Album} von {Artist}
+ListenToAlbum spiele die Platte {Album}
+ListenToAlbum spiele die Platte {Album} von {Artist}
+ListenToAlbumOrSong spiel das Album {Album} von der Band {Artist}
+ListenToAlbumOrSong spiel das Album {Album} von der Gruppe {Artist}
+ListenToAlbumOrSong spiel das Album {Album} von {Artist}
+ListenToAlbumOrSong spiel das Lied {Song} von {Artist}
+ListenToAlbumOrSong spiel den Song {Song} von {Artist}
+ListenToAlbumOrSong spiel die CD {Album} von der Band {Artist}
+ListenToAlbumOrSong spiel die CD {Album} von der Gruppe {Artist}
+ListenToAlbumOrSong spiel die CD {Album} von {Artist}
+ListenToAlbumOrSong spiel die Platte {Album} von der Band {Artist}
+ListenToAlbumOrSong spiel die Platte {Album} von der Gruppe {Artist}
+ListenToAlbumOrSong spiel die Platte {Album} von {Artist}
+ListenToAlbumOrSong spiel {Album} von der Band {Artist}
+ListenToAlbumOrSong spiel {Album} von der Gruppe {Artist}
+ListenToAlbumOrSong spiel {Album} von {Artist}
+ListenToAlbumOrSong spiel {Song} von {Artist}
+ListenToAlbumOrSong spiele das Album {Album} von der Band {Artist}
+ListenToAlbumOrSong spiele das Album {Album} von der Gruppe {Artist}
+ListenToAlbumOrSong spiele das Album {Album} von {Artist}
+ListenToAlbumOrSong spiele das Lied {Song} von {Artist}
+ListenToAlbumOrSong spiele den Song {Song} von {Artist}
+ListenToAlbumOrSong spiele die CD {Album} von der Band {Artist}
+ListenToAlbumOrSong spiele die CD {Album} von der Gruppe {Artist}
+ListenToAlbumOrSong spiele die CD {Album} von {Artist}
+ListenToAlbumOrSong spiele die Platte {Album} von der Band {Artist}
+ListenToAlbumOrSong spiele die Platte {Album} von der Gruppe {Artist}
+ListenToAlbumOrSong spiele die Platte {Album} von {Artist}
+ListenToAlbumOrSong spiele {Album} von der Band {Artist}
+ListenToAlbumOrSong spiele {Album} von der Gruppe {Artist}
+ListenToAlbumOrSong spiele {Album} von {Artist}
+ListenToAlbumOrSong spiele {Song} von {Artist}
+ListenToArtist spiel Lieder von dem Artist {Artist}
+ListenToArtist spiel Lieder von dem Komponist {Artist}
+ListenToArtist spiel Lieder von dem Künstler {Artist}
+ListenToArtist spiel Lieder von der Artistin {Artist}
+ListenToArtist spiel Lieder von der Band {Artist}
+ListenToArtist spiel Lieder von der Gruppe {Artist}
+ListenToArtist spiel Lieder von der Komponistin {Artist}
+ListenToArtist spiel Lieder von der Künstlerin {Artist}
+ListenToArtist spiel Lieder von {Artist}
+ListenToArtist spiel Mucke von dem Artist {Artist}
+ListenToArtist spiel Mucke von dem Komponist {Artist}
+ListenToArtist spiel Mucke von dem Künstler {Artist}
+ListenToArtist spiel Mucke von der Artistin {Artist}
+ListenToArtist spiel Mucke von der Band {Artist}
+ListenToArtist spiel Mucke von der Gruppe {Artist}
+ListenToArtist spiel Mucke von der Komponistin {Artist}
+ListenToArtist spiel Mucke von der Künstlerin {Artist}
+ListenToArtist spiel Mucke von {Artist}
+ListenToArtist spiel Musik von dem Artist {Artist}
+ListenToArtist spiel Musik von dem Komponist {Artist}
+ListenToArtist spiel Musik von dem Künstler {Artist}
+ListenToArtist spiel Musik von der Artistin {Artist}
+ListenToArtist spiel Musik von der Band {Artist}
+ListenToArtist spiel Musik von der Gruppe {Artist}
+ListenToArtist spiel Musik von der Komponistin {Artist}
+ListenToArtist spiel Musik von der Künstlerin {Artist}
+ListenToArtist spiel Musik von {Artist}
+ListenToArtist spiel Songs von dem Artist {Artist}
+ListenToArtist spiel Songs von dem Komponist {Artist}
+ListenToArtist spiel Songs von dem Künstler {Artist}
+ListenToArtist spiel Songs von der Artistin {Artist}
+ListenToArtist spiel Songs von der Band {Artist}
+ListenToArtist spiel Songs von der Gruppe {Artist}
+ListenToArtist spiel Songs von der Komponistin {Artist}
+ListenToArtist spiel Songs von der Künstlerin {Artist}
+ListenToArtist spiel Songs von {Artist}
+ListenToArtist spiele Lieder von dem Artist {Artist}
+ListenToArtist spiele Lieder von dem Komponist {Artist}
+ListenToArtist spiele Lieder von dem Künstler {Artist}
+ListenToArtist spiele Lieder von der Artistin {Artist}
+ListenToArtist spiele Lieder von der Band {Artist}
+ListenToArtist spiele Lieder von der Gruppe {Artist}
+ListenToArtist spiele Lieder von der Komponistin {Artist}
+ListenToArtist spiele Lieder von der Künstlerin {Artist}
+ListenToArtist spiele Lieder von {Artist}
+ListenToArtist spiele Mucke von dem Artist {Artist}
+ListenToArtist spiele Mucke von dem Komponist {Artist}
+ListenToArtist spiele Mucke von dem Künstler {Artist}
+ListenToArtist spiele Mucke von der Artistin {Artist}
+ListenToArtist spiele Mucke von der Band {Artist}
+ListenToArtist spiele Mucke von der Gruppe {Artist}
+ListenToArtist spiele Mucke von der Komponistin {Artist}
+ListenToArtist spiele Mucke von der Künstlerin {Artist}
+ListenToArtist spiele Mucke von {Artist}
+ListenToArtist spiele Musik von dem Artist {Artist}
+ListenToArtist spiele Musik von dem Komponist {Artist}
+ListenToArtist spiele Musik von dem Künstler {Artist}
+ListenToArtist spiele Musik von der Artistin {Artist}
+ListenToArtist spiele Musik von der Band {Artist}
+ListenToArtist spiele Musik von der Gruppe {Artist}
+ListenToArtist spiele Musik von der Komponistin {Artist}
+ListenToArtist spiele Musik von der Künstlerin {Artist}
+ListenToArtist spiele Musik von {Artist}
+ListenToArtist spiele Songs von dem Artist {Artist}
+ListenToArtist spiele Songs von dem Komponist {Artist}
+ListenToArtist spiele Songs von dem Künstler {Artist}
+ListenToArtist spiele Songs von der Artistin {Artist}
+ListenToArtist spiele Songs von der Band {Artist}
+ListenToArtist spiele Songs von der Gruppe {Artist}
+ListenToArtist spiele Songs von der Komponistin {Artist}
+ListenToArtist spiele Songs von der Künstlerin {Artist}
+ListenToArtist spiele Songs von {Artist}
+ListenToAudioPlaylist spiel Lieder playlist {AudioPlaylist}
+ListenToAudioPlaylist spiel Musik playlist {AudioPlaylist}
+ListenToAudioPlaylist spiel Song playlist {AudioPlaylist}
+ListenToAudioPlaylist spiel {AudioPlaylist} Lieder playlist
+ListenToAudioPlaylist spiel {AudioPlaylist} Musik playlist
+ListenToAudioPlaylist spiel {AudioPlaylist} Song playlist
+ListenToAudioPlaylist spiele Lieder playlist {AudioPlaylist}
+ListenToAudioPlaylist spiele Musik playlist {AudioPlaylist}
+ListenToAudioPlaylist spiele Song playlist {AudioPlaylist}
+ListenToAudioPlaylist spiele {AudioPlaylist} Lieder playlist
+ListenToAudioPlaylist spiele {AudioPlaylist} Musik playlist
+ListenToAudioPlaylist spiele {AudioPlaylist} Song playlist
+ListenToAudioPlaylistRecent spiel kürzlich hinzugefügte Lieder
+ListenToAudioPlaylistRecent spiel kürzlich hinzugefügte Musik
+ListenToAudioPlaylistRecent spiel kürzlich hinzugefügte Songs
+ListenToAudioPlaylistRecent spiel neue Lieder
+ListenToAudioPlaylistRecent spiel neue Musik
+ListenToAudioPlaylistRecent spiel neue Songs
+ListenToAudioPlaylistRecent spiel zuletzt hinzugefügte Lieder
+ListenToAudioPlaylistRecent spiel zuletzt hinzugefügte Musik
+ListenToAudioPlaylistRecent spiel zuletzt hinzugefügte Songs
+ListenToAudioPlaylistRecent spiele kürzlich hinzugefügte Lieder
+ListenToAudioPlaylistRecent spiele kürzlich hinzugefügte Musik
+ListenToAudioPlaylistRecent spiele kürzlich hinzugefügte Songs
+ListenToAudioPlaylistRecent spiele neue Lieder
+ListenToAudioPlaylistRecent spiele neue Musik
+ListenToAudioPlaylistRecent spiele neue Songs
+ListenToAudioPlaylistRecent spiele zuletzt hinzugefügte Lieder
+ListenToAudioPlaylistRecent spiele zuletzt hinzugefügte Musik
+ListenToAudioPlaylistRecent spiele zuletzt hinzugefügte Songs
+ListenToSong spiel das Lied {Song}
+ListenToSong spiel das Lied {Song} von {Artist}
+ListenToSong spiel den Song {Song}
+ListenToSong spiel den Song {Song} von {Artist}
+ListenToSong spiele das Lied {Song}
+ListenToSong spiele das Lied {Song} von {Artist}
+ListenToSong spiele den Song {Song}
+ListenToSong spiele den Song {Song} von {Artist}
+Menu öffne Menü
+Mute ton an
+Mute ton anschalten
+Mute ton aus
+Mute ton ausschalten
+NewShowInquiry ob du eine neue Episode von {Show} hast
+NewShowInquiry ob du eine neue Episode {Show} hast
+NewShowInquiry ob du eine neue Folge von {Show} hast
+NewShowInquiry ob du eine neue Folge {Show} hast
+NewShowInquiry ob du eine neue von {Show} hast
+NewShowInquiry ob du eine neue {Show} hast
+NewShowInquiry ob du neue Episoden von {Show} hast
+NewShowInquiry ob du neue Episoden {Show} hast
+NewShowInquiry ob du neue Folgen von {Show} hast
+NewShowInquiry ob du neue Folgen {Show} hast
+NewShowInquiry ob du neue von {Show} hast
+NewShowInquiry ob du neue {Show} hast
+NewShowInquiry ob es eine neue Episode von {Show} gibt
+NewShowInquiry ob es eine neue Episode {Show} gibt
+NewShowInquiry ob es eine neue Folge von {Show} gibt
+NewShowInquiry ob es eine neue Folge {Show} gibt
+NewShowInquiry ob es eine neue von {Show} gibt
+NewShowInquiry ob es eine neue {Show} gibt
+NewShowInquiry ob es neue Episoden von {Show} gibt
+NewShowInquiry ob es neue Episoden {Show} gibt
+NewShowInquiry ob es neue Folgen von {Show} gibt
+NewShowInquiry ob es neue Folgen {Show} gibt
+NewShowInquiry ob es neue von {Show} gibt
+NewShowInquiry ob es neue {Show} gibt
+NewShowInquiry ob wir eine neue Episode von {Show} haben
+NewShowInquiry ob wir eine neue Episode {Show} haben
+NewShowInquiry ob wir eine neue Folge von {Show} haben
+NewShowInquiry ob wir eine neue Folge {Show} haben
+NewShowInquiry ob wir eine neue von {Show} haben
+NewShowInquiry ob wir eine neue {Show} haben
+NewShowInquiry ob wir neue Episoden von {Show} haben
+NewShowInquiry ob wir neue Episoden {Show} haben
+NewShowInquiry ob wir neue Folgen von {Show} haben
+NewShowInquiry ob wir neue Folgen {Show} haben
+NewShowInquiry ob wir neue von {Show} haben
+NewShowInquiry ob wir neue {Show} haben
+OpenRemote öffne Controller
+OpenRemote öffne Fernbedienung
+PageDown Seite nach unten
+PageDown Seite runter
+PageDown navigier Seite nach unten
+PageDown navigier Seite runter
+PageDown navigiere Seite nach unten
+PageDown navigiere Seite runter
+PageUp Seite hoch
+PageUp Seite nach oben
+PageUp navigier Seite hoch
+PageUp navigier Seite nach oben
+PageUp navigiere Seite hoch
+PageUp navigiere Seite nach oben
+PartyMode Party
+PartyMode Party Modus
+PartyMode leg Lieder auf
+PartyMode leg Mucke auf
+PartyMode leg Musik auf
+PartyMode leg Songs auf
+PartyMode leg irgendetwas auf
+PartyMode leg irgendwas auf
+PartyMode leg irgendwelche Lieder auf
+PartyMode leg irgendwelche Mucke auf
+PartyMode leg irgendwelche Musik auf
+PartyMode leg irgendwelche Songs auf
+PartyMode leg was auf
+PartyMode leg zufällige Lieder auf
+PartyMode leg zufällige Mucke auf
+PartyMode leg zufällige Musik auf
+PartyMode leg zufällige Songs auf
+PartyMode lege Lieder auf
+PartyMode lege Mucke auf
+PartyMode lege Musik auf
+PartyMode lege Songs auf
+PartyMode lege irgendetwas auf
+PartyMode lege irgendwas auf
+PartyMode lege irgendwelche Lieder auf
+PartyMode lege irgendwelche Mucke auf
+PartyMode lege irgendwelche Musik auf
+PartyMode lege irgendwelche Songs auf
+PartyMode lege was auf
+PartyMode lege zufällige Lieder auf
+PartyMode lege zufällige Mucke auf
+PartyMode lege zufällige Musik auf
+PartyMode lege zufällige Songs auf
+PartyMode spiel Lieder
+PartyMode spiel Mucke
+PartyMode spiel Musik
+PartyMode spiel Songs
+PartyMode spiel irgendwelche Lieder
+PartyMode spiel irgendwelche Mucke
+PartyMode spiel irgendwelche Musik
+PartyMode spiel irgendwelche Songs
+PartyMode spiel zufällige Lieder
+PartyMode spiel zufällige Mucke
+PartyMode spiel zufällige Musik
+PartyMode spiel zufällige Songs
+PartyMode spiele Lieder
+PartyMode spiele Mucke
+PartyMode spiele Musik
+PartyMode spiele Songs
+PartyMode spiele irgendetwas
+PartyMode spiele irgendwas
+PartyMode spiele irgendwelche Lieder
+PartyMode spiele irgendwelche Mucke
+PartyMode spiele irgendwelche Musik
+PartyMode spiele irgendwelche Songs
+PartyMode spiele zufällige Lieder
+PartyMode spiele zufällige Mucke
+PartyMode spiele zufällige Musik
+PartyMode spiele zufällige Songs
+PlayPause abspielen
+PlayPause anhalten
+PlayPause halt
+PlayPause pause
+PlayPause play
+PlayerMoveDown geh nach unten
+PlayerMoveDown geh runter
+PlayerMoveDown gehe nach unten
+PlayerMoveDown gehe runter
+PlayerMoveDown nach unten
+PlayerMoveDown runter
+PlayerMoveLeft geh links
+PlayerMoveLeft geh nach links
+PlayerMoveLeft gehe links
+PlayerMoveLeft gehe nach links
+PlayerMoveLeft links
+PlayerMoveLeft nach links
+PlayerMoveRight geh nach rechts
+PlayerMoveRight geh rechts
+PlayerMoveRight gehe nach rechts
+PlayerMoveRight gehe rechts
+PlayerMoveRight nach rechts
+PlayerMoveRight rechts
+PlayerMoveUp geh hoch
+PlayerMoveUp geh nach oben
+PlayerMoveUp gehe hoch
+PlayerMoveUp gehe nach oben
+PlayerMoveUp hoch
+PlayerMoveUp nach oben
+PlayerRotateClockwise drehe
+PlayerRotateClockwise drehe im Uhrzeigersinn
+PlayerRotateClockwise drehe neunzig grad
+PlayerRotateClockwise rotiere
+PlayerRotateClockwise rotiere im Uhrzeigersinn
+PlayerRotateClockwise rotiere neunzig grad
+PlayerRotateCounterClockwise drehe gegen den Uhrzeigersinn
+PlayerRotateCounterClockwise rotiere gegen den Uhrzeigersinn
+PlayerSeekBigBackward weiter zurück
+PlayerSeekBigBackward weiter zurückspringen
+PlayerSeekBigBackward weiter zurückspulen
+PlayerSeekBigForward großer Schritt rückwärts
+PlayerSeekBigForward großer Schritt vor
+PlayerSeekBigForward großer Schritt vorwärts
+PlayerSeekBigForward großer Schritt zurück
+PlayerSeekBigForward großer Sprung rückwärts
+PlayerSeekBigForward großer Sprung vor
+PlayerSeekBigForward großer Sprung vorwärts
+PlayerSeekBigForward großer Sprung zurück
+PlayerSeekBigForward großer rückwärts Schritt
+PlayerSeekBigForward großer rückwärts Sprung
+PlayerSeekBigForward großer vorwärts Schritt
+PlayerSeekBigForward großer vorwärts Sprung
+PlayerSeekBigForward langer Schritt rückwärts
+PlayerSeekBigForward langer Schritt vor
+PlayerSeekBigForward langer Schritt vorwärts
+PlayerSeekBigForward langer Schritt zurück
+PlayerSeekBigForward langer Sprung rückwärts
+PlayerSeekBigForward langer Sprung vor
+PlayerSeekBigForward langer Sprung vorwärts
+PlayerSeekBigForward langer Sprung zurück
+PlayerSeekBigForward langer rückwärts Schritt
+PlayerSeekBigForward langer rückwärts Sprung
+PlayerSeekBigForward langer vorwärts Schritt
+PlayerSeekBigForward langer vorwärts Sprung
+PlayerSeekBigForward weiter Schritt rückwärts
+PlayerSeekBigForward weiter Schritt vor
+PlayerSeekBigForward weiter Schritt vorwärts
+PlayerSeekBigForward weiter Schritt zurück
+PlayerSeekBigForward weiter Sprung rückwärts
+PlayerSeekBigForward weiter Sprung vor
+PlayerSeekBigForward weiter Sprung vorwärts
+PlayerSeekBigForward weiter Sprung zurück
+PlayerSeekBigForward weiter rückwärts Schritt
+PlayerSeekBigForward weiter rückwärts Sprung
+PlayerSeekBigForward weiter vor
+PlayerSeekBigForward weiter vorspringen
+PlayerSeekBigForward weiter vorspulen
+PlayerSeekBigForward weiter vorwärts Schritt
+PlayerSeekBigForward weiter vorwärts Sprung
+PlayerSeekSmallBackward Schritt rückwärts
+PlayerSeekSmallBackward Schritt zurück
+PlayerSeekSmallBackward Sprung rückwärts
+PlayerSeekSmallBackward Sprung zurück
+PlayerSeekSmallBackward kleiner Schritt rückwärts
+PlayerSeekSmallBackward kleiner Schritt zurück
+PlayerSeekSmallBackward kleiner Sprung rückwärts
+PlayerSeekSmallBackward kleiner Sprung zurück
+PlayerSeekSmallBackward rückwärts
+PlayerSeekSmallBackward zurück
+PlayerSeekSmallBackward zurückspulen
+PlayerSeekSmallForward Schritt vor
+PlayerSeekSmallForward Schritt vorwärts
+PlayerSeekSmallForward Sprung vor
+PlayerSeekSmallForward Sprung vorwärts
+PlayerSeekSmallForward kleiner Schritt vor
+PlayerSeekSmallForward kleiner Schritt vorwärts
+PlayerSeekSmallForward kleiner Sprung vor
+PlayerSeekSmallForward kleiner Sprung vorwärts
+PlayerSeekSmallForward kleiner vorwärts Schritt
+PlayerSeekSmallForward kleiner vorwärts Sprung
+PlayerSeekSmallForward vor
+PlayerSeekSmallForward vorspulen
+PlayerSeekSmallForward vorwärts
+PlayerSeekSmallForward vorwärts Schritt
+PlayerSeekSmallForward vorwärts Sprung
+PlayerZoomHold halte
+PlayerZoomHold halte Zoom
+PlayerZoomHold halte Zoom da
+PlayerZoomHold halte Zoom genau da
+PlayerZoomHold halte da
+PlayerZoomHold halte den Zoom
+PlayerZoomHold halte den Zoom da
+PlayerZoomHold halte den Zoom genau da
+PlayerZoomHold halte es
+PlayerZoomHold halte es da
+PlayerZoomHold halte es genau da
+PlayerZoomHold halte genau da
+PlayerZoomIn rein zoomen
+PlayerZoomIn vergrößern
+PlayerZoomIn zoom rein
+PlayerZoomInMoveDown rein zoomen und geh runter
+PlayerZoomInMoveDown rein zoomen und gehe runter
+PlayerZoomInMoveDown rein zoomen und runter
+PlayerZoomInMoveDown vergrößern und geh runter
+PlayerZoomInMoveDown vergrößern und gehe runter
+PlayerZoomInMoveDown vergrößern und runter
+PlayerZoomInMoveDown zoom rein und geh runter
+PlayerZoomInMoveDown zoom rein und gehe runter
+PlayerZoomInMoveDown zoom rein und runter
+PlayerZoomInMoveLeft rein zoomen und geh links
+PlayerZoomInMoveLeft rein zoomen und geh nach links
+PlayerZoomInMoveLeft rein zoomen und gehe links
+PlayerZoomInMoveLeft rein zoomen und gehe nach links
+PlayerZoomInMoveLeft rein zoomen und links
+PlayerZoomInMoveLeft rein zoomen und nach links
+PlayerZoomInMoveLeft vergrößern und geh links
+PlayerZoomInMoveLeft vergrößern und geh nach links
+PlayerZoomInMoveLeft vergrößern und gehe links
+PlayerZoomInMoveLeft vergrößern und gehe nach links
+PlayerZoomInMoveLeft vergrößern und links
+PlayerZoomInMoveLeft vergrößern und nach links
+PlayerZoomInMoveLeft zoom rein und geh links
+PlayerZoomInMoveLeft zoom rein und geh nach links
+PlayerZoomInMoveLeft zoom rein und gehe links
+PlayerZoomInMoveLeft zoom rein und gehe nach links
+PlayerZoomInMoveLeft zoom rein und links
+PlayerZoomInMoveLeft zoom rein und nach links
+PlayerZoomInMoveRight rein zoomen und geh nach rechts
+PlayerZoomInMoveRight rein zoomen und geh rechts
+PlayerZoomInMoveRight rein zoomen und gehe nach rechts
+PlayerZoomInMoveRight rein zoomen und gehe rechts
+PlayerZoomInMoveRight rein zoomen und nach rechts
+PlayerZoomInMoveRight rein zoomen und rechts
+PlayerZoomInMoveRight vergrößern und geh nach rechts
+PlayerZoomInMoveRight vergrößern und geh rechts
+PlayerZoomInMoveRight vergrößern und gehe nach rechts
+PlayerZoomInMoveRight vergrößern und gehe rechts
+PlayerZoomInMoveRight vergrößern und nach rechts
+PlayerZoomInMoveRight vergrößern und rechts
+PlayerZoomInMoveRight zoom rein und geh nach rechts
+PlayerZoomInMoveRight zoom rein und geh rechts
+PlayerZoomInMoveRight zoom rein und gehe nach rechts
+PlayerZoomInMoveRight zoom rein und gehe rechts
+PlayerZoomInMoveRight zoom rein und nach rechts
+PlayerZoomInMoveRight zoom rein und rechts
+PlayerZoomInMoveUp rein zoomen und geh hoch
+PlayerZoomInMoveUp rein zoomen und gehe hoch
+PlayerZoomInMoveUp rein zoomen und hoch
+PlayerZoomInMoveUp vergrößern und geh hoch
+PlayerZoomInMoveUp vergrößern und gehe hoch
+PlayerZoomInMoveUp vergrößern und hoch
+PlayerZoomInMoveUp zoom rein und geh hoch
+PlayerZoomInMoveUp zoom rein und gehe hoch
+PlayerZoomInMoveUp zoom rein und hoch
+PlayerZoomOut raus zoomen
+PlayerZoomOut verkleinern
+PlayerZoomOut zoom raus
+PlayerZoomOutMoveDown raus zoomen und geh nach unten
+PlayerZoomOutMoveDown raus zoomen und geh runter
+PlayerZoomOutMoveDown raus zoomen und gehe nach unten
+PlayerZoomOutMoveDown raus zoomen und gehe runter
+PlayerZoomOutMoveDown raus zoomen und nach unten
+PlayerZoomOutMoveDown raus zoomen und runter
+PlayerZoomOutMoveDown verkleinern und geh nach unten
+PlayerZoomOutMoveDown verkleinern und geh runter
+PlayerZoomOutMoveDown verkleinern und gehe nach unten
+PlayerZoomOutMoveDown verkleinern und gehe runter
+PlayerZoomOutMoveDown verkleinern und nach unten
+PlayerZoomOutMoveDown verkleinern und runter
+PlayerZoomOutMoveDown zoom raus und geh nach unten
+PlayerZoomOutMoveDown zoom raus und geh runter
+PlayerZoomOutMoveDown zoom raus und gehe nach unten
+PlayerZoomOutMoveDown zoom raus und gehe runter
+PlayerZoomOutMoveDown zoom raus und nach unten
+PlayerZoomOutMoveDown zoom raus und runter
+PlayerZoomOutMoveLeft raus zoomen und geh links
+PlayerZoomOutMoveLeft raus zoomen und geh nach links
+PlayerZoomOutMoveLeft raus zoomen und gehe links
+PlayerZoomOutMoveLeft raus zoomen und gehe nach links
+PlayerZoomOutMoveLeft raus zoomen und links
+PlayerZoomOutMoveLeft raus zoomen und nach links
+PlayerZoomOutMoveLeft verkleinern und geh links
+PlayerZoomOutMoveLeft verkleinern und geh nach links
+PlayerZoomOutMoveLeft verkleinern und gehe links
+PlayerZoomOutMoveLeft verkleinern und gehe nach links
+PlayerZoomOutMoveLeft verkleinern und links
+PlayerZoomOutMoveLeft verkleinern und nach links
+PlayerZoomOutMoveLeft zoom raus und geh links
+PlayerZoomOutMoveLeft zoom raus und geh nach links
+PlayerZoomOutMoveLeft zoom raus und gehe links
+PlayerZoomOutMoveLeft zoom raus und gehe nach links
+PlayerZoomOutMoveLeft zoom raus und links
+PlayerZoomOutMoveLeft zoom raus und nach links
+PlayerZoomOutMoveRight raus zoomen und geh nach rechts
+PlayerZoomOutMoveRight raus zoomen und geh rechts
+PlayerZoomOutMoveRight raus zoomen und gehe nach rechts
+PlayerZoomOutMoveRight raus zoomen und gehe rechts
+PlayerZoomOutMoveRight raus zoomen und nach rechts
+PlayerZoomOutMoveRight raus zoomen und rechts
+PlayerZoomOutMoveRight verkleinern und geh nach rechts
+PlayerZoomOutMoveRight verkleinern und geh rechts
+PlayerZoomOutMoveRight verkleinern und gehe nach rechts
+PlayerZoomOutMoveRight verkleinern und gehe rechts
+PlayerZoomOutMoveRight verkleinern und nach rechts
+PlayerZoomOutMoveRight verkleinern und rechts
+PlayerZoomOutMoveRight zoom raus und geh nach rechts
+PlayerZoomOutMoveRight zoom raus und geh rechts
+PlayerZoomOutMoveRight zoom raus und gehe nach rechts
+PlayerZoomOutMoveRight zoom raus und gehe rechts
+PlayerZoomOutMoveRight zoom raus und nach rechts
+PlayerZoomOutMoveRight zoom raus und rechts
+PlayerZoomOutMoveUp raus zoomen und geh hoch
+PlayerZoomOutMoveUp raus zoomen und geh nach oben
+PlayerZoomOutMoveUp raus zoomen und geh rauf
+PlayerZoomOutMoveUp raus zoomen und gehe hoch
+PlayerZoomOutMoveUp raus zoomen und gehe nach oben
+PlayerZoomOutMoveUp raus zoomen und gehe rauf
+PlayerZoomOutMoveUp raus zoomen und hoch
+PlayerZoomOutMoveUp raus zoomen und nach oben
+PlayerZoomOutMoveUp raus zoomen und rauf
+PlayerZoomOutMoveUp verkleinern und geh hoch
+PlayerZoomOutMoveUp verkleinern und geh nach oben
+PlayerZoomOutMoveUp verkleinern und geh rauf
+PlayerZoomOutMoveUp verkleinern und gehe hoch
+PlayerZoomOutMoveUp verkleinern und gehe nach oben
+PlayerZoomOutMoveUp verkleinern und gehe rauf
+PlayerZoomOutMoveUp verkleinern und hoch
+PlayerZoomOutMoveUp verkleinern und nach oben
+PlayerZoomOutMoveUp verkleinern und rauf
+PlayerZoomOutMoveUp zoom raus und geh hoch
+PlayerZoomOutMoveUp zoom raus und geh nach oben
+PlayerZoomOutMoveUp zoom raus und geh rauf
+PlayerZoomOutMoveUp zoom raus und gehe hoch
+PlayerZoomOutMoveUp zoom raus und gehe nach oben
+PlayerZoomOutMoveUp zoom raus und gehe rauf
+PlayerZoomOutMoveUp zoom raus und hoch
+PlayerZoomOutMoveUp zoom raus und nach oben
+PlayerZoomOutMoveUp zoom raus und rauf
+PlayerZoomReset kein zoom
+PlayerZoomReset normal zoom
+PlayerZoomReset reset zoom
+Prev letztes
+Prev letztes Lied
+Prev spiel letztes
+Prev spiel letztes Lied
+Prev spiel voriges
+Prev spiel voriges Lied
+Prev spiele letztes
+Prev spiele letztes Lied
+Prev spiele voriges
+Prev spiele voriges Lied
+Prev voriges
+Prev voriges Lied
+Reboot neustarten
+Reboot reboot
+Reboot system neustarten
+Reboot system reboot
+Right nach rechts
+Right navigier nach rechts
+Right navigier rechts
+Right navigiere nach rechts
+Right navigiere rechts
+Right rechts
+Select auswählen
+ShuffleAudioPlaylist zufallswiedergabe Audio playlist {AudioPlaylist}
+ShuffleAudioPlaylist zufallswiedergabe Lied playlist {AudioPlaylist}
+ShuffleAudioPlaylist zufallswiedergabe Lieder playlist {AudioPlaylist}
+ShuffleAudioPlaylist zufallswiedergabe Musik playlist {AudioPlaylist}
+ShuffleAudioPlaylist zufallswiedergabe Song playlist {AudioPlaylist}
+ShuffleAudioPlaylist zufallswiedergabe {AudioPlaylist} Audio playlist
+ShuffleAudioPlaylist zufallswiedergabe {AudioPlaylist} Lied playlist
+ShuffleAudioPlaylist zufallswiedergabe {AudioPlaylist} Lieder playlist
+ShuffleAudioPlaylist zufallswiedergabe {AudioPlaylist} Musik playlist
+ShuffleAudioPlaylist zufallswiedergabe {AudioPlaylist} Song playlist
+ShufflePlaylist zufallswiedergabe playlist {AudioPlaylist}
+ShufflePlaylist zufallswiedergabe playlist {VideoPlaylist}
+ShufflePlaylist zufallswiedergabe {AudioPlaylist} playlist
+ShufflePlaylist zufallswiedergabe {VideoPlaylist} playlist
+ShuffleVideoPlaylist zufallswiedergabe Film playlist {VideoPlaylist}
+ShuffleVideoPlaylist zufallswiedergabe Serie playlist {VideoPlaylist}
+ShuffleVideoPlaylist zufallswiedergabe Video playlist {VideoPlaylist}
+ShuffleVideoPlaylist zufallswiedergabe {VideoPlaylist} Film playlist
+ShuffleVideoPlaylist zufallswiedergabe {VideoPlaylist} Serie playlist
+ShuffleVideoPlaylist zufallswiedergabe {VideoPlaylist} Video playlist
+Shutdown herunterfahren
+Shutdown shutdown
+Shutdown system herunterfahren
+Shutdown system shutdown
+Skip nächstes
+Skip nächstes Lied
+Skip spiel nächstes
+Skip spiel nächstes Lied
+Skip spiele nächstes
+Skip spiele nächstes Lied
+Skip weiter
+StartOver nochmal
+StartOver von vorn
+StartOver von vorne
+StartOver wiederhol
+StartOver wiederhole
+StartOver wiederholen
+StreamArtist Stream Lieder von dem Artist {Artist}
+StreamArtist Stream Lieder von dem Komponist {Artist}
+StreamArtist Stream Lieder von dem Künstler {Artist}
+StreamArtist Stream Lieder von der Artistin {Artist}
+StreamArtist Stream Lieder von der Band {Artist}
+StreamArtist Stream Lieder von der Gruppe {Artist}
+StreamArtist Stream Lieder von der Komponistin {Artist}
+StreamArtist Stream Lieder von der Künstlerin {Artist}
+StreamArtist Stream Lieder von {Artist}
+StreamArtist Stream Mucke von dem Artist {Artist}
+StreamArtist Stream Mucke von dem Komponist {Artist}
+StreamArtist Stream Mucke von dem Künstler {Artist}
+StreamArtist Stream Mucke von der Artistin {Artist}
+StreamArtist Stream Mucke von der Band {Artist}
+StreamArtist Stream Mucke von der Gruppe {Artist}
+StreamArtist Stream Mucke von der Komponistin {Artist}
+StreamArtist Stream Mucke von der Künstlerin {Artist}
+StreamArtist Stream Mucke von {Artist}
+StreamArtist Stream Musik von dem Artist {Artist}
+StreamArtist Stream Musik von dem Komponist {Artist}
+StreamArtist Stream Musik von dem Künstler {Artist}
+StreamArtist Stream Musik von der Artistin {Artist}
+StreamArtist Stream Musik von der Band {Artist}
+StreamArtist Stream Musik von der Gruppe {Artist}
+StreamArtist Stream Musik von der Komponistin {Artist}
+StreamArtist Stream Musik von der Künstlerin {Artist}
+StreamArtist Stream Musik von {Artist}
+StreamArtist Stream Songs von dem Artist {Artist}
+StreamArtist Stream Songs von dem Komponist {Artist}
+StreamArtist Stream Songs von dem Künstler {Artist}
+StreamArtist Stream Songs von der Artistin {Artist}
+StreamArtist Stream Songs von der Band {Artist}
+StreamArtist Stream Songs von der Gruppe {Artist}
+StreamArtist Stream Songs von der Komponistin {Artist}
+StreamArtist Stream Songs von der Künstlerin {Artist}
+StreamArtist Stream Songs von {Artist}
+StreamPartyMode stream Lieder
+StreamPartyMode stream Mucke
+StreamPartyMode stream Musik
+StreamPartyMode stream Songs
+StreamPartyMode stream irgendwelche Lieder
+StreamPartyMode stream irgendwelche Mucke
+StreamPartyMode stream irgendwelche Musik
+StreamPartyMode stream irgendwelche Songs
+StreamPartyMode stream zufällige Lieder
+StreamPartyMode stream zufällige Mucke
+StreamPartyMode stream zufällige Musik
+StreamPartyMode stream zufällige Songs
+SubtitlesNext Untertitel umschalten
+SubtitlesNext nächster Untertitel
+SubtitlesOff Untertitel aus
+SubtitlesOff Untertitel ausschalten
+SubtitlesOn Untertitel an
+SubtitlesOn Untertitel anschalten
+SubtitlesPrevious voriger Untertitel
+Suspend geh schlafen
+Suspend gehe schlafen
+Suspend schlafen
+Suspend standby
+Suspend suspend
+Suspend system geh schlafen
+Suspend system gehe schlafen
+Suspend system schlafen
+Suspend system standby
+Suspend system suspend
+Up hoch
+Up nach oben
+Up navigier hoch
+Up navigier nach oben
+Up navigiere hoch
+Up navigiere nach oben
+UpdateAudio erneuer Audio Bibliothek
+UpdateAudio erneuer Musik Bibliothek
+UpdateAudio erneuere Audio Bibliothek
+UpdateAudio erneuere Musik Bibliothek
+UpdateAudio refresh Audio Bibliothek
+UpdateAudio refresh Musik Bibliothek
+UpdateAudio refreshe Audio Bibliothek
+UpdateAudio refreshe Musik Bibliothek
+UpdateAudio update Audio Bibliothek
+UpdateAudio update Musik Bibliothek
+UpdateVideo Audio Bibliothek erneuern
+UpdateVideo Audio Bibliothek refreshen
+UpdateVideo Audio Bibliothek updaten
+UpdateVideo Musik Bibliothek erneuern
+UpdateVideo Musik Bibliothek refreshen
+UpdateVideo Musik Bibliothek updaten
+UpdateVideo Video Bibliothek erneuern
+UpdateVideo Video Bibliothek refreshen
+UpdateVideo Video Bibliothek updaten
+UpdateVideo erneuer Video Bibliothek
+UpdateVideo erneuere Video Bibliothek
+UpdateVideo refresh Video Bibliothek
+UpdateVideo refreshe Video Bibliothek
+UpdateVideo update Video Bibliothek
+VolumeDown leiser
+VolumeSet Lautstärke auf {Volume}
+VolumeSet Lautstärke {Volume}
+VolumeSet stelle Lautstärke auf {Volume}
+VolumeSet stelle Lautstärke {Volume}
+VolumeSetPct Lautstärke auf {Volume} Prozent
+VolumeSetPct Lautstärke {Volume} Prozent
+VolumeSetPct stelle Lautstärke auf {Volume} Prozent
+VolumeSetPct stelle Lautstärke {Volume} Prozent
+VolumeUp lauter
+WatchEpisode zeige Staffel {Season} Episode {Episode} von {Show}
+WatchEpisode zeige Staffel {Season} Folge {Episode} von {Show}
+WatchLastShow weiter mit Serie
+WatchLastShow weiter mit letzter Serie
+WatchLatestEpisode zeige letzte Episode von {Show}
+WatchLatestEpisode zeige letzte Folge von {Show}
+WatchLatestEpisode zeige neueste Episode von {Show}
+WatchLatestEpisode zeige neueste Folge von {Show}
+WatchMovie zeige Film {Movie}
+WatchNextEpisode zeige nächste Episode von {Show}
+WatchNextEpisode zeige nächste Folge von {Show}
+WatchRandomEpisode zeige eine Episode von {Show}
+WatchRandomEpisode zeige eine Folge von {Show}
+WatchRandomEpisode zeige eine zufällige Episode von {Show}
+WatchRandomEpisode zeige eine zufällige Folge von {Show}
+WatchRandomMovie zeige Film
+WatchRandomMovie zeige zufälligen Film
+WatchRandomMovie zeige zufälligen {Genre} Film
+WatchRandomMovie zeige {Genre} Film
+WatchVideoPlaylist zeige Film playlist {VideoPlaylist}
+WatchVideoPlaylist zeige Serie playlist {VideoPlaylist}
+WatchVideoPlaylist zeige Video playlist {VideoPlaylist}
+WatchVideoPlaylist zeige playlist {VideoPlaylist}
+WatchVideoPlaylist zeige {VideoPlaylist} Film playlist
+WatchVideoPlaylist zeige {VideoPlaylist} Serie playlist
+WatchVideoPlaylist zeige {VideoPlaylist} Video playlist
+WatchVideoPlaylist zeige {VideoPlaylist} playlist
+WhatAlbums welche Alben du von {Artist} hast
+WhatAlbums welche Alben ich von {Artist} habe
+WhatAlbums welche Alben wir von {Artist} haben
+WhatAlbums welche CD du von {Artist} hast
+WhatAlbums welche CD ich von {Artist} habe
+WhatAlbums welche CD wir von {Artist} haben
+WhatAlbums welche CDs du von {Artist} hast
+WhatAlbums welche CDs ich von {Artist} habe
+WhatAlbums welche CDs wir von {Artist} haben
+WhatAlbums welche Platte du von {Artist} hast
+WhatAlbums welche Platte ich von {Artist} habe
+WhatAlbums welche Platte wir von {Artist} haben
+WhatAlbums welche Platten du von {Artist} hast
+WhatAlbums welche Platten ich von {Artist} habe
+WhatAlbums welche Platten wir von {Artist} haben
+WhatAlbums welches Album du von {Artist} hast
+WhatAlbums welches Album ich von {Artist} habe
+WhatAlbums welches Album wir von {Artist} haben
+WhatNewAlbums welche Alben auf dem mediaserver sind
+WhatNewAlbums welche Alben auf dem server sind
+WhatNewAlbums welche Alben aufgenommen worden sind
+WhatNewAlbums welche Alben fertig sind
+WhatNewAlbums welche Alben warten
+WhatNewAlbums welche CD auf dem mediaserver ist
+WhatNewAlbums welche CD auf dem server ist
+WhatNewAlbums welche CD aufgenommen worden ist
+WhatNewAlbums welche CD fertig ist
+WhatNewAlbums welche CD wartet
+WhatNewAlbums welche CDs auf dem mediaserver sind
+WhatNewAlbums welche CDs auf dem server sind
+WhatNewAlbums welche CDs aufgenommen worden sind
+WhatNewAlbums welche CDs fertig sind
+WhatNewAlbums welche CDs warten
+WhatNewAlbums welche Platte auf dem mediaserver ist
+WhatNewAlbums welche Platte auf dem server ist
+WhatNewAlbums welche Platte aufgenommen worden ist
+WhatNewAlbums welche Platte fertig ist
+WhatNewAlbums welche Platte wartet
+WhatNewAlbums welche Platten auf dem mediaserver sind
+WhatNewAlbums welche Platten auf dem server sind
+WhatNewAlbums welche Platten aufgenommen worden sind
+WhatNewAlbums welche Platten fertig sind
+WhatNewAlbums welche Platten warten
+WhatNewAlbums welche neue CD auf dem mediaserver ist
+WhatNewAlbums welche neue CD auf dem server ist
+WhatNewAlbums welche neue CD aufgenommen worden ist
+WhatNewAlbums welche neue CD fertig ist
+WhatNewAlbums welche neue CD wartet
+WhatNewAlbums welche neue Platte auf dem mediaserver ist
+WhatNewAlbums welche neue Platte auf dem server ist
+WhatNewAlbums welche neue Platte aufgenommen worden ist
+WhatNewAlbums welche neue Platte fertig ist
+WhatNewAlbums welche neue Platte wartet
+WhatNewAlbums welche neuen Alben auf dem mediaserver sind
+WhatNewAlbums welche neuen Alben auf dem server sind
+WhatNewAlbums welche neuen Alben aufgenommen worden sind
+WhatNewAlbums welche neuen Alben fertig sind
+WhatNewAlbums welche neuen Alben warten
+WhatNewAlbums welche neuen CDs auf dem mediaserver sind
+WhatNewAlbums welche neuen CDs auf dem server sind
+WhatNewAlbums welche neuen CDs aufgenommen worden sind
+WhatNewAlbums welche neuen CDs fertig sind
+WhatNewAlbums welche neuen CDs warten
+WhatNewAlbums welche neuen Platten auf dem mediaserver sind
+WhatNewAlbums welche neuen Platten auf dem server sind
+WhatNewAlbums welche neuen Platten aufgenommen worden sind
+WhatNewAlbums welche neuen Platten fertig sind
+WhatNewAlbums welche neuen Platten warten
+WhatNewAlbums welches Album auf dem mediaserver ist
+WhatNewAlbums welches Album auf dem server ist
+WhatNewAlbums welches Album aufgenommen worden ist
+WhatNewAlbums welches Album fertig ist
+WhatNewAlbums welches Album wartet
+WhatNewAlbums welches neue Album auf dem mediaserver ist
+WhatNewAlbums welches neue Album auf dem server ist
+WhatNewAlbums welches neue Album aufgenommen worden ist
+WhatNewAlbums welches neue Album fertig ist
+WhatNewAlbums welches neue Album wartet
+WhatNewMovies ob du einen neuen Film hast
+WhatNewMovies ob du einen neuen {Genre} Film hast
+WhatNewMovies ob du neue Filme hast
+WhatNewMovies ob du neue {Genre} Filme hast
+WhatNewMovies ob es einen neuen Film gibt
+WhatNewMovies ob es einen neuen {Genre} Film gibt
+WhatNewMovies ob es neue Filme gibt
+WhatNewMovies ob es neue {Genre} Filme gibt
+WhatNewMovies ob wir einen neuen Film haben
+WhatNewMovies ob wir einen neuen {Genre} Film haben
+WhatNewMovies ob wir neue Filme haben
+WhatNewMovies ob wir neue {Genre} Filme haben
+WhatNewMovies welche Filme auf dem mediaserver sind
+WhatNewMovies welche Filme auf dem server sind
+WhatNewMovies welche Filme aufgenommen worden sind
+WhatNewMovies welche Filme fertig sind
+WhatNewMovies welche Filme warten
+WhatNewMovies welche neuen Filme auf dem mediaserver sind
+WhatNewMovies welche neuen Filme auf dem server sind
+WhatNewMovies welche neuen Filme aufgenommen worden sind
+WhatNewMovies welche neuen Filme fertig sind
+WhatNewMovies welche neuen Filme warten
+WhatNewMovies welche neuen {Genre} Filme auf dem mediaserver sind
+WhatNewMovies welche neuen {Genre} Filme auf dem server sind
+WhatNewMovies welche neuen {Genre} Filme aufgenommen worden sind
+WhatNewMovies welche neuen {Genre} Filme fertig sind
+WhatNewMovies welche neuen {Genre} Filme warten
+WhatNewMovies welche {Genre} Filme auf dem mediaserver sind
+WhatNewMovies welche {Genre} Filme auf dem server sind
+WhatNewMovies welche {Genre} Filme aufgenommen worden sind
+WhatNewMovies welche {Genre} Filme fertig sind
+WhatNewMovies welche {Genre} Filme warten
+WhatNewMovies welcher Film auf dem mediaserver ist
+WhatNewMovies welcher Film auf dem server ist
+WhatNewMovies welcher Film aufgenommen worden ist
+WhatNewMovies welcher Film fertig ist
+WhatNewMovies welcher Film wartet
+WhatNewMovies welcher neue Film auf dem mediaserver ist
+WhatNewMovies welcher neue Film auf dem server ist
+WhatNewMovies welcher neue Film aufgenommen worden ist
+WhatNewMovies welcher neue Film fertig ist
+WhatNewMovies welcher neue Film wartet
+WhatNewMovies welcher neue {Genre} Film auf dem mediaserver ist
+WhatNewMovies welcher neue {Genre} Film auf dem server ist
+WhatNewMovies welcher neue {Genre} Film aufgenommen worden ist
+WhatNewMovies welcher neue {Genre} Film fertig ist
+WhatNewMovies welcher neue {Genre} Film wartet
+WhatNewMovies welcher {Genre} Film auf dem mediaserver ist
+WhatNewMovies welcher {Genre} Film auf dem server ist
+WhatNewMovies welcher {Genre} Film aufgenommen worden ist
+WhatNewMovies welcher {Genre} Film fertig ist
+WhatNewMovies welcher {Genre} Film wartet
+WhatNewShows welche Serie auf dem mediaserver ist
+WhatNewShows welche Serie auf dem server ist
+WhatNewShows welche Serie aufgenommen worden ist
+WhatNewShows welche Serie du hast
+WhatNewShows welche Serie es gibt
+WhatNewShows welche Serie fertig ist
+WhatNewShows welche Serie gibt es
+WhatNewShows welche Serie habe ich
+WhatNewShows welche Serie haben wir
+WhatNewShows welche Serie hast du
+WhatNewShows welche Serie ich habe
+WhatNewShows welche Serie wartet
+WhatNewShows welche Serie wir haben
+WhatNewShows welche Serien auf dem mediaserver sind
+WhatNewShows welche Serien auf dem server sind
+WhatNewShows welche Serien aufgenommen worden sind
+WhatNewShows welche Serien du hast
+WhatNewShows welche Serien es gibt
+WhatNewShows welche Serien fertig sind
+WhatNewShows welche Serien gibt es
+WhatNewShows welche Serien habe ich
+WhatNewShows welche Serien haben wir
+WhatNewShows welche Serien hast du
+WhatNewShows welche Serien ich habe
+WhatNewShows welche Serien warten
+WhatNewShows welche Serien wir haben
+WhatNewShows welche neue Serie auf dem mediaserver ist
+WhatNewShows welche neue Serie auf dem server ist
+WhatNewShows welche neue Serie aufgenommen worden ist
+WhatNewShows welche neue Serie du hast
+WhatNewShows welche neue Serie es gibt
+WhatNewShows welche neue Serie fertig ist
+WhatNewShows welche neue Serie gibt es
+WhatNewShows welche neue Serie habe ich
+WhatNewShows welche neue Serie haben wir
+WhatNewShows welche neue Serie hast du
+WhatNewShows welche neue Serie ich habe
+WhatNewShows welche neue Serie wartet
+WhatNewShows welche neue Serie wir haben
+WhatNewShows welche neuen Serien auf dem mediaserver sind
+WhatNewShows welche neuen Serien auf dem server sind
+WhatNewShows welche neuen Serien aufgenommen worden sind
+WhatNewShows welche neuen Serien du hast
+WhatNewShows welche neuen Serien es gibt
+WhatNewShows welche neuen Serien fertig sind
+WhatNewShows welche neuen Serien gibt es
+WhatNewShows welche neuen Serien habe ich
+WhatNewShows welche neuen Serien haben wir
+WhatNewShows welche neuen Serien hast du
+WhatNewShows welche neuen Serien ich habe
+WhatNewShows welche neuen Serien warten
+WhatNewShows welche neuen Serien wir haben
