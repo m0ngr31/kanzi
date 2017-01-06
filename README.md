@@ -1,6 +1,12 @@
 # Alexa integration with Kodi
 
-Here are some of the features supported with this skill:
+## Upgrade to v2.5
+
+For those of you doing an upgrade to the new version, please run the Slot generator again. There is a little bit of change to how it works. Users on Heroku should just be able to do a `git pull` and `git push heroku master` to upgrade. Just make sure you update the skill information as well. For Lambda users, the setup is completely different now, so please check the new documentaion.
+
+## About
+
+Here are some of the features supported by this skill:
 
 - Basic navigation (Up/Down, Left/Right, Page Up/Down, Select, Back, Open Menu)
 - Remote control (Keeps session open so you can give multiple navication commands)
@@ -180,7 +186,9 @@ You'll need to configure the MONGODB_URL, MONGODB_PORT, MONGODB_NAME, MONGODB_US
 
 You'll also need to run `pip install pymongo` (inside your virtualenv if you are on Lambda).
 
-Since Alexa requires that all music it streams use HTTPS traffic, you'll need a proxy to provide this because Kodi only has plain HTTP. The USE_PROXY variable will enable your music to stream through a [simple proxy I built](https://github.com/m0ngr31/kodi-music-proxy) to make it easy. The ALT_PROXY is there if you want to self host the proxy server so you don't have to trust or rely on mine. 
+Since Alexa requires that all music it streams use HTTPS traffic, you'll need a proxy to provide this because Kodi only has plain HTTP. The USE_PROXY variable will enable your music to stream through a [simple proxy I built](https://github.com/m0ngr31/kodi-music-proxy) to make it easy. The ALT_PROXY is there if you want to self host the proxy server so you don't have to trust or rely on mine.
+
+After you've set that up, you need to enable the music playback option on the first page of the skill setup on Amazon's developer site.
 
 
 # Optimising search performance on large libraries (local installations only)
