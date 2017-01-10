@@ -100,7 +100,7 @@ you_have_list: "{{ _('You have') }} {{ list }}"
 
 you_have_episode_list: "{{ _('There are new episodes of') }} {{ list }}"
 
-volume_set: "{ _{('Volume set to') }} {{ num }}"
+volume_set: "{{ _('Volume set to') }} {{ num }}"
 
 cant_steam: "{{ _('You need to add database information to your environment variables for this to work') }}"
 
