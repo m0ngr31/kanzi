@@ -1193,18 +1193,62 @@ VolumeUp turn volume up
 VolumeUp up the volume
 VolumeUp up volume
 VolumeUp volume up
+WatchEpisode play episode number {Episode} from season {Season} of {Show}
+WatchEpisode play episode number {Episode} from series {Season} of {Show}
+WatchEpisode play episode number {Episode} in season {Season} of {Show}
+WatchEpisode play episode number {Episode} in series {Season} of {Show}
+WatchEpisode play episode number {Episode} season {Season} of {Show}
+WatchEpisode play episode number {Episode} series {Season} of {Show}
+WatchEpisode play episode {Episode} from season {Season} of {Show}
+WatchEpisode play episode {Episode} from series {Season} of {Show}
+WatchEpisode play episode {Episode} in season {Season} of {Show}
+WatchEpisode play episode {Episode} in series {Season} of {Show}
 WatchEpisode play episode {Episode} season {Season} of {Show}
 WatchEpisode play episode {Episode} series {Season} of {Show}
 WatchEpisode play season {Season} episode {Episode} of {Show}
 WatchEpisode play series {Season} episode {Episode} of {Show}
+WatchEpisode play the episode number {Episode} from season {Season} of {Show}
+WatchEpisode play the episode number {Episode} from series {Season} of {Show}
+WatchEpisode play the episode number {Episode} in season {Season} of {Show}
+WatchEpisode play the episode number {Episode} in series {Season} of {Show}
+WatchEpisode play the episode number {Episode} season {Season} of {Show}
+WatchEpisode play the episode number {Episode} series {Season} of {Show}
+WatchEpisode play the episode {Episode} from season {Season} of {Show}
+WatchEpisode play the episode {Episode} from series {Season} of {Show}
+WatchEpisode play the episode {Episode} in season {Season} of {Show}
+WatchEpisode play the episode {Episode} in series {Season} of {Show}
+WatchEpisode play the episode {Episode} season {Season} of {Show}
+WatchEpisode play the episode {Episode} series {Season} of {Show}
 WatchEpisode play {Show} episode {Episode} season {Season}
 WatchEpisode play {Show} episode {Episode} series {Season}
 WatchEpisode play {Show} season {Season} episode {Episode}
 WatchEpisode play {Show} series {Season} episode {Episode}
+WatchEpisode watch episode number {Episode} from season {Season} of {Show}
+WatchEpisode watch episode number {Episode} from series {Season} of {Show}
+WatchEpisode watch episode number {Episode} in season {Season} of {Show}
+WatchEpisode watch episode number {Episode} in series {Season} of {Show}
+WatchEpisode watch episode number {Episode} season {Season} of {Show}
+WatchEpisode watch episode number {Episode} series {Season} of {Show}
+WatchEpisode watch episode {Episode} from season {Season} of {Show}
+WatchEpisode watch episode {Episode} from series {Season} of {Show}
+WatchEpisode watch episode {Episode} in season {Season} of {Show}
+WatchEpisode watch episode {Episode} in series {Season} of {Show}
 WatchEpisode watch episode {Episode} season {Season} of {Show}
 WatchEpisode watch episode {Episode} series {Season} of {Show}
 WatchEpisode watch season {Season} episode {Episode} of {Show}
 WatchEpisode watch series {Season} episode {Episode} of {Show}
+WatchEpisode watch the episode number {Episode} from season {Season} of {Show}
+WatchEpisode watch the episode number {Episode} from series {Season} of {Show}
+WatchEpisode watch the episode number {Episode} in season {Season} of {Show}
+WatchEpisode watch the episode number {Episode} in series {Season} of {Show}
+WatchEpisode watch the episode number {Episode} season {Season} of {Show}
+WatchEpisode watch the episode number {Episode} series {Season} of {Show}
+WatchEpisode watch the episode {Episode} from season {Season} of {Show}
+WatchEpisode watch the episode {Episode} from series {Season} of {Show}
+WatchEpisode watch the episode {Episode} in season {Season} of {Show}
+WatchEpisode watch the episode {Episode} in series {Season} of {Show}
+WatchEpisode watch the episode {Episode} season {Season} of {Show}
+WatchEpisode watch the episode {Episode} series {Season} of {Show}
 WatchEpisode watch {Show} episode {Episode} season {Season}
 WatchEpisode watch {Show} episode {Episode} series {Season}
 WatchEpisode watch {Show} season {Season} episode {Episode}
@@ -1252,9 +1296,17 @@ WatchNextEpisode play the next episode of {Show}
 WatchNextEpisode watch next episode of {Show}
 WatchNextEpisode watch the next episode of {Show}
 WatchRandomEpisode play a random episode of {Show}
+WatchRandomEpisode play a random {Show}
+WatchRandomEpisode play a random {Show} episode
 WatchRandomEpisode play random episode of {Show}
+WatchRandomEpisode play random {Show}
+WatchRandomEpisode play random {Show} episode
 WatchRandomEpisode watch a random episode of {Show}
+WatchRandomEpisode watch a random {Show}
+WatchRandomEpisode watch a random {Show} episode
 WatchRandomEpisode watch random episode of {Show}
+WatchRandomEpisode watch random {Show}
+WatchRandomEpisode watch random {Show} episode
 WatchRandomMovie play a random film
 WatchRandomMovie play a random movie
 WatchRandomMovie play a random {Genre} film
