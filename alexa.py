@@ -317,7 +317,7 @@ def play_steam_test(Artist):
           playlist_queue = music.MusicPlayer(songs_array)
 
           response_text = render_template('streaming', heard_name=heard_artist).encode("utf-8")
-          audio('').stop()
+          audio('').clear_queue(stop=True)
           return audio(response_text).play(songs_array[0])
         else:
           response_text = render_template('could_not_find', heard_name=heard_artist).encode("utf-8")
@@ -606,7 +606,7 @@ def alexa_stream_party():
         playlist_queue = music.MusicPlayer(songs_array)
 
         response_text = render_template('streaming_party').encode("utf-8")
-        audio('').stop()
+        audio('').clear_queue(stop=True)
         return audio(response_text).play(songs_array[0])
       else:
         response_text = render_template('error_parsing_results').encode("utf-8")
@@ -1870,6 +1870,7 @@ def alexa_what_albums(Artist):
 @ask.intent('AMAZON.PauseIntent')
 def pause():
   if CAN_STREAM:
+    audio('').clear_queue()
     return audio('').stop()
   else:
     response_text = render_template('cant_steam').encode("utf-8")
@@ -1966,6 +1967,7 @@ def stopped(offset):
 
   playlist_queue.current_offset = offset
   playlist_queue.save_to_mongo()
+  audio().enqueue(playlist_queue.current_item)
   print 'Streaming stopped'
 
 
