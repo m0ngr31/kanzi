@@ -205,3 +205,5 @@ AddonGlobalSearch suche (/nach) {Album}
 AddonGlobalSearch suche (/nach) {Artist}
 
 OpenRemote öffne (Fernbedienung/Controller)
+
+AMAZON.HelpIntent (/öffnen sie) hilfe
