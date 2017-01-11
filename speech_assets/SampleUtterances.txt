@@ -1,3 +1,5 @@
+AMAZON.HelpIntent help
+AMAZON.HelpIntent open help
 AMAZON.StopIntent cancel
 AMAZON.StopIntent shut up
 AMAZON.StopIntent stop

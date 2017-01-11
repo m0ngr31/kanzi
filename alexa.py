@@ -1963,22 +1963,31 @@ def started(offset):
 def stopped(offset):
   playlist_queue = music.MusicPlayer()
 
-  print offset
-
   playlist_queue.current_offset = offset
   playlist_queue.save_to_mongo()
   audio().enqueue(playlist_queue.current_item)
   print 'Streaming stopped'
 
 
-# What should the Echo say when you just open your app instead of invoking an intent?
-@ask.launch
+@ask.intent('AMAZON.HelpIntent')
 def prepare_help_message():
   response_text = render_template('help').encode("utf-8")
+  reprompt_text = render_template('what_to_do').encode("utf-8")
   card_title = render_template('help_card').encode("utf-8")
   print card_title
 
-  return statement(response_text).simple_card(card_title, response_text)
+  return question(response_text).reprompt(reprompt_text)
+
+
+# No intents invoked
+@ask.launch
+def prepare_help_message():
+  response_text = render_template('welcome').encode("utf-8")
+  reprompt_text = render_template('what_to_do').encode("utf-8")
+  card_title = response_text
+  print card_title
+
+  return question(response_text).reprompt(reprompt_text)
 
 
 @ask.session_ended

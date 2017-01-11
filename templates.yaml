@@ -108,6 +108,10 @@ open_remote: "{{ _('Starting remote control mode, to use say go up, go back as i
 
 help: "{{ _('You can ask me whether there are any new shows, to play a movie, tv show, or artist, or control playback of media.') }}"
 
+what_to_do: "{{ _('What would you like to do?') }}"
+
+welcome: "{{ _('Welcome to the Kodi skill.') }}"
+
 
 ############################
 ##  Card Title Templates  ##
