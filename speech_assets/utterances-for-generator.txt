@@ -9,22 +9,22 @@
 # Check for duplicates after generating
 
 
-PlayPause (play/pause/resume) (/song/video/episode/track/movie/playback)
+PlayPause (play/pause/resume)
 
 
 Skip skip (/this) (/one/item/song/video/episode/track/movie)
 
 Skip (listen to (/the) /play (/the)) next (song/track)
-Skip (watch to (/the) /play (/the)) next (video/episode/movie)
+Skip (watch to (/the) /play (/the)) next (video/episode/movie/film/show/TV show)
 
 Skip (listen to/play/watch) (/the) next (one/item) 
 
 Prev (listen to/play) (/the/that) (previous/last) (song/track) (/again)
-Prev (watch/play) (/the/that) (previous/last) (video/episode/movie) (/again)
+Prev (watch/play) (/the/that) (previous/last) (video/episode/movie/film/show/TV show) (/again)
 
 Prev (listen to/play/watch) (/the/that) (previous/last) (one/item) (/again)
 
-StartOver (replay (/this) (/song/video/episode/track/movie)/start over/play again/play (/song/video/episode/track/movie) again/go back to the beginning)
+StartOver (replay (/this) (/song/video/episode/track/movie/film/show/TV show)/start over/play again/play (/song/video/episode/track/movie/film/show/TV show) again/go back to the beginning)
 
 Home (navigate/go) (/to) (home/main) (/menu/screen)
 

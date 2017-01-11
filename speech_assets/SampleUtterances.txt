@@ -523,26 +523,8 @@ PartyMode play all music
 PartyMode play random music
 PartyMode shuffle all music
 PlayPause pause
-PlayPause pause episode
-PlayPause pause movie
-PlayPause pause playback
-PlayPause pause song
-PlayPause pause track
-PlayPause pause video
 PlayPause play
-PlayPause play episode
-PlayPause play movie
-PlayPause play playback
-PlayPause play song
-PlayPause play track
-PlayPause play video
 PlayPause resume
-PlayPause resume episode
-PlayPause resume movie
-PlayPause resume playback
-PlayPause resume song
-PlayPause resume track
-PlayPause resume video
 PlayerMoveDown move down
 PlayerMoveDown pan down
 PlayerMoveDown track down
@@ -796,148 +778,220 @@ Prev listen to the previous song
 Prev listen to the previous song again
 Prev listen to the previous track
 Prev listen to the previous track again
+Prev play last TV show
+Prev play last TV show again
 Prev play last episode
 Prev play last episode again
+Prev play last film
+Prev play last film again
 Prev play last item
 Prev play last item again
 Prev play last movie
 Prev play last movie again
 Prev play last one
 Prev play last one again
+Prev play last show
+Prev play last show again
 Prev play last song
 Prev play last song again
 Prev play last track
 Prev play last track again
 Prev play last video
 Prev play last video again
+Prev play previous TV show
+Prev play previous TV show again
 Prev play previous episode
 Prev play previous episode again
+Prev play previous film
+Prev play previous film again
 Prev play previous item
 Prev play previous item again
 Prev play previous movie
 Prev play previous movie again
 Prev play previous one
 Prev play previous one again
+Prev play previous show
+Prev play previous show again
 Prev play previous song
 Prev play previous song again
 Prev play previous track
 Prev play previous track again
 Prev play previous video
 Prev play previous video again
+Prev play that last TV show
+Prev play that last TV show again
 Prev play that last episode
 Prev play that last episode again
+Prev play that last film
+Prev play that last film again
 Prev play that last item
 Prev play that last item again
 Prev play that last movie
 Prev play that last movie again
 Prev play that last one
 Prev play that last one again
+Prev play that last show
+Prev play that last show again
 Prev play that last song
 Prev play that last song again
 Prev play that last track
 Prev play that last track again
 Prev play that last video
 Prev play that last video again
+Prev play that previous TV show
+Prev play that previous TV show again
 Prev play that previous episode
 Prev play that previous episode again
+Prev play that previous film
+Prev play that previous film again
 Prev play that previous item
 Prev play that previous item again
 Prev play that previous movie
 Prev play that previous movie again
 Prev play that previous one
 Prev play that previous one again
+Prev play that previous show
+Prev play that previous show again
 Prev play that previous song
 Prev play that previous song again
 Prev play that previous track
 Prev play that previous track again
 Prev play that previous video
 Prev play that previous video again
+Prev play the last TV show
+Prev play the last TV show again
 Prev play the last episode
 Prev play the last episode again
+Prev play the last film
+Prev play the last film again
 Prev play the last item
 Prev play the last item again
 Prev play the last movie
 Prev play the last movie again
 Prev play the last one
 Prev play the last one again
+Prev play the last show
+Prev play the last show again
 Prev play the last song
 Prev play the last song again
 Prev play the last track
 Prev play the last track again
 Prev play the last video
 Prev play the last video again
+Prev play the previous TV show
+Prev play the previous TV show again
 Prev play the previous episode
 Prev play the previous episode again
+Prev play the previous film
+Prev play the previous film again
 Prev play the previous item
 Prev play the previous item again
 Prev play the previous movie
 Prev play the previous movie again
 Prev play the previous one
 Prev play the previous one again
+Prev play the previous show
+Prev play the previous show again
 Prev play the previous song
 Prev play the previous song again
 Prev play the previous track
 Prev play the previous track again
 Prev play the previous video
 Prev play the previous video again
+Prev watch last TV show
+Prev watch last TV show again
 Prev watch last episode
 Prev watch last episode again
+Prev watch last film
+Prev watch last film again
 Prev watch last item
 Prev watch last item again
 Prev watch last movie
 Prev watch last movie again
 Prev watch last one
 Prev watch last one again
+Prev watch last show
+Prev watch last show again
 Prev watch last video
 Prev watch last video again
+Prev watch previous TV show
+Prev watch previous TV show again
 Prev watch previous episode
 Prev watch previous episode again
+Prev watch previous film
+Prev watch previous film again
 Prev watch previous item
 Prev watch previous item again
 Prev watch previous movie
 Prev watch previous movie again
 Prev watch previous one
 Prev watch previous one again
+Prev watch previous show
+Prev watch previous show again
 Prev watch previous video
 Prev watch previous video again
+Prev watch that last TV show
+Prev watch that last TV show again
 Prev watch that last episode
 Prev watch that last episode again
+Prev watch that last film
+Prev watch that last film again
 Prev watch that last item
 Prev watch that last item again
 Prev watch that last movie
 Prev watch that last movie again
 Prev watch that last one
 Prev watch that last one again
+Prev watch that last show
+Prev watch that last show again
 Prev watch that last video
 Prev watch that last video again
+Prev watch that previous TV show
+Prev watch that previous TV show again
 Prev watch that previous episode
 Prev watch that previous episode again
+Prev watch that previous film
+Prev watch that previous film again
 Prev watch that previous item
 Prev watch that previous item again
 Prev watch that previous movie
 Prev watch that previous movie again
 Prev watch that previous one
 Prev watch that previous one again
+Prev watch that previous show
+Prev watch that previous show again
 Prev watch that previous video
 Prev watch that previous video again
+Prev watch the last TV show
+Prev watch the last TV show again
 Prev watch the last episode
 Prev watch the last episode again
+Prev watch the last film
+Prev watch the last film again
 Prev watch the last item
 Prev watch the last item again
 Prev watch the last movie
 Prev watch the last movie again
 Prev watch the last one
 Prev watch the last one again
+Prev watch the last show
+Prev watch the last show again
 Prev watch the last video
 Prev watch the last video again
+Prev watch the previous TV show
+Prev watch the previous TV show again
 Prev watch the previous episode
 Prev watch the previous episode again
+Prev watch the previous film
+Prev watch the previous film again
 Prev watch the previous item
 Prev watch the previous item again
 Prev watch the previous movie
 Prev watch the previous movie again
 Prev watch the previous one
 Prev watch the previous one again
+Prev watch the previous show
+Prev watch the previous show again
 Prev watch the previous video
 Prev watch the previous video again
 Reboot reboot
@@ -980,17 +1034,23 @@ Skip listen to the next item
 Skip listen to the next one
 Skip listen to the next song
 Skip listen to the next track
+Skip play next TV show
 Skip play next episode
+Skip play next film
 Skip play next item
 Skip play next movie
 Skip play next one
+Skip play next show
 Skip play next song
 Skip play next track
 Skip play next video
+Skip play the next TV show
 Skip play the next episode
+Skip play the next film
 Skip play the next item
 Skip play the next movie
 Skip play the next one
+Skip play the next show
 Skip play the next song
 Skip play the next track
 Skip play the next video
@@ -1014,26 +1074,41 @@ Skip watch next item
 Skip watch next one
 Skip watch the next item
 Skip watch the next one
+Skip watch to next TV show
 Skip watch to next episode
+Skip watch to next film
 Skip watch to next movie
+Skip watch to next show
 Skip watch to next video
+Skip watch to the next TV show
 Skip watch to the next episode
+Skip watch to the next film
 Skip watch to the next movie
+Skip watch to the next show
 Skip watch to the next video
 StartOver go back to the beginning
+StartOver play TV show again
 StartOver play again
 StartOver play episode again
+StartOver play film again
 StartOver play movie again
+StartOver play show again
 StartOver play song again
 StartOver play track again
 StartOver play video again
 StartOver replay
+StartOver replay TV show
 StartOver replay episode
+StartOver replay film
 StartOver replay movie
+StartOver replay show
 StartOver replay song
 StartOver replay this
+StartOver replay this TV show
 StartOver replay this episode
+StartOver replay this film
 StartOver replay this movie
+StartOver replay this show
 StartOver replay this song
 StartOver replay this track
 StartOver replay this video
