@@ -59,7 +59,7 @@ Here are a few options to get started:
 
 - [Heroku](#heroku)
 - [AWS Lambda](#aws-lambda)
-- [Docker](#docker)
+- ~~[Docker](#docker)~~
 
 If you plan on running your own Apache/Nginx server, I'm sure you can figure that out yourself. Skip ahead to the [Skill setup section](#skill-setup). Keep in mind that you will have to generate a self-signed SSL cert (or Let's Encrypt) so that Amazon will allow you to use it.
 
@@ -132,9 +132,13 @@ Now skip ahead to the [Skill setup section](#skill-setup).
 
 ## Docker
 
-I personally haven't tried this, so I can't verify that it works, and I don't know how to make it work. But if someone would like to submit a PR to add documentaion, I would appreciate it.
+The Docker support files have been removed as there are no reports of anyone using it sucessfully. Though there were several reporting they were unable to get it to work:
 
-Here the docker command to get it running: `docker run -p "443:8000" -e KODI_ADDRESS="<local xbmc ip>" -e KODI_PORT="8080" -e KODI_USERNAME="<your xbmc/kodi username>" -e KODI_PASSWORD="<the user's password>" kuroshi/kodi-alexa`
+https://lime-technology.com/forum/index.php?topic=53050.0
+https://forum.libreelec.tv/thread-2135.html
+https://forum.libreelec.tv/thread-1787.html
+
+If you are curious or want to create a Docker version, go back to any release before 2.5.
 
 # Skill Setup
 
