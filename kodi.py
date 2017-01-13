@@ -880,15 +880,14 @@ def SystemEjectMedia():
 # Prepare file url for streaming
 def PrepareDownload(path=""):
   path = urllib.quote(path.encode('utf-8')).decode('utf-8')
-  path = '/vfs/' + path
 
   # Join the environment variables into a url
-  url = "%s://%s:%s@%s:%s/%s" % (SCHEME, USER, PASS, KODI, PORT, SUBPATH)
-
-  url = url + path
+  url = "%s://%s:%s@%s:%s/%s/vfs" % (SCHEME, USER, PASS, KODI, PORT, SUBPATH)
 
   # Remove any double slashes in the url
   url = http_normalize_slashes(url)
+
+  url = url + '/' + path
 
   accepted_answers = ['y', 'yes', 'Y', 'Yes', 'YES', 'true', 'True']
 
