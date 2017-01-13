@@ -1,18 +1,36 @@
-AMAZON.StopIntent cancel
-AMAZON.StopIntent shut up
-AMAZON.StopIntent stop
 AddonExecute execute addon {Addon}
 AddonExecute execute plugin {Addon}
 AddonExecute execute script {Addon}
+AddonExecute execute the addon {Addon}
+AddonExecute execute the plugin {Addon}
+AddonExecute execute the script {Addon}
+AddonExecute execute the {Addon}
 AddonExecute execute {Addon}
+AddonExecute execute {Addon} addon
+AddonExecute execute {Addon} plugin
+AddonExecute execute {Addon} script
 AddonExecute open addon {Addon}
 AddonExecute open plugin {Addon}
 AddonExecute open script {Addon}
+AddonExecute open the addon {Addon}
+AddonExecute open the plugin {Addon}
+AddonExecute open the script {Addon}
+AddonExecute open the {Addon}
 AddonExecute open {Addon}
+AddonExecute open {Addon} addon
+AddonExecute open {Addon} plugin
+AddonExecute open {Addon} script
 AddonExecute run addon {Addon}
 AddonExecute run plugin {Addon}
 AddonExecute run script {Addon}
+AddonExecute run the addon {Addon}
+AddonExecute run the plugin {Addon}
+AddonExecute run the script {Addon}
+AddonExecute run the {Addon}
 AddonExecute run {Addon}
+AddonExecute run {Addon} addon
+AddonExecute run {Addon} plugin
+AddonExecute run {Addon} script
 AddonGlobalSearch search for {Album}
 AddonGlobalSearch search for {Artist}
 AddonGlobalSearch search for {Movie}
@@ -32,10 +50,22 @@ AudioStreamPrevious previous language
 Back back
 Back go back
 Back navigate back
+Back press back
 CleanAudio clean audio library
 CleanAudio clean music library
+CleanAudio clean my audio library
+CleanAudio clean my music library
+CleanAudio clean the audio library
+CleanAudio clean the music library
 CleanVideo clean library
+CleanVideo clean my library
+CleanVideo clean my video library
+CleanVideo clean the library
+CleanVideo clean the video library
 CleanVideo clean video library
+CurrentPlayItemInquiry what TV show is currently playing
+CurrentPlayItemInquiry what TV show is playing
+CurrentPlayItemInquiry what TV show is this
 CurrentPlayItemInquiry what audio is currently playing
 CurrentPlayItemInquiry what audio is playing
 CurrentPlayItemInquiry what audio is this
@@ -57,6 +87,9 @@ CurrentPlayItemInquiry what show is this
 CurrentPlayItemInquiry what song is currently playing
 CurrentPlayItemInquiry what song is playing
 CurrentPlayItemInquiry what song is this
+CurrentPlayItemInquiry what track is currently playing
+CurrentPlayItemInquiry what track is playing
+CurrentPlayItemInquiry what track is this
 CurrentPlayItemInquiry what video is currently playing
 CurrentPlayItemInquiry what video is playing
 CurrentPlayItemInquiry what video is this
@@ -239,6 +272,7 @@ CurrentPlayItemTimeRemaining when will video end
 Down down
 Down go down
 Down navigate down
+Down press down
 EjectMedia eject
 EjectMedia eject audio disc
 EjectMedia eject bluray
@@ -255,17 +289,105 @@ Hibernate deep sleep
 Hibernate deep sleep system
 Hibernate hibernate
 Hibernate hibernate system
+Home go home
+Home go home menu
+Home go home screen
+Home go main
+Home go main menu
+Home go main screen
+Home go to home
+Home go to home menu
+Home go to home screen
+Home go to main
+Home go to main menu
+Home go to main screen
 Home navigate home
+Home navigate home menu
+Home navigate home screen
+Home navigate main
+Home navigate main menu
+Home navigate main screen
+Home navigate to home
+Home navigate to home menu
+Home navigate to home screen
+Home navigate to main
+Home navigate to main menu
+Home navigate to main screen
 Left go left
 Left left
 Left navigate left
+Left press left
 ListenToAlbum listen to album {Album}
 ListenToAlbum listen to album {Album} by {Artist}
+ListenToAlbum listen to the album {Album}
+ListenToAlbum listen to the album {Album} by {Artist}
+ListenToAlbum listen to the {Album}
+ListenToAlbum listen to the {Album} album
+ListenToAlbum listen to the {Album} album by {Artist}
+ListenToAlbum listen to the {Album} by {Artist}
+ListenToAlbum listen to {Album}
+ListenToAlbum listen to {Album} album
+ListenToAlbum listen to {Album} album by {Artist}
+ListenToAlbum listen to {Album} by {Artist}
 ListenToAlbum play album {Album}
 ListenToAlbum play album {Album} by {Artist}
+ListenToAlbum play the album {Album}
+ListenToAlbum play the album {Album} by {Artist}
+ListenToAlbum play the {Album}
+ListenToAlbum play the {Album} album
+ListenToAlbum play the {Album} album by {Artist}
+ListenToAlbum play the {Album} by {Artist}
+ListenToAlbum play {Album}
+ListenToAlbum play {Album} album
+ListenToAlbum play {Album} album by {Artist}
+ListenToAlbum play {Album} by {Artist}
+ListenToAlbumOrSong listen to the {Album} by the artist {Artist}
+ListenToAlbumOrSong listen to the {Album} by the band {Artist}
+ListenToAlbumOrSong listen to the {Album} by the group {Artist}
+ListenToAlbumOrSong listen to the {Album} by the singer {Artist}
+ListenToAlbumOrSong listen to the {Album} by the {Artist}
+ListenToAlbumOrSong listen to the {Album} by {Artist}
+ListenToAlbumOrSong listen to the {Song} by the artist {Artist}
+ListenToAlbumOrSong listen to the {Song} by the band {Artist}
+ListenToAlbumOrSong listen to the {Song} by the group {Artist}
+ListenToAlbumOrSong listen to the {Song} by the singer {Artist}
+ListenToAlbumOrSong listen to the {Song} by the {Artist}
+ListenToAlbumOrSong listen to the {Song} by {Artist}
+ListenToAlbumOrSong listen to {Album} by the artist {Artist}
+ListenToAlbumOrSong listen to {Album} by the band {Artist}
+ListenToAlbumOrSong listen to {Album} by the group {Artist}
+ListenToAlbumOrSong listen to {Album} by the singer {Artist}
+ListenToAlbumOrSong listen to {Album} by the {Artist}
 ListenToAlbumOrSong listen to {Album} by {Artist}
+ListenToAlbumOrSong listen to {Song} by the artist {Artist}
+ListenToAlbumOrSong listen to {Song} by the band {Artist}
+ListenToAlbumOrSong listen to {Song} by the group {Artist}
+ListenToAlbumOrSong listen to {Song} by the singer {Artist}
+ListenToAlbumOrSong listen to {Song} by the {Artist}
 ListenToAlbumOrSong listen to {Song} by {Artist}
+ListenToAlbumOrSong play the {Album} by the artist {Artist}
+ListenToAlbumOrSong play the {Album} by the band {Artist}
+ListenToAlbumOrSong play the {Album} by the group {Artist}
+ListenToAlbumOrSong play the {Album} by the singer {Artist}
+ListenToAlbumOrSong play the {Album} by the {Artist}
+ListenToAlbumOrSong play the {Album} by {Artist}
+ListenToAlbumOrSong play the {Song} by the artist {Artist}
+ListenToAlbumOrSong play the {Song} by the band {Artist}
+ListenToAlbumOrSong play the {Song} by the group {Artist}
+ListenToAlbumOrSong play the {Song} by the singer {Artist}
+ListenToAlbumOrSong play the {Song} by the {Artist}
+ListenToAlbumOrSong play the {Song} by {Artist}
+ListenToAlbumOrSong play {Album} by the artist {Artist}
+ListenToAlbumOrSong play {Album} by the band {Artist}
+ListenToAlbumOrSong play {Album} by the group {Artist}
+ListenToAlbumOrSong play {Album} by the singer {Artist}
+ListenToAlbumOrSong play {Album} by the {Artist}
 ListenToAlbumOrSong play {Album} by {Artist}
+ListenToAlbumOrSong play {Song} by the artist {Artist}
+ListenToAlbumOrSong play {Song} by the band {Artist}
+ListenToAlbumOrSong play {Song} by the group {Artist}
+ListenToAlbumOrSong play {Song} by the singer {Artist}
+ListenToAlbumOrSong play {Song} by the {Artist}
 ListenToAlbumOrSong play {Song} by {Artist}
 ListenToArtist listen to artist {Artist}
 ListenToArtist listen to music by {Artist}
@@ -312,27 +434,77 @@ ListenToAudioPlaylistRecent shuffle recently added audio
 ListenToAudioPlaylistRecent shuffle recently added music
 ListenToAudioPlaylistRecent shuffle recently added songs
 ListenToSong listen to song {Song}
+ListenToSong listen to song {Song} by the artist {Artist}
+ListenToSong listen to song {Song} by the band {Artist}
+ListenToSong listen to song {Song} by the group {Artist}
+ListenToSong listen to song {Song} by the singer {Artist}
+ListenToSong listen to song {Song} by the {Artist}
 ListenToSong listen to song {Song} by {Artist}
+ListenToSong listen to the song {Song}
+ListenToSong listen to the song {Song} by the artist {Artist}
+ListenToSong listen to the song {Song} by the band {Artist}
+ListenToSong listen to the song {Song} by the group {Artist}
+ListenToSong listen to the song {Song} by the singer {Artist}
+ListenToSong listen to the song {Song} by the {Artist}
+ListenToSong listen to the song {Song} by {Artist}
 ListenToSong play song {Song}
+ListenToSong play song {Song} by the artist {Artist}
+ListenToSong play song {Song} by the band {Artist}
+ListenToSong play song {Song} by the group {Artist}
+ListenToSong play song {Song} by the singer {Artist}
+ListenToSong play song {Song} by the {Artist}
 ListenToSong play song {Song} by {Artist}
+ListenToSong play the song {Song}
+ListenToSong play the song {Song} by the artist {Artist}
+ListenToSong play the song {Song} by the band {Artist}
+ListenToSong play the song {Song} by the group {Artist}
+ListenToSong play the song {Song} by the singer {Artist}
+ListenToSong play the song {Song} by the {Artist}
+ListenToSong play the song {Song} by {Artist}
+Menu contextual menu
+Menu go contextual menu
+Menu go menu
+Menu go right click
+Menu menu
+Menu navigate contextual menu
+Menu navigate menu
+Menu navigate right click
+Menu open contextual menu
 Menu open menu
+Menu press contextual menu
+Menu press menu
+Menu press right click
+Menu right click
 Mute mute
 Mute set mute
 Mute set unmute
 Mute toggle mute
 Mute toggle unmute
 Mute unmute
-NewShowInquiry if there are any episodes of {Show}
-NewShowInquiry if there are any new episodes of {Show}
+NewShowInquiry do we have a new episode of {Show}
+NewShowInquiry do we have a new {Show}
+NewShowInquiry do we have any episodes of {Show}
+NewShowInquiry do we have any new episodes of {Show}
+NewShowInquiry do we have {Show}
+NewShowInquiry do you have a new episode of {Show}
+NewShowInquiry do you have a new {Show}
+NewShowInquiry do you have any episodes of {Show}
+NewShowInquiry do you have any new episodes of {Show}
+NewShowInquiry do you have {Show}
 NewShowInquiry if there are any {Show}
+NewShowInquiry if there are episodes of {Show}
+NewShowInquiry if there are new episodes of {Show}
 NewShowInquiry if there is a new episode of {Show}
 NewShowInquiry if there is a new {Show}
+NewShowInquiry if there is any {Show}
+NewShowInquiry if there is episodes of {Show}
+NewShowInquiry if there is new episodes of {Show}
 NewShowInquiry if there is {Show}
 NewShowInquiry if we have a new episode of {Show}
 NewShowInquiry if we have a new {Show}
-NewShowInquiry if we have any episodes of {Show}
-NewShowInquiry if we have any new episodes of {Show}
 NewShowInquiry if we have any {Show}
+NewShowInquiry if we have episodes of {Show}
+NewShowInquiry if we have new episodes of {Show}
 NewShowInquiry if we have {Show}
 OpenRemote open controller
 OpenRemote open controls
@@ -340,9 +512,11 @@ OpenRemote open remote
 PageDown go page down
 PageDown navigate page down
 PageDown page down
+PageDown press page down
 PageUp go page up
 PageUp navigate page up
 PageUp page up
+PageUp press page up
 PartyMode listen to all music
 PartyMode listen to random music
 PartyMode play all music
@@ -354,11 +528,9 @@ PlayPause resume
 PlayerMoveDown move down
 PlayerMoveDown pan down
 PlayerMoveDown track down
-PlayerMoveLeft go left
 PlayerMoveLeft move left
 PlayerMoveLeft pan left
 PlayerMoveLeft track left
-PlayerMoveRight go right
 PlayerMoveRight move right
 PlayerMoveRight pan right
 PlayerMoveRight track right
@@ -558,17 +730,283 @@ PlayerZoomOutMoveUp zoom out and pan up
 PlayerZoomOutMoveUp zoom out and track up
 PlayerZoomReset normal zoom
 PlayerZoomReset reset zoom
-Prev listen to previous
+Prev listen to last item
+Prev listen to last item again
+Prev listen to last one
+Prev listen to last one again
+Prev listen to last song
+Prev listen to last song again
+Prev listen to last track
+Prev listen to last track again
+Prev listen to previous item
+Prev listen to previous item again
+Prev listen to previous one
+Prev listen to previous one again
 Prev listen to previous song
-Prev play previous
+Prev listen to previous song again
+Prev listen to previous track
+Prev listen to previous track again
+Prev listen to that last item
+Prev listen to that last item again
+Prev listen to that last one
+Prev listen to that last one again
+Prev listen to that last song
+Prev listen to that last song again
+Prev listen to that last track
+Prev listen to that last track again
+Prev listen to that previous item
+Prev listen to that previous item again
+Prev listen to that previous one
+Prev listen to that previous one again
+Prev listen to that previous song
+Prev listen to that previous song again
+Prev listen to that previous track
+Prev listen to that previous track again
+Prev listen to the last item
+Prev listen to the last item again
+Prev listen to the last one
+Prev listen to the last one again
+Prev listen to the last song
+Prev listen to the last song again
+Prev listen to the last track
+Prev listen to the last track again
+Prev listen to the previous item
+Prev listen to the previous item again
+Prev listen to the previous one
+Prev listen to the previous one again
+Prev listen to the previous song
+Prev listen to the previous song again
+Prev listen to the previous track
+Prev listen to the previous track again
+Prev play last TV show
+Prev play last TV show again
+Prev play last episode
+Prev play last episode again
+Prev play last film
+Prev play last film again
+Prev play last item
+Prev play last item again
+Prev play last movie
+Prev play last movie again
+Prev play last one
+Prev play last one again
+Prev play last show
+Prev play last show again
+Prev play last song
+Prev play last song again
+Prev play last track
+Prev play last track again
+Prev play last video
+Prev play last video again
+Prev play previous TV show
+Prev play previous TV show again
+Prev play previous episode
+Prev play previous episode again
+Prev play previous film
+Prev play previous film again
+Prev play previous item
+Prev play previous item again
+Prev play previous movie
+Prev play previous movie again
+Prev play previous one
+Prev play previous one again
+Prev play previous show
+Prev play previous show again
 Prev play previous song
-Prev previous
-Prev previous song
+Prev play previous song again
+Prev play previous track
+Prev play previous track again
+Prev play previous video
+Prev play previous video again
+Prev play that last TV show
+Prev play that last TV show again
+Prev play that last episode
+Prev play that last episode again
+Prev play that last film
+Prev play that last film again
+Prev play that last item
+Prev play that last item again
+Prev play that last movie
+Prev play that last movie again
+Prev play that last one
+Prev play that last one again
+Prev play that last show
+Prev play that last show again
+Prev play that last song
+Prev play that last song again
+Prev play that last track
+Prev play that last track again
+Prev play that last video
+Prev play that last video again
+Prev play that previous TV show
+Prev play that previous TV show again
+Prev play that previous episode
+Prev play that previous episode again
+Prev play that previous film
+Prev play that previous film again
+Prev play that previous item
+Prev play that previous item again
+Prev play that previous movie
+Prev play that previous movie again
+Prev play that previous one
+Prev play that previous one again
+Prev play that previous show
+Prev play that previous show again
+Prev play that previous song
+Prev play that previous song again
+Prev play that previous track
+Prev play that previous track again
+Prev play that previous video
+Prev play that previous video again
+Prev play the last TV show
+Prev play the last TV show again
+Prev play the last episode
+Prev play the last episode again
+Prev play the last film
+Prev play the last film again
+Prev play the last item
+Prev play the last item again
+Prev play the last movie
+Prev play the last movie again
+Prev play the last one
+Prev play the last one again
+Prev play the last show
+Prev play the last show again
+Prev play the last song
+Prev play the last song again
+Prev play the last track
+Prev play the last track again
+Prev play the last video
+Prev play the last video again
+Prev play the previous TV show
+Prev play the previous TV show again
+Prev play the previous episode
+Prev play the previous episode again
+Prev play the previous film
+Prev play the previous film again
+Prev play the previous item
+Prev play the previous item again
+Prev play the previous movie
+Prev play the previous movie again
+Prev play the previous one
+Prev play the previous one again
+Prev play the previous show
+Prev play the previous show again
+Prev play the previous song
+Prev play the previous song again
+Prev play the previous track
+Prev play the previous track again
+Prev play the previous video
+Prev play the previous video again
+Prev watch last TV show
+Prev watch last TV show again
+Prev watch last episode
+Prev watch last episode again
+Prev watch last film
+Prev watch last film again
+Prev watch last item
+Prev watch last item again
+Prev watch last movie
+Prev watch last movie again
+Prev watch last one
+Prev watch last one again
+Prev watch last show
+Prev watch last show again
+Prev watch last video
+Prev watch last video again
+Prev watch previous TV show
+Prev watch previous TV show again
+Prev watch previous episode
+Prev watch previous episode again
+Prev watch previous film
+Prev watch previous film again
+Prev watch previous item
+Prev watch previous item again
+Prev watch previous movie
+Prev watch previous movie again
+Prev watch previous one
+Prev watch previous one again
+Prev watch previous show
+Prev watch previous show again
+Prev watch previous video
+Prev watch previous video again
+Prev watch that last TV show
+Prev watch that last TV show again
+Prev watch that last episode
+Prev watch that last episode again
+Prev watch that last film
+Prev watch that last film again
+Prev watch that last item
+Prev watch that last item again
+Prev watch that last movie
+Prev watch that last movie again
+Prev watch that last one
+Prev watch that last one again
+Prev watch that last show
+Prev watch that last show again
+Prev watch that last video
+Prev watch that last video again
+Prev watch that previous TV show
+Prev watch that previous TV show again
+Prev watch that previous episode
+Prev watch that previous episode again
+Prev watch that previous film
+Prev watch that previous film again
+Prev watch that previous item
+Prev watch that previous item again
+Prev watch that previous movie
+Prev watch that previous movie again
+Prev watch that previous one
+Prev watch that previous one again
+Prev watch that previous show
+Prev watch that previous show again
+Prev watch that previous video
+Prev watch that previous video again
+Prev watch the last TV show
+Prev watch the last TV show again
+Prev watch the last episode
+Prev watch the last episode again
+Prev watch the last film
+Prev watch the last film again
+Prev watch the last item
+Prev watch the last item again
+Prev watch the last movie
+Prev watch the last movie again
+Prev watch the last one
+Prev watch the last one again
+Prev watch the last show
+Prev watch the last show again
+Prev watch the last video
+Prev watch the last video again
+Prev watch the previous TV show
+Prev watch the previous TV show again
+Prev watch the previous episode
+Prev watch the previous episode again
+Prev watch the previous film
+Prev watch the previous film again
+Prev watch the previous item
+Prev watch the previous item again
+Prev watch the previous movie
+Prev watch the previous movie again
+Prev watch the previous one
+Prev watch the previous one again
+Prev watch the previous show
+Prev watch the previous show again
+Prev watch the previous video
+Prev watch the previous video again
 Reboot reboot
 Reboot reboot system
 Right go right
 Right navigate right
+Right press right
 Right right
+Select OK
+Select go OK
+Select go select
+Select navigate OK
+Select navigate select
+Select press OK
+Select press select
 Select select
 ShuffleAudioPlaylist shuffle audio playlist {AudioPlaylist}
 ShuffleAudioPlaylist shuffle music playlist {AudioPlaylist}
@@ -588,15 +1026,94 @@ ShuffleVideoPlaylist shuffle {VideoPlaylist} show playlist
 ShuffleVideoPlaylist shuffle {VideoPlaylist} video playlist
 Shutdown shut down
 Shutdown shut down system
-Skip listen to next
+Skip listen to next item
+Skip listen to next one
 Skip listen to next song
-Skip next
-Skip next song
-Skip play next
+Skip listen to next track
+Skip listen to the next item
+Skip listen to the next one
+Skip listen to the next song
+Skip listen to the next track
+Skip play next TV show
+Skip play next episode
+Skip play next film
+Skip play next item
+Skip play next movie
+Skip play next one
+Skip play next show
 Skip play next song
+Skip play next track
+Skip play next video
+Skip play the next TV show
+Skip play the next episode
+Skip play the next film
+Skip play the next item
+Skip play the next movie
+Skip play the next one
+Skip play the next show
+Skip play the next song
+Skip play the next track
+Skip play the next video
 Skip skip
+Skip skip episode
+Skip skip item
+Skip skip movie
+Skip skip one
 Skip skip song
+Skip skip this
+Skip skip this episode
+Skip skip this item
+Skip skip this movie
+Skip skip this one
+Skip skip this song
+Skip skip this track
+Skip skip this video
+Skip skip track
+Skip skip video
+Skip watch next item
+Skip watch next one
+Skip watch the next item
+Skip watch the next one
+Skip watch to next TV show
+Skip watch to next episode
+Skip watch to next film
+Skip watch to next movie
+Skip watch to next show
+Skip watch to next video
+Skip watch to the next TV show
+Skip watch to the next episode
+Skip watch to the next film
+Skip watch to the next movie
+Skip watch to the next show
+Skip watch to the next video
+StartOver go back to the beginning
+StartOver play TV show again
+StartOver play again
+StartOver play episode again
+StartOver play film again
+StartOver play movie again
+StartOver play show again
+StartOver play song again
+StartOver play track again
+StartOver play video again
 StartOver replay
+StartOver replay TV show
+StartOver replay episode
+StartOver replay film
+StartOver replay movie
+StartOver replay show
+StartOver replay song
+StartOver replay this
+StartOver replay this TV show
+StartOver replay this episode
+StartOver replay this film
+StartOver replay this movie
+StartOver replay this show
+StartOver replay this song
+StartOver replay this track
+StartOver replay this video
+StartOver replay track
+StartOver replay video
 StartOver start over
 StreamArtist stream artist {Artist}
 StreamArtist stream music by {Artist}
@@ -621,51 +1138,262 @@ Suspend suspend
 Suspend suspend system
 Up go up
 Up navigate up
+Up press up
 Up up
+UpdateAudio refresh audio library
+UpdateAudio refresh music library
+UpdateAudio refresh my audio library
+UpdateAudio refresh my music library
+UpdateAudio refresh the audio library
+UpdateAudio refresh the music library
 UpdateAudio update audio library
 UpdateAudio update music library
+UpdateAudio update my audio library
+UpdateAudio update my music library
+UpdateAudio update the audio library
+UpdateAudio update the music library
+UpdateVideo refresh library
+UpdateVideo refresh my library
+UpdateVideo refresh my video library
+UpdateVideo refresh the library
+UpdateVideo refresh the video library
+UpdateVideo refresh video library
 UpdateVideo update library
+UpdateVideo update my library
+UpdateVideo update my video library
+UpdateVideo update the library
+UpdateVideo update the video library
 UpdateVideo update video library
+VolumeDown down the volume
 VolumeDown down volume
+VolumeDown the volume down
+VolumeDown turn down the volume
 VolumeDown turn down volume
+VolumeDown turn the volume down
 VolumeDown turn volume down
 VolumeDown volume down
+VolumeSet adjust sound level to {Volume}
+VolumeSet adjust sound level {Volume}
+VolumeSet adjust sound to {Volume}
+VolumeSet adjust sound {Volume}
+VolumeSet adjust the sound level to {Volume}
+VolumeSet adjust the sound level {Volume}
+VolumeSet adjust the sound to {Volume}
+VolumeSet adjust the sound {Volume}
+VolumeSet adjust the volume level to {Volume}
+VolumeSet adjust the volume level {Volume}
+VolumeSet adjust the volume to {Volume}
+VolumeSet adjust the volume {Volume}
+VolumeSet adjust volume level to {Volume}
+VolumeSet adjust volume level {Volume}
+VolumeSet adjust volume to {Volume}
+VolumeSet adjust volume {Volume}
+VolumeSet set sound level to {Volume}
+VolumeSet set sound level {Volume}
+VolumeSet set sound to {Volume}
+VolumeSet set sound {Volume}
+VolumeSet set the sound level to {Volume}
+VolumeSet set the sound level {Volume}
+VolumeSet set the sound to {Volume}
+VolumeSet set the sound {Volume}
+VolumeSet set the volume level to {Volume}
+VolumeSet set the volume level {Volume}
+VolumeSet set the volume to {Volume}
+VolumeSet set the volume {Volume}
+VolumeSet set volume level to {Volume}
+VolumeSet set volume level {Volume}
+VolumeSet set volume to {Volume}
 VolumeSet set volume {Volume}
+VolumeSet sound level to {Volume}
+VolumeSet sound level {Volume}
+VolumeSet sound to {Volume}
+VolumeSet sound {Volume}
+VolumeSet turn sound level to {Volume}
+VolumeSet turn sound level {Volume}
+VolumeSet turn sound to {Volume}
+VolumeSet turn sound {Volume}
+VolumeSet turn the sound level to {Volume}
+VolumeSet turn the sound level {Volume}
+VolumeSet turn the sound to {Volume}
+VolumeSet turn the sound {Volume}
+VolumeSet turn the volume level to {Volume}
+VolumeSet turn the volume level {Volume}
+VolumeSet turn the volume to {Volume}
+VolumeSet turn the volume {Volume}
+VolumeSet turn volume level to {Volume}
+VolumeSet turn volume level {Volume}
+VolumeSet turn volume to {Volume}
+VolumeSet turn volume {Volume}
+VolumeSet volume level to {Volume}
+VolumeSet volume level {Volume}
+VolumeSet volume to {Volume}
 VolumeSet volume {Volume}
+VolumeSetPct adjust sound level to {Volume} percent
+VolumeSetPct adjust sound level {Volume} percent
+VolumeSetPct adjust sound to {Volume} percent
+VolumeSetPct adjust sound {Volume} percent
+VolumeSetPct adjust volume level to {Volume} percent
+VolumeSetPct adjust volume level {Volume} percent
+VolumeSetPct adjust volume to {Volume} percent
+VolumeSetPct adjust volume {Volume} percent
+VolumeSetPct set sound level to {Volume} percent
+VolumeSetPct set sound level {Volume} percent
+VolumeSetPct set sound to {Volume} percent
+VolumeSetPct set sound {Volume} percent
+VolumeSetPct set volume level to {Volume} percent
+VolumeSetPct set volume level {Volume} percent
+VolumeSetPct set volume to {Volume} percent
 VolumeSetPct set volume {Volume} percent
+VolumeSetPct sound level to {Volume} percent
+VolumeSetPct sound level {Volume} percent
+VolumeSetPct sound to {Volume} percent
+VolumeSetPct sound {Volume} percent
+VolumeSetPct turn sound level to {Volume} percent
+VolumeSetPct turn sound level {Volume} percent
+VolumeSetPct turn sound to {Volume} percent
+VolumeSetPct turn sound {Volume} percent
+VolumeSetPct turn volume level to {Volume} percent
+VolumeSetPct turn volume level {Volume} percent
+VolumeSetPct turn volume to {Volume} percent
+VolumeSetPct turn volume {Volume} percent
+VolumeSetPct volume level to {Volume} percent
+VolumeSetPct volume level {Volume} percent
+VolumeSetPct volume to {Volume} percent
 VolumeSetPct volume {Volume} percent
+VolumeUp the volume up
+VolumeUp turn the volume up
+VolumeUp turn up the volume
 VolumeUp turn up volume
 VolumeUp turn volume up
+VolumeUp up the volume
 VolumeUp up volume
 VolumeUp volume up
+WatchEpisode play episode number {Episode} from season {Season} of {Show}
+WatchEpisode play episode number {Episode} from series {Season} of {Show}
+WatchEpisode play episode number {Episode} in season {Season} of {Show}
+WatchEpisode play episode number {Episode} in series {Season} of {Show}
+WatchEpisode play episode number {Episode} season {Season} of {Show}
+WatchEpisode play episode number {Episode} series {Season} of {Show}
+WatchEpisode play episode {Episode} from season {Season} of {Show}
+WatchEpisode play episode {Episode} from series {Season} of {Show}
+WatchEpisode play episode {Episode} in season {Season} of {Show}
+WatchEpisode play episode {Episode} in series {Season} of {Show}
+WatchEpisode play episode {Episode} season {Season} of {Show}
+WatchEpisode play episode {Episode} series {Season} of {Show}
 WatchEpisode play season {Season} episode {Episode} of {Show}
 WatchEpisode play series {Season} episode {Episode} of {Show}
+WatchEpisode play the episode number {Episode} from season {Season} of {Show}
+WatchEpisode play the episode number {Episode} from series {Season} of {Show}
+WatchEpisode play the episode number {Episode} in season {Season} of {Show}
+WatchEpisode play the episode number {Episode} in series {Season} of {Show}
+WatchEpisode play the episode number {Episode} season {Season} of {Show}
+WatchEpisode play the episode number {Episode} series {Season} of {Show}
+WatchEpisode play the episode {Episode} from season {Season} of {Show}
+WatchEpisode play the episode {Episode} from series {Season} of {Show}
+WatchEpisode play the episode {Episode} in season {Season} of {Show}
+WatchEpisode play the episode {Episode} in series {Season} of {Show}
+WatchEpisode play the episode {Episode} season {Season} of {Show}
+WatchEpisode play the episode {Episode} series {Season} of {Show}
+WatchEpisode play {Show} episode {Episode} season {Season}
+WatchEpisode play {Show} episode {Episode} series {Season}
+WatchEpisode play {Show} season {Season} episode {Episode}
+WatchEpisode play {Show} series {Season} episode {Episode}
+WatchEpisode watch episode number {Episode} from season {Season} of {Show}
+WatchEpisode watch episode number {Episode} from series {Season} of {Show}
+WatchEpisode watch episode number {Episode} in season {Season} of {Show}
+WatchEpisode watch episode number {Episode} in series {Season} of {Show}
+WatchEpisode watch episode number {Episode} season {Season} of {Show}
+WatchEpisode watch episode number {Episode} series {Season} of {Show}
+WatchEpisode watch episode {Episode} from season {Season} of {Show}
+WatchEpisode watch episode {Episode} from series {Season} of {Show}
+WatchEpisode watch episode {Episode} in season {Season} of {Show}
+WatchEpisode watch episode {Episode} in series {Season} of {Show}
+WatchEpisode watch episode {Episode} season {Season} of {Show}
+WatchEpisode watch episode {Episode} series {Season} of {Show}
 WatchEpisode watch season {Season} episode {Episode} of {Show}
 WatchEpisode watch series {Season} episode {Episode} of {Show}
+WatchEpisode watch the episode number {Episode} from season {Season} of {Show}
+WatchEpisode watch the episode number {Episode} from series {Season} of {Show}
+WatchEpisode watch the episode number {Episode} in season {Season} of {Show}
+WatchEpisode watch the episode number {Episode} in series {Season} of {Show}
+WatchEpisode watch the episode number {Episode} season {Season} of {Show}
+WatchEpisode watch the episode number {Episode} series {Season} of {Show}
+WatchEpisode watch the episode {Episode} from season {Season} of {Show}
+WatchEpisode watch the episode {Episode} from series {Season} of {Show}
+WatchEpisode watch the episode {Episode} in season {Season} of {Show}
+WatchEpisode watch the episode {Episode} in series {Season} of {Show}
+WatchEpisode watch the episode {Episode} season {Season} of {Show}
+WatchEpisode watch the episode {Episode} series {Season} of {Show}
+WatchEpisode watch {Show} episode {Episode} season {Season}
+WatchEpisode watch {Show} episode {Episode} series {Season}
+WatchEpisode watch {Show} season {Season} episode {Episode}
+WatchEpisode watch {Show} series {Season} episode {Episode}
 WatchLastShow continue last show
 WatchLastShow continue playing last show
 WatchLastShow continue playing show
 WatchLastShow continue show
 WatchLastShow continue watching last show
 WatchLastShow continue watching show
+WatchLatestEpisode play current episode of {Show}
 WatchLatestEpisode play latest episode of {Show}
+WatchLatestEpisode play most recent episode of {Show}
 WatchLatestEpisode play newest episode of {Show}
+WatchLatestEpisode play the current episode of {Show}
+WatchLatestEpisode play the latest episode of {Show}
+WatchLatestEpisode play the most recent episode of {Show}
+WatchLatestEpisode play the newest episode of {Show}
+WatchLatestEpisode watch current episode of {Show}
 WatchLatestEpisode watch latest episode of {Show}
+WatchLatestEpisode watch most recent episode of {Show}
 WatchLatestEpisode watch newest episode of {Show}
+WatchLatestEpisode watch the current episode of {Show}
+WatchLatestEpisode watch the latest episode of {Show}
+WatchLatestEpisode watch the most recent episode of {Show}
+WatchLatestEpisode watch the newest episode of {Show}
 WatchMovie play film {Movie}
 WatchMovie play movie {Movie}
+WatchMovie play the film {Movie}
+WatchMovie play the movie {Movie}
+WatchMovie play the {Movie} film
+WatchMovie play the {Movie} movie
+WatchMovie play {Movie} film
+WatchMovie play {Movie} movie
 WatchMovie watch film {Movie}
 WatchMovie watch movie {Movie}
+WatchMovie watch the film {Movie}
+WatchMovie watch the movie {Movie}
+WatchMovie watch the {Movie} film
+WatchMovie watch the {Movie} movie
+WatchMovie watch {Movie} film
+WatchMovie watch {Movie} movie
 WatchNextEpisode play next episode of {Show}
+WatchNextEpisode play the next episode of {Show}
 WatchNextEpisode watch next episode of {Show}
-WatchRandomEpisode play episode of {Show}
+WatchNextEpisode watch the next episode of {Show}
+WatchRandomEpisode play a random episode of {Show}
+WatchRandomEpisode play a random {Show}
+WatchRandomEpisode play a random {Show} episode
 WatchRandomEpisode play random episode of {Show}
-WatchRandomEpisode watch episode of {Show}
+WatchRandomEpisode play random {Show}
+WatchRandomEpisode play random {Show} episode
+WatchRandomEpisode watch a random episode of {Show}
+WatchRandomEpisode watch a random {Show}
+WatchRandomEpisode watch a random {Show} episode
 WatchRandomEpisode watch random episode of {Show}
+WatchRandomEpisode watch random {Show}
+WatchRandomEpisode watch random {Show} episode
+WatchRandomMovie play a random film
+WatchRandomMovie play a random movie
+WatchRandomMovie play a random {Genre} film
+WatchRandomMovie play a random {Genre} movie
 WatchRandomMovie play random film
 WatchRandomMovie play random movie
 WatchRandomMovie play random {Genre} film
 WatchRandomMovie play random {Genre} movie
+WatchRandomMovie watch a random film
+WatchRandomMovie watch a random movie
+WatchRandomMovie watch a random {Genre} film
+WatchRandomMovie watch a random {Genre} movie
 WatchRandomMovie watch random film
 WatchRandomMovie watch random movie
 WatchRandomMovie watch random {Genre} film
@@ -1719,6 +2447,18 @@ WhatNewMovies what {Genre} movies do you have
 WhatNewMovies what {Genre} movies i have
 WhatNewMovies what {Genre} movies we have
 WhatNewMovies what {Genre} movies you have
+WhatNewShows are there any new TV shows
+WhatNewShows are there any new TV shows recorded
+WhatNewShows are there any new TV shows recorded to watch
+WhatNewShows are there any new TV shows recorded to watch today
+WhatNewShows are there any new TV shows recorded to watch tonight
+WhatNewShows are there any new TV shows recorded today
+WhatNewShows are there any new TV shows recorded tonight
+WhatNewShows are there any new TV shows to watch
+WhatNewShows are there any new TV shows to watch today
+WhatNewShows are there any new TV shows to watch tonight
+WhatNewShows are there any new TV shows today
+WhatNewShows are there any new TV shows tonight
 WhatNewShows are there any new shows
 WhatNewShows are there any new shows recorded
 WhatNewShows are there any new shows recorded to watch
@@ -1731,6 +2471,18 @@ WhatNewShows are there any new shows to watch today
 WhatNewShows are there any new shows to watch tonight
 WhatNewShows are there any new shows today
 WhatNewShows are there any new shows tonight
+WhatNewShows are there new TV shows
+WhatNewShows are there new TV shows recorded
+WhatNewShows are there new TV shows recorded to watch
+WhatNewShows are there new TV shows recorded to watch today
+WhatNewShows are there new TV shows recorded to watch tonight
+WhatNewShows are there new TV shows recorded today
+WhatNewShows are there new TV shows recorded tonight
+WhatNewShows are there new TV shows to watch
+WhatNewShows are there new TV shows to watch today
+WhatNewShows are there new TV shows to watch tonight
+WhatNewShows are there new TV shows today
+WhatNewShows are there new TV shows tonight
 WhatNewShows are there new shows
 WhatNewShows are there new shows recorded
 WhatNewShows are there new shows recorded to watch
@@ -1743,6 +2495,18 @@ WhatNewShows are there new shows to watch today
 WhatNewShows are there new shows to watch tonight
 WhatNewShows are there new shows today
 WhatNewShows are there new shows tonight
+WhatNewShows are there some new TV shows
+WhatNewShows are there some new TV shows recorded
+WhatNewShows are there some new TV shows recorded to watch
+WhatNewShows are there some new TV shows recorded to watch today
+WhatNewShows are there some new TV shows recorded to watch tonight
+WhatNewShows are there some new TV shows recorded today
+WhatNewShows are there some new TV shows recorded tonight
+WhatNewShows are there some new TV shows to watch
+WhatNewShows are there some new TV shows to watch today
+WhatNewShows are there some new TV shows to watch tonight
+WhatNewShows are there some new TV shows today
+WhatNewShows are there some new TV shows tonight
 WhatNewShows are there some new shows
 WhatNewShows are there some new shows recorded
 WhatNewShows are there some new shows recorded to watch
@@ -1755,6 +2519,18 @@ WhatNewShows are there some new shows to watch today
 WhatNewShows are there some new shows to watch tonight
 WhatNewShows are there some new shows today
 WhatNewShows are there some new shows tonight
+WhatNewShows do i have a new TV show
+WhatNewShows do i have a new TV show recorded
+WhatNewShows do i have a new TV show recorded to watch
+WhatNewShows do i have a new TV show recorded to watch today
+WhatNewShows do i have a new TV show recorded to watch tonight
+WhatNewShows do i have a new TV show recorded today
+WhatNewShows do i have a new TV show recorded tonight
+WhatNewShows do i have a new TV show to watch
+WhatNewShows do i have a new TV show to watch today
+WhatNewShows do i have a new TV show to watch tonight
+WhatNewShows do i have a new TV show today
+WhatNewShows do i have a new TV show tonight
 WhatNewShows do i have a new show
 WhatNewShows do i have a new show recorded
 WhatNewShows do i have a new show recorded to watch
@@ -1767,6 +2543,18 @@ WhatNewShows do i have a new show to watch today
 WhatNewShows do i have a new show to watch tonight
 WhatNewShows do i have a new show today
 WhatNewShows do i have a new show tonight
+WhatNewShows do i have any new TV shows
+WhatNewShows do i have any new TV shows recorded
+WhatNewShows do i have any new TV shows recorded to watch
+WhatNewShows do i have any new TV shows recorded to watch today
+WhatNewShows do i have any new TV shows recorded to watch tonight
+WhatNewShows do i have any new TV shows recorded today
+WhatNewShows do i have any new TV shows recorded tonight
+WhatNewShows do i have any new TV shows to watch
+WhatNewShows do i have any new TV shows to watch today
+WhatNewShows do i have any new TV shows to watch tonight
+WhatNewShows do i have any new TV shows today
+WhatNewShows do i have any new TV shows tonight
 WhatNewShows do i have any new shows
 WhatNewShows do i have any new shows recorded
 WhatNewShows do i have any new shows recorded to watch
@@ -1779,6 +2567,18 @@ WhatNewShows do i have any new shows to watch today
 WhatNewShows do i have any new shows to watch tonight
 WhatNewShows do i have any new shows today
 WhatNewShows do i have any new shows tonight
+WhatNewShows do i have new TV shows
+WhatNewShows do i have new TV shows recorded
+WhatNewShows do i have new TV shows recorded to watch
+WhatNewShows do i have new TV shows recorded to watch today
+WhatNewShows do i have new TV shows recorded to watch tonight
+WhatNewShows do i have new TV shows recorded today
+WhatNewShows do i have new TV shows recorded tonight
+WhatNewShows do i have new TV shows to watch
+WhatNewShows do i have new TV shows to watch today
+WhatNewShows do i have new TV shows to watch tonight
+WhatNewShows do i have new TV shows today
+WhatNewShows do i have new TV shows tonight
 WhatNewShows do i have new shows
 WhatNewShows do i have new shows recorded
 WhatNewShows do i have new shows recorded to watch
@@ -1791,6 +2591,18 @@ WhatNewShows do i have new shows to watch today
 WhatNewShows do i have new shows to watch tonight
 WhatNewShows do i have new shows today
 WhatNewShows do i have new shows tonight
+WhatNewShows do i have some new TV shows
+WhatNewShows do i have some new TV shows recorded
+WhatNewShows do i have some new TV shows recorded to watch
+WhatNewShows do i have some new TV shows recorded to watch today
+WhatNewShows do i have some new TV shows recorded to watch tonight
+WhatNewShows do i have some new TV shows recorded today
+WhatNewShows do i have some new TV shows recorded tonight
+WhatNewShows do i have some new TV shows to watch
+WhatNewShows do i have some new TV shows to watch today
+WhatNewShows do i have some new TV shows to watch tonight
+WhatNewShows do i have some new TV shows today
+WhatNewShows do i have some new TV shows tonight
 WhatNewShows do i have some new shows
 WhatNewShows do i have some new shows recorded
 WhatNewShows do i have some new shows recorded to watch
@@ -1803,6 +2615,18 @@ WhatNewShows do i have some new shows to watch today
 WhatNewShows do i have some new shows to watch tonight
 WhatNewShows do i have some new shows today
 WhatNewShows do i have some new shows tonight
+WhatNewShows do we have a new TV show
+WhatNewShows do we have a new TV show recorded
+WhatNewShows do we have a new TV show recorded to watch
+WhatNewShows do we have a new TV show recorded to watch today
+WhatNewShows do we have a new TV show recorded to watch tonight
+WhatNewShows do we have a new TV show recorded today
+WhatNewShows do we have a new TV show recorded tonight
+WhatNewShows do we have a new TV show to watch
+WhatNewShows do we have a new TV show to watch today
+WhatNewShows do we have a new TV show to watch tonight
+WhatNewShows do we have a new TV show today
+WhatNewShows do we have a new TV show tonight
 WhatNewShows do we have a new show
 WhatNewShows do we have a new show recorded
 WhatNewShows do we have a new show recorded to watch
@@ -1815,6 +2639,18 @@ WhatNewShows do we have a new show to watch today
 WhatNewShows do we have a new show to watch tonight
 WhatNewShows do we have a new show today
 WhatNewShows do we have a new show tonight
+WhatNewShows do we have any new TV shows
+WhatNewShows do we have any new TV shows recorded
+WhatNewShows do we have any new TV shows recorded to watch
+WhatNewShows do we have any new TV shows recorded to watch today
+WhatNewShows do we have any new TV shows recorded to watch tonight
+WhatNewShows do we have any new TV shows recorded today
+WhatNewShows do we have any new TV shows recorded tonight
+WhatNewShows do we have any new TV shows to watch
+WhatNewShows do we have any new TV shows to watch today
+WhatNewShows do we have any new TV shows to watch tonight
+WhatNewShows do we have any new TV shows today
+WhatNewShows do we have any new TV shows tonight
 WhatNewShows do we have any new shows
 WhatNewShows do we have any new shows recorded
 WhatNewShows do we have any new shows recorded to watch
@@ -1827,6 +2663,18 @@ WhatNewShows do we have any new shows to watch today
 WhatNewShows do we have any new shows to watch tonight
 WhatNewShows do we have any new shows today
 WhatNewShows do we have any new shows tonight
+WhatNewShows do we have new TV shows
+WhatNewShows do we have new TV shows recorded
+WhatNewShows do we have new TV shows recorded to watch
+WhatNewShows do we have new TV shows recorded to watch today
+WhatNewShows do we have new TV shows recorded to watch tonight
+WhatNewShows do we have new TV shows recorded today
+WhatNewShows do we have new TV shows recorded tonight
+WhatNewShows do we have new TV shows to watch
+WhatNewShows do we have new TV shows to watch today
+WhatNewShows do we have new TV shows to watch tonight
+WhatNewShows do we have new TV shows today
+WhatNewShows do we have new TV shows tonight
 WhatNewShows do we have new shows
 WhatNewShows do we have new shows recorded
 WhatNewShows do we have new shows recorded to watch
@@ -1839,6 +2687,18 @@ WhatNewShows do we have new shows to watch today
 WhatNewShows do we have new shows to watch tonight
 WhatNewShows do we have new shows today
 WhatNewShows do we have new shows tonight
+WhatNewShows do we have some new TV shows
+WhatNewShows do we have some new TV shows recorded
+WhatNewShows do we have some new TV shows recorded to watch
+WhatNewShows do we have some new TV shows recorded to watch today
+WhatNewShows do we have some new TV shows recorded to watch tonight
+WhatNewShows do we have some new TV shows recorded today
+WhatNewShows do we have some new TV shows recorded tonight
+WhatNewShows do we have some new TV shows to watch
+WhatNewShows do we have some new TV shows to watch today
+WhatNewShows do we have some new TV shows to watch tonight
+WhatNewShows do we have some new TV shows today
+WhatNewShows do we have some new TV shows tonight
 WhatNewShows do we have some new shows
 WhatNewShows do we have some new shows recorded
 WhatNewShows do we have some new shows recorded to watch
@@ -1851,6 +2711,18 @@ WhatNewShows do we have some new shows to watch today
 WhatNewShows do we have some new shows to watch tonight
 WhatNewShows do we have some new shows today
 WhatNewShows do we have some new shows tonight
+WhatNewShows if there are any new TV shows
+WhatNewShows if there are any new TV shows recorded
+WhatNewShows if there are any new TV shows recorded to watch
+WhatNewShows if there are any new TV shows recorded to watch today
+WhatNewShows if there are any new TV shows recorded to watch tonight
+WhatNewShows if there are any new TV shows recorded today
+WhatNewShows if there are any new TV shows recorded tonight
+WhatNewShows if there are any new TV shows to watch
+WhatNewShows if there are any new TV shows to watch today
+WhatNewShows if there are any new TV shows to watch tonight
+WhatNewShows if there are any new TV shows today
+WhatNewShows if there are any new TV shows tonight
 WhatNewShows if there are any new shows
 WhatNewShows if there are any new shows recorded
 WhatNewShows if there are any new shows recorded to watch
@@ -1863,6 +2735,18 @@ WhatNewShows if there are any new shows to watch today
 WhatNewShows if there are any new shows to watch tonight
 WhatNewShows if there are any new shows today
 WhatNewShows if there are any new shows tonight
+WhatNewShows if there are new TV shows
+WhatNewShows if there are new TV shows recorded
+WhatNewShows if there are new TV shows recorded to watch
+WhatNewShows if there are new TV shows recorded to watch today
+WhatNewShows if there are new TV shows recorded to watch tonight
+WhatNewShows if there are new TV shows recorded today
+WhatNewShows if there are new TV shows recorded tonight
+WhatNewShows if there are new TV shows to watch
+WhatNewShows if there are new TV shows to watch today
+WhatNewShows if there are new TV shows to watch tonight
+WhatNewShows if there are new TV shows today
+WhatNewShows if there are new TV shows tonight
 WhatNewShows if there are new shows
 WhatNewShows if there are new shows recorded
 WhatNewShows if there are new shows recorded to watch
@@ -1875,6 +2759,18 @@ WhatNewShows if there are new shows to watch today
 WhatNewShows if there are new shows to watch tonight
 WhatNewShows if there are new shows today
 WhatNewShows if there are new shows tonight
+WhatNewShows if there are some new TV shows
+WhatNewShows if there are some new TV shows recorded
+WhatNewShows if there are some new TV shows recorded to watch
+WhatNewShows if there are some new TV shows recorded to watch today
+WhatNewShows if there are some new TV shows recorded to watch tonight
+WhatNewShows if there are some new TV shows recorded today
+WhatNewShows if there are some new TV shows recorded tonight
+WhatNewShows if there are some new TV shows to watch
+WhatNewShows if there are some new TV shows to watch today
+WhatNewShows if there are some new TV shows to watch tonight
+WhatNewShows if there are some new TV shows today
+WhatNewShows if there are some new TV shows tonight
 WhatNewShows if there are some new shows
 WhatNewShows if there are some new shows recorded
 WhatNewShows if there are some new shows recorded to watch
@@ -1887,6 +2783,18 @@ WhatNewShows if there are some new shows to watch today
 WhatNewShows if there are some new shows to watch tonight
 WhatNewShows if there are some new shows today
 WhatNewShows if there are some new shows tonight
+WhatNewShows if there is a new TV show
+WhatNewShows if there is a new TV show recorded
+WhatNewShows if there is a new TV show recorded to watch
+WhatNewShows if there is a new TV show recorded to watch today
+WhatNewShows if there is a new TV show recorded to watch tonight
+WhatNewShows if there is a new TV show recorded today
+WhatNewShows if there is a new TV show recorded tonight
+WhatNewShows if there is a new TV show to watch
+WhatNewShows if there is a new TV show to watch today
+WhatNewShows if there is a new TV show to watch tonight
+WhatNewShows if there is a new TV show today
+WhatNewShows if there is a new TV show tonight
 WhatNewShows if there is a new show
 WhatNewShows if there is a new show recorded
 WhatNewShows if there is a new show recorded to watch
@@ -1899,6 +2807,18 @@ WhatNewShows if there is a new show to watch today
 WhatNewShows if there is a new show to watch tonight
 WhatNewShows if there is a new show today
 WhatNewShows if there is a new show tonight
+WhatNewShows is there a new TV show
+WhatNewShows is there a new TV show recorded
+WhatNewShows is there a new TV show recorded to watch
+WhatNewShows is there a new TV show recorded to watch today
+WhatNewShows is there a new TV show recorded to watch tonight
+WhatNewShows is there a new TV show recorded today
+WhatNewShows is there a new TV show recorded tonight
+WhatNewShows is there a new TV show to watch
+WhatNewShows is there a new TV show to watch today
+WhatNewShows is there a new TV show to watch tonight
+WhatNewShows is there a new TV show today
+WhatNewShows is there a new TV show tonight
 WhatNewShows is there a new show
 WhatNewShows is there a new show recorded
 WhatNewShows is there a new show recorded to watch
@@ -1911,6 +2831,30 @@ WhatNewShows is there a new show to watch today
 WhatNewShows is there a new show to watch tonight
 WhatNewShows is there a new show today
 WhatNewShows is there a new show tonight
+WhatNewShows what TV shows are on the media server
+WhatNewShows what TV shows are on the server
+WhatNewShows what TV shows are ready
+WhatNewShows what TV shows are recorded
+WhatNewShows what TV shows are there
+WhatNewShows what TV shows are waiting
+WhatNewShows what TV shows do i have
+WhatNewShows what TV shows do we have
+WhatNewShows what TV shows do you have
+WhatNewShows what TV shows i have
+WhatNewShows what TV shows we have
+WhatNewShows what TV shows you have
+WhatNewShows what new TV shows are on the media server
+WhatNewShows what new TV shows are on the server
+WhatNewShows what new TV shows are ready
+WhatNewShows what new TV shows are recorded
+WhatNewShows what new TV shows are there
+WhatNewShows what new TV shows are waiting
+WhatNewShows what new TV shows do i have
+WhatNewShows what new TV shows do we have
+WhatNewShows what new TV shows do you have
+WhatNewShows what new TV shows i have
+WhatNewShows what new TV shows we have
+WhatNewShows what new TV shows you have
 WhatNewShows what new shows are on the media server
 WhatNewShows what new shows are on the server
 WhatNewShows what new shows are ready

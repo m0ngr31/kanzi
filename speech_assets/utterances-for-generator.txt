@@ -6,41 +6,50 @@
 # Tool to expand the single line into the usable list of utterances
 # http://www.makermusings.com/amazon-echo-utterance-expander/
 
+# Check for duplicates after generating
+
 
 PlayPause (play/pause/resume)
 
-AMAZON.StopIntent (stop/cancel/shut up)
 
-Skip (skip/next) (/song)
-Skip (listen to/play) next (/song)
+Skip skip (/this) (/one/item/song/video/episode/track/movie)
 
-Prev (/listen to/play) previous (/song)
+Skip (listen to (/the) /play (/the)) next (song/track)
+Skip (watch to (/the) /play (/the)) next (video/episode/movie/film/show/TV show)
 
-StartOver (replay/start over)
+Skip (listen to/play/watch) (/the) next (one/item) 
 
-Home navigate home
+Prev (listen to/play) (/the/that) (previous/last) (song/track) (/again)
+Prev (watch/play) (/the/that) (previous/last) (video/episode/movie/film/show/TV show) (/again)
 
-Back (/navigate/go) back
-Up (/navigate/go) up
-Down (/navigate/go) down
-Right (/navigate/go) right
-Left (/navigate/go) left
-PageUp (/navigate/go) page up
-PageDown (/navigate/go) page down
+Prev (listen to/play/watch) (/the/that) (previous/last) (one/item) (/again)
 
-Select select
+StartOver (replay (/this) (/song/video/episode/track/movie/film/show/TV show)/start over/play again/play (/song/video/episode/track/movie/film/show/TV show) again/go back to the beginning)
 
-Menu open menu
+Home (navigate/go) (/to) (home/main) (/menu/screen)
+
+Back (/navigate/go/press) back
+Up (/navigate/go/press) up
+Down (/navigate/go/press) down
+Right (/navigate/go/press) right
+Left (/navigate/go/press) left
+PageUp (/navigate/go/press) page up
+PageDown (/navigate/go/press) page down
+
+Select (/navigate/go/press) (select/OK)
+
+Menu (/navigate/go/press/open) (menu/contextual menu)
+Menu (/navigate/go/press) right click
 
 Fullscreen (/toggle) (fullscreen/visualizer)
 
 Mute (/toggle/set) (mute/unmute)
-VolumeUp (/turn) volume up
-VolumeUp (/turn) up volume
-VolumeDown (/turn) volume down
-VolumeDown (/turn) down volume
-VolumeSet (/set) volume {Volume}
-VolumeSetPct (/set) volume {Volume} percent
+VolumeUp (/turn) (/the) volume up
+VolumeUp (/turn) up (/the) volume
+VolumeDown (/turn) (/the) volume down
+VolumeDown (/turn) down (/the) volume
+VolumeSet (/(set/adjust/turn) (/the)) (volume/sound) (/level) (/to) {Volume}
+VolumeSetPct (/(set/adjust/turn)) (volume/sound) (/level) (/to) {Volume} percent
 
 SubtitlesOn (enable/turn on) subtitles
 SubtitlesOff (disable/turn off) subtitles
@@ -54,8 +63,8 @@ AudioStreamPrevious previous (/audio) language
 
 PlayerMoveUp (track/pan/move) up
 PlayerMoveDown (track/pan/move) down
-PlayerMoveLeft (track/pan/move/go) left
-PlayerMoveRight (track/pan/move/go) right
+PlayerMoveLeft (track/pan/move) left
+PlayerMoveRight (track/pan/move) right
 PlayerRotateClockwise rotate (/clockwise/ninety degrees)
 PlayerRotateCounterClockwise rotate counter clockwise
 PlayerZoomHold hold (/it) (/there/right there)
@@ -73,13 +82,13 @@ PlayerZoomOutMoveLeft (pull out/pull back/move out/zoom out) and (track/pan/move
 PlayerZoomOutMoveRight (pull out/pull back/move out/zoom out) and (track/pan/move/go) right
 PlayerZoomReset (normal/reset) zoom
 
-CleanVideo clean (/video) library
+CleanVideo clean (/the/my) (/video) library
 
-UpdateVideo update (/video) library
+UpdateVideo (update/refresh) (/the/my) (/video) library
 
-CleanAudio clean (audio/music) library
+CleanAudio clean (/the/my) (audio/music) library
 
-UpdateAudio update (audio/music) library
+UpdateAudio (update/refresh) (/the/my) (audio/music) library
 
 WhatAlbums what albums do (we/i/you) have by {Artist}
 
@@ -87,14 +96,13 @@ ListenToArtist (play/listen to/shuffle) (music by/artist) {Artist}
 
 StreamArtist stream (music by/artist) {Artist}
 
-ListenToAlbum (play/listen to) album {Album}
-ListenToAlbum (play/listen to) album {Album} by {Artist}
+ListenToAlbum (play/listen to) (/the) ({Album}/album {Album}/{Album} album) (/by {Artist})
 
-ListenToSong (play/listen to) song {Song}
-ListenToSong (play/listen to) song {Song} by {Artist}
+ListenToSong (play/listen to) (/the) song {Song}
+ListenToSong (play/listen to) (/the) song {Song} by (/the (/artist/singer/band/group)) {Artist}
 
-ListenToAlbumOrSong (play/listen to) {Album} by {Artist}
-ListenToAlbumOrSong (play/listen to) {Song} by {Artist}
+ListenToAlbumOrSong (play/listen to) (/the) {Album} by (/the (/artist/singer/band/group)) {Artist}
+ListenToAlbumOrSong (play/listen to) (/the) {Song} by (/the (/artist/singer/band/group)) {Artist}
 
 ListenToAudioPlaylist (play/listen to) (song/music/audio) playlist {AudioPlaylist}
 ListenToAudioPlaylist (play/listen to) {AudioPlaylist} (song/music/audio) playlist
@@ -104,19 +112,22 @@ ListenToAudioPlaylist listen to {AudioPlaylist} playlist
 ListenToAudioPlaylistRecent (play/listen to/shuffle) recent (songs/music/audio/albums)
 ListenToAudioPlaylistRecent (play/listen to/shuffle) recently added (songs/music/audio/albums)
 
-WatchRandomMovie (play/watch) random (/{Genre}) (movie/film)
+WatchRandomMovie (play/watch) (/a) random (/{Genre}) (movie/film)
 
-WatchMovie (play/watch) (movie/film) {Movie}
+WatchMovie (play/watch) (/the) ((movie/film) {Movie}/{Movie} (movie/film))
 
 WatchEpisode (play/watch) (season/series) {Season} episode {Episode} of {Show}
+WatchEpisode (play/watch) (/the) episode (/number) {Episode} (/from/in) (season/series) {Season} of {Show}
+WatchEpisode (play/watch) {Show} (season/series) {Season} episode {Episode}
+WatchEpisode (play/watch) {Show} episode {Episode} (season/series) {Season}
 
-WatchRandomEpisode (play/watch) (/random) episode of {Show}
+WatchRandomEpisode (play/watch) (/a) random (episode of {Show}/{Show} episode/{Show})
 
-WatchNextEpisode (play/watch) next episode of {Show}
+WatchNextEpisode (play/watch) (/the) next episode of {Show}
 
 WatchLastShow continue (/watching/playing) (/last) show
 
-WatchLatestEpisode (play/watch) (newest/latest) episode of {Show}
+WatchLatestEpisode (play/watch) (/the) (newest/latest/current/most recent) episode of {Show}
 
 WatchVideoPlaylist (play/watch) (movie/show/video) playlist {VideoPlaylist}
 WatchVideoPlaylist (play/watch) {VideoPlaylist} (movie/show/video) playlist
@@ -144,13 +155,16 @@ WhatNewMovies (if there is/is there/do (we/i) have) a new (movie/film) (/recorde
 WhatNewMovies (if there is/is there/do (we/i) have) a new {Genre} (movie/film) (/recorded) (/to watch) (/today/tonight)
 WhatNewMovies what (/new) {Genre} (movies/films) ((/do) (we/i/you) have/are (ready/waiting/recorded/there/on the (/media) server))
 
-WhatNewShows (if there are/are there/do (we/i) have) (/any/some) new shows (/recorded) (/to watch) (/today/tonight)
-WhatNewShows (if there is/is there/do (we/i) have) a new show (/recorded) (/to watch) (/today/tonight)
-WhatNewShows what (/new) shows ((/do) (we/i/you) have/are (ready/waiting/recorded/there/on the (/media) server))
+WhatNewShows (if there are/are there/do (we/i) have) (/any/some) new (/TV) shows (/recorded) (/to watch) (/today/tonight)
+WhatNewShows (if there is/is there/do (we/i) have) a new (/TV) show (/recorded) (/to watch) (/today/tonight)
+WhatNewShows what (/new) (/TV) shows ((/do) (we/i/you) have/are (ready/waiting/recorded/there/on the (/media) server))
 
 NewShowInquiry if (there is/we have) a new (/episode of) {Show}
-NewShowInquiry if (there are/we have) any (/(/new )episodes of) {Show}
+NewShowInquiry if (there (are/is)/we have) (any/(/new) episodes of) {Show}
 NewShowInquiry if (there is/we have) {Show}
+
+NewShowInquiry do (we/you) have a new (/episode of) {Show}
+NewShowInquiry do (we/you) have (/any (/new) episodes of) {Show}
 
 PartyMode listen to random music
 PartyMode listen to all music
@@ -160,7 +174,7 @@ PartyMode shuffle all music
 
 StreamPartyMode stream (/random/all/) music
 
-CurrentPlayItemInquiry what (/song/audio/video/movie/film/episode/show) is (this/playing/currently playing)
+CurrentPlayItemInquiry what (/song/audio/track/video/movie/film/episode/show/TV show) is (this/playing/currently playing)
 
 CurrentPlayItemTimeRemaining how much (/time) is (left/remaining) on (my/this) (audio/video/movie/film/show/episode/song)
 CurrentPlayItemTimeRemaining how much (/time) is (left/remaining)
@@ -189,7 +203,8 @@ PlayerSeekSmallBackward (/small) (backward/back) (step/jump)
 PlayerSeekBigBackward (large/big/long) (step/jump) (backward/back)
 PlayerSeekBigBackward (large/big/long) (backward/back) (step/jump)
 
-AddonExecute (open/execute/run) (/addon/plugin/script) {Addon}
+AddonExecute (open/execute/run) ((/the) (/addon/plugin/script) {Addon} / {Addon} (/addon/plugin/script))
+
 AddonGlobalSearch search for {Show}
 AddonGlobalSearch search for {Movie}
 AddonGlobalSearch search for {Album}
