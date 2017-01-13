@@ -196,5 +196,3 @@ AddonGlobalSearch search for {Album}
 AddonGlobalSearch search for {Artist}
 
 OpenRemote open (remote/controls/controller)
-
-AMAZON.HelpIntent (/open) help

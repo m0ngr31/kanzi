@@ -1,5 +1,3 @@
-AMAZON.HelpIntent hilfe
-AMAZON.HelpIntent öffnen sie hilfe
 AMAZON.StopIntent anhalten
 AMAZON.StopIntent halt
 AMAZON.StopIntent halt's maul
