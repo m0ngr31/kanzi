@@ -363,11 +363,9 @@ PlayPause resume
 PlayerMoveDown move down
 PlayerMoveDown pan down
 PlayerMoveDown track down
-PlayerMoveLeft go left
 PlayerMoveLeft move left
 PlayerMoveLeft pan left
 PlayerMoveLeft track left
-PlayerMoveRight go right
 PlayerMoveRight move right
 PlayerMoveRight pan right
 PlayerMoveRight track right
@@ -449,51 +447,39 @@ PlayerZoomHold hold there
 PlayerZoomIn enhance
 PlayerZoomIn move in
 PlayerZoomIn zoom in
-PlayerZoomInMoveDown enhance and go down
 PlayerZoomInMoveDown enhance and move down
 PlayerZoomInMoveDown enhance and pan down
 PlayerZoomInMoveDown enhance and track down
-PlayerZoomInMoveDown move in and go down
 PlayerZoomInMoveDown move in and move down
 PlayerZoomInMoveDown move in and pan down
 PlayerZoomInMoveDown move in and track down
-PlayerZoomInMoveDown zoom in and go down
 PlayerZoomInMoveDown zoom in and move down
 PlayerZoomInMoveDown zoom in and pan down
 PlayerZoomInMoveDown zoom in and track down
-PlayerZoomInMoveLeft enhance and go left
 PlayerZoomInMoveLeft enhance and move left
 PlayerZoomInMoveLeft enhance and pan left
 PlayerZoomInMoveLeft enhance and track left
-PlayerZoomInMoveLeft move in and go left
 PlayerZoomInMoveLeft move in and move left
 PlayerZoomInMoveLeft move in and pan left
 PlayerZoomInMoveLeft move in and track left
-PlayerZoomInMoveLeft zoom in and go left
 PlayerZoomInMoveLeft zoom in and move left
 PlayerZoomInMoveLeft zoom in and pan left
 PlayerZoomInMoveLeft zoom in and track left
-PlayerZoomInMoveRight enhance and go right
 PlayerZoomInMoveRight enhance and move right
 PlayerZoomInMoveRight enhance and pan right
 PlayerZoomInMoveRight enhance and track right
-PlayerZoomInMoveRight move in and go right
 PlayerZoomInMoveRight move in and move right
 PlayerZoomInMoveRight move in and pan right
 PlayerZoomInMoveRight move in and track right
-PlayerZoomInMoveRight zoom in and go right
 PlayerZoomInMoveRight zoom in and move right
 PlayerZoomInMoveRight zoom in and pan right
 PlayerZoomInMoveRight zoom in and track right
-PlayerZoomInMoveUp enhance and go up
 PlayerZoomInMoveUp enhance and move up
 PlayerZoomInMoveUp enhance and pan up
 PlayerZoomInMoveUp enhance and track up
-PlayerZoomInMoveUp move in and go up
 PlayerZoomInMoveUp move in and move up
 PlayerZoomInMoveUp move in and pan up
 PlayerZoomInMoveUp move in and track up
-PlayerZoomInMoveUp zoom in and go up
 PlayerZoomInMoveUp zoom in and move up
 PlayerZoomInMoveUp zoom in and pan up
 PlayerZoomInMoveUp zoom in and track up
@@ -501,67 +487,51 @@ PlayerZoomOut move out
 PlayerZoomOut pull back
 PlayerZoomOut pull out
 PlayerZoomOut zoom out
-PlayerZoomOutMoveDown move out and go down
 PlayerZoomOutMoveDown move out and move down
 PlayerZoomOutMoveDown move out and pan down
 PlayerZoomOutMoveDown move out and track down
-PlayerZoomOutMoveDown pull back and go down
 PlayerZoomOutMoveDown pull back and move down
 PlayerZoomOutMoveDown pull back and pan down
 PlayerZoomOutMoveDown pull back and track down
-PlayerZoomOutMoveDown pull out and go down
 PlayerZoomOutMoveDown pull out and move down
 PlayerZoomOutMoveDown pull out and pan down
 PlayerZoomOutMoveDown pull out and track down
-PlayerZoomOutMoveDown zoom out and go down
 PlayerZoomOutMoveDown zoom out and move down
 PlayerZoomOutMoveDown zoom out and pan down
 PlayerZoomOutMoveDown zoom out and track down
-PlayerZoomOutMoveLeft move out and go left
 PlayerZoomOutMoveLeft move out and move left
 PlayerZoomOutMoveLeft move out and pan left
 PlayerZoomOutMoveLeft move out and track left
-PlayerZoomOutMoveLeft pull back and go left
 PlayerZoomOutMoveLeft pull back and move left
 PlayerZoomOutMoveLeft pull back and pan left
 PlayerZoomOutMoveLeft pull back and track left
-PlayerZoomOutMoveLeft pull out and go left
 PlayerZoomOutMoveLeft pull out and move left
 PlayerZoomOutMoveLeft pull out and pan left
 PlayerZoomOutMoveLeft pull out and track left
-PlayerZoomOutMoveLeft zoom out and go left
 PlayerZoomOutMoveLeft zoom out and move left
 PlayerZoomOutMoveLeft zoom out and pan left
 PlayerZoomOutMoveLeft zoom out and track left
-PlayerZoomOutMoveRight move out and go right
 PlayerZoomOutMoveRight move out and move right
 PlayerZoomOutMoveRight move out and pan right
 PlayerZoomOutMoveRight move out and track right
-PlayerZoomOutMoveRight pull back and go right
 PlayerZoomOutMoveRight pull back and move right
 PlayerZoomOutMoveRight pull back and pan right
 PlayerZoomOutMoveRight pull back and track right
-PlayerZoomOutMoveRight pull out and go right
 PlayerZoomOutMoveRight pull out and move right
 PlayerZoomOutMoveRight pull out and pan right
 PlayerZoomOutMoveRight pull out and track right
-PlayerZoomOutMoveRight zoom out and go right
 PlayerZoomOutMoveRight zoom out and move right
 PlayerZoomOutMoveRight zoom out and pan right
 PlayerZoomOutMoveRight zoom out and track right
-PlayerZoomOutMoveUp move out and go up
 PlayerZoomOutMoveUp move out and move up
 PlayerZoomOutMoveUp move out and pan up
 PlayerZoomOutMoveUp move out and track up
-PlayerZoomOutMoveUp pull back and go up
 PlayerZoomOutMoveUp pull back and move up
 PlayerZoomOutMoveUp pull back and pan up
 PlayerZoomOutMoveUp pull back and track up
-PlayerZoomOutMoveUp pull out and go up
 PlayerZoomOutMoveUp pull out and move up
 PlayerZoomOutMoveUp pull out and pan up
 PlayerZoomOutMoveUp pull out and track up
-PlayerZoomOutMoveUp zoom out and go up
 PlayerZoomOutMoveUp zoom out and move up
 PlayerZoomOutMoveUp zoom out and pan up
 PlayerZoomOutMoveUp zoom out and track up
