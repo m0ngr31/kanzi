@@ -333,16 +333,12 @@ Mute toggle unmute
 Mute unmute
 NewShowInquiry if there are any episodes of {Show}
 NewShowInquiry if there are any new episodes of {Show}
-NewShowInquiry if there are any {Show}
 NewShowInquiry if there is a new episode of {Show}
-NewShowInquiry if there is a new {Show}
-NewShowInquiry if there is {Show}
+NewShowInquiry if there is an episode of {Show}
 NewShowInquiry if we have a new episode of {Show}
-NewShowInquiry if we have a new {Show}
+NewShowInquiry if we have an episode of {Show}
 NewShowInquiry if we have any episodes of {Show}
 NewShowInquiry if we have any new episodes of {Show}
-NewShowInquiry if we have any {Show}
-NewShowInquiry if we have {Show}
 OpenRemote open controller
 OpenRemote open controls
 OpenRemote open remote
