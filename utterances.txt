@@ -148,9 +148,8 @@ WhatNewShows (if there are/are there/do (we/i) have) (/any/some) new shows (/rec
 WhatNewShows (if there is/is there/do (we/i) have) a new show (/recorded) (/to watch) (/today/tonight)
 WhatNewShows what (/new) shows ((/do) (we/i/you) have/are (ready/waiting/recorded/there/on the (/media) server))
 
-NewShowInquiry if (there is/we have) a new (/episode of) {Show}
-NewShowInquiry if (there are/we have) any (/(/new )episodes of) {Show}
-NewShowInquiry if (there is/we have) {Show}
+NewShowInquiry if (there is/we have) (a new/an) episode of {Show}
+NewShowInquiry if (there are/we have) any (/new) episodes of {Show}
 
 PartyMode listen to random music
 PartyMode listen to all music
