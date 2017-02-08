@@ -238,12 +238,21 @@ Down go down
 Down navigate down
 EjectMedia eject
 EjectMedia eject audio disc
-EjectMedia eject bluray
-EjectMedia eject bluray disc
-EjectMedia eject cd
+EjectMedia eject blu-ray
+EjectMedia eject blu-ray disc
+EjectMedia eject c. d.
+EjectMedia eject compact disc
+EjectMedia eject d. v. d.
 EjectMedia eject disc
-EjectMedia eject dvd
 EjectMedia eject media
+EjectMedia eject the audio disc
+EjectMedia eject the blu-ray
+EjectMedia eject the blu-ray disc
+EjectMedia eject the c. d.
+EjectMedia eject the compact disc
+EjectMedia eject the d. v. d.
+EjectMedia eject the disc
+EjectMedia eject the media
 Fullscreen fullscreen
 Fullscreen toggle fullscreen
 Fullscreen toggle visualizer
