@@ -97,8 +97,10 @@ def sanitize_name(media_name, remove_between=False):
     # Just remove the actual brackets and parentheses
     removed_bracket = normalized.translate(None, '[]()')
 
-  trimmed = removed_bracket.strip()
+  if len(removed_bracket) > 140:
+    removed_bracket = removed_bracket[:140].rsplit(' ', 1)[0]
 
+  trimmed = removed_bracket.strip()
   return trimmed
 
 
