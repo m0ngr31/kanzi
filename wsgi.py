@@ -303,7 +303,7 @@ def alexa_player_seek_bigforward(slots):
 
 
 # Handle the PlayerSeekBigBackward intent.
-def alexa_player_seek_bigforward(slots):
+def alexa_player_seek_bigbackward(slots):
   card_title = 'Big Step backward'
   print card_title
   sys.stdout.flush()
@@ -1820,7 +1820,7 @@ INTENTS = [
   ['PlayerSeekSmallForward', alexa_player_seek_smallforward],
   ['PlayerSeekBigForward', alexa_player_seek_bigforward],
   ['PlayerSeekSmallBackward', alexa_player_seek_smallbackward],
-  ['PlayerSeekBigBackward', alexa_player_seek_bigforward],
+  ['PlayerSeekBigBackward', alexa_player_seek_bigbackward],
   ['Home', alexa_go_home],
   ['Back', alexa_back],
   ['Up', alexa_up],
