@@ -244,7 +244,7 @@ def alexa_player_seek_bigforward():
 
 # Handle the PlayerSeekBigBackward intent.
 @ask.intent('PlayerSeekBigBackward')
-def alexa_player_seek_bigforward():
+def alexa_player_seek_bigbackward():
   card_title = render_template('big_step_backward').encode("utf-8")
   print card_title
 
