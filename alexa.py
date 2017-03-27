@@ -12,7 +12,8 @@ import os
 from multiprocessing import Process
 from flask import Flask, json, render_template
 from flask_ask import Ask, session, question, statement, audio, request
-from flask_babel import Babel, gettext
+from shutil import copyfile
+from functools import wraps
 
 sys.path += [os.path.dirname(__file__)]
 
@@ -34,23 +35,36 @@ app.config['LANGUAGES'] = {
 
 CAN_STREAM = music.has_music_functionality()
 
+# If no templates.yaml file, create an empty one so that Flask-ask won't have an error
+template = "templates.yaml"
+if not os.path.isfile(template):
+  open(template, 'w').close()
+
 # According to this: https://alexatutorial.com/flask-ask/configuration.html
 # Timestamp based verification shouldn't be used in production. Use at own risk
 # app.config['ASK_VERIFY_TIMESTAMP_DEBUG'] = True
 
 
 # Needs to be instanced after app is configured
-babel = Babel(app)
 ask = Ask(app, "/")
 
-@babel.localeselector
-def get_locale():
+
+# Setup the templates.yaml file with a decorator
+@ask.on_session_started
+def template_locale():
   locale = request['locale'][:2]
 
-  if locale in app.config['LANGUAGES'].keys():
-    return locale
-  else:
-    return 'en'
+  if not locale in app.config['LANGUAGES'].keys():
+    locale = 'en'
+
+  if(os.path.isfile(template)):
+    os.remove(template)
+
+  if locale == 'en':
+    copyfile('templates.en.yaml', template)
+  elif locale == 'de':
+    copyfile('templates.de.yaml', template)
+
 
 # Start of intent methods
 
