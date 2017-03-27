@@ -5,4 +5,4 @@ pycountry
 pytz
 fuzzywuzzy
 flask-ask>=0.8.4
-Flask-Babel
+zappa

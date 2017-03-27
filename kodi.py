@@ -512,7 +512,7 @@ def PlayPrev():
 def PlayStartOver():
   playerid = GetPlayerID()
   if playerid is not None:
-    return SendCommand(RPCString("Player.GoTo", {"playerid":playerid, "to": "previous"}))
+    return SendCommand(RPCString("Player.Seek", {"playerid":playerid, "value": 0}))
 
 
 def Stop():

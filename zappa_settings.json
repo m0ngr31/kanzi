@@ -1,8 +1,0 @@
-{
-    "dev": {
-        "app_function": "alexa.app", 
-        "s3_bucket": "kodi-alexa",
-        "timeout_seconds": 60,
-        "debug": false
-    }
-}
