@@ -36,7 +36,6 @@ import random
 import re
 import string
 import sys
-import pycountry
 from fuzzywuzzy import fuzz
 from fuzzywuzzy import process
 
@@ -943,7 +942,7 @@ def GetCurrentSubtitles():
   if curprops is not None:
     try:
       lang = curprops['currentsubtitle']['language']
-      subs = pycountry.languages.get(bibliographic=lang).name
+      subs = lang
       name = curprops['currentsubtitle']['name']
       if name:
         subs += " " + name
@@ -959,7 +958,7 @@ def GetCurrentAudioStream():
   if curprops is not None:
     try:
       lang = curprops['currentaudiostream']['language']
-      stream = pycountry.languages.get(bibliographic=lang).name
+      stream = lang
       name = curprops['currentaudiostream']['name']
       if name:
         stream += " " + name
