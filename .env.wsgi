@@ -13,9 +13,10 @@ KODI_ADDRESS=
 KODI_PORT=
 KODI_USERNAME=
 KODI_PASSWORD=
-
 SKILL_APPID=
 SKILL_VERIFY_CERT=
+BROADCAST_LOAD_TIMEOUT=
+BROADCAST_SCAN_TIMEOUT=
 
 # Your local time zone for responses that include absolute times.
 # See https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
@@ -28,3 +29,6 @@ SKILL_VERIFY_CERT=
 # end.  If you have SKILL_TZ defined, it will also tell you the wall-clock
 # time when the item will conclude.
 SKILL_TZ=
+
+BROADCAST_LOAD_TIMEOUT=
+BROADCAST_SCAN_TIMEOUT=

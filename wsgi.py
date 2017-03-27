@@ -1,5 +1,8 @@
 #!/usr/bin/python
 import os
+from fuzzywuzzy import fuzz
+from fuzzywuzzy import process
+import pvr
 
 """
 The MIT License (MIT)
@@ -1744,6 +1747,92 @@ def alexa_what_new_episodes(slots):
     answer = "There are new episodes of %(show_list)s." % {"show_list":show_list}
   return build_alexa_response(answer, card_title)
 
+def alexa_watch_pvr_channel(slots):
+  heard_pvr_channel = str(slots['Channel']['value']).lower()
+
+  print('Trying to play the PVR channel %s' % (heard_pvr_channel))
+  sys.stdout.flush()
+
+  try:
+    pvr_channels_by_label = pvr.get_pvr_channels_by_label()
+  except IOError:
+      return build_alexa_response('Error parsing results.')
+
+  #print(channel['label'] for channel in pvr_channels_by_label)
+  located = process.extract(heard_pvr_channel, pvr_channels_by_label.keys(), scorer=fuzz.QRatio, limit=1)
+  channel, score = located[0]
+
+  if score > 75:
+    kodi.WatchPVRChannel(pvr_channels_by_label[channel.lower()])
+
+    return build_alexa_response('Playing PVR channel %s' % (channel))
+  else:
+    return build_alexa_response('Could not find a PVR channel called %s' % (heard_pvr_channel))
+
+
+def alexa_watch_pvr_broadcast(slots):
+  heard_pvr_broadcast = str(slots['Broadcast']['value'])
+  timeout_seconds = pvr.BROADCAST_SCAN_TIMEOUT
+
+  print('Searching for %s' % (heard_pvr_broadcast))
+  sys.stdout.flush()
+
+  try:
+    # pvr_broadcasts = pvr.get_pvr_favourite_broadcasts()
+    pvr_broadcasts = pvr.get_pvr_broadcasts()
+  except IOError:
+    return build_alexa_response('Error parsing results.')
+
+  print('start search')
+  # print(pvr_broadcasts)
+  best_candidate = None
+  stop_time = datetime.datetime.utcnow() + datetime.timedelta(0, timeout_seconds)
+  for channelid, broadcasts in pvr_broadcasts.items():
+    if datetime.datetime.utcnow() >= stop_time:
+      print('timed out after %n seconds' % (timeout_seconds))
+      break
+
+    #print(channelid)
+    #print(best_candidate)
+
+    candidate = None
+    now = datetime.datetime.utcnow()
+    for broadcast in broadcasts:
+      # all dates in the response appear to be UTC
+      endtime = datetime.datetime.strptime(broadcast['endtime'], "%Y-%m-%d %H:%M:%S", )
+      if endtime < now:
+        continue
+      if best_candidate and best_candidate['score'] == 100:
+        if endtime > best_candidate['endtime']:
+          #no point looking further ahead when we already have a perfect match that ends earlier
+          break
+        #we already have a perfect match so now we don't need to use the expensive fuzzywuzzy search
+        score = 100 if best_candidate['label'] == broadcast['label'] else 0
+        #print('%s score %d' % (broadcast['label'], score))
+      else:
+        score = fuzz.QRatio(heard_pvr_broadcast, broadcast['label'])
+        if score < 75:
+          continue
+      if candidate is None or score > candidate['score']:
+        candidate = {'channel': channelid, 'score': score, 'label': broadcast['label'], 'endtime': endtime}
+      if score == 100:
+        break
+
+    if candidate:
+      if best_candidate is None or (
+          candidate['score'] > best_candidate['score'] or
+                (candidate['endtime'] < best_candidate['endtime' ] and candidate['score'] == best_candidate['score'])):
+        #print(candidate)
+        best_candidate = candidate
+
+  print('end search')
+  if best_candidate:
+    print(best_candidate)
+    kodi.WatchPVRChannel(best_candidate['channel'])
+
+    return build_alexa_response('Playing %s' % (best_candidate['label']))
+  else:
+    return build_alexa_response('Could not find a PVR broadcast called %s' % (heard_pvr_broadcast))
 
 # Handle the WhatAlbums intent.
 def alexa_what_albums(slots):
@@ -1872,7 +1961,9 @@ INTENTS = [
   ['Reboot', alexa_reboot],
   ['Shutdown', alexa_shutdown],
   ['Suspend', alexa_suspend],
-  ['EjectMedia', alexa_ejectmedia]
+  ['EjectMedia', alexa_ejectmedia],
+  ['WatchPVRChannel', alexa_watch_pvr_channel],
+  ['WatchPVRBroadcast', alexa_watch_pvr_broadcast]
 ]
 
 
