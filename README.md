@@ -123,6 +123,8 @@ Now, clone my repo: `git clone https://github.com/m0ngr31/kodi-alexa.git` and `c
 
 After successfull completion, run `pip install -r requirements.txt` and `pip install zappa`. Before you deploy, you need to copy the `.env.example` file to `.env` and enter the correct information for: KODI_ADDRESS, KODI_PORT, KODI_USERNAME, and KODI_PASSWORD. I'll go over the other variables in another section below.
 
+Before you can send any code to Lambda, you'll need to setup Zappa. Just run `zappa init` and accept the defaults for everything. If it doesn't automatically detect that this is a Flask app, tell it that the application function is "alexa.app".
+
 To make an initial deployment to Lambda, just run the following command: `zappa deploy dev`. It'll take a few minutes, and at the end it will give you a URL that you will need to copy. It will look like this:
 ![Lambda deploy](http://i.imgur.com/5rtN5ls.png)
 
