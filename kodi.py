@@ -13,7 +13,7 @@ import random
 import re
 import string
 import sys
-import pycountry
+import codecs
 import unicodedata
 from fuzzywuzzy import fuzz, process
 from yaep import populate_env, env
@@ -85,6 +85,7 @@ STOPWORDS = [
   "will",
   "with",
 ]
+
 
 def sanitize_name(media_name, remove_between=False):
   # Normalize string

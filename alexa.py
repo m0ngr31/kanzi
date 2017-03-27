@@ -49,7 +49,7 @@ if not os.path.isfile(template):
 ask = Ask(app, "/")
 
 
-# Setup the templates.yaml file with a decorator
+# Setup the templates.yaml file
 @ask.on_session_started
 def template_locale():
   locale = request['locale'][:2]
