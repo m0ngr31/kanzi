@@ -30,13 +30,13 @@ import datetime
 import json
 import requests
 import time
+import codecs
 import urllib
 import os
 import random
 import re
 import string
 import sys
-import pycountry
 from fuzzywuzzy import fuzz
 from fuzzywuzzy import process
 
@@ -936,14 +936,59 @@ def GetActivePlayProperties():
     return data['result']
 
 
+COUNTRY_DIC_FILE = os.path.join(os.path.dirname(__file__), "ISO-639-2_utf-8.txt")
+
+def getisocodes_dict(data_path):
+  # Provide a map from ISO code (both bibliographic and terminologic)
+  # in ISO 639-2 to a dict with the two letter ISO 639-2 codes (alpha2)
+  # English and french names
+  #
+  # "bibliographic" iso codes are derived from English word for the language
+  # "terminologic" iso codes are derived from the pronunciation in the target
+  # language (if different to the bibliographic code)
+  #
+  # Source
+  # http://stackoverflow.com/questions/2879856/get-system-language-in-iso-639-3-letter-codes-in-python/2879958#2879958
+  #
+  # Usage:
+  # country_dic = getisocodes_dict('ISO-639-2_utf-8.txt')
+  # print country_dic['eng']
+
+  D = {}
+  f = codecs.open(data_path, 'rb', 'utf-8')
+  for line in f:
+    iD = {}
+    iD['bibliographic'], iD['terminologic'], iD['alpha2'], \
+      iD['english'], iD['french'] = line.strip().split('|')
+    D[iD['bibliographic']] = iD
+
+    if iD['terminologic']:
+      D[iD['terminologic']] = iD
+
+    if iD['alpha2']:
+      D[iD['alpha2']] = iD
+
+    for k in iD:
+      # Assign `None` when columns not available from the data
+      iD[k] = iD[k] or None
+  f.close()
+  return D
+
+
 # Returns current subtitles as a speakable string
 def GetCurrentSubtitles():
   subs = ""
+  country_dic = getisocodes_dict(COUNTRY_DIC_FILE)
   curprops = GetActivePlayProperties()
   if curprops is not None:
     try:
+      # gets 3 character country code e.g. fre
       lang = curprops['currentsubtitle']['language']
-      subs = pycountry.languages.get(bibliographic=lang).name
+      # looks up 3 character code in the dictionary e.g. fre|fra|fr|French|français
+      subslang = country_dic[lang]
+      # matches 3 character code with the english (4th) column e.g. French
+      subs = subslang['english']
+      # joins full language name with the name of the subtitle file e.g. French External
       name = curprops['currentsubtitle']['name']
       if name:
         subs += " " + name
@@ -955,11 +1000,17 @@ def GetCurrentSubtitles():
 # Returns current audio stream as a speakable string
 def GetCurrentAudioStream():
   stream = ""
+  country_dic = getisocodes_dict(COUNTRY_DIC_FILE)
   curprops = GetActivePlayProperties()
   if curprops is not None:
     try:
+      # gets 3 character country code e.g. fre
       lang = curprops['currentaudiostream']['language']
-      stream = pycountry.languages.get(bibliographic=lang).name
+      # looks up 3 character code in the dictionary e.g. fre|fra|fr|French|français
+      streamlang = country_dic[lang]
+      # matches 3 character code with the english (4th) column e.g. French
+      stream = streamlang['english']
+      # joins full language name with the name of the subtitle file e.g. French External
       name = curprops['currentaudiostream']['name']
       if name:
         stream += " " + name

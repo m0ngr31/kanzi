@@ -1,6 +1,5 @@
 requests
 gunicorn
 yaep
-pycountry
 pytz
 fuzzywuzzy
