@@ -26,6 +26,9 @@ if(os.path.isfile("kodi.py")):
 
 if(os.path.isfile("wsgi.py")):
   shutil.copy("wsgi.py", app_name)
+  
+if(os.path.isfile("ISO-639-2_utf-8.txt")):
+  shutil.copy("ISO-639-2_utf-8.txt", app_name)
 
 if(os.path.isfile("requirements.txt")):
   shutil.copy("requirements.txt", app_name)
