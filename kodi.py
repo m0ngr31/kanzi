@@ -267,12 +267,15 @@ def matchHeard(heard, results, lookingFor='label'):
 # Playlists
 
 def FindAudioPlaylist(heard_search):
+  print 'Searching for audio playlist "%s"' % (heard_search)
+
   playlists = GetMusicPlaylists()
   if 'result' in playlists and 'files' in playlists['result']:
     playlists_list = playlists['result']['files']
     located = matchHeard(heard_search, playlists_list, 'label')
 
     if located:
+      print 'Located audio playlist "%s"' % (located['file'])
       return located['file']
 
 
@@ -314,12 +317,15 @@ def StartAudioPlaylist(playlist_file=None):
 
 
 def FindVideoPlaylist(heard_search):
+  print 'Searching for video playlist "%s"' % (heard_search)
+
   playlists = GetVideoPlaylists()
   if 'result' in playlists and 'files' in playlists['result']:
     playlists_list = playlists['result']['files']
     located = matchHeard(heard_search, playlists_list, 'label')
 
     if located:
+      print 'Located video playlist "%s"' % (located['file'])
       return located['file']
 
 
