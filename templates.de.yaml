@@ -161,6 +161,8 @@ ejecting_media: "Ejecting media"
 
 suspending_system: "Suspending system"
 
+quitting: "Quitting"
+
 shutting_down: "Shutting down system"
 
 rebooting: "Rebooting system"
