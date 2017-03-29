@@ -3,3 +3,4 @@ gunicorn
 yaep
 pytz
 fuzzywuzzy
+wakeonlan

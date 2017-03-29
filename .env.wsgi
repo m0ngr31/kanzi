@@ -14,6 +14,15 @@ KODI_PORT=
 KODI_USERNAME=
 KODI_PASSWORD=
 
+# If you want to enable WOL, set these variables.
+# If your skill endpoint is on the same subnet as the kodi host, only set the mac
+# and the magic packet will be sent to the broadcast address.  If you set a port,
+# then it assumes that the endpoint is not local and wake-on-wan is required.
+# In this case the magic packet is sent to KODI_ADDRESS:KODI_WOL_PORT, and your
+# router will need to be set up to forward this on appropriately.
+KODI_WOL_MAC =
+KODI_WOL_PORT =
+
 SKILL_APPID=
 SKILL_VERIFY_CERT=
 

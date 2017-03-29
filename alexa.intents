@@ -441,6 +441,10 @@
       "slots": []
     },
     {
+      "intent": "Wake",
+      "slots": []
+    },
+    {
       "intent": "Suspend",
       "slots": []
     },
