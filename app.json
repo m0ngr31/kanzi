@@ -57,31 +57,6 @@
       "value": "",
       "required": false
     },
-    "MONGODB_URL": {
-      "description": "MongoDB URL for streaming music.",
-      "value": "",
-      "required": false
-    },
-    "MONGODB_PORT": {
-      "description": "MongoDB port.",
-      "value": "",
-      "required": false
-    },
-    "MONGODB_NAME": {
-      "description": "MongoDB database name",
-      "value": "",
-      "required": false
-    },
-    "MONGODB_USER": {
-      "description": "MongoDB user name.",
-      "value": "",
-      "required": false
-    },
-    "MONGODB_PASS": {
-      "description": "MongoDB password.",
-      "value": "",
-      "required": false
-    },
     "USE_PROXY": {
       "description": "Put 'y' here if you would like to use my HTTPS proxy.",
       "value": "",
