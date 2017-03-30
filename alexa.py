@@ -1202,10 +1202,14 @@ def alexa_reboot():
 # Handle the Shutdown intent.
 @ask.intent('Shutdown')
 def alexa_shutdown():
-  card_title = render_template('shutting_down').encode("utf-8")
+  quit = os.getenv('SHUTDOWN_MEANS_QUIT')
+  if quit and quit != 'None':
+    card_title = render_template('quitting').encode("utf-8")
+    kodi.ApplicationQuit()
+  else:
+    card_title = render_template('shutting_down').encode("utf-8")
+    kodi.SystemShutdown()
   print card_title
-
-  kodi.SystemShutdown()
 
   return statement(card_title).simple_card(card_title, "")
 

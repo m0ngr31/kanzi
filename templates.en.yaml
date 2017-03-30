@@ -159,6 +159,8 @@ clean_video: "Cleaning video library"
 
 ejecting_media: "Ejecting media"
 
+quitting: "Quitting"
+
 suspending_system: "Suspending system"
 
 shutting_down: "Shutting down system"

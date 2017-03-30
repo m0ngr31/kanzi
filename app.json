@@ -47,6 +47,11 @@
       "value": "",
       "required": false
     },
+    "SHUTDOWN_MEANS_QUIT": {
+      "description": "If you'd like 'Alexa, tell Kodi to shut down' to quit Kodi instead of shutting down the system.",
+      "value": "",
+      "required": false
+    },
     "ACCEPT_MUSIC_WARNING": {
       "description": "Setup MongoDB to handle playing music from Kodi to your Alexa device. Must accept agreement saying I'm not liable for stolen information since your username and password for Kodi will be stored in plaintext in a database and will be transferred over the internet to a HTTPS proxy server for you to have this functionality.",
       "value": "",
