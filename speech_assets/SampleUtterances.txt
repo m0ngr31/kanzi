@@ -564,11 +564,33 @@ Skip skip
 Skip skip song
 StartOver replay
 StartOver start over
+StreamAlbum stream album {Album}
+StreamAlbum stream album {Album} by {Artist}
+StreamAlbumOrSong stream {Album} by {Artist}
+StreamAlbumOrSong stream {Song} by {Artist}
 StreamArtist stream artist {Artist}
 StreamArtist stream music by {Artist}
+StreamAudioPlaylist stream audio playlist {AudioPlaylist}
+StreamAudioPlaylist stream music playlist {AudioPlaylist}
+StreamAudioPlaylist stream playlist {AudioPlaylist}
+StreamAudioPlaylist stream song playlist {AudioPlaylist}
+StreamAudioPlaylist stream {AudioPlaylist} audio playlist
+StreamAudioPlaylist stream {AudioPlaylist} music playlist
+StreamAudioPlaylist stream {AudioPlaylist} playlist
+StreamAudioPlaylist stream {AudioPlaylist} song playlist
+StreamAudioPlaylistRecent stream recent albums
+StreamAudioPlaylistRecent stream recent audio
+StreamAudioPlaylistRecent stream recent music
+StreamAudioPlaylistRecent stream recent songs
+StreamAudioPlaylistRecent stream recently added albums
+StreamAudioPlaylistRecent stream recently added audio
+StreamAudioPlaylistRecent stream recently added music
+StreamAudioPlaylistRecent stream recently added songs
 StreamPartyMode stream all music
 StreamPartyMode stream music
 StreamPartyMode stream random music
+StreamSong stream song {Song}
+StreamSong stream song {Song} by {Artist}
 SubtitlesNext next subtitle language
 SubtitlesNext next subtitles
 SubtitlesNext switch subtitle language

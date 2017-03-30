@@ -88,17 +88,32 @@ StreamArtist Stream (Musik/Lieder/Songs/Mucke) von (/dem Artist/der Artistin/dem
 
 ListenToAlbum spiel(/e) (das Album/die CD/die Platte) {Album} (/von {Artist})
 
+StreamAlbum stream album {Album}
+StreamAlbum stream album {Album} by {Artist}
+
 ListenToSong spiel(/e) (das Lied/den Song) {Song}
 ListenToSong spiel(/e) (das Lied/den Song) {Song} von {Artist}
+
+StreamSong stream song {Song}
+StreamSong stream song {Song} by {Artist}
 
 ListenToAlbumOrSong spiel(/e) (/das Album/die CD/die Platte) {Album} von (/der Band/der Gruppe) {Artist}
 ListenToAlbumOrSong spiel(/e) (/das Lied/den Song) {Song} von {Artist}
 
+StreamAlbumOrSong stream {Album} by {Artist}
+StreamAlbumOrSong stream {Song} by {Artist}
+
 ListenToAudioPlaylist spiel(/e) (Musik/Lieder/Song) playlist {AudioPlaylist}
 ListenToAudioPlaylist spiel(/e) {AudioPlaylist} (Musik/Lieder/Song) playlist
 
+StreamAudioPlaylist stream (song/music/audio/) playlist {AudioPlaylist}
+StreamAudioPlaylist stream {AudioPlaylist} (song/music/audio/) playlist
+
 ListenToAudioPlaylistRecent spiel(/e) neue (Musik/Lieder/Songs)
 ListenToAudioPlaylistRecent spiel(/e) (zuletzt/kürzlich) hinzugefügte (Musik/Lieder/Songs)
+
+StreamAudioPlaylistRecent stream recent (songs/music/audio/albums)
+StreamAudioPlaylistRecent stream recently added (songs/music/audio/albums)
 
 WatchRandomMovie zeige (/zufälligen) (/{Genre}) Film
 

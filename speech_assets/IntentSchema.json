@@ -113,7 +113,33 @@
       ]
     },
     {
+      "intent": "StreamAlbum",
+      "slots": [
+        {
+          "name": "Artist",
+          "type": "MUSICARTISTS"
+        },
+        {
+          "name": "Album",
+          "type": "MUSICALBUMS"
+        }
+      ]
+    },
+    {
       "intent": "ListenToSong",
+      "slots": [
+        {
+          "name": "Artist",
+          "type": "MUSICARTISTS"
+        },
+        {
+          "name": "Song",
+          "type": "MUSICSONGS"
+        }
+      ]
+    },
+    {
+      "intent": "StreamSong",
       "slots": [
         {
           "name": "Artist",
@@ -143,7 +169,33 @@
       ]
     },
     {
+      "intent": "StreamAlbumOrSong",
+      "slots": [
+        {
+          "name": "Artist",
+          "type": "MUSICARTISTS"
+        },
+        {
+          "name": "Album",
+          "type": "MUSICALBUMS"
+        },
+        {
+          "name": "Song",
+          "type": "MUSICSONGS"
+        }
+      ]
+    },
+    {
       "intent": "ListenToAudioPlaylist",
+      "slots": [
+        {
+          "name": "AudioPlaylist",
+          "type": "MUSICPLAYLISTS"
+        }
+      ]
+    },
+    {
+      "intent": "StreamAudioPlaylist",
       "slots": [
         {
           "name": "AudioPlaylist",
@@ -162,6 +214,9 @@
     },
     {
       "intent": "ListenToAudioPlaylistRecent"
+    },
+    {
+      "intent": "StreamAudioPlaylistRecent"
     },
     {
       "intent": "WatchEpisode",
