@@ -10,7 +10,7 @@ def has_music_functionality():
   accepted_warning = os.getenv('ACCEPT_MUSIC_WARNING')
 
   if accepted_warning in accepted_answers:
-    if os.getenv('MONGODB_USER') and os.getenv('MONGODB_PASS') and os.getenv('MONGODB_URL') and os.getenv('MONGODB_PORT') and os.getenv('MONGODB_NAME'):
+    if os.getenv('MONGODB_URI'):
       return True
     else:
       return False
@@ -20,7 +20,7 @@ def has_music_functionality():
 class MusicPlayer:
   def __init__(self, urls=[]):
     from pymongo import MongoClient
-    self.mongo_uri = 'mongodb://%s:%s@%s:%s/%s' % (os.getenv('MONGODB_USER'), os.getenv('MONGODB_PASS'), os.getenv('MONGODB_URL'), int(os.getenv('MONGODB_PORT')), os.getenv('MONGODB_NAME'))
+    self.mongo_uri = os.getenv('MONGODB_URI')
     self.client = MongoClient(self.mongo_uri)
     self.db = self.client[os.getenv('MONGODB_NAME')]
     self.playlists = self.db['playlist-info']
