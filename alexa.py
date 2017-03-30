@@ -13,7 +13,6 @@ from multiprocessing import Process
 from flask import Flask, json, render_template
 from flask_ask import Ask, session, question, statement, audio, request
 from shutil import copyfile
-from functools import wraps
 
 sys.path += [os.path.dirname(__file__)]
 
@@ -28,17 +27,13 @@ SKILL_ID = os.getenv('SKILL_APPID')
 if SKILL_ID and SKILL_ID != 'None':
   app.config['ASK_APPLICATION_ID'] = SKILL_ID
 
-app.config['LANGUAGES'] = {
-    'en': 'English',
-    'de': 'Deutsch'
-}
+LANGUAGE = os.getenv('LANGUAGE')
+if LANGUAGE and LANGUAGE != 'None' and LANGUAGE == 'de':
+  TEMPLATE_FILE = "templates.de.yaml"
+else:
+  TEMPLATE_FILE = "templates.en.yaml"
 
 CAN_STREAM = music.has_music_functionality()
-
-# If no templates.yaml file, create an empty one so that Flask-ask won't have an error
-template = "templates.yaml"
-if not os.path.isfile(template):
-  open(template, 'w').close()
 
 # According to this: https://alexatutorial.com/flask-ask/configuration.html
 # Timestamp based verification shouldn't be used in production. Use at own risk
@@ -46,24 +41,8 @@ if not os.path.isfile(template):
 
 
 # Needs to be instanced after app is configured
-ask = Ask(app, "/")
-
-
-# Setup the templates.yaml file
-@ask.on_session_started
-def template_locale():
-  locale = request['locale'][:2]
-
-  if not locale in app.config['LANGUAGES'].keys():
-    locale = 'en'
-
-  if(os.path.isfile(template)):
-    os.remove(template)
-
-  if locale == 'en':
-    copyfile('templates.en.yaml', template)
-  elif locale == 'de':
-    copyfile('templates.de.yaml', template)
+# ask = Ask(app, "/", None, TEMPLATE_FILE) # For when PR gets merged on Flask-Ask project
+ask = Ask(app, '/')
 
 
 # Start of intent methods

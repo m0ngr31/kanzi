@@ -1,0 +1,98 @@
+{
+  "name": "Kodi-Alexa Skill",
+  "description": "An Alexa still that let's you control (almost) anything on a Kodi box.",
+  "repository": "https://github.com/m0ngr31/kodi-alexa",
+  "logo": "http://i.imgur.com/BaBCo1t.png",
+  "keywords": ["kodi", "alexa", "python", "flask-ask"],
+  "website": "https://github.com/m0ngr31/kodi-alexa",
+  "env": {
+    "KODI_ADDRESS": {
+      "description": "URL or IP adress to talk to Kodi.*",
+      "value": ""
+    },
+    "KODI_PORT": {
+      "description": "Open port on your router that Kodi is port forwarded.*",
+      "value": ""
+    },
+    "KODI_USERNAME": {
+      "description": "Your Kodi user name.*",
+      "value": ""
+    },
+    "KODI_PASSWORD": {
+      "description": "Your Kodi password.*",
+      "value": ""
+    },
+    "KODI_SCHEME": {
+      "description": "The Kodi webserver only supports HTTP, however if you have a reverse proxy running and have SSL enabled, enter 'https' here. Otherwise, leave blank.",
+      "value": "",
+      "required": false
+    },
+    "KODI_SUBPATH": {
+      "description": "If using a reverse proxy you might need to add an extra bit to the url before 'jsonrpc'.",
+      "value": "",
+      "required": false
+    },
+    "SKILL_APPID": {
+      "description": "Add this to enable verification of requests.",
+      "value": "",
+      "required": false
+    },
+    "SKILL_TZ": {
+      "description": "Your local time zone for responses that include absolute times. See https://en.wikipedia.org/wiki/List_of_tz_database_time_zones. Leave empty or undefined (commented out) if you don't need or want absolute time responses.",
+      "value": "",
+      "required": false
+    },
+    "LANGUAGE": {
+      "description": "If you are German speaker, put 'de' here. If not, leave blank.",
+      "value": "",
+      "required": false
+    },
+    "ACCEPT_MUSIC_WARNING": {
+      "description": "Setup MongoDB to handle playing music from Kodi to your Alexa device. Must accept agreement saying I'm not liable for stolen information since your username and password for Kodi will be stored in plaintext in a database and will be transferred over the internet to a HTTPS proxy server for you to have this functionality.",
+      "value": "",
+      "required": false
+    },
+    "MONGODB_URL": {
+      "description": "MongoDB URL for streaming music.",
+      "value": "",
+      "required": false
+    },
+    "MONGODB_PORT": {
+      "description": "MongoDB port.",
+      "value": "",
+      "required": false
+    },
+    "MONGODB_NAME": {
+      "description": "MongoDB database name",
+      "value": "",
+      "required": false
+    },
+    "MONGODB_USER": {
+      "description": "MongoDB user name.",
+      "value": "",
+      "required": false
+    },
+    "MONGODB_PASS": {
+      "description": "MongoDB password.",
+      "value": "",
+      "required": false
+    },
+    "USE_PROXY": {
+      "description": "Put 'y' here if you would like to use my HTTPS proxy.",
+      "value": "",
+      "required": false
+    },
+    "ALT_PROXY": {
+      "description": "Enter a URL here if you would like to run your own HTTPS proxy.",
+      "value": "",
+      "required": false
+    }
+  },
+  "image": "heroku/python",
+  "addons": [
+    "mongo",
+    {
+      "plan": "mongolab:sandbox"
+    }
+  ]
+}
