@@ -119,6 +119,8 @@ ListenToAudioPlaylistRecent (play/listen to/shuffle) recently added (songs/music
 StreamAudioPlaylistRecent stream recent (songs/music/audio/albums)
 StreamAudioPlaylistRecent stream recently added (songs/music/audio/albums)
 
+StreamThis stream (this/current playlist)
+
 WatchRandomMovie (play/watch) random (/{Genre}) (movie/film)
 
 WatchMovie (play/watch) (movie/film) {Movie}

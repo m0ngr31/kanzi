@@ -122,6 +122,10 @@ what_to_do: "What would you like to do?"
 
 welcome: "Welcome to the Kodi skill."
 
+nothing_currently_playing: "Kodi isn't playing any music right now."
+
+transferring_stream: "Transferring stream from Kodi to Alexa."
+
 
 ############################
 ##  Card Title Templates  ##
@@ -290,6 +294,8 @@ help_card: "Help"
 open_remote_card: "Opening remote"
 
 playback_stopped: "Playback stopped"
+
+streaming_current_playlist: "Streaming current playlist"
 
 
 ############################

@@ -152,6 +152,9 @@
       ]
     },
     {
+      "intent": "StreamThis"
+    },
+    {
       "intent": "ListenToAlbumOrSong",
       "slots": [
         {
