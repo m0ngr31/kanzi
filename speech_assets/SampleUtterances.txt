@@ -600,6 +600,8 @@ StreamPartyMode stream music
 StreamPartyMode stream random music
 StreamSong stream song {Song}
 StreamSong stream song {Song} by {Artist}
+StreamThis stream current playlist
+StreamThis stream this
 SubtitlesNext next subtitle language
 SubtitlesNext next subtitles
 SubtitlesNext switch subtitle language

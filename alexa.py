@@ -943,6 +943,60 @@ def alexa_stream_party_play():
   return statement(response_text).simple_card(card_title, response_text)
 
 
+# Handle the SteamThis intent.
+@ask.intent('StreamThis')
+def alexa_stream_this():
+  card_title = render_template('streaming_current_playlist').encode("utf-8")
+  print card_title
+
+  current_item = kodi.GetActivePlayItem()
+
+  if current_item and current_item['type'] == 'song':
+    play_status = kodi.GetPlayerStatus()
+    playlist_items = []
+    final_playlist = []
+    songs_array = []
+
+    offset = 0
+    current_time = play_status['time']
+    if len(current_time) == 5:
+      x = time.strptime(current_time,'%M:%S')
+    else:
+      x = time.strptime(current_time,'%H:%M:%S')
+    offset = int(datetime.timedelta(hours=x.tm_hour,minutes=x.tm_min,seconds=x.tm_sec).total_seconds()) * 1000
+
+    playlist_result = kodi.GetAudioPlaylistItems()
+
+    if 'items' in playlist_result['result']:
+      playlist_items = playlist_result['result']['items']
+
+    if len(playlist_items) > 0:
+      current_playing = next((x for x in playlist_items if x['id'] == current_item['id']), None)
+      current_index = playlist_items.index(current_playing)
+      final_playlist = playlist_items[current_index:]
+
+    if len(final_playlist) > 0:
+      for song in final_playlist:
+        song_detail = kodi.GetSongIdPath(song['id'])
+        song_detail = song_detail['result']['songdetails']
+        songs_array.append(kodi.PrepareDownload(song_detail['file']))
+
+    if len(songs_array) > 0:
+      playlist_queue = music.MusicPlayer(songs_array)
+
+      kodi.Stop()
+      kodi.ClearAudioPlaylist()
+
+      response_text = render_template('transferring_stream').encode("utf-8")
+      audio('').clear_queue(stop=True)
+      return audio(response_text).play(songs_array[0])
+
+  else:
+    response_text = render_template('nothing_currently_playing')
+
+  return statement(response_text).simple_card(card_title, response_text)
+
+
 # Handle the StartOver intent.
 @ask.intent('StartOver')
 def alexa_start_over():

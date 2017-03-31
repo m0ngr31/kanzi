@@ -1188,6 +1188,8 @@ StreamPartyMode stream zufällige Musik
 StreamPartyMode stream zufällige Songs
 StreamSong stream song {Song}
 StreamSong stream song {Song} by {Artist}
+StreamThis stream Aktuelle playlist
+StreamThis stream this
 SubtitlesNext Untertitel umschalten
 SubtitlesNext nächster Untertitel
 SubtitlesOff Untertitel aus
