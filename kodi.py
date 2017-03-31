@@ -706,6 +706,10 @@ def GetArtistSongsPath(artist_id):
   return SendCommand(RPCString("AudioLibrary.GetSongs", {"filter": {"artistid": int(artist_id)}, "properties":["file"]}))
 
 
+def GetAlbumSongsPath(album_id):
+  return SendCommand(RPCString("AudioLibrary.GetSongs", {"filter": {"albumid": int(album_id)}, "properties":["file"]}))
+
+
 def GetSongs():
   return SendCommand(RPCString("AudioLibrary.GetSongs"))
 
@@ -714,12 +718,20 @@ def GetSongsPath():
   return SendCommand(RPCString("AudioLibrary.GetSongs", {"properties":["file"]}))
 
 
+def GetSongIdPath(song_id):
+  return SendCommand(RPCString("AudioLibrary.GetSongDetails", {"songid": int(song_id), "properties":["file"]}))
+
+
 def GetRecentlyAddedAlbums():
   return SendCommand(RPCString("AudioLibrary.GetRecentlyAddedAlbums", {'properties':['artist']}))
 
 
 def GetRecentlyAddedSongs():
   return SendCommand(RPCString("AudioLibrary.GetRecentlyAddedSongs", {'properties':['artist']}))
+
+
+def GetRecentlyAddedSongsPath():
+  return SendCommand(RPCString("AudioLibrary.GetRecentlyAddedSongs", {'properties':['artist', 'file']}))
 
 
 def GetVideoPlaylists():
