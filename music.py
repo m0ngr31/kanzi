@@ -22,7 +22,9 @@ class MusicPlayer:
     from pymongo import MongoClient
     self.mongo_uri = os.getenv('MONGODB_URI')
     self.client = MongoClient(self.mongo_uri)
-    self.db = self.client[os.getenv('MONGODB_NAME')]
+
+    database_name = self.mongo_uri.rsplit('/', 1)[1] 
+    self.db = self.client[database_name]
     self.playlists = self.db['playlist-info']
 
     if len(urls) > 0:
