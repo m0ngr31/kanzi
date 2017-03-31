@@ -23,7 +23,7 @@ class MusicPlayer:
     self.mongo_uri = os.getenv('MONGODB_URI')
     self.client = MongoClient(self.mongo_uri)
 
-    database_name = self.mongo_uri.rsplit('/', 1)[1] 
+    database_name = self.mongo_uri.rsplit('/', 1)[1]
     self.db = self.client[database_name]
     self.playlists = self.db['playlist-info']
 

@@ -265,9 +265,9 @@ playing_album_card: "Playing album"
 
 streaming_album_card: "Streaming album"
 
-playing_song: "Playing song"
+playing_song_card: "Playing song"
 
-streaming_song: "Streaming song"
+streaming_song_card: "Streaming song"
 
 playing_album_or_song: "Playing album or song"
 
