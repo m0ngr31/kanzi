@@ -265,9 +265,9 @@ playing_album_card: "Spiele Album"
 
 streaming_album_card: "Streaming album"
 
-playing_song: "Spiele Song"
+playing_song_card: "Spiele Song"
 
-streaming_song: "Streaming song"
+streaming_song_card: "Streaming song"
 
 playing_album_or_song: "Spile Album oder Song"
 

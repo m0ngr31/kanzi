@@ -467,7 +467,7 @@ def alexa_stream_album(Album, Artist):
 @ask.intent('ListenToSong')
 def alexa_listen_song(Song, Artist):
   heard_song = str(Song).lower().translate(None, string.punctuation)
-  card_title = render_template('playing_song').encode("utf-8")
+  card_title = render_template('playing_song_card').encode("utf-8")
   print card_title
 
   if Artist:
@@ -527,7 +527,7 @@ def alexa_stream_song(Song, Artist):
     return statement(response_text)
 
   heard_song = str(Song).lower().translate(None, string.punctuation)
-  card_title = render_template('streaming_song').encode("utf-8")
+  card_title = render_template('streaming_song_card').encode("utf-8")
   print card_title
 
   if Artist:
