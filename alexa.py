@@ -870,24 +870,23 @@ def alexa_stream_audio_playlist(AudioPlaylist, shuffle=False):
 
   playlist = kodi.FindAudioPlaylist(heard_search)
   if playlist:
-    if shuffle:
-      songs = kodi.GetPlaylistItems(playlist)['result']['files']
+    songs = kodi.GetPlaylistItems(playlist)['result']['files']
 
-      songs_array = []
+    songs_array = []
 
-      for song in songs:
-        songs_array.append(song['id'])
+    for song in songs:
+      songs_array.append(kodi.PrepareDownload(song['file']))
 
-# XXXXXXXXXXXX
-#      kodi.Stop()
-#      kodi.ClearAudioPlaylist()
-#      kodi.AddSongsToPlaylist(songs_array, True)
-#      kodi.StartAudioPlaylist()
-#    else:
-#      kodi.Stop()
-#      kodi.StartAudioPlaylist(playlist)
-# XXXXXXXXXXXX
-    response_text = render_template('playing_playlist', action=op, playlist_name=heard_search).encode("utf-8")
+    if len(songs_array) > 0:
+      if shuffle:
+        random.shuffle(songs_array)
+      playlist_queue = music.MusicPlayer(songs_array)
+
+      response_text = render_template('playing_playlist', action=op, playlist_name=heard_search).encode("utf-8")
+      audio('').clear_queue(stop=True)
+      return audio(response_text).play(songs_array[0])
+    else:
+      response_text = render_template('could_not_find_playlist', heard_name=heard_search).encode("utf-8")
   else:
     response_text = render_template('could_not_find_playlist', heard_name=heard_search).encode("utf-8")
 
