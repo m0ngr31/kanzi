@@ -1118,6 +1118,10 @@ StartOver von vorne
 StartOver wiederhol
 StartOver wiederhole
 StartOver wiederholen
+StreamAlbum stream album {Album}
+StreamAlbum stream album {Album} by {Artist}
+StreamAlbumOrSong stream {Album} by {Artist}
+StreamAlbumOrSong stream {Song} by {Artist}
 StreamArtist Stream Lieder von dem Artist {Artist}
 StreamArtist Stream Lieder von dem Komponist {Artist}
 StreamArtist Stream Lieder von dem Künstler {Artist}
@@ -1154,6 +1158,22 @@ StreamArtist Stream Songs von der Gruppe {Artist}
 StreamArtist Stream Songs von der Komponistin {Artist}
 StreamArtist Stream Songs von der Künstlerin {Artist}
 StreamArtist Stream Songs von {Artist}
+StreamAudioPlaylist stream audio playlist {AudioPlaylist}
+StreamAudioPlaylist stream music playlist {AudioPlaylist}
+StreamAudioPlaylist stream playlist {AudioPlaylist}
+StreamAudioPlaylist stream song playlist {AudioPlaylist}
+StreamAudioPlaylist stream {AudioPlaylist} audio playlist
+StreamAudioPlaylist stream {AudioPlaylist} music playlist
+StreamAudioPlaylist stream {AudioPlaylist} playlist
+StreamAudioPlaylist stream {AudioPlaylist} song playlist
+StreamAudioPlaylistRecent stream recent albums
+StreamAudioPlaylistRecent stream recent audio
+StreamAudioPlaylistRecent stream recent music
+StreamAudioPlaylistRecent stream recent songs
+StreamAudioPlaylistRecent stream recently added albums
+StreamAudioPlaylistRecent stream recently added audio
+StreamAudioPlaylistRecent stream recently added music
+StreamAudioPlaylistRecent stream recently added songs
 StreamPartyMode stream Lieder
 StreamPartyMode stream Mucke
 StreamPartyMode stream Musik
@@ -1166,6 +1186,10 @@ StreamPartyMode stream zufällige Lieder
 StreamPartyMode stream zufällige Mucke
 StreamPartyMode stream zufällige Musik
 StreamPartyMode stream zufällige Songs
+StreamSong stream song {Song}
+StreamSong stream song {Song} by {Artist}
+StreamThis stream Aktuelle playlist
+StreamThis stream this
 SubtitlesNext Untertitel umschalten
 SubtitlesNext nächster Untertitel
 SubtitlesOff Untertitel aus
