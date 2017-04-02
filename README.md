@@ -1,14 +1,8 @@
 # Alexa integration with Kodi
 
-## Upgrade to v2.5
+## Updating
 
-For those of you doing an upgrade to the new version, please run the Slot generator again and repopulate all of your slots with the output. If you don't do this, the skill might seem to successfully build and save, but those with large libraries may encounter issues at runtime.
-
-Besides the above, users on Heroku should just be able to do a `git pull` and `git push heroku master` to upgrade.
-
-For Lambda users, the setup is completely different now, so please check the new documentaion.
-
-When upgrading the code in general, remember to always update the Intents and Utterances in the skill.  If new slots were added, you will need to add those as well.
+If you are updating from a previous version, please browse to the UPGRADING.md file and look at what you need to do.
 
 ## About
 
@@ -68,29 +62,9 @@ If you plan on running your own Apache/Nginx server, I'm sure you can figure tha
 [Heroku](https://heroku.com/) is a great way to get a server running for free, but there is a small limitation with the free tier on Heroku where the 'dyno' will go to sleep after 30 minutes of in-activity. This might cause some commands to timeout, but so far it seems to be the best option for getting up and running as quickly as possibly. To get around this, you can either pay for a "Hobby" server which is only $7/month. If you really don't want to pay, there is a work-a-round where you get enough free hours a month to leave this server running 24/7 if you add your Credit Card to your account. Then you can use something like [Kaffeine](http://kaffeine.herokuapp.com/) to keep it from spinning down.
 
 ### Setup
-After you've setup an Heroku account, go ahead and [install the command line tool](https://toolbelt.heroku.com/). Once installed, open up a command line and run `heroku login`.
+After you've setup an Heroku account, click on this button below to provision a new server. Select a unique name to make upgrades easy.
 
-To create a new app, just run this from the command line: `heroku apps:create`. If that runs successfully, you'll see something like this:
-![Create app](http://i.imgur.com/C17Ts7L.png)
-
-Now, clone my repo: `git clone https://github.com/m0ngr31/kodi-alexa.git` and `cd kodi-alexa`.
-
-Once you have my repo cloned and you are in the directory, you can setup the following environment variables to talk to your Kodi box:
-
-- KODI_ADDRESS
-- KODI_PORT
-- KODI_USERNAME
-- KODI_PASSWORD
-
-You can do this easily from the command line: `heroku config:set KODI_ADDRESS='your_ip_or_dynamic_address' KODI_PORT='kodi_port' KODI_USERNAME='kodi_username' KODI_PASSWORD='kodi_password' --app app-name-and-number`. Changing of course for your settings. You can also use the settings page on your Heroku app to add these.
-
-Now run `git remote add heroku https://git.heroku.com/your_apps_name_and_number.git`. This command will allow heroku to deploy new code based on what is in your directory.
-
-Next, run `git push heroku master`. This will push the code to Heroku and deploy the server!
-
-Heroku doesn't just fire up the server automatically, so you have to tell it to: `heroku ps:scale web=1 --app app-name-and-number`. Now you are ready to setup the Alexa skill.
-
-*If I release a new update here, just browse to the repo directory in your terminal, and run these commands: `git pull origin master` and `git push heroku master`*
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://www.heroku.com/deploy/?template=https://github.com/m0ngr31/kodi-alexa)
 
 Now skip ahead to the [Skill setup section](#skill-setup).
 
@@ -194,9 +168,7 @@ This skill now supports streaming music from your Kodi device over the internet 
 Here is the disclaimer:
 **You must accept this agreement saying that I'm not liable for stolen information since your username and password for Kodi will be stored in plaintext in a database and will be transferred over the internet to a HTTPS proxy server for you to have this functionality.**
 
-You'll need to configure the MONGODB_URL, MONGODB_PORT, MONGODB_NAME, MONGODB_USER, MONGODB_PASS and ACCEPT_MUSIC_WARNING variables makes it so you can stream music from your Kodi device over the internet to Alexa.
-
-You'll also need to run `pip install pymongo` (inside your virtualenv if you are on Lambda).
+You'll need to configure the MONGODB_URI and ACCEPT_MUSIC_WARNING variables makes it so you can stream music from your Kodi device over the internet to Alexa.
 
 Since Alexa requires that all music it streams use HTTPS traffic, you'll need a proxy to provide this because Kodi only has plain HTTP. The USE_PROXY variable will enable your music to stream through a [simple proxy I built](https://github.com/m0ngr31/kodi-music-proxy) to make it easy. The ALT_PROXY is there if you want to self host the proxy server so you don't have to trust or rely on mine.
 
