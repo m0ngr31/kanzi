@@ -184,10 +184,8 @@ def alexa_play_pause():
   return statement(response_text).simple_card(card_title, response_text)
 
 
-# Handle the AMAZON.StopIntent intent.
-@ask.intent('AMAZON.StopIntent')
-def alexa_stop():
-  if not 'navigating' in session.attributes:
+def alexa_stop_cancel():
+  if session.new:
     card_title = render_template('stopping').encode("utf-8")
     print card_title
 
@@ -195,6 +193,46 @@ def alexa_stop():
     response_text = render_template('playback_stopped').encode("utf-8")
 
     return statement(response_text).simple_card(card_title, response_text)
+  else:
+    return statement("")
+
+
+# Handle the AMAZON.StopIntent intent.
+@ask.intent('AMAZON.StopIntent')
+def alexa_stop():
+  return alexa_stop_cancel()
+
+
+# Handle the AMAZON.CancelIntent intent.
+@ask.intent('AMAZON.CancelIntent')
+def alexa_cancel():
+  return alexa_stop_cancel()
+
+
+# Handle the AMAZON.YesIntent intent.
+@ask.intent('AMAZON.YesIntent')
+def alexa_yes():
+  if 'shutting_down' in session.attributes:
+    quit = os.getenv('SHUTDOWN_MEANS_QUIT')
+    if quit and quit != 'None':
+      card_title = render_template('quitting').encode("utf-8")
+      kodi.ApplicationQuit()
+    else:
+      card_title = render_template('shutting_down').encode("utf-8")
+      kodi.SystemShutdown()
+  elif 'rebooting' in session.attributes:
+    card_title = render_template('rebooting').encode("utf-8")
+    kodi.SystemReboot()
+  elif 'hibernating' in session.attributes:
+    card_title = render_template('hibernating').encode("utf-8")
+    kodi.SystemHibernate()
+  elif 'suspending' in session.attributes:
+    card_title = render_template('suspending_system').encode("utf-8")
+    kodi.SystemSuspend()
+
+  if card_title:
+    print card_title
+    return statement(card_title).simple_card(card_title, "")
   else:
     return statement("")
 
@@ -1561,52 +1599,36 @@ def alexa_back():
   return question(response_text).reprompt(response_text)
 
 
-# Handle the Hibernate intent.
-@ask.intent('Hibernate')
-def alexa_hibernate():
-  card_title = render_template('hibernating').encode("utf-8")
-  print card_title
-
-  kodi.SystemHibernate()
-
-  return statement(card_title).simple_card(card_title, "")
+# Handle the Shutdown intent.
+@ask.intent('Shutdown')
+def alexa_shutdown():
+  response_text = render_template('are_you_sure').encode("utf-8")
+  session.attributes['shutting_down'] = True
+  return question(response_text).reprompt(response_text)
 
 
 # Handle the Reboot intent.
 @ask.intent('Reboot')
 def alexa_reboot():
-  card_title = render_template('rebooting').encode("utf-8")
-  print card_title
-
-  kodi.SystemReboot()
-
-  return statement(card_title).simple_card(card_title, "")
+  response_text = render_template('are_you_sure').encode("utf-8")
+  session.attributes['rebooting'] = True
+  return question(response_text).reprompt(response_text)
 
 
-# Handle the Shutdown intent.
-@ask.intent('Shutdown')
-def alexa_shutdown():
-  quit = os.getenv('SHUTDOWN_MEANS_QUIT')
-  if quit and quit != 'None':
-    card_title = render_template('quitting').encode("utf-8")
-    kodi.ApplicationQuit()
-  else:
-    card_title = render_template('shutting_down').encode("utf-8")
-    kodi.SystemShutdown()
-  print card_title
-
-  return statement(card_title).simple_card(card_title, "")
+# Handle the Hibernate intent.
+@ask.intent('Hibernate')
+def alexa_hibernate():
+  response_text = render_template('are_you_sure').encode("utf-8")
+  session.attributes['hibernating'] = True
+  return question(response_text).reprompt(response_text)
 
 
 # Handle the Suspend intent.
 @ask.intent('Suspend')
 def alexa_suspend():
-  card_title = render_template('suspending_system').encode("utf-8")
-  print card_title
-
-  kodi.SystemSuspend()
-
-  return statement(card_title).simple_card(card_title, "")
+  response_text = render_template('are_you_sure').encode("utf-8")
+  session.attributes['suspending'] = True
+  return question(response_text).reprompt(response_text)
 
 
 # Handle the EjectMedia intent.
