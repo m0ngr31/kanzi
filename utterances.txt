@@ -9,8 +9,6 @@
 
 PlayPause (play/pause/resume)
 
-AMAZON.StopIntent (stop/cancel/shut up)
-
 Skip skip (/this) (/audio/video/movie/film/show/episode/song/track)
 Skip (next/play (/the) next) (/audio/video/movie/film/show/episode/song/track)
 Skip listen to (/the) next (/audio/song/track)
