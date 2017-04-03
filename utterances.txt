@@ -11,14 +11,19 @@ PlayPause (play/pause/resume)
 
 AMAZON.StopIntent (stop/cancel/shut up)
 
-Skip (skip/next) (/song)
-Skip (listen to/play) next (/song)
+Skip skip (/this) (/audio/video/movie/film/show/episode/song/track)
+Skip (next/play (/the) next) (/audio/video/movie/film/show/episode/song/track)
+Skip listen to (/the) next (/audio/song/track)
+Skip watch (/the) next (/video/movie/film/show/episode)
 
-Prev (/listen to/play) previous (/song)
+Prev previous
+Prev play (/the) previous (/audio/video/movie/film/show/episode/song/track)
+Prev listen to (/the) previous (/audio/song/track)
+Prev watch (/the) previous (/video/movie/film/show/episode)
 
 StartOver (replay/start over)
 
-Home navigate home
+Home (navigate/go) home
 
 Back (/navigate/go) back
 Up (/navigate/go) up
@@ -87,30 +92,30 @@ ListenToArtist (play/listen to/shuffle) (music by/artist) {Artist}
 
 StreamArtist stream (music by/artist) {Artist}
 
-ListenToAlbum (play/listen to) album {Album}
-ListenToAlbum (play/listen to) album {Album} by {Artist}
+ListenToAlbum (play/listen to) (/the) album {Album}
+ListenToAlbum (play/listen to) (/the) album {Album} by {Artist}
 
-StreamAlbum stream album {Album}
-StreamAlbum stream album {Album} by {Artist}
+StreamAlbum stream (/the) album {Album}
+StreamAlbum stream (/the) album {Album} by {Artist}
 
-ListenToSong (play/listen to) song {Song}
-ListenToSong (play/listen to) song {Song} by {Artist}
+ListenToSong (play/listen to) (/the) song {Song}
+ListenToSong (play/listen to) (/the) song {Song} by {Artist}
 
-StreamSong stream song {Song}
-StreamSong stream song {Song} by {Artist}
+StreamSong stream (/the) song {Song}
+StreamSong stream (/the) song {Song} by {Artist}
 
-ListenToAlbumOrSong (play/listen to) {Album} by {Artist}
-ListenToAlbumOrSong (play/listen to) {Song} by {Artist}
+ListenToAlbumOrSong (play/listen to) (/the) {Album} by {Artist}
+ListenToAlbumOrSong (play/listen to) (/the) {Song} by {Artist}
 
-StreamAlbumOrSong stream {Album} by {Artist}
-StreamAlbumOrSong stream {Song} by {Artist}
+StreamAlbumOrSong stream (/the) {Album} by {Artist}
+StreamAlbumOrSong stream (/the) {Song} by {Artist}
 
-ListenToAudioPlaylist (play/listen to) (song/music/audio) playlist {AudioPlaylist}
-ListenToAudioPlaylist (play/listen to) {AudioPlaylist} (song/music/audio) playlist
-ListenToAudioPlaylist listen to playlist {AudioPlaylist}
+ListenToAudioPlaylist (play/listen to) (/the) (song/music/audio) playlist {AudioPlaylist}
+ListenToAudioPlaylist (play/listen to) (/the) {AudioPlaylist} (song/music/audio) playlist
+ListenToAudioPlaylist listen to (/the) playlist {AudioPlaylist}
 ListenToAudioPlaylist listen to {AudioPlaylist} playlist
 
-StreamAudioPlaylist stream (song/music/audio/) playlist {AudioPlaylist}
+StreamAudioPlaylist stream (/the) (song/music/audio/) playlist {AudioPlaylist}
 StreamAudioPlaylist stream {AudioPlaylist} (song/music/audio/) playlist
 
 ListenToAudioPlaylistRecent (play/listen to/shuffle) recent (songs/music/audio/albums)
@@ -121,34 +126,34 @@ StreamAudioPlaylistRecent stream recently added (songs/music/audio/albums)
 
 StreamThis stream (this/current playlist)
 
-WatchRandomMovie (play/watch) random (/{Genre}) (movie/film)
+WatchRandomMovie (play/watch) (/a) random (/{Genre}) (movie/film)
 
-WatchMovie (play/watch) (movie/film) {Movie}
+WatchMovie (play/watch) (/the) (movie/film) {Movie}
 
 WatchEpisode (play/watch) (season/series) {Season} episode {Episode} of {Show}
 
 WatchRandomEpisode (play/watch) (/random) episode of {Show}
 
-WatchNextEpisode (play/watch) next episode of {Show}
+WatchNextEpisode (play/watch) (/the) next episode of {Show}
 
-WatchLastShow continue (/watching/playing) (/last) show
+WatchLastShow continue (/watching/playing) (/last/the last) show
 
-WatchLatestEpisode (play/watch) (newest/latest) episode of {Show}
+WatchLatestEpisode (play/watch) (/the) (newest/latest) episode of {Show}
 
-WatchVideoPlaylist (play/watch) (movie/show/video) playlist {VideoPlaylist}
+WatchVideoPlaylist (play/watch) (/the) (movie/show/video) playlist {VideoPlaylist}
 WatchVideoPlaylist (play/watch) {VideoPlaylist} (movie/show/video) playlist
-WatchVideoPlaylist watch playlist {VideoPlaylist}
+WatchVideoPlaylist watch (/the) playlist {VideoPlaylist}
 WatchVideoPlaylist watch {VideoPlaylist} playlist
 
-ShuffleAudioPlaylist shuffle (song/music/audio) playlist {AudioPlaylist}
+ShuffleAudioPlaylist shuffle (/the) (song/music/audio) playlist {AudioPlaylist}
 ShuffleAudioPlaylist shuffle {AudioPlaylist} (song/music/audio) playlist
 
-ShuffleVideoPlaylist shuffle (movie/show/video) playlist {VideoPlaylist}
+ShuffleVideoPlaylist shuffle (/the) (movie/show/video) playlist {VideoPlaylist}
 ShuffleVideoPlaylist shuffle {VideoPlaylist} (movie/show/video) playlist
 
-ShufflePlaylist shuffle playlist {AudioPlaylist}
+ShufflePlaylist shuffle (/the) playlist {AudioPlaylist}
 ShufflePlaylist shuffle {AudioPlaylist} playlist
-ShufflePlaylist shuffle playlist {VideoPlaylist}
+ShufflePlaylist shuffle (/the) playlist {VideoPlaylist}
 ShufflePlaylist shuffle {VideoPlaylist} playlist
 
 WhatNewAlbums (if there are/are there/do (we/i) have) (/any/some) new albums (/recorded) (/to listen to) (/today/tonight)
@@ -176,13 +181,13 @@ PartyMode shuffle all music
 
 StreamPartyMode stream (/random/all/) music
 
-CurrentPlayItemInquiry what (/song/audio/video/movie/film/episode/show) is (this/playing/currently playing)
+CurrentPlayItemInquiry what (/audio/video/movie/film/show/episode/song/track) is (this/playing/currently playing)
 
-CurrentPlayItemTimeRemaining how much (/time) is (left/remaining) on (my/this) (audio/video/movie/film/show/episode/song)
+CurrentPlayItemTimeRemaining how much (/time) is (left/remaining) on (my/this) (audio/video/movie/film/show/episode/song/track)
 CurrentPlayItemTimeRemaining how much (/time) is (left/remaining)
-CurrentPlayItemTimeRemaining how much longer is (/my/this) (audio/video/movie/film/show/episode/song)
+CurrentPlayItemTimeRemaining how much longer is (/my/this) (audio/video/movie/film/show/episode/song/track)
 CurrentPlayItemTimeRemaining how much longer is this
-CurrentPlayItemTimeRemaining (when/what time) (will/does) (/my/this) (audio/video/movie/film/show/episode/song) end
+CurrentPlayItemTimeRemaining (when/what time) (will/does) (/my/this) (audio/video/movie/film/show/episode/song/track) end
 CurrentPlayItemTimeRemaining (when/what time) (will/does) this end
 CurrentPlayItemTimeRemaining (when/what time) this (ends/is over)
 CurrentPlayItemTimeRemaining (when/what time) is this over
