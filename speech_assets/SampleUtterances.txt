@@ -1,6 +1,3 @@
-AMAZON.StopIntent cancel
-AMAZON.StopIntent shut up
-AMAZON.StopIntent stop
 AddonExecute execute addon {Addon}
 AddonExecute execute plugin {Addon}
 AddonExecute execute script {Addon}

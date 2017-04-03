@@ -1,7 +1,3 @@
-AMAZON.StopIntent anhalten
-AMAZON.StopIntent halt
-AMAZON.StopIntent halt's maul
-AMAZON.StopIntent stop
 AddonExecute führe addon {Addon} aus
 AddonExecute führe erweiterung {Addon} aus
 AddonExecute führe plugin {Addon} aus
