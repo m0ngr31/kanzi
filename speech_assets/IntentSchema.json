@@ -58,6 +58,9 @@
       "intent": "AMAZON.StopIntent"
     },
     {
+      "intent": "AMAZON.NoIntent"
+    },
+    {
       "intent": "AMAZON.YesIntent"
     },
     {

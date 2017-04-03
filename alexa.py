@@ -209,6 +209,12 @@ def alexa_cancel():
   return alexa_stop_cancel()
 
 
+# Handle the AMAZON.NoIntent intent.
+@ask.intent('AMAZON.NoIntent')
+def alexa_no():
+  return alexa_stop_cancel()
+
+
 # Handle the AMAZON.YesIntent intent.
 @ask.intent('AMAZON.YesIntent')
 def alexa_yes():
