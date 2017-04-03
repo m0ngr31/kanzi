@@ -57,6 +57,9 @@ CurrentPlayItemInquiry what show is this
 CurrentPlayItemInquiry what song is currently playing
 CurrentPlayItemInquiry what song is playing
 CurrentPlayItemInquiry what song is this
+CurrentPlayItemInquiry what track is currently playing
+CurrentPlayItemInquiry what track is playing
+CurrentPlayItemInquiry what track is this
 CurrentPlayItemInquiry what video is currently playing
 CurrentPlayItemInquiry what video is playing
 CurrentPlayItemInquiry what video is this
@@ -67,6 +70,7 @@ CurrentPlayItemTimeRemaining how much is left on my film
 CurrentPlayItemTimeRemaining how much is left on my movie
 CurrentPlayItemTimeRemaining how much is left on my show
 CurrentPlayItemTimeRemaining how much is left on my song
+CurrentPlayItemTimeRemaining how much is left on my track
 CurrentPlayItemTimeRemaining how much is left on my video
 CurrentPlayItemTimeRemaining how much is left on this audio
 CurrentPlayItemTimeRemaining how much is left on this episode
@@ -74,6 +78,7 @@ CurrentPlayItemTimeRemaining how much is left on this film
 CurrentPlayItemTimeRemaining how much is left on this movie
 CurrentPlayItemTimeRemaining how much is left on this show
 CurrentPlayItemTimeRemaining how much is left on this song
+CurrentPlayItemTimeRemaining how much is left on this track
 CurrentPlayItemTimeRemaining how much is left on this video
 CurrentPlayItemTimeRemaining how much is remaining
 CurrentPlayItemTimeRemaining how much is remaining on my audio
@@ -82,6 +87,7 @@ CurrentPlayItemTimeRemaining how much is remaining on my film
 CurrentPlayItemTimeRemaining how much is remaining on my movie
 CurrentPlayItemTimeRemaining how much is remaining on my show
 CurrentPlayItemTimeRemaining how much is remaining on my song
+CurrentPlayItemTimeRemaining how much is remaining on my track
 CurrentPlayItemTimeRemaining how much is remaining on my video
 CurrentPlayItemTimeRemaining how much is remaining on this audio
 CurrentPlayItemTimeRemaining how much is remaining on this episode
@@ -89,6 +95,7 @@ CurrentPlayItemTimeRemaining how much is remaining on this film
 CurrentPlayItemTimeRemaining how much is remaining on this movie
 CurrentPlayItemTimeRemaining how much is remaining on this show
 CurrentPlayItemTimeRemaining how much is remaining on this song
+CurrentPlayItemTimeRemaining how much is remaining on this track
 CurrentPlayItemTimeRemaining how much is remaining on this video
 CurrentPlayItemTimeRemaining how much longer is audio
 CurrentPlayItemTimeRemaining how much longer is episode
@@ -100,6 +107,7 @@ CurrentPlayItemTimeRemaining how much longer is my film
 CurrentPlayItemTimeRemaining how much longer is my movie
 CurrentPlayItemTimeRemaining how much longer is my show
 CurrentPlayItemTimeRemaining how much longer is my song
+CurrentPlayItemTimeRemaining how much longer is my track
 CurrentPlayItemTimeRemaining how much longer is my video
 CurrentPlayItemTimeRemaining how much longer is show
 CurrentPlayItemTimeRemaining how much longer is song
@@ -110,7 +118,9 @@ CurrentPlayItemTimeRemaining how much longer is this film
 CurrentPlayItemTimeRemaining how much longer is this movie
 CurrentPlayItemTimeRemaining how much longer is this show
 CurrentPlayItemTimeRemaining how much longer is this song
+CurrentPlayItemTimeRemaining how much longer is this track
 CurrentPlayItemTimeRemaining how much longer is this video
+CurrentPlayItemTimeRemaining how much longer is track
 CurrentPlayItemTimeRemaining how much longer is video
 CurrentPlayItemTimeRemaining how much time is left
 CurrentPlayItemTimeRemaining how much time is left on my audio
@@ -119,6 +129,7 @@ CurrentPlayItemTimeRemaining how much time is left on my film
 CurrentPlayItemTimeRemaining how much time is left on my movie
 CurrentPlayItemTimeRemaining how much time is left on my show
 CurrentPlayItemTimeRemaining how much time is left on my song
+CurrentPlayItemTimeRemaining how much time is left on my track
 CurrentPlayItemTimeRemaining how much time is left on my video
 CurrentPlayItemTimeRemaining how much time is left on this audio
 CurrentPlayItemTimeRemaining how much time is left on this episode
@@ -126,6 +137,7 @@ CurrentPlayItemTimeRemaining how much time is left on this film
 CurrentPlayItemTimeRemaining how much time is left on this movie
 CurrentPlayItemTimeRemaining how much time is left on this show
 CurrentPlayItemTimeRemaining how much time is left on this song
+CurrentPlayItemTimeRemaining how much time is left on this track
 CurrentPlayItemTimeRemaining how much time is left on this video
 CurrentPlayItemTimeRemaining how much time is remaining
 CurrentPlayItemTimeRemaining how much time is remaining on my audio
@@ -134,6 +146,7 @@ CurrentPlayItemTimeRemaining how much time is remaining on my film
 CurrentPlayItemTimeRemaining how much time is remaining on my movie
 CurrentPlayItemTimeRemaining how much time is remaining on my show
 CurrentPlayItemTimeRemaining how much time is remaining on my song
+CurrentPlayItemTimeRemaining how much time is remaining on my track
 CurrentPlayItemTimeRemaining how much time is remaining on my video
 CurrentPlayItemTimeRemaining how much time is remaining on this audio
 CurrentPlayItemTimeRemaining how much time is remaining on this episode
@@ -141,6 +154,7 @@ CurrentPlayItemTimeRemaining how much time is remaining on this film
 CurrentPlayItemTimeRemaining how much time is remaining on this movie
 CurrentPlayItemTimeRemaining how much time is remaining on this show
 CurrentPlayItemTimeRemaining how much time is remaining on this song
+CurrentPlayItemTimeRemaining how much time is remaining on this track
 CurrentPlayItemTimeRemaining how much time is remaining on this video
 CurrentPlayItemTimeRemaining what time does audio end
 CurrentPlayItemTimeRemaining what time does episode end
@@ -152,6 +166,7 @@ CurrentPlayItemTimeRemaining what time does my film end
 CurrentPlayItemTimeRemaining what time does my movie end
 CurrentPlayItemTimeRemaining what time does my show end
 CurrentPlayItemTimeRemaining what time does my song end
+CurrentPlayItemTimeRemaining what time does my track end
 CurrentPlayItemTimeRemaining what time does my video end
 CurrentPlayItemTimeRemaining what time does show end
 CurrentPlayItemTimeRemaining what time does song end
@@ -162,7 +177,9 @@ CurrentPlayItemTimeRemaining what time does this film end
 CurrentPlayItemTimeRemaining what time does this movie end
 CurrentPlayItemTimeRemaining what time does this show end
 CurrentPlayItemTimeRemaining what time does this song end
+CurrentPlayItemTimeRemaining what time does this track end
 CurrentPlayItemTimeRemaining what time does this video end
+CurrentPlayItemTimeRemaining what time does track end
 CurrentPlayItemTimeRemaining what time does video end
 CurrentPlayItemTimeRemaining what time is this over
 CurrentPlayItemTimeRemaining what time this ends
@@ -177,6 +194,7 @@ CurrentPlayItemTimeRemaining what time will my film end
 CurrentPlayItemTimeRemaining what time will my movie end
 CurrentPlayItemTimeRemaining what time will my show end
 CurrentPlayItemTimeRemaining what time will my song end
+CurrentPlayItemTimeRemaining what time will my track end
 CurrentPlayItemTimeRemaining what time will my video end
 CurrentPlayItemTimeRemaining what time will show end
 CurrentPlayItemTimeRemaining what time will song end
@@ -187,7 +205,9 @@ CurrentPlayItemTimeRemaining what time will this film end
 CurrentPlayItemTimeRemaining what time will this movie end
 CurrentPlayItemTimeRemaining what time will this show end
 CurrentPlayItemTimeRemaining what time will this song end
+CurrentPlayItemTimeRemaining what time will this track end
 CurrentPlayItemTimeRemaining what time will this video end
+CurrentPlayItemTimeRemaining what time will track end
 CurrentPlayItemTimeRemaining what time will video end
 CurrentPlayItemTimeRemaining when does audio end
 CurrentPlayItemTimeRemaining when does episode end
@@ -199,6 +219,7 @@ CurrentPlayItemTimeRemaining when does my film end
 CurrentPlayItemTimeRemaining when does my movie end
 CurrentPlayItemTimeRemaining when does my show end
 CurrentPlayItemTimeRemaining when does my song end
+CurrentPlayItemTimeRemaining when does my track end
 CurrentPlayItemTimeRemaining when does my video end
 CurrentPlayItemTimeRemaining when does show end
 CurrentPlayItemTimeRemaining when does song end
@@ -209,7 +230,9 @@ CurrentPlayItemTimeRemaining when does this film end
 CurrentPlayItemTimeRemaining when does this movie end
 CurrentPlayItemTimeRemaining when does this show end
 CurrentPlayItemTimeRemaining when does this song end
+CurrentPlayItemTimeRemaining when does this track end
 CurrentPlayItemTimeRemaining when does this video end
+CurrentPlayItemTimeRemaining when does track end
 CurrentPlayItemTimeRemaining when does video end
 CurrentPlayItemTimeRemaining when is this over
 CurrentPlayItemTimeRemaining when this ends
@@ -224,6 +247,7 @@ CurrentPlayItemTimeRemaining when will my film end
 CurrentPlayItemTimeRemaining when will my movie end
 CurrentPlayItemTimeRemaining when will my show end
 CurrentPlayItemTimeRemaining when will my song end
+CurrentPlayItemTimeRemaining when will my track end
 CurrentPlayItemTimeRemaining when will my video end
 CurrentPlayItemTimeRemaining when will show end
 CurrentPlayItemTimeRemaining when will song end
@@ -234,7 +258,9 @@ CurrentPlayItemTimeRemaining when will this film end
 CurrentPlayItemTimeRemaining when will this movie end
 CurrentPlayItemTimeRemaining when will this show end
 CurrentPlayItemTimeRemaining when will this song end
+CurrentPlayItemTimeRemaining when will this track end
 CurrentPlayItemTimeRemaining when will this video end
+CurrentPlayItemTimeRemaining when will track end
 CurrentPlayItemTimeRemaining when will video end
 Down down
 Down go down
@@ -255,16 +281,25 @@ Hibernate deep sleep
 Hibernate deep sleep system
 Hibernate hibernate
 Hibernate hibernate system
+Home go home
 Home navigate home
 Left go left
 Left left
 Left navigate left
 ListenToAlbum listen to album {Album}
 ListenToAlbum listen to album {Album} by {Artist}
+ListenToAlbum listen to the album {Album}
+ListenToAlbum listen to the album {Album} by {Artist}
 ListenToAlbum play album {Album}
 ListenToAlbum play album {Album} by {Artist}
+ListenToAlbum play the album {Album}
+ListenToAlbum play the album {Album} by {Artist}
+ListenToAlbumOrSong listen to the {Album} by {Artist}
+ListenToAlbumOrSong listen to the {Song} by {Artist}
 ListenToAlbumOrSong listen to {Album} by {Artist}
 ListenToAlbumOrSong listen to {Song} by {Artist}
+ListenToAlbumOrSong play the {Album} by {Artist}
+ListenToAlbumOrSong play the {Song} by {Artist}
 ListenToAlbumOrSong play {Album} by {Artist}
 ListenToAlbumOrSong play {Song} by {Artist}
 ListenToArtist listen to artist {Artist}
@@ -277,6 +312,13 @@ ListenToAudioPlaylist listen to audio playlist {AudioPlaylist}
 ListenToAudioPlaylist listen to music playlist {AudioPlaylist}
 ListenToAudioPlaylist listen to playlist {AudioPlaylist}
 ListenToAudioPlaylist listen to song playlist {AudioPlaylist}
+ListenToAudioPlaylist listen to the audio playlist {AudioPlaylist}
+ListenToAudioPlaylist listen to the music playlist {AudioPlaylist}
+ListenToAudioPlaylist listen to the playlist {AudioPlaylist}
+ListenToAudioPlaylist listen to the song playlist {AudioPlaylist}
+ListenToAudioPlaylist listen to the {AudioPlaylist} audio playlist
+ListenToAudioPlaylist listen to the {AudioPlaylist} music playlist
+ListenToAudioPlaylist listen to the {AudioPlaylist} song playlist
 ListenToAudioPlaylist listen to {AudioPlaylist} audio playlist
 ListenToAudioPlaylist listen to {AudioPlaylist} music playlist
 ListenToAudioPlaylist listen to {AudioPlaylist} playlist
@@ -284,6 +326,12 @@ ListenToAudioPlaylist listen to {AudioPlaylist} song playlist
 ListenToAudioPlaylist play audio playlist {AudioPlaylist}
 ListenToAudioPlaylist play music playlist {AudioPlaylist}
 ListenToAudioPlaylist play song playlist {AudioPlaylist}
+ListenToAudioPlaylist play the audio playlist {AudioPlaylist}
+ListenToAudioPlaylist play the music playlist {AudioPlaylist}
+ListenToAudioPlaylist play the song playlist {AudioPlaylist}
+ListenToAudioPlaylist play the {AudioPlaylist} audio playlist
+ListenToAudioPlaylist play the {AudioPlaylist} music playlist
+ListenToAudioPlaylist play the {AudioPlaylist} song playlist
 ListenToAudioPlaylist play {AudioPlaylist} audio playlist
 ListenToAudioPlaylist play {AudioPlaylist} music playlist
 ListenToAudioPlaylist play {AudioPlaylist} song playlist
@@ -313,8 +361,12 @@ ListenToAudioPlaylistRecent shuffle recently added music
 ListenToAudioPlaylistRecent shuffle recently added songs
 ListenToSong listen to song {Song}
 ListenToSong listen to song {Song} by {Artist}
+ListenToSong listen to the song {Song}
+ListenToSong listen to the song {Song} by {Artist}
 ListenToSong play song {Song}
 ListenToSong play song {Song} by {Artist}
+ListenToSong play the song {Song}
+ListenToSong play the song {Song} by {Artist}
 Menu open menu
 Mute mute
 Mute set mute
@@ -525,11 +577,44 @@ PlayerZoomOutMoveUp zoom out and track up
 PlayerZoomReset normal zoom
 PlayerZoomReset reset zoom
 Prev listen to previous
+Prev listen to previous audio
 Prev listen to previous song
+Prev listen to previous track
+Prev listen to the previous
+Prev listen to the previous audio
+Prev listen to the previous song
+Prev listen to the previous track
 Prev play previous
+Prev play previous audio
+Prev play previous episode
+Prev play previous film
+Prev play previous movie
+Prev play previous show
 Prev play previous song
+Prev play previous track
+Prev play previous video
+Prev play the previous
+Prev play the previous audio
+Prev play the previous episode
+Prev play the previous film
+Prev play the previous movie
+Prev play the previous show
+Prev play the previous song
+Prev play the previous track
+Prev play the previous video
 Prev previous
-Prev previous song
+Prev watch previous
+Prev watch previous episode
+Prev watch previous film
+Prev watch previous movie
+Prev watch previous show
+Prev watch previous video
+Prev watch the previous
+Prev watch the previous episode
+Prev watch the previous film
+Prev watch the previous movie
+Prev watch the previous show
+Prev watch the previous video
 Reboot reboot
 Reboot reboot system
 Right go right
@@ -539,15 +624,23 @@ Select select
 ShuffleAudioPlaylist shuffle audio playlist {AudioPlaylist}
 ShuffleAudioPlaylist shuffle music playlist {AudioPlaylist}
 ShuffleAudioPlaylist shuffle song playlist {AudioPlaylist}
+ShuffleAudioPlaylist shuffle the audio playlist {AudioPlaylist}
+ShuffleAudioPlaylist shuffle the music playlist {AudioPlaylist}
+ShuffleAudioPlaylist shuffle the song playlist {AudioPlaylist}
 ShuffleAudioPlaylist shuffle {AudioPlaylist} audio playlist
 ShuffleAudioPlaylist shuffle {AudioPlaylist} music playlist
 ShuffleAudioPlaylist shuffle {AudioPlaylist} song playlist
 ShufflePlaylist shuffle playlist {AudioPlaylist}
 ShufflePlaylist shuffle playlist {VideoPlaylist}
+ShufflePlaylist shuffle the playlist {AudioPlaylist}
+ShufflePlaylist shuffle the playlist {VideoPlaylist}
 ShufflePlaylist shuffle {AudioPlaylist} playlist
 ShufflePlaylist shuffle {VideoPlaylist} playlist
 ShuffleVideoPlaylist shuffle movie playlist {VideoPlaylist}
 ShuffleVideoPlaylist shuffle show playlist {VideoPlaylist}
+ShuffleVideoPlaylist shuffle the movie playlist {VideoPlaylist}
+ShuffleVideoPlaylist shuffle the show playlist {VideoPlaylist}
+ShuffleVideoPlaylist shuffle the video playlist {VideoPlaylist}
 ShuffleVideoPlaylist shuffle video playlist {VideoPlaylist}
 ShuffleVideoPlaylist shuffle {VideoPlaylist} movie playlist
 ShuffleVideoPlaylist shuffle {VideoPlaylist} show playlist
@@ -555,17 +648,78 @@ ShuffleVideoPlaylist shuffle {VideoPlaylist} video playlist
 Shutdown shut down
 Shutdown shut down system
 Skip listen to next
+Skip listen to next audio
 Skip listen to next song
+Skip listen to next track
+Skip listen to the next
+Skip listen to the next audio
+Skip listen to the next song
+Skip listen to the next track
 Skip next
+Skip next audio
+Skip next episode
+Skip next film
+Skip next movie
+Skip next show
 Skip next song
+Skip next track
+Skip next video
 Skip play next
+Skip play next audio
+Skip play next episode
+Skip play next film
+Skip play next movie
+Skip play next show
 Skip play next song
+Skip play next track
+Skip play next video
+Skip play the next
+Skip play the next audio
+Skip play the next episode
+Skip play the next film
+Skip play the next movie
+Skip play the next show
+Skip play the next song
+Skip play the next track
+Skip play the next video
 Skip skip
+Skip skip audio
+Skip skip episode
+Skip skip film
+Skip skip movie
+Skip skip show
 Skip skip song
+Skip skip this
+Skip skip this audio
+Skip skip this episode
+Skip skip this film
+Skip skip this movie
+Skip skip this show
+Skip skip this song
+Skip skip this track
+Skip skip this video
+Skip skip track
+Skip skip video
+Skip watch next
+Skip watch next episode
+Skip watch next film
+Skip watch next movie
+Skip watch next show
+Skip watch next video
+Skip watch the next
+Skip watch the next episode
+Skip watch the next film
+Skip watch the next movie
+Skip watch the next show
+Skip watch the next video
 StartOver replay
 StartOver start over
 StreamAlbum stream album {Album}
 StreamAlbum stream album {Album} by {Artist}
+StreamAlbum stream the album {Album}
+StreamAlbum stream the album {Album} by {Artist}
+StreamAlbumOrSong stream the {Album} by {Artist}
+StreamAlbumOrSong stream the {Song} by {Artist}
 StreamAlbumOrSong stream {Album} by {Artist}
 StreamAlbumOrSong stream {Song} by {Artist}
 StreamArtist stream artist {Artist}
@@ -574,6 +728,10 @@ StreamAudioPlaylist stream audio playlist {AudioPlaylist}
 StreamAudioPlaylist stream music playlist {AudioPlaylist}
 StreamAudioPlaylist stream playlist {AudioPlaylist}
 StreamAudioPlaylist stream song playlist {AudioPlaylist}
+StreamAudioPlaylist stream the audio playlist {AudioPlaylist}
+StreamAudioPlaylist stream the music playlist {AudioPlaylist}
+StreamAudioPlaylist stream the playlist {AudioPlaylist}
+StreamAudioPlaylist stream the song playlist {AudioPlaylist}
 StreamAudioPlaylist stream {AudioPlaylist} audio playlist
 StreamAudioPlaylist stream {AudioPlaylist} music playlist
 StreamAudioPlaylist stream {AudioPlaylist} playlist
@@ -591,6 +749,8 @@ StreamPartyMode stream music
 StreamPartyMode stream random music
 StreamSong stream song {Song}
 StreamSong stream song {Song} by {Artist}
+StreamSong stream the song {Song}
+StreamSong stream the song {Song} by {Artist}
 StreamThis stream current playlist
 StreamThis stream this
 SubtitlesNext next subtitle language
@@ -635,33 +795,57 @@ WatchEpisode watch series {Season} episode {Episode} of {Show}
 WatchLastShow continue last show
 WatchLastShow continue playing last show
 WatchLastShow continue playing show
+WatchLastShow continue playing the last show
 WatchLastShow continue show
+WatchLastShow continue the last show
 WatchLastShow continue watching last show
 WatchLastShow continue watching show
+WatchLastShow continue watching the last show
 WatchLatestEpisode play latest episode of {Show}
 WatchLatestEpisode play newest episode of {Show}
+WatchLatestEpisode play the latest episode of {Show}
+WatchLatestEpisode play the newest episode of {Show}
 WatchLatestEpisode watch latest episode of {Show}
 WatchLatestEpisode watch newest episode of {Show}
+WatchLatestEpisode watch the latest episode of {Show}
+WatchLatestEpisode watch the newest episode of {Show}
 WatchMovie play film {Movie}
 WatchMovie play movie {Movie}
+WatchMovie play the film {Movie}
+WatchMovie play the movie {Movie}
 WatchMovie watch film {Movie}
 WatchMovie watch movie {Movie}
+WatchMovie watch the film {Movie}
+WatchMovie watch the movie {Movie}
 WatchNextEpisode play next episode of {Show}
+WatchNextEpisode play the next episode of {Show}
 WatchNextEpisode watch next episode of {Show}
+WatchNextEpisode watch the next episode of {Show}
 WatchRandomEpisode play episode of {Show}
 WatchRandomEpisode play random episode of {Show}
 WatchRandomEpisode watch episode of {Show}
 WatchRandomEpisode watch random episode of {Show}
+WatchRandomMovie play a random film
+WatchRandomMovie play a random movie
+WatchRandomMovie play a random {Genre} film
+WatchRandomMovie play a random {Genre} movie
 WatchRandomMovie play random film
 WatchRandomMovie play random movie
 WatchRandomMovie play random {Genre} film
 WatchRandomMovie play random {Genre} movie
+WatchRandomMovie watch a random film
+WatchRandomMovie watch a random movie
+WatchRandomMovie watch a random {Genre} film
+WatchRandomMovie watch a random {Genre} movie
 WatchRandomMovie watch random film
 WatchRandomMovie watch random movie
 WatchRandomMovie watch random {Genre} film
 WatchRandomMovie watch random {Genre} movie
 WatchVideoPlaylist play movie playlist {VideoPlaylist}
 WatchVideoPlaylist play show playlist {VideoPlaylist}
+WatchVideoPlaylist play the movie playlist {VideoPlaylist}
+WatchVideoPlaylist play the show playlist {VideoPlaylist}
+WatchVideoPlaylist play the video playlist {VideoPlaylist}
 WatchVideoPlaylist play video playlist {VideoPlaylist}
 WatchVideoPlaylist play {VideoPlaylist} movie playlist
 WatchVideoPlaylist play {VideoPlaylist} show playlist
@@ -669,6 +853,10 @@ WatchVideoPlaylist play {VideoPlaylist} video playlist
 WatchVideoPlaylist watch movie playlist {VideoPlaylist}
 WatchVideoPlaylist watch playlist {VideoPlaylist}
 WatchVideoPlaylist watch show playlist {VideoPlaylist}
+WatchVideoPlaylist watch the movie playlist {VideoPlaylist}
+WatchVideoPlaylist watch the playlist {VideoPlaylist}
+WatchVideoPlaylist watch the show playlist {VideoPlaylist}
+WatchVideoPlaylist watch the video playlist {VideoPlaylist}
 WatchVideoPlaylist watch video playlist {VideoPlaylist}
 WatchVideoPlaylist watch {VideoPlaylist} movie playlist
 WatchVideoPlaylist watch {VideoPlaylist} playlist
