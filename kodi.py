@@ -88,23 +88,23 @@ STOPWORDS = [
 
 def sanitize_name(media_name, remove_between=False):
   # Normalize string
-  normalized = unicodedata.normalize('NFKD', media_name).encode('ASCII', 'ignore')
+  name = unicodedata.normalize('NFKD', media_name).encode('ASCII', 'ignore')
 
   if remove_between:
     # Strip things between and including brackets and parentheses
-    removed_paren = re.sub(r'\([^)]*\)', '', normalized)
-    removed_bracket = re.sub(r'\[[^)]*\]', '', removed_paren)
+    name = re.sub(r'\([^)]*\)', '', name)
+    name = re.sub(r'\[[^)]*\]', '', name)
   else:
     # Just remove the actual brackets and parentheses
-    removed_bracket = normalized.translate(None, '[]()')
+    name = name.translate(None, '[]()')
 
-  if len(removed_bracket) > 140:
-    removed_bracket = removed_bracket[:140].rsplit(' ', 1)[0]
+  name = name.translate(None, '"')
 
-  trimmed = removed_bracket.strip()
+  if len(name) > 140:
+    name = name[:140].rsplit(' ', 1)[0]
 
-  remove_quotes = trimmed.translate(None, '"')
-  return remove_quotes
+  name = name.strip()
+  return name
 
 
 # Very naive method to remove a leading "the" from the given string
