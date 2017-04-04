@@ -103,7 +103,9 @@ def sanitize_name(media_name, remove_between=False):
     removed_bracket = removed_bracket[:140].rsplit(' ', 1)[0]
 
   trimmed = removed_bracket.strip()
-  return trimmed
+
+  remove_quotes = trimmed.translate(None, '"')
+  return remove_quotes
 
 
 # Very naive method to remove a leading "the" from the given string
