@@ -9,8 +9,6 @@
 
 PlayPause (play/abspielen/pause/halt/anhalten)
 
-AMAZON.StopIntent (stop/anhalten/halt's maul/halt)
-
 Skip (/spiel(/e)) nächstes (/Lied)
 Skip weiter
 

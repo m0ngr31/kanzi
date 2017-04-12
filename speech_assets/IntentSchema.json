@@ -52,7 +52,16 @@
       "intent": "PlayerSeekBigBackward"
     },
     {
+      "intent": "AMAZON.CancelIntent"
+    },
+    {
       "intent": "AMAZON.StopIntent"
+    },
+    {
+      "intent": "AMAZON.NoIntent"
+    },
+    {
+      "intent": "AMAZON.YesIntent"
     },
     {
       "intent": "AMAZON.NextIntent"
@@ -444,40 +453,40 @@
       "intent": "PlayerZoomInMoveRight"
     },
     {
-      "intent": "PlayerZoomOut"      
+      "intent": "PlayerZoomOut"
     },
     {
-      "intent": "PlayerZoomOutMoveUp"      
+      "intent": "PlayerZoomOutMoveUp"
     },
     {
-      "intent": "PlayerZoomOutMoveDown"      
+      "intent": "PlayerZoomOutMoveDown"
     },
     {
-      "intent": "PlayerZoomOutMoveLeft"      
+      "intent": "PlayerZoomOutMoveLeft"
     },
     {
-      "intent": "PlayerZoomOutMoveRight"      
+      "intent": "PlayerZoomOutMoveRight"
     },
     {
-      "intent": "PlayerZoomReset"      
+      "intent": "PlayerZoomReset"
     },
     {
-      "intent": "Hibernate"      
+      "intent": "Hibernate"
     },
     {
-      "intent": "Reboot"      
+      "intent": "Reboot"
     },
     {
-      "intent": "Shutdown"      
+      "intent": "Shutdown"
     },
     {
-      "intent": "Suspend"      
+      "intent": "Suspend"
     },
     {
-      "intent": "EjectMedia"      
+      "intent": "EjectMedia"
     },
     {
-      "intent": "PartyMode"      
+      "intent": "PartyMode"
     },
     {
       "intent": "StreamPartyMode"
