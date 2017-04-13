@@ -197,12 +197,16 @@ Suspend (/system) ((/geh/gehe) schlafen/suspend/standby)
 
 EjectMedia (/medium/disc/audio disc/bluray/bluray disc/cd/audio cd/dvd/Scheibe) auswerfen
 
+PlayerSeekForward (Schritt/Sprung) (/vorwärts/vor) (/um) {ForwardDur}
+PlayerSeekForward vorwärts (Schritt/Sprung) um {ForwardDur}
 PlayerSeekSmallForward (/kleiner) (Schritt/Sprung) (vorwärts/vor)
 PlayerSeekSmallForward (/kleiner) vorwärts (Schritt/Sprung)
 PlayerSeekSmallForward (vorwärts/vor(/spulen))
 PlayerSeekBigForward (großer/langer/weiter) (Schritt/Sprung) (vorwärts/vor)
 PlayerSeekBigForward (großer/langer/weiter) vorwärts (Schritt/Sprung)
 PlayerSeekBigForward weiter vor(/spulen/springen)
+PlayerSeekBackward (Schritt/Sprung) (rückwärts/zurück) (/um) {BackwardDur}
+PlayerSeekBackward (rückwärts/zurück) (Schritt/Sprung) um {BackwardDur}
 PlayerSeekSmallBackward (/kleiner) (Schritt/Sprung) (rückwärts/zurück)
 PlayerSeekSmallBackward (rückwärts/zurück(/spulen))
 PlayerSeekBigForward (großer/langer/weiter) (Schritt/Sprung) (rückwärts/zurück)
