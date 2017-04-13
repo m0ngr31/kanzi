@@ -793,11 +793,6 @@ PartyMode spiele zufällige Lieder
 PartyMode spiele zufällige Mucke
 PartyMode spiele zufällige Musik
 PartyMode spiele zufällige Songs
-PlayPause abspielen
-PlayPause anhalten
-PlayPause halt
-PlayPause pause
-PlayPause play
 PlayerMoveDown geh nach unten
 PlayerMoveDown geh runter
 PlayerMoveDown gehe nach unten
@@ -1080,18 +1075,6 @@ PlayerZoomOutMoveUp zoom raus und rauf
 PlayerZoomReset kein zoom
 PlayerZoomReset normal zoom
 PlayerZoomReset reset zoom
-Prev letztes
-Prev letztes Lied
-Prev spiel letztes
-Prev spiel letztes Lied
-Prev spiel voriges
-Prev spiel voriges Lied
-Prev spiele letztes
-Prev spiele letztes Lied
-Prev spiele voriges
-Prev spiele voriges Lied
-Prev voriges
-Prev voriges Lied
 Reboot neustarten
 Reboot reboot
 Reboot system neustarten
@@ -1127,19 +1110,6 @@ Shutdown herunterfahren
 Shutdown shutdown
 Shutdown system herunterfahren
 Shutdown system shutdown
-Skip nächstes
-Skip nächstes Lied
-Skip spiel nächstes
-Skip spiel nächstes Lied
-Skip spiele nächstes
-Skip spiele nächstes Lied
-Skip weiter
-StartOver nochmal
-StartOver von vorn
-StartOver von vorne
-StartOver wiederhol
-StartOver wiederhole
-StartOver wiederholen
 SubtitlesNext Untertitel umschalten
 SubtitlesNext nächster Untertitel
 SubtitlesOff Untertitel aus

@@ -37,9 +37,6 @@
       "intent": "UpdateAudio"
     },
     {
-      "intent": "PlayPause"
-    },
-    {
       "intent": "PlayerSeekForward",
       "slots": [
         {
@@ -276,15 +273,6 @@
           "type": "VIDEOPLAYLISTS"
         }
       ]
-    },
-    {
-      "intent": "Prev"
-    },
-    {
-      "intent": "Skip"
-    },
-    {
-      "intent": "StartOver"
     },
     {
       "intent": "OpenRemote"

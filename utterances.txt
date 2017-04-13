@@ -7,20 +7,6 @@
 # http://www.makermusings.com/amazon-echo-utterance-expander/
 
 
-PlayPause (play/pause/resume)
-
-Skip skip (/this) (/audio/video/movie/film/show/episode/song/track)
-Skip (next/play (/the) next) (/audio/video/movie/film/show/episode/song/track)
-Skip listen to (/the) next (/audio/song/track)
-Skip watch (/the) next (/video/movie/film/show/episode)
-
-Prev previous
-Prev play (/the) previous (/audio/video/movie/film/show/episode/song/track)
-Prev listen to (/the) previous (/audio/song/track)
-Prev watch (/the) previous (/video/movie/film/show/episode)
-
-StartOver (replay/start over)
-
 Home (navigate/go) home
 
 Back (/navigate/go) back

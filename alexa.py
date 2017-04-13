@@ -170,8 +170,6 @@ def alexa_current_playitem_time_remaining():
   return statement(response_text).simple_card(card_title, response_text)
 
 
-# Handle the PlayPause intent.
-@ask.intent('PlayPause')
 def alexa_play_pause():
   card_title = render_template('play_pause').encode("utf-8")
   print card_title
@@ -180,6 +178,18 @@ def alexa_play_pause():
   response_text = ""
 
   return statement(response_text).simple_card(card_title, response_text)
+
+
+# Handle the AMAZON.PauseIntent intent.
+@ask.intent('AMAZON.PauseIntent')
+def alexa_pause():
+  return alexa_play_pause()
+
+
+# Handle the AMAZON.ResumeIntent intent.
+@ask.intent('AMAZON.ResumeIntent')
+def alexa_resume():
+  return alexa_play_pause()
 
 
 def alexa_stop_cancel():
@@ -637,8 +647,8 @@ def alexa_party_play():
   return statement(response_text).simple_card(card_title, response_text)
 
 
-# Handle the StartOver intent.
-@ask.intent('StartOver')
+# Handle the AMAZON.StartOverIntent intent.
+@ask.intent('AMAZON.StartOverIntent')
 def alexa_start_over():
   card_title = render_template('playing_same').encode("utf-8")
   print card_title
@@ -649,9 +659,9 @@ def alexa_start_over():
   return statement(response_text).simple_card(card_title, response_text)
 
 
-# Handle the Skip intent.
-@ask.intent('Skip')
-def alexa_skip():
+# Handle the AMAZON.NextIntent intent.
+@ask.intent('AMAZON.NextIntent')
+def alexa_next():
   card_title = render_template('playing_next').encode("utf-8")
   print card_title
 
@@ -661,8 +671,8 @@ def alexa_skip():
   return statement(response_text).simple_card(card_title, response_text)
 
 
-# Handle the Prev intent.
-@ask.intent('Prev')
+# Handle the AMAZON.PreviousIntent intent.
+@ask.intent('AMAZON.PreviousIntent')
 def alexa_prev():
   card_title = render_template('playing_previous').encode("utf-8")
   print card_title

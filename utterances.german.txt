@@ -7,15 +7,6 @@
 # http://www.makermusings.com/amazon-echo-utterance-expander/
 
 
-PlayPause (play/abspielen/pause/halt/anhalten)
-
-Skip (/spiel(/e)) nächstes (/Lied)
-Skip weiter
-
-Prev (/spiel(/e)) (letztes/voriges) (/Lied)
-
-StartOver (nochmal/von vorn(/e)/wiederhol(/e)/wiederholen)
-
 Home startseite
 
 Back zurück
