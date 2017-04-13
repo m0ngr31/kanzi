@@ -421,6 +421,18 @@ PlayerRotateClockwise rotate
 PlayerRotateClockwise rotate clockwise
 PlayerRotateClockwise rotate ninety degrees
 PlayerRotateCounterClockwise rotate counter clockwise
+PlayerSeekBackward back jump by {BackwardDur}
+PlayerSeekBackward back step by {BackwardDur}
+PlayerSeekBackward backward jump by {BackwardDur}
+PlayerSeekBackward backward step by {BackwardDur}
+PlayerSeekBackward jump back by {BackwardDur}
+PlayerSeekBackward jump back {BackwardDur}
+PlayerSeekBackward jump backward by {BackwardDur}
+PlayerSeekBackward jump backward {BackwardDur}
+PlayerSeekBackward step back by {BackwardDur}
+PlayerSeekBackward step back {BackwardDur}
+PlayerSeekBackward step backward by {BackwardDur}
+PlayerSeekBackward step backward {BackwardDur}
 PlayerSeekBigBackward big back jump
 PlayerSeekBigBackward big back step
 PlayerSeekBigBackward big backward jump
@@ -457,6 +469,16 @@ PlayerSeekBigForward long forward jump
 PlayerSeekBigForward long forward step
 PlayerSeekBigForward long jump forward
 PlayerSeekBigForward long step forward
+PlayerSeekForward forward jump by {ForwardDur}
+PlayerSeekForward forward step by {ForwardDur}
+PlayerSeekForward jump by {ForwardDur}
+PlayerSeekForward jump forward by {ForwardDur}
+PlayerSeekForward jump forward {ForwardDur}
+PlayerSeekForward jump {ForwardDur}
+PlayerSeekForward step by {ForwardDur}
+PlayerSeekForward step forward by {ForwardDur}
+PlayerSeekForward step forward {ForwardDur}
+PlayerSeekForward step {ForwardDur}
 PlayerSeekSmallBackward back jump
 PlayerSeekSmallBackward back step
 PlayerSeekSmallBackward backward jump

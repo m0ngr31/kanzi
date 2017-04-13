@@ -40,6 +40,24 @@
       "intent": "PlayPause"
     },
     {
+      "intent": "PlayerSeekForward",
+      "slots": [
+        {
+          "name": "ForwardDur",
+          "type": "AMAZON.DURATION"
+        }
+      ]
+    },
+    {
+      "intent": "PlayerSeekBackward",
+      "slots": [
+        {
+          "name": "BackwardDur",
+          "type": "AMAZON.DURATION"
+        }
+      ]
+    },
+    {
       "intent": "PlayerSeekSmallForward"
     },
     {

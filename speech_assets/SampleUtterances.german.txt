@@ -830,6 +830,18 @@ PlayerRotateClockwise rotiere im Uhrzeigersinn
 PlayerRotateClockwise rotiere neunzig grad
 PlayerRotateCounterClockwise drehe gegen den Uhrzeigersinn
 PlayerRotateCounterClockwise rotiere gegen den Uhrzeigersinn
+PlayerSeekBackward Schritt rückwärts um {BackwardDur}
+PlayerSeekBackward Schritt rückwärts {BackwardDur}
+PlayerSeekBackward Schritt zurück um {BackwardDur}
+PlayerSeekBackward Schritt zurück {BackwardDur}
+PlayerSeekBackward Sprung rückwärts um {BackwardDur}
+PlayerSeekBackward Sprung rückwärts {BackwardDur}
+PlayerSeekBackward Sprung zurück um {BackwardDur}
+PlayerSeekBackward Sprung zurück {BackwardDur}
+PlayerSeekBackward rückwärts Schritt um {BackwardDur}
+PlayerSeekBackward rückwärts Sprung um {BackwardDur}
+PlayerSeekBackward zurück Schritt um {BackwardDur}
+PlayerSeekBackward zurück Sprung um {BackwardDur}
 PlayerSeekBigBackward weiter zurück
 PlayerSeekBigBackward weiter zurückspringen
 PlayerSeekBigBackward weiter zurückspulen
@@ -872,6 +884,20 @@ PlayerSeekBigForward weiter vorspringen
 PlayerSeekBigForward weiter vorspulen
 PlayerSeekBigForward weiter vorwärts Schritt
 PlayerSeekBigForward weiter vorwärts Sprung
+PlayerSeekForward Schritt um {ForwardDur}
+PlayerSeekForward Schritt vor um {ForwardDur}
+PlayerSeekForward Schritt vor {ForwardDur}
+PlayerSeekForward Schritt vorwärts um {ForwardDur}
+PlayerSeekForward Schritt vorwärts {ForwardDur}
+PlayerSeekForward Schritt {ForwardDur}
+PlayerSeekForward Sprung um {ForwardDur}
+PlayerSeekForward Sprung vor um {ForwardDur}
+PlayerSeekForward Sprung vor {ForwardDur}
+PlayerSeekForward Sprung vorwärts um {ForwardDur}
+PlayerSeekForward Sprung vorwärts {ForwardDur}
+PlayerSeekForward Sprung {ForwardDur}
+PlayerSeekForward vorwärts Schritt um {ForwardDur}
+PlayerSeekForward vorwärts Sprung um {ForwardDur}
 PlayerSeekSmallBackward Schritt rückwärts
 PlayerSeekSmallBackward Schritt zurück
 PlayerSeekSmallBackward Sprung rückwärts

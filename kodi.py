@@ -531,6 +531,12 @@ def Stop():
     return SendCommand(RPCString("Player.Stop", {"playerid":playerid}))
 
 
+def PlayerSeek(seconds):
+  playerid = GetPlayerID()
+  if playerid:
+    return SendCommand(RPCString("Player.Seek", {"playerid":playerid, "value":{"seconds":seconds}}))
+
+
 def PlayerSeekSmallForward():
   playerid = GetPlayerID()
   if playerid:

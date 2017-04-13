@@ -9,6 +9,7 @@ import string
 import sys
 import time
 import os
+import re
 from multiprocessing import Process
 from flask import Flask, json, render_template
 from flask_ask import Ask, session, question, statement, audio, request
@@ -241,6 +242,67 @@ def alexa_yes():
     return statement(card_title).simple_card(card_title, "")
   else:
     return statement("")
+
+
+def duration_in_seconds(duration_str):
+  if duration_str[0] != 'P':
+    raise ValueError('Not an ISO 8601 Duration string')
+  seconds = 0
+  # split by the 'T'
+  for i, item in enumerate(duration_str.split('T')):
+    for number, unit in re.findall('(?P<number>\d+)(?P<period>S|M|H|D|W|Y)', item):
+      number = int(number)
+      this = 0
+      if unit == 'Y':
+        this = number * 31557600 # 365.25
+      elif unit == 'W':
+        this = number * 604800
+      elif unit == 'D':
+        this = number * 86400
+      elif unit == 'H':
+        this = number * 3600
+      elif unit == 'M':
+        # ambiguity alleviated with index i
+        if i == 0:
+          this = number * 2678400 # assume 30 days
+        else:
+          this = number * 60
+      elif unit == 'S':
+        this = number
+      seconds = seconds + this
+  return seconds
+
+
+# Handle the PlayerSeekForward intent.
+@ask.intent('PlayerSeekForward')
+def alexa_player_seek_forward(ForwardDur):
+  card_title = render_template('step_forward').encode("utf-8")
+  print card_title
+
+  response_text = ""
+
+  seek_sec = duration_in_seconds(ForwardDur)
+  print "Stepping forward by %d seconds" % (seek_sec)
+
+  kodi.PlayerSeek(seek_sec)
+
+  return statement(response_text).simple_card(card_title, response_text)
+
+
+# Handle the PlayerSeekBackward intent.
+@ask.intent('PlayerSeekBackward')
+def alexa_player_seek_backward(BackwardDur):
+  card_title = render_template('step_backward').encode("utf-8")
+  print card_title
+
+  response_text = ""
+
+  seek_sec = duration_in_seconds(BackwardDur)
+  print "Stepping backward by %d seconds" % (seek_sec)
+
+  kodi.PlayerSeek(-seek_sec)
+
+  return statement(response_text).simple_card(card_title, response_text)
 
 
 # Handle the PlayerSeekSmallForward intent.

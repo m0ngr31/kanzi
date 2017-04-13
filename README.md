@@ -10,7 +10,7 @@ Here are some of the features supported by this skill:
 
 - Basic navigation (Up/Down, Left/Right, Page Up/Down, Select, Back, Open Menu)
 - Remote control (Keeps session open so you can give multiple navication commands)
-- Playback control (Play/Pause, Skip, Previous, Stop)
+- Playback control (Play/Pause, Skip, Previous, Stop, Step/Jump)
 - Adjust volume
 - Shuffle music by artist
 - Play specific album
