@@ -88,41 +88,22 @@ WhatAlbums what albums do (we/i/you) have by {Artist}
 
 ListenToArtist (play/listen to/shuffle) (music by/artist) {Artist}
 
-StreamArtist stream (music by/artist) {Artist}
-
 ListenToAlbum (play/listen to) (/the) album {Album}
 ListenToAlbum (play/listen to) (/the) album {Album} by {Artist}
-
-StreamAlbum stream (/the) album {Album}
-StreamAlbum stream (/the) album {Album} by {Artist}
 
 ListenToSong (play/listen to) (/the) song {Song}
 ListenToSong (play/listen to) (/the) song {Song} by {Artist}
 
-StreamSong stream (/the) song {Song}
-StreamSong stream (/the) song {Song} by {Artist}
-
 ListenToAlbumOrSong (play/listen to) (/the) {Album} by {Artist}
 ListenToAlbumOrSong (play/listen to) (/the) {Song} by {Artist}
-
-StreamAlbumOrSong stream (/the) {Album} by {Artist}
-StreamAlbumOrSong stream (/the) {Song} by {Artist}
 
 ListenToAudioPlaylist (play/listen to) (/the) (song/music/audio) playlist {AudioPlaylist}
 ListenToAudioPlaylist (play/listen to) (/the) {AudioPlaylist} (song/music/audio) playlist
 ListenToAudioPlaylist listen to (/the) playlist {AudioPlaylist}
 ListenToAudioPlaylist listen to {AudioPlaylist} playlist
 
-StreamAudioPlaylist stream (/the) (song/music/audio/) playlist {AudioPlaylist}
-StreamAudioPlaylist stream {AudioPlaylist} (song/music/audio/) playlist
-
 ListenToAudioPlaylistRecent (play/listen to/shuffle) recent (songs/music/audio/albums)
 ListenToAudioPlaylistRecent (play/listen to/shuffle) recently added (songs/music/audio/albums)
-
-StreamAudioPlaylistRecent stream recent (songs/music/audio/albums)
-StreamAudioPlaylistRecent stream recently added (songs/music/audio/albums)
-
-StreamThis stream (this/current playlist)
 
 WatchRandomMovie (play/watch) (/a) random (/{Genre}) (movie/film)
 
@@ -176,8 +157,6 @@ PartyMode listen to all music
 PartyMode play random music
 PartyMode play all music
 PartyMode shuffle all music
-
-StreamPartyMode stream (/random/all/) music
 
 CurrentPlayItemInquiry what (/audio/video/movie/film/show/episode/song/track) is (this/playing/currently playing)
 

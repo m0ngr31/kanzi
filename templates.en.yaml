@@ -34,29 +34,17 @@ opening: "Opening {{ heard_name }}"
 
 playing: "Playing {{ heard_name }}"
 
-streaming: "Streaming {{ heard_name }}"
-
 playing_album: "Playing album {{ album_name }}"
-
-streaming_album: "Streaming album {{ album_name }}"
 
 playing_album_artist: "Playing album {{ album_name }} by {{ artist }}"
 
-streaming_album_artist: "Streaming album {{ album_name }} by {{ artist }}"
-
 playing_song: "Playing song {{ song_name }}"
 
-streaming_song: "Streaming song {{ song_name }}"
-
 playing_song_artist: "Playing song {{ song_name }} by {{ artist }}"
-
-streaming_song_artist: "Streaming song {{ song_name }} by {{ artist }}"
 
 playing_playlist: "{{ action }} playlist {{ playlist_name }}"
 
 playing_party: "Starting party play"
-
-streaming_party: "Streaming party mode"
 
 playing_genre: "Playing the {{ genre }} movie {{ movie_name }}"
 
@@ -69,8 +57,6 @@ playing_episode_number: "Playing season {{ season }} episode {{ episode }} of {{
 playing_action_episode_number: "{{ action }} season {{ season }} episode {{ episode }} of {{ show_name }}"
 
 playing_empty: "Playing"
-
-streaming_empty: "Streaming"
 
 resuming_empty: "Resuming"
 
@@ -112,8 +98,6 @@ you_have_episode_list: "There are new episodes of {{ list }}"
 
 volume_set: "Volume set to {{ num }}"
 
-cant_stream: "You need to add database information to your environment variables for this to work"
-
 open_remote: "Starting remote control mode, to use say go up, go back as if you were pressing buttons, say stop to exit control mode"
 
 help: "You can ask me whether there are any new shows, to play a movie, tv show, or artist, or control playback of media."
@@ -125,8 +109,6 @@ what_to_do: "What would you like to do?"
 welcome: "Welcome to the Kodi skill."
 
 nothing_currently_playing: "Kodi isn't playing any music right now."
-
-transferring_stream: "Transferring stream from Kodi to Alexa."
 
 
 ############################
@@ -152,8 +134,6 @@ big_step_forward: "Big step forward"
 big_step_backward: "Big step backward"
 
 listen_artist: "Playing music by {{ heard_artist }}"
-
-stream_artist: "Streaming music by {{ heard_artist }}"
 
 newly_added_shows: "Newly added shows"
 
@@ -251,8 +231,6 @@ playing_same: "Starting current item over"
 
 playing_recent_songs: "Playing recently added songs"
 
-streaming_recent_songs: "Streaming recently added songs"
-
 playing_random_movie: "Playing a random movie"
 
 playing_random_movie_genre: "Playing a random {{ genre }} movie"
@@ -269,21 +247,13 @@ playing_newest_episode: "Playing the newest episode of {{ heard_show }}"
 
 playing_album_card: "Playing album"
 
-streaming_album_card: "Streaming album"
-
 playing_song_card: "Playing song"
 
-streaming_song_card: "Streaming song"
-
 playing_album_or_song: "Playing album or song"
-
-streaming_album_or_song: "Streaming album or song"
 
 action_audio_playlist: "{{ action }} audio playlist"
 
 party_mode: "Party Mode"
-
-streaming_party_mode: "Streaming Party Mode"
 
 albums_by: "Albums by {{ heard_artist }}"
 
@@ -296,8 +266,6 @@ help_card: "Help"
 open_remote_card: "Opening remote"
 
 playback_stopped: "Playback stopped"
-
-streaming_current_playlist: "Streaming current playlist"
 
 
 ############################

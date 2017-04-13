@@ -47,26 +47,11 @@
       "value": "",
       "required": false
     },
-    "ACCEPT_MUSIC_WARNING": {
-      "description": "Setup MongoDB to handle playing music from Kodi to your Alexa device. Must accept agreement saying I'm not liable for stolen information since your username and password for Kodi will be stored in plaintext in a database and will be transferred over the internet to a HTTPS proxy server for you to have this functionality.",
-      "value": "",
-      "required": false
-    },
-    "USE_PROXY": {
-      "description": "Put 'y' here if you would like to use my HTTPS proxy.",
-      "value": "",
-      "required": false
-    },
-    "ALT_PROXY": {
-      "description": "Enter a URL here if you would like to run your own HTTPS proxy.",
+    "SHUTDOWN_MEANS_QUIT": {
+      "description": "If you'd like 'Alexa, tell Kodi to shut down' to quit Kodi instead of shutting down the system.",
       "value": "",
       "required": false
     }
   },
-  "image": "heroku/python",
-  "addons": [
-    {
-      "plan": "mongolab:sandbox"
-    }
-  ]
+  "image": "heroku/python"
 }

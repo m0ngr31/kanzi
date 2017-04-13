@@ -18,7 +18,6 @@ from shutil import copyfile
 sys.path += [os.path.dirname(__file__)]
 
 import kodi
-import music
 
 kodi.PopulateEnv()
 
@@ -33,8 +32,6 @@ if LANGUAGE and LANGUAGE != 'None' and LANGUAGE == 'de':
   TEMPLATE_FILE = "templates.de.yaml"
 else:
   TEMPLATE_FILE = "templates.en.yaml"
-
-CAN_STREAM = music.has_music_functionality()
 
 # According to this: https://alexatutorial.com/flask-ask/configuration.html
 # Timestamp based verification shouldn't be used in production. Use at own risk
@@ -388,49 +385,6 @@ def alexa_listen_artist(Artist):
   return statement(response_text).simple_card(card_title, response_text)
 
 
-# Handle the StreamArtist intent.
-@ask.intent('StreamArtist')
-def alexa_stream_artist(Artist):
-  if not CAN_STREAM:
-    response_text = render_template('cant_stream').encode("utf-8")
-    return statement(response_text)
-
-  heard_artist = str(Artist).lower().translate(None, string.punctuation)
-
-  card_title = render_template('stream_artist', heard_artist=heard_artist).encode("utf-8")
-  print card_title
-
-  artists = kodi.GetMusicArtists()
-  if 'result' in artists and 'artists' in artists['result']:
-    artists_list = artists['result']['artists']
-    located = kodi.matchHeard(heard_artist, artists_list, 'artist')
-
-    if located:
-      songs_result = kodi.GetArtistSongsPath(located['artistid'])
-      songs = songs_result['result']['songs']
-
-      songs_array = []
-
-      for song in songs:
-        songs_array.append(kodi.PrepareDownload(song['file']))
-
-      if len(songs_array) > 0:
-        random.shuffle(songs_array)
-        playlist_queue = music.MusicPlayer(songs_array)
-
-        response_text = render_template('streaming', heard_name=heard_artist).encode("utf-8")
-        audio('').clear_queue(stop=True)
-        return audio(response_text).play(songs_array[0])
-      else:
-        response_text = render_template('could_not_find', heard_name=heard_artist).encode("utf-8")
-    else:
-      response_text = render_template('could_not_find', heard_name=heard_artist).encode("utf-8")
-  else:
-    response_text = render_template('could_not_find', heard_name=heard_artist).encode("utf-8")
-
-  return statement(response_text).simple_card(card_title, response_text)
-
-
 # Handle the ListenToAlbum intent (Play whole album, or whole album by a specific artist).
 @ask.intent('ListenToAlbum')
 def alexa_listen_album(Album, Artist):
@@ -487,88 +441,6 @@ def alexa_listen_album(Album, Artist):
   return statement(response_text).simple_card(card_title, response_text)
 
 
-# Handle the StreamAlbum intent (Stream whole album, or whole album by a specific artist).
-@ask.intent('StreamAlbum')
-def alexa_stream_album(Album, Artist):
-  if not CAN_STREAM:
-    response_text = render_template('cant_stream').encode("utf-8")
-    return statement(response_text)
-
-  heard_album = str(Album).lower().translate(None, string.punctuation)
-  card_title = render_template('streaming_album_card').encode("utf-8")
-  print card_title
-
-  if Artist:
-    heard_artist = str(Artist).lower().translate(None, string.punctuation)
-    artists = kodi.GetMusicArtists()
-    if 'result' in artists and 'artists' in artists['result']:
-      artists_list = artists['result']['artists']
-      located = kodi.matchHeard(heard_artist, artists_list, 'artist')
-
-      if located:
-        albums = kodi.GetArtistAlbums(located['artistid'])
-        if 'result' in albums and 'albums' in albums['result']:
-          albums_list = albums['result']['albums']
-          album_located = kodi.matchHeard(heard_album, albums_list)
-
-          if album_located:
-            songs_result = kodi.GetAlbumSongsPath(album_located['albumid'])
-            songs = songs_result['result']['songs']
-
-            songs_array = []
-
-            for song in songs:
-              songs_array.append(kodi.PrepareDownload(song['file']))
-
-            if len(songs_array) > 0:
-              random.shuffle(songs_array)
-              playlist_queue = music.MusicPlayer(songs_array)
-
-              response_text = render_template('streaming_album_artist', album_name=heard_album, artist=heard_artist).encode("utf-8")
-              audio('').clear_queue(stop=True)
-              return audio(response_text).play(songs_array[0])
-            else:
-              response_text = render_template('could_not_find_album_artist', album_name=heard_album, artist=heard_artist).encode("utf-8")
-          else:
-            response_text = render_template('could_not_find_album_artist', album_name=heard_album, artist=heard_artist).encode("utf-8")
-        else:
-          response_text = render_template('could_not_find_album_artist', album_name=heard_album, artist=heard_artist).encode("utf-8")
-      else:
-        response_text = render_template('could_not_find_album_artist', album_name=heard_album, artist=heard_artist).encode("utf-8")
-    else:
-      response_text = render_template('could_not_find_album_artist', album_name=heard_album, artist=heard_artist).encode("utf-8")
-  else:
-    albums = kodi.GetAlbums()
-    if 'result' in albums and 'albums' in albums['result']:
-      albums_list = albums['result']['albums']
-      album_located = kodi.matchHeard(heard_album, albums_list)
-
-      if album_located:
-        songs_result = kodi.GetAlbumSongsPath(album_located['albumid'])
-        songs = songs_result['result']['songs']
-
-        songs_array = []
-
-        for song in songs:
-          songs_array.append(kodi.PrepareDownload(song['file']))
-
-        if len(songs_array) > 0:
-          random.shuffle(songs_array)
-          playlist_queue = music.MusicPlayer(songs_array)
-
-          response_text = render_template('streaming_album', album_name=heard_album).encode("utf-8")
-          audio('').clear_queue(stop=True)
-          return audio(response_text).play(songs_array[0])
-        else:
-          response_text = render_template('could_not_find_album', album_name=heard_album).encode("utf-8")
-      else:
-        response_text = render_template('could_not_find_album', album_name=heard_album).encode("utf-8")
-    else:
-      response_text = render_template('could_not_find_album', album_name=heard_album).encode("utf-8")
-
-  return statement(response_text).simple_card(card_title, response_text)
-
-
 # Handle the ListenToSong intent (Play a song, or song by a specific artist).
 @ask.intent('ListenToSong')
 def alexa_listen_song(Song, Artist):
@@ -617,94 +489,6 @@ def alexa_listen_song(Song, Artist):
         kodi.AddSongToPlaylist(song_result)
         kodi.StartAudioPlaylist()
         response_text = render_template('playing_song', song_name=heard_song).encode("utf-8")
-      else:
-        response_text = render_template('could_not_find_song', song_name=heard_song).encode("utf-8")
-    else:
-      response_text = render_template('could_not_find_song', song_name=heard_song).encode("utf-8")
-
-  return statement(response_text).simple_card(card_title, response_text)
-
-
-# Handle the StreamSong intent (Stream a song, or song by a specific artist).
-@ask.intent('StreamSong')
-def alexa_stream_song(Song, Artist):
-  if not CAN_STREAM:
-    response_text = render_template('cant_stream').encode("utf-8")
-    return statement(response_text)
-
-  heard_song = str(Song).lower().translate(None, string.punctuation)
-  card_title = render_template('streaming_song_card').encode("utf-8")
-  print card_title
-
-  if Artist:
-    heard_artist = str(Artist).lower().translate(None, string.punctuation)
-    artists = kodi.GetMusicArtists()
-    if 'result' in artists and 'artists' in artists['result']:
-      artists_list = artists['result']['artists']
-      located = kodi.matchHeard(heard_artist, artists_list, 'artist')
-
-      if located:
-        songs = kodi.GetArtistSongs(located['artistid'])
-        if 'result' in songs and 'songs' in songs['result']:
-          songs_list = songs['result']['songs']
-          song_located = kodi.matchHeard(heard_song, songs_list)
-
-          if song_located:
-            songs_array = []
-            song = None
-
-            song_result = kodi.GetSongIdPath(song_located['songid'])
-
-            if 'songdetails' in song_result['result']:
-              song = song_result['result']['songdetails']['file']
-
-            if song:
-              songs_array.append(kodi.PrepareDownload(song))
-
-            if len(songs_array) > 0:
-              random.shuffle(songs_array)
-              playlist_queue = music.MusicPlayer(songs_array)
-
-              response_text = render_template('streaming_song_artist', song_name=heard_song, artist=heard_artist).encode("utf-8")
-              audio('').clear_queue(stop=True)
-              return audio(response_text).play(songs_array[0])
-            else:
-              response_text = render_template('could_not_find_song_artist', song_name=heard_song, artist=heard_artist).encode("utf-8")
-          else:
-            response_text = render_template('could_not_find_song_artist', song_name=heard_song, artist=heard_artist).encode("utf-8")
-        else:
-          response_text = render_template('could_not_find_song_artist', song_name=heard_song, artist=heard_artist).encode("utf-8")
-      else:
-        response_text = render_template('could_not_find_song_artist', song_name=heard_song, artist=heard_artist).encode("utf-8")
-    else:
-      response_text = render_template('could_not_find_song_artist', song_name=heard_song, artist=heard_artist).encode("utf-8")
-  else:
-    songs = kodi.GetSongs()
-    if 'result' in songs and 'songs' in songs['result']:
-      songs_list = songs['result']['songs']
-      song_located = kodi.matchHeard(heard_song, songs_list)
-
-      if song_located:
-        songs_array = []
-        song = None
-
-        song_result = kodi.GetSongIdPath(song_located['songid'])
-
-        if 'songdetails' in song_result['result']:
-          song = song_result['result']['songdetails']['file']
-
-        if song:
-          songs_array.append(kodi.PrepareDownload(song))
-
-        if len(songs_array) > 0:
-          random.shuffle(songs_array)
-          playlist_queue = music.MusicPlayer(songs_array)
-
-          response_text = render_template('streaming_song', song_name=heard_song).encode("utf-8")
-          audio('').clear_queue(stop=True)
-          return audio(response_text).play(songs_array[0])
-        else:
-          response_text = render_template('could_not_find_song', song_name=heard_song).encode("utf-8")
       else:
         response_text = render_template('could_not_find_song', song_name=heard_song).encode("utf-8")
     else:
@@ -771,93 +555,6 @@ def alexa_listen_album_or_song(Song, Album, Artist):
   return statement(response_text).simple_card(card_title, response_text)
 
 
-# Handle the StreamAlbumOrSong intent (Stream whole album or song by a specific artist).
-@ask.intent('StreamAlbumOrSong')
-def alexa_stream_album_or_song(Song, Album, Artist):
-  if not CAN_STREAM:
-    response_text = render_template('cant_stream').encode("utf-8")
-    return statement(response_text)
-
-  if Song:
-    heard_search = str(Song).lower().translate(None, string.punctuation)
-  elif Album:
-    heard_search = str(Album).lower().translate(None, string.punctuation)
-  if Artist:
-    heard_artist = str(Artist).lower().translate(None, string.punctuation)
-
-  card_title = render_template('streaming_album_or_song').encode("utf-8")
-  print card_title
-
-  artists = kodi.GetMusicArtists()
-  if 'result' in artists and 'artists' in artists['result']:
-    artists_list = artists['result']['artists']
-    located = kodi.matchHeard(heard_artist, artists_list, 'artist')
-
-    if located:
-      albums = kodi.GetArtistAlbums(located['artistid'])
-      if 'result' in albums and 'albums' in albums['result']:
-        albums_list = albums['result']['albums']
-        album_located = kodi.matchHeard(heard_search, albums_list)
-
-        if album_located:
-          songs_result = kodi.GetAlbumSongsPath(album_located['albumid'])
-          songs = songs_result['result']['songs']
-
-          songs_array = []
-
-          for song in songs:
-            songs_array.append(kodi.PrepareDownload(song['file']))
-
-          if len(songs_array) > 0:
-            random.shuffle(songs_array)
-            playlist_queue = music.MusicPlayer(songs_array)
-
-            response_text = render_template('streaming_album_artist', album_name=heard_search, artist=heard_artist).encode("utf-8")
-            audio('').clear_queue(stop=True)
-            return audio(response_text).play(songs_array[0])
-          else:
-            response_text = render_template('could_not_find_album_artist', album_name=heard_search, artist=heard_artist).encode("utf-8")
-        else:
-          songs = kodi.GetArtistSongs(located['artistid'])
-          if 'result' in songs and 'songs' in songs['result']:
-            songs_list = songs['result']['songs']
-            song_located = kodi.matchHeard(heard_search, songs_list)
-
-            if song_located:
-              songs_array = []
-              song = None
-
-              song_result = kodi.GetSongIdPath(song_located['songid'])
-
-              if 'songdetails' in song_result['result']:
-                song = song_result['result']['songdetails']['file']
-
-              if song:
-                songs_array.append(kodi.PrepareDownload(song))
-
-              if len(songs_array) > 0:
-                random.shuffle(songs_array)
-                playlist_queue = music.MusicPlayer(songs_array)
-
-                response_text = render_template('streaming_song_artist', song_name=heard_search, artist=heard_artist).encode("utf-8")
-                audio('').clear_queue(stop=True)
-                return audio(response_text).play(songs_array[0])
-              else:
-                response_text = render_template('could_not_find_song_artist', song_name=heard_search, artist=heard_artist).encode("utf-8")
-            else:
-              response_text = render_template('could_not_find_song_artist', heard_name=heard_search, artist=heard_artist).encode("utf-8")
-          else:
-            response_text = render_template('could_not_find_song_artist', heard_name=heard_search, artist=heard_artist).encode("utf-8")
-      else:
-        response_text = render_template('could_not_find_song_artist', heard_name=heard_search, artist=heard_artist).encode("utf-8")
-    else:
-      response_text = render_template('could_not_find_song_artist', heard_name=heard_search, artist=heard_artist).encode("utf-8")
-  else:
-    response_text = render_template('could_not_find', heard_name=heard_artist).encode("utf-8")
-
-  return statement(response_text).simple_card(card_title, response_text)
-
-
 # Handle the ListenToAudioPlaylistRecent intent (Shuffle all recently added songs).
 @ask.intent('ListenToAudioPlaylistRecent')
 def alexa_listen_recently_added_songs():
@@ -879,37 +576,6 @@ def alexa_listen_recently_added_songs():
     kodi.AddSongsToPlaylist(songs_array, True)
     kodi.StartAudioPlaylist()
     response_text = ""
-
-  return statement(response_text).simple_card(card_title, response_text)
-
-
-# Handle the StreamAudioPlaylistRecent intent (Shuffle and stream all recently added songs).
-@ask.intent('StreamAudioPlaylistRecent')
-def alexa_stream_recently_added_songs():
-  if not CAN_STREAM:
-    response_text = render_template('cant_stream').encode("utf-8")
-    return statement(response_text)
-
-  card_title = render_template('streaming_recent_songs').encode("utf-8")
-  response_text = render_template('no_recent_songs').encode("utf-8")
-  print card_title
-
-  songs_result = kodi.GetRecentlyAddedSongsPath()
-  if songs_result:
-    songs = songs_result['result']['songs']
-
-    songs_array = []
-
-    for song in songs:
-      songs_array.append(kodi.PrepareDownload(song['file']))
-
-    if len(songs_array) > 0:
-      random.shuffle(songs_array)
-      playlist_queue = music.MusicPlayer(songs_array)
-
-      response_text = render_template('streaming_recent_songs').encode("utf-8")
-      audio('').clear_queue(stop=True)
-      return audio(response_text).play(songs_array[0])
 
   return statement(response_text).simple_card(card_title, response_text)
 
@@ -957,48 +623,6 @@ def alexa_shuffle_audio_playlist(AudioPlaylist):
   return alexa_listen_audio_playlist(AudioPlaylist, True)
 
 
-# Handle the StreamAudioPlaylist intent.
-@ask.intent('StreamAudioPlaylist')
-def alexa_stream_audio_playlist(AudioPlaylist, shuffle=False):
-  if not CAN_STREAM:
-    response_text = render_template('cant_stream').encode("utf-8")
-    return statement(response_text)
-
-  heard_search = str(AudioPlaylist).lower().translate(None, string.punctuation)
-
-  if shuffle:
-    op = render_template('shuffling_empty').encode("utf-8")
-  else:
-    op = render_template('streaming_empty').encode("utf-8")
-
-  card_title = render_template('action_audio_playlist', action=op).encode("utf-8")
-  print card_title
-
-  playlist = kodi.FindAudioPlaylist(heard_search)
-  if playlist:
-    songs = kodi.GetPlaylistItems(playlist)['result']['files']
-
-    songs_array = []
-
-    for song in songs:
-      songs_array.append(kodi.PrepareDownload(song['file']))
-
-    if len(songs_array) > 0:
-      if shuffle:
-        random.shuffle(songs_array)
-      playlist_queue = music.MusicPlayer(songs_array)
-
-      response_text = render_template('playing_playlist', action=op, playlist_name=heard_search).encode("utf-8")
-      audio('').clear_queue(stop=True)
-      return audio(response_text).play(songs_array[0])
-    else:
-      response_text = render_template('could_not_find_playlist', heard_name=heard_search).encode("utf-8")
-  else:
-    response_text = render_template('could_not_find_playlist', heard_name=heard_search).encode("utf-8")
-
-  return statement(response_text).simple_card(card_title, response_text)
-
-
 # Handle the PartyMode intent.
 @ask.intent('PartyMode')
 def alexa_party_play():
@@ -1009,95 +633,6 @@ def alexa_party_play():
   kodi.ClearAudioPlaylist()
   kodi.PartyPlayMusic()
   response_text = render_template('playing_party').encode("utf-8")
-
-  return statement(response_text).simple_card(card_title, response_text)
-
-
-# Handle the StreamPartyMode intent.
-@ask.intent('StreamPartyMode')
-def alexa_stream_party_play():
-  if not CAN_STREAM:
-    response_text = render_template('cant_stream').encode("utf-8")
-    return statement(response_text)
-
-  card_title = render_template('streaming_party_mode').encode("utf-8")
-  print card_title
-
-  response_text = render_template('streaming_party').encode("utf-8")
-
-  songs = kodi.GetSongsPath()
-
-  if 'result' in songs and 'songs' in songs['result']:
-    songs_array = []
-
-    for song in songs['result']['songs']:
-      songs_array.append(kodi.PrepareDownload(song['file']))
-
-    if len(songs_array) > 0:
-      random.shuffle(songs_array)
-      playlist_queue = music.MusicPlayer(songs_array)
-
-      response_text = render_template('streaming_party').encode("utf-8")
-      audio('').clear_queue(stop=True)
-      return audio(response_text).play(songs_array[0])
-    else:
-      response_text = render_template('error_parsing_results').encode("utf-8")
-  else:
-    response_text = render_template('error_parsing_results').encode("utf-8")
-
-  return statement(response_text).simple_card(card_title, response_text)
-
-
-# Handle the SteamThis intent.
-@ask.intent('StreamThis')
-def alexa_stream_this():
-  card_title = render_template('streaming_current_playlist').encode("utf-8")
-  print card_title
-
-  current_item = kodi.GetActivePlayItem()
-
-  if current_item and current_item['type'] == 'song':
-    play_status = kodi.GetPlayerStatus()
-    playlist_items = []
-    final_playlist = []
-    songs_array = []
-
-    offset = 0
-    current_time = play_status['time']
-    if len(current_time) == 5:
-      x = time.strptime(current_time,'%M:%S')
-    else:
-      x = time.strptime(current_time,'%H:%M:%S')
-    offset = int(datetime.timedelta(hours=x.tm_hour,minutes=x.tm_min,seconds=x.tm_sec).total_seconds()) * 1000
-
-    playlist_result = kodi.GetAudioPlaylistItems()
-
-    if 'items' in playlist_result['result']:
-      playlist_items = playlist_result['result']['items']
-
-    if len(playlist_items) > 0:
-      current_playing = next((x for x in playlist_items if x['id'] == current_item['id']), None)
-      current_index = playlist_items.index(current_playing)
-      final_playlist = playlist_items[current_index:]
-
-    if len(final_playlist) > 0:
-      for song in final_playlist:
-        song_detail = kodi.GetSongIdPath(song['id'])
-        song_detail = song_detail['result']['songdetails']
-        songs_array.append(kodi.PrepareDownload(song_detail['file']))
-
-    if len(songs_array) > 0:
-      playlist_queue = music.MusicPlayer(songs_array)
-
-      kodi.Stop()
-      kodi.ClearAudioPlaylist()
-
-      response_text = render_template('transferring_stream').encode("utf-8")
-      audio('').clear_queue(stop=True)
-      return audio(response_text).play(songs_array[0])
-
-  else:
-    response_text = render_template('nothing_currently_playing')
 
   return statement(response_text).simple_card(card_title, response_text)
 
@@ -2336,108 +1871,6 @@ def alexa_what_albums(Artist):
     response_text = render_template('could_not_find', heard_name=heard_artist).encode("utf-8")
 
   return statement(response_text).simple_card(card_title, response_text)
-
-
-@ask.intent('AMAZON.PauseIntent')
-def alexa_stream_pause():
-  if not CAN_STREAM:
-    response_text = render_template('cant_stream').encode("utf-8")
-    return statement(response_text)
-
-  audio('').clear_queue()
-  return audio('').stop()
-
-
-# NextIntent steps queue forward and clears enqueued streams that were already sent to Alexa
-# next_stream will match queue.up_next and enqueue Alexa with the correct subsequent stream.
-@ask.intent('AMAZON.NextIntent')
-def alexa_stream_skip():
-  if not CAN_STREAM:
-    response_text = render_template('cant_stream').encode("utf-8")
-    return statement(response_text)
-
-  playlist_queue = music.MusicPlayer()
-
-  if playlist_queue.next_item:
-    playlist_queue.skip_song()
-    # current_item is now set as the next item from the playlist
-    return audio('').play(playlist_queue.current_item)
-  else:
-    response_text = render_template('no_more_songs').encode("utf-8")
-    return audio(response_text)
-
-
-@ask.intent('AMAZON.PreviousIntent')
-def alexa_stream_prev():
-  if not CAN_STREAM:
-    response_text = render_template('cant_stream').encode("utf-8")
-    return statement(response_text)
-
-  playlist_queue = music.MusicPlayer()
-
-  if playlist_queue.prev_item:
-    playlist_queue.prev_song()
-    # current_item is now set as the previous item from the playlist
-    return audio('').play(playlist_queue.current_item)
-  else:
-    response_text = render_template('no_songs_history').encode("utf-8")
-    return audio(response_text)
-
-
-@ask.intent('AMAZON.StartOverIntent')
-def alexa_stream_restart_track():
-  if not CAN_STREAM:
-    response_text = render_template('cant_stream').encode("utf-8")
-    return statement(response_text)
-
-  playlist_queue = music.MusicPlayer()
-
-  if playlist_queue.current_item:
-    return audio('').play(playlist_queue.current_item, offset=0)
-  else:
-    response_text = render_template('no_current_song').encode("utf-8")
-    return audio(response_text)
-
-
-@ask.intent('AMAZON.ResumeIntent')
-def alexa_stream_resume():
-  if not CAN_STREAM:
-    response_text = render_template('cant_stream').encode("utf-8")
-    return statement(response_text)
-
-  return audio('').resume()
-
-
-# This allows for Next Intents and on_playback_finished requests to trigger the step
-@ask.on_playback_nearly_finished()
-def nearly_finished():
-  playlist_queue = music.MusicPlayer()
-
-  if playlist_queue.next_item:
-    return audio().enqueue(playlist_queue.next_item)
-
-
-@ask.on_playback_finished()
-def play_back_finished():
-  playlist_queue = music.MusicPlayer()
-
-  if playlist_queue.next_item:
-    playlist_queue.skip_song()
-
-
-@ask.on_playback_started()
-def started(offset):
-  print 'Streaming started'
-
-
-@ask.on_playback_stopped()
-def stopped(offset):
-  playlist_queue = music.MusicPlayer()
-
-  playlist_queue.current_offset = offset
-  playlist_queue.save_to_mongo()
-  audio().enqueue(playlist_queue.current_item)
-  print 'Streaming stopped'
 
 
 @ask.intent('AMAZON.HelpIntent')

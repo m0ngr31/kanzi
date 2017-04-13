@@ -34,29 +34,17 @@ opening: "Öffne {{ heard_name }}"
 
 playing: "Spiele {{ heard_name }}"
 
-streaming: "Streaming {{ heard_name }}"
-
 playing_album: "Spiele das Album {{ album_name }}"
-
-streaming_album: "Streaming album {{ album_name }}"
 
 playing_album_artist: "Spiele das Album {{ album_name }} von {{ artist }}"
 
-streaming_album_artist: "Streaming album {{ album_name }} by {{ artist }}"
-
 playing_song: "Speile den Song {{ song_name }}"
 
-streaming_song: "Streaming song {{ song_name }}"
-
 playing_song_artist: "Spiele den Song {{ song_name }} von {{ artist }}"
-
-streaming_song_artist: "Streaming song {{ song_name }} by {{ artist }}"
 
 playing_playlist: "{{ action }} Playlist {{ playlist_name }}"
 
 playing_party: "Starte party play"
-
-streaming_party: "Streaming party mode"
 
 playing_genre: "Siele den {{ genre }} Film {{ movie_name }}"
 
@@ -69,8 +57,6 @@ playing_episode_number: "Spiele die Staffel {{ season }} Folge {{ episode }} von
 playing_action_episode_number: "{{ action }} Staffel {{ season }} Folge {{ episode }} von {{ show_name }}"
 
 playing_empty: "Spiele"
-
-streaming_empty: "Streaming"
 
 resuming_empty: "Setze fort"
 
@@ -112,8 +98,6 @@ you_have_episode_list: "Es gibt neue Folgen für {{ list }}"
 
 volume_set: "Lautstärke auf {{ num }} gestellt"
 
-cant_stream: "Du must Datenbank Informationen zu deinen Umgebungs Variablen hinzufügen damit dies funktioniert"
-
 open_remote: "Starte Ferbedienungs Modus, zum benutzen sage gehe nach oben, gehe zurück als wenn Du die Ferbedienung beutzen würdest, Sage Stop um den Kontroll Modus zu verlassen"
 
 help: "Du kannst mich fragen ob es neue Serien gibt, einen Film, Serie oder Sänger zu spielen, oder die Wiedergabe von Medien zu bedienen."
@@ -125,8 +109,6 @@ what_to_do: "Was möchtest Du tun?"
 welcome: "Willkommen zum Kodi skill."
 
 nothing_currently_playing: "Kodi isn't playing any music right now."
-
-transferring_stream: "Transferring stream from Kodi to Alexa."
 
 
 ############################
@@ -152,8 +134,6 @@ big_step_forward: "einen großen Schritt vorwärts"
 big_step_backward: "einen großen Schritt zurück"
 
 listen_artist: "Spiele Musik von {{ heard_artist }}"
-
-stream_artist: "Streame Musik von {{ heard_artist }}"
 
 newly_added_shows: "neu hinzugefügte Serien"
 
@@ -251,8 +231,6 @@ playing_same: "Starte aktuellen Titel erneut"
 
 playing_recent_songs: "Spiele kürzlich hinzugefügte Songs"
 
-streaming_recent_songs: "Streaming recently added songs"
-
 playing_random_movie: "Spiele zufälligen Film"
 
 playing_random_movie_genre: "Spiele zufälligen {{ genre }} Film"
@@ -269,21 +247,13 @@ playing_newest_episode: "Spiele die neuste Folge von {{ heard_show }}"
 
 playing_album_card: "Spiele Album"
 
-streaming_album_card: "Streaming album"
-
 playing_song_card: "Spiele Song"
 
-streaming_song_card: "Streaming song"
-
 playing_album_or_song: "Spile Album oder Song"
-
-streaming_album_or_song: "Streaming album or song"
 
 action_audio_playlist: "{{ action }} Audio Playlist"
 
 party_mode: "Party Mode"
-
-streaming_party_mode: "Streaming Party Mode"
 
 albums_by: "Alben von {{ heard_artist }}"
 
@@ -296,8 +266,6 @@ help_card: "Hilfe"
 open_remote_card: "Öffne Fernbedienung"
 
 playback_stopped: "Wiedergabe Stoppen"
-
-streaming_current_playlist: "Streaming current playlist"
 
 
 ############################

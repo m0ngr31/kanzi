@@ -15,7 +15,6 @@ Here are some of the features supported by this skill:
 - Shuffle music by artist
 - Play specific album
 - Play audio playlists
-- Stream music from Kodi to Alexa device
 - "Party mode" for music (shuffle all)
 - Play random unwatched episode of TV show
 - Play random unwatched movie
@@ -161,19 +160,6 @@ To verify that incoming requests are only allowed from your own copy of the skil
 
 Setting the `SKILL_TZ` environment variable will make it so when you ask how long something has left playing, it'll respond for your correct time.
 Setting the `KODI_SCHEME` to `https` allows you to talk to your Kodi box securely, but this requires some work on your end to setup.
-
-### Music streaming
-This skill now supports streaming music from your Kodi device over the internet to Alexa. Unfortunately, session data between commands when playing music is not saved by Alexa. So you have to use a database to keep track of everything. I selected MongoDB to handle this since it is Open Source and runs on everything. If you don't want to run it on your own server, you can use a service like [mLab](https://www.mlab.com/) which provides a free tier that works great for this.
-
-Here is the disclaimer:
-**You must accept this agreement saying that I'm not liable for stolen information since your username and password for Kodi will be stored in plaintext in a database and will be transferred over the internet to a HTTPS proxy server for you to have this functionality.**
-
-You'll need to configure the MONGODB_URI and ACCEPT_MUSIC_WARNING variables makes it so you can stream music from your Kodi device over the internet to Alexa.
-
-Since Alexa requires that all music it streams use HTTPS traffic, you'll need a proxy to provide this because Kodi only has plain HTTP. The USE_PROXY variable will enable your music to stream through a [simple proxy I built](https://github.com/m0ngr31/kodi-music-proxy) to make it easy. The ALT_PROXY is there if you want to self host the proxy server so you don't have to trust or rely on mine.
-
-After you've set that up, you need to enable the music playback option on the first page of the skill setup on Amazon's developer site.
-
 
 # Optimising search performance on large libraries (local installations only)
 
