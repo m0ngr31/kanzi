@@ -39,8 +39,7 @@ else:
 
 
 # Needs to be instanced after app is configured
-# ask = Ask(app, "/", None, TEMPLATE_FILE) # For when PR gets merged on Flask-Ask project
-ask = Ask(app, "/")
+ask = Ask(app, "/", None, TEMPLATE_FILE)
 
 
 # Start of intent methods
