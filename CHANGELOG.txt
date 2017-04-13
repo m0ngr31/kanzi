@@ -1,3 +1,20 @@
+v2.5.0 (04/xx/2017)
+* Migrated to Flask-Ask
+* Added session support
+* Added OpenRemote intent
+* Added support for German language
+* Updated Python slot generator to trim illegal characters
+* Added Help intent
+* Fixed BigForward/Backward and StartOver intents
+* Replaced pycontry dependency with light-weight alternative
+* Added option to make Shutdown equal Quit
+* Added 'Deploy to heroku' functionality
+* Added confirmation for destructive power commands
+* Reduced number of slot items the generator produces
+* Allow step/jump by arbitrary durations
+* Utilized Amazon Standard Built-ins for playback control
+* Various minor bug fixes
+
 v2.1.0 (01/05/2017)
 * Misc bug fixes
 * Added ability to execute addons
