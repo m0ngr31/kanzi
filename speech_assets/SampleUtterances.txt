@@ -306,12 +306,8 @@ ListenToAlbum play album {Album}
 ListenToAlbum play album {Album} by {Artist}
 ListenToAlbum play the album {Album}
 ListenToAlbum play the album {Album} by {Artist}
-ListenToAlbumOrSong listen to the {Album} by {Artist}
-ListenToAlbumOrSong listen to the {Song} by {Artist}
 ListenToAlbumOrSong listen to {Album} by {Artist}
 ListenToAlbumOrSong listen to {Song} by {Artist}
-ListenToAlbumOrSong play the {Album} by {Artist}
-ListenToAlbumOrSong play the {Song} by {Artist}
 ListenToAlbumOrSong play {Album} by {Artist}
 ListenToAlbumOrSong play {Song} by {Artist}
 ListenToArtist listen to artist {Artist}
@@ -751,6 +747,9 @@ WatchVideoPlaylist watch {VideoPlaylist} video playlist
 WhatAlbums what albums do i have by {Artist}
 WhatAlbums what albums do we have by {Artist}
 WhatAlbums what albums do you have by {Artist}
+WhatAlbums what albums i have by {Artist}
+WhatAlbums what albums we have by {Artist}
+WhatAlbums what albums you have by {Artist}
 WhatNewAlbums are there any new albums
 WhatNewAlbums are there any new albums recorded
 WhatNewAlbums are there any new albums recorded to listen to

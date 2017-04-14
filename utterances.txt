@@ -70,7 +70,7 @@ CleanAudio clean (audio/music) library
 
 UpdateAudio update (audio/music) library
 
-WhatAlbums what albums do (we/i/you) have by {Artist}
+WhatAlbums what albums (/do) (we/i/you) have by {Artist}
 
 ListenToArtist (play/listen to/shuffle) (music by/artist) {Artist}
 
@@ -80,8 +80,8 @@ ListenToAlbum (play/listen to) (/the) album {Album} by {Artist}
 ListenToSong (play/listen to) (/the) song {Song}
 ListenToSong (play/listen to) (/the) song {Song} by {Artist}
 
-ListenToAlbumOrSong (play/listen to) (/the) {Album} by {Artist}
-ListenToAlbumOrSong (play/listen to) (/the) {Song} by {Artist}
+ListenToAlbumOrSong (play/listen to) {Album} by {Artist}
+ListenToAlbumOrSong (play/listen to) {Song} by {Artist}
 
 ListenToAudioPlaylist (play/listen to) (/the) (song/music/audio) playlist {AudioPlaylist}
 ListenToAudioPlaylist (play/listen to) (/the) {AudioPlaylist} (song/music/audio) playlist

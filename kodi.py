@@ -132,6 +132,7 @@ def http_normalize_slashes(url):
   normalized_url = '/'.join(correct_segments)
   return normalized_url
 
+
 def PopulateEnv():
   populate_env()
 
@@ -334,7 +335,20 @@ def matchHeard(heard, results, lookingFor='label'):
   return located
 
 
-# Playlists
+# Helpers to find media
+
+def FindVideoPlaylist(heard_search):
+  print 'Searching for video playlist "%s"' % (heard_search)
+
+  playlists = GetVideoPlaylists()
+  if 'result' in playlists and 'files' in playlists['result']:
+    playlists_list = playlists['result']['files']
+    located = matchHeard(heard_search, playlists_list, 'label')
+
+    if located:
+      print 'Located video playlist "%s"' % (located['file'])
+      return located['file']
+
 
 def FindAudioPlaylist(heard_search):
   print 'Searching for audio playlist "%s"' % (heard_search)
@@ -348,6 +362,73 @@ def FindAudioPlaylist(heard_search):
       print 'Located audio playlist "%s"' % (located['file'])
       return located['file']
 
+
+def FindMovie(heard_search):
+  print 'Searching for movie "%s"' % (heard_search)
+
+  movies = GetMovies()
+  if 'result' in movies and 'movies' in movies['result']:
+    movies_array = movies['result']['movies']
+    located = matchHeard(heard_search, movies_array)
+
+    if located:
+      print 'Located movie "%s"' % (located['label'])
+      return located['movieid']
+
+
+def FindTvShow(heard_search):
+  print 'Searching for show "%s"' % (heard_search)
+
+  shows = GetTvShows()
+  if 'result' in shows and 'tvshows' in shows['result']:
+    shows_array = shows['result']['tvshows']
+    located = matchHeard(heard_search, shows_array)
+
+    if located:
+      print 'Located tvshow "%s"' % (located['label'])
+      return located['tvshowid']
+
+
+def FindArtist(heard_search):
+  print 'Searching for artist "%s"' % (heard_search)
+
+  artists = GetMusicArtists()
+  if 'result' in artists and 'artists' in artists['result']:
+    artists_list = artists['result']['artists']
+    located = matchHeard(heard_search, artists_list, 'artist')
+
+    if located:
+      print 'Located artist "%s"' % (located['label'])
+      return located['artistid']
+
+
+def FindAlbum(heard_search):
+  print 'Searching for album "%s"' % (heard_search)
+
+  albums = GetAlbums()
+  if 'result' in albums and 'albums' in albums['result']:
+    albums_list = albums['result']['albums']
+    located = matchHeard(heard_search, albums_list, 'label')
+
+    if located:
+      print 'Located album "%s"' % (located['label'])
+      return located['albumid']
+
+
+def FindSong(heard_search):
+  print 'Searching for song "%s"' % (heard_search)
+
+  songs = GetSongs()
+  if 'result' in songs and 'songs' in songs['result']:
+    songs_list = songs['result']['songs']
+    located = matchHeard(heard_search, songs_list, 'label')
+
+    if located:
+      print 'Located song "%s"' % (located['label'])
+      return located['songid']
+
+
+# Playlists
 
 def ClearAudioPlaylist():
   return SendCommand(RPCString("Playlist.Clear", {"playlistid": 0}))
@@ -390,19 +471,6 @@ def StartAudioPlaylist(playlist_file=None):
     return SendCommand(RPCString("Player.Open", {"item": {"file": playlist_file}}))
   else:
     return SendCommand(RPCString("Player.Open", {"item": {"playlistid": 0}}))
-
-
-def FindVideoPlaylist(heard_search):
-  print 'Searching for video playlist "%s"' % (heard_search)
-
-  playlists = GetVideoPlaylists()
-  if 'result' in playlists and 'files' in playlists['result']:
-    playlists_list = playlists['result']['files']
-    located = matchHeard(heard_search, playlists_list, 'label')
-
-    if located:
-      print 'Located video playlist "%s"' % (located['file'])
-      return located['file']
 
 
 def ClearVideoPlaylist():
