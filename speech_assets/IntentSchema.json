@@ -109,7 +109,25 @@
       "intent": "AMAZON.HelpIntent"
     },
     {
+      "intent": "PlayMedia",
+      "slots": [
+        {
+          "name": "Movie",
+          "type": "MOVIES"
+        }
+      ]
+    },
+    {
       "intent": "WhatAlbums",
+      "slots": [
+        {
+          "name": "Artist",
+          "type": "MUSICARTISTS"
+        }
+      ]
+    },
+    {
+      "intent": "ListenToAudio",
       "slots": [
         {
           "name": "Artist",
@@ -189,6 +207,15 @@
     },
     {
       "intent": "ListenToAudioPlaylistRecent"
+    },
+    {
+      "intent": "WatchVideo",
+      "slots": [
+        {
+          "name": "Movie",
+          "type": "MOVIES"
+        }
+      ]
     },
     {
       "intent": "WatchEpisode",

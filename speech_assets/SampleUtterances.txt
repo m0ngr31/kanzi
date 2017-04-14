@@ -316,6 +316,7 @@ ListenToArtist play artist {Artist}
 ListenToArtist play music by {Artist}
 ListenToArtist shuffle artist {Artist}
 ListenToArtist shuffle music by {Artist}
+ListenToAudio listen to {Artist}
 ListenToAudioPlaylist listen to audio playlist {AudioPlaylist}
 ListenToAudioPlaylist listen to music playlist {AudioPlaylist}
 ListenToAudioPlaylist listen to playlist {AudioPlaylist}
@@ -404,6 +405,7 @@ PartyMode listen to random music
 PartyMode play all music
 PartyMode play random music
 PartyMode shuffle all music
+PlayMedia play {Movie}
 PlayerMoveDown move down
 PlayerMoveDown pan down
 PlayerMoveDown track down
@@ -723,6 +725,7 @@ WatchRandomMovie watch random film
 WatchRandomMovie watch random movie
 WatchRandomMovie watch random {Genre} film
 WatchRandomMovie watch random {Genre} movie
+WatchVideo watch {Movie}
 WatchVideoPlaylist play movie playlist {VideoPlaylist}
 WatchVideoPlaylist play show playlist {VideoPlaylist}
 WatchVideoPlaylist play the movie playlist {VideoPlaylist}

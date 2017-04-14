@@ -69,7 +69,11 @@ CleanAudio (Audio/Musik) Bibliothek säubern
 UpdateAudio (erneuer(/e)/refresh(/e)/update) (Audio/Musik) Bibliothek
 UpdateVideo (Audio/Musik) Bibliothek (erneuern/refreshen/updaten)
 
+PlayMedia spiel(/e) {Movie}
+
 WhatAlbums (welches Album/welche (Alben/CD/CDs/Platte/Platten)) (ich von {Artist} habe/wir von {Artist} haben/du von {Artist} hast)
+
+ListenToAudio anhören {Artist}
 
 ListenToArtist spiel(/e) (Musik/Lieder/Songs/Mucke) von (/dem Artist/der Artistin/dem Komponist/der Komponistin/dem Künstler/der Künstlerin/der Band/der Gruppe) {Artist}
 
@@ -86,6 +90,8 @@ ListenToAudioPlaylist spiel(/e) {AudioPlaylist} (Musik/Lieder/Song) playlist
 
 ListenToAudioPlaylistRecent spiel(/e) neue (Musik/Lieder/Songs)
 ListenToAudioPlaylistRecent spiel(/e) (zuletzt/kürzlich) hinzugefügte (Musik/Lieder/Songs)
+
+WatchVideo zeige {Movie}
 
 WatchRandomMovie zeige (/zufälligen) (/{Genre}) Film
 

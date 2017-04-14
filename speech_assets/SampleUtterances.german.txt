@@ -654,6 +654,7 @@ ListenToArtist spiele Songs von der Gruppe {Artist}
 ListenToArtist spiele Songs von der Komponistin {Artist}
 ListenToArtist spiele Songs von der Künstlerin {Artist}
 ListenToArtist spiele Songs von {Artist}
+ListenToAudio anhören {Artist}
 ListenToAudioPlaylist spiel Lieder playlist {AudioPlaylist}
 ListenToAudioPlaylist spiel Musik playlist {AudioPlaylist}
 ListenToAudioPlaylist spiel Song playlist {AudioPlaylist}
@@ -805,6 +806,8 @@ PartyMode spiele zufällige Lieder
 PartyMode spiele zufällige Mucke
 PartyMode spiele zufällige Musik
 PartyMode spiele zufällige Songs
+PlayMedia spiel {Movie}
+PlayMedia spiele {Movie}
 PlayerMoveDown geh nach unten
 PlayerMoveDown geh runter
 PlayerMoveDown gehe nach unten
@@ -1198,6 +1201,7 @@ WatchRandomMovie zeige Film
 WatchRandomMovie zeige zufälligen Film
 WatchRandomMovie zeige zufälligen {Genre} Film
 WatchRandomMovie zeige {Genre} Film
+WatchVideo zeige {Movie}
 WatchVideoPlaylist zeige Film playlist {VideoPlaylist}
 WatchVideoPlaylist zeige Serie playlist {VideoPlaylist}
 WatchVideoPlaylist zeige Video playlist {VideoPlaylist}

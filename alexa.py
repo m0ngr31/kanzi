@@ -350,6 +350,151 @@ def alexa_player_seek_bigbackward():
   return statement(response_text).simple_card(card_title, response_text)
 
 
+def find_and_play(needle, content=['video','audio'], slot_hint='unknown', slot_ignore=""):
+  print 'Searching for "%s"' % (needle)
+  if slot_hint != 'unknown':
+    print 'Pre-match with slot: ' + slot_hint
+  print 'Searching content types: '
+  print content
+
+  # The order of the searches here is not random, please don't reorganize
+  # without giving some thought to overall performance based on most
+  # frequently requested types.
+
+  # Video playlist?
+  if 'video' in content and slot_ignore != 'VideoPlaylist' and (slot_hint == 'unknown' or slot_hint == 'VideoPlaylist'):
+    playlist = kodi.FindVideoPlaylist(needle)
+    if playlist:
+      kodi.PlayerStop()
+      kodi.StartVideoPlaylist(playlist)
+      op = render_template('playing_empty').encode("utf-8")
+      return render_template('playing_playlist_video', action=op, playlist_name=needle).encode("utf-8")
+
+  # Audio playlist?
+  if 'audio' in content and slot_ignore != 'AudioPlaylist' and (slot_hint == 'unknown' or slot_hint == 'AudioPlaylist'):
+    playlist = kodi.FindAudioPlaylist(needle)
+    if playlist:
+      kodi.PlayerStop()
+      kodi.StartAudioPlaylist(playlist)
+      op = render_template('playing_empty').encode("utf-8")
+      return render_template('playing_playlist_audio', action=op, playlist_name=needle).encode("utf-8")
+
+  # Movie?
+  if 'video' in content and slot_ignore != 'Movie' and (slot_hint == 'unknown' or slot_hint == 'Movie'):
+    movie = kodi.FindMovie(needle)
+    if movie:
+      if kodi.GetMovieDetails(movie)['resume']['position'] > 0:
+        action = render_template('resuming_empty').encode("utf-8")
+      else:
+        action = render_template('playing_empty').encode("utf-8")
+      kodi.PlayMovie(movie)
+      return render_template('playing_action', action=action, movie_name=needle).encode("utf-8")
+
+  # Show?
+  if 'video' in content and slot_ignore != 'Show' and (slot_hint == 'unknown' or slot_hint == 'Show'):
+    show = kodi.FindTvShow(needle)
+    if show:
+      # Try the next unwatched episode first
+      episode_id = kodi.GetNextUnwatchedEpisode(show)
+      if not episode_id:
+        # All episodes already watched, so just play a random episode
+        episodes_result = kodi.GetEpisodesFromShow(show)
+        episodes_array = []
+        for episode in episodes_result['result']['episodes']:
+          episodes_array.append(episode['episodeid'])
+        episode_id = random.choice(episodes_array)
+
+      if episode_id:
+        episode_details = kodi.GetEpisodeDetails(episode_id)
+        # Resume is not enabled for generic play request of shows
+        kodi.PlayEpisode(episode_id, False)
+        return render_template('playing_episode_number', season=episode_details['season'], episode=episode_details['episode'], show_name=needle).encode("utf-8")
+
+  # Artist?
+  if 'audio' in content and slot_ignore != 'Artist' and (slot_hint == 'unknown' or slot_hint == 'Artist'):
+    artist = kodi.FindArtist(needle)
+    if artist:
+      songs_result = kodi.GetArtistSongs(artist)
+      songs = songs_result['result']['songs']
+      songs_array = []
+      for song in songs:
+        songs_array.append(song['songid'])
+
+      kodi.PlayerStop()
+      kodi.ClearAudioPlaylist()
+      kodi.AddSongsToPlaylist(songs_array, True)
+      kodi.StartAudioPlaylist()
+      return render_template('playing', heard_name=needle).encode("utf-8")
+
+  # Song?
+  if 'audio' in content and slot_ignore != 'Song' and (slot_hint == 'unknown' or slot_hint == 'Song'):
+    song = kodi.FindSong(needle)
+    if song:
+      kodi.PlayerStop()
+      kodi.ClearAudioPlaylist()
+      kodi.AddSongToPlaylist(song)
+      kodi.StartAudioPlaylist()
+      return render_template('playing_song', song_name=needle).encode("utf-8")
+
+  # Album?
+  if 'audio' in content and slot_ignore != 'Album' and (slot_hint == 'unknown' or slot_hint == 'Album'):
+    album = kodi.FindAlbum(needle)
+    if album:
+      kodi.PlayerStop()
+      kodi.ClearAudioPlaylist()
+      kodi.AddAlbumToPlaylist(album)
+      kodi.StartAudioPlaylist()
+      return render_template('playing_album', album_name=needle).encode("utf-8")
+
+  return None
+
+
+# Handle the PlayMedia intent.
+#
+# Generic play function.  Tries to find media to play when the user didn't
+# specify the media type.  Can be restricted to video or audio by passing
+# in the array argument content, which is most useful when the user's verb
+# is "listen to" or "watch".
+@ask.intent('PlayMedia')
+def alexa_play_media(Movie=None, Artist=None, content=None):
+  if not content:
+    content=['video','audio']
+
+  # Matches directly to slots Movie and Artist only, but will fuzzy match
+  # across the whole library if neither are found.  See the find_and_play()
+  # method for the order of the searches.
+  heard_search = ''
+  heard_slot = 'unknown'
+  if 'video' in content and Movie:
+    heard_search = str(Movie).lower().translate(None, string.punctuation)
+    heard_slot = 'Movie'
+  elif 'audio' in content and Artist:
+    heard_search = str(Artist).lower().translate(None, string.punctuation)
+    heard_slot = 'Artist'
+
+  card_title = 'Playing "%s"' % (heard_search)
+  print card_title
+
+  if (len(heard_search) > 0):
+    response_text = find_and_play(heard_search, content, heard_slot)
+    if not response_text and heard_slot != 'unknown':
+      response_text = find_and_play(heard_search, content, slot_ignore=heard_slot)
+    if not response_text:
+      response_text = render_template('could_not_find', heard_name=heard_search).encode("utf-8")
+  else:
+    response_text = render_template('error_parsing_results').encode("utf-8")
+
+  return statement(response_text).simple_card(card_title, response_text)
+
+# Handle the ListenToAudio intent.
+#
+# Defaults to Artists, but will fuzzy match across the library if none found.
+@ask.intent('ListenToAudio')
+def alexa_listen_audio(Artist):
+  print "Listen to audio..."
+  return alexa_play_media(Artist=Artist, content=['audio'])
+
+
 # Handle the ListenToArtist intent (Shuffles all music by an artist).
 @ask.intent('ListenToArtist')
 def alexa_listen_artist(Artist):
@@ -1381,6 +1526,15 @@ def alexa_addon_globalsearch(Movie, Show, Artist, Album, Song):
     response_text = render_template('could_not_find_generic').encode("utf-8")
 
   return statement(response_text).simple_card(card_title, response_text)
+
+
+# Handle the WatchVideo intent.
+#
+# Defaults to Movies, but will fuzzy match across the library if none found.
+@ask.intent('WatchVideo')
+def alexa_watch_video(Movie):
+  print "Watch a video..."
+  return alexa_play_media(Movie=Movie, content=['video'])
 
 
 # Handle the WatchRandomMovie intent.
