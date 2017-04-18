@@ -186,7 +186,7 @@ PlayerSeekBigForward (großer/langer/weiter) rückwärts (Schritt/Sprung)
 PlayerSeekBigBackward weiter zurück(/spulen/springen)
 
 AddonExecute öffne {Addon}
-AddonExecute führe (/addon/plugin/script/erweiterung) {Addon} aus
+AddonExecute führe (/addon/add on/plugin/plug in/script/erweiterung) {Addon} aus
 
 AddonGlobalSearch suche (/nach) {Show}
 AddonGlobalSearch suche (/nach) {Movie}
