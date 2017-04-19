@@ -300,7 +300,13 @@ def AddSongsToPlaylist(song_ids, shuffle=False):
   if shuffle:
     random.shuffle(songs_array)
 
-  return SendCommand(RPCString("Playlist.Add", {"playlistid": 0, "item": songs_array}))
+  # Segment the requests into chunks that Kodi will accept in a single call
+  song_groups = [songs_array[x:x+2000] for x in range(0, len(songs_array), 2000)]
+  for a in song_groups:
+    print "Adding %d items to the queue..." % (len(a))
+    res = SendCommand(RPCString("Playlist.Add", {"playlistid": 0, "item": a}))
+
+  return res
 
 
 def AddAlbumToPlaylist(album_id):
@@ -354,7 +360,13 @@ def AddVideosToPlaylist(video_files, shuffle=False):
   if shuffle:
     random.shuffle(videos_array)
 
-  return SendCommand(RPCString("Playlist.Add", {"playlistid": 1, "item": videos_array}))
+  # Segment the requests into chunks that Kodi will accept in a single call
+  video_groups = [videos_array[x:x+2000] for x in range(0, len(videos_array), 2000)]
+  for a in video_groups:
+    print "Adding %d items to the queue..." % (len(a))
+    res = SendCommand(RPCString("Playlist.Add", {"playlistid": 1, "item": a}))
+
+  return res
 
 
 def GetVideoPlaylistItems():
