@@ -512,32 +512,32 @@ def VolumeSet(vol, percent=True):
 
 # Player controls
 
-def PlayPause():
+def PlayerPlayPause():
   playerid = GetPlayerID()
   if playerid is not None:
     return SendCommand(RPCString("Player.PlayPause", {"playerid":playerid}))
 
 
-def PlaySkip():
+def PlayerSkip():
   playerid = GetPlayerID()
   if playerid is not None:
     return SendCommand(RPCString("Player.GoTo", {"playerid":playerid, "to": "next"}))
 
 
-def PlayPrev():
+def PlayerPrev():
   playerid = GetPlayerID()
   if playerid is not None:
     SendCommand(RPCString("Player.GoTo", {"playerid":playerid, "to": "previous"}))
     return SendCommand(RPCString("Player.GoTo", {"playerid":playerid, "to": "previous"}))
 
 
-def PlayStartOver():
+def PlayerStartOver():
   playerid = GetPlayerID()
   if playerid is not None:
     return SendCommand(RPCString("Player.Seek", {"playerid":playerid, "value": 0}))
 
 
-def Stop():
+def PlayerStop():
   playerid = GetPlayerID()
   if playerid is not None:
     return SendCommand(RPCString("Player.Stop", {"playerid":playerid}))
@@ -573,43 +573,37 @@ def PlayerSeekBigBackward():
     return SendCommand(RPCString("Player.Seek", {"playerid":playerid, "value":"bigbackward"}))
 
 
-def Replay():
-  playerid = GetPlayerID()
-  if playerid:
-    return SendCommand(RPCString("Player.Seek", {"playerid":playerid, "value":"smallbackward"}))
-
-
-def SubtitlesOn():
+def PlayerSubtitlesOn():
   playerid = GetVideoPlayerID()
   if playerid:
     return SendCommand(RPCString("Player.SetSubtitle", {"playerid":playerid, "subtitle":"on"}))
 
 
-def SubtitlesOff():
+def PlayerSubtitlesOff():
   playerid = GetVideoPlayerID()
   if playerid:
     return SendCommand(RPCString("Player.SetSubtitle", {"playerid":playerid, "subtitle":"off"}))
 
 
-def SubtitlesNext():
+def PlayerSubtitlesNext():
   playerid = GetVideoPlayerID()
   if playerid:
     return SendCommand(RPCString("Player.SetSubtitle", {"playerid":playerid, "subtitle":"next", "enable":True}))
 
 
-def SubtitlesPrevious():
+def PlayerSubtitlesPrevious():
   playerid = GetVideoPlayerID()
   if playerid:
     return SendCommand(RPCString("Player.SetSubtitle", {"playerid":playerid, "subtitle":"previous", "enable":True}))
 
 
-def AudioStreamNext():
+def PlayerAudioStreamNext():
   playerid = GetVideoPlayerID()
   if playerid:
     return SendCommand(RPCString("Player.SetAudioStream", {"playerid":playerid, "stream":"next"}))
 
 
-def AudioStreamPrevious():
+def PlayerAudioStreamPrevious():
   playerid = GetVideoPlayerID()
   if playerid:
     return SendCommand(RPCString("Player.SetAudioStream", {"playerid":playerid, "stream":"previous"}))
@@ -920,7 +914,7 @@ def SystemEjectMedia():
 # Misc helpers
 
 # Get the first active player.
-def GetPlayerID(playertype=['audio', 'video', 'picture']):
+def GetPlayerID(playertype=['picture', 'audio', 'video']):
   data = SendCommand(RPCString("Player.GetActivePlayers"))
   result = data.get("result", [])
   if len(result) > 0:
@@ -1021,7 +1015,6 @@ def GetCurrentSubtitles():
   subs = ""
   country_dic = getisocodes_dict()
   curprops = GetActivePlayProperties()
-  print curprops
   if curprops is not None:
     try:
       # gets 3 character country code e.g. fre

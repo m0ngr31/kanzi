@@ -173,7 +173,7 @@ def alexa_play_pause():
   card_title = render_template('play_pause').encode("utf-8")
   print card_title
 
-  kodi.PlayPause()
+  kodi.PlayerPlayPause()
   response_text = ""
 
   return statement(response_text).simple_card(card_title, response_text)
@@ -196,7 +196,7 @@ def alexa_stop_cancel():
     card_title = render_template('stopping').encode("utf-8")
     print card_title
 
-    kodi.Stop()
+    kodi.PlayerStop()
     response_text = render_template('playback_stopped').encode("utf-8")
 
     return statement(response_text).simple_card(card_title, response_text)
@@ -381,7 +381,7 @@ def alexa_listen_artist(Artist):
       for song in songs:
         songs_array.append(song['songid'])
 
-      kodi.Stop()
+      kodi.PlayerStop()
       kodi.ClearAudioPlaylist()
       kodi.AddSongsToPlaylist(songs_array, True)
       kodi.StartAudioPlaylist()
@@ -416,7 +416,7 @@ def alexa_listen_album(Album, Artist):
 
           if album_located:
             album_result = album_located['albumid']
-            kodi.Stop()
+            kodi.PlayerStop()
             kodi.ClearAudioPlaylist()
             kodi.AddAlbumToPlaylist(album_result)
             kodi.StartAudioPlaylist()
@@ -437,7 +437,7 @@ def alexa_listen_album(Album, Artist):
 
       if album_located:
         album_result = album_located['albumid']
-        kodi.Stop()
+        kodi.PlayerStop()
         kodi.ClearAudioPlaylist()
         kodi.AddAlbumToPlaylist(album_result)
         kodi.StartAudioPlaylist()
@@ -472,7 +472,7 @@ def alexa_listen_song(Song, Artist):
 
           if song_located:
             song_result = song_located['songid']
-            kodi.Stop()
+            kodi.PlayerStop()
             kodi.ClearAudioPlaylist()
             kodi.AddSongToPlaylist(song_result)
             kodi.StartAudioPlaylist()
@@ -493,7 +493,7 @@ def alexa_listen_song(Song, Artist):
 
       if song_located:
         song_result = song_located['songid']
-        kodi.Stop()
+        kodi.PlayerStop()
         kodi.ClearAudioPlaylist()
         kodi.AddSongToPlaylist(song_result)
         kodi.StartAudioPlaylist()
@@ -532,7 +532,7 @@ def alexa_listen_album_or_song(Song, Album, Artist):
 
         if album_located:
           album_result = album_located['albumid']
-          kodi.Stop()
+          kodi.PlayerStop()
           kodi.ClearAudioPlaylist()
           kodi.AddAlbumToPlaylist(album_result)
           kodi.StartAudioPlaylist()
@@ -545,7 +545,7 @@ def alexa_listen_album_or_song(Song, Album, Artist):
 
             if song_located:
               song_result = song_located['songid']
-              kodi.Stop()
+              kodi.PlayerStop()
               kodi.ClearAudioPlaylist()
               kodi.AddSongToPlaylist(song_result)
               kodi.StartAudioPlaylist()
@@ -580,7 +580,7 @@ def alexa_listen_recently_added_songs():
     for song in songs:
       songs_array.append(song['songid'])
 
-    kodi.Stop()
+    kodi.PlayerStop()
     kodi.ClearAudioPlaylist()
     kodi.AddSongsToPlaylist(songs_array, True)
     kodi.StartAudioPlaylist()
@@ -612,12 +612,12 @@ def alexa_listen_audio_playlist(AudioPlaylist, shuffle=False):
       for song in songs:
         songs_array.append(song['id'])
 
-      kodi.Stop()
+      kodi.PlayerStop()
       kodi.ClearAudioPlaylist()
       kodi.AddSongsToPlaylist(songs_array, True)
       kodi.StartAudioPlaylist()
     else:
-      kodi.Stop()
+      kodi.PlayerStop()
       kodi.StartAudioPlaylist(playlist)
     response_text = render_template('playing_playlist', action=op, playlist_name=heard_search).encode("utf-8")
   else:
@@ -638,7 +638,7 @@ def alexa_party_play():
   card_title = render_template('party_mode').encode("utf-8")
   print card_title
 
-  kodi.Stop()
+  kodi.PlayerStop()
   kodi.ClearAudioPlaylist()
   kodi.PartyPlayMusic()
   response_text = render_template('playing_party').encode("utf-8")
@@ -652,7 +652,7 @@ def alexa_start_over():
   card_title = render_template('playing_same').encode("utf-8")
   print card_title
 
-  kodi.PlayStartOver()
+  kodi.PlayerStartOver()
   response_text = ""
 
   return statement(response_text).simple_card(card_title, response_text)
@@ -664,7 +664,7 @@ def alexa_next():
   card_title = render_template('playing_next').encode("utf-8")
   print card_title
 
-  kodi.PlaySkip()
+  kodi.PlayerSkip()
   response_text = ""
 
   return statement(response_text).simple_card(card_title, response_text)
@@ -676,7 +676,7 @@ def alexa_prev():
   card_title = render_template('playing_previous').encode("utf-8")
   print card_title
 
-  kodi.PlayPrev()
+  kodi.PlayerPrev()
   response_text = ""
 
   return statement(response_text).simple_card(card_title, response_text)
@@ -760,7 +760,7 @@ def alexa_subtitles_on():
   card_title = render_template('subtitles_enable').encode("utf-8")
   print card_title
 
-  kodi.SubtitlesOn()
+  kodi.PlayerSubtitlesOn()
   response_text = kodi.GetCurrentSubtitles()
 
   return statement(response_text).simple_card(card_title, response_text)
@@ -772,7 +772,7 @@ def alexa_subtitles_off():
   card_title = render_template('subtitles_disable').encode("utf-8")
   print card_title
 
-  kodi.SubtitlesOff()
+  kodi.PlayerSubtitlesOff()
   response_text = kodi.GetCurrentSubtitles()
 
   return statement(response_text).simple_card(card_title, response_text)
@@ -784,7 +784,7 @@ def alexa_subtitles_next():
   card_title = render_template('subtitles_next').encode("utf-8")
   print card_title
 
-  kodi.SubtitlesNext()
+  kodi.PlayerSubtitlesNext()
   response_text = kodi.GetCurrentSubtitles()
 
   return statement(response_text).simple_card(card_title, response_text)
@@ -796,7 +796,7 @@ def alexa_subtitles_previous():
   card_title = render_template('subtitles_previous').encode("utf-8")
   print card_title
 
-  kodi.SubtitlesPrevious()
+  kodi.PlayerSubtitlesPrevious()
   response_text = kodi.GetCurrentSubtitles()
 
   return statement(response_text).simple_card(card_title, response_text)
@@ -808,7 +808,7 @@ def alexa_audiostream_next():
   card_title = render_template('audio_stream_next').encode("utf-8")
   print card_title
 
-  kodi.AudioStreamNext()
+  kodi.PlayerAudioStreamNext()
   response_text = kodi.GetCurrentAudioStream()
 
   return statement(response_text).simple_card(card_title, response_text)
@@ -820,7 +820,7 @@ def alexa_audiostream_previous():
   card_title = render_template('audio_stream_previous').encode("utf-8")
   print card_title
 
-  kodi.AudioStreamPrevious()
+  kodi.PlayerAudioStreamPrevious()
   response_text = kodi.GetCurrentAudioStream()
 
   return statement(response_text).simple_card(card_title, response_text)
@@ -1659,12 +1659,12 @@ def alexa_watch_video_playlist(VideoPlaylist, shuffle=False):
       for video in videos:
         videos_array.append(video['file'])
 
-      kodi.Stop()
+      kodi.PlayerStop()
       kodi.ClearVideoPlaylist()
       kodi.AddVideosToPlaylist(videos_array, True)
       kodi.StartVideoPlaylist()
     else:
-      kodi.Stop()
+      kodi.PlayerStop()
       kodi.StartVideoPlaylist(playlist)
     response_text = render_template('playing_playlist_action', action=op, playlist_name=heard_search).encode("utf-8")
   else:
@@ -1701,7 +1701,7 @@ def alexa_shuffle_playlist(VideoPlaylist, AudioPlaylist):
       for video in videos:
         videos_array.append(video['file'])
 
-      kodi.Stop()
+      kodi.PlayerStop()
       kodi.ClearVideoPlaylist()
       kodi.AddVideosToPlaylist(videos_array, True)
       kodi.StartVideoPlaylist()
@@ -1716,7 +1716,7 @@ def alexa_shuffle_playlist(VideoPlaylist, AudioPlaylist):
         for song in songs:
           songs_array.append(song['id'])
 
-        kodi.Stop()
+        kodi.PlayerStop()
         kodi.ClearAudioPlaylist()
         kodi.AddSongsToPlaylist(songs_array, True)
         kodi.StartAudioPlaylist()
