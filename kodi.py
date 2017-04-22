@@ -573,6 +573,18 @@ def PlayerSeekBigBackward():
     return SendCommand(RPCString("Player.Seek", {"playerid":playerid, "value":"bigbackward"}))
 
 
+def PlayerShuffleOn():
+  playerid = GetPlayerID()
+  if playerid is not None:
+    return SendCommand(RPCString("Player.SetShuffle", {"playerid":playerid, "shuffle":True}))
+
+
+def PlayerShuffleOff():
+  playerid = GetPlayerID()
+  if playerid is not None:
+    return SendCommand(RPCString("Player.SetShuffle", {"playerid":playerid, "shuffle":False}))
+
+
 def PlayerSubtitlesOn():
   playerid = GetVideoPlayerID()
   if playerid:

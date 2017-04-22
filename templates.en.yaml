@@ -68,6 +68,10 @@ shuffling_playlist_audio: "Shuffling audio playlist {{ playlist_name }}"
 
 shuffling_playlist: "Shuffling playlist {{ playlist_name }}"
 
+shuffle_on: "Shuffle mode on"
+
+shuffle_off: "Shuffle mode off"
+
 no_new_episodes_show: "No new episodes for {{ show_name }}"
 
 no_albums_artist: "You have no albums by {{ artist }}"
@@ -200,6 +204,10 @@ player_move_left: "Player move left"
 player_move_down: "Player move down"
 
 player_move_up: "Player move up"
+
+shuffle_disable: "Disabling shuffle"
+
+shuffle_enable: "Enabling shuffle"
 
 audio_stream_next: "Switching to next audio stream"
 

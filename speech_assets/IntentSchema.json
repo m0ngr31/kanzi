@@ -94,6 +94,12 @@
       "intent": "AMAZON.StartOverIntent"
     },
     {
+      "intent": "AMAZON.ShuffleOnIntent"
+    },
+    {
+      "intent": "AMAZON.ShuffleOffIntent"
+    },
+    {
       "intent": "AMAZON.HelpIntent"
     },
     {

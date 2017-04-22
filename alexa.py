@@ -682,6 +682,30 @@ def alexa_prev():
   return statement(response_text).simple_card(card_title, response_text)
 
 
+# Handle the AMAZON.ShuffleOnIntent intent.
+@ask.intent('AMAZON.ShuffleOnIntent')
+def alexa_shuffle_on():
+  card_title = render_template('shuffle_enable').encode("utf-8")
+  print card_title
+
+  kodi.PlayerShuffleOn()
+  response_text = render_template('shuffle_on').encode("utf-8")
+
+  return statement(response_text).simple_card(card_title, response_text)
+
+
+# Handle the AMAZON.ShuffleOffIntent intent.
+@ask.intent('AMAZON.ShuffleOffIntent')
+def alexa_shuffle_off():
+  card_title = render_template('shuffle_disable').encode("utf-8")
+  print card_title
+
+  kodi.PlayerShuffleOff()
+  response_text = render_template('shuffle_off').encode("utf-8")
+
+  return statement(response_text).simple_card(card_title, response_text)
+
+
 # Handle the Fullscreen intent.
 @ask.intent('Fullscreen')
 def alexa_fullscreen():
