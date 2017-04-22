@@ -585,6 +585,18 @@ def PlayerShuffleOff():
     return SendCommand(RPCString("Player.SetShuffle", {"playerid":playerid, "shuffle":False}))
 
 
+def PlayerLoopOn():
+  playerid = GetPlayerID()
+  if playerid is not None:
+    return SendCommand(RPCString("Player.SetRepeat", {"playerid":playerid, "repeat":"cycle"}))
+
+
+def PlayerLoopOff():
+  playerid = GetPlayerID()
+  if playerid is not None:
+    return SendCommand(RPCString("Player.SetRepeat", {"playerid":playerid, "repeat":"off"}))
+
+
 def PlayerSubtitlesOn():
   playerid = GetVideoPlayerID()
   if playerid:

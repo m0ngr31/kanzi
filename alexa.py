@@ -706,6 +706,38 @@ def alexa_shuffle_off():
   return statement(response_text).simple_card(card_title, response_text)
 
 
+# Handle the AMAZON.LoopOnIntent intent.
+@ask.intent('AMAZON.LoopOnIntent')
+def alexa_loop_on():
+  card_title = render_template('loop_enable').encode("utf-8")
+  print card_title
+
+  kodi.PlayerLoopOn()
+  response_text = ""
+  curprops = kodi.GetActivePlayProperties()
+  if curprops is not None:
+    if curprops['repeat'] == 'one':
+      response_text = render_template('loop_one').encode("utf-8")
+    elif curprops['repeat'] == 'all':
+      response_text = render_template('loop_all').encode("utf-8")
+    elif curprops['repeat'] == 'off':
+      response_text = render_template('loop_off').encode("utf-8")
+
+  return statement(response_text).simple_card(card_title, response_text)
+
+
+# Handle the AMAZON.LoopOffIntent intent.
+@ask.intent('AMAZON.LoopOffIntent')
+def alexa_loop_off():
+  card_title = render_template('loop_disable').encode("utf-8")
+  print card_title
+
+  kodi.PlayerLoopOff()
+  response_text = render_template('loop_off').encode("utf-8")
+
+  return statement(response_text).simple_card(card_title, response_text)
+
+
 # Handle the Fullscreen intent.
 @ask.intent('Fullscreen')
 def alexa_fullscreen():

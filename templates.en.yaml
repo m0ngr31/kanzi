@@ -72,6 +72,12 @@ shuffle_on: "Shuffle mode on"
 
 shuffle_off: "Shuffle mode off"
 
+loop_one: "Loop mode one"
+
+loop_all: "Loop mode all"
+
+loop_off: "Loop mode off"
+
 no_new_episodes_show: "No new episodes for {{ show_name }}"
 
 no_albums_artist: "You have no albums by {{ artist }}"
@@ -208,6 +214,10 @@ player_move_up: "Player move up"
 shuffle_disable: "Disabling shuffle"
 
 shuffle_enable: "Enabling shuffle"
+
+loop_disable: "Disabling repeat"
+
+loop_enable: "Cycling repeat mode"
 
 audio_stream_next: "Switching to next audio stream"
 
