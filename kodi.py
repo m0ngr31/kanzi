@@ -15,6 +15,7 @@ import string
 import sys
 import codecs
 import unicodedata
+import roman
 from fuzzywuzzy import fuzz, process
 from yaep import populate_env, env
 
@@ -159,8 +160,9 @@ def RPCString(method, params=None):
   return json.dumps(j)
 
 
-# Function to convert numbers to words
-def word_form(number):
+# Convert numbers to words.
+# XXXLANG: This is currently English-only and shouldn't be!
+def num2word(number):
   # based on stackoverflow answer from https://github.com/ralphembree/Loquitor
   leading_zero = 0
   ones = ("", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine")
@@ -171,7 +173,7 @@ def word_form(number):
   word = ""
   if number[0] == "0":
     leading_zero = 1
-  #number will now be the reverse of the string form of itself.
+  # number will now be the reverse of the string form of itself.
   num = reversed(str(number))
   number = ""
   for x in num:
@@ -205,14 +207,74 @@ def word_form(number):
   return reply
 
 
-# Function to replace the digits in the Alexa heard term to words
-def replaceDigits(phrase):
+# Replace word-form numbers with digits.
+# XXXLANG: This is currently English-only and shouldn't be!
+def word2num(textnum):
+  numwords = {}
+  units = [
+    "zero", "one", "two", "three", "four", "five", "six", "seven", "eight",
+    "nine", "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen",
+    "sixteen", "seventeen", "eighteen", "nineteen",
+  ]
+  tens = ["", "", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"]
+  scales = ["hundred", "thousand", "million", "billion", "trillion"]
+
+  numwords["and"] = (1, 0)
+  for idx, word in enumerate(units):
+    numwords[word] = (1, idx)
+  for idx, word in enumerate(tens):
+    numwords[word] = (1, idx * 10)
+  for idx, word in enumerate(scales):
+    numwords[word] = (10 ** (idx * 3 or 2), 0)
+
+  current = result = 0
+  for word in textnum.split():
+    if word not in numwords:
+      raise Exception("Illegal word: " + word)
+
+    scale, increment = numwords[word]
+    current = current * scale + increment
+    if scale > 100:
+      result += current
+      current = 0
+
+  return result + current
+
+# Replace digits with word-form numbers.
+# XXXLANG: This is currently English-only and shouldn't be!
+def digits2words(phrase):
   # all word variant of the heard phrase if it contains digits
   wordified = ''
   for word in phrase.split():
     word = word.decode('utf-8')
     if word.isnumeric():
-      word = word_form(word)
+      word = num2word(word)
+    wordified = wordified + word + " "
+  return wordified[:-1]
+
+
+# Replace digits with roman numerals.
+# XXXLANG: This is currently English-only and shouldn't be!
+def digits2roman(phrase):
+  wordified = ''
+  for word in phrase.split():
+    word = word.decode('utf-8')
+    if word.isnumeric():
+      word = roman.toRoman(int(word))
+    wordified = wordified + word + " "
+  return wordified[:-1]
+
+
+# Replace word-form numbers with roman numerals.
+# XXXLANG: This is currently English-only and shouldn't be!
+def words2roman(phrase):
+  wordified = ''
+  for word in phrase.split():
+    word = word.decode('utf-8')
+    try:
+      word = roman.toRoman(word2num(word))
+    except:
+      pass
     wordified = wordified + word + " "
   return wordified[:-1]
 
@@ -252,16 +314,22 @@ def matchHeard(heard, results, lookingFor='label'):
   if not located:
     print 'Simple match failed, trying fuzzy match...'
 
-    fuzzy_result = process.extract(str(heard), [d[lookingFor] for d in results], limit=1, scorer=fuzz.QRatio)
-    if fuzzy_result[0][1] > 75:
+    fuzzy_result = False
+    for f in (digits2roman, words2roman, str, digits2words):
+      try:
+        ms = f(heard)
+        print "Trying to match %s from %s" % (ms, f)
+        rv = process.extract(ms, [d[lookingFor] for d in results], limit=1, scorer=fuzz.QRatio)
+        if rv[0][1] >= 75:
+          fuzzy_result = rv
+          break
+      except:
+        continue
+
+    # Got a match?
+    if fuzzy_result:
       print 'Fuzzy match %s%%' % (fuzzy_result[0][1])
       located = (item for item in results if item[lookingFor] == fuzzy_result[0][0]).next()
-    else:
-      heard = replaceDigits(heard)
-      fuzzy_result = process.extract(str(heard), [d[lookingFor] for d in results], limit=1, scorer=fuzz.QRatio)
-      if fuzzy_result[0][1] > 75:
-        print 'Fuzzy match %s%%' % (fuzzy_result[0][1])
-        located = (item for item in results if item[lookingFor] == fuzzy_result[0][0]).next()
 
   return located
 
@@ -1035,6 +1103,7 @@ def getisocodes_dict():
 
 
 # Returns current subtitles as a speakable string
+# XXXLANG: Only supports English currently!
 def GetCurrentSubtitles():
   subs = ""
   country_dic = getisocodes_dict()
@@ -1057,6 +1126,7 @@ def GetCurrentSubtitles():
 
 
 # Returns current audio stream as a speakable string
+# XXXLANG: Only supports English currently!
 def GetCurrentAudioStream():
   stream = ""
   country_dic = getisocodes_dict()

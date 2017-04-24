@@ -2,5 +2,6 @@ requests
 gunicorn
 yaep
 pytz
+roman
 fuzzywuzzy
 flask-ask>=0.8.9
