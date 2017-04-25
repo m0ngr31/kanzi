@@ -572,7 +572,7 @@ def alexa_listen_audio_playlist(AudioPlaylist, shuffle=False):
     else:
       kodi.PlayerStop()
       kodi.StartAudioPlaylist(playlist)
-    response_text = render_template('playing_playlist', action=op, playlist_name=heard_search).encode("utf-8")
+    response_text = render_template('playing_playlist_audio', action=op, playlist_name=heard_search).encode("utf-8")
   else:
     response_text = render_template('could_not_find_playlist', heard_name=heard_search).encode("utf-8")
 
@@ -1619,7 +1619,7 @@ def alexa_watch_video_playlist(VideoPlaylist, shuffle=False):
   else:
     op = render_template('playing_empty').encode("utf-8")
 
-  card_title = render_template('playing_playlist_action', action=op, playlist_name=heard_search).encode("utf-8")
+  card_title = render_template('action_video_playlist', action=op).encode("utf-8")
   print card_title
 
   playlist = kodi.FindVideoPlaylist(heard_search)
@@ -1639,7 +1639,7 @@ def alexa_watch_video_playlist(VideoPlaylist, shuffle=False):
     else:
       kodi.PlayerStop()
       kodi.StartVideoPlaylist(playlist)
-    response_text = render_template('playing_playlist_action', action=op, playlist_name=heard_search).encode("utf-8")
+    response_text = render_template('playing_playlist_video', action=op, playlist_name=heard_search).encode("utf-8")
   else:
     response_text = render_template('could_not_find_playlist', heard_name=heard_search).encode("utf-8")
 

@@ -42,15 +42,15 @@ playing_song: "Playing song {{ song_name }}"
 
 playing_song_artist: "Playing song {{ song_name }} by {{ artist }}"
 
-playing_playlist: "{{ action }} playlist {{ playlist_name }}"
+playing_playlist_audio: "{{ action }} audio playlist {{ playlist_name }}"
+
+playing_playlist_video: "{{ action }} video playlist {{ playlist_name }}"
 
 playing_party: "Starting party play"
 
 playing_genre: "Playing the {{ genre }} movie {{ movie_name }}"
 
 playing_action: "{{ action }} {{ movie_name }}"
-
-playing_playlist_action: "{{ action }} video playlist {{ playlist_name }}"
 
 playing_episode_number: "Playing season {{ season }} episode {{ episode }} of {{ show_name }}"
 
@@ -270,6 +270,8 @@ playing_song_card: "Playing song"
 playing_album_or_song: "Playing album or song"
 
 action_audio_playlist: "{{ action }} audio playlist"
+
+action_video_playlist: "{{ action }} video playlist"
 
 party_mode: "Party Mode"
 
