@@ -475,14 +475,18 @@ def alexa_play_media(Movie=None, Artist=None, content=None):
   card_title = 'Playing "%s"' % (heard_search)
   print card_title
 
-  if (len(heard_search) > 0):
-    response_text = find_and_play(heard_search, content, heard_slot)
-    if not response_text and heard_slot != 'unknown':
-      response_text = find_and_play(heard_search, content, slot_ignore=heard_slot)
-    if not response_text:
-      response_text = render_template('could_not_find', heard_name=heard_search).encode("utf-8")
+  disable_ds = os.getenv('DISABLE_DEEP_SEARCH')
+  if disable_ds and disable_ds != 'None':
+    response_text = render_template('help_play').encode("utf-8")
   else:
-    response_text = render_template('error_parsing_results').encode("utf-8")
+    if (len(heard_search) > 0):
+      response_text = find_and_play(heard_search, content, heard_slot)
+      if not response_text and heard_slot != 'unknown':
+        response_text = find_and_play(heard_search, content, slot_ignore=heard_slot)
+      if not response_text:
+        response_text = render_template('could_not_find', heard_name=heard_search).encode("utf-8")
+    else:
+      response_text = render_template('error_parsing_results').encode("utf-8")
 
   return statement(response_text).simple_card(card_title, response_text)
 

@@ -112,6 +112,8 @@ open_remote: "Starte Ferbedienungs Modus, zum benutzen sage gehe nach oben, gehe
 
 help: "Du kannst mich fragen ob es neue Serien gibt, einen Film, Serie oder Sänger zu spielen, oder die Wiedergabe von Medien zu bedienen."
 
+help_play: "Please specify the media type in your play command, such as, play the movie ghost busters."
+
 are_you_sure: "Are you sure?"
 
 what_to_do: "Was möchtest Du tun?"

@@ -51,6 +51,11 @@
       "description": "If you'd like 'Alexa, tell Kodi to shut down' to quit Kodi instead of shutting down the system.",
       "value": "",
       "required": false
+    },
+    "DISABLE_DEEP_SEARCH": {
+      "description": "If you'd like to disable searching the entire library with generic play commands.",
+      "value": "",
+      "required": false
     }
   },
   "image": "heroku/python"
