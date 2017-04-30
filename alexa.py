@@ -422,6 +422,7 @@ def find_and_play(needle, content=['video','audio'], slot_hint='unknown', slot_i
 
       kodi.PlayerStop()
       kodi.ClearAudioPlaylist()
+      # Always shuffle when generically specifying an Artist
       kodi.AddSongsToPlaylist(songs_array, True)
       kodi.StartAudioPlaylist()
       return render_template('playing', heard_name=needle).encode("utf-8")
@@ -708,9 +709,7 @@ def alexa_listen_audio_playlist(AudioPlaylist, shuffle=False):
   if playlist:
     if shuffle:
       songs = kodi.GetPlaylistItems(playlist)['result']['files']
-
       songs_array = []
-
       for song in songs:
         songs_array.append(song['id'])
 
@@ -1784,9 +1783,7 @@ def alexa_watch_video_playlist(VideoPlaylist, shuffle=False):
   if playlist:
     if shuffle:
       videos = kodi.GetPlaylistItems(playlist)['result']['files']
-
       videos_array = []
-
       for video in videos:
         videos_array.append(video['file'])
 
@@ -1826,9 +1823,7 @@ def alexa_shuffle_playlist(VideoPlaylist, AudioPlaylist):
     playlist = kodi.FindVideoPlaylist(heard_search)
     if playlist:
       videos = kodi.GetPlaylistItems(playlist)['result']['files']
-
       videos_array = []
-
       for video in videos:
         videos_array.append(video['file'])
 
@@ -1841,9 +1836,7 @@ def alexa_shuffle_playlist(VideoPlaylist, AudioPlaylist):
       playlist = kodi.FindAudioPlaylist(heard_search)
       if playlist:
         songs = kodi.GetPlaylistItems(playlist)['result']['files']
-
         songs_array = []
-
         for song in songs:
           songs_array.append(song['id'])
 

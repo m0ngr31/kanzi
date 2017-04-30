@@ -458,14 +458,22 @@ def AddSongsToPlaylist(song_ids, shuffle=False):
   return res
 
 
-def AddAlbumToPlaylist(album_id):
-  return SendCommand(RPCString("Playlist.Add", {"playlistid": 0, "item": {"albumid": int(album_id)}}))
+def AddAlbumToPlaylist(album_id, shuffle=False):
+  songs_result = GetAlbumSongs(album_id)
+  songs = songs_result['result']['songs']
+  songs_array = []
+  for song in songs:
+    songs_array.append(song['songid'])
+
+  return AddSongsToPlaylist(songs_array, shuffle)
 
 
 def GetAudioPlaylistItems():
   return SendCommand(RPCString("Playlist.GetItems", {"playlistid": 0}))
 
 
+# Note that subsequent shuffle commands won't work with this, as Kodi
+# considers a playlist to be a single item.
 def StartAudioPlaylist(playlist_file=None):
   if playlist_file is not None and playlist_file != '':
     return SendCommand(RPCString("Player.Open", {"item": {"file": playlist_file}}))
@@ -509,6 +517,8 @@ def GetVideoPlaylistItems():
   return SendCommand(RPCString("Playlist.GetItems", {"playlistid": 1}))
 
 
+# Note that subsequent shuffle commands won't work with this, as Kodi
+# considers a playlist to be a single item.
 def StartVideoPlaylist(playlist_file=None):
   if playlist_file is not None and playlist_file != '':
     return SendCommand(RPCString("Player.Open", {"item": {"file": playlist_file}}))
@@ -879,6 +889,10 @@ def GetArtistSongs(artist_id):
 
 def GetArtistSongsPath(artist_id):
   return SendCommand(RPCString("AudioLibrary.GetSongs", {"filter": {"artistid": int(artist_id)}, "properties":["file"]}))
+
+
+def GetAlbumSongs(album_id):
+  return SendCommand(RPCString("AudioLibrary.GetSongs", {"filter": {"albumid": int(album_id)}}))
 
 
 def GetAlbumSongsPath(album_id):
