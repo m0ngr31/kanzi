@@ -39,7 +39,7 @@ else:
 
 
 # Needs to be instanced after app is configured
-ask = Ask(app, "/", None, TEMPLATE_FILE)
+ask = Ask(app, "/", None, path=TEMPLATE_FILE)
 
 
 # Start of intent methods
