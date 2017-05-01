@@ -620,6 +620,7 @@ ShuffleAudioPlaylist shuffle the song playlist {AudioPlaylist}
 ShuffleAudioPlaylist shuffle {AudioPlaylist} audio playlist
 ShuffleAudioPlaylist shuffle {AudioPlaylist} music playlist
 ShuffleAudioPlaylist shuffle {AudioPlaylist} song playlist
+ShuffleMedia shuffle {Show}
 ShufflePlaylist shuffle playlist {AudioPlaylist}
 ShufflePlaylist shuffle playlist {VideoPlaylist}
 ShufflePlaylist shuffle the playlist {AudioPlaylist}

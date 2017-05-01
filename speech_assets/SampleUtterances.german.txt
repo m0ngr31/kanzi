@@ -1101,6 +1101,7 @@ ShuffleAudioPlaylist zufallswiedergabe {AudioPlaylist} Lied playlist
 ShuffleAudioPlaylist zufallswiedergabe {AudioPlaylist} Lieder playlist
 ShuffleAudioPlaylist zufallswiedergabe {AudioPlaylist} Musik playlist
 ShuffleAudioPlaylist zufallswiedergabe {AudioPlaylist} Song playlist
+ShuffleMedia zufallswiedergabe {Show}
 ShufflePlaylist zufallswiedergabe playlist {AudioPlaylist}
 ShufflePlaylist zufallswiedergabe playlist {VideoPlaylist}
 ShufflePlaylist zufallswiedergabe {AudioPlaylist} playlist

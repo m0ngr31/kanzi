@@ -489,6 +489,26 @@ def AddEpisodeToPlayList(ep_id):
   return SendCommand(RPCString("Playlist.Add", {"playlistid": 1, "item": {"episodeid": int(ep_id)}}))
 
 
+def AddEpisodesToPlaylist(episode_ids, shuffle=False):
+  episodes_array = []
+
+  for episode_id in episode_ids:
+    temp_episode = {}
+    temp_episode['episodeid'] = episode_id
+    episodes_array.append(temp_episode)
+
+  if shuffle:
+    random.shuffle(episodes_array)
+
+  # Segment the requests into chunks that Kodi will accept in a single call
+  episode_groups = [episodes_array[x:x+2000] for x in range(0, len(episodes_array), 2000)]
+  for a in episode_groups:
+    print "Adding %d items to the queue..." % (len(a))
+    res = SendCommand(RPCString("Playlist.Add", {"playlistid": 1, "item": a}))
+
+  return res
+
+
 def AddMovieToPlaylist(movie_id):
   return SendCommand(RPCString("Playlist.Add", {"playlistid": 1, "item": {"movieid": int(movie_id)}}))
 

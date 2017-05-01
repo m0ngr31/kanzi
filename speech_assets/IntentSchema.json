@@ -118,6 +118,15 @@
       ]
     },
     {
+      "intent": "ShuffleMedia",
+      "slots": [
+        {
+          "name": "Show",
+          "type": "SHOWS"
+        }
+      ]
+    },
+    {
       "intent": "WhatAlbums",
       "slots": [
         {

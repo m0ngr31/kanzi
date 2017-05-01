@@ -60,6 +60,8 @@ playing_empty: "Playing"
 
 resuming_empty: "Resuming"
 
+shuffling: "Shuffling {{ heard_name }}"
+
 shuffling_empty: "Shuffling"
 
 shuffling_playlist_video: "Shuffling video playlist {{ playlist_name }}"
@@ -67,6 +69,8 @@ shuffling_playlist_video: "Shuffling video playlist {{ playlist_name }}"
 shuffling_playlist_audio: "Shuffling audio playlist {{ playlist_name }}"
 
 shuffling_playlist: "Shuffling playlist {{ playlist_name }}"
+
+shuffling_album: "Shuffling album {{ album_name }}"
 
 shuffle_on: "Shuffle mode on"
 

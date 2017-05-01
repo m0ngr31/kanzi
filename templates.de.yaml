@@ -60,6 +60,8 @@ playing_empty: "Spiele"
 
 resuming_empty: "Setze fort"
 
+shuffling: "zufällige {{ heard_name }}"
+
 shuffling_empty: "zufällige Wiedergabe"
 
 shuffling_playlist_video: "zufälliege Wiedergabe der Video Playlist {{ playlist_name }}"
@@ -67,6 +69,8 @@ shuffling_playlist_video: "zufälliege Wiedergabe der Video Playlist {{ playlist
 shuffling_playlist_audio: "zufällige Wiedergabe der Audio Playlist {{ playlist_name }}"
 
 shuffling_playlist: "Zufällige Wiedergabe der Playlist {{ playlist_name }}"
+
+shuffling_album: "Zufällige das Album {{ album_name }}"
 
 shuffle_on: "Shuffle mode on"
 

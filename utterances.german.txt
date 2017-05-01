@@ -70,6 +70,7 @@ UpdateAudio (erneuer(/e)/refresh(/e)/update) (Audio/Musik) Bibliothek
 UpdateVideo (Audio/Musik) Bibliothek (erneuern/refreshen/updaten)
 
 PlayMedia spiel(/e) {Movie}
+ShuffleMedia zufallswiedergabe {Show}
 
 WhatAlbums (welches Album/welche (Alben/CD/CDs/Platte/Platten)) (ich von {Artist} habe/wir von {Artist} haben/du von {Artist} hast)
 

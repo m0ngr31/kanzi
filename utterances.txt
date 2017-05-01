@@ -71,6 +71,7 @@ CleanAudio clean (audio/music) library
 UpdateAudio update (audio/music) library
 
 PlayMedia play {Movie}
+ShuffleMedia shuffle {Show}
 
 WhatAlbums what albums (/do) (we/i/you) have by {Artist}
 
