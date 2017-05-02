@@ -145,7 +145,7 @@ def SendCommand(command):
   # Remove any double slashes in the url
   url = http_normalize_slashes(url)
 
-  print "Sending request to %s" % (url)
+  print("Sending request to %s" % (url))
 
   try:
     r = requests.post(url, data=command, auth=(USER, PASS))
@@ -285,7 +285,7 @@ def matchHeard(heard, results, lookingFor='label'):
   located = None
 
   heard_minus_the = remove_the(heard)
-  print 'Trying to match: ' + heard
+  print('Trying to match: ' + heard)
 
   heard_list = set([x for x in heard.split() if x not in STOPWORDS])
 
@@ -295,31 +295,31 @@ def matchHeard(heard, results, lookingFor='label'):
 
     # Direct comparison
     if heard == result_name:
-      print 'Simple match on direct comparison'
+      print('Simple match on direct comparison')
       located = result
       break
 
     # Remove 'the'
     if remove_the(result_name) == heard_minus_the:
-      print 'Simple match minus "the"'
+      print('Simple match minus "the"')
       located = result
       break
 
     # Remove parentheses
     removed_paren = sanitize_name(result[lookingFor], True).lower()
     if heard == removed_paren:
-      print 'Simple match minus parentheses'
+      print('Simple match minus parentheses')
       located = result
       break
 
   if not located:
-    print 'Simple match failed, trying fuzzy match...'
+    print('Simple match failed, trying fuzzy match...')
 
     fuzzy_result = False
     for f in (digits2roman, words2roman, str, digits2words):
       try:
         ms = f(heard)
-        print "Trying to match %s from %s" % (ms, f)
+        print("Trying to match %s from %s" % (ms, f))
         rv = process.extract(ms, [d[lookingFor] for d in results], limit=1, scorer=fuzz.QRatio)
         if rv[0][1] >= 75:
           fuzzy_result = rv
@@ -329,7 +329,7 @@ def matchHeard(heard, results, lookingFor='label'):
 
     # Got a match?
     if fuzzy_result:
-      print 'Fuzzy match %s%%' % (fuzzy_result[0][1])
+      print('Fuzzy match %s%%' % (fuzzy_result[0][1]))
       located = (item for item in results if item[lookingFor] == fuzzy_result[0][0]).next()
 
   return located
@@ -338,7 +338,7 @@ def matchHeard(heard, results, lookingFor='label'):
 # Helpers to find media
 
 def FindVideoPlaylist(heard_search):
-  print 'Searching for video playlist "%s"' % (heard_search)
+  print('Searching for video playlist "%s"' % heard_search)
 
   playlists = GetVideoPlaylists()
   if 'result' in playlists and 'files' in playlists['result']:
@@ -346,12 +346,12 @@ def FindVideoPlaylist(heard_search):
     located = matchHeard(heard_search, playlists_list, 'label')
 
     if located:
-      print 'Located video playlist "%s"' % (located['file'])
+      print('Located video playlist "%s"' % (located['file']))
       return located['file']
 
 
 def FindAudioPlaylist(heard_search):
-  print 'Searching for audio playlist "%s"' % (heard_search)
+  print('Searching for audio playlist "%s"' % heard_search)
 
   playlists = GetMusicPlaylists()
   if 'result' in playlists and 'files' in playlists['result']:
@@ -359,12 +359,12 @@ def FindAudioPlaylist(heard_search):
     located = matchHeard(heard_search, playlists_list, 'label')
 
     if located:
-      print 'Located audio playlist "%s"' % (located['file'])
+      print('Located audio playlist "%s"' % (located['file']))
       return located['file']
 
 
 def FindMovie(heard_search):
-  print 'Searching for movie "%s"' % (heard_search)
+  print('Searching for movie "%s"' % heard_search)
 
   movies = GetMovies()
   if 'result' in movies and 'movies' in movies['result']:
@@ -372,12 +372,12 @@ def FindMovie(heard_search):
     located = matchHeard(heard_search, movies_array)
 
     if located:
-      print 'Located movie "%s"' % (located['label'])
+      print('Located movie "%s"' % (located['label']))
       return located['movieid']
 
 
 def FindTvShow(heard_search):
-  print 'Searching for show "%s"' % (heard_search)
+  print('Searching for show "%s"' % heard_search)
 
   shows = GetTvShows()
   if 'result' in shows and 'tvshows' in shows['result']:
@@ -385,12 +385,12 @@ def FindTvShow(heard_search):
     located = matchHeard(heard_search, shows_array)
 
     if located:
-      print 'Located tvshow "%s"' % (located['label'])
+      print('Located tvshow "%s"' % (located['label']))
       return located['tvshowid']
 
 
 def FindArtist(heard_search):
-  print 'Searching for artist "%s"' % (heard_search)
+  print('Searching for artist "%s"' % heard_search)
 
   artists = GetMusicArtists()
   if 'result' in artists and 'artists' in artists['result']:
@@ -398,12 +398,12 @@ def FindArtist(heard_search):
     located = matchHeard(heard_search, artists_list, 'artist')
 
     if located:
-      print 'Located artist "%s"' % (located['label'])
+      print('Located artist "%s"' % (located['label']))
       return located['artistid']
 
 
 def FindAlbum(heard_search):
-  print 'Searching for album "%s"' % (heard_search)
+  print('Searching for album "%s"' % heard_search)
 
   albums = GetAlbums()
   if 'result' in albums and 'albums' in albums['result']:
@@ -411,12 +411,12 @@ def FindAlbum(heard_search):
     located = matchHeard(heard_search, albums_list, 'label')
 
     if located:
-      print 'Located album "%s"' % (located['label'])
+      print('Located album "%s"' % (located['label']))
       return located['albumid']
 
 
 def FindSong(heard_search):
-  print 'Searching for song "%s"' % (heard_search)
+  print('Searching for song "%s"' % heard_search)
 
   songs = GetSongs()
   if 'result' in songs and 'songs' in songs['result']:
@@ -424,7 +424,7 @@ def FindSong(heard_search):
     located = matchHeard(heard_search, songs_list, 'label')
 
     if located:
-      print 'Located song "%s"' % (located['label'])
+      print('Located song "%s"' % (located['label']))
       return located['songid']
 
 
