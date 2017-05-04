@@ -72,6 +72,8 @@ shuffling_playlist: "Shuffling playlist {{ playlist_name }}"
 
 shuffling_album: "Shuffling album {{ album_name }}"
 
+shuffling_album_artist: "Shuffling album {{ album_name }} by {{ artist }}"
+
 shuffle_on: "Shuffle mode on"
 
 shuffle_off: "Shuffle mode off"
@@ -270,6 +272,8 @@ playing_next_unwatched_episode: "Playing the next unwatched episode of {{ heard_
 playing_newest_episode: "Playing the newest episode of {{ heard_show }}"
 
 playing_album_card: "Playing album"
+
+shuffling_album_card: "Shuffling album"
 
 playing_song_card: "Playing song"
 

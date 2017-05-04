@@ -117,6 +117,9 @@ WatchVideoPlaylist (play/watch) {VideoPlaylist} (movie/show/video) playlist
 WatchVideoPlaylist watch (/the) playlist {VideoPlaylist}
 WatchVideoPlaylist watch {VideoPlaylist} playlist
 
+ShuffleAlbum shuffle (album/the album) {Album}
+ShuffleAlbum shuffle (/album/the album) {Album} by {Artist}
+
 ShuffleAudioPlaylist shuffle (/the) (song/music/audio) playlist {AudioPlaylist}
 ShuffleAudioPlaylist shuffle {AudioPlaylist} (song/music/audio) playlist
 

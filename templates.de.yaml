@@ -72,6 +72,8 @@ shuffling_playlist: "Zufällige Wiedergabe der Playlist {{ playlist_name }}"
 
 shuffling_album: "Zufällige das Album {{ album_name }}"
 
+shuffling_album_artist: "Zufällige das Album {{ album_name }} von {{ artist }}"
+
 shuffle_on: "Shuffle mode on"
 
 shuffle_off: "Shuffle mode off"
@@ -270,6 +272,8 @@ playing_next_unwatched_episode: "Spiele die nächte ungesehene Folge von{{ heard
 playing_newest_episode: "Spiele die neuste Folge von {{ heard_show }}"
 
 playing_album_card: "Spiele Album"
+
+shuffling_album_card: "Zufällige Album"
 
 playing_song_card: "Spiele Song"
 

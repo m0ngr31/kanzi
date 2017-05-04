@@ -1091,6 +1091,11 @@ Right navigiere nach rechts
 Right navigiere rechts
 Right rechts
 Select auswählen
+ShuffleAlbum shuffle album {Album}
+ShuffleAlbum shuffle album {Album} by {Artist}
+ShuffleAlbum shuffle the album {Album}
+ShuffleAlbum shuffle the album {Album} by {Artist}
+ShuffleAlbum shuffle {Album} by {Artist}
 ShuffleAudioPlaylist zufallswiedergabe Audio playlist {AudioPlaylist}
 ShuffleAudioPlaylist zufallswiedergabe Lied playlist {AudioPlaylist}
 ShuffleAudioPlaylist zufallswiedergabe Lieder playlist {AudioPlaylist}

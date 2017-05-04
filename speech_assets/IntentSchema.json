@@ -206,6 +206,19 @@
       ]
     },
     {
+      "intent": "ShuffleAlbum",
+      "slots": [
+        {
+          "name": "Artist",
+          "type": "MUSICARTISTS"
+        },
+        {
+          "name": "Album",
+          "type": "MUSICALBUMS"
+        }
+      ]
+    },
+    {
       "intent": "ShuffleAudioPlaylist",
       "slots": [
         {

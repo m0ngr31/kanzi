@@ -608,9 +608,12 @@ def alexa_listen_artist(Artist):
 
 # Handle the ListenToAlbum intent (Play whole album, or whole album by a specific artist).
 @ask.intent('ListenToAlbum')
-def alexa_listen_album(Album, Artist):
+def alexa_listen_album(Album, Artist, shuffle=False):
   heard_album = str(Album).lower().translate(None, string.punctuation)
-  card_title = render_template('playing_album_card').encode("utf-8")
+  if shuffle:
+    card_title = render_template('shuffling_album_card').encode("utf-8")
+  else:
+    card_title = render_template('playing_album_card').encode("utf-8")
   print card_title
 
   if Artist:
@@ -626,9 +629,13 @@ def alexa_listen_album(Album, Artist):
           album_result = album_located['albumid']
           kodi.PlayerStop()
           kodi.ClearAudioPlaylist()
-          kodi.AddAlbumToPlaylist(album_result)
+          kodi.AddAlbumToPlaylist(album_result, shuffle)
           kodi.StartAudioPlaylist()
-          response_text = render_template('playing_album_artist', album_name=heard_album, artist=heard_artist).encode("utf-8")
+          if shuffle:
+            response_text = render_template('shuffling_album_artist', album_name=heard_album, artist=heard_artist).encode("utf-8")
+          else:
+            response_text = render_template('playing_album_artist', album_name=heard_album, artist=heard_artist).encode("utf-8")
+            return render_template('playing_album', album_name=heard_album).encode("utf-8")
         else:
           response_text = render_template('could_not_find_album_artist', album_name=heard_album, artist=heard_artist).encode("utf-8")
       else:
@@ -640,13 +647,22 @@ def alexa_listen_album(Album, Artist):
     if album:
       kodi.PlayerStop()
       kodi.ClearAudioPlaylist()
-      kodi.AddAlbumToPlaylist(album)
+      kodi.AddAlbumToPlaylist(album, shuffle)
       kodi.StartAudioPlaylist()
-      response_text = render_template('playing_album', album_name=heard_album).encode("utf-8")
+      if shuffle:
+        response_text = render_template('shuffling_album', album_name=heard_album).encode("utf-8")
+      else:
+        response_text = render_template('playing_album', album_name=heard_album).encode("utf-8")
     else:
       response_text = render_template('could_not_find_album', album_name=heard_album).encode("utf-8")
 
   return statement(response_text).simple_card(card_title, response_text)
+
+
+# Handle the ShuffleAlbum intent (Shuffle whole album, or whole album by a specific artist).
+@ask.intent('ShuffleAlbum')
+def alexa_shuffle_album(Album, Artist):
+  return alexa_listen_album(Album, Artist, True)
 
 
 # Handle the ListenToSong intent (Play a song, or song by a specific artist).

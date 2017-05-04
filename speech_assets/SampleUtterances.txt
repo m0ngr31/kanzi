@@ -611,6 +611,11 @@ Right go right
 Right navigate right
 Right right
 Select select
+ShuffleAlbum shuffle album {Album}
+ShuffleAlbum shuffle album {Album} by {Artist}
+ShuffleAlbum shuffle the album {Album}
+ShuffleAlbum shuffle the album {Album} by {Artist}
+ShuffleAlbum shuffle {Album} by {Artist}
 ShuffleAudioPlaylist shuffle audio playlist {AudioPlaylist}
 ShuffleAudioPlaylist shuffle music playlist {AudioPlaylist}
 ShuffleAudioPlaylist shuffle song playlist {AudioPlaylist}
