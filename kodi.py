@@ -347,7 +347,9 @@ def FindVideoPlaylist(heard_search):
 
     if located:
       print 'Located video playlist "%s"' % (located['file'])
-      return located['file']
+      return located['file'], located['label']
+
+  return None, None
 
 
 def FindAudioPlaylist(heard_search):
@@ -360,7 +362,9 @@ def FindAudioPlaylist(heard_search):
 
     if located:
       print 'Located audio playlist "%s"' % (located['file'])
-      return located['file']
+      return located['file'], located['label']
+
+  return None, None
 
 
 def FindMovie(heard_search):
@@ -373,7 +377,9 @@ def FindMovie(heard_search):
 
     if located:
       print 'Located movie "%s"' % (located['label'])
-      return located['movieid']
+      return located['movieid'], located['label']
+
+  return None, None
 
 
 def FindTvShow(heard_search):
@@ -386,7 +392,9 @@ def FindTvShow(heard_search):
 
     if located:
       print 'Located tvshow "%s"' % (located['label'])
-      return located['tvshowid']
+      return located['tvshowid'], located['label']
+
+  return None, None
 
 
 def FindArtist(heard_search):
@@ -399,7 +407,9 @@ def FindArtist(heard_search):
 
     if located:
       print 'Located artist "%s"' % (located['label'])
-      return located['artistid']
+      return located['artistid'], located['label']
+
+  return None, None
 
 
 def FindAlbum(heard_search):
@@ -412,7 +422,9 @@ def FindAlbum(heard_search):
 
     if located:
       print 'Located album "%s"' % (located['label'])
-      return located['albumid']
+      return located['albumid'], located['label']
+
+  return None, None
 
 
 def FindSong(heard_search):
@@ -425,7 +437,9 @@ def FindSong(heard_search):
 
     if located:
       print 'Located song "%s"' % (located['label'])
-      return located['songid']
+      return located['songid'], located['label']
+
+  return None, None
 
 
 # Playlists
