@@ -1111,6 +1111,8 @@ ShufflePlaylist zufallswiedergabe playlist {AudioPlaylist}
 ShufflePlaylist zufallswiedergabe playlist {VideoPlaylist}
 ShufflePlaylist zufallswiedergabe {AudioPlaylist} playlist
 ShufflePlaylist zufallswiedergabe {VideoPlaylist} playlist
+ShuffleShow shuffle all episodes of {Show}
+ShuffleShow shuffle episodes of {Show}
 ShuffleVideoPlaylist zufallswiedergabe Film playlist {VideoPlaylist}
 ShuffleVideoPlaylist zufallswiedergabe Serie playlist {VideoPlaylist}
 ShuffleVideoPlaylist zufallswiedergabe Video playlist {VideoPlaylist}

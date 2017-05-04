@@ -263,6 +263,8 @@ playing_random_movie_genre: "Spiele zufälligen {{ genre }} Film"
 
 playing_movie: "Spiele Film"
 
+shuffling_episodes: "Shuffling episodes of {{ heard_show }}"
+
 playing_an_episode: "Spiele eine Folge von {{ heard_show }}"
 
 playing_random_episode: "Spiele eine zufällige Folge von{{ heard_show }}"

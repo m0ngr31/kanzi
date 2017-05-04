@@ -108,6 +108,8 @@ WatchLastShow weiter mit (/letzter) Serie
 
 WatchLatestEpisode zeige (neueste/letzte) (Episode/Folge) von {Show}
 
+ShuffleShow shuffle (/all) episodes of {Show}
+
 ShuffleAlbum shuffle (album/the album) {Album}
 ShuffleAlbum shuffle (/album/the album) {Album} by {Artist}
 

@@ -632,6 +632,8 @@ ShufflePlaylist shuffle the playlist {AudioPlaylist}
 ShufflePlaylist shuffle the playlist {VideoPlaylist}
 ShufflePlaylist shuffle {AudioPlaylist} playlist
 ShufflePlaylist shuffle {VideoPlaylist} playlist
+ShuffleShow shuffle all episodes of {Show}
+ShuffleShow shuffle episodes of {Show}
 ShuffleVideoPlaylist shuffle movie playlist {VideoPlaylist}
 ShuffleVideoPlaylist shuffle show playlist {VideoPlaylist}
 ShuffleVideoPlaylist shuffle the movie playlist {VideoPlaylist}

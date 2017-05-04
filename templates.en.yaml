@@ -263,6 +263,8 @@ playing_random_movie_genre: "Playing a random {{ genre }} movie"
 
 playing_movie: "Playing Movie"
 
+shuffling_episodes: "Shuffling episodes of {{ heard_show }}"
+
 playing_an_episode: "Playing an episode of {{ heard_show }}"
 
 playing_random_episode: "Playing a random episode of {{ heard_show }}"

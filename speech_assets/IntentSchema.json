@@ -314,6 +314,15 @@
       ]
     },
     {
+      "intent": "ShuffleShow",
+      "slots": [
+        {
+          "name": "Show",
+          "type": "SHOWS"
+        }
+      ]
+    },
+    {
       "intent": "ShuffleVideoPlaylist",
       "slots": [
         {

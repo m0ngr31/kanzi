@@ -1703,6 +1703,32 @@ def alexa_watch_movie(Movie):
   return statement(response_text).simple_card(card_title, response_text)
 
 
+# Handle the ShuffleShow intent.
+@ask.intent('ShuffleShow')
+def alexa_shuffle_show(Show):
+  heard_show = str(Show).lower().translate(None, string.punctuation)
+
+  card_title = render_template('shuffling_episodes', heard_show=heard_show).encode("utf-8")
+  print card_title
+
+  show = kodi.FindTvShow(heard_show)
+  if show:
+    episodes_array = []
+    episodes_result = kodi.GetEpisodesFromShow(show)
+    for episode in episodes_result['result']['episodes']:
+      episodes_array.append(episode['episodeid'])
+
+    kodi.PlayerStop()
+    kodi.ClearVideoPlaylist()
+    kodi.AddEpisodesToPlaylist(episodes_array, True)
+    kodi.StartVideoPlaylist()
+    response_text = render_template('shuffling', heard_name=heard_show).encode("utf-8")
+  else:
+    response_text = render_template('could_not_find_show', heard_show=heard_show).encode("utf-8")
+
+  return statement(response_text).simple_card(card_title, response_text)
+
+
 # Handle the WatchRandomEpisode intent.
 @ask.intent('WatchRandomEpisode')
 def alexa_watch_random_episode(Show):
