@@ -1,6 +1,6 @@
 requests
 gunicorn
-yaep
+ConfigParser
 pytz
 roman
 fuzzywuzzy
