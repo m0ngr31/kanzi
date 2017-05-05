@@ -17,43 +17,13 @@ import codecs
 import unicodedata
 import roman
 from fuzzywuzzy import fuzz, process
-from yaep import populate_env, env
 
-sys.path += [os.path.dirname(__file__)]
-
-ENV_FILE = os.path.join(os.path.dirname(__file__), ".env")
-os.environ['ENV_FILE'] = ENV_FILE
-
-populate_env()
-
-# Do not use below for your own settings, use the .env file
-
-# We don't use the fallback param in os.getenv() because AWS Lambda actually
-# sets any environment variables included in LAMBDA_ENV_VARS, regardless if
-# it was unset before.
-#
-# Furthermore, os.getenv() under AWS Lambda returns 'None' as a string
-# instead of None as NoneType as we'd normally expect, so we have to
-# explicitly test for that.
-
-SCHEME = os.getenv('KODI_SCHEME')
-if not SCHEME or SCHEME == 'None':
-  SCHEME = 'http'
-SUBPATH = os.getenv('KODI_SUBPATH')
-if not SUBPATH or SUBPATH == 'None':
-  SUBPATH = ''
-KODI = os.getenv('KODI_ADDRESS')
-if not KODI or KODI == 'None':
-  KODI = '127.0.0.1'
-PORT = os.getenv('KODI_PORT')
-if not PORT or PORT == 'None':
-  PORT = '8080'
-USER = os.getenv('KODI_USERNAME')
-if not USER or USER == 'None':
-  USER = 'kodi'
-PASS = os.getenv('KODI_PASSWORD')
-if not PASS or PASS == 'None':
-  PASS = 'kodi'
+# Read kodi device congigurations
+# http://stackoverflow.com/questions/19078170/python-how-would-you-save-a-simple-settings-config-file
+from ConfigParser import SafeConfigParser
+config = SafeConfigParser()
+config.read(os.path.join(os.path.dirname(__file__), "kodi.config"))
+#print dict(config.items('DEFAULT'))
 
 # These are words that we ignore when doing a non-exact match on show names
 STOPWORDS = [
@@ -86,7 +56,6 @@ STOPWORDS = [
   "will",
   "with",
 ]
-
 
 def sanitize_name(media_name, remove_between=False):
   # Normalize string
@@ -131,27 +100,6 @@ def http_normalize_slashes(url):
   correct_segments[0] = correct_segments[0] + '/'
   normalized_url = '/'.join(correct_segments)
   return normalized_url
-
-
-def PopulateEnv():
-  populate_env()
-
-
-# These two methods construct the JSON-RPC message and send it to the Kodi player
-def SendCommand(command):
-  # Join the environment variables into a url
-  url = "%s://%s:%s/%s/%s" % (SCHEME, KODI, PORT, SUBPATH, 'jsonrpc')
-
-  # Remove any double slashes in the url
-  url = http_normalize_slashes(url)
-
-  print "Sending request to %s" % (url)
-
-  try:
-    r = requests.post(url, data=command, auth=(USER, PASS))
-  except:
-    return {}
-  return json.loads(r.text)
 
 
 def RPCString(method, params=None):
@@ -335,819 +283,6 @@ def matchHeard(heard, results, lookingFor='label'):
   return located
 
 
-# Helpers to find media
-
-def FindVideoPlaylist(heard_search):
-  print 'Searching for video playlist "%s"' % (heard_search)
-
-  playlists = GetVideoPlaylists()
-  if 'result' in playlists and 'files' in playlists['result']:
-    playlists_list = playlists['result']['files']
-    located = matchHeard(heard_search, playlists_list, 'label')
-
-    if located:
-      print 'Located video playlist "%s"' % (located['file'])
-      return located['file']
-
-
-def FindAudioPlaylist(heard_search):
-  print 'Searching for audio playlist "%s"' % (heard_search)
-
-  playlists = GetMusicPlaylists()
-  if 'result' in playlists and 'files' in playlists['result']:
-    playlists_list = playlists['result']['files']
-    located = matchHeard(heard_search, playlists_list, 'label')
-
-    if located:
-      print 'Located audio playlist "%s"' % (located['file'])
-      return located['file']
-
-
-def FindMovie(heard_search):
-  print 'Searching for movie "%s"' % (heard_search)
-
-  movies = GetMovies()
-  if 'result' in movies and 'movies' in movies['result']:
-    movies_array = movies['result']['movies']
-    located = matchHeard(heard_search, movies_array)
-
-    if located:
-      print 'Located movie "%s"' % (located['label'])
-      return located['movieid']
-
-
-def FindTvShow(heard_search):
-  print 'Searching for show "%s"' % (heard_search)
-
-  shows = GetTvShows()
-  if 'result' in shows and 'tvshows' in shows['result']:
-    shows_array = shows['result']['tvshows']
-    located = matchHeard(heard_search, shows_array)
-
-    if located:
-      print 'Located tvshow "%s"' % (located['label'])
-      return located['tvshowid']
-
-
-def FindArtist(heard_search):
-  print 'Searching for artist "%s"' % (heard_search)
-
-  artists = GetMusicArtists()
-  if 'result' in artists and 'artists' in artists['result']:
-    artists_list = artists['result']['artists']
-    located = matchHeard(heard_search, artists_list, 'artist')
-
-    if located:
-      print 'Located artist "%s"' % (located['label'])
-      return located['artistid']
-
-
-def FindAlbum(heard_search):
-  print 'Searching for album "%s"' % (heard_search)
-
-  albums = GetAlbums()
-  if 'result' in albums and 'albums' in albums['result']:
-    albums_list = albums['result']['albums']
-    located = matchHeard(heard_search, albums_list, 'label')
-
-    if located:
-      print 'Located album "%s"' % (located['label'])
-      return located['albumid']
-
-
-def FindSong(heard_search):
-  print 'Searching for song "%s"' % (heard_search)
-
-  songs = GetSongs()
-  if 'result' in songs and 'songs' in songs['result']:
-    songs_list = songs['result']['songs']
-    located = matchHeard(heard_search, songs_list, 'label')
-
-    if located:
-      print 'Located song "%s"' % (located['label'])
-      return located['songid']
-
-
-# Playlists
-
-def ClearAudioPlaylist():
-  return SendCommand(RPCString("Playlist.Clear", {"playlistid": 0}))
-
-
-def AddSongToPlaylist(song_id):
-  return SendCommand(RPCString("Playlist.Add", {"playlistid": 0, "item": {"songid": int(song_id)}}))
-
-
-def AddSongsToPlaylist(song_ids, shuffle=False):
-  songs_array = []
-
-  for song_id in song_ids:
-    temp_song = {}
-    temp_song['songid'] = song_id
-    songs_array.append(temp_song)
-
-  if shuffle:
-    random.shuffle(songs_array)
-
-  # Segment the requests into chunks that Kodi will accept in a single call
-  song_groups = [songs_array[x:x+2000] for x in range(0, len(songs_array), 2000)]
-  for a in song_groups:
-    print "Adding %d items to the queue..." % (len(a))
-    res = SendCommand(RPCString("Playlist.Add", {"playlistid": 0, "item": a}))
-
-  return res
-
-
-def AddAlbumToPlaylist(album_id, shuffle=False):
-  songs_result = GetAlbumSongs(album_id)
-  songs = songs_result['result']['songs']
-  songs_array = []
-  for song in songs:
-    songs_array.append(song['songid'])
-
-  return AddSongsToPlaylist(songs_array, shuffle)
-
-
-def GetAudioPlaylistItems():
-  return SendCommand(RPCString("Playlist.GetItems", {"playlistid": 0}))
-
-
-# Note that subsequent shuffle commands won't work with this, as Kodi
-# considers a playlist to be a single item.
-def StartAudioPlaylist(playlist_file=None):
-  if playlist_file is not None and playlist_file != '':
-    return SendCommand(RPCString("Player.Open", {"item": {"file": playlist_file}}))
-  else:
-    return SendCommand(RPCString("Player.Open", {"item": {"playlistid": 0}}))
-
-
-def ClearVideoPlaylist():
-  return SendCommand(RPCString("Playlist.Clear", {"playlistid": 1}))
-
-
-def AddEpisodeToPlayList(ep_id):
-  return SendCommand(RPCString("Playlist.Add", {"playlistid": 1, "item": {"episodeid": int(ep_id)}}))
-
-
-def AddMovieToPlaylist(movie_id):
-  return SendCommand(RPCString("Playlist.Add", {"playlistid": 1, "item": {"movieid": int(movie_id)}}))
-
-
-def AddVideosToPlaylist(video_files, shuffle=False):
-  videos_array = []
-
-  for video_file in video_files:
-    temp_video = {}
-    temp_video['file'] = video_file
-    videos_array.append(temp_video)
-
-  if shuffle:
-    random.shuffle(videos_array)
-
-  # Segment the requests into chunks that Kodi will accept in a single call
-  video_groups = [videos_array[x:x+2000] for x in range(0, len(videos_array), 2000)]
-  for a in video_groups:
-    print "Adding %d items to the queue..." % (len(a))
-    res = SendCommand(RPCString("Playlist.Add", {"playlistid": 1, "item": a}))
-
-  return res
-
-
-def GetVideoPlaylistItems():
-  return SendCommand(RPCString("Playlist.GetItems", {"playlistid": 1}))
-
-
-# Note that subsequent shuffle commands won't work with this, as Kodi
-# considers a playlist to be a single item.
-def StartVideoPlaylist(playlist_file=None):
-  if playlist_file is not None and playlist_file != '':
-    return SendCommand(RPCString("Player.Open", {"item": {"file": playlist_file}}))
-  else:
-    return SendCommand(RPCString("Player.Open", {"item": {"playlistid": 1}}))
-
-
-# Direct plays
-
-def PlayEpisode(ep_id, resume=True):
-  return SendCommand(RPCString("Player.Open", {"item": {"episodeid": ep_id}, "options": {"resume": resume}}))
-
-
-def PlayMovie(movie_id, resume=True):
-  return SendCommand(RPCString("Player.Open", {"item": {"movieid": movie_id}, "options": {"resume": resume}}))
-
-
-def PartyPlayMusic():
-  return SendCommand(RPCString("Player.Open", {"item": {"partymode": "music"}}))
-
-
-# Tell Kodi to update its video or music libraries
-
-def UpdateVideo():
-  return SendCommand(RPCString("VideoLibrary.Scan"))
-
-
-def CleanVideo():
-  return SendCommand(RPCString("VideoLibrary.Clean"))
-
-
-def UpdateMusic():
-  return SendCommand(RPCString("AudioLibrary.Scan"))
-
-
-def CleanMusic():
-  return SendCommand(RPCString("AudioLibrary.Clean"))
-
-
-# Perform UI actions that match the normal remote control buttons
-
-def PageUp():
-  return SendCommand(RPCString("Input.ExecuteAction", {"action":"pageup"}))
-
-
-def PageDown():
-  return SendCommand(RPCString("Input.ExecuteAction", {"action":"pagedown"}))
-
-
-def ToggleWatched():
-  return SendCommand(RPCString("Input.ExecuteAction", {"action":"togglewatched"}))
-
-
-def Info():
-  return SendCommand(RPCString("Input.Info"))
-
-
-def Menu():
-  return SendCommand(RPCString("Input.ContextMenu"))
-
-
-def Home():
-  return SendCommand(RPCString("Input.Home"))
-
-
-def Select():
-  return SendCommand(RPCString("Input.Select"))
-
-
-def Up():
-  return SendCommand(RPCString("Input.Up"))
-
-
-def Down():
-  return SendCommand(RPCString("Input.Down"))
-
-
-def Left():
-  return SendCommand(RPCString("Input.Left"))
-
-
-def Right():
-  return SendCommand(RPCString("Input.Right"))
-
-
-def Back():
-  return SendCommand(RPCString("Input.Back"))
-
-
-def ToggleFullscreen():
-  return SendCommand(RPCString("GUI.SetFullscreen", {"fullscreen":"toggle"}))
-
-
-def ToggleMute():
-  return SendCommand(RPCString("Application.SetMute", {"mute":"toggle"}))
-
-
-def GetCurrentVolume():
-  return SendCommand(RPCString("Application.GetProperties", {"properties":["volume", "muted"]}))
-
-def VolumeUp():
-  resp = GetCurrentVolume()
-  vol = resp['result']['volume']
-  if vol % 10 == 0:
-    # already modulo 10, so just add 10
-    vol += 10
-  else:
-    # round up to nearest 10
-    vol -= vol % -10
-  if vol > 100:
-    vol = 100
-  return SendCommand(RPCString("Application.SetVolume", {"volume":vol}))
-
-
-def VolumeDown():
-  resp = GetCurrentVolume()
-  vol = resp['result']['volume']
-  if vol % 10 != 0:
-    # round up to nearest 10 first
-    vol -= vol % -10
-  vol -= 10
-  if vol < 0:
-    vol = 0
-  return SendCommand(RPCString("Application.SetVolume", {"volume":vol}))
-
-
-def VolumeSet(vol, percent=True):
-  if vol < 0:
-    vol = 0
-  if not percent:
-    # specified with scale of 0 to 10
-    vol *= 10
-  if vol > 100:
-    vol = 100
-  return SendCommand(RPCString("Application.SetVolume", {"volume":vol}))
-
-
-# Player controls
-
-def PlayerPlayPause():
-  playerid = GetPlayerID()
-  if playerid is not None:
-    return SendCommand(RPCString("Player.PlayPause", {"playerid":playerid}))
-
-
-def PlayerSkip():
-  playerid = GetPlayerID()
-  if playerid is not None:
-    return SendCommand(RPCString("Player.GoTo", {"playerid":playerid, "to": "next"}))
-
-
-def PlayerPrev():
-  playerid = GetPlayerID()
-  if playerid is not None:
-    SendCommand(RPCString("Player.GoTo", {"playerid":playerid, "to": "previous"}))
-    return SendCommand(RPCString("Player.GoTo", {"playerid":playerid, "to": "previous"}))
-
-
-def PlayerStartOver():
-  playerid = GetPlayerID()
-  if playerid is not None:
-    return SendCommand(RPCString("Player.Seek", {"playerid":playerid, "value": 0}))
-
-
-def PlayerStop():
-  playerid = GetPlayerID()
-  if playerid is not None:
-    return SendCommand(RPCString("Player.Stop", {"playerid":playerid}))
-
-
-def PlayerSeek(seconds):
-  playerid = GetPlayerID()
-  if playerid:
-    return SendCommand(RPCString("Player.Seek", {"playerid":playerid, "value":{"seconds":seconds}}))
-
-
-def PlayerSeekSmallForward():
-  playerid = GetPlayerID()
-  if playerid:
-    return SendCommand(RPCString("Player.Seek", {"playerid":playerid, "value":"smallforward"}))
-
-
-def PlayerSeekSmallBackward():
-  playerid = GetPlayerID()
-  if playerid:
-    return SendCommand(RPCString("Player.Seek", {"playerid":playerid, "value":"smallbackward"}))
-
-
-def PlayerSeekBigForward():
-  playerid = GetPlayerID()
-  if playerid:
-    return SendCommand(RPCString("Player.Seek", {"playerid":playerid, "value":"bigforward"}))
-
-
-def PlayerSeekBigBackward():
-  playerid = GetPlayerID()
-  if playerid:
-    return SendCommand(RPCString("Player.Seek", {"playerid":playerid, "value":"bigbackward"}))
-
-
-def PlayerShuffleOn():
-  playerid = GetPlayerID()
-  if playerid is not None:
-    return SendCommand(RPCString("Player.SetShuffle", {"playerid":playerid, "shuffle":True}))
-
-
-def PlayerShuffleOff():
-  playerid = GetPlayerID()
-  if playerid is not None:
-    return SendCommand(RPCString("Player.SetShuffle", {"playerid":playerid, "shuffle":False}))
-
-
-def PlayerLoopOn():
-  playerid = GetPlayerID()
-  if playerid is not None:
-    return SendCommand(RPCString("Player.SetRepeat", {"playerid":playerid, "repeat":"cycle"}))
-
-
-def PlayerLoopOff():
-  playerid = GetPlayerID()
-  if playerid is not None:
-    return SendCommand(RPCString("Player.SetRepeat", {"playerid":playerid, "repeat":"off"}))
-
-
-def PlayerSubtitlesOn():
-  playerid = GetVideoPlayerID()
-  if playerid:
-    return SendCommand(RPCString("Player.SetSubtitle", {"playerid":playerid, "subtitle":"on"}))
-
-
-def PlayerSubtitlesOff():
-  playerid = GetVideoPlayerID()
-  if playerid:
-    return SendCommand(RPCString("Player.SetSubtitle", {"playerid":playerid, "subtitle":"off"}))
-
-
-def PlayerSubtitlesNext():
-  playerid = GetVideoPlayerID()
-  if playerid:
-    return SendCommand(RPCString("Player.SetSubtitle", {"playerid":playerid, "subtitle":"next", "enable":True}))
-
-
-def PlayerSubtitlesPrevious():
-  playerid = GetVideoPlayerID()
-  if playerid:
-    return SendCommand(RPCString("Player.SetSubtitle", {"playerid":playerid, "subtitle":"previous", "enable":True}))
-
-
-def PlayerAudioStreamNext():
-  playerid = GetVideoPlayerID()
-  if playerid:
-    return SendCommand(RPCString("Player.SetAudioStream", {"playerid":playerid, "stream":"next"}))
-
-
-def PlayerAudioStreamPrevious():
-  playerid = GetVideoPlayerID()
-  if playerid:
-    return SendCommand(RPCString("Player.SetAudioStream", {"playerid":playerid, "stream":"previous"}))
-
-
-def PlayerMoveUp():
-  playerid = GetPicturePlayerID()
-  if playerid:
-    return SendCommand(RPCString("Player.Move", {"playerid":playerid, "direction":"up"}))
-
-
-def PlayerMoveDown():
-  playerid = GetPicturePlayerID()
-  if playerid:
-    return SendCommand(RPCString("Player.Move", {"playerid":playerid, "direction":"down"}))
-
-
-def PlayerMoveLeft():
-  playerid = GetPicturePlayerID()
-  if playerid:
-    return SendCommand(RPCString("Player.Move", {"playerid":playerid, "direction":"left"}))
-
-
-def PlayerMoveRight():
-  playerid = GetPicturePlayerID()
-  if playerid:
-    return SendCommand(RPCString("Player.Move", {"playerid":playerid, "direction":"right"}))
-
-
-def PlayerZoom(lvl=0):
-  playerid = GetPicturePlayerID()
-  if playerid and lvl > 0 and lvl < 11:
-    return SendCommand(RPCString("Player.Zoom", {"playerid":playerid, "zoom":lvl}))
-
-
-def PlayerZoomIn():
-  playerid = GetPicturePlayerID()
-  if playerid:
-    return SendCommand(RPCString("Player.Zoom", {"playerid":playerid, "zoom":"in"}))
-
-
-def PlayerZoomOut():
-  playerid = GetPicturePlayerID()
-  if playerid:
-    return SendCommand(RPCString("Player.Zoom", {"playerid":playerid, "zoom":"out"}))
-
-
-def PlayerRotateClockwise():
-  playerid = GetPicturePlayerID()
-  if playerid:
-    return SendCommand(RPCString("Player.Rotate", {"playerid":playerid, "value":"clockwise"}))
-
-
-def PlayerRotateCounterClockwise():
-  playerid = GetPicturePlayerID()
-  if playerid:
-    return SendCommand(RPCString("Player.Rotate", {"playerid":playerid, "value":"counterclockwise"}))
-
-
-# Addons
-
-def AddonExecute(addon_id, params={}):
-  return SendCommand(RPCString("Addons.ExecuteAddon", {"addonid":addon_id, "params":params}))
-
-def AddonGlobalSearch(needle=''):
-  return AddonExecute("script.globalsearch", {"searchstring":needle})
-
-def AddonCinemaVision():
-  return AddonExecute("script.cinemavision", ["experience"])
-
-
-# Library queries
-
-# content can be: video, audio, image, executable, or unknown
-def GetAddons(content):
-  if content:
-    return SendCommand(RPCString("Addons.GetAddons", {"content":content, "properties":["name"]}))
-  else:
-    return SendCommand(RPCString("Addons.GetAddons", {"properties":["name"]}))
-
-
-def GetAddonDetails(addon_id):
-  return SendCommand(RPCString("Addons.GetAddonDetails", {"addonid":addon_id, "properties":["name", "version", "description", "summary"]}))
-
-
-def GetPlaylistItems(playlist_file):
-  return SendCommand(RPCString("Files.GetDirectory", {"directory": playlist_file}))
-
-
-def GetMusicPlaylists():
-  return SendCommand(RPCString("Files.GetDirectory", {"directory": "special://musicplaylists"}))
-
-
-def GetMusicArtists():
-  return SendCommand(RPCString("AudioLibrary.GetArtists"))
-
-
-def GetMusicGenres():
-  return SendCommand(RPCString("AudioLibrary.GetGenres"))
-
-
-def GetArtistAlbums(artist_id):
-  return SendCommand(RPCString("AudioLibrary.GetAlbums", {"filter": {"artistid": int(artist_id)}}))
-
-
-def GetAlbums():
-  return SendCommand(RPCString("AudioLibrary.GetAlbums"))
-
-
-def GetArtistSongs(artist_id):
-  return SendCommand(RPCString("AudioLibrary.GetSongs", {"filter": {"artistid": int(artist_id)}}))
-
-
-def GetArtistSongsPath(artist_id):
-  return SendCommand(RPCString("AudioLibrary.GetSongs", {"filter": {"artistid": int(artist_id)}, "properties":["file"]}))
-
-
-def GetAlbumSongs(album_id):
-  return SendCommand(RPCString("AudioLibrary.GetSongs", {"filter": {"albumid": int(album_id)}}))
-
-
-def GetAlbumSongsPath(album_id):
-  return SendCommand(RPCString("AudioLibrary.GetSongs", {"filter": {"albumid": int(album_id)}, "properties":["file"]}))
-
-
-def GetSongs():
-  return SendCommand(RPCString("AudioLibrary.GetSongs"))
-
-
-def GetSongsPath():
-  return SendCommand(RPCString("AudioLibrary.GetSongs", {"properties":["file"]}))
-
-
-def GetSongIdPath(song_id):
-  return SendCommand(RPCString("AudioLibrary.GetSongDetails", {"songid": int(song_id), "properties":["file"]}))
-
-
-def GetRecentlyAddedAlbums():
-  return SendCommand(RPCString("AudioLibrary.GetRecentlyAddedAlbums", {'properties':['artist']}))
-
-
-def GetRecentlyAddedSongs():
-  return SendCommand(RPCString("AudioLibrary.GetRecentlyAddedSongs", {'properties':['artist']}))
-
-
-def GetRecentlyAddedSongsPath():
-  return SendCommand(RPCString("AudioLibrary.GetRecentlyAddedSongs", {'properties':['artist', 'file']}))
-
-
-def GetVideoPlaylists():
-  return SendCommand(RPCString("Files.GetDirectory", {"directory": "special://videoplaylists"}))
-
-
-def GetTvShowDetails(show_id):
-  data = SendCommand(RPCString("VideoLibrary.GetTVShowDetails", {'tvshowid':show_id, 'properties':['art']}))
-  return data['result']['tvshowdetails']
-
-
-def GetTvShows():
-  return SendCommand(RPCString("VideoLibrary.GetTVShows"))
-
-
-def GetMovieDetails(movie_id):
-  data = SendCommand(RPCString("VideoLibrary.GetMovieDetails", {'movieid':movie_id, 'properties':['resume']}))
-  return data['result']['moviedetails']
-
-
-def GetMovies():
-  return SendCommand(RPCString("VideoLibrary.GetMovies"))
-
-
-def GetMoviesByGenre(genre):
-  return SendCommand(RPCString("VideoLibrary.GetMovies", {"filter":{"genre":genre}}))
-
-
-def GetMovieGenres():
-  return SendCommand(RPCString("VideoLibrary.GetGenres", {"type": "movie"}))
-
-
-def GetEpisodeDetails(ep_id):
-  data = SendCommand(RPCString("VideoLibrary.GetEpisodeDetails", {"episodeid": int(ep_id), "properties":["season", "episode", "resume"]}))
-  return data['result']['episodedetails']
-
-
-def GetEpisodesFromShow(show_id):
-  return SendCommand(RPCString("VideoLibrary.GetEpisodes", {"tvshowid": int(show_id)}))
-
-
-def GetUnwatchedEpisodesFromShow(show_id):
-  return SendCommand(RPCString("VideoLibrary.GetEpisodes", {"tvshowid": int(show_id), "filter":{"field":"playcount", "operator":"lessthan", "value":"1"}}))
-
-
-def GetNewestEpisodeFromShow(show_id):
-  data = SendCommand(RPCString("VideoLibrary.GetEpisodes", {"limits":{"end":1},"tvshowid": int(show_id), "sort":{"method":"dateadded", "order":"descending"}}))
-  if 'episodes' in data['result']:
-    episode = data['result']['episodes'][0]
-    return episode['episodeid']
-  else:
-    return None
-
-
-def GetNextUnwatchedEpisode(show_id):
-  data = SendCommand(RPCString("VideoLibrary.GetEpisodes", {"limits":{"end":1},"tvshowid": int(show_id), "filter":{"field":"lastplayed", "operator":"greaterthan", "value":"0"}, "properties":["season", "episode", "lastplayed", "firstaired", "resume"], "sort":{"method":"lastplayed", "order":"descending"}}))
-  if 'episodes' in data['result']:
-    episode = data['result']['episodes'][0]
-    episode_season = episode['season']
-    episode_number = episode['episode']
-
-    if episode['resume']['position'] > 0.0:
-      next_episode_id = episode['episodeid']
-    else:
-      next_episode_id = GetSpecificEpisode(show_id, episode_season, int(episode_number) + 1)
-
-    if next_episode_id:
-      return next_episode_id
-    else:
-      next_episode_id = GetSpecificEpisode(show_id, int(episode_season) + 1, 1)
-
-      if next_episode_id:
-        return next_episode_id
-      else:
-        return None
-  else:
-    return None
-
-
-def GetLastWatchedShow():
-  return SendCommand(RPCString("VideoLibrary.GetEpisodes", {"limits":{"end":1}, "filter":{"field":"playcount", "operator":"greaterthan", "value":"0"}, "filter":{"field":"lastplayed", "operator":"greaterthan", "value":"0"}, "sort":{"method":"lastplayed", "order":"descending"}, "properties":["tvshowid", "showtitle"]}))
-
-
-def GetSpecificEpisode(show_id, season, episode):
-  data = SendCommand(RPCString("VideoLibrary.GetEpisodes", {"tvshowid": int(show_id), "season": int(season), "properties": ["season", "episode"]}))
-  if 'episodes' in data['result']:
-    correct_id = None
-    for episode_data in data['result']['episodes']:
-      if int(episode_data['episode']) == int(episode):
-        correct_id = episode_data['episodeid']
-        break
-
-    return correct_id
-  else:
-    return None
-
-
-def GetEpisodesFromShowDetails(show_id):
-  return SendCommand(RPCString("VideoLibrary.GetEpisodes", {"tvshowid": int(show_id), "properties": ["season", "episode"]}))
-
-
-# Returns a list of dictionaries with information about episodes that have been watched.
-# May take a long time if you have lots of shows and you set max to a big number
-def GetWatchedEpisodes(max=90):
-  return SendCommand(RPCString("VideoLibrary.GetEpisodes", {"limits":{"end":max}, "filter":{"field":"playcount", "operator":"greaterthan", "value":"0"}, "properties":["playcount", "showtitle", "season", "episode", "lastplayed" ]}))
-
-
-# Returns a list of dictionaries with information about unwatched movies. Useful for
-# telling/showing users what's ready to be watched. Setting max to very high values
-# can take a long time.
-def GetUnwatchedMovies(max=90):
-  data = SendCommand(RPCString("VideoLibrary.GetMovies", {"limits":{"end":max}, "filter":{"field":"playcount", "operator":"lessthan", "value":"1"}, "sort":{"method":"dateadded", "order":"descending"}, "properties":["title", "playcount", "dateadded"]}))
-  answer = []
-  for d in data['result']['movies']:
-    answer.append({'title':d['title'], 'movieid':d['movieid'], 'label':d['label'], 'dateadded':datetime.datetime.strptime(d['dateadded'], "%Y-%m-%d %H:%M:%S")})
-  return answer
-
-# Returns a list of dictionaries with information about unwatched movies in a particular genre. Useful for
-# telling/showing users what's ready to be watched. Setting max to very high values
-# can take a long time.
-def GetUnwatchedMoviesByGenre(genre, max=90):
-  data = SendCommand(RPCString("VideoLibrary.GetMovies", {"limits":{"end":max}, "filter":{"and":[{"field":"playcount", "operator":"lessthan", "value":"1"}, {"field":"genre", "operator":"contains", "value":genre}]}, "sort":{"method":"dateadded", "order":"descending"}, "properties":["title", "playcount", "dateadded"]}))
-  answer = []
-  for d in data['result']['movies']:
-    answer.append({'title':d['title'], 'movieid':d['movieid'], 'label':d['label'], 'dateadded':datetime.datetime.strptime(d['dateadded'], "%Y-%m-%d %H:%M:%S")})
-  return answer
-
-
-# Returns a list of dictionaries with information about unwatched episodes. Useful for
-# telling/showing users what's ready to be watched. Setting max to very high values
-# can take a long time.
-def GetUnwatchedEpisodes(max=90):
-  data = SendCommand(RPCString("VideoLibrary.GetEpisodes", {"limits":{"end":max}, "filter":{"field":"playcount", "operator":"lessthan", "value":"1"}, "sort":{"method":"dateadded", "order":"descending"}, "properties":["title", "playcount", "showtitle", "tvshowid", "dateadded" ]}))
-  answer = []
-  shows = set([d['tvshowid'] for d in data['result']['episodes']])
-  show_info = {}
-  for show in shows:
-    show_info[show] = GetTvShowDetails(show_id=show)
-  for d in data['result']['episodes']:
-    showinfo = show_info[d['tvshowid']]
-    answer.append({'title':d['title'], 'episodeid':d['episodeid'], 'show':d['showtitle'], 'label':d['label'], 'dateadded':datetime.datetime.strptime(d['dateadded'], "%Y-%m-%d %H:%M:%S")})
-  return answer
-
-
-# System commands
-def ApplicationQuit():
-  return SendCommand(RPCString("Application.Quit"))
-
-def SystemHibernate():
-  return SendCommand(RPCString("System.Hibernate"))
-
-def SystemReboot():
-  return SendCommand(RPCString("System.Reboot"))
-
-def SystemShutdown():
-  return SendCommand(RPCString("System.Shutdown"))
-
-def SystemSuspend():
-  return SendCommand(RPCString("System.Suspend"))
-
-def SystemEjectMedia():
-  return SendCommand(RPCString("System.EjectOpticalDrive"))
-
-
-# Misc helpers
-
-# Get the first active player.
-def GetPlayerID(playertype=['picture', 'audio', 'video']):
-  data = SendCommand(RPCString("Player.GetActivePlayers"))
-  result = data.get("result", [])
-  if len(result) > 0:
-    for curitem in result:
-      if curitem.get("type") in playertype:
-        return curitem.get("playerid")
-  return None
-
-# Get the first active Video player.
-def GetVideoPlayerID(playertype=['video']):
-  data = SendCommand(RPCString("Player.GetActivePlayers"))
-  result = data.get("result", [])
-  if len(result) > 0:
-    for curitem in result:
-      if curitem.get("type") in playertype:
-        return curitem.get("playerid")
-  return None
-
-
-# Get the first active Audio player.
-def GetAudioPlayerID(playertype=['audio']):
-  data = SendCommand(RPCString("Player.GetActivePlayers"))
-  result = data.get("result", [])
-  if len(result) > 0:
-    for curitem in result:
-      if curitem.get("type") in playertype:
-        return curitem.get("playerid")
-  return None
-
-
-# Get the first active Picture player.
-def GetPicturePlayerID(playertype=['picture']):
-  data = SendCommand(RPCString("Player.GetActivePlayers"))
-  result = data.get("result", [])
-  if len(result) > 0:
-    for curitem in result:
-      if curitem.get("type") in playertype:
-        return curitem.get("playerid")
-  return None
-
-
-# Information about the video or audio that's currently playing
-
-def GetActivePlayItem():
-  playerid = GetPlayerID()
-  if playerid is not None:
-    data = SendCommand(RPCString("Player.GetItem", {"playerid":playerid, "properties":["title", "album", "artist", "season", "episode", "showtitle", "tvshowid", "description"]}))
-    #print data['result']['item']
-    return data['result']['item']
-
-
-def GetActivePlayProperties():
-  playerid = GetPlayerID()
-  if playerid is not None:
-    data = SendCommand(RPCString("Player.GetProperties", {"playerid":playerid, "properties":["currentaudiostream", "currentsubtitle", "canshuffle", "shuffled", "canrepeat", "repeat", "canzoom", "canrotate", "canmove"]}))
-    #print data['result']
-    return data['result']
-
-
 # Provide a map from ISO code (both bibliographic and terminologic)
 # in ISO 639-2 to a dict with the two letter ISO 639-2 codes (alpha2)
 # English and french names
@@ -1184,70 +319,935 @@ def getisocodes_dict():
   return D
 
 
-# Returns current subtitles as a speakable string
-# XXXLANG: Only supports English currently!
-def GetCurrentSubtitles():
-  subs = ""
-  country_dic = getisocodes_dict()
-  curprops = GetActivePlayProperties()
-  if curprops is not None:
-    try:
-      # gets 3 character country code e.g. fre
-      lang = curprops['currentsubtitle']['language']
-      # looks up 3 character code in the dictionary e.g. fre|fra|fr|French|francais
-      subslang = country_dic[lang]
-      # matches 3 character code with the english (4th) column e.g. French
-      subs = subslang['english']
-      # joins full language name with the name of the subtitle file e.g. French External
-      name = curprops['currentsubtitle']['name']
-      if name:
-        subs += " " + name
-    except:
-      pass
-  return subs
+class Kodi:
+    def __init__(self, context):
+        # Do not use below for your own settings, use the .env file
+
+        # We don't use the fallback param in os.getenv() because AWS Lambda actually
+        # sets any environment variables included in LAMBDA_ENV_VARS, regardless if
+        # it was unset before.
+        #
+        # Furthermore, os.getenv() under AWS Lambda returns 'None' as a string
+        # instead of None as NoneType as we'd normally expect, so we have to
+        # explicitly test for that.
+
+        # When testing from the simulator there is no context object (04/2017)
+        if context:
+            self.deviceId = context.System.device.deviceId
+        else:
+            self.deviceId = 'DEFAULT'
+
+        self.scheme   = config.get(self.deviceId, 'scheme')
+        self.subpath  = config.get(self.deviceId, 'subpath')
+        self.address  = config.get(self.deviceId, 'address')
+        self.port     = config.get(self.deviceId, 'port')
+        self.username = config.get(self.deviceId, 'username')
+        self.password = config.get(self.deviceId, 'password')
+
+    # These two methods construct the JSON-RPC message and send it to the Kodi player
+    def SendCommand(self, command):
+      # Join the environment variables into a url
+      url = "%s://%s:%s/%s/%s" % (self.scheme, self.address, self.port, self.subpath, 'jsonrpc')
+
+      # Remove any double slashes in the url
+      url = http_normalize_slashes(url)
+
+      print "Sending request to %s from device %s" % (url, self.deviceId)
+
+      try:
+        r = requests.post(url, data=command, auth=(self.username, self.password))
+      except:
+        print "Error: jsonrpc call failed {}".format(r)
+        raise
+
+      try:
+        return json.loads(r.text)
+      except:
+        print "Error: json decoding failed {}".format(r)
+        raise
+
+    # Utilities
+
+    def sanitize_name(self, media_name, remove_between=False):
+        return sanitize_name(media_name, remove_between)
+
+    # Helpers to find media
+
+    def FindVideoPlaylist(self, heard_search):
+      print 'Searching for video playlist "%s"' % (heard_search)
+
+      playlists = self.GetVideoPlaylists()
+      if 'result' in playlists and 'files' in playlists['result']:
+        playlists_list = playlists['result']['files']
+        located = matchHeard(heard_search, playlists_list, 'label')
+
+        if located:
+          print 'Located video playlist "%s"' % (located['file'])
+          return located['file']
 
 
-# Returns current audio stream as a speakable string
-# XXXLANG: Only supports English currently!
-def GetCurrentAudioStream():
-  stream = ""
-  country_dic = getisocodes_dict()
-  curprops = GetActivePlayProperties()
-  if curprops is not None:
-    try:
-      # gets 3 character country code e.g. fre
-      lang = curprops['currentaudiostream']['language']
-      # looks up 3 character code in the dictionary e.g. fre|fra|fr|French|francais
-      streamlang = country_dic[lang]
-      # matches 3 character code with the english (4th) column e.g. French
-      stream = streamlang['english']
-      # joins full language name with the name of the subtitle file e.g. French External
-      name = curprops['currentaudiostream']['name']
-      if name:
-        stream += " " + name
-    except:
-      pass
-  return stream
+    def FindAudioPlaylist(self, heard_search):
+      print 'Searching for audio playlist "%s"' % (heard_search)
+
+      playlists = self.GetMusicPlaylists()
+      if 'result' in playlists and 'files' in playlists['result']:
+        playlists_list = playlists['result']['files']
+        located = matchHeard(heard_search, playlists_list, 'label')
+
+        if located:
+          print 'Located audio playlist "%s"' % (located['file'])
+          return located['file']
 
 
-# Returns information useful for building a progress bar to show an item's play time
-def GetPlayerStatus():
-  playerid = GetVideoPlayerID()
-  if playerid is None:
-    playerid = GetAudioPlayerID()
-  if playerid is not None:
-    data = SendCommand(RPCString("Player.GetProperties", {"playerid":playerid, "properties":["percentage", "speed", "time", "totaltime"]}))
-    if 'result' in data:
-      hours_total = data['result']['totaltime']['hours']
-      hours_cur = data['result']['time']['hours']
-      mins_total = hours_total * 60 + data['result']['totaltime']['minutes']
-      mins_cur = hours_cur * 60 + data['result']['time']['minutes']
-      speed = data['result']['speed']
-      if hours_total > 0:
-        total = '%d:%02d:%02d' % (hours_total, data['result']['totaltime']['minutes'], data['result']['totaltime']['seconds'])
-        cur = '%d:%02d:%02d' % (data['result']['time']['hours'], data['result']['time']['minutes'], data['result']['time']['seconds'])
+    def FindMovie(self, heard_search):
+      print 'Searching for movie "%s"' % (heard_search)
+
+      movies = self.GetMovies()
+      if 'result' in movies and 'movies' in movies['result']:
+        movies_array = movies['result']['movies']
+        located = matchHeard(heard_search, movies_array)
+
+        if located:
+          print 'Located movie "%s"' % (located['label'])
+          return located['movieid']
+
+
+    def FindTvShow(self, heard_search):
+      print 'Searching for show "%s"' % (heard_search)
+
+      shows = self.GetTvShows()
+      if 'result' in shows and 'tvshows' in shows['result']:
+        shows_array = shows['result']['tvshows']
+        located = matchHeard(heard_search, shows_array)
+
+        if located:
+          print 'Located tvshow "%s"' % (located['label'])
+          return located['tvshowid']
+
+
+    def FindArtist(self, heard_search):
+      print 'Searching for artist "%s"' % (heard_search)
+
+      artists = self.GetMusicArtists()
+      if 'result' in artists and 'artists' in artists['result']:
+        artists_list = artists['result']['artists']
+        located = matchHeard(heard_search, artists_list, 'artist')
+
+        if located:
+          print 'Located artist "%s"' % (located['label'])
+          return located['artistid']
+
+
+    def FindAlbum(self, heard_search):
+      print 'Searching for album "%s"' % (heard_search)
+
+      albums = self.GetAlbums()
+      if 'result' in albums and 'albums' in albums['result']:
+        albums_list = albums['result']['albums']
+        located = matchHeard(heard_search, albums_list, 'label')
+
+        if located:
+          print 'Located album "%s"' % (located['label'])
+          return located['albumid']
+
+
+    def FindSong(self, heard_search):
+      print 'Searching for song "%s"' % (heard_search)
+
+      songs = self.GetSongs()
+      if 'result' in songs and 'songs' in songs['result']:
+        songs_list = songs['result']['songs']
+        located = matchHeard(heard_search, songs_list, 'label')
+
+        if located:
+          print 'Located song "%s"' % (located['label'])
+          return located['songid']
+
+
+    # Playlists
+
+    def ClearAudioPlaylist(self):
+      return self.SendCommand(RPCString("Playlist.Clear", {"playlistid": 0}))
+
+
+    def AddSongToPlaylist(self, song_id):
+      return self.SendCommand(RPCString("Playlist.Add", {"playlistid": 0, "item": {"songid": int(song_id)}}))
+
+
+    def AddSongsToPlaylist(self, song_ids, shuffle=False):
+      songs_array = []
+
+      for song_id in song_ids:
+        temp_song = {}
+        temp_song['songid'] = song_id
+        songs_array.append(temp_song)
+
+      if shuffle:
+        random.shuffle(songs_array)
+
+      # Segment the requests into chunks that Kodi will accept in a single call
+      song_groups = [songs_array[x:x+2000] for x in range(0, len(songs_array), 2000)]
+      for a in song_groups:
+        print "Adding %d items to the queue..." % (len(a))
+        res = self.SendCommand(RPCString("Playlist.Add", {"playlistid": 0, "item": a}))
+
+      return res
+
+
+    def AddAlbumToPlaylist(self, album_id, shuffle=False):
+      songs_result = self.GetAlbumSongs(album_id)
+      songs = songs_result['result']['songs']
+      songs_array = []
+      for song in songs:
+        songs_array.append(song['songid'])
+
+      return AddSongsToPlaylist(songs_array, shuffle)
+
+
+    def GetAudioPlaylistItems(self):
+      return self.SendCommand(RPCString("Playlist.GetItems", {"playlistid": 0}))
+
+
+    # Note that subsequent shuffle commands won't work with this, as Kodi
+    # considers a playlist to be a single item.
+    def StartAudioPlaylist(self, playlist_file=None):
+      if playlist_file is not None and playlist_file != '':
+        return self.SendCommand(RPCString("Player.Open", {"item": {"file": playlist_file}}))
       else:
-        total = '%02d:%02d' % (data['result']['totaltime']['minutes'], data['result']['totaltime']['seconds'])
-        cur = '%02d:%02d' % (data['result']['time']['minutes'], data['result']['time']['seconds'])
-      return {'state':'play' if speed > 0 else 'pause', 'time':cur, 'time_hours':hours_cur, 'time_mins':mins_cur, 'totaltime':total, 'total_hours':hours_total, 'total_mins':mins_total, 'pct':data['result']['percentage']}
-  return {'state':'stop'}
+        return self.SendCommand(RPCString("Player.Open", {"item": {"playlistid": 0}}))
+
+
+    def ClearVideoPlaylist(self):
+      return self.SendCommand(RPCString("Playlist.Clear", {"playlistid": 1}))
+
+
+    def AddEpisodeToPlayList(self, ep_id):
+      return self.SendCommand(RPCString("Playlist.Add", {"playlistid": 1, "item": {"episodeid": int(ep_id)}}))
+
+
+    def AddMovieToPlaylist(self, movie_id):
+      return self.SendCommand(RPCString("Playlist.Add", {"playlistid": 1, "item": {"movieid": int(movie_id)}}))
+
+
+    def AddVideosToPlaylist(self, video_files, shuffle=False):
+      videos_array = []
+
+      for video_file in video_files:
+        temp_video = {}
+        temp_video['file'] = video_file
+        videos_array.append(temp_video)
+
+      if shuffle:
+        random.shuffle(videos_array)
+
+      # Segment the requests into chunks that Kodi will accept in a single call
+      video_groups = [videos_array[x:x+2000] for x in range(0, len(videos_array), 2000)]
+      for a in video_groups:
+        print "Adding %d items to the queue..." % (len(a))
+        res = self.SendCommand(RPCString("Playlist.Add", {"playlistid": 1, "item": a}))
+
+      return res
+
+
+    def GetVideoPlaylistItems(self):
+      return self.SendCommand(RPCString("Playlist.GetItems", {"playlistid": 1}))
+
+
+    # Note that subsequent shuffle commands won't work with this, as Kodi
+    # considers a playlist to be a single item.
+    def StartVideoPlaylist(self, playlist_file=None):
+      if playlist_file is not None and playlist_file != '':
+        return self.SendCommand(RPCString("Player.Open", {"item": {"file": playlist_file}}))
+      else:
+        return self.SendCommand(RPCString("Player.Open", {"item": {"playlistid": 1}}))
+
+
+    # Direct plays
+
+    def PlayEpisode(self, ep_id, resume=True):
+      return self.SendCommand(RPCString("Player.Open", {"item": {"episodeid": ep_id}, "options": {"resume": resume}}))
+
+
+    def PlayMovie(self, movie_id, resume=True):
+      return self.SendCommand(RPCString("Player.Open", {"item": {"movieid": movie_id}, "options": {"resume": resume}}))
+
+
+    def PartyPlayMusic(self):
+      return self.SendCommand(RPCString("Player.Open", {"item": {"partymode": "music"}}))
+
+
+    # Tell Kodi to update its video or music libraries
+
+    def UpdateVideo(self):
+      return self.SendCommand(RPCString("VideoLibrary.Scan"))
+
+
+    def CleanVideo(self):
+      return self.SendCommand(RPCString("VideoLibrary.Clean"))
+
+
+    def UpdateMusic(self):
+      return self.SendCommand(RPCString("AudioLibrary.Scan"))
+
+
+    def CleanMusic(self):
+      return self.SendCommand(RPCString("AudioLibrary.Clean"))
+
+
+    # Perform UI actions that match the normal remote control buttons
+
+    def PageUp(self):
+      return self.SendCommand(RPCString("Input.ExecuteAction", {"action":"pageup"}))
+
+
+    def PageDown(self):
+      return self.SendCommand(RPCString("Input.ExecuteAction", {"action":"pagedown"}))
+
+
+    def ToggleWatched(self):
+      return self.SendCommand(RPCString("Input.ExecuteAction", {"action":"togglewatched"}))
+
+
+    def Info(self):
+      return self.SendCommand(RPCString("Input.Info"))
+
+
+    def Menu(self):
+      return self.SendCommand(RPCString("Input.ContextMenu"))
+
+
+    def Home(self):
+      return self.SendCommand(RPCString("Input.Home"))
+
+
+    def Select(self):
+      return self.SendCommand(RPCString("Input.Select"))
+
+
+    def Up(self):
+      return self.SendCommand(RPCString("Input.Up"))
+
+
+    def Down(self):
+      return self.SendCommand(RPCString("Input.Down"))
+
+
+    def Left(self):
+      return self.SendCommand(RPCString("Input.Left"))
+
+
+    def Right(self):
+      return self.SendCommand(RPCString("Input.Right"))
+
+
+    def Back(self):
+      return self.SendCommand(RPCString("Input.Back"))
+
+
+    def ToggleFullscreen(self):
+      return self.SendCommand(RPCString("GUI.SetFullscreen", {"fullscreen":"toggle"}))
+
+
+    def ToggleMute(self):
+      return self.SendCommand(RPCString("Application.SetMute", {"mute":"toggle"}))
+
+
+    def GetCurrentVolume(self):
+      return self.SendCommand(RPCString("Application.GetProperties", {"properties":["volume", "muted"]}))
+
+    def VolumeUp(self):
+      resp = self.GetCurrentVolume()
+      vol = resp['result']['volume']
+      if vol % 10 == 0:
+        # already modulo 10, so just add 10
+        vol += 10
+      else:
+        # round up to nearest 10
+        vol -= vol % -10
+      if vol > 100:
+        vol = 100
+      return self.SendCommand(RPCString("Application.SetVolume", {"volume":vol}))
+
+
+    def VolumeDown(self):
+      resp = self.GetCurrentVolume()
+      vol = resp['result']['volume']
+      if vol % 10 != 0:
+        # round up to nearest 10 first
+        vol -= vol % -10
+      vol -= 10
+      if vol < 0:
+        vol = 0
+      return self.SendCommand(RPCString("Application.SetVolume", {"volume":vol}))
+
+
+    def VolumeSet(self, vol, percent=True):
+      if vol < 0:
+        vol = 0
+      if not percent:
+        # specified with scale of 0 to 10
+        vol *= 10
+      if vol > 100:
+        vol = 100
+      return self.SendCommand(RPCString("Application.SetVolume", {"volume":vol}))
+
+
+    # Player controls
+
+    def PlayerPlayPause(self):
+      playerid = self.GetPlayerID()
+      if playerid is not None:
+        return self.SendCommand(RPCString("Player.PlayPause", {"playerid":playerid}))
+
+
+    def PlayerSkip(self):
+      playerid = self.GetPlayerID()
+      if playerid is not None:
+        return self.SendCommand(RPCString("Player.GoTo", {"playerid":playerid, "to": "next"}))
+
+
+    def PlayerPrev(self):
+      playerid = self.GetPlayerID()
+      if playerid is not None:
+        self.SendCommand(RPCString("Player.GoTo", {"playerid":playerid, "to": "previous"}))
+        return self.SendCommand(RPCString("Player.GoTo", {"playerid":playerid, "to": "previous"}))
+
+
+    def PlayerStartOver(self):
+      playerid = self.GetPlayerID()
+      if playerid is not None:
+        return self.SendCommand(RPCString("Player.Seek", {"playerid":playerid, "value": 0}))
+
+
+    def PlayerStop(self):
+      playerid = self.GetPlayerID()
+      if playerid is not None:
+        return self.SendCommand(RPCString("Player.Stop", {"playerid":playerid}))
+
+
+    def PlayerSeek(self, seconds):
+      playerid = self.GetPlayerID()
+      if playerid:
+        return self.SendCommand(RPCString("Player.Seek", {"playerid":playerid, "value":{"seconds":seconds}}))
+
+
+    def PlayerSeekSmallForward(self):
+      playerid = self.GetPlayerID()
+      if playerid:
+        return self.SendCommand(RPCString("Player.Seek", {"playerid":playerid, "value":"smallforward"}))
+
+
+    def PlayerSeekSmallBackward(self):
+      playerid = self.GetPlayerID()
+      if playerid:
+        return self.SendCommand(RPCString("Player.Seek", {"playerid":playerid, "value":"smallbackward"}))
+
+
+    def PlayerSeekBigForward(self):
+      playerid = self.GetPlayerID()
+      if playerid:
+        return self.SendCommand(RPCString("Player.Seek", {"playerid":playerid, "value":"bigforward"}))
+
+
+    def PlayerSeekBigBackward(self):
+      playerid = self.GetPlayerID()
+      if playerid:
+        return self.SendCommand(RPCString("Player.Seek", {"playerid":playerid, "value":"bigbackward"}))
+
+
+    def PlayerShuffleOn(self):
+      playerid = self.GetPlayerID()
+      if playerid is not None:
+        return self.SendCommand(RPCString("Player.SetShuffle", {"playerid":playerid, "shuffle":True}))
+
+
+    def PlayerShuffleOff(self):
+      playerid = self.GetPlayerID()
+      if playerid is not None:
+        return self.SendCommand(RPCString("Player.SetShuffle", {"playerid":playerid, "shuffle":False}))
+
+
+    def PlayerLoopOn(self):
+      playerid = self.GetPlayerID()
+      if playerid is not None:
+        return self.SendCommand(RPCString("Player.SetRepeat", {"playerid":playerid, "repeat":"cycle"}))
+
+
+    def PlayerLoopOff(self):
+      playerid = self.GetPlayerID()
+      if playerid is not None:
+        return self.SendCommand(RPCString("Player.SetRepeat", {"playerid":playerid, "repeat":"off"}))
+
+
+    def PlayerSubtitlesOn(self):
+      playerid = self.GetVideoPlayerID()
+      if playerid:
+        return self.SendCommand(RPCString("Player.SetSubtitle", {"playerid":playerid, "subtitle":"on"}))
+
+
+    def PlayerSubtitlesOff(self):
+      playerid = self.GetVideoPlayerID()
+      if playerid:
+        return self.SendCommand(RPCString("Player.SetSubtitle", {"playerid":playerid, "subtitle":"off"}))
+
+
+    def PlayerSubtitlesNext(self):
+      playerid = self.GetVideoPlayerID()
+      if playerid:
+        return self.SendCommand(RPCString("Player.SetSubtitle", {"playerid":playerid, "subtitle":"next", "enable":True}))
+
+
+    def PlayerSubtitlesPrevious(self):
+      playerid = self.GetVideoPlayerID()
+      if playerid:
+        return self.SendCommand(RPCString("Player.SetSubtitle", {"playerid":playerid, "subtitle":"previous", "enable":True}))
+
+
+    def PlayerAudioStreamNext(self):
+      playerid = self.GetVideoPlayerID()
+      if playerid:
+        return self.SendCommand(RPCString("Player.SetAudioStream", {"playerid":playerid, "stream":"next"}))
+
+
+    def PlayerAudioStreamPrevious(self):
+      playerid = self.GetVideoPlayerID()
+      if playerid:
+        return self.SendCommand(RPCString("Player.SetAudioStream", {"playerid":playerid, "stream":"previous"}))
+
+
+    def PlayerMoveUp(self):
+      playerid = self.GetPicturePlayerID()
+      if playerid:
+        return self.SendCommand(RPCString("Player.Move", {"playerid":playerid, "direction":"up"}))
+
+
+    def PlayerMoveDown(self):
+      playerid = self.GetPicturePlayerID()
+      if playerid:
+        return self.SendCommand(RPCString("Player.Move", {"playerid":playerid, "direction":"down"}))
+
+
+    def PlayerMoveLeft(self):
+      playerid = self.GetPicturePlayerID()
+      if playerid:
+        return self.SendCommand(RPCString("Player.Move", {"playerid":playerid, "direction":"left"}))
+
+
+    def PlayerMoveRight(self):
+      playerid = self.GetPicturePlayerID()
+      if playerid:
+        return self.SendCommand(RPCString("Player.Move", {"playerid":playerid, "direction":"right"}))
+
+
+    def PlayerZoom(self, lvl=0):
+      playerid = self.GetPicturePlayerID()
+      if playerid and lvl > 0 and lvl < 11:
+        return self.SendCommand(RPCString("Player.Zoom", {"playerid":playerid, "zoom":lvl}))
+
+
+    def PlayerZoomIn(self):
+      playerid = self.GetPicturePlayerID()
+      if playerid:
+        return self.SendCommand(RPCString("Player.Zoom", {"playerid":playerid, "zoom":"in"}))
+
+
+    def PlayerZoomOut(self):
+      playerid = self.GetPicturePlayerID()
+      if playerid:
+        return self.SendCommand(RPCString("Player.Zoom", {"playerid":playerid, "zoom":"out"}))
+
+
+    def PlayerRotateClockwise(self):
+      playerid = self.GetPicturePlayerID()
+      if playerid:
+        return self.SendCommand(RPCString("Player.Rotate", {"playerid":playerid, "value":"clockwise"}))
+
+
+    def PlayerRotateCounterClockwise(self):
+      playerid = self.GetPicturePlayerID()
+      if playerid:
+        return self.SendCommand(RPCString("Player.Rotate", {"playerid":playerid, "value":"counterclockwise"}))
+
+
+    # Addons
+
+    def AddonExecute(self, addon_id, params={}):
+      return self.SendCommand(RPCString("Addons.ExecuteAddon", {"addonid":addon_id, "params":params}))
+
+    def AddonGlobalSearch(self, needle=''):
+      return AddonExecute("script.globalsearch", {"searchstring":needle})
+
+    def AddonCinemaVision(self):
+      return AddonExecute("script.cinemavision", ["experience"])
+
+
+    # Library queries
+
+    # content can be: video, audio, image, executable, or unknown
+    def GetAddons(self, content):
+      if content:
+        return self.SendCommand(RPCString("Addons.GetAddons", {"content":content, "properties":["name"]}))
+      else:
+        return self.SendCommand(RPCString("Addons.GetAddons", {"properties":["name"]}))
+
+
+    def GetAddonDetails(self, addon_id):
+      return self.SendCommand(RPCString("Addons.GetAddonDetails", {"addonid":addon_id, "properties":["name", "version", "description", "summary"]}))
+
+
+    def GetPlaylistItems(self, playlist_file):
+      return self.SendCommand(RPCString("Files.GetDirectory", {"directory": playlist_file}))
+
+
+    def GetMusicPlaylists(self):
+      return self.SendCommand(RPCString("Files.GetDirectory", {"directory": "special://musicplaylists"}))
+
+
+    def GetMusicArtists(self):
+      return self.SendCommand(RPCString("AudioLibrary.GetArtists"))
+
+
+    def GetMusicGenres(self):
+      return self.SendCommand(RPCString("AudioLibrary.GetGenres"))
+
+
+    def GetArtistAlbums(self, artist_id):
+      return self.SendCommand(RPCString("AudioLibrary.GetAlbums", {"filter": {"artistid": int(artist_id)}}))
+
+
+    def GetAlbums(self):
+      return self.SendCommand(RPCString("AudioLibrary.GetAlbums"))
+
+
+    def GetArtistSongs(self, artist_id):
+      return self.SendCommand(RPCString("AudioLibrary.GetSongs", {"filter": {"artistid": int(artist_id)}}))
+
+
+    def GetArtistSongsPath(self, artist_id):
+      return self.SendCommand(RPCString("AudioLibrary.GetSongs", {"filter": {"artistid": int(artist_id)}, "properties":["file"]}))
+
+
+    def GetAlbumSongs(self, album_id):
+      return self.SendCommand(RPCString("AudioLibrary.GetSongs", {"filter": {"albumid": int(album_id)}}))
+
+
+    def GetAlbumSongsPath(self, album_id):
+      return self.SendCommand(RPCString("AudioLibrary.GetSongs", {"filter": {"albumid": int(album_id)}, "properties":["file"]}))
+
+
+    def GetSongs(self):
+      return self.SendCommand(RPCString("AudioLibrary.GetSongs"))
+
+
+    def GetSongsPath(self):
+      return self.SendCommand(RPCString("AudioLibrary.GetSongs", {"properties":["file"]}))
+
+
+    def GetSongIdPath(self, song_id):
+      return self.SendCommand(RPCString("AudioLibrary.GetSongDetails", {"songid": int(song_id), "properties":["file"]}))
+
+
+    def GetRecentlyAddedAlbums(self):
+      return self.SendCommand(RPCString("AudioLibrary.GetRecentlyAddedAlbums", {'properties':['artist']}))
+
+
+    def GetRecentlyAddedSongs(self):
+      return self.SendCommand(RPCString("AudioLibrary.GetRecentlyAddedSongs", {'properties':['artist']}))
+
+
+    def GetRecentlyAddedSongsPath(self):
+      return self.SendCommand(RPCString("AudioLibrary.GetRecentlyAddedSongs", {'properties':['artist', 'file']}))
+
+
+    def GetVideoPlaylists(self):
+      return self.SendCommand(RPCString("Files.GetDirectory", {"directory": "special://videoplaylists"}))
+
+
+    def GetTvShowDetails(self, show_id):
+      data = self.SendCommand(RPCString("VideoLibrary.GetTVShowDetails", {'tvshowid':show_id, 'properties':['art']}))
+      return data['result']['tvshowdetails']
+
+
+    def GetTvShows(self):
+      return self.SendCommand(RPCString("VideoLibrary.GetTVShows"))
+
+
+    def GetMovieDetails(self, movie_id):
+      data = self.SendCommand(RPCString("VideoLibrary.GetMovieDetails", {'movieid':movie_id, 'properties':['resume']}))
+      return data['result']['moviedetails']
+
+
+    def GetMovies(self):
+      return self.SendCommand(RPCString("VideoLibrary.GetMovies"))
+
+
+    def GetMoviesByGenre(self, genre):
+      return self.SendCommand(RPCString("VideoLibrary.GetMovies", {"filter":{"genre":genre}}))
+
+
+    def GetMovieGenres(self):
+      return self.SendCommand(RPCString("VideoLibrary.GetGenres", {"type": "movie"}))
+
+
+    def GetEpisodeDetails(self, ep_id):
+      data = self.SendCommand(RPCString("VideoLibrary.GetEpisodeDetails", {"episodeid": int(ep_id), "properties":["season", "episode", "resume"]}))
+      return data['result']['episodedetails']
+
+
+    def GetEpisodesFromShow(self, show_id):
+      return self.SendCommand(RPCString("VideoLibrary.GetEpisodes", {"tvshowid": int(show_id)}))
+
+
+    def GetUnwatchedEpisodesFromShow(self, show_id):
+      return self.SendCommand(RPCString("VideoLibrary.GetEpisodes", {"tvshowid": int(show_id), "filter":{"field":"playcount", "operator":"lessthan", "value":"1"}}))
+
+
+    def GetNewestEpisodeFromShow(self, show_id):
+      data = self.SendCommand(RPCString("VideoLibrary.GetEpisodes", {"limits":{"end":1},"tvshowid": int(show_id), "sort":{"method":"dateadded", "order":"descending"}}))
+      if 'episodes' in data['result']:
+        episode = data['result']['episodes'][0]
+        return episode['episodeid']
+      else:
+        return None
+
+
+    def GetNextUnwatchedEpisode(self, show_id):
+      data = self.SendCommand(RPCString("VideoLibrary.GetEpisodes", {"limits":{"end":1},"tvshowid": int(show_id), "filter":{"field":"lastplayed", "operator":"greaterthan", "value":"0"}, "properties":["season", "episode", "lastplayed", "firstaired", "resume"], "sort":{"method":"lastplayed", "order":"descending"}}))
+      if 'episodes' in data['result']:
+        episode = data['result']['episodes'][0]
+        episode_season = episode['season']
+        episode_number = episode['episode']
+
+        if episode['resume']['position'] > 0.0:
+          next_episode_id = episode['episodeid']
+        else:
+          next_episode_id = self.GetSpecificEpisode(show_id, episode_season, int(episode_number) + 1)
+
+        if next_episode_id:
+          return next_episode_id
+        else:
+          next_episode_id = self.GetSpecificEpisode(show_id, int(episode_season) + 1, 1)
+
+          if next_episode_id:
+            return next_episode_id
+          else:
+            return None
+      else:
+        return None
+
+
+    def GetLastWatchedShow(self):
+      return self.SendCommand(RPCString("VideoLibrary.GetEpisodes", {"limits":{"end":1}, "filter":{"field":"playcount", "operator":"greaterthan", "value":"0"}, "filter":{"field":"lastplayed", "operator":"greaterthan", "value":"0"}, "sort":{"method":"lastplayed", "order":"descending"}, "properties":["tvshowid", "showtitle"]}))
+
+
+    def GetSpecificEpisode(self, show_id, season, episode):
+      data = self.SendCommand(RPCString("VideoLibrary.GetEpisodes", {"tvshowid": int(show_id), "season": int(season), "properties": ["season", "episode"]}))
+      if 'episodes' in data['result']:
+        correct_id = None
+        for episode_data in data['result']['episodes']:
+          if int(episode_data['episode']) == int(episode):
+            correct_id = episode_data['episodeid']
+            break
+
+        return correct_id
+      else:
+        return None
+
+
+    def GetEpisodesFromShowDetails(self, show_id):
+      return self.SendCommand(RPCString("VideoLibrary.GetEpisodes", {"tvshowid": int(show_id), "properties": ["season", "episode"]}))
+
+
+    # Returns a list of dictionaries with information about episodes that have been watched.
+    # May take a long time if you have lots of shows and you set max to a big number
+    def GetWatchedEpisodes(self, max=90):
+      return self.SendCommand(RPCString("VideoLibrary.GetEpisodes", {"limits":{"end":max}, "filter":{"field":"playcount", "operator":"greaterthan", "value":"0"}, "properties":["playcount", "showtitle", "season", "episode", "lastplayed" ]}))
+
+
+    # Returns a list of dictionaries with information about unwatched movies. Useful for
+    # telling/showing users what's ready to be watched. Setting max to very high values
+    # can take a long time.
+    def GetUnwatchedMovies(self, max=90):
+      data = self.SendCommand(RPCString("VideoLibrary.GetMovies", {"limits":{"end":max}, "filter":{"field":"playcount", "operator":"lessthan", "value":"1"}, "sort":{"method":"dateadded", "order":"descending"}, "properties":["title", "playcount", "dateadded"]}))
+      answer = []
+      for d in data['result']['movies']:
+        answer.append({'title':d['title'], 'movieid':d['movieid'], 'label':d['label'], 'dateadded':datetime.datetime.strptime(d['dateadded'], "%Y-%m-%d %H:%M:%S")})
+      return answer
+
+    # Returns a list of dictionaries with information about unwatched movies in a particular genre. Useful for
+    # telling/showing users what's ready to be watched. Setting max to very high values
+    # can take a long time.
+    def GetUnwatchedMoviesByGenre(self, genre, max=90):
+      data = self.SendCommand(RPCString("VideoLibrary.GetMovies", {"limits":{"end":max}, "filter":{"and":[{"field":"playcount", "operator":"lessthan", "value":"1"}, {"field":"genre", "operator":"contains", "value":genre}]}, "sort":{"method":"dateadded", "order":"descending"}, "properties":["title", "playcount", "dateadded"]}))
+      answer = []
+      for d in data['result']['movies']:
+        answer.append({'title':d['title'], 'movieid':d['movieid'], 'label':d['label'], 'dateadded':datetime.datetime.strptime(d['dateadded'], "%Y-%m-%d %H:%M:%S")})
+      return answer
+
+
+    # Returns a list of dictionaries with information about unwatched episodes. Useful for
+    # telling/showing users what's ready to be watched. Setting max to very high values
+    # can take a long time.
+    def GetUnwatchedEpisodes(self, max=90):
+      data = self.SendCommand(RPCString("VideoLibrary.GetEpisodes", {"limits":{"end":max}, "filter":{"field":"playcount", "operator":"lessthan", "value":"1"}, "sort":{"method":"dateadded", "order":"descending"}, "properties":["title", "playcount", "showtitle", "tvshowid", "dateadded" ]}))
+      answer = []
+      shows = set([d['tvshowid'] for d in data['result']['episodes']])
+      show_info = {}
+      for show in shows:
+        show_info[show] = GetTvShowDetails(show_id=show)
+      for d in data['result']['episodes']:
+        showinfo = show_info[d['tvshowid']]
+        answer.append({'title':d['title'], 'episodeid':d['episodeid'], 'show':d['showtitle'], 'label':d['label'], 'dateadded':datetime.datetime.strptime(d['dateadded'], "%Y-%m-%d %H:%M:%S")})
+      return answer
+
+
+    # System commands
+    def ApplicationQuit(self):
+      return self.SendCommand(RPCString("Application.Quit"))
+
+    def SystemHibernate(self):
+      return self.SendCommand(RPCString("System.Hibernate"))
+
+    def SystemReboot(self):
+      return self.SendCommand(RPCString("System.Reboot"))
+
+    def SystemShutdown(self):
+      return self.SendCommand(RPCString("System.Shutdown"))
+
+    def SystemSuspend(self):
+      return self.SendCommand(RPCString("System.Suspend"))
+
+    def SystemEjectMedia(self):
+      return self.SendCommand(RPCString("System.EjectOpticalDrive"))
+
+
+    # Misc helpers
+
+    # Get the first active player.
+    def GetPlayerID(self, playertype=['picture', 'audio', 'video']):
+      data = self.SendCommand(RPCString("Player.GetActivePlayers"))
+      result = data.get("result", [])
+      if len(result) > 0:
+        for curitem in result:
+          if curitem.get("type") in playertype:
+            return curitem.get("playerid")
+      return None
+
+    # Get the first active Video player.
+    def GetVideoPlayerID(self, playertype=['video']):
+      data = self.SendCommand(RPCString("Player.GetActivePlayers"))
+      result = data.get("result", [])
+      if len(result) > 0:
+        for curitem in result:
+          if curitem.get("type") in playertype:
+            return curitem.get("playerid")
+      return None
+
+
+    # Get the first active Audio player.
+    def GetAudioPlayerID(self, playertype=['audio']):
+      data = self.SendCommand(RPCString("Player.GetActivePlayers"))
+      result = data.get("result", [])
+      if len(result) > 0:
+        for curitem in result:
+          if curitem.get("type") in playertype:
+            return curitem.get("playerid")
+      return None
+
+
+    # Get the first active Picture player.
+    def GetPicturePlayerID(self, playertype=['picture']):
+      data = self.SendCommand(RPCString("Player.GetActivePlayers"))
+      result = data.get("result", [])
+      if len(result) > 0:
+        for curitem in result:
+          if curitem.get("type") in playertype:
+            return curitem.get("playerid")
+      return None
+
+
+    # Information about the video or audio that's currently playing
+
+    def GetActivePlayItem(self):
+      playerid = self.GetPlayerID()
+      if playerid is not None:
+        data = self.SendCommand(RPCString("Player.GetItem", {"playerid":playerid, "properties":["title", "album", "artist", "season", "episode", "showtitle", "tvshowid", "description"]}))
+        #print data['result']['item']
+        return data['result']['item']
+
+
+    def GetActivePlayProperties(self):
+      playerid = self.GetPlayerID()
+      if playerid is not None:
+        data = self.SendCommand(RPCString("Player.GetProperties", {"playerid":playerid, "properties":["currentaudiostream", "currentsubtitle", "canshuffle", "shuffled", "canrepeat", "repeat", "canzoom", "canrotate", "canmove"]}))
+        #print data['result']
+        return data['result']
+
+
+    # Returns current subtitles as a speakable string
+    # XXXLANG: Only supports English currently!
+    def GetCurrentSubtitles(self):
+      subs = ""
+      country_dic = getisocodes_dict()
+      curprops = self.GetActivePlayProperties()
+      if curprops is not None:
+        try:
+          # gets 3 character country code e.g. fre
+          lang = curprops['currentsubtitle']['language']
+          # looks up 3 character code in the dictionary e.g. fre|fra|fr|French|francais
+          subslang = country_dic[lang]
+          # matches 3 character code with the english (4th) column e.g. French
+          subs = subslang['english']
+          # joins full language name with the name of the subtitle file e.g. French External
+          name = curprops['currentsubtitle']['name']
+          if name:
+            subs += " " + name
+        except:
+          pass
+      return subs
+
+
+    # Returns current audio stream as a speakable string
+    # XXXLANG: Only supports English currently!
+    def GetCurrentAudioStream():
+      stream = ""
+      country_dic = getisocodes_dict()
+      curprops = self.GetActivePlayProperties()
+      if curprops is not None:
+        try:
+          # gets 3 character country code e.g. fre
+          lang = curprops['currentaudiostream']['language']
+          # looks up 3 character code in the dictionary e.g. fre|fra|fr|French|francais
+          streamlang = country_dic[lang]
+          # matches 3 character code with the english (4th) column e.g. French
+          stream = streamlang['english']
+          # joins full language name with the name of the subtitle file e.g. French External
+          name = curprops['currentaudiostream']['name']
+          if name:
+            stream += " " + name
+        except:
+          pass
+      return stream
+
+
+    # Returns information useful for building a progress bar to show an item's play time
+    def GetPlayerStatus(self):
+      playerid = self.GetVideoPlayerID()
+      if playerid is None:
+        playerid = self.GetAudioPlayerID()
+      if playerid is not None:
+        data = self.SendCommand(RPCString("Player.GetProperties", {"playerid":playerid, "properties":["percentage", "speed", "time", "totaltime"]}))
+        if 'result' in data:
+          hours_total = data['result']['totaltime']['hours']
+          hours_cur = data['result']['time']['hours']
+          mins_total = hours_total * 60 + data['result']['totaltime']['minutes']
+          mins_cur = hours_cur * 60 + data['result']['time']['minutes']
+          speed = data['result']['speed']
+          if hours_total > 0:
+            total = '%d:%02d:%02d' % (hours_total, data['result']['totaltime']['minutes'], data['result']['totaltime']['seconds'])
+            cur = '%d:%02d:%02d' % (data['result']['time']['hours'], data['result']['time']['minutes'], data['result']['time']['seconds'])
+          else:
+            total = '%02d:%02d' % (data['result']['totaltime']['minutes'], data['result']['totaltime']['seconds'])
+            cur = '%02d:%02d' % (data['result']['time']['minutes'], data['result']['time']['seconds'])
+          return {'state':'play' if speed > 0 else 'pause', 'time':cur, 'time_hours':hours_cur, 'time_mins':mins_cur, 'totaltime':total, 'total_hours':hours_total, 'total_mins':mins_total, 'pct':data['result']['percentage']}
+      return {'state':'stop'}

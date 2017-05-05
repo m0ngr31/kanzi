@@ -1,12 +1,9 @@
-import kodi
+from kodi import Kodi
 import re
 import string
 import random
-from yaep import populate_env
 
-# to use put the Kodi details into environment variables
-# KODI_ADDRESS=localhost KODI_PORT=8088 KODI_USERNAME=kodi KODI_PASSWORD=kodi python generate_custom_types.py
-kodi.PopulateEnv()
+kodi = Kodi(None)
 
 # Generate MUSICARTISTS Slot
 retrieved = kodi.GetMusicArtists()
