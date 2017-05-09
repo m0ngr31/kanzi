@@ -151,6 +151,9 @@ def SendCommand(command):
     r = requests.post(url, data=command, auth=(USER, PASS))
   except:
     return {}
+  if r.status_code == 401:
+    print "Unauthorized. Please set environemnt variables KODI_USERNAME and KODI_PASSWORD."
+    raise SystemError("Unauthorized. Please set environemnt variables KODI_USERNAME and KODI_PASSWORD.")
   return json.loads(r.text)
 
 
