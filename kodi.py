@@ -321,17 +321,7 @@ def getisocodes_dict():
 
 class Kodi:
     def __init__(self, context):
-        # Do not use below for your own settings, use the .env file
-
-        # We don't use the fallback param in os.getenv() because AWS Lambda actually
-        # sets any environment variables included in LAMBDA_ENV_VARS, regardless if
-        # it was unset before.
-        #
-        # Furthermore, os.getenv() under AWS Lambda returns 'None' as a string
-        # instead of None as NoneType as we'd normally expect, so we have to
-        # explicitly test for that.
-
-        # When testing from the simulator there is no context object (04/2017)
+        # When testing from the web simulator there is no context object (04/2017)
         if context:
             self.deviceId = context.System.device.deviceId
         else:
@@ -354,11 +344,7 @@ class Kodi:
 
       print "Sending request to %s from device %s" % (url, self.deviceId)
 
-      try:
-        r = requests.post(url, data=command, auth=(self.username, self.password))
-      except:
-        print "Error: jsonrpc call failed {}".format(r)
-        raise
+      r = requests.post(url, data=command, auth=(self.username, self.password))
 
       try:
         return json.loads(r.text)

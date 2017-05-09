@@ -14,16 +14,16 @@ from multiprocessing import Process
 from flask import Flask, json, render_template
 from flask_ask import Ask, session, question, statement, audio, request, context
 from shutil import copyfile
-from kodi import Kodi
+from kodi import Kodi, config
 
 
 app = Flask(__name__)
 
-SKILL_ID = os.getenv('SKILL_APPID')
+SKILL_ID = config.get('alexa', 'skill_id')
 if SKILL_ID and SKILL_ID != 'None':
   app.config['ASK_APPLICATION_ID'] = SKILL_ID
 
-LANGUAGE = os.getenv('LANGUAGE')
+LANGUAGE = config.get('alexa', 'language')
 if LANGUAGE and LANGUAGE != 'None' and LANGUAGE == 'de':
   TEMPLATE_FILE = "templates.de.yaml"
 else:
@@ -32,9 +32,6 @@ else:
 # According to this: https://alexatutorial.com/flask-ask/configuration.html
 # Timestamp based verification shouldn't be used in production. Use at own risk
 # app.config['ASK_VERIFY_TIMESTAMP_DEBUG'] = True
-
-# https://github.com/johnwheeler/flask-ask/issues/43
-app.config['ASK_VERIFY_REQUESTS'] = False
 
 # Needs to be instanced after app is configured
 ask = Ask(app, "/", None, path=TEMPLATE_FILE)
@@ -149,7 +146,7 @@ def alexa_current_playitem_time_remaining():
       response_text = 'There is one minute remaining.'
     elif minsleft > 1:
       response_text = 'There are %d minutes remaining' % (minsleft)
-      tz = os.getenv('SKILL_TZ')
+      tz = config.get(kodi.deviceId, 'timezone')
       if minsleft > 9 and tz and tz != 'None':
         utctime = datetime.datetime.now(pytz.utc)
         loctime = utctime.astimezone(pytz.timezone(tz))
@@ -221,8 +218,8 @@ def alexa_no():
 def alexa_yes():
   kodi = Kodi(context)
   if 'shutting_down' in session.attributes:
-    quit = os.getenv('SHUTDOWN_MEANS_QUIT')
-    if quit and quit != 'None':
+    quit = config.get(kodi.deviceId, 'shutdown')
+    if quit and quit == 'quit':
       card_title = render_template('quitting').encode("utf-8")
       kodi.ApplicationQuit()
     else:
@@ -487,8 +484,8 @@ def alexa_play_media(Movie=None, Artist=None, content=None):
   card_title = 'Playing "%s"' % (heard_search)
   print card_title
 
-  disable_ds = os.getenv('DISABLE_DEEP_SEARCH')
-  if disable_ds and disable_ds != 'None':
+  disable_ds = config.get('alexa', 'disable_deep_search')
+  if disable_ds and disable_ds == 'yes':
     response_text = render_template('help_play').encode("utf-8")
   else:
     if (len(heard_search) > 0):
