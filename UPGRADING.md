@@ -2,7 +2,9 @@
 
 For each new update, please run the Slot generator again and repopulate all of your slots with the output. If you don't do this, the skill might seem to successfully build and save, but those with large libraries may encounter issues at runtime. There might be new slots needed for new functionality as well.
 
-Also remember to always update the Intents and Utterances in the skill. If new slots were added, you will need to add those as well.
+Remember to always update the Intents and Utterances in the skill. If new slots were added, you will need to add those as well.
+
+Almost anything else can change, too.  Please be sure to check the CHANGELOG and README again when updating.
 
 ## Heroku
 
