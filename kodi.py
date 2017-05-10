@@ -51,15 +51,15 @@ if not os.path.isfile(config_file):
   SHUTDOWN_MEANS_QUIT = os.getenv('SHUTDOWN_MEANS_QUIT')
   if SHUTDOWN_MEANS_QUIT and SHUTDOWN_MEANS_QUIT != 'None':
     config.set('DEFAULT', 'shutdown', SHUTDOWN_MEANS_QUIT)
+  SKILL_TZ = os.getenv('SKILL_TZ')
   if SKILL_TZ and SKILL_TZ != 'None':
     config.set('DEFAULT', 'timezone', SKILL_TZ)
   LANGUAGE = os.getenv('LANGUAGE')
+  if LANGUAGE and LANGUAGE != 'None':
+    config.set('global', 'language', LANGUAGE)
   SKILL_APPID = os.getenv('SKILL_APPID')
   if SKILL_APPID and SKILL_APPID != 'None':
     config.set('alexa', 'skill_id', SKILL_APPID)
-  SKILL_TZ = os.getenv('SKILL_TZ')
-  if LANGUAGE and LANGUAGE != 'None':
-    config.set('global', 'language', LANGUAGE)
   DEEP_SEARCH = os.getenv('DEEP_SEARCH')
   if DEEP_SEARCH and DEEP_SEARCH != 'None':
     config.set('global', 'deep_search', DEEP_SEARCH)
