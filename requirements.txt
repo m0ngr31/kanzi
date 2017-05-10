@@ -1,7 +1,4 @@
-requests
 gunicorn
-ConfigParser
 pytz
-roman
-fuzzywuzzy
 flask-ask>=0.8.9
+kodi-voice
