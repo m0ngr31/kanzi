@@ -22,7 +22,7 @@ language = en
 #
 # When disabled, Alexa will simply provide help in the response directing you
 # to issue a play command that includes the media type of the item.
-disable_deep_search = 0
+deep_search = yes
 
 
 #

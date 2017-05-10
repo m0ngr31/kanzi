@@ -484,8 +484,7 @@ def alexa_play_media(Movie=None, Artist=None, content=None):
   card_title = 'Playing "%s"' % (heard_search)
   print card_title
 
-  disable_ds = config.get('alexa', 'disable_deep_search')
-  if disable_ds and disable_ds != 'None':
+  if not config.getboolean('alexa', 'deep_search'):
     response_text = render_template('help_play').encode("utf-8")
   else:
     if (len(heard_search) > 0):
