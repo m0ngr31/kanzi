@@ -162,7 +162,7 @@ Setting the `SKILL_TZ` environment variable will make it so when you ask how lon
 
 Setting `KODI_SCHEME` to `https` allows you to talk to your Kodi box securely, but this requires some work on your end to setup.
 
-Be default, the skill allows very generic queries such as, `play 99 red balloons` or `shuffle the office`.  These very generic commands can be slow, however, and may cause timeouts.  If these timeouts bother you, you can direct the skill to provide help playing media more specifically instead when it encounters these kinds of requests, by disabling `deep_search`.
+By default, the skill allows very generic queries such as, `play 99 red balloons` or `shuffle the office`.  These very generic commands can be slow however, and may cause timeouts.  If these timeouts bother you, you can direct the skill to provide help playing media more specifically instead when it encounters these kinds of requests, by setting `DISABLE_DEEP_SEARCH`.
 
 # Optimising search performance on large libraries (local installations only)
 
