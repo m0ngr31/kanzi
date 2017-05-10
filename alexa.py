@@ -14,7 +14,7 @@ from multiprocessing import Process
 from flask import Flask, json, render_template
 from flask_ask import Ask, session, question, statement, audio, request, context
 from shutil import copyfile
-from kodi import Kodi, config
+from kodi_voice import Kodi, config
 
 
 app = Flask(__name__)
