@@ -362,7 +362,7 @@ def getisocodes_dict():
 
 
 class Kodi:
-  def __init__(self, context):
+  def __init__(self, context=None):
     # When testing from the web simulator there is no context object (04/2017)
     if context:
       self.deviceId = context.System.device.deviceId
