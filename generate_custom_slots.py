@@ -3,7 +3,7 @@ import re
 import string
 import random
 
-kodi = Kodi(None)
+kodi = Kodi()
 
 # Generate MUSICARTISTS Slot
 retrieved = kodi.GetMusicArtists()

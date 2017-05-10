@@ -1,10 +1,7 @@
 #
-# Global Alexa skill configuration
+# Global configuration
 #
-[alexa]
-# Set skill_id to enable verification of requests by Flask-Ask.
-skill_id =
-
+[global]
 # Currently supported languages: en, de
 language = en
 
@@ -26,6 +23,14 @@ deep_search = yes
 
 
 #
+# Global Alexa skill configuration
+#
+[alexa]
+# Set skill_id to enable verification of requests by Flask-Ask.
+skill_id =
+
+
+#
 # Default parameters common to all Alexa devices and the web simulator
 #
 [DEFAULT]
@@ -40,6 +45,10 @@ subpath  =
 username = kodi
 password = kodi
 
+# Set shutdown to 'quit' if you'd like "Alexa, tell Kodi to shut down"
+# to quit Kodi instead of shutting down the system.
+shutdown =
+
 # Your local time zone for responses that include absolute times.
 # See https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 #
@@ -51,10 +60,6 @@ password = kodi
 # defined, it will also tell you the wall-clock time when the item will
 # conclude.
 timezone =
-
-# Set shutdown to 'quit' if you'd like "Alexa, tell Kodi to shut down"
-# to quit Kodi instead of shutting down the system.
-shutdown =
 
 
 # Override default values by specifying them below for individual devices.

@@ -21,9 +21,51 @@ from fuzzywuzzy import fuzz, process
 # Read kodi device congigurations
 # http://stackoverflow.com/questions/19078170/python-how-would-you-save-a-simple-settings-config-file
 from ConfigParser import SafeConfigParser
+config_file = os.path.join(os.path.dirname(__file__), "kodi.config")
 config = SafeConfigParser()
-config.read(os.path.join(os.path.dirname(__file__), "kodi.config"))
-#print dict(config.items('DEFAULT'))
+
+if not os.path.isfile(config_file):
+  # Seed the default values from the example
+  config_file = os.path.join(os.path.dirname(__file__), "kodi.config.example")
+  config.read(config_file)
+
+  # Fill out the rest of the config based on .env variabled
+  SCHEME = os.getenv('KODI_SCHEME')
+  if SCHEME and SCHEME != 'None':
+    config.set('DEFAULT', 'scheme', SCHEME)
+  SUBPATH = os.getenv('KODI_SUBPATH')
+  if SUBPATH and SUBPATH != 'None':
+    config.set('DEFAULT', 'subpath', SUBPATH)
+  KODI_ADDRESS = os.getenv('KODI_ADDRESS')
+  if KODI_ADDRESS and KODI_ADDRESS != 'None':
+    config.set('DEFAULT', 'address', KODI_ADDRESS)
+  KODI_PORT = os.getenv('KODI_PORT')
+  if KODI_PORT and KODI_PORT != 'None':
+    config.set('DEFAULT', 'port', KODI_PORT)
+  KODI_USERNAME = os.getenv('KODI_USERNAME')
+  if KODI_USERNAME and KODI_USERNAME != 'None':
+    config.set('DEFAULT', 'username', KODI_USERNAME)
+  KODI_PASSWORD = os.getenv('KODI_PASSWORD')
+  if KODI_PASSWORD and KODI_PASSWORD != 'None':
+    config.set('DEFAULT', 'password', KODI_PASSWORD)
+  SHUTDOWN_MEANS_QUIT = os.getenv('SHUTDOWN_MEANS_QUIT')
+  if SHUTDOWN_MEANS_QUIT and SHUTDOWN_MEANS_QUIT != 'None':
+    config.set('DEFAULT', 'shutdown', SHUTDOWN_MEANS_QUIT)
+  SKILL_TZ = os.getenv('SKILL_TZ')
+  if SKILL_TZ and SKILL_TZ != 'None':
+    config.set('DEFAULT', 'timezone', SKILL_TZ)
+  LANGUAGE = os.getenv('LANGUAGE')
+  if LANGUAGE and LANGUAGE != 'None':
+    config.set('global', 'language', LANGUAGE)
+  SKILL_APPID = os.getenv('SKILL_APPID')
+  if SKILL_APPID and SKILL_APPID != 'None':
+    config.set('alexa', 'skill_id', SKILL_APPID)
+  DEEP_SEARCH = os.getenv('DEEP_SEARCH')
+  if DEEP_SEARCH and DEEP_SEARCH != 'None':
+    config.set('global', 'deep_search', DEEP_SEARCH)
+else:
+  config.read(config_file)
+
 
 # These are words that we ignore when doing a non-exact match on show names
 STOPWORDS = [
@@ -320,7 +362,7 @@ def getisocodes_dict():
 
 
 class Kodi:
-  def __init__(self, context):
+  def __init__(self, context=None):
     # When testing from the web simulator there is no context object (04/2017)
     if context:
       self.deviceId = context.System.device.deviceId
