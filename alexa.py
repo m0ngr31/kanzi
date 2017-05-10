@@ -23,7 +23,7 @@ SKILL_ID = config.get('alexa', 'skill_id')
 if SKILL_ID and SKILL_ID != 'None':
   app.config['ASK_APPLICATION_ID'] = SKILL_ID
 
-LANGUAGE = config.get('alexa', 'language')
+LANGUAGE = config.get('global', 'language')
 if LANGUAGE and LANGUAGE != 'None' and LANGUAGE == 'de':
   TEMPLATE_FILE = "templates.de.yaml"
 else:
@@ -146,7 +146,7 @@ def alexa_current_playitem_time_remaining():
       response_text = 'There is one minute remaining.'
     elif minsleft > 1:
       response_text = 'There are %d minutes remaining' % (minsleft)
-      tz = config.get(kodi.deviceId, 'timezone')
+      tz = config.get('global', 'timezone')
       if minsleft > 9 and tz and tz != 'None':
         utctime = datetime.datetime.now(pytz.utc)
         loctime = utctime.astimezone(pytz.timezone(tz))
@@ -484,7 +484,7 @@ def alexa_play_media(Movie=None, Artist=None, content=None):
   card_title = 'Playing "%s"' % (heard_search)
   print card_title
 
-  if not config.getboolean('alexa', 'deep_search'):
+  if not config.getboolean('global', 'deep_search'):
     response_text = render_template('help_play').encode("utf-8")
   else:
     if (len(heard_search) > 0):
