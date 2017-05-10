@@ -325,18 +325,23 @@ class Kodi:
         if context:
             self.deviceId = context.System.device.deviceId
         else:
-            self.deviceId = 'DEFAULT'
+            self.deviceId = 'Unknown Device'
 
-        self.scheme   = config.get(self.deviceId, 'scheme')
-        self.subpath  = config.get(self.deviceId, 'subpath')
-        self.address  = config.get(self.deviceId, 'address')
-        self.port     = config.get(self.deviceId, 'port')
-        self.username = config.get(self.deviceId, 'username')
-        self.password = config.get(self.deviceId, 'password')
+        if config.has_section(self.deviceId):
+            dev_cfg_section = self.deviceId
+        else:
+            dev_cfg_section = 'DEFAULT'
 
-    # These two methods construct the JSON-RPC message and send it to the Kodi player
+        self.scheme   = config.get(dev_cfg_section, 'scheme')
+        self.subpath  = config.get(dev_cfg_section, 'subpath')
+        self.address  = config.get(dev_cfg_section, 'address')
+        self.port     = config.get(dev_cfg_section, 'port')
+        self.username = config.get(dev_cfg_section, 'username')
+        self.password = config.get(dev_cfg_section, 'password')
+
+    # Construct the JSON-RPC message and send it to the Kodi player
     def SendCommand(self, command):
-      # Join the environment variables into a url
+      # Join the configuration variables into a url
       url = "%s://%s:%s/%s/%s" % (self.scheme, self.address, self.port, self.subpath, 'jsonrpc')
 
       # Remove any double slashes in the url
