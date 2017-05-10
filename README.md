@@ -159,7 +159,10 @@ To verify that incoming requests are only allowed from your own copy of the skil
 # Extra settings for more functionality
 
 Setting the `SKILL_TZ` environment variable will make it so when you ask how long something has left playing, it'll respond for your correct time.
-Setting the `KODI_SCHEME` to `https` allows you to talk to your Kodi box securely, but this requires some work on your end to setup.
+
+Setting `KODI_SCHEME` to `https` allows you to talk to your Kodi box securely, but this requires some work on your end to setup.
+
+Be default, the skill allows very generic queries such as, `play 99 red balloons` or `shuffle the office`.  These very generic commands can be slow, however, and may cause timeouts.  If these timeouts bother you, you can direct the skill to provide help playing media more specifically instead when it encounters these kinds of requests, by disabling `deep_search`.
 
 # Optimising search performance on large libraries (local installations only)
 
