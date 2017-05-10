@@ -19,7 +19,7 @@ from kodi import Kodi, config
 
 app = Flask(__name__)
 
-SKILL_ID = config.get('alexa', 'skill_id')
+SKILL_ID = config.get('global', 'skill_id')
 if SKILL_ID and SKILL_ID != 'None':
   app.config['ASK_APPLICATION_ID'] = SKILL_ID
 
