@@ -21,18 +21,6 @@ language = en
 # to issue a play command that includes the media type of the item.
 deep_search = yes
 
-# Your local time zone for responses that include absolute times.
-# See https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
-#
-# For example, if you are in the Eastern US time zone, you would use:
-# timezone = US/Eastern
-#
-# Leave empty if you don't need or want absolute time responses.  An example
-# is asking when the currently playing item will end.  If you have this
-# defined, it will also tell you the wall-clock time when the item will
-# conclude.
-timezone =
-
 
 #
 # Global Alexa skill configuration
@@ -60,6 +48,18 @@ password = kodi
 # Set shutdown to 'quit' if you'd like "Alexa, tell Kodi to shut down"
 # to quit Kodi instead of shutting down the system.
 shutdown =
+
+# Your local time zone for responses that include absolute times.
+# See https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+#
+# For example, if you are in the Eastern US time zone, you would use:
+# timezone = US/Eastern
+#
+# Leave empty if you don't need or want absolute time responses.  An example
+# is asking when the currently playing item will end.  If you have this
+# defined, it will also tell you the wall-clock time when the item will
+# conclude.
+timezone =
 
 
 # Override default values by specifying them below for individual devices.
