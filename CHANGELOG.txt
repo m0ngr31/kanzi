@@ -1,4 +1,19 @@
-v2.5.0 (04/xx/2017)
+v2.6.0 (05/12/2017)
+* Fixed shuffling of really large playlists
+* Added Shuffle On/Off Intents
+* Added Loop On/Off Intents
+* Better matching for titles with roman numerals
+* Clean up Cards and Responses
+* Added generic play/shuffle commands ("deep searches")
+- "play <media>"
+- "shuffle <media>"
+- "listen to <music>"
+- "watch <video>"
+* Fixed an issue with Flask-Ask 0.9.2
+* Fixed German translations for Addon Intents
+* Added basic support for multiple Kodi installations
+
+v2.5.0 (04/13/2017)
 * Migrated to Flask-Ask
 * Added session support
 * Added OpenRemote intent
@@ -73,15 +88,12 @@ v1.5.0 (04/13/2016)
 * Added Intent to watch the newest episode of a show
 
 v1.0.2 (04/07/2016)
-===================
 * Updated documentation and source for using Heroku by default instead of Openshift
 
 v1.0.1 (01/12/2016)
-===================
 * Changed random on movies and tv shows to only search for unwatched episodes. If there are none, pick a watched one
 * Added Intent to be able to watch next episode of whatever was watched last
 * Added Intent to be able to watch next episode of specific tv show
 
 v.1.0.0 (01/01/2016)
-===================
 * Initial release
