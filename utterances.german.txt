@@ -108,18 +108,18 @@ WatchLastShow weiter mit (/letzter) Serie
 
 WatchLatestEpisode zeige (neueste/letzte) (Episode/Folge) von {Show}
 
-ShuffleShow shuffle (/all) episodes of {Show}
+ShuffleShow zufallswiedergabe (/aller) episoden von {Show}
 
-ShuffleAlbum shuffle (album/the album) {Album}
-ShuffleAlbum shuffle (/album/the album) {Album} by {Artist}
+ShuffleAlbum zufallswiedergabe (album/des albums/vom album) {Album}
+ShuffleAlbum zufallswiedergabe (/album/das albums/vom album) {Album} von {Artist}
 
 WatchVideoPlaylist zeige (Film/Serie/Video) playlist {VideoPlaylist}
 WatchVideoPlaylist zeige {VideoPlaylist} (Film/Serie/Video) playlist
 WatchVideoPlaylist zeige playlist {VideoPlaylist}
 WatchVideoPlaylist zeige {VideoPlaylist} playlist
 
-ShuffleAudioPlaylist zufallswiedergabe (Musik/Lied(/er)/Song/Audio) playlist {AudioPlaylist}
-ShuffleAudioPlaylist zufallswiedergabe {AudioPlaylist} (Musik/Lied(/er)/Song/Audio) playlist
+ShuffleAudioPlaylist zufallswiedergabe (Musik/Audio) playlist {AudioPlaylist}
+ShuffleAudioPlaylist zufallswiedergabe {AudioPlaylist} (Musik/Audio) playlist
 
 ShuffleVideoPlaylist zufallswiedergabe (Film/Serie/Video) playlist {VideoPlaylist}
 ShuffleVideoPlaylist zufallswiedergabe {VideoPlaylist} (Film/Serie/Video) playlist
@@ -153,7 +153,7 @@ NewShowInquiry ob es neue (/Episoden/Folgen) (/von) {Show} gibt
 NewShowInquiry ob wir neue (/Episoden/Folgen) (/von) {Show} haben
 NewShowInquiry ob du neue (/Episoden/Folgen) (/von) {Show} hast
 
-PartyMode spiel(/e) (/zufällige/irgendwelche) (Musik/Lieder/Songs/Mucke)
+PartyMode (zufallswiedergabe/spiel(/e) (/zufällige/irgendwelche)) (Musik/Lieder/Songs/Mucke)
 PartyMode leg(/e) (/zufällige/irgendwelche) (Musik/Lieder/Songs/Mucke) auf
 PartyMode spiele irgend(/et)was
 PartyMode leg(/e) (/irgend(/et))was auf
