@@ -1786,6 +1786,7 @@ def alexa_shuffle_show(Show):
   card_title = render_template('shuffling_episodes', heard_show=heard_show).encode("utf-8")
   print card_title
 
+  kodi = Kodi(config, context)
   show, show_label = kodi.FindTvShow(heard_show)
   if show:
     episodes_array = []
