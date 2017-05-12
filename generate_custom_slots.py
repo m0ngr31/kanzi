@@ -3,7 +3,10 @@ import re
 import string
 import random
 
-kodi = Kodi()
+config_file = os.path.join(os.path.dirname(__file__), "kodi.config")
+config = KodiConfigParser(config_file)
+
+kodi = Kodi(config)
 
 # Generate MUSICARTISTS Slot
 retrieved = kodi.GetMusicArtists()
