@@ -94,7 +94,7 @@ After you've done that, run `pip install virtualenv`. This is required for a lat
 Now, clone my repo: `git clone https://github.com/m0ngr31/kodi-alexa.git` and `cd kodi-alexa`. Once you are inside the project directory, you're going to create a new "Virtual environement" and then activate it:
 `virtualenv venv` and `source venv/bin/activate` (if you are on Windows, that's `venv\Scripts\activate.bat` or `venv\Scripts\activate.ps1` for Powershell).
 
-After successful completion, run `pip install -r requirements.txt` and `pip install zappa`. Before you deploy, you need to copy the `kodi.config.example` file to `kodi.config` and enter the correct information for: address, port, username, and password. I'll go over the other variables in another section below.
+After successful completion, run `pip install -r requirements.txt` and `pip install zappa`. Before you deploy, you need to create the file `kodi.config` from the [kodi.config.example template](https://raw.githubusercontent.com/m0ngr31/kodi-voice/master/kodi.config.example) and enter the correct information for: address, port, username, and password. I'll go over the other variables in another section below.
 
 Before you can send any code to Lambda, you'll need to setup Zappa. Just run `zappa init` and accept the defaults for everything. If it doesn't automatically detect that this is a Flask app, tell it that the application function is "alexa.app".
 
