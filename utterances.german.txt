@@ -74,7 +74,7 @@ ShuffleMedia zufallswiedergabe {Show}
 
 WhatAlbums (welches Album/welche (Alben/CD/CDs/Platte/Platten)) (ich von {Artist} habe/wir von {Artist} haben/du von {Artist} hast)
 
-ListenToAudio anhören {Artist}
+ListenToAudio {Artist} anhören
 
 ListenToArtist spiel(/e) (Musik/Lieder/Songs/Mucke) von (/dem Artist/der Artistin/dem Komponist/der Komponistin/dem Künstler/der Künstlerin/der Band/der Gruppe) {Artist}
 
@@ -174,10 +174,10 @@ CurrentPlayItemTimeRemaining wie viel länger (das/(dieses/mein) (audio/video) /
 CurrentPlayItemTimeRemaining wie lange das noch (ist/geht/läuft)
 CurrentPlayItemTimeRemaining (wann/welche Uhrzeit) (das/(dieses/mein) (audio/video) /(der/dieser/mein) Film/(die/diese/meine) (Serie/Episode/Folge)/(das/dieses/mein) Lied) (ende(t/n wird)/zu ende ist)
 
-Hibernate (/system) (tiefschlaf/hibernate)
+Hibernate (/system) (ruhezustand/tiefschlaf/hibernate)
 Reboot (/system) (neustarten/reboot)
 Shutdown (/system) (herunterfahren/shutdown)
-Suspend (/system) ((/geh/gehe) schlafen/suspend/standby)
+Suspend (/system) ((/geh/gehe) schlafen/bereitschaft/suspend/standby)
 
 EjectMedia (/medium/disc/audio disc/bluray/bluray disc/cd/audio cd/dvd/Scheibe) auswerfen
 
