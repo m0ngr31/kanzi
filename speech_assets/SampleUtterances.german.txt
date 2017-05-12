@@ -520,7 +520,9 @@ EjectMedia medium auswerfen
 Fullscreen vollbild
 Fullscreen vollbild umschalten
 Hibernate hibernate
+Hibernate ruhezustand
 Hibernate system hibernate
+Hibernate system ruhezustand
 Hibernate system tiefschlaf
 Hibernate tiefschlaf
 Home startseite
@@ -644,7 +646,7 @@ ListenToArtist spiele Songs von der Gruppe {Artist}
 ListenToArtist spiele Songs von der Komponistin {Artist}
 ListenToArtist spiele Songs von der Künstlerin {Artist}
 ListenToArtist spiele Songs von {Artist}
-ListenToAudio anhören {Artist}
+ListenToAudio {Artist} anhören
 ListenToAudioPlaylist spiel Lieder playlist {AudioPlaylist}
 ListenToAudioPlaylist spiel Musik playlist {AudioPlaylist}
 ListenToAudioPlaylist spiel Song playlist {AudioPlaylist}
@@ -796,6 +798,10 @@ PartyMode spiele zufällige Lieder
 PartyMode spiele zufällige Mucke
 PartyMode spiele zufällige Musik
 PartyMode spiele zufällige Songs
+PartyMode zufallswiedergabe Lieder
+PartyMode zufallswiedergabe Mucke
+PartyMode zufallswiedergabe Musik
+PartyMode zufallswiedergabe Songs
 PlayMedia spiel {Movie}
 PlayMedia spiele {Movie}
 PlayerMoveDown geh nach unten
@@ -1091,28 +1097,24 @@ Right navigiere nach rechts
 Right navigiere rechts
 Right rechts
 Select auswählen
-ShuffleAlbum shuffle album {Album}
-ShuffleAlbum shuffle album {Album} by {Artist}
-ShuffleAlbum shuffle the album {Album}
-ShuffleAlbum shuffle the album {Album} by {Artist}
-ShuffleAlbum shuffle {Album} by {Artist}
+ShuffleAlbum zufallswiedergabe album {Album}
+ShuffleAlbum zufallswiedergabe album {Album} von {Artist}
+ShuffleAlbum zufallswiedergabe das albums {Album} von {Artist}
+ShuffleAlbum zufallswiedergabe des albums {Album}
+ShuffleAlbum zufallswiedergabe vom album {Album}
+ShuffleAlbum zufallswiedergabe vom album {Album} von {Artist}
+ShuffleAlbum zufallswiedergabe {Album} von {Artist}
 ShuffleAudioPlaylist zufallswiedergabe Audio playlist {AudioPlaylist}
-ShuffleAudioPlaylist zufallswiedergabe Lied playlist {AudioPlaylist}
-ShuffleAudioPlaylist zufallswiedergabe Lieder playlist {AudioPlaylist}
 ShuffleAudioPlaylist zufallswiedergabe Musik playlist {AudioPlaylist}
-ShuffleAudioPlaylist zufallswiedergabe Song playlist {AudioPlaylist}
 ShuffleAudioPlaylist zufallswiedergabe {AudioPlaylist} Audio playlist
-ShuffleAudioPlaylist zufallswiedergabe {AudioPlaylist} Lied playlist
-ShuffleAudioPlaylist zufallswiedergabe {AudioPlaylist} Lieder playlist
 ShuffleAudioPlaylist zufallswiedergabe {AudioPlaylist} Musik playlist
-ShuffleAudioPlaylist zufallswiedergabe {AudioPlaylist} Song playlist
 ShuffleMedia zufallswiedergabe {Show}
 ShufflePlaylist zufallswiedergabe playlist {AudioPlaylist}
 ShufflePlaylist zufallswiedergabe playlist {VideoPlaylist}
 ShufflePlaylist zufallswiedergabe {AudioPlaylist} playlist
 ShufflePlaylist zufallswiedergabe {VideoPlaylist} playlist
-ShuffleShow shuffle all episodes of {Show}
-ShuffleShow shuffle episodes of {Show}
+ShuffleShow zufallswiedergabe aller episoden von {Show}
+ShuffleShow zufallswiedergabe episoden von {Show}
 ShuffleVideoPlaylist zufallswiedergabe Film playlist {VideoPlaylist}
 ShuffleVideoPlaylist zufallswiedergabe Serie playlist {VideoPlaylist}
 ShuffleVideoPlaylist zufallswiedergabe Video playlist {VideoPlaylist}
@@ -1130,11 +1132,13 @@ SubtitlesOff Untertitel ausschalten
 SubtitlesOn Untertitel an
 SubtitlesOn Untertitel anschalten
 SubtitlesPrevious voriger Untertitel
+Suspend bereitschaft
 Suspend geh schlafen
 Suspend gehe schlafen
 Suspend schlafen
 Suspend standby
 Suspend suspend
+Suspend system bereitschaft
 Suspend system geh schlafen
 Suspend system gehe schlafen
 Suspend system schlafen

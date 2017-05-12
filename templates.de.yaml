@@ -2,7 +2,7 @@
 ##   Response Templates   ##
 ############################
 
-error_parsing_results: "Error parsing results"
+error_parsing_results: "Konnte das nicht verarbeiten"
 
 could_not_find: "Konnte {{ heard_name }} nicht finden"
 
@@ -12,13 +12,13 @@ could_not_find_album: "Konnte das Album {{ album_name }} nicht finden"
 
 could_not_find_album_artist: "Konnte das Album {{ album_name }} von {{ artist }} nicht finden"
 
-could_not_find_song: "Konnte den song {{ song_name }} nicht finden"
+could_not_find_song: "Konnte den Song {{ song_name }} nicht finden"
 
-could_not_find_song_artist: "Konnte den Song {{ song_name }} von {{ artist }}"
+could_not_find_song_artist: "Konnte den Song {{ song_name }} von {{ artist }} nicht finden"
 
 could_not_find_multi: "Konnte {{ heard_name }} von {{ artist }} nicht finden"
 
-could_not_find_playlist: "Ich konnte die Playlist {{ heard_name }} nicht finden"
+could_not_find_playlist: "Konnte die Playlist {{ heard_name }} nicht finden"
 
 could_not_find_addon: "Konnte das Addon {{ heard_addon }} nicht finden"
 
@@ -26,7 +26,7 @@ could_not_find_movie: "Konnte den Film {{ heard_movie }} nicht finden"
 
 could_not_find_show: "Konnte die Serie {{ heard_show }} nicht finden"
 
-could_not_find_episode_show: "Konnte die Staffeln {{ season }} Folge {{ episode }} von {{ show_name }} nicht finden"
+could_not_find_episode_show: "Konnte Staffel {{ season }} Folge {{ episode }} von {{ show_name }} nicht finden"
 
 searching: "Suche nach {{ heard_name }}"
 
@@ -38,17 +38,17 @@ playing_album: "Spiele das Album {{ album_name }}"
 
 playing_album_artist: "Spiele das Album {{ album_name }} von {{ artist }}"
 
-playing_song: "Speile den Song {{ song_name }}"
+playing_song: "Spiele den Song {{ song_name }}"
 
 playing_song_artist: "Spiele den Song {{ song_name }} von {{ artist }}"
 
-playing_playlist_audio: "{{ action }} audio Playlist {{ playlist_name }}"
+playing_playlist_audio: "{{ action }} Audio Playlist {{ playlist_name }}"
 
-playing_playlist_video: "{{ action }} video Playlist {{ playlist_name }}"
+playing_playlist_video: "{{ action }} Video Playlist {{ playlist_name }}"
 
-playing_party: "Starte party play"
+playing_party: "Starte Party Play"
 
-playing_genre: "Siele den {{ genre }} Film {{ movie_name }}"
+playing_genre: "Spiele den {{ genre }} Film {{ movie_name }}"
 
 playing_action: "{{ action }} {{ movie_name }}"
 
@@ -60,41 +60,41 @@ playing_empty: "Spiele"
 
 resuming_empty: "Setze fort"
 
-shuffling: "zufällige {{ heard_name }}"
+shuffling: "Zufallswiedergabe {{ heard_name }}"
 
-shuffling_empty: "zufällige Wiedergabe"
+shuffling_empty: "Zufallswiedergabe"
 
-shuffling_playlist_video: "zufälliege Wiedergabe der Video Playlist {{ playlist_name }}"
+shuffling_playlist_video: "Zufallswiedergabe der Video Playlist {{ playlist_name }}"
 
-shuffling_playlist_audio: "zufällige Wiedergabe der Audio Playlist {{ playlist_name }}"
+shuffling_playlist_audio: "Zufallswiedergabe der Audio Playlist {{ playlist_name }}"
 
-shuffling_playlist: "Zufällige Wiedergabe der Playlist {{ playlist_name }}"
+shuffling_playlist: "Zufallswiedergabe der Playlist {{ playlist_name }}"
 
-shuffling_album: "Zufällige das Album {{ album_name }}"
+shuffling_album: "Zufallswiedergabe des Albums {{ album_name }}"
 
-shuffling_album_artist: "Zufällige das Album {{ album_name }} von {{ artist }}"
+shuffling_album_artist: "Zufallswiedergabe des Albums {{ album_name }} von {{ artist }}"
 
-shuffle_on: "Shuffle mode on"
+shuffle_on: "Zufallswiedergabe ein"
 
-shuffle_off: "Shuffle mode off"
+shuffle_off: "Zufallswiedergabe aus"
 
-loop_one: "Loop mode one"
+loop_one: "Wiederhole eins"
 
-loop_all: "Loop mode all"
+loop_all: "Wiederhole alle"
 
-loop_off: "Loop mode off"
+loop_off: "Wiederholung aus"
 
-no_new_episodes_show: "Keine neue Folge von {{ show_name }}"
+no_new_episodes_show: "Keine neuen Folgen von {{ show_name }}"
 
 no_albums_artist: "Du hast kein Album von {{ artist }}"
 
-no_new_albums: "Du hast kein neus Album um es anzuhören"
+no_new_albums: "Du hast kein neues Album zum anhören"
 
-no_new_movies: "Du hast keinen neuen Film um ihn anzusehen"
+no_new_movies: "Du hast keinen neuen Film zum anschauen"
 
-no_new_shows: "Du hast keine neuen Serien um sie anzusehen"
+no_new_shows: "Du hast keine neuen Serien zum anschauen"
 
-no_recent_songs: "Es gibt keine kürzlich hinzugefügten Songs"
+no_recent_songs: "Es gibt keine kürzlich hinzugefügten Songs	"
 
 no_unseen_show: "Es gibt keine ungesehen Folgen von {{ show_name }}"
 
@@ -104,7 +104,7 @@ multiple_unseen_show: "Es gibt {{ num }} ungesehene Folgen von {{ show_name }}"
 
 one_new_episode: "Es gibt eine neue Folge von {{ show_name }}"
 
-two_new_episodes: "Es gibt zwei neue folgen von {{ show_name }}"
+two_new_episodes: "Es gibt zwei neue Folgen von {{ show_name }}"
 
 multiple_new_episodes: "Es gibt {{ count }} neue Folgen von {{ show_name }}"
 
@@ -114,19 +114,19 @@ you_have_episode_list: "Es gibt neue Folgen für {{ list }}"
 
 volume_set: "Lautstärke auf {{ num }} gestellt"
 
-open_remote: "Starte Ferbedienungs Modus, zum benutzen sage gehe nach oben, gehe zurück als wenn Du die Ferbedienung beutzen würdest, Sage Stop um den Kontroll Modus zu verlassen"
+open_remote: "Starte Fernbedienungs-Modus, zum Benutzen sage gehe nach oben oder gehe zurück, so als wenn Du die Fernbedienung benutzen würdest, sage Stopp um den Fernbedienungs-Modus zu verlassen"
 
-help: "Du kannst mich fragen ob es neue Serien gibt, einen Film, Serie oder Sänger zu spielen, oder die Wiedergabe von Medien zu bedienen."
+help: "Du kannst mich fragen ob es neue Serien gibt, einen Film, Serie oder Sänger zu spielen, oder die Wiedergabe von Medien zu bedienen"
 
-help_play: "Please specify the media type in your play command, such as, play the movie ghost busters."
+help_play: "Spezifiziere bitte den Medientyp mit dem Wiedergabebefehl, so wie Spiele den Film Ghost Busters"
 
-are_you_sure: "Are you sure?"
+are_you_sure: "Bist du dir sicher?"
 
 what_to_do: "Was möchtest Du tun?"
 
-welcome: "Willkommen zum Kodi skill."
+welcome: "Willkommen zum Kodi Skill"
 
-nothing_currently_playing: "Kodi isn't playing any music right now."
+nothing_currently_playing: "Es läuft gerade nichts."
 
 
 ############################
@@ -137,15 +137,15 @@ looking_for_show: "Such nach neuen Folgen von {{ heard_show }}"
 
 current_playing_item: "Aktuelle Wiedergabe"
 
-time_left_playing: "Verbleibene Zeit der aktuellen Wiedergabe"
+time_left_playing: "Verbleibende Zeit der aktuellen Wiedergabe"
 
 play_pause: "Play/Pause"
 
 stopping: "Stoppe Wiedergabe"
 
-step_forward: "ein Schritt vorwärts"
+step_forward: "einen Schritt vorwärts"
 
-step_backward: "ein Schritt zurück"
+step_backward: "einen Schritt zurück"
 
 big_step_forward: "einen großen Schritt vorwärts"
 
@@ -153,15 +153,15 @@ big_step_backward: "einen großen Schritt zurück"
 
 listen_artist: "Spiele Musik von {{ heard_artist }}"
 
-newly_added_shows: "neu hinzugefügte Serien"
+newly_added_shows: "Neu hinzugefügte Serien"
 
-newly_added_albums: "neu hinzugefügte Alben"
+newly_added_albums: "Neu hinzugefügte Alben"
 
 newly_added_movies: "Neu hinzugefügte Filme"
 
 newly_added_movies_genre: "Neu hinzugefügte {{ genre }} Filme"
 
-last_unwatched: "Speiel die nächste ungesehene Folge der zuletzt gesehenen Serie"
+last_unwatched: "Spiele die nächste ungesehene Folge der zuletzt gesehenen Serie"
 
 update_audio: "Aktualisiere Audio Bibliothek"
 
@@ -173,15 +173,15 @@ clean_video: "Säubere Video Bibliothek"
 
 ejecting_media: "Medium auswerfen"
 
-suspending_system: "Suspend System"
+suspending_system: "Schalte das System in den Bereitschaftsmodus"
 
-quitting: "Beende"
+quitting: "Beenden"
 
-shutting_down: "Schalte System aus"
+shutting_down: "Schalte das System aus"
 
-rebooting: "Reboot System"
+rebooting: "Starte das System neu"
 
-hibernating: "Hibernate System"
+hibernating: "Schalte das System in den Ruhezustand"
 
 player_zoom_normal: "Player Zoom normal"
 
@@ -219,39 +219,39 @@ player_move_down: "Player gehe nach unten"
 
 player_move_up: "Player gehe nach oben"
 
-shuffle_disable: "Disabling shuffle"
+shuffle_disable: "Zufallswiedergabe ausschalten"
 
-shuffle_enable: "Enabling shuffle"
+shuffle_enable: "Zufallswiedergabe einschalten"
 
-loop_disable: "Disabling repeat"
+loop_disable: "Wiederholung ausschalten"
 
-loop_enable: "Cycling repeat mode"
+loop_enable: "Wiederholung einschalten"
 
 audio_stream_next: "Wechsel zum nächsten Audio Stream"
 
-audio_stream_previous: "Wechsel zu vorherigen Audio Stream"
+audio_stream_previous: "Wechsel zum vorherigen Audio Stream"
 
-subtitles_next: "Wechsel zum nächten Untertitel"
+subtitles_next: "Wechsel zum nächsten Untertitel"
 
 subtitles_previous: "Wechsel zum vorherigen Untertitel"
 
-subtitles_disable: "Untertietel abschalten"
+subtitles_disable: "Untertitel ausschalten"
 
-subtitles_enable: "Untertieten einschlten"
+subtitles_enable: "Untertitel einschalten"
 
 adjusting_volume: "Lautstärke anpassen"
 
-volume_down: "Lautstärke nach unten drehen"
+volume_down: "Lautstärke verringern"
 
-volume_up: "Lautstärke nach oben drehen"
+volume_up: "Lautstärke erhöhen"
 
 mute_unmute: "Stummschalten"
 
-toggle_fullscreen: "Umschaten Vollbild"
+toggle_fullscreen: "Vollbild umschalten"
 
 playing_previous: "Spiele vorherigen Titel"
 
-playing_next: "Speiel nächsten Titel"
+playing_next: "Spiele nächsten Titel"
 
 playing_same: "Starte aktuellen Titel erneut"
 
@@ -263,27 +263,27 @@ playing_random_movie_genre: "Spiele zufälligen {{ genre }} Film"
 
 playing_movie: "Spiele Film"
 
-shuffling_episodes: "Shuffling episodes of {{ heard_show }}"
+shuffling_episodes: "Spiele eine zufällige Folge von {{ heard_show }}"
 
 playing_an_episode: "Spiele eine Folge von {{ heard_show }}"
 
-playing_random_episode: "Spiele eine zufällige Folge von{{ heard_show }}"
+playing_random_episode: "Spiele eine zufällige Folge von {{ heard_show }}"
 
-playing_next_unwatched_episode: "Spiele die nächte ungesehene Folge von{{ heard_show }}"
+playing_next_unwatched_episode: "Spiele die nächste ungesehene Folge von {{ heard_show }}"
 
-playing_newest_episode: "Spiele die neuste Folge von {{ heard_show }}"
+playing_newest_episode: "Spiele die neueste Folge von {{ heard_show }}"
 
 playing_album_card: "Spiele Album"
 
-shuffling_album_card: "Zufällige Album"
+shuffling_album_card: "Zufälliges Album"
 
 playing_song_card: "Spiele Song"
 
-playing_album_or_song: "Spile Album oder Song"
+playing_album_or_song: "Spiele Album oder Song"
 
 action_audio_playlist: "{{ action }} Audio Playlist"
 
-action_video_playlist: "{{ action }} video playlist"
+action_video_playlist: "{{ action }} Video Playlist"
 
 party_mode: "Party Mode"
 
@@ -297,7 +297,7 @@ help_card: "Hilfe"
 
 open_remote_card: "Öffne Fernbedienung"
 
-playback_stopped: "Wiedergabe Stoppen"
+playback_stopped: "Wiedergabe gestoppt"
 
 
 ############################
