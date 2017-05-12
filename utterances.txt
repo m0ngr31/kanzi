@@ -156,13 +156,10 @@ PartyMode play random music
 PartyMode play all music
 PartyMode shuffle all music
 
-CurrentPlayItemInquiry what (/audio/video/movie/film/show/episode/song/track) is (this/playing/currently playing)
+CurrentPlayItemInquiry what is (this/playing/currently playing)
 
-CurrentPlayItemTimeRemaining how much (/time) is (left/remaining) on (my/this) (audio/video/movie/film/show/episode/song/track)
-CurrentPlayItemTimeRemaining how much (/time) is (left/remaining)
-CurrentPlayItemTimeRemaining how much longer is (/my/this) (audio/video/movie/film/show/episode/song/track)
-CurrentPlayItemTimeRemaining how much longer is this
-CurrentPlayItemTimeRemaining (when/what time) (will/does) (/my/this) (audio/video/movie/film/show/episode/song/track) end
+CurrentPlayItemTimeRemaining how much (/time) is (left/remaining) (/on this)
+CurrentPlayItemTimeRemaining how much longer (/is this)
 CurrentPlayItemTimeRemaining (when/what time) (will/does) this end
 CurrentPlayItemTimeRemaining (when/what time) this (ends/is over)
 CurrentPlayItemTimeRemaining (when/what time) is this over
