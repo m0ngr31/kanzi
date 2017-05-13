@@ -2,7 +2,7 @@
 
 ## Updating
 
-If you are updating from a previous version, please browse to the UPGRADING.md file and look at what you need to do.
+If you are updating from a previous version, **it is very important that you browse to the UPGRADING.md file and look at what you need to do.**
 
 ## About
 
@@ -122,7 +122,7 @@ Once you've set up your server, you'll need to configure a new Alexa skill. Head
 The initial setup page looks like this:
 ![Inital setup skill](http://i.imgur.com/AzufQxo.png)
 
-On the next page, you'll have to paste the `IntentSchema.json` file into the "Intent Schema" field, and paste the `SampleUtterances.txt` file in the "Sample Utterances" field. **Generate and save your Custom Slots first before pasting the Intents and Utterances to avoid errors when attempting to save**.
+On the next page, you'll have to paste the contents of the `IntentSchema.json` file into the "Intent Schema" field, and paste the contents of the `SampleUtterances.txt` file in the "Sample Utterances" field. **Generate and save your Custom Slots first before pasting the Intents and Utterances to avoid errors when attempting to save**.
 
 You need to create 9 different slots:
 - MOVIES
