@@ -40,15 +40,19 @@ There are a few things in the instructions that you will need to install before 
 
 ## Kodi Setup
 
-Before a command from Alexa can be sent to your Kodi box, you need to enable the "Allow remote control via HTTP", "Allow remote control from applications on this system", and "Allow remote control from applications on other systems" options in your Kodi settings. (Note that wording might be change a little bit on different versions, this example is for Kodi 17).
+Before a command from Alexa can be sent to your [Kodi](https://kodi.tv) box, you need to enable the "Allow remote control via HTTP", "Allow remote control from applications on this system", and "Allow remote control from applications on other systems" options in your [Kodi](https://kodi.tv) settings. Note that wording might be change a little bit on different versions, this example is for [Kodi](https://kodi.tv) 17.
 
 ![Kodi settings](http://i.imgur.com/YMqS8Qj.png)
 
-Make sure to keep track of the port, username, and password you are using. Now, you'll need to have your Kodi box opened up to the internet via port forwarding. If you don't have a dedicated IP address, you'll need a dynamic DNS service to give you a static URL to use so you don't have to be constantly change this value.
+Make sure to keep track of the port, username, and password you are using.
 
-Once you get that setup, you'll have to have your own server to handle the requests and pass them to your Kodi box. Since this is a Python application, it has several ways that you can run it.
+Now, you'll need to have your [Kodi](https://kodi.tv) box opened up to the internet via port forwarding.
 
-Here are a few options to get started:
+If you don't have a dedicated IP address, you'll need a dynamic DNS service to give you a static URL to use so you don't have to be constantly change this value.
+
+Repeat the above for each instance of [Kodi](https://kodi.tv) that you wish to control via the skill.  Remember you will need to open a separate, unique port on your router for each instance of [Kodi](https://kodi.tv).
+
+Once you get that setup, you'll have to have your own server to handle the requests and pass them to your [Kodi](https://kodi.tv) box. Since this is a Python application, it has several ways that you can run it. Here are a few options to get started:
 
 - [Heroku](#heroku)
 - [AWS Lambda](#aws-lambda)
@@ -59,6 +63,9 @@ If you plan on running your own Apache/Nginx server, I'm sure you can figure tha
 ## Heroku
 ### Pricing
 [Heroku](https://heroku.com/) is a great way to get a server running for free, but there is a small limitation with the free tier on Heroku where the 'dyno' will go to sleep after 30 minutes of in-activity. This might cause some commands to timeout, but so far it seems to be the best option for getting up and running as quickly as possibly. To get around this, you can either pay for a "Hobby" server which is only $7/month. If you really don't want to pay, there is a work-a-round where you get enough free hours a month to leave this server running 24/7 if you add your Credit Card to your account. Then you can use something like [Kaffeine](http://kaffeine.herokuapp.com/) to keep it from spinning down.
+
+### Limitations
+Currently we do not support addressing multiple instances of [Kodi](https://kodi.tv) with [Heroku](https://heroku.com/).  If you wish to control multiple instances of [Kodi](https://kodi.tv), you will need to set up multiple copies of the skill to do so.
 
 ### Setup
 After you've setup an Heroku account, click on this button below to provision a new server. Select a unique name to make upgrades easy.
@@ -117,6 +124,8 @@ If you are curious or want to create a Docker version, go back to any release be
 
 # Skill Setup
 
+If you are self-hosting, you will need to create the file `kodi.config` from the [kodi.config.example template](https://raw.githubusercontent.com/m0ngr31/kodi-voice/master/kodi.config.example).  The template file contains comments to describe the options.
+
 Once you've set up your server, you'll need to configure a new Alexa skill. Head over to the [Skills list on Amazon's developer page](https://developer.amazon.com/edw/home.html#/skills/list) and hit the 'Add new skill' button.
 
 The initial setup page looks like this:
@@ -135,7 +144,11 @@ You need to create 9 different slots:
 - VIDEOPLAYLISTS
 - ADDONS
 
-To make it as easy as possible, I wrote a little webapp that will give you the information you need: [here](https://slot-generator.herokuapp.com/). You can also get the information from running `python generate_custom_slots.py` in the project directory. This will create txt files with the relevant information. If one of your slots is empty, you can just enter the word 'Empty' or something so that it'll save.
+To make it as easy as possible, I wrote a little webapp that will give you the information you need: [here](https://slot-generator.herokuapp.com/).
+
+You can also get the information from running `python generate_custom_slots.py` in the project directory. This will create txt files with the relevant information. Note that this will communicate with the Kodi instance defined in the `[DEFAULT]` section in `kodi.config`.
+
+If one of your slots is empty, you can just enter the word 'Empty' or something so that it'll save.
 
 ![2nd tab](http://i.imgur.com/WQYExdK.png)
 
@@ -148,9 +161,41 @@ The fourth tab is asking about the SSL certificate. If you are using Heroku or L
 
 After that is pretty much just information that you can just put whatever into. Don't submit it for certification since only you will be using your server.
 
-And now you should be set! Go ahead and try speaking a few commands to it and see if it works! If you can't get it working, try looking for support in [this thread](http://forum.kodi.tv/showthread.php?tid=254502) on the Kodi forum, and if you have more techinical problems, submit and issue here on Github.
+And now you should be set! Go ahead and try speaking a few commands to it and see if it works! If you can't get it working, try looking for support in [this thread](http://forum.kodi.tv/showthread.php?tid=254502) on the [Kodi](https://kodi.tv) forum, and if you have more techinical problems, submit and issue here on Github.
 
 Thanks!
+
+# Controlling more than one instance of Kodi
+
+As of version 2.6 of the skill, it can now control more than one instance of [Kodi](https://kodi.tv).  The skill determines which instance to talk to by determining which Echo device received the command.
+
+You set up the mapping in the `kodi.config` file.  There are a few examples there with dummy device IDs.
+
+If a device ID isn't explicitly present in the config file, it will utilize the details in the `[DEFAULT]` section.  So, for example, if you wanted most of your devices to send commands to [Kodi](https://kodi.tv) in your living room, you would set the `[DEFAULT]` section to point at that instance.  For any that you want to override -- say, office and master bedroom -- you would define override sections with those device IDs.
+
+Further, for override sections, if a variable isn't defined, it will inherit it from the `[DEFAULT]` section.  Thus, if the only thing you need to change is `address` and `port`, define just those in the override.  You do not need to copy all of the other variables as well.
+
+## Getting the device IDs
+
+When you send a request to the skill, it will log an entry on the skill's server that will look something like this:
+
+`Sending request to http://mydomain.com:8080/jsonrpc from device amzn1.ask.device.AEFDXCGLSFJFNGCVF8SDJF90FID9G284JDJFGJGHH83358DJFFGIGD734JJDFGK211GDFFHHH23HGFJTYEFGJRT56KJDHDFJ5546DJDFFSWOPPP677P88P873EHZNZDFEIRTYIN2239NDFGIH724JDFKS2AA`
+
+For AWS Lambda/Zappa deployments, you can access your logs with:
+
+`zappa tail dev`
+
+To generate your override sections, you will want to tail (watch the end of) the log file and send any request (like, `Alexa, ask Kodi what is playing?`) from the Echo device you wish to override.  Look for a line that looks like the above.  The device ID is everything from `amzn1.ask.device.` to the end of the line.  Copy this text and paste it to the end of the `kodi.config` file, placing it within square brackets `[]`, like so:
+
+`[amzn1.ask.device.AEFDXCGLSFJFNGCVF8SDJF90FID9G284JDJFGJGHH83358DJFFGIGD734JJDFGK211GDFFHHH23HGFJTYEFGJRT56KJDHDFJ5546DJDFFSWOPPP677P88P873EHZNZDFEIRTYIN2239NDFGIH724JDFKS2AA]`
+
+Anything in square brackets denotes a new section.  In this section, you can override whatever variables you'd like.  In this example, this Echo device is my Echo Dot in the office, so I would do something like:
+
+```
+# Office Echo Dot
+[amzn1.ask.device.AEFDXCGLSFJFNGCVF8SDJF90FID9G284JDJFGJGHH83358DJFFGIGD734JJDFGK211GDFFHHH23HGFJTYEFGJRT56KJDHDFJ5546DJDFFSWOPPP677P88P873EHZNZDFEIRTYIN2239NDFGIH724JDFKS2AA]
+address = office-dot
+```
 
 # Additional validation of requests
 
@@ -160,7 +205,7 @@ To verify that incoming requests are only allowed from your own copy of the skil
 
 Setting the `timezone` configuration variable will make it so when you ask how long something has left playing, it'll respond for your correct time.
 
-Setting `scheme` to `https` allows you to talk to your Kodi box securely, but this requires some work on your end to setup.
+Setting `scheme` to `https` allows you to talk to your [Kodi](https://kodi.tv) box securely, but this requires some work on your end to setup.
 
 By default, the skill allows very generic queries such as, `play 99 red balloons` or `shuffle the office`.  These very generic commands can be slow however, and may cause timeouts.  If these timeouts bother you, you can direct the skill to provide help playing media more specifically instead when it encounters these kinds of requests, by disabling `deep_search`.
 
