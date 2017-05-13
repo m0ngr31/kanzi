@@ -65,6 +65,7 @@ test.py
 
 .env
 *.ini
+kodi.config
 MUSICALBUMS
 MUSICARTISTS
 MUSICSONGS

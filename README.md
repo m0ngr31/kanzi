@@ -69,7 +69,7 @@ Now skip ahead to the [Skill setup section](#skill-setup).
 
 ## AWS Lambda
 ### Pricing
-Lambda is a great service which lets the skill run "serverless". AWS provides credits for new accounts and should allow you to run everything the skill needs for free for 12 months. Once you are being billed for it, it will be less than $0.20/month. Very reasonalbe for what it offers.
+Lambda is a great service which lets the skill run "serverless". AWS provides credits for new accounts and should allow you to run everything the skill needs for free for 12 months. Once you are being billed for it, it will be less than $0.20/month. Very reasonable for what it offers.
 
 ### Setup
 Getting going on Lambda is pretty straightforward. First, you'll need to create an Amazon developer account if you don't have one already. After that, browse to the [IAM Management Console](https://console.aws.amazon.com/iam/home) where you will create a new user:
@@ -94,7 +94,7 @@ After you've done that, run `pip install virtualenv`. This is required for a lat
 Now, clone my repo: `git clone https://github.com/m0ngr31/kodi-alexa.git` and `cd kodi-alexa`. Once you are inside the project directory, you're going to create a new "Virtual environement" and then activate it:
 `virtualenv venv` and `source venv/bin/activate` (if you are on Windows, that's `venv\Scripts\activate.bat` or `venv\Scripts\activate.ps1` for Powershell).
 
-After successfull completion, run `pip install -r requirements.txt` and `pip install zappa`. Before you deploy, you need to copy the `.env.example` file to `.env` and enter the correct information for: KODI_ADDRESS, KODI_PORT, KODI_USERNAME, and KODI_PASSWORD. I'll go over the other variables in another section below.
+After successful completion, run `pip install -r requirements.txt` and `pip install zappa`. Before you deploy, you need to create the file `kodi.config` from the [kodi.config.example template](https://raw.githubusercontent.com/m0ngr31/kodi-voice/master/kodi.config.example) and enter the correct information for: address, port, username, and password. I'll go over the other variables in another section below.
 
 Before you can send any code to Lambda, you'll need to setup Zappa. Just run `zappa init` and accept the defaults for everything. If it doesn't automatically detect that this is a Flask app, tell it that the application function is "alexa.app".
 
@@ -117,7 +117,7 @@ If you are curious or want to create a Docker version, go back to any release be
 
 # Skill Setup
 
-Once you've setup your server, you'll need to configure a new Alexa skill. Head over to the [Skills list on Amazon's developer page](https://developer.amazon.com/edw/home.html#/skills/list) and hit the 'Add new skill' button.
+Once you've set up your server, you'll need to configure a new Alexa skill. Head over to the [Skills list on Amazon's developer page](https://developer.amazon.com/edw/home.html#/skills/list) and hit the 'Add new skill' button.
 
 The initial setup page looks like this:
 ![Inital setup skill](http://i.imgur.com/AzufQxo.png)
@@ -154,15 +154,15 @@ Thanks!
 
 # Additional validation of requests
 
-To verify that incoming requests are only allowed from your own copy of the skill, you can set the `SKILL_APPID` environment variable to your own Application ID; e.g., `amzn1.ask.skill.deadbeef-4e4f-ad61-fe42-aee7d2de083d`
+To verify that incoming requests are only allowed from your own copy of the skill, you can set the `skill_id` configuration variable to your own Application ID; e.g., `amzn1.ask.skill.deadbeef-4e4f-ad61-fe42-aee7d2de083d`
 
 # Extra settings for more functionality
 
-Setting the `SKILL_TZ` environment variable will make it so when you ask how long something has left playing, it'll respond for your correct time.
+Setting the `timezone` configuration variable will make it so when you ask how long something has left playing, it'll respond for your correct time.
 
-Setting `KODI_SCHEME` to `https` allows you to talk to your Kodi box securely, but this requires some work on your end to setup.
+Setting `scheme` to `https` allows you to talk to your Kodi box securely, but this requires some work on your end to setup.
 
-By default, the skill allows very generic queries such as, `play 99 red balloons` or `shuffle the office`.  These very generic commands can be slow however, and may cause timeouts.  If these timeouts bother you, you can direct the skill to provide help playing media more specifically instead when it encounters these kinds of requests, by setting `DISABLE_DEEP_SEARCH`.
+By default, the skill allows very generic queries such as, `play 99 red balloons` or `shuffle the office`.  These very generic commands can be slow however, and may cause timeouts.  If these timeouts bother you, you can direct the skill to provide help playing media more specifically instead when it encounters these kinds of requests, by disabling `deep_search`.
 
 # Optimising search performance on large libraries (local installations only)
 

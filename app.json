@@ -48,12 +48,12 @@
       "required": false
     },
     "SHUTDOWN_MEANS_QUIT": {
-      "description": "If you'd like 'Alexa, tell Kodi to shut down' to quit Kodi instead of shutting down the system.",
+      "description": "If you'd like 'Alexa, tell Kodi to shut down' to quit Kodi instead of shutting down the system, type 'quit'.",
       "value": "",
       "required": false
     },
-    "DISABLE_DEEP_SEARCH": {
-      "description": "If you'd like to disable searching the entire library with generic play commands.",
+    "DEEP_SEARCH": {
+      "description": "If you'd like to enable searching the entire library with generic play commands.",
       "value": "",
       "required": false
     }
