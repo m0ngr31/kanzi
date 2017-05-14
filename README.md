@@ -36,7 +36,12 @@ Here are some of the features supported by this skill:
 - Eject disc
 
 ## Initial Computer Setup
-There are a few things in the instructions that you will need to install before you can get started: Python 2.7 and git. There are numerous tutorials online about how to install these, so just Google how to install them on your OS if you are uncertain about how to proceed.
+Unless you are going to host the skill on Heroku, there are a few things in the instructions that you will need to install before you can get started: 
+
+ - **Python 2.7 (Python 3 will not work)**
+ - Git
+
+ There are numerous tutorials online about how to install these, so just Google how to install them on your OS if you are uncertain about how to proceed.
 
 ## Kodi Setup
 
