@@ -129,7 +129,7 @@ If you are curious or want to create a Docker version, go back to any release be
 
 # Skill Setup
 
-If you are self-hosting, you will need to create the file `kodi.config` from the [kodi.config.example template](https://raw.githubusercontent.com/m0ngr31/kodi-voice/master/kodi.config.example).  The template file contains comments to describe the options.
+If you are self-hosting, you will need to create the file `kodi.config` from the [kodi.config.example template](https://raw.githubusercontent.com/m0ngr31/kodi-voice/master/kodi_voice/kodi.config.example).  The template file contains comments to describe the options.
 
 Once you've set up your server, you'll need to configure a new Alexa skill. Head over to the [Skills list on Amazon's developer page](https://developer.amazon.com/edw/home.html#/skills/list) and hit the 'Add new skill' button.
 
