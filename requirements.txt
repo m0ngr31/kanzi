@@ -1,4 +1,4 @@
 gunicorn
 pytz
 flask-ask>=0.8.9
-kodi-voice
+kodi-voice>=0.7.9

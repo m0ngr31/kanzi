@@ -149,7 +149,7 @@ def alexa_current_playitem_time_remaining():
       response_text = 'There is one minute remaining.'
     elif minsleft > 1:
       response_text = 'There are %d minutes remaining' % (minsleft)
-      tz = config.get(kodi.deviceId, 'timezone')
+      tz = config.get(kodi.dev_cfg_section, 'timezone')
       if minsleft > 9 and tz and tz != 'None':
         utctime = datetime.datetime.now(pytz.utc)
         loctime = utctime.astimezone(pytz.timezone(tz))
@@ -221,7 +221,7 @@ def alexa_no():
 def alexa_yes():
   kodi = Kodi(config, context)
   if 'shutting_down' in session.attributes:
-    quit = config.get(kodi.deviceId, 'shutdown')
+    quit = config.get(kodi.dev_cfg_section, 'shutdown')
     if quit and quit == 'quit':
       card_title = render_template('quitting').encode("utf-8")
       kodi.ApplicationQuit()
