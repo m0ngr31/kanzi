@@ -45,15 +45,13 @@ ask = Ask(app, "/", None, path=TEMPLATE_FILE)
 # Handle the NewShowInquiry intent.
 @ask.intent('NewShowInquiry')
 def alexa_new_show_inquiry(Show):
-  heard_show = str(Show).lower().translate(None, string.punctuation)
-
-  card_title = render_template('looking_for_show', heard_show=heard_show).encode("utf-8")
+  card_title = render_template('looking_for_show', heard_show=Show).encode("utf-8")
   print card_title
 
   kodi = Kodi(config, context)
-  show, show_label = kodi.FindTvShow(heard_show)
-  if show:
-    episodes_result = kodi.GetUnwatchedEpisodesFromShow(show)
+  show_id, show_label = kodi.FindTvShow(Show)
+  if show_id:
+    episodes_result = kodi.GetUnwatchedEpisodesFromShow(show_id)
 
     if not 'episodes' in episodes_result['result']:
       num_of_unwatched = 0
@@ -68,12 +66,13 @@ def alexa_new_show_inquiry(Show):
     else:
       response_text = render_template('no_unseen_show', show_name=show_label).encode("utf-8")
   else:
-    response_text = render_template('could_not_find', heard_name=heard_show).encode("utf-8")
+    response_text = render_template('could_not_find', heard_name=Show).encode("utf-8")
 
   return statement(response_text).simple_card(card_title, response_text)
 
 
 # Handle the CurrentPlayItemInquiry intent.
+# XXXLANG: Only supports English currently!
 @ask.intent('CurrentPlayItemInquiry')
 def alexa_current_playitem_inquiry():
   card_title = render_template('current_playing_item').encode("utf-8")
@@ -132,6 +131,7 @@ def alexa_current_playitem_inquiry():
 
 
 # Handle the CurrentPlayItemTimeRemaining intent.
+# XXXLANG: Only supports English currently!
 @ask.intent('CurrentPlayItemTimeRemaining')
 def alexa_current_playitem_time_remaining():
   card_title = render_template('time_left_playing').encode("utf-8")
@@ -360,8 +360,8 @@ def alexa_player_seek_bigbackward():
   return statement(response_text).simple_card(card_title, response_text)
 
 
-def find_and_play(needle, content=['video','audio'], shuffle=False, slot_hint='unknown', slot_ignore=[]):
-  print 'Searching for "%s"' % (needle)
+def find_and_play(kodi, needle, content=['video','audio'], shuffle=False, slot_hint='unknown', slot_ignore=[]):
+  print 'Find and Play: "%s"' % (kodi.sanitize_name(needle))
   if slot_hint != 'unknown':
     print 'Pre-match with slot: ' + slot_hint
   print 'Searching content types: '
@@ -371,13 +371,12 @@ def find_and_play(needle, content=['video','audio'], shuffle=False, slot_hint='u
   # without giving some thought to overall performance based on most
   # frequently requested types and user expectations.
 
-  kodi = Kodi(config, context)
   # Video playlist?
   if 'video' in content and 'VideoPlaylist' not in slot_ignore and (slot_hint == 'unknown' or slot_hint == 'VideoPlaylist'):
-    playlist, playlist_label = kodi.FindVideoPlaylist(needle)
-    if playlist:
+    playlist_id, playlist_label = kodi.FindVideoPlaylist(needle)
+    if playlist_id:
       if shuffle:
-        videos = kodi.GetPlaylistItems(playlist)['result']['files']
+        videos = kodi.GetPlaylistItems(playlist_id)['result']['files']
         videos_array = []
         for video in videos:
           videos_array.append(video['file'])
@@ -389,16 +388,16 @@ def find_and_play(needle, content=['video','audio'], shuffle=False, slot_hint='u
         op = render_template('shuffling_empty').encode("utf-8")
       else:
         kodi.PlayerStop()
-        kodi.StartVideoPlaylist(playlist)
+        kodi.StartVideoPlaylist(playlist_id)
         op = render_template('playing_empty').encode("utf-8")
       return render_template('playing_playlist_video', action=op, playlist_name=playlist_label).encode("utf-8")
 
   # Audio playlist?
   if 'audio' in content and 'AudioPlaylist' not in slot_ignore and (slot_hint == 'unknown' or slot_hint == 'AudioPlaylist'):
-    playlist, playlist_label = kodi.FindAudioPlaylist(needle)
-    if playlist:
+    playlist_id, playlist_label = kodi.FindAudioPlaylist(needle)
+    if playlist_id:
       if shuffle:
-        songs = kodi.GetPlaylistItems(playlist)['result']['files']
+        songs = kodi.GetPlaylistItems(playlist_id)['result']['files']
         songs_array = []
         for song in songs:
           songs_array.append(song['id'])
@@ -410,31 +409,31 @@ def find_and_play(needle, content=['video','audio'], shuffle=False, slot_hint='u
         op = render_template('shuffling_empty').encode("utf-8")
       else:
         kodi.PlayerStop()
-        kodi.StartAudioPlaylist(playlist)
+        kodi.StartAudioPlaylist(playlist_id)
         op = render_template('playing_empty').encode("utf-8")
       return render_template('playing_playlist_audio', action=op, playlist_name=playlist_label).encode("utf-8")
 
   # Movie?
   if 'video' in content and 'Movie' not in slot_ignore and (slot_hint == 'unknown' or slot_hint == 'Movie'):
-    movie, movie_label = kodi.FindMovie(needle)
-    if movie:
-      if kodi.GetMovieDetails(movie)['resume']['position'] > 0:
+    movie_id, movie_label = kodi.FindMovie(needle)
+    if movie_id:
+      if kodi.GetMovieDetails(movie_id)['resume']['position'] > 0:
         action = render_template('resuming_empty').encode("utf-8")
       else:
         action = render_template('playing_empty').encode("utf-8")
-      kodi.PlayMovie(movie)
+      kodi.PlayMovie(movie_id)
       return render_template('playing_action', action=action, movie_name=movie_label).encode("utf-8")
 
   # Show?
   if 'video' in content and 'Show' not in slot_ignore and (slot_hint == 'unknown' or slot_hint == 'Show'):
-    show, show_label = kodi.FindTvShow(needle)
-    if show:
+    show_id, show_label = kodi.FindTvShow(needle)
+    if show_id:
       episode_id = None
       episodes_array = []
 
       if shuffle:
         # Shuffle all episodes of the specified show
-        episodes_result = kodi.GetEpisodesFromShow(show)
+        episodes_result = kodi.GetEpisodesFromShow(show_id)
         for episode in episodes_result['result']['episodes']:
           episodes_array.append(episode['episodeid'])
 
@@ -445,10 +444,10 @@ def find_and_play(needle, content=['video','audio'], shuffle=False, slot_hint='u
         return render_template('shuffling', heard_name=show_label).encode("utf-8")
       else:
         # Try the next unwatched episode first
-        episode_id = kodi.GetNextUnwatchedEpisode(show)
+        episode_id = kodi.GetNextUnwatchedEpisode(show_id)
         if not episode_id:
           # All episodes already watched, so just play a random episode
-          episodes_result = kodi.GetEpisodesFromShow(show)
+          episodes_result = kodi.GetEpisodesFromShow(show_id)
           for episode in episodes_result['result']['episodes']:
             episodes_array.append(episode['episodeid'])
           episode_id = random.choice(episodes_array)
@@ -460,9 +459,9 @@ def find_and_play(needle, content=['video','audio'], shuffle=False, slot_hint='u
 
   # Artist?
   if 'audio' in content and 'Artist' not in slot_ignore and (slot_hint == 'unknown' or slot_hint == 'Artist'):
-    artist, artist_label = kodi.FindArtist(needle)
-    if artist:
-      songs_result = kodi.GetArtistSongs(artist)
+    artist_id, artist_label = kodi.FindArtist(needle)
+    if artist_id:
+      songs_result = kodi.GetArtistSongs(artist_id)
       songs = songs_result['result']['songs']
       songs_array = []
       for song in songs:
@@ -481,21 +480,21 @@ def find_and_play(needle, content=['video','audio'], shuffle=False, slot_hint='u
 
   # Song?
   if 'audio' in content and 'Song' not in slot_ignore and (slot_hint == 'unknown' or slot_hint == 'Song'):
-    song, song_label = kodi.FindSong(needle)
-    if song:
+    song_id, song_label = kodi.FindSong(needle)
+    if song_id:
       kodi.PlayerStop()
       kodi.ClearAudioPlaylist()
-      kodi.AddSongToPlaylist(song)
+      kodi.AddSongToPlaylist(song_id)
       kodi.StartAudioPlaylist()
       return render_template('playing_song', song_name=song_label).encode("utf-8")
 
   # Album?
   if 'audio' in content and 'Album' not in slot_ignore and (slot_hint == 'unknown' or slot_hint == 'Album'):
-    album, album_label = kodi.FindAlbum(needle)
-    if album:
+    album_id, album_label = kodi.FindAlbum(needle)
+    if album_id:
       kodi.PlayerStop()
       kodi.ClearAudioPlaylist()
-      kodi.AddAlbumToPlaylist(album, shuffle)
+      kodi.AddAlbumToPlaylist(album_id, shuffle)
       kodi.StartAudioPlaylist()
       if shuffle:
         return render_template('shuffling_album', album_name=album_label).encode("utf-8")
@@ -509,32 +508,31 @@ def find_and_play(needle, content=['video','audio'], shuffle=False, slot_hint='u
 #
 # Generic shuffle function.  Tries to find media to play when the user didn't
 # specify the media type.
+#
+# Matches directly to Show slot only, but will fuzzy match across the whole
+# library if nothing found.
+#
+# See find_and_play() for the order of the searches.
 @ask.intent('ShuffleMedia')
 def alexa_shuffle_media(Show=None):
-  # Matches directly to Show slot only, but will fuzzy match across the whole
-  # library if nothing found.  See the find_and_play() method for the order
-  # of the searches.
-  heard_search = str(Show).lower().translate(None, string.punctuation)
+  kodi = Kodi(config, context)
 
   # Some media types don't make sense when shuffling
   ignore_slots = ['Movie', 'Song']
 
-  card_title = 'Shuffling "%s"' % (heard_search)
+  card_title = 'Shuffling "%s"' % (kodi.sanitize_name(Show))
   print card_title
 
   disable_ds = os.getenv('DISABLE_DEEP_SEARCH')
   if disable_ds and disable_ds != 'None':
     response_text = render_template('help_play').encode("utf-8")
   else:
-    if (len(heard_search) > 0):
-      response_text = find_and_play(heard_search, shuffle=True, slot_hint='Show', slot_ignore=ignore_slots)
-      if not response_text:
-        ignore_slots.append('Show')
-        response_text = find_and_play(heard_search, shuffle=True, slot_ignore=ignore_slots)
-      if not response_text:
-        response_text = render_template('could_not_find', heard_name=heard_search).encode("utf-8")
-    else:
-      response_text = render_template('error_parsing_results').encode("utf-8")
+    response_text = find_and_play(kodi, Show, shuffle=True, slot_hint='Show', slot_ignore=ignore_slots)
+    if not response_text:
+      ignore_slots.append('Show')
+      response_text = find_and_play(kodi, Show, shuffle=True, slot_ignore=ignore_slots)
+    if not response_text:
+      response_text = render_template('could_not_find', heard_name=Show).encode("utf-8")
 
   return statement(response_text).simple_card(card_title, response_text)
 
@@ -544,37 +542,38 @@ def alexa_shuffle_media(Show=None):
 # specify the media type.  Can be restricted to video or audio by passing
 # in the array argument content, which is most useful when the user's verb
 # is "listen to" or "watch".
+#
+# Matches directly to slots Movie and Artist only, but will fuzzy match
+# across the whole library if neither are found.
+#
+# See find_and_play() for the order of the searches.
 @ask.intent('PlayMedia')
 def alexa_play_media(Movie=None, Artist=None, content=None, shuffle=False):
+  kodi = Kodi(config, context)
+
   if not content:
     content=['video','audio']
 
-  # Matches directly to slots Movie and Artist only, but will fuzzy match
-  # across the whole library if neither are found.  See the find_and_play()
-  # method for the order of the searches.
   heard_search = ''
   heard_slot = 'unknown'
   if 'video' in content and Movie:
-    heard_search = str(Movie).lower().translate(None, string.punctuation)
+    heard_search = Movie
     heard_slot = 'Movie'
   elif 'audio' in content and Artist:
-    heard_search = str(Artist).lower().translate(None, string.punctuation)
+    heard_search = Artist
     heard_slot = 'Artist'
 
-  card_title = 'Playing "%s"' % (heard_search)
+  card_title = 'Playing "%s"' % (kodi.sanitize_name(heard_search))
   print card_title
 
   if not config.getboolean('global', 'deep_search'):
     response_text = render_template('help_play').encode("utf-8")
   else:
-    if (len(heard_search) > 0):
-      response_text = find_and_play(heard_search, content, shuffle, slot_hint=heard_slot)
-      if not response_text and heard_slot != 'unknown':
-        response_text = find_and_play(heard_search, content, shuffle, slot_ignore=[heard_slot])
-      if not response_text:
-        response_text = render_template('could_not_find', heard_name=heard_search).encode("utf-8")
-    else:
-      response_text = render_template('error_parsing_results').encode("utf-8")
+    response_text = find_and_play(kodi, heard_search, content, shuffle, slot_hint=heard_slot)
+    if not response_text and heard_slot != 'unknown':
+      response_text = find_and_play(kodi, heard_search, content, shuffle, slot_ignore=[heard_slot])
+    if not response_text:
+      response_text = render_template('could_not_find', heard_name=heard_search).encode("utf-8")
 
   return statement(response_text).simple_card(card_title, response_text)
 
@@ -590,15 +589,13 @@ def alexa_listen_audio(Artist):
 # Handle the ListenToArtist intent (Shuffles all music by an artist).
 @ask.intent('ListenToArtist')
 def alexa_listen_artist(Artist):
-  heard_artist = str(Artist).lower().translate(None, string.punctuation)
-
-  card_title = render_template('listen_artist', heard_artist=heard_artist).encode("utf-8")
+  card_title = render_template('listen_artist', heard_artist=Artist).encode("utf-8")
   print card_title
 
   kodi = Kodi(config, context)
-  artist, artist_label = kodi.FindArtist(heard_artist)
-  if artist:
-    songs_result = kodi.GetArtistSongs(artist)
+  artist_id, artist_label = kodi.FindArtist(Artist)
+  if artist_id:
+    songs_result = kodi.GetArtistSongs(artist_id)
     songs = songs_result['result']['songs']
 
     songs_array = []
@@ -612,7 +609,7 @@ def alexa_listen_artist(Artist):
     kodi.StartAudioPlaylist()
     response_text = render_template('playing', heard_name=artist_label).encode("utf-8")
   else:
-    response_text = render_template('could_not_find', heard_name=heard_artist).encode("utf-8")
+    response_text = render_template('could_not_find', heard_name=Artist).encode("utf-8")
 
   return statement(response_text).simple_card(card_title, response_text)
 
@@ -620,7 +617,6 @@ def alexa_listen_artist(Artist):
 # Handle the ListenToAlbum intent (Play whole album, or whole album by a specific artist).
 @ask.intent('ListenToAlbum')
 def alexa_listen_album(Album, Artist, shuffle=False):
-  heard_album = str(Album).lower().translate(None, string.punctuation)
   if shuffle:
     card_title = render_template('shuffling_album_card').encode("utf-8")
   else:
@@ -629,13 +625,12 @@ def alexa_listen_album(Album, Artist, shuffle=False):
 
   kodi = Kodi(config, context)
   if Artist:
-    heard_artist = str(Artist).lower().translate(None, string.punctuation)
-    artist, artist_label = kodi.FindArtist(heard_artist)
-    if artist:
-      albums = kodi.GetArtistAlbums(artist)
+    artist_id, artist_label = kodi.FindArtist(Artist)
+    if artist_id:
+      albums = kodi.GetArtistAlbums(artist_id)
       if 'result' in albums and 'albums' in albums['result']:
         albums_list = albums['result']['albums']
-        album_located = kodi.matchHeard(heard_album, albums_list, 'label')
+        album_located = kodi.matchHeard(Album, albums_list, 'label')
 
         if album_located:
           album_id = album_located['albumid']
@@ -649,24 +644,24 @@ def alexa_listen_album(Album, Artist, shuffle=False):
           else:
             response_text = render_template('playing_album_artist', album_name=album_label, artist=artist_label).encode("utf-8")
         else:
-          response_text = render_template('could_not_find_album_artist', album_name=heard_album, artist=artist_label).encode("utf-8")
+          response_text = render_template('could_not_find_album_artist', album_name=Album, artist=artist_label).encode("utf-8")
       else:
-        response_text = render_template('could_not_find_album_artist', album_name=heard_album, artist=heard_artist).encode("utf-8")
+        response_text = render_template('could_not_find_album_artist', album_name=Album, artist=Artist).encode("utf-8")
     else:
-      response_text = render_template('could_not_find_album_artist', album_name=heard_album, artist=heard_artist).encode("utf-8")
+      response_text = render_template('could_not_find_album_artist', album_name=Album, artist=Artist).encode("utf-8")
   else:
-    album, album_label = kodi.FindAlbum(heard_album)
-    if album:
+    album_id, album_label = kodi.FindAlbum(Album)
+    if album_id:
       kodi.PlayerStop()
       kodi.ClearAudioPlaylist()
-      kodi.AddAlbumToPlaylist(album, shuffle)
+      kodi.AddAlbumToPlaylist(album_id, shuffle)
       kodi.StartAudioPlaylist()
       if shuffle:
         response_text = render_template('shuffling_album', album_name=album_label).encode("utf-8")
       else:
         response_text = render_template('playing_album', album_name=album_label).encode("utf-8")
     else:
-      response_text = render_template('could_not_find_album', album_name=heard_album).encode("utf-8")
+      response_text = render_template('could_not_find_album', album_name=Album).encode("utf-8")
 
   return statement(response_text).simple_card(card_title, response_text)
 
@@ -680,19 +675,17 @@ def alexa_shuffle_album(Album, Artist):
 # Handle the ListenToSong intent (Play a song, or song by a specific artist).
 @ask.intent('ListenToSong')
 def alexa_listen_song(Song, Artist):
-  heard_song = str(Song).lower().translate(None, string.punctuation)
   card_title = render_template('playing_song_card').encode("utf-8")
   print card_title
 
   kodi = Kodi(config, context)
   if Artist:
-    heard_artist = str(Artist).lower().translate(None, string.punctuation)
-    artist, artist_label = kodi.FindArtist(heard_artist)
-    if artist:
-      songs = kodi.GetArtistSongs(artist)
+    artist_id, artist_label = kodi.FindArtist(Artist)
+    if artist_id:
+      songs = kodi.GetArtistSongs(artist_id)
       if 'result' in songs and 'songs' in songs['result']:
         songs_list = songs['result']['songs']
-        song_located = kodi.matchHeard(heard_song, songs_list, 'label')
+        song_located = kodi.matchHeard(Song, songs_list, 'label')
 
         if song_located:
           song_id = song_located['songid']
@@ -703,21 +696,21 @@ def alexa_listen_song(Song, Artist):
           kodi.StartAudioPlaylist()
           response_text = render_template('playing_song_artist', song_name=song_label, artist=artist_label).encode("utf-8")
         else:
-          response_text = render_template('could_not_find_song_artist', song_name=heard_song, artist=artist_label).encode("utf-8")
+          response_text = render_template('could_not_find_song_artist', song_name=Song, artist=artist_label).encode("utf-8")
       else:
-        response_text = render_template('could_not_find_song_artist', song_name=heard_song, artist=heard_artist).encode("utf-8")
+        response_text = render_template('could_not_find_song_artist', song_name=Song, artist=Artist).encode("utf-8")
     else:
-      response_text = render_template('could_not_find_song_artist', song_name=heard_song, artist=heard_artist).encode("utf-8")
+      response_text = render_template('could_not_find_song_artist', song_name=Song, artist=Artist).encode("utf-8")
   else:
-    song, song_label = kodi.FindSong(heard_song)
-    if song:
+    song_id, song_label = kodi.FindSong(Song)
+    if song_id:
       kodi.PlayerStop()
       kodi.ClearAudioPlaylist()
-      kodi.AddSongToPlaylist(song)
+      kodi.AddSongToPlaylist(song_id)
       kodi.StartAudioPlaylist()
       response_text = render_template('playing_song', song_name=song_label).encode("utf-8")
     else:
-      response_text = render_template('could_not_find_song', song_name=heard_song).encode("utf-8")
+      response_text = render_template('could_not_find_song', song_name=Song).encode("utf-8")
 
   return statement(response_text).simple_card(card_title, response_text)
 
@@ -726,19 +719,17 @@ def alexa_listen_song(Song, Artist):
 @ask.intent('ListenToAlbumOrSong')
 def alexa_listen_album_or_song(Song, Album, Artist):
   if Song:
-    heard_search = str(Song).lower().translate(None, string.punctuation)
+    heard_search = Song
   elif Album:
-    heard_search = str(Album).lower().translate(None, string.punctuation)
-  if Artist:
-    heard_artist = str(Artist).lower().translate(None, string.punctuation)
+    heard_search = Album
 
   card_title = render_template('playing_album_or_song').encode("utf-8")
   print card_title
 
   kodi = Kodi(config, context)
-  artist, artist_label = kodi.FindArtist(heard_artist)
-  if artist:
-    songs = kodi.GetArtistSongs(artist)
+  artist_id, artist_label = kodi.FindArtist(Artist)
+  if artist_id:
+    songs = kodi.GetArtistSongs(artist_id)
     if 'result' in songs and 'songs' in songs['result']:
       songs_list = songs['result']['songs']
       song_located = kodi.matchHeard(heard_search, songs_list)
@@ -752,7 +743,7 @@ def alexa_listen_album_or_song(Song, Album, Artist):
         kodi.StartAudioPlaylist()
         response_text = render_template('playing_song_artist', song_name=song_label, artist=artist_label).encode("utf-8")
       else:
-        albums = kodi.GetArtistAlbums(artist)
+        albums = kodi.GetArtistAlbums(artist_id)
         if 'result' in albums and 'albums' in albums['result']:
           albums_list = albums['result']['albums']
           album_located = kodi.matchHeard(heard_search, albums_list, 'label')
@@ -772,7 +763,7 @@ def alexa_listen_album_or_song(Song, Album, Artist):
     else:
       response_text = render_template('could_not_find_multi', heard_name=heard_search, artist=artist_label).encode("utf-8")
   else:
-    response_text = render_template('could_not_find', heard_name=heard_artist).encode("utf-8")
+    response_text = render_template('could_not_find', heard_name=Artist).encode("utf-8")
 
   return statement(response_text).simple_card(card_title, response_text)
 
@@ -806,8 +797,6 @@ def alexa_listen_recently_added_songs():
 # Handle the ListenToAudioPlaylist intent.
 @ask.intent('ListenToAudioPlaylist')
 def alexa_listen_audio_playlist(AudioPlaylist, shuffle=False):
-  heard_search = str(AudioPlaylist).lower().translate(None, string.punctuation)
-
   if shuffle:
     op = render_template('shuffling_empty').encode("utf-8")
   else:
@@ -817,10 +806,10 @@ def alexa_listen_audio_playlist(AudioPlaylist, shuffle=False):
   print card_title
 
   kodi = Kodi(config, context)
-  playlist, playlist_label = kodi.FindAudioPlaylist(heard_search)
-  if playlist:
+  playlist_id, playlist_label = kodi.FindAudioPlaylist(AudioPlaylist)
+  if playlist_id:
     if shuffle:
-      songs = kodi.GetPlaylistItems(playlist)['result']['files']
+      songs = kodi.GetPlaylistItems(playlist_id)['result']['files']
       songs_array = []
       for song in songs:
         songs_array.append(song['id'])
@@ -831,10 +820,10 @@ def alexa_listen_audio_playlist(AudioPlaylist, shuffle=False):
       kodi.StartAudioPlaylist()
     else:
       kodi.PlayerStop()
-      kodi.StartAudioPlaylist(playlist)
+      kodi.StartAudioPlaylist(playlist_id)
     response_text = render_template('playing_playlist_audio', action=op, playlist_name=playlist_label).encode("utf-8")
   else:
-    response_text = render_template('could_not_find_playlist', heard_name=heard_search).encode("utf-8")
+    response_text = render_template('could_not_find_playlist', heard_name=AudioPlaylist).encode("utf-8")
 
   return statement(response_text).simple_card(card_title, response_text)
 
@@ -1642,8 +1631,6 @@ def alexa_update_audio():
 # Handle the AddonExecute intent.
 @ask.intent('AddonExecute')
 def alexa_addon_execute(Addon):
-  heard_addon = str(Addon).lower().translate(None, string.punctuation)
-
   card_title = render_template('open_addon').encode("utf-8")
   print card_title
 
@@ -1653,7 +1640,7 @@ def alexa_addon_execute(Addon):
     if 'result' in addons and 'addons' in addons['result']:
       addons_array = addons['result']['addons']
 
-      located = kodi.matchHeard(heard_addon, addons_array, 'name')
+      located = kodi.matchHeard(Addon, addons_array, 'name')
 
       if located:
         kodi.Home()
@@ -1661,7 +1648,7 @@ def alexa_addon_execute(Addon):
         response_text = render_template('opening', heard_name=located['name']).encode("utf-8")
         return statement(response_text).simple_card(card_title, response_text)
       else:
-        response_text = render_template('could_not_find_addon', heard_addon=heard_addon).encode("utf-8")
+        response_text = render_template('could_not_find_addon', heard_addon=Addon).encode("utf-8")
     else:
       response_text = render_template('error_parsing_results').encode("utf-8")
 
@@ -1675,15 +1662,15 @@ def alexa_addon_globalsearch(Movie, Show, Artist, Album, Song):
   heard_search = ''
 
   if Movie:
-    heard_search = str(Movie).lower().translate(None, string.punctuation)
+    heard_search = Movie
   elif Show:
-    heard_search = str(Show).lower().translate(None, string.punctuation)
+    heard_search = Show
   elif Artist:
-    heard_search = str(Artist).lower().translate(None, string.punctuation)
+    heard_search = Artist
   elif Album:
-    heard_search = str(Album).lower().translate(None, string.punctuation)
+    heard_search = Album
   elif Song:
-    heard_search = str(Song).lower().translate(None, string.punctuation)
+    heard_search = Song
 
   if (len(heard_search) > 0):
     response_text = render_template('searching', heard_name=heard_search).encode("utf-8")
@@ -1713,12 +1700,11 @@ def alexa_watch_random_movie(Genre):
   genre_located = None
   # If a genre has been specified, match the genre for use in selecting a random film
   if Genre:
-    heard_genre = str(Genre).lower().translate(None, string.punctuation)
-    card_title = render_template('playing_random_movie_genre', genre=heard_genre).encode("utf-8")
+    card_title = render_template('playing_random_movie_genre', genre=Genre).encode("utf-8")
     genres = kodi.GetMovieGenres()
     if 'result' in genres and 'genres' in genres['result']:
       genres_list = genres['result']['genres']
-      genre_located = kodi.matchHeard(heard_genre, genres_list)
+      genre_located = kodi.matchHeard(Genre, genres_list)
   else:
     card_title = render_template('playing_random_movie').encode("utf-8")
   print card_title
@@ -1754,26 +1740,21 @@ def alexa_watch_random_movie(Genre):
 # Handle the WatchMovie intent.
 @ask.intent('WatchMovie')
 def alexa_watch_movie(Movie):
-  heard_movie = str(Movie).lower().translate(None, string.punctuation)
-
   card_title = render_template('playing_movie').encode("utf-8")
   print card_title
 
   kodi = Kodi(config, context)
-  if (len(heard_movie) > 0):
-    movie, movie_label = kodi.FindMovie(heard_movie)
-    if movie:
-      if kodi.GetMovieDetails(movie)['resume']['position'] > 0:
-        action = render_template('resuming_empty').encode("utf-8")
-      else:
-        action = render_template('playing_empty').encode("utf-8")
-
-      kodi.PlayMovie(movie)
-      response_text = render_template('playing_action', action=action, movie_name=movie_label).encode("utf-8")
+  movie_id, movie_label = kodi.FindMovie(Movie)
+  if movie_id:
+    if kodi.GetMovieDetails(movie_id)['resume']['position'] > 0:
+      action = render_template('resuming_empty').encode("utf-8")
     else:
-      response_text = render_template('could_not_find_movie', heard_movie=heard_movie).encode("utf-8")
+      action = render_template('playing_empty').encode("utf-8")
+
+    kodi.PlayMovie(movie_id)
+    response_text = render_template('playing_action', action=action, movie_name=movie_label).encode("utf-8")
   else:
-    response_text = render_template('error_parsing_results').encode("utf-8")
+    response_text = render_template('could_not_find_movie', heard_movie=Movie).encode("utf-8")
 
   return statement(response_text).simple_card(card_title, response_text)
 
@@ -1781,16 +1762,14 @@ def alexa_watch_movie(Movie):
 # Handle the ShuffleShow intent.
 @ask.intent('ShuffleShow')
 def alexa_shuffle_show(Show):
-  heard_show = str(Show).lower().translate(None, string.punctuation)
-
-  card_title = render_template('shuffling_episodes', heard_show=heard_show).encode("utf-8")
+  card_title = render_template('shuffling_episodes', heard_show=Show).encode("utf-8")
   print card_title
 
   kodi = Kodi(config, context)
-  show, show_label = kodi.FindTvShow(heard_show)
-  if show:
+  show_id, show_label = kodi.FindTvShow(Show)
+  if show_id:
     episodes_array = []
-    episodes_result = kodi.GetEpisodesFromShow(show)
+    episodes_result = kodi.GetEpisodesFromShow(show_id)
     for episode in episodes_result['result']['episodes']:
       episodes_array.append(episode['episodeid'])
 
@@ -1800,7 +1779,7 @@ def alexa_shuffle_show(Show):
     kodi.StartVideoPlaylist()
     response_text = render_template('shuffling', heard_name=show_label).encode("utf-8")
   else:
-    response_text = render_template('could_not_find_show', heard_show=heard_show).encode("utf-8")
+    response_text = render_template('could_not_find_show', heard_show=Show).encode("utf-8")
 
   return statement(response_text).simple_card(card_title, response_text)
 
@@ -1808,19 +1787,17 @@ def alexa_shuffle_show(Show):
 # Handle the WatchRandomEpisode intent.
 @ask.intent('WatchRandomEpisode')
 def alexa_watch_random_episode(Show):
-  heard_show = str(Show).lower().translate(None, string.punctuation)
-
-  card_title = render_template('playing_random_episode', heard_show=heard_show).encode("utf-8")
+  card_title = render_template('playing_random_episode', heard_show=Show).encode("utf-8")
   print card_title
 
   kodi = Kodi(config, context)
-  show, show_label = kodi.FindTvShow(heard_show)
-  if show:
-    episodes_result = kodi.GetUnwatchedEpisodesFromShow(show)
+  show_id, show_label = kodi.FindTvShow(Show)
+  if show_id:
+    episodes_result = kodi.GetUnwatchedEpisodesFromShow(show_id)
 
     if not 'episodes' in episodes_result['result']:
       # Fall back to all episodes if no unwatched available
-      episodes_result = kodi.GetEpisodesFromShow(show)
+      episodes_result = kodi.GetEpisodesFromShow(show_id)
 
     episodes_array = []
 
@@ -1834,7 +1811,7 @@ def alexa_watch_random_episode(Show):
 
     response_text = render_template('playing_episode_number', season=episode_details['season'], episode=episode_details['episode'], show_name=show_label).encode("utf-8")
   else:
-    response_text = render_template('could_not_find_show', heard_show=heard_show).encode("utf-8")
+    response_text = render_template('could_not_find_show', heard_show=Show).encode("utf-8")
 
   return statement(response_text).simple_card(card_title, response_text)
 
@@ -1842,18 +1819,13 @@ def alexa_watch_random_episode(Show):
 # Handle the WatchEpisode intent.
 @ask.intent('WatchEpisode')
 def alexa_watch_episode(Show, Season, Episode):
-  heard_show = str(Show).lower().translate(None, string.punctuation)
-
-  card_title = render_template('playing_an_episode', heard_show=heard_show).encode("utf-8")
+  card_title = render_template('playing_an_episode', heard_show=Show).encode("utf-8")
   print card_title
 
   kodi = Kodi(config, context)
-  show, show_label = kodi.FindTvShow(heard_show)
-  if show:
-    heard_season = Season
-    heard_episode = Episode
-
-    episode_id = kodi.GetSpecificEpisode(show, heard_season, heard_episode)
+  show_id, show_label = kodi.FindTvShow(Show)
+  if show_id:
+    episode_id = kodi.GetSpecificEpisode(show_id, Season, Episode)
     if episode_id:
       if kodi.GetEpisodeDetails(episode_id)['resume']['position'] > 0:
         action = render_template('resuming_empty').encode("utf-8")
@@ -1862,12 +1834,12 @@ def alexa_watch_episode(Show, Season, Episode):
 
       kodi.PlayEpisode(episode_id)
 
-      response_text = render_template('playing_action_episode_number', action=action, season=heard_season, episode=heard_episode, show_name=show_label).encode("utf-8")
+      response_text = render_template('playing_action_episode_number', action=action, season=Season, episode=Episode, show_name=show_label).encode("utf-8")
 
     else:
-      response_text = render_template('could_not_find_episode_show', season=heard_season, episode=heard_episode, show_name=show_label).encode("utf-8")
+      response_text = render_template('could_not_find_episode_show', season=Season, episode=Episode, show_name=show_label).encode("utf-8")
   else:
-    response_text = render_template('could_not_find_show', heard_show=heard_show).encode("utf-8")
+    response_text = render_template('could_not_find_show', heard_show=Show).encode("utf-8")
 
   return statement(response_text).simple_card(card_title, response_text)
 
@@ -1875,15 +1847,13 @@ def alexa_watch_episode(Show, Season, Episode):
 # Handle the WatchNextEpisode intent.
 @ask.intent('WatchNextEpisode')
 def alexa_watch_next_episode(Show):
-  heard_show = str(Show).lower().translate(None, string.punctuation)
-
-  card_title = render_template('playing_next_unwatched_episode', heard_show=heard_show).encode("utf-8")
+  card_title = render_template('playing_next_unwatched_episode', heard_show=Show).encode("utf-8")
   print card_title
 
   kodi = Kodi(config, context)
-  show, show_label = kodi.FindTvShow(heard_show)
-  if show:
-    next_episode_id = kodi.GetNextUnwatchedEpisode(show)
+  show_id, show_label = kodi.FindTvShow(Show)
+  if show_id:
+    next_episode_id = kodi.GetNextUnwatchedEpisode(show_id)
     if next_episode_id:
       episode_details = kodi.GetEpisodeDetails(next_episode_id)
 
@@ -1898,7 +1868,7 @@ def alexa_watch_next_episode(Show):
     else:
       response_text = render_template('no_new_episodes_show', show_name=show_label).encode("utf-8")
   else:
-    response_text = render_template('could_not_find_show', heard_show=heard_show).encode("utf-8")
+    response_text = render_template('could_not_find_show', heard_show=Show).encode("utf-8")
 
   return statement(response_text).simple_card(card_title, response_text)
 
@@ -1906,15 +1876,13 @@ def alexa_watch_next_episode(Show):
 # Handle the WatchLatestEpisode intent.
 @ask.intent('WatchLatestEpisode')
 def alexa_watch_newest_episode(Show):
-  heard_show = str(Show).lower().translate(None, string.punctuation)
-
-  card_title = render_template('playing_newest_episode', heard_show=heard_show).encode("utf-8")
+  card_title = render_template('playing_newest_episode', heard_show=Show).encode("utf-8")
   print card_title
 
   kodi = Kodi(config, context)
-  show, show_label = kodi.FindTvShow(heard_show)
-  if show:
-    episode_id = kodi.GetNewestEpisodeFromShow(show)
+  show_id, show_label = kodi.FindTvShow(Show)
+  if show_id:
+    episode_id = kodi.GetNewestEpisodeFromShow(show_id)
     if episode_id:
       episode_details = kodi.GetEpisodeDetails(episode_id)
 
@@ -1929,7 +1897,7 @@ def alexa_watch_newest_episode(Show):
     else:
       response_text = render_template('no_new_episodes_show', show_name=show_label).encode("utf-8")
   else:
-    response_text = render_template('could_not_find_show', heard_show=heard_show).encode("utf-8")
+    response_text = render_template('could_not_find_show', heard_show=Show).encode("utf-8")
 
   return statement(response_text).simple_card(card_title, response_text)
 
@@ -1969,8 +1937,6 @@ def alexa_watch_last_show():
 # Handle the WatchVideoPlaylist intent.
 @ask.intent('WatchVideoPlaylist')
 def alexa_watch_video_playlist(VideoPlaylist, shuffle=False):
-  heard_search = str(VideoPlaylist).lower().translate(None, string.punctuation)
-
   if shuffle:
     op = render_template('shuffling_empty').encode("utf-8")
   else:
@@ -1980,10 +1946,10 @@ def alexa_watch_video_playlist(VideoPlaylist, shuffle=False):
   print card_title
 
   kodi = Kodi(config, context)
-  playlist, playlist_label = kodi.FindVideoPlaylist(heard_search)
-  if playlist:
+  playlist_id, playlist_label = kodi.FindVideoPlaylist(VideoPlaylist)
+  if playlist_id:
     if shuffle:
-      videos = kodi.GetPlaylistItems(playlist)['result']['files']
+      videos = kodi.GetPlaylistItems(playlist_id)['result']['files']
       videos_array = []
       for video in videos:
         videos_array.append(video['file'])
@@ -1994,10 +1960,10 @@ def alexa_watch_video_playlist(VideoPlaylist, shuffle=False):
       kodi.StartVideoPlaylist()
     else:
       kodi.PlayerStop()
-      kodi.StartVideoPlaylist(playlist)
+      kodi.StartVideoPlaylist(playlist_id)
     response_text = render_template('playing_playlist_video', action=op, playlist_name=playlist_label).encode("utf-8")
   else:
-    response_text = render_template('could_not_find_playlist', heard_name=heard_search).encode("utf-8")
+    response_text = render_template('could_not_find_playlist', heard_name=VideoPlaylist).encode("utf-8")
 
   return statement(response_text).simple_card(card_title, response_text)
 
@@ -2013,18 +1979,18 @@ def alexa_shuffle_video_playlist(VideoPlaylist):
 def alexa_shuffle_playlist(VideoPlaylist, AudioPlaylist):
   heard_search = ''
   if VideoPlaylist:
-    heard_search = str(VideoPlaylist).lower().translate(None, string.punctuation)
+    heard_search = VideoPlaylist
   elif AudioPlaylist:
-    heard_search = str(AudioPlaylist).lower().translate(None, string.punctuation)
+    heard_search = AudioPlaylist
 
   card_title = render_template('shuffling_playlist', playlist_name=heard_search).encode("utf-8")
   print card_title
 
   kodi = Kodi(config, context)
   if (len(heard_search) > 0):
-    playlist, playlist_label = kodi.FindVideoPlaylist(heard_search)
-    if playlist:
-      videos = kodi.GetPlaylistItems(playlist)['result']['files']
+    playlist_id, playlist_label = kodi.FindVideoPlaylist(heard_search)
+    if playlist_id:
+      videos = kodi.GetPlaylistItems(playlist_id)['result']['files']
       videos_array = []
       for video in videos:
         videos_array.append(video['file'])
@@ -2035,9 +2001,9 @@ def alexa_shuffle_playlist(VideoPlaylist, AudioPlaylist):
       kodi.StartVideoPlaylist()
       response_text = render_template('shuffling_playlist_video', playlist_name=playlist_label).encode("utf-8")
     else:
-      playlist, playlist_label = kodi.FindAudioPlaylist(heard_search)
-      if playlist:
-        songs = kodi.GetPlaylistItems(playlist)['result']['files']
+      playlist_id, playlist_label = kodi.FindAudioPlaylist(heard_search)
+      if playlist_id:
+        songs = kodi.GetPlaylistItems(playlist_id)['result']['files']
         songs_array = []
         for song in songs:
           songs_array.append(song['id'])
@@ -2048,7 +2014,7 @@ def alexa_shuffle_playlist(VideoPlaylist, AudioPlaylist):
         kodi.StartAudioPlaylist()
         response_text = render_template('shuffling_playlist_audio', playlist_name=playlist_label).encode("utf-8")
 
-    if not playlist:
+    if not playlist_id:
       response_text = render_template('could_not_find_playlist', heard_name=heard_search).encode("utf-8")
   else:
     response_text = render_template('error_parsing_results').encode("utf-8")
@@ -2066,7 +2032,8 @@ def alexa_what_new_albums():
   # Get the list of recently added albums from Kodi
   new_albums = kodi.GetRecentlyAddedAlbums()['result']['albums']
 
-  new_album_names = list(set([kodi.sanitize_name(u'%s by %s' % (x['label'], x['artist'][0])) for x in new_albums]))
+  # XXXLANG: 'by' is English...
+  new_album_names = list(set([u'%s by %s' % (x['label'], x['artist'][0]) for x in new_albums]))
   num_albums = len(new_album_names)
 
   if num_albums == 0:
@@ -2094,12 +2061,11 @@ def alexa_what_new_movies(Genre):
   kodi = Kodi(config, context)
   # If a genre has been specified, match the genre for use in selecting random films
   if Genre:
-    heard_genre = str(Genre).lower().translate(None, string.punctuation)
-    card_title = render_template('newly_added_movies_genre', genre=heard_genre).encode("utf-8")
+    card_title = render_template('newly_added_movies_genre', genre=Genre).encode("utf-8")
     genres = kodi.GetMovieGenres()
     if 'result' in genres and 'genres' in genres['result']:
       genres_list = genres['result']['genres']
-      genre_located = kodi.matchHeard(heard_genre, genres_list)
+      genre_located = kodi.matchHeard(Genre, genres_list)
   else:
     card_title = render_template('newly_added_movies').encode("utf-8")
   print card_title
@@ -2110,7 +2076,7 @@ def alexa_what_new_movies(Genre):
   else:
     new_movies = kodi.GetUnwatchedMovies()
 
-  new_movie_names = list(set([kodi.sanitize_name(x['title']) for x in new_movies]))
+  new_movie_names = list(set([u'%s' % (x['title']) for x in new_movies]))
   num_movies = len(new_movie_names)
 
   if num_movies == 0:
@@ -2144,7 +2110,7 @@ def alexa_what_new_episodes():
   new_episodes = kodi.GetUnwatchedEpisodes()
 
   # Find out how many EPISODES were recently added and get the names of the SHOWS
-  new_show_names = list(set([kodi.sanitize_name(x['show']) for x in new_episodes]))
+  new_show_names = list(set([u'%s' % (x['show']) for x in new_episodes]))
   num_shows = len(new_show_names)
 
   if num_shows == 0:
@@ -2178,20 +2144,18 @@ def alexa_what_new_episodes():
 # Handle the WhatAlbums intent.
 @ask.intent('WhatAlbums')
 def alexa_what_albums(Artist):
-  heard_artist = str(Artist).lower().translate(None, string.punctuation)
-
-  card_title = render_template('albums_by', heard_artist=heard_artist).encode("utf-8")
+  card_title = render_template('albums_by', heard_artist=Artist).encode("utf-8")
   print card_title
 
   kodi = Kodi(config, context)
-  artist, artist_label = kodi.FindArtist(heard_artist)
-  if artist:
-    albums_result = kodi.GetArtistAlbums(artist)
+  artist_id, artist_label = kodi.FindArtist(Artist)
+  if artist_id:
+    albums_result = kodi.GetArtistAlbums(artist_id)
     albums = albums_result['result']['albums']
     num_albums = len(albums)
 
     if num_albums > 0:
-      really_albums = list(set([kodi.sanitize_name(x['label']) for x in albums]))
+      really_albums = list(set([u'%s' % (x['label']) for x in albums]))
       album_list = really_albums[0]
       if num_albums > 1:
         for one_album in really_albums[1:-1]:
@@ -2201,7 +2165,7 @@ def alexa_what_albums(Artist):
     else:
       response_text = render_template('no_albums_artist', artist=artist_label).encode("utf-8")
   else:
-    response_text = render_template('could_not_find', heard_name=heard_artist).encode("utf-8")
+    response_text = render_template('could_not_find', heard_name=Artist).encode("utf-8")
 
   return statement(response_text).simple_card(card_title, response_text)
 
