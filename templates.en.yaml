@@ -108,9 +108,9 @@ two_new_episodes: "There are two new episodes of {{ show_name }}"
 
 multiple_new_episodes: "There are {{ count }} new episodes of {{ show_name }}"
 
-you_have_list: "You have {{ list }}"
+you_have_list: "You have {{ items }}"
 
-you_have_episode_list: "There are new episodes of {{ list }}"
+you_have_episode_list: "There are new episodes of {{ items }}"
 
 volume_set: "Volume set to {{ num }}"
 
@@ -308,7 +308,9 @@ pause: " "
 
 and_more: ", and more"
 
-and: ", and  "
+and: ", and "
+
+by: "by"
 
 no_more_songs: "There are no more songs in the queue"
 

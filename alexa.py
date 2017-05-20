@@ -2032,8 +2032,8 @@ def alexa_what_new_albums():
   # Get the list of recently added albums from Kodi
   new_albums = kodi.GetRecentlyAddedAlbums()['result']['albums']
 
-  # XXXLANG: 'by' is English...
-  new_album_names = list(set([u'%s by %s' % (x['label'], x['artist'][0]) for x in new_albums]))
+  by_word = render_template('by').encode("utf-8")
+  new_album_names = list(set([u'%s %s %s' % (x['label'], by_word, x['artist'][0]) for x in new_albums]))
   num_albums = len(new_album_names)
 
   if num_albums == 0:
@@ -2044,12 +2044,12 @@ def alexa_what_new_albums():
     limited_new_album_names = new_album_names[0:5]
     album_list = limited_new_album_names[0]
     for one_album in limited_new_album_names[1:-1]:
-      album_list += ", " + one_album
+      album_list += u', ' + one_album
     if num_albums > 5:
-      album_list += ", " + limited_new_album_names[-1] + render_template('and_more').encode("utf-8")
+      album_list += u', ' + limited_new_album_names[-1] + render_template('and_more').encode("utf-8")
     else:
-      album_list += render_template('and').encode("utf-8") + limited_new_album_names[-1]
-    response_text = render_template('you_have_list', list=album_list).encode("utf-8")
+      album_list += render_template('and') + limited_new_album_names[-1]
+    response_text = render_template('you_have_list', items=album_list).encode("utf-8")
 
   return statement(response_text).simple_card(card_title, response_text)
 
@@ -2087,12 +2087,12 @@ def alexa_what_new_movies(Genre):
     limited_new_movie_names = new_movie_names[0:5]
     movie_list = limited_new_movie_names[0]
     for one_movie in limited_new_movie_names[1:-1]:
-      movie_list += ", " + one_movie
+      movie_list += u', ' + one_movie
     if num_movies > 5:
-      movie_list += ", " + limited_new_movie_names[-1] + render_template('and_more').encode("utf-8")
+      movie_list += u', ' + limited_new_movie_names[-1] + render_template('and_more').encode("utf-8")
     else:
       movie_list += render_template('and').encode("utf-8") + limited_new_movie_names[-1]
-    response_text = render_template('you_have_list', list=movie_list).encode("utf-8").encode("utf-8")
+    response_text = render_template('you_have_list', items=movie_list).encode("utf-8").encode("utf-8")
 
   return statement(response_text).simple_card(card_title, response_text)
 
@@ -2131,12 +2131,12 @@ def alexa_what_new_episodes():
     limited_new_show_names = new_show_names[0:5]
     show_list = limited_new_show_names[0]
     for one_show in limited_new_show_names[1:-1]:
-      show_list += ", " + one_show
+      show_list += u', ' + one_show
     if num_shows > 5:
-      show_list += ", " + limited_new_show_names[-1] + render_template('and_more').encode("utf-8")
+      show_list += u', ' + limited_new_show_names[-1] + render_template('and_more').encode("utf-8")
     else:
-      show_list += render_template('and').encode("utf-8") + limited_new_show_names[-1]
-    response_text = render_template('you_have_episode_list', list=show_list).encode("utf-8")
+      show_list += render_template('and') + limited_new_show_names[-1]
+    response_text = render_template('you_have_episode_list', items=show_list).encode("utf-8")
 
   return statement(response_text).simple_card(card_title, response_text)
 
@@ -2159,9 +2159,9 @@ def alexa_what_albums(Artist):
       album_list = really_albums[0]
       if num_albums > 1:
         for one_album in really_albums[1:-1]:
-          album_list += ", " + one_album
-        album_list += render_template('and').encode("utf-8") + really_albums[-1]
-      response_text = render_template('you_have_list', list=album_list).encode("utf-8")
+          album_list += u', ' + one_album
+        album_list += render_template('and') + really_albums[-1]
+      response_text = render_template('you_have_list', items=album_list).encode("utf-8")
     else:
       response_text = render_template('no_albums_artist', artist=artist_label).encode("utf-8")
   else:
