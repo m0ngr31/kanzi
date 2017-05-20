@@ -72,91 +72,80 @@ def alexa_new_show_inquiry(Show):
 
 
 # Handle the CurrentPlayItemInquiry intent.
-# XXXLANG: Only supports English currently!
 @ask.intent('CurrentPlayItemInquiry')
 def alexa_current_playitem_inquiry():
   card_title = render_template('current_playing_item').encode("utf-8")
   print card_title
 
-  answer = 'The current'
-  answer_append = 'ly playing item is unknown'
+  response_text = render_template('nothing_playing')
 
   kodi = Kodi(config, context)
-  try:
-    curitem = kodi.GetActivePlayItem()
-  except:
-    answer = 'There is nothing current'
-    answer_append = 'ly playing'
-  else:
-    if curitem is not None:
-      if curitem['type'] == 'episode':
-        # is a tv show
-        answer += ' TV show is'
-        answer_append = ' unknown'
-        if curitem['showtitle']:
-          answer += ' %s,' % (curitem['showtitle'])
-          answer_append = ''
-        if curitem['season']:
-          answer += ' season %s,' % (curitem['season'])
-          answer_append = ''
-        if curitem['episode']:
-          answer += ' episode %s,' % (curitem['episode'])
-          answer_append = ''
-        if curitem['title']:
-          answer += ' %s' % (curitem['title'])
-          answer_append = ''
-      elif curitem['type'] == 'song' or curitem['type'] == 'musicvideo':
-        # is a song (music video or audio)
-        answer += ' song is'
-        answer_append = ' unknown'
-        if curitem['title']:
-          answer += ' %s,' % (curitem['title'])
-          answer_append = ''
-        if curitem['artist']:
-          answer += ' by %s,' % (curitem['artist'][0])
-          answer_append = ''
-        if curitem['album']:
-          answer += ' on the album %s' % (curitem['album'])
-          answer_append = ''
-      elif curitem['type'] == 'movie':
-        # is a video
-        answer += ' movie is'
-        answer_append = ' unknown'
-        if curitem['title']:
-          answer += ' %s' % (curitem['title'])
-          answer_append = ''
+  curitem = kodi.GetActivePlayItem()
+  if curitem:
+    response_text = render_template('unknown_playing')
 
-    response_text = '%s%s.' % (answer, answer_append)
-    return statement(response_text).simple_card(card_title, response_text)
+    if curitem['type'] == 'episode':
+      # is a tv show
+      if curitem['showtitle']:
+        response_text = render_template('current_show_is')
+        response_text += u' '
+        response_text += curitem['showtitle']
+        if curitem['season']:
+          response_text += u', season %s' % (curitem['season'])
+        if curitem['episode']:
+          response_text += u', episode %s' % (curitem['episode'])
+        if curitem['title']:
+          response_text += u', '
+          response_text += curitem['title']
+    elif curitem['type'] == 'song' or curitem['type'] == 'musicvideo':
+      # is a song (music video or audio)
+      if curitem['title']:
+        response_text = render_template('current_song_is')
+        response_text += u' '
+        response_text += curitem['title']
+        if curitem['artist']:
+          response_text += u' ' + render_template('by') + u' '
+          response_text += curitem['artist'][0]
+        if curitem['album']:
+          response_text += u', '
+          response_text += render_template('on_the_album')
+          response_text += u' '
+          response_text += curitem['album']
+    elif curitem['type'] == 'movie':
+      # is a video
+      if curitem['title']:
+        response_text = render_template('current_movie_is')
+        response_text += u' '
+        response_text += curitem['title']
+
+  response_text = response_text.encode("utf-8")
+  return statement(response_text).simple_card(card_title, response_text)
 
 
 # Handle the CurrentPlayItemTimeRemaining intent.
-# XXXLANG: Only supports English currently!
 @ask.intent('CurrentPlayItemTimeRemaining')
 def alexa_current_playitem_time_remaining():
   card_title = render_template('time_left_playing').encode("utf-8")
   print card_title
 
-  response_text = 'Playback is stopped.'
+  response_text = render_template('nothing_playing').encode("utf-8")
 
   kodi = Kodi(config, context)
   status = kodi.GetPlayerStatus()
   if status['state'] is not 'stop':
     minsleft = status['total_mins'] - status['time_mins']
     if minsleft == 0:
-      response_text = 'It is nearly over.'
+      response_text = render_template('remaining_close').encode("utf-8")
     elif minsleft == 1:
-      response_text = 'There is one minute remaining.'
+      response_text = render_template('remaining_min').encode("utf-8")
     elif minsleft > 1:
-      response_text = 'There are %d minutes remaining' % (minsleft)
+      response_text = render_template('remaining_mins', minutes=minsleft).encode("utf-8")
       tz = config.get(kodi.dev_cfg_section, 'timezone')
       if minsleft > 9 and tz and tz != 'None':
         utctime = datetime.datetime.now(pytz.utc)
         loctime = utctime.astimezone(pytz.timezone(tz))
         endtime = loctime + datetime.timedelta(minutes=minsleft)
-        response_text += ', and it will end at %s.' % (endtime.strftime('%I:%M'))
-      else:
-        response_text += '.'
+        response_text += render_template('remaining_time', end_time=endtime.strftime('%I:%M')).encode("utf-8")
 
   return statement(response_text).simple_card(card_title, response_text)
 

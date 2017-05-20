@@ -299,6 +299,18 @@ open_remote_card: "Opening remote"
 
 playback_stopped: "Playback stopped"
 
+unknown_playing: "The currently playing item is unknown"
+
+nothing_playing: "There is nothing currently playing"
+
+remaining_close: "It is nearly over"
+
+remaining_mins: "There are {{ minutes }} minutes remaining"
+
+remaining_min: "There is one minute remaining"
+
+remaining_time: ", and it will end at {{ end_time }}"
+
 
 ############################
 ##   General Templates    ##
@@ -317,3 +329,11 @@ no_more_songs: "There are no more songs in the queue"
 no_songs_history: "There are no songs in your playlist history"
 
 no_current_song: "There is no current song"
+
+current_show_is: "The currently playing tv show is"
+
+current_song_is: "The currently playing song is"
+
+on_the_album: "on the album"
+
+current_movie_is: "The currently playing movie is"
