@@ -16,8 +16,8 @@ all = []
 
 if 'result' in retrieved and 'artists' in retrieved['result']:
   for v in retrieved['result']['artists']:
-    name = kodi.sanitize_name(v['artist'])
-    name_stripped = kodi.sanitize_name(v['artist'], True)
+    name = kodi.sanitize_name(v['artist'], normalize=False)
+    name_stripped = kodi.sanitize_name(v['artist'], True, False)
     all.append(name)
     all.append(name_stripped)
 
@@ -28,7 +28,7 @@ cleaned = cleaned[:300]
 
 gfile = open('MUSICARTISTS', 'w')
 for a in cleaned:
-  gfile.write("%s\n" % a)
+  gfile.write("%s\n" % a.encode("utf-8"))
 gfile.close()
 
 
@@ -39,8 +39,8 @@ all = []
 
 if 'result' in retrieved and 'albums' in retrieved['result']:
   for v in retrieved['result']['albums']:
-    name = kodi.sanitize_name(v['label'])
-    name_stripped = kodi.sanitize_name(v['label'], True)
+    name = kodi.sanitize_name(v['label'], normalize=False)
+    name_stripped = kodi.sanitize_name(v['label'], True, False)
     all.append(name)
     all.append(name_stripped)
 
@@ -51,7 +51,7 @@ cleaned = cleaned[:300]
 
 gfile = open('MUSICALBUMS', 'w')
 for a in cleaned:
-  gfile.write("%s\n" % a)
+  gfile.write("%s\n" % a.encode("utf-8"))
 gfile.close()
 
 
@@ -62,8 +62,8 @@ all = []
 
 if 'result' in retrieved and 'songs' in retrieved['result']:
   for v in retrieved['result']['songs']:
-    name = kodi.sanitize_name(v['label'])
-    name_stripped = kodi.sanitize_name(v['label'], True)
+    name = kodi.sanitize_name(v['label'], normalize=False)
+    name_stripped = kodi.sanitize_name(v['label'], True, False)
     all.append(name)
     all.append(name_stripped)
 
@@ -74,7 +74,7 @@ cleaned = cleaned[:300]
 
 gfile = open('MUSICSONGS', 'w')
 for a in cleaned:
-  gfile.write("%s\n" % a)
+  gfile.write("%s\n" % a.encode("utf-8"))
 gfile.close()
 
 
@@ -85,8 +85,8 @@ all = []
 
 if 'result' in retrieved and 'files' in retrieved['result']:
   for v in retrieved['result']['files']:
-    name = kodi.sanitize_name(v['label'])
-    name_stripped = kodi.sanitize_name(v['label'], True)
+    name = kodi.sanitize_name(v['label'], normalize=False)
+    name_stripped = kodi.sanitize_name(v['label'], True, False)
     all.append(name)
     all.append(name_stripped)
 
@@ -97,7 +97,7 @@ cleaned = cleaned[:300]
 
 gfile = open('MUSICPLAYLISTS', 'w')
 for a in cleaned:
-  gfile.write("%s\n" % a)
+  gfile.write("%s\n" % a.encode("utf-8"))
 gfile.close()
 
 
@@ -108,8 +108,8 @@ all = []
 
 if 'result' in retrieved and 'files' in retrieved['result']:
   for v in retrieved['result']['files']:
-    name = kodi.sanitize_name(v['label'])
-    name_stripped = kodi.sanitize_name(v['label'], True)
+    name = kodi.sanitize_name(v['label'], normalize=False)
+    name_stripped = kodi.sanitize_name(v['label'], True, False)
     all.append(name)
     all.append(name_stripped)
 
@@ -120,7 +120,7 @@ cleaned = cleaned[:300]
 
 gfile = open('VIDEOPLAYLISTS', 'w')
 for a in cleaned:
-  gfile.write("%s\n" % a)
+  gfile.write("%s\n" % a.encode("utf-8"))
 gfile.close()
 
 
@@ -131,8 +131,8 @@ all = []
 
 if 'result' in retrieved and 'genres' in retrieved['result']:
   for v in retrieved['result']['genres']:
-    name = kodi.sanitize_name(v['label'])
-    name_stripped = kodi.sanitize_name(v['label'], True)
+    name = kodi.sanitize_name(v['label'], normalize=False)
+    name_stripped = kodi.sanitize_name(v['label'], True, False)
     all.append(name)
     all.append(name_stripped)
 
@@ -143,7 +143,7 @@ cleaned = cleaned[:300]
 
 gfile = open('MOVIEGENRES', 'w')
 for a in cleaned:
-  gfile.write("%s\n" % a)
+  gfile.write("%s\n" % a.encode("utf-8"))
 gfile.close()
 
 
@@ -154,8 +154,8 @@ all = []
 
 if 'result' in retrieved and 'movies' in retrieved['result']:
   for v in retrieved['result']['movies']:
-    name = kodi.sanitize_name(v['label'])
-    name_stripped = kodi.sanitize_name(v['label'], True)
+    name = kodi.sanitize_name(v['label'], normalize=False)
+    name_stripped = kodi.sanitize_name(v['label'], True, False)
     all.append(name)
     all.append(name_stripped)
 
@@ -166,7 +166,7 @@ cleaned = cleaned[:300]
 
 gfile = open('MOVIES', 'w')
 for a in cleaned:
-  gfile.write("%s\n" % a)
+  gfile.write("%s\n" % a.encode("utf-8"))
 gfile.close()
 
 
@@ -177,8 +177,8 @@ all = []
 
 if 'result' in retrieved and 'tvshows' in retrieved['result']:
   for v in retrieved['result']['tvshows']:
-    name = kodi.sanitize_name(v['label'])
-    name_stripped = kodi.sanitize_name(v['label'], True)
+    name = kodi.sanitize_name(v['label'], normalize=False)
+    name_stripped = kodi.sanitize_name(v['label'], True, False)
     all.append(name)
     all.append(name_stripped)
 
@@ -189,7 +189,7 @@ cleaned = cleaned[:300]
 
 gfile = open('SHOWS', 'w')
 for a in cleaned:
-  gfile.write("%s\n" % a)
+  gfile.write("%s\n" % a.encode("utf-8"))
 gfile.close()
 
 
@@ -201,8 +201,8 @@ for content in ['video', 'audio', 'image', 'executable']:
 
   if 'result' in retrieved and 'addons' in retrieved['result']:
     for v in retrieved['result']['addons']:
-      name = kodi.sanitize_name(v['name'])
-      name_stripped = kodi.sanitize_name(v['name'], True)
+      name = kodi.sanitize_name(v['name'], normalize=False)
+      name_stripped = kodi.sanitize_name(v['name'], True, False)
       all.append(name)
       all.append(name_stripped)
 
@@ -213,5 +213,5 @@ cleaned = cleaned[:300]
 
 gfile = open('ADDONS', 'w')
 for a in cleaned:
-  gfile.write("%s\n" % a)
+  gfile.write("%s\n" % a.encode("utf-8"))
 gfile.close()
