@@ -350,7 +350,7 @@ def alexa_player_seek_bigbackward():
 
 
 def find_and_play(kodi, needle, content=['video','audio'], shuffle=False, slot_hint='unknown', slot_ignore=[]):
-  print 'Find and Play: "%s"' % (kodi.sanitize_name(needle))
+  print 'Find and Play: "%s"' % (needle.encode("utf-8"))
   if slot_hint != 'unknown':
     print 'Pre-match with slot: ' + slot_hint
   print 'Searching content types: '
@@ -509,7 +509,7 @@ def alexa_shuffle_media(Show=None):
   # Some media types don't make sense when shuffling
   ignore_slots = ['Movie', 'Song']
 
-  card_title = 'Shuffling "%s"' % (kodi.sanitize_name(Show))
+  card_title = render_template('shuffling', heard_name=Show).encode("utf-8")
   print card_title
 
   disable_ds = os.getenv('DISABLE_DEEP_SEARCH')
@@ -552,7 +552,7 @@ def alexa_play_media(Movie=None, Artist=None, content=None, shuffle=False):
     heard_search = Artist
     heard_slot = 'Artist'
 
-  card_title = 'Playing "%s"' % (kodi.sanitize_name(heard_search))
+  card_title = render_template('playing', heard_name=heard_search).encode("utf-8")
   print card_title
 
   if not config.getboolean('global', 'deep_search'):
@@ -1348,8 +1348,7 @@ def alexa_open_remote():
 # Handle the Menu intent.
 @ask.intent('Menu')
 def alexa_context_menu():
-  card_title = 'Navigate: Context Menu'
-  print card_title
+  print 'Navigate: Context Menu'
 
   kodi = Kodi(config, context)
   kodi.Menu()
@@ -1364,8 +1363,7 @@ def alexa_context_menu():
 # Handle the Home intent.
 @ask.intent('Home')
 def alexa_go_home():
-  card_title = 'Navigate: Home'
-  print card_title
+  print 'Navigate: Home'
 
   kodi = Kodi(config, context)
   kodi.Home()
@@ -1380,8 +1378,7 @@ def alexa_go_home():
 # Handle the Select intent.
 @ask.intent('Select')
 def alexa_select():
-  card_title = 'Navigate: Select'
-  print card_title
+  print 'Navigate: Select'
 
   kodi = Kodi(config, context)
   kodi.Select()
@@ -1396,8 +1393,7 @@ def alexa_select():
 # Handle the PageUp intent.
 @ask.intent('PageUp')
 def alexa_pageup():
-  card_title = 'Navigate: Page up'
-  print card_title
+  print 'Navigate: Page up'
 
   kodi = Kodi(config, context)
   kodi.PageUp()
@@ -1412,8 +1408,7 @@ def alexa_pageup():
 # Handle the PageDown intent.
 @ask.intent('PageDown')
 def alexa_pagedown():
-  card_title = 'Navigate: Page down'
-  print card_title
+  print 'Navigate: Page down'
 
   kodi = Kodi(config, context)
   kodi.PageDown()
@@ -1428,8 +1423,7 @@ def alexa_pagedown():
 # Handle the Left intent.
 @ask.intent('Left')
 def alexa_left():
-  card_title = 'Navigate: Left'
-  print card_title
+  print 'Navigate: Left'
 
   kodi = Kodi(config, context)
   kodi.Left()
@@ -1444,8 +1438,7 @@ def alexa_left():
 # Handle the Right intent.
 @ask.intent('Right')
 def alexa_right():
-  card_title = 'Navigate: Right'
-  print card_title
+  print 'Navigate: Right'
 
   kodi = Kodi(config, context)
   kodi.Right()
@@ -1460,8 +1453,7 @@ def alexa_right():
 # Handle the Up intent.
 @ask.intent('Up')
 def alexa_up():
-  card_title = 'Navigate: Up'
-  print card_title
+  print 'Navigate: Up'
 
   kodi = Kodi(config, context)
   kodi.Up()
@@ -1476,8 +1468,7 @@ def alexa_up():
 # Handle the Down intent.
 @ask.intent('Down')
 def alexa_down():
-  card_title = 'Navigate: Down'
-  print card_title
+  print 'Navigate: Down'
 
   kodi = Kodi(config, context)
   kodi.Down()
@@ -1492,8 +1483,7 @@ def alexa_down():
 # Handle the Back intent.
 @ask.intent('Back')
 def alexa_back():
-  card_title = 'Navigate: Back'
-  print card_title
+  print 'Navigate: Back'
 
   kodi = Kodi(config, context)
   kodi.Back()
