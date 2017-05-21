@@ -67,7 +67,7 @@ CleanAudio säuber(/e) (Audio/Musik) Bibliothek
 CleanAudio (Audio/Musik) Bibliothek säubern
 
 UpdateAudio (erneuer(/e)/refresh(/e)/update) (Audio/Musik) Bibliothek
-UpdateVideo (Audio/Musik) Bibliothek (erneuern/refreshen/updaten)
+UpdateAudio (Audio/Musik) Bibliothek (erneuern/refreshen/updaten)
 
 PlayMedia spiel(/e) {Movie}
 ShuffleMedia zufallswiedergabe {Show}
