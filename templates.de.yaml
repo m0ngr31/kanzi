@@ -108,9 +108,9 @@ two_new_episodes: "Es gibt zwei neue Folgen von {{ show_name }}"
 
 multiple_new_episodes: "Es gibt {{ count }} neue Folgen von {{ show_name }}"
 
-you_have_list: "Du hast {{ list }}"
+you_have_list: "Du hast {{ items }}"
 
-you_have_episode_list: "Es gibt neue Folgen für {{ list }}"
+you_have_episode_list: "Es gibt neue Folgen für {{ items }}"
 
 volume_set: "Lautstärke auf {{ num }} gestellt"
 
@@ -299,6 +299,18 @@ open_remote_card: "Öffne Fernbedienung"
 
 playback_stopped: "Wiedergabe gestoppt"
 
+unknown_playing: "Der Titel der aktuellen Wiedergabe ist unbekannt"
+
+nothing_playing: "Im Augenblick findet keine Wiedergabe statt"
+
+remaining_close: "Die Wiedergabe ist fast vorbei"
+
+remaining_mins: "Es sind noch {{ minutes }} Minuten übrig"
+
+remaining_min: "Es ist noch eine Minute übrig"
+
+remaining_time: ", und die Wiedergabe wird um {{ end_time }} enden"
+
 
 ############################
 ##   General Templates    ##
@@ -308,10 +320,22 @@ pause: " "
 
 and_more: ", und mehr"
 
-and: ", und  "
+and_more_similar: ", und weitere"
+
+and: ", und "
+
+by: "von"
 
 no_more_songs: "Es gibt keine weiteren Songs in der Warteschlange"
 
 no_songs_history: "Es gibt keine Songs in der Playlist Historie"
 
 no_current_song: "Es gibt keinen aktuellen Song"
+
+current_show_is: "Der Name der gerade laufenden Serie ist"
+
+current_song_is: "Der Titel des aktuell laufenden Lieds lautet"
+
+on_the_album: "auf dem Album"
+
+current_movie_is: "Der Titel des gerade laufenden Films lautet"
