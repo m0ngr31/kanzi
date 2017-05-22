@@ -334,6 +334,10 @@ no_current_song: "There is no current song"
 
 current_show_is: "The currently playing tv show is"
 
+season: "season"
+
+episode: "episode"
+
 current_song_is: "The currently playing song is"
 
 on_the_album: "on the album"

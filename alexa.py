@@ -91,9 +91,9 @@ def alexa_current_playitem_inquiry():
         response_text += u' '
         response_text += curitem['showtitle']
         if curitem['season']:
-          response_text += u', season %s' % (curitem['season'])
+          response_text += u', %s %s' % (render_template('season'), curitem['season'])
         if curitem['episode']:
-          response_text += u', episode %s' % (curitem['episode'])
+          response_text += u', %s %s' % (render_template('episode'), curitem['episode'])
         if curitem['title']:
           response_text += u', '
           response_text += curitem['title']

@@ -334,6 +334,10 @@ no_current_song: "Es gibt keinen aktuellen Song"
 
 current_show_is: "Der Name der gerade laufenden Serie ist"
 
+season: "Staffel"
+
+episode: "Folge"
+
 current_song_is: "Der Titel des aktuell laufenden Lieds lautet"
 
 on_the_album: "auf dem Album"
