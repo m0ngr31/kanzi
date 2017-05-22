@@ -2011,7 +2011,7 @@ def alexa_what_new_albums():
   # Get the list of recently added albums from Kodi
   new_albums = kodi.GetRecentlyAddedAlbums()['result']['albums']
 
-  by_word = render_template('by').encode("utf-8")
+  by_word = render_template('by')
   new_album_names = list(set([u'%s %s %s' % (x['label'], by_word, x['artist'][0]) for x in new_albums]))
   num_albums = len(new_album_names)
 
@@ -2025,7 +2025,7 @@ def alexa_what_new_albums():
     for one_album in limited_new_album_names[1:-1]:
       album_list += u', ' + one_album
     if num_albums > 5:
-      album_list += u', ' + limited_new_album_names[-1] + render_template('and_more_similar').encode("utf-8")
+      album_list += u', ' + limited_new_album_names[-1] + render_template('and_more_similar')
     else:
       album_list += render_template('and') + limited_new_album_names[-1]
     response_text = render_template('you_have_list', items=album_list).encode("utf-8")
@@ -2068,10 +2068,10 @@ def alexa_what_new_movies(Genre):
     for one_movie in limited_new_movie_names[1:-1]:
       movie_list += u', ' + one_movie
     if num_movies > 5:
-      movie_list += u', ' + limited_new_movie_names[-1] + render_template('and_more_similar').encode("utf-8")
+      movie_list += u', ' + limited_new_movie_names[-1] + render_template('and_more_similar')
     else:
-      movie_list += render_template('and').encode("utf-8") + limited_new_movie_names[-1]
-    response_text = render_template('you_have_list', items=movie_list).encode("utf-8").encode("utf-8")
+      movie_list += render_template('and') + limited_new_movie_names[-1]
+    response_text = render_template('you_have_list', items=movie_list).encode("utf-8")
 
   return statement(response_text).simple_card(card_title, response_text)
 
@@ -2112,7 +2112,7 @@ def alexa_what_new_episodes():
     for one_show in limited_new_show_names[1:-1]:
       show_list += u', ' + one_show
     if num_shows > 5:
-      show_list += u', ' + limited_new_show_names[-1] + render_template('and_more_similar').encode("utf-8")
+      show_list += u', ' + limited_new_show_names[-1] + render_template('and_more_similar')
     else:
       show_list += render_template('and') + limited_new_show_names[-1]
     response_text = render_template('you_have_episode_list', items=show_list).encode("utf-8")
