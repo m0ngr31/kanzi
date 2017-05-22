@@ -1,3 +1,8 @@
+v2.6.1 (05/22/2017)
+* Update German translation
+* Better handling of non-ASCII strings
+* Fix errors retrieving certain config variables
+
 v2.6.0 (05/12/2017)
 * Fixed shuffling of really large playlists
 * Added Shuffle On/Off Intents
