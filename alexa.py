@@ -661,6 +661,43 @@ def alexa_shuffle_album(Album, Artist):
   return alexa_listen_album(Album, Artist, True)
 
 
+# Handle the ListenToLatestAlbum intent (Play latest album by a specific artist).
+@ask.intent('ListenToLatestAlbum')
+def alexa_listen_latest_album(Artist, shuffle=False):
+  if shuffle:
+    card_title = render_template('shuffling_latest_album_card', heard_artist=Artist).encode("utf-8")
+  else:
+    card_title = render_template('playing_latest_album_card', heard_artist=Artist).encode("utf-8")
+  print card_title
+
+  kodi = Kodi(config, context)
+  artist_id, artist_label = kodi.FindArtist(Artist)
+  if artist_id:
+    album_id = kodi.GetNewestAlbumFromArtist(artist_id)
+    if album_id:
+      album_label = kodi.GetAlbumDetails(album_id)['label']
+      kodi.PlayerStop()
+      kodi.ClearAudioPlaylist()
+      kodi.AddAlbumToPlaylist(album_id, shuffle)
+      kodi.StartAudioPlaylist()
+      if shuffle:
+        response_text = render_template('shuffling_album_artist', album_name=album_label, artist=artist_label).encode("utf-8")
+      else:
+        response_text = render_template('playing_album_artist', album_name=album_label, artist=artist_label).encode("utf-8")
+    else:
+      response_text = render_template('could_not_find_artist', artist_name=artist_label).encode("utf-8")
+  else:
+    response_text = render_template('could_not_find', heard_name=Artist).encode("utf-8")
+
+  return statement(response_text).simple_card(card_title, response_text)
+
+
+# Handle the ShuffleLatestAlbum intent (Shuffle latest album by a specific artist).
+@ask.intent('ShuffleLatestAlbum')
+def alexa_shuffle_latest_album(Artist):
+  return alexa_listen_latest_album(Artist, True)
+
+
 # Handle the ListenToSong intent (Play a song, or song by a specific artist).
 @ask.intent('ListenToSong')
 def alexa_listen_song(Song, Artist):

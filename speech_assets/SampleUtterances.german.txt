@@ -677,6 +677,16 @@ ListenToAudioPlaylistRecent spiele neue Songs
 ListenToAudioPlaylistRecent spiele zuletzt hinzugefügte Lieder
 ListenToAudioPlaylistRecent spiele zuletzt hinzugefügte Musik
 ListenToAudioPlaylistRecent spiele zuletzt hinzugefügte Songs
+ListenToLatestAlbum spiele aktuelles Album von {Artist}
+ListenToLatestAlbum spiele aktuellstes Album von {Artist}
+ListenToLatestAlbum spiele das aktuelle Album von {Artist}
+ListenToLatestAlbum spiele das aktuellste Album von {Artist}
+ListenToLatestAlbum spiele das neue Album von {Artist}
+ListenToLatestAlbum spiele das neueste Album von {Artist}
+ListenToLatestAlbum spiele neues Album von {Artist}
+ListenToLatestAlbum spiele neuestes Album von {Artist}
+ListenToLatestAlbum spiele zuletzt das hinzugefügte Album von {Artist}
+ListenToLatestAlbum spiele zuletzt hinzugefügtes Album von {Artist}
 ListenToSong spiel das Lied {Song}
 ListenToSong spiel das Lied {Song} von {Artist}
 ListenToSong spiel den Song {Song}
@@ -1108,6 +1118,16 @@ ShuffleAudioPlaylist zufallswiedergabe Audio playlist {AudioPlaylist}
 ShuffleAudioPlaylist zufallswiedergabe Musik playlist {AudioPlaylist}
 ShuffleAudioPlaylist zufallswiedergabe {AudioPlaylist} Audio playlist
 ShuffleAudioPlaylist zufallswiedergabe {AudioPlaylist} Musik playlist
+ShuffleLatestAlbum shuffle Zufallswiedergabe des aktuellen Albums von {Artist}
+ShuffleLatestAlbum shuffle Zufallswiedergabe des aktuellsten Albums von {Artist}
+ShuffleLatestAlbum shuffle Zufallswiedergabe des neuen Albums von {Artist}
+ShuffleLatestAlbum shuffle Zufallswiedergabe des neuesten Albums von {Artist}
+ShuffleLatestAlbum shuffle Zufallswiedergabe des zuletzt hinzugefügten Albums von {Artist}
+ShuffleLatestAlbum shuffle starte Zufallswiedergabe des aktuellen Albums von {Artist}
+ShuffleLatestAlbum shuffle starte Zufallswiedergabe des aktuellsten Albums von {Artist}
+ShuffleLatestAlbum shuffle starte Zufallswiedergabe des neuen Albums von {Artist}
+ShuffleLatestAlbum shuffle starte Zufallswiedergabe des neuesten Albums von {Artist}
+ShuffleLatestAlbum shuffle starte Zufallswiedergabe des zuletzt hinzugefügten Albums von {Artist}
 ShuffleMedia zufallswiedergabe {Show}
 ShufflePlaylist zufallswiedergabe playlist {AudioPlaylist}
 ShufflePlaylist zufallswiedergabe playlist {VideoPlaylist}

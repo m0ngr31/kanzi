@@ -154,6 +154,15 @@
       ]
     },
     {
+      "intent": "ListenToLatestAlbum",
+      "slots": [
+        {
+          "name": "Artist",
+          "type": "MUSICARTISTS"
+        }
+      ]
+    },
+    {
       "intent": "ListenToAlbum",
       "slots": [
         {
@@ -202,6 +211,15 @@
         {
           "name": "AudioPlaylist",
           "type": "MUSICPLAYLISTS"
+        }
+      ]
+    },
+    {
+      "intent": "ShuffleLatestAlbum",
+      "slots": [
+        {
+          "name": "Artist",
+          "type": "MUSICARTISTS"
         }
       ]
     },

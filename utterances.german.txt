@@ -78,6 +78,11 @@ ListenToAudio {Artist} anhören
 
 ListenToArtist spiel(/e) (Musik/Lieder/Songs/Mucke) von (/dem Artist/der Artistin/dem Komponist/der Komponistin/dem Künstler/der Künstlerin/der Band/der Gruppe) {Artist}
 
+ListenToLatestAlbum spiele das (neueste/aktuellste/neue/aktuelle) Album von {Artist}
+ListenToLatestAlbum spiele (aktuelles/neues/neuestes/aktuellstes) Album von {Artist}
+ListenToLatestAlbum spiele zuletzt hinzugefügtes Album von {Artist}
+ListenToLatestAlbum spiele zuletzt das hinzugefügte Album von {Artist}
+
 ListenToAlbum spiel(/e) (das Album/die CD/die Platte) {Album} (/von {Artist})
 
 ListenToSong spiel(/e) (das Lied/den Song) {Song}
@@ -109,6 +114,8 @@ WatchLastShow weiter mit (/letzter) Serie
 WatchLatestEpisode zeige (neueste/letzte) (Episode/Folge) von {Show}
 
 ShuffleShow zufallswiedergabe (/aller) episoden von {Show}
+
+ShuffleLatestAlbum shuffle (/starte) Zufallswiedergabe des (aktuellen/neuen/aktuellsten/neuesten/zuletzt hinzugefügten) Albums von {Artist}
 
 ShuffleAlbum zufallswiedergabe (album/des albums/vom album) {Album}
 ShuffleAlbum zufallswiedergabe (/album/das albums/vom album) {Album} von {Artist}
