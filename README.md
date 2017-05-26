@@ -136,7 +136,7 @@ Once you've set up your server, you'll need to configure a new Alexa skill. Head
 The initial setup page looks like this:
 ![Inital setup skill](http://i.imgur.com/AzufQxo.png)
 
-On the next page, you'll have to paste the contents of the `IntentSchema.json` file into the "Intent Schema" field, and paste the contents of the `SampleUtterances.txt` file in the "Sample Utterances" field. **Generate and save your Custom Slots first before pasting the Intents and Utterances to avoid errors when attempting to save**.
+On the next page, you'll have to paste the contents of the [IntentSchema.json](https://raw.githubusercontent.com/m0ngr31/kodi-alexa/master/speech_assets/IntentSchema.json) file into the "Intent Schema" field, and paste the contents of the [SampleUtterances.txt](https://raw.githubusercontent.com/m0ngr31/kodi-alexa/master/speech_assets/SampleUtterances.txt) or [SampleUtterances.german.txt](https://raw.githubusercontent.com/m0ngr31/kodi-alexa/master/speech_assets/SampleUtterances.german.txt) file in the "Sample Utterances" field. **Generate and save your Custom Slots first before pasting the Intents and Utterances to avoid errors when attempting to save**.
 
 You need to create 9 different slots:
 - MOVIES
