@@ -8,14 +8,17 @@ If you are updating from a previous version, **it is very important that you bro
 
 Here are some of the features supported by this skill:
 
-- Basic navigation (Up/Down, Left/Right, Page Up/Down, Select, Back, Open Menu)
+- Basic navigation (Up/Down, Left/Right, Page Up/Down, Select, Back, Menu, Zoom, Rotate, Move)
 - Remote control (Keeps session open so you can give multiple navication commands)
 - Playback control (Play/Pause, Skip, Previous, Stop, Step/Jump)
 - Adjust volume
-- Shuffle music by artist
-- Play specific album
-- Play audio playlists
+- Shuffle all music by an artist
+- Play/Shuffle specific album
+- Play/Shuffle the latest album by an artist
+- Play a specific song
+- Play/Shuffle audio and video playlists
 - "Party mode" for music (shuffle all)
+- Shuffle all episodes of a TV show
 - Play random unwatched episode of TV show
 - Play random unwatched movie
 - Play random movie from a specific genre
@@ -24,16 +27,17 @@ Here are some of the features supported by this skill:
 - Continue watching next episode of last show that was watched
 - Play next episode of a show
 - Play newest episode of a show
-- List recently added media
+- List/Play recently added media
 - List available albums by an artist
 - Clean/Update video and audio sources
 - "What's playing?" functionality for music, movies, and shows
+- Report time remaining on current media and when it will end
 - Cycle through audio and subtitle streams
 - Search for something in your library
 - Execute addons
 - Shutdown/reboot/sleep/hibernate system
 - Toggle fullscreen
-- Eject disc
+- Eject media
 
 ## Initial Computer Setup
 Unless you are going to host the skill on Heroku, there are a few things in the instructions that you will need to install before you can get started: 
