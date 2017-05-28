@@ -137,21 +137,19 @@ ShufflePlaylist zufallswiedergabe {AudioPlaylist} playlist
 ShufflePlaylist zufallswiedergabe playlist {VideoPlaylist}
 ShufflePlaylist zufallswiedergabe {VideoPlaylist} playlist
 
-WhatNewAlbums (welches (/neue) Album/welche (/neue) (CD/Platte)) (wartet/(fertig/auf dem (/media)server/aufgenommen worden) ist)
-WhatNewAlbums welche (/neuen) (Alben/CDs/Platten) (warten/(fertig/auf dem (/media)server/aufgenommen worden) sind)
+WhatNewAlbums welches neue Album (wartet/(fertig/aufgenommen worden) ist)
+WhatNewAlbums welche neuen Alben (warten/(fertig/aufgenommen worden) sind)
 
-WhatNewMovies welcher (/neue) (/{Genre}) Film (wartet/(fertig/auf dem (/media)server/aufgenommen worden) ist)
-WhatNewMovies welche (/neuen) (/{Genre}) Filme (warten/(fertig/auf dem (/media)server/aufgenommen worden) sind)
+WhatNewMovies welcher (/neue) (/{Genre}) Film (wartet/(fertig/aufgenommen worden) ist)
+WhatNewMovies welche (/neuen) (/{Genre}) Filme (warten/(fertig/aufgenommen worden) sind)
 WhatNewMovies ob es einen neuen (/{Genre}) Film gibt
 WhatNewMovies ob wir einen neuen (/{Genre}) Film haben
-WhatNewMovies ob du einen neuen (/{Genre}) Film hast
 WhatNewMovies ob es neue (/{Genre}) Filme gibt
 WhatNewMovies ob wir neue (/{Genre}) Filme haben
-WhatNewMovies ob du neue (/{Genre}) Filme hast
 
-WhatNewShows welche (/neue) Serie (wartet/(fertig/auf dem (/media)server/aufgenommen worden) ist)
-WhatNewShows welche (/neuen) Serien (warten/(fertig/auf dem (/media)server/aufgenommen worden) sind)
-WhatNewShows welche ((/neue) Serie/(/neuen) Serien) (habe ich/hast du/haben wir/gibt es/ich habe/du hast/wir haben/es gibt)
+WhatNewShows welche (/neue) Serie (wartet/(fertig/aufgenommen worden) ist)
+WhatNewShows welche neuen Serien (warten/(fertig/aufgenommen worden) sind)
+WhatNewShows welche (neue Serie/neuen Serien) (habe ich/haben wir/gibt es/ich habe/wir haben/es gibt)
 
 NewShowInquiry ob es eine neue (/Episode/Folge) (/von) {Show} gibt
 NewShowInquiry ob wir eine neue (/Episode/Folge) (/von) {Show} haben
@@ -166,20 +164,18 @@ PartyMode spiele irgend(/et)was
 PartyMode leg(/e) (/irgend(/et))was auf
 PartyMode Party (/Modus)
 
-CurrentPlayItemInquiry (was/wer) (das ist/ist das)
-CurrentPlayItemInquiry was (/gerade/jetzt/gerade jetzt/jetzt gerade/in diesem Moment) (läuft/spielt)
+CurrentPlayItemInquiry (was/wer) das ist
+CurrentPlayItemInquiry was (/gerade/jetzt/jetzt gerade) (läuft/spielt)
 CurrentPlayItemInquiry welche (/Folge/Episode/Serie/Staffel) das ist
-CurrentPlayItemInquiry welche (/Folge/Episode/Serie/Staffel) (/gerade/jetzt/gerade jetzt/jetzt gerade/in diesem Moment) (läuft/spielt)
+CurrentPlayItemInquiry welche (/Folge/Episode/Serie/Staffel) (/gerade/jetzt/jetzt gerade) (läuft/spielt)
 CurrentPlayItemInquiry welcher (/Song) das ist
-CurrentPlayItemInquiry welcher (/Song) (/gerade/jetzt/gerade jetzt/jetzt gerade/in diesem Moment) (läuft/spielt)
+CurrentPlayItemInquiry welcher (/Song) (/gerade/jetzt/jetzt gerade) (läuft/spielt)
 CurrentPlayItemInquiry welches (/Lied/Video) das ist
-CurrentPlayItemInquiry welches (/Lied/Video) (/gerade/jetzt/gerade jetzt/jetzt gerade/in diesem Moment) (läuft/spielt)
+CurrentPlayItemInquiry welches (/Lied/Video) (/gerade/jetzt/jetzt gerade) (läuft/spielt)
 
-CurrentPlayItemTimeRemaining wie viel (/zeit) von (dem/(diesem/meinem) (audio/video) /(dem/diesem/meinem) Film/(der/dieser/meiner) (Serie/Episode/Folge)/(dem/diesem/meinem) Lied) (/noch) verbleibt
-CurrentPlayItemTimeRemaining wie viel (/zeit) noch verbleibt
-CurrentPlayItemTimeRemaining wie viel länger (das/(dieses/mein) (audio/video) /(der/dieser/mein) Film/(die/diese/meine) (Serie/Episode/Folge)/(das/dieses/mein) Lied) (/noch) (ist/geht/läuft)
+CurrentPlayItemTimeRemaining (wann/um wieviel Uhr) (das Video/der Film/die (Serie/Episode/Folge)/das Lied) (endet/enden wird/aus sein wird/aus ist/zuende ist)
+CurrentPlayItemTimeRemaining wie lang(/e) (das Video/der Film/die (Serie/Episode/Folge)/das Lied) (/noch) (ist/geht/läuft)
 CurrentPlayItemTimeRemaining wie lange das noch (ist/geht/läuft)
-CurrentPlayItemTimeRemaining (wann/welche Uhrzeit) (das/(dieses/mein) (audio/video) /(der/dieser/mein) Film/(die/diese/meine) (Serie/Episode/Folge)/(das/dieses/mein) Lied) (ende(t/n wird)/zu ende ist)
 
 Hibernate (/system) (ruhezustand/tiefschlaf/hibernate)
 Reboot (/system) (neustarten/reboot)
