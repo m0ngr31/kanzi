@@ -1,3 +1,11 @@
+v2.6.2 (05/28/2017)
+* Add ListenToLatestAlbum (by artist) Intent
+* Include song artists in results
+* Fix WatchNextEpisode and ContinueLastShow Intents
+* Fix AudioStreamNext/Previous
+* Update documentation
+* Update translations
+
 v2.6.1 (05/22/2017)
 * Update German translation
 * Better handling of non-ASCII strings
