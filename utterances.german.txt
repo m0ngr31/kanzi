@@ -115,7 +115,7 @@ WatchLatestEpisode zeige (neueste/letzte) (Episode/Folge) von {Show}
 
 ShuffleShow zufallswiedergabe (/aller) episoden von {Show}
 
-ShuffleLatestAlbum shuffle (/starte) Zufallswiedergabe des (aktuellen/neuen/aktuellsten/neuesten/zuletzt hinzugefügten) Albums von {Artist}
+ShuffleLatestAlbum (shuffle/(/starte) Zufallswiedergabe) des (aktuellen/neuen/aktuellsten/neuesten/zuletzt hinzugefügten) Albums von {Artist}
 
 ShuffleAlbum zufallswiedergabe (album/des albums/vom album) {Album}
 ShuffleAlbum zufallswiedergabe (/album/das albums/vom album) {Album} von {Artist}
