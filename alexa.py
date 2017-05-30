@@ -1073,7 +1073,7 @@ def alexa_subtitles_off():
 
   kodi = Kodi(config, context)
   kodi.PlayerSubtitlesOff()
-  response_text = kodi.GetCurrentSubtitles()
+  response_text = render_template('subtitles_disable').encode("utf-8")
 
   return statement(response_text).simple_card(card_title, response_text)
 
