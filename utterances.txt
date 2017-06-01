@@ -202,3 +202,8 @@ AddonGlobalSearch search for {Album}
 AddonGlobalSearch search for {Artist}
 
 OpenRemote open (remote/controls/controller)
+
+WatchPVRBroadcast (watch/play/find/look for) the (program/broadcast) (/called) {Broadcast}
+WatchPVRBroadcast (jump/change channel) to {Broadcast}
+WatchPVRChannel (play/watch) (p.v.r./t.v./live t.v.) (/channel) {Channel}
+WatchPVRChannel (play/watch) channel {Channel}

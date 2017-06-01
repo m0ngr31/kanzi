@@ -2211,5 +2211,37 @@ def prepare_help_message():
 def session_ended():
   return "", 200
 
+@ask.intent('WatchPVRChannel')
+def alexa_watch_pvr_channel(Channel):
+  card_title = render_template('playing_pvr_channel').encode("utf-8")
+  print card_title
+
+  kodi = Kodi(config, context)
+  channel_id, channel_label = kodi.FindPVRChannel(Channel)
+  if channel_id:
+    action = render_template('playing_empty').encode("utf-8")
+    kodi.WatchPVRChannel(channel_id)
+    response_text = render_template('playing_action', action=action, movie_name=channel_label).encode("utf-8")
+  else:
+    response_text = render_template('could_not_find_pvr_channel', heard_pvr_channel=Channel).encode("utf-8")
+
+  return statement(response_text).simple_card(card_title, response_text)
+
+@ask.intent('WatchPVRBroadcast')
+def alexa_watch_pvr_broadcast(Broadcast):
+  card_title = render_template('playing_pvr_channel').encode("utf-8")
+  print card_title
+
+  kodi = Kodi(config, context)
+  broadcast_id, broadcast_label, channel_id, channel_label = kodi.FindPVRBroadcast(Broadcast)
+  if broadcast_id:
+    kodi.WatchPVRChannel(channel_id)
+    response_text = render_template('playing_pvr_broadcast',
+                                    broadcast_name = broadcast_label,
+                                    channel_name = channel_label).encode("utf-8")
+  else:
+    response_text = render_template('could_not_find_pvr_broadcast', heard_pvr_broadcast=Broadcast).encode("utf-8")
+
+  return statement(response_text).simple_card(card_title, response_text)
 
 # End of intent methods
