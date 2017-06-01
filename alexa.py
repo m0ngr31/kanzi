@@ -2088,9 +2088,9 @@ def alexa_what_new_movies(Genre):
 
   # Select from specified genre if one was matched
   if genre_located:
-    new_movies = kodi.GetUnwatchedMoviesByGenre(genre_located['label'])
+    new_movies = kodi.GetUnwatchedMoviesByGenre(genre_located['label'],max=10)
   else:
-    new_movies = kodi.GetUnwatchedMovies()
+    new_movies = kodi.GetUnwatchedMovies(max=10)
 
   new_movie_names = list(set([u'%s' % (x['title']) for x in new_movies]))
   num_movies = len(new_movie_names)
