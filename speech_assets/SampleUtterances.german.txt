@@ -10,10 +10,6 @@ AddonGlobalSearch suche nach {Album}
 AddonGlobalSearch suche nach {Artist}
 AddonGlobalSearch suche nach {Movie}
 AddonGlobalSearch suche nach {Show}
-AddonGlobalSearch suche {Album}
-AddonGlobalSearch suche {Artist}
-AddonGlobalSearch suche {Movie}
-AddonGlobalSearch suche {Show}
 AudioStreamNext Sprache umschalten
 AudioStreamNext audio Stream umschalten
 AudioStreamNext nächste Sprache
