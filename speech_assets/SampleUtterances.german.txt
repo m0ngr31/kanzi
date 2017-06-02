@@ -496,8 +496,6 @@ NewShowInquiry ob wir neue Folgen von {Show} haben
 NewShowInquiry ob wir neue Folgen {Show} haben
 NewShowInquiry ob wir neue von {Show} haben
 NewShowInquiry ob wir neue {Show} haben
-OpenRemote öffne Controller
-OpenRemote öffne Fernbedienung
 PageDown Seite nach unten
 PageDown Seite runter
 PageDown navigier Seite nach unten

@@ -116,8 +116,6 @@ you_have_episode_list: "Es gibt neue Folgen für {{ items }}"
 
 volume_set: "Lautstärke auf {{ num }} gestellt"
 
-open_remote: "Starte Fernbedienungs-Modus, zum Benutzen sage gehe nach oben oder gehe zurück, so als wenn Du die Fernbedienung benutzen würdest, sage Stopp um den Fernbedienungs-Modus zu verlassen"
-
 help: "Du kannst mich fragen ob es neue Serien gibt, einen Film, Serie oder Sänger zu spielen, oder die Wiedergabe von Medien zu bedienen"
 
 help_play: "Spezifiziere bitte den Medientyp mit dem Wiedergabebefehl, so wie Spiele den Film Ghost Busters"
@@ -301,8 +299,6 @@ search: "Suche"
 
 help_card: "Hilfe"
 
-open_remote_card: "Öffne Fernbedienung"
-
 playback_stopped: "Wiedergabe gestoppt"
 
 unknown_playing: "Der Titel der aktuellen Wiedergabe ist unbekannt"
@@ -322,7 +318,7 @@ remaining_time: ", und die Wiedergabe wird um {{ end_time }} enden"
 ##   General Templates    ##
 ############################
 
-pause: " "
+confirmed: " "
 
 and_more: ", und mehr"
 

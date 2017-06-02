@@ -116,8 +116,6 @@ you_have_episode_list: "There are new episodes of {{ items }}"
 
 volume_set: "Volume set to {{ num }}"
 
-open_remote: "Starting remote control mode, to use say go up, go back as if you were pressing buttons, say stop to exit control mode"
-
 help: "You can ask me whether there are any new shows, to play a movie, tv show, or artist, or control playback of media."
 
 help_play: "Please specify the media type in your play command, such as, play the movie ghost busters."
@@ -301,8 +299,6 @@ search: "Search"
 
 help_card: "Help"
 
-open_remote_card: "Opening remote"
-
 playback_stopped: "Playback stopped"
 
 unknown_playing: "The currently playing item is unknown"
@@ -322,7 +318,7 @@ remaining_time: ", and it will end at {{ end_time }}"
 ##   General Templates    ##
 ############################
 
-pause: " "
+confirmed: " "
 
 and_more: ", and more"
 
