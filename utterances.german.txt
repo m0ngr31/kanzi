@@ -207,5 +207,3 @@ AddonGlobalSearch suche nach {Show}
 AddonGlobalSearch suche nach {Movie}
 AddonGlobalSearch suche nach {Album}
 AddonGlobalSearch suche nach {Artist}
-
-OpenRemote öffne (Fernbedienung/Controller)

@@ -1138,9 +1138,8 @@ def alexa_player_move_up():
 
   kodi = Kodi(config, context)
   kodi.PlayerMoveUp()
-  response_text = ""
-
-  return statement(response_text).simple_card(card_title, response_text)
+  response_text = render_template('confirmed').encode("utf-8")
+  return question(response_text)
 
 
 # Handle the PlayerMoveDown intent.
@@ -1151,9 +1150,8 @@ def alexa_player_move_down():
 
   kodi = Kodi(config, context)
   kodi.PlayerMoveDown()
-  response_text = ""
-
-  return statement(response_text).simple_card(card_title, response_text)
+  response_text = render_template('confirmed').encode("utf-8")
+  return question(response_text)
 
 
 # Handle the PlayerMoveLeft intent.
@@ -1164,9 +1162,8 @@ def alexa_player_move_left():
 
   kodi = Kodi(config, context)
   kodi.PlayerMoveLeft()
-  response_text = ""
-
-  return statement(response_text).simple_card(card_title, response_text)
+  response_text = render_template('confirmed').encode("utf-8")
+  return question(response_text)
 
 
 # Handle the PlayerMoveRight intent.
@@ -1177,9 +1174,8 @@ def alexa_player_move_right():
 
   kodi = Kodi(config, context)
   kodi.PlayerMoveRight()
-  response_text = ""
-
-  return statement(response_text).simple_card(card_title, response_text)
+  response_text = render_template('confirmed').encode("utf-8")
+  return question(response_text)
 
 
 # Handle the PlayerRotateClockwise intent.
@@ -1190,9 +1186,8 @@ def alexa_player_rotate_clockwise():
 
   kodi = Kodi(config, context)
   kodi.PlayerRotateClockwise()
-  response_text = ""
-
-  return statement(response_text).simple_card(card_title, response_text)
+  response_text = render_template('confirmed').encode("utf-8")
+  return question(response_text)
 
 
 # Handle the PlayerRotateCounterClockwise intent.
@@ -1203,9 +1198,8 @@ def alexa_player_rotate_counterclockwise():
 
   kodi = Kodi(config, context)
   kodi.PlayerRotateCounterClockwise()
-  response_text = ""
-
-  return statement(response_text).simple_card(card_title, response_text)
+  response_text = render_template('confirmed').encode("utf-8")
+  return question(response_text)
 
 
 # Handle the PlayerZoomHold intent.
@@ -1215,7 +1209,6 @@ def alexa_player_zoom_hold():
   print card_title
 
   response_text = ""
-
   return statement(response_text).simple_card(card_title, response_text)
 
 
@@ -1227,9 +1220,8 @@ def alexa_player_zoom_in():
 
   kodi = Kodi(config, context)
   kodi.PlayerZoomIn()
-  response_text = ""
-
-  return statement(response_text).simple_card(card_title, response_text)
+  response_text = render_template('confirmed').encode("utf-8")
+  return question(response_text)
 
 
 # Handle the PlayerZoomInMoveUp intent.
@@ -1241,9 +1233,8 @@ def alexa_player_zoom_in_move_up():
   kodi = Kodi(config, context)
   kodi.PlayerZoomIn()
   kodi.PlayerMoveUp()
-  response_text = ""
-
-  return statement(response_text).simple_card(card_title, response_text)
+  response_text = render_template('confirmed').encode("utf-8")
+  return question(response_text)
 
 
 # Handle the PlayerZoomInMoveDown intent.
@@ -1255,9 +1246,8 @@ def alexa_player_zoom_in_move_down():
   kodi = Kodi(config, context)
   kodi.PlayerZoomIn()
   kodi.PlayerMoveDown()
-  response_text = ""
-
-  return statement(response_text).simple_card(card_title, response_text)
+  response_text = render_template('confirmed').encode("utf-8")
+  return question(response_text)
 
 
 # Handle the PlayerZoomInMoveLeft intent.
@@ -1269,9 +1259,8 @@ def alexa_player_zoom_in_move_left():
   kodi = Kodi(config, context)
   kodi.PlayerZoomIn()
   kodi.PlayerMoveLeft()
-  response_text = ""
-
-  return statement(response_text).simple_card(card_title, response_text)
+  response_text = render_template('confirmed').encode("utf-8")
+  return question(response_text)
 
 
 # Handle the PlayerZoomInMoveRight intent.
@@ -1283,9 +1272,8 @@ def alexa_player_zoom_in_move_right():
   kodi = Kodi(config, context)
   kodi.PlayerZoomIn()
   kodi.PlayerMoveRight()
-  response_text = ""
-
-  return statement(response_text).simple_card(card_title, response_text)
+  response_text = render_template('confirmed').encode("utf-8")
+  return question(response_text)
 
 
 # Handle the PlayerZoomOut intent.
@@ -1296,9 +1284,8 @@ def alexa_player_zoom_out():
 
   kodi = Kodi(config, context)
   kodi.PlayerZoomOut()
-  response_text = ""
-
-  return statement(response_text).simple_card(card_title, response_text)
+  response_text = render_template('confirmed').encode("utf-8")
+  return question(response_text)
 
 
 # Handle the PlayerZoomOutMoveUp intent.
@@ -1310,9 +1297,8 @@ def alexa_player_zoom_out_move_up():
   kodi = Kodi(config, context)
   kodi.PlayerZoomOut()
   kodi.PlayerMoveUp()
-  response_text = ""
-
-  return statement(response_text).simple_card(card_title, response_text)
+  response_text = render_template('confirmed').encode("utf-8")
+  return question(response_text)
 
 
 # Handle the PlayerZoomOutMoveDown intent.
@@ -1324,9 +1310,8 @@ def alexa_player_zoom_out_move_down():
   kodi = Kodi(config, context)
   kodi.PlayerZoomOut()
   kodi.PlayerMoveDown()
-  response_text = ""
-
-  return statement(response_text).simple_card(card_title, response_text)
+  response_text = render_template('confirmed').encode("utf-8")
+  return question(response_text)
 
 
 # Handle the PlayerZoomOutMoveLeft intent.
@@ -1338,9 +1323,8 @@ def alexa_player_zoom_out_move_left():
   kodi = Kodi(config, context)
   kodi.PlayerZoomOut()
   kodi.PlayerMoveLeft()
-  response_text = ""
-
-  return statement(response_text).simple_card(card_title, response_text)
+  response_text = render_template('confirmed').encode("utf-8")
+  return question(response_text)
 
 
 # Handle the PlayerZoomOutMoveRight intent.
@@ -1352,9 +1336,8 @@ def alexa_player_zoom_out_move_right():
   kodi = Kodi(config, context)
   kodi.PlayerZoomOut()
   kodi.PlayerMoveRight()
-  response_text = ""
-
-  return statement(response_text).simple_card(card_title, response_text)
+  response_text = render_template('confirmed').encode("utf-8")
+  return question(response_text)
 
 
 # Handle the PlayerZoomReset intent.
@@ -1365,21 +1348,8 @@ def alexa_player_zoom_reset():
 
   kodi = Kodi(config, context)
   kodi.PlayerZoom(1)
-  response_text = ""
-
-  return statement(response_text).simple_card(card_title, response_text)
-
-
-# Handle the OpenRemote intent.
-@ask.intent('OpenRemote')
-def alexa_open_remote():
-  card_title = render_template('open_remote_card').encode("utf-8")
-  print card_title
-
-  session.attributes['navigating'] = True
-
-  response_text = render_template('open_remote').encode("utf-8")
-  return question(response_text).reprompt("").simple_card(card_title, response_text)
+  response_text = render_template('confirmed').encode("utf-8")
+  return question(response_text)
 
 
 # Handle the Menu intent.
@@ -1389,12 +1359,8 @@ def alexa_context_menu():
 
   kodi = Kodi(config, context)
   kodi.Menu()
-  response_text = render_template('pause').encode("utf-8")
-
-  if not 'navigating' in session.attributes:
-    return statement(response_text)
-
-  return question(response_text).reprompt(response_text)
+  response_text = render_template('confirmed').encode("utf-8")
+  return question(response_text)
 
 
 # Handle the Home intent.
@@ -1404,12 +1370,8 @@ def alexa_go_home():
 
   kodi = Kodi(config, context)
   kodi.Home()
-  response_text = render_template('pause').encode("utf-8")
-
-  if not 'navigating' in session.attributes:
-    return statement(response_text)
-
-  return question(response_text).reprompt(response_text)
+  response_text = render_template('confirmed').encode("utf-8")
+  return question(response_text)
 
 
 # Handle the Select intent.
@@ -1419,12 +1381,8 @@ def alexa_select():
 
   kodi = Kodi(config, context)
   kodi.Select()
-  response_text = render_template('pause').encode("utf-8")
-
-  if not 'navigating' in session.attributes:
-    return statement(response_text)
-
-  return question(response_text).reprompt(response_text)
+  response_text = render_template('confirmed').encode("utf-8")
+  return question(response_text)
 
 
 # Handle the PageUp intent.
@@ -1434,12 +1392,8 @@ def alexa_pageup():
 
   kodi = Kodi(config, context)
   kodi.PageUp()
-  response_text = render_template('pause').encode("utf-8")
-
-  if not 'navigating' in session.attributes:
-    return statement(response_text)
-
-  return question(response_text).reprompt(response_text)
+  response_text = render_template('confirmed').encode("utf-8")
+  return question(response_text)
 
 
 # Handle the PageDown intent.
@@ -1449,12 +1403,8 @@ def alexa_pagedown():
 
   kodi = Kodi(config, context)
   kodi.PageDown()
-  response_text = render_template('pause').encode("utf-8")
-
-  if not 'navigating' in session.attributes:
-    return statement(response_text)
-
-  return question(response_text).reprompt(response_text)
+  response_text = render_template('confirmed').encode("utf-8")
+  return question(response_text)
 
 
 # Handle the Left intent.
@@ -1464,12 +1414,8 @@ def alexa_left():
 
   kodi = Kodi(config, context)
   kodi.Left()
-  response_text = render_template('pause').encode("utf-8")
-
-  if not 'navigating' in session.attributes:
-    return statement(response_text)
-
-  return question(response_text).reprompt(response_text)
+  response_text = render_template('confirmed').encode("utf-8")
+  return question(response_text)
 
 
 # Handle the Right intent.
@@ -1479,12 +1425,8 @@ def alexa_right():
 
   kodi = Kodi(config, context)
   kodi.Right()
-  response_text = render_template('pause').encode("utf-8")
-
-  if not 'navigating' in session.attributes:
-    return statement(response_text)
-
-  return question(response_text).reprompt(response_text)
+  response_text = render_template('confirmed').encode("utf-8")
+  return question(response_text)
 
 
 # Handle the Up intent.
@@ -1494,12 +1436,8 @@ def alexa_up():
 
   kodi = Kodi(config, context)
   kodi.Up()
-  response_text = render_template('pause').encode("utf-8")
-
-  if not 'navigating' in session.attributes:
-    return statement(response_text)
-
-  return question(response_text).reprompt(response_text)
+  response_text = render_template('confirmed').encode("utf-8")
+  return question(response_text)
 
 
 # Handle the Down intent.
@@ -1509,12 +1447,8 @@ def alexa_down():
 
   kodi = Kodi(config, context)
   kodi.Down()
-  response_text = render_template('pause').encode("utf-8")
-
-  if not 'navigating' in session.attributes:
-    return statement(response_text)
-
-  return question(response_text).reprompt(response_text)
+  response_text = render_template('confirmed').encode("utf-8")
+  return question(response_text)
 
 
 # Handle the Back intent.
@@ -1524,12 +1458,8 @@ def alexa_back():
 
   kodi = Kodi(config, context)
   kodi.Back()
-  response_text = render_template('pause').encode("utf-8")
-
-  if not 'navigating' in session.attributes:
-    return statement(response_text)
-
-  return question(response_text).reprompt(response_text)
+  response_text = render_template('confirmed').encode("utf-8")
+  return question(response_text)
 
 
 # Handle the Shutdown intent.
