@@ -68,7 +68,10 @@ def alexa_new_show_inquiry(Show):
   else:
     response_text = render_template('could_not_find', heard_name=Show).encode("utf-8")
 
-  return statement(response_text).simple_card(card_title, response_text)
+  if not 'queries_keep_open' in session.attributes:
+    return statement(response_text).simple_card(card_title, response_text)
+
+  return question(response_text)
 
 
 # Handle the CurrentPlayItemInquiry intent.
@@ -1503,7 +1506,10 @@ def alexa_ejectmedia():
   kodi = Kodi(config, context)
   kodi.SystemEjectMedia()
 
-  return statement(card_title).simple_card(card_title, "")
+  if not 'queries_keep_open' in session.attributes:
+    return statement(card_title).simple_card(card_title, '')
+
+  return question(card_title)
 
 
 # Handle the CleanVideo intent.
@@ -1627,7 +1633,10 @@ def alexa_addon_globalsearch(Movie, Show, Artist, Album, Song):
   else:
     response_text = render_template('could_not_find_generic').encode("utf-8")
 
-  return statement(response_text).simple_card(card_title, response_text)
+  if not 'queries_keep_open' in session.attributes:
+    return statement(response_text).simple_card(card_title, response_text)
+
+  return question(response_text).reprompt(response_text)
 
 
 # Handle the WatchVideo intent.
@@ -1997,7 +2006,10 @@ def alexa_what_new_albums():
       album_list += render_template('and') + limited_new_album_names[-1]
     response_text = render_template('you_have_list', items=album_list).encode("utf-8")
 
-  return statement(response_text).simple_card(card_title, response_text)
+  if not 'queries_keep_open' in session.attributes:
+    return statement(response_text).simple_card(card_title, response_text)
+
+  return question(response_text)
 
 
 # Handle the WhatNewMovies intent.
@@ -2043,7 +2055,10 @@ def alexa_what_new_movies(Genre):
       movie_list += render_template('and') + limited_new_movie_names[-1]
     response_text = render_template('you_have_list', items=movie_list).encode("utf-8")
 
-  return statement(response_text).simple_card(card_title, response_text)
+  if not 'queries_keep_open' in session.attributes:
+    return statement(response_text).simple_card(card_title, response_text)
+
+  return question(response_text)
 
 
 # Handle the WhatNewShows intent.
@@ -2087,7 +2102,10 @@ def alexa_what_new_episodes():
       show_list += render_template('and') + limited_new_show_names[-1]
     response_text = render_template('you_have_episode_list', items=show_list).encode("utf-8")
 
-  return statement(response_text).simple_card(card_title, response_text)
+  if not 'queries_keep_open' in session.attributes:
+    return statement(response_text).simple_card(card_title, response_text)
+
+  return question(response_text)
 
 
 # Handle the WhatAlbums intent.
@@ -2116,7 +2134,10 @@ def alexa_what_albums(Artist):
   else:
     response_text = render_template('could_not_find', heard_name=Artist).encode("utf-8")
 
-  return statement(response_text).simple_card(card_title, response_text)
+  if not 'queries_keep_open' in session.attributes:
+    return statement(response_text).simple_card(card_title, response_text)
+
+  return question(response_text)
 
 
 @ask.intent('AMAZON.HelpIntent')
@@ -2126,16 +2147,22 @@ def prepare_help_message():
   card_title = render_template('help_card').encode("utf-8")
   print card_title
 
+  if not 'queries_keep_open' in session.attributes:
+    return statement(response_text).simple_card(card_title, response_text)
+
   return question(response_text).reprompt(reprompt_text)
 
 
 # No intents invoked
 @ask.launch
-def prepare_help_message():
+def alexa_launch():
   response_text = render_template('welcome').encode("utf-8")
   reprompt_text = render_template('what_to_do').encode("utf-8")
   card_title = response_text
   print card_title
+
+  # All non-playback requests should keep the session open
+  session.attributes['queries_keep_open'] = True
 
   return question(response_text).reprompt(reprompt_text)
 
