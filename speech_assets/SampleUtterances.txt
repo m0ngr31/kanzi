@@ -188,14 +188,6 @@ Mute set unmute
 Mute toggle mute
 Mute toggle unmute
 Mute unmute
-NewShowInquiry if there are any episodes of {Show}
-NewShowInquiry if there are any new episodes of {Show}
-NewShowInquiry if there is a new episode of {Show}
-NewShowInquiry if there is an episode of {Show}
-NewShowInquiry if we have a new episode of {Show}
-NewShowInquiry if we have an episode of {Show}
-NewShowInquiry if we have any episodes of {Show}
-NewShowInquiry if we have any new episodes of {Show}
 PageDown go page down
 PageDown navigate page down
 PageDown page down
@@ -583,6 +575,14 @@ WhatNewAlbums what new albums are there
 WhatNewAlbums what new albums are there to listen to
 WhatNewAlbums what new albums do i have
 WhatNewAlbums what new albums do i have to listen to
+WhatNewEpisodes if there are any episodes of {Show}
+WhatNewEpisodes if there are any new episodes of {Show}
+WhatNewEpisodes if there is a new episode of {Show}
+WhatNewEpisodes if there is an episode of {Show}
+WhatNewEpisodes if we have a new episode of {Show}
+WhatNewEpisodes if we have an episode of {Show}
+WhatNewEpisodes if we have any episodes of {Show}
+WhatNewEpisodes if we have any new episodes of {Show}
 WhatNewMovies are there any new {Genre} films
 WhatNewMovies are there any new {Genre} films recorded
 WhatNewMovies are there any new {Genre} films recorded to watch

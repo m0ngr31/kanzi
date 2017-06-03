@@ -151,12 +151,12 @@ WhatNewShows welche (/neue) Serie (wartet/(fertig/aufgenommen worden) ist)
 WhatNewShows welche neuen Serien (warten/(fertig/aufgenommen worden) sind)
 WhatNewShows welche (neue Serie/neuen Serien) (habe ich/haben wir/gibt es/ich habe/wir haben/es gibt)
 
-NewShowInquiry ob es eine neue (/Episode/Folge) (/von) {Show} gibt
-NewShowInquiry ob wir eine neue (/Episode/Folge) (/von) {Show} haben
-NewShowInquiry ob du eine neue (/Episode/Folge) (/von) {Show} hast
-NewShowInquiry ob es neue (/Episoden/Folgen) (/von) {Show} gibt
-NewShowInquiry ob wir neue (/Episoden/Folgen) (/von) {Show} haben
-NewShowInquiry ob du neue (/Episoden/Folgen) (/von) {Show} hast
+WhatNewEpisodes ob es eine neue (/Episode/Folge) (/von) {Show} gibt
+WhatNewEpisodes ob wir eine neue (/Episode/Folge) (/von) {Show} haben
+WhatNewEpisodes ob du eine neue (/Episode/Folge) (/von) {Show} hast
+WhatNewEpisodes ob es neue (/Episoden/Folgen) (/von) {Show} gibt
+WhatNewEpisodes ob wir neue (/Episoden/Folgen) (/von) {Show} haben
+WhatNewEpisodes ob du neue (/Episoden/Folgen) (/von) {Show} hast
 
 PartyMode (zufallswiedergabe/spiel(/e) (/zufällige/irgendwelche)) (Musik/Lieder/Songs/Mucke)
 PartyMode leg(/e) (/zufällige/irgendwelche) (Musik/Lieder/Songs/Mucke) auf

@@ -42,38 +42,6 @@ ask = Ask(app, "/", None, path=TEMPLATE_FILE)
 
 # Start of intent methods
 
-# Handle the NewShowInquiry intent.
-@ask.intent('NewShowInquiry')
-def alexa_new_show_inquiry(Show):
-  card_title = render_template('looking_for_show', heard_show=Show).encode("utf-8")
-  print card_title
-
-  kodi = Kodi(config, context)
-  show_id, show_label = kodi.FindTvShow(Show)
-  if show_id:
-    episodes_result = kodi.GetUnwatchedEpisodesFromShow(show_id)
-
-    if not 'episodes' in episodes_result['result']:
-      num_of_unwatched = 0
-    else:
-      num_of_unwatched = len(episodes_result['result']['episodes'])
-
-    if num_of_unwatched > 0:
-      if num_of_unwatched == 1:
-        response_text = render_template('one_unseen_show', show_name=show_label).encode("utf-8")
-      else:
-        response_text = render_template('multiple_unseen_show', show_name=show_label, num=num_of_unwatched).encode("utf-8")
-    else:
-      response_text = render_template('no_unseen_show', show_name=show_label).encode("utf-8")
-  else:
-    response_text = render_template('could_not_find', heard_name=Show).encode("utf-8")
-
-  if not 'queries_keep_open' in session.attributes:
-    return statement(response_text).simple_card(card_title, response_text)
-
-  return question(response_text)
-
-
 # Handle the CurrentPlayItemInquiry intent.
 @ask.intent('CurrentPlayItemInquiry')
 def alexa_current_playitem_inquiry():
@@ -2101,6 +2069,38 @@ def alexa_what_new_episodes():
     elif num_shows > 1:
       show_list += render_template('and') + limited_new_show_names[-1]
     response_text = render_template('you_have_episode_list', items=show_list).encode("utf-8")
+
+  if not 'queries_keep_open' in session.attributes:
+    return statement(response_text).simple_card(card_title, response_text)
+
+  return question(response_text)
+
+
+# Handle the WhatNewEpisodes intent.
+@ask.intent('WhatNewEpisodes')
+def alexa_what_new_episodes(Show):
+  card_title = render_template('looking_for_show', heard_show=Show).encode("utf-8")
+  print card_title
+
+  kodi = Kodi(config, context)
+  show_id, show_label = kodi.FindTvShow(Show)
+  if show_id:
+    episodes_result = kodi.GetUnwatchedEpisodesFromShow(show_id)
+
+    if not 'episodes' in episodes_result['result']:
+      num_of_unwatched = 0
+    else:
+      num_of_unwatched = len(episodes_result['result']['episodes'])
+
+    if num_of_unwatched > 0:
+      if num_of_unwatched == 1:
+        response_text = render_template('one_unseen_show', show_name=show_label).encode("utf-8")
+      else:
+        response_text = render_template('multiple_unseen_show', show_name=show_label, num=num_of_unwatched).encode("utf-8")
+    else:
+      response_text = render_template('no_unseen_show', show_name=show_label).encode("utf-8")
+  else:
+    response_text = render_template('could_not_find', heard_name=Show).encode("utf-8")
 
   if not 'queries_keep_open' in session.attributes:
     return statement(response_text).simple_card(card_title, response_text)

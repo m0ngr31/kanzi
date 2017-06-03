@@ -155,8 +155,8 @@ WhatNewShows (if there are/are there/do i have) new shows (/to watch)
 WhatNewShows (if there is/is there/do i have) a new show (/to watch)
 WhatNewShows what new shows (do i have/are there) (/to watch)
 
-NewShowInquiry if (there is/we have) (a new/an) episode of {Show}
-NewShowInquiry if (there are/we have) any (/new) episodes of {Show}
+WhatNewEpisodes if (there is/we have) (a new/an) episode of {Show}
+WhatNewEpisodes if (there are/we have) any (/new) episodes of {Show}
 
 PartyMode listen to random music
 PartyMode listen to all music
