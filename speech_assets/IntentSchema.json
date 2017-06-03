@@ -16,7 +16,7 @@
       "intent": "WhatNewShows"
     },
     {
-      "intent": "NewShowInquiry",
+      "intent": "WhatNewEpisodes",
       "slots": [
         {
           "name": "Show",
