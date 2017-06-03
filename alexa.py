@@ -2063,7 +2063,7 @@ def alexa_what_new_albums():
       album_list += u', ' + one_album
     if num_albums > 5:
       album_list += u', ' + limited_new_album_names[-1] + render_template('and_more_similar')
-    else:
+    elif num_albums > 1:
       album_list += render_template('and') + limited_new_album_names[-1]
     response_text = render_template('you_have_list', items=album_list).encode("utf-8")
 
@@ -2106,7 +2106,7 @@ def alexa_what_new_movies(Genre):
       movie_list += u', ' + one_movie
     if num_movies > 5:
       movie_list += u', ' + limited_new_movie_names[-1] + render_template('and_more_similar')
-    else:
+    elif num_movies > 1:
       movie_list += render_template('and') + limited_new_movie_names[-1]
     response_text = render_template('you_have_list', items=movie_list).encode("utf-8")
 
@@ -2150,7 +2150,7 @@ def alexa_what_new_episodes():
       show_list += u', ' + one_show
     if num_shows > 5:
       show_list += u', ' + limited_new_show_names[-1] + render_template('and_more_similar')
-    else:
+    elif num_shows > 1:
       show_list += render_template('and') + limited_new_show_names[-1]
     response_text = render_template('you_have_episode_list', items=show_list).encode("utf-8")
 
