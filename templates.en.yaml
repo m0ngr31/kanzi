@@ -318,7 +318,7 @@ remaining_time: ", and it will end at {{ end_time }}"
 ##   General Templates    ##
 ############################
 
-confirmed: " "
+short_confirm: " "
 
 and_more: ", and more"
 

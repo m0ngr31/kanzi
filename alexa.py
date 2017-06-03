@@ -1141,7 +1141,7 @@ def alexa_player_move_up():
 
   kodi = Kodi(config, context)
   kodi.PlayerMoveUp()
-  response_text = render_template('confirmed').encode("utf-8")
+  response_text = render_template('short_confirm').encode("utf-8")
   return question(response_text)
 
 
@@ -1153,7 +1153,7 @@ def alexa_player_move_down():
 
   kodi = Kodi(config, context)
   kodi.PlayerMoveDown()
-  response_text = render_template('confirmed').encode("utf-8")
+  response_text = render_template('short_confirm').encode("utf-8")
   return question(response_text)
 
 
@@ -1165,7 +1165,7 @@ def alexa_player_move_left():
 
   kodi = Kodi(config, context)
   kodi.PlayerMoveLeft()
-  response_text = render_template('confirmed').encode("utf-8")
+  response_text = render_template('short_confirm').encode("utf-8")
   return question(response_text)
 
 
@@ -1177,7 +1177,7 @@ def alexa_player_move_right():
 
   kodi = Kodi(config, context)
   kodi.PlayerMoveRight()
-  response_text = render_template('confirmed').encode("utf-8")
+  response_text = render_template('short_confirm').encode("utf-8")
   return question(response_text)
 
 
@@ -1189,7 +1189,7 @@ def alexa_player_rotate_clockwise():
 
   kodi = Kodi(config, context)
   kodi.PlayerRotateClockwise()
-  response_text = render_template('confirmed').encode("utf-8")
+  response_text = render_template('short_confirm').encode("utf-8")
   return question(response_text)
 
 
@@ -1201,7 +1201,7 @@ def alexa_player_rotate_counterclockwise():
 
   kodi = Kodi(config, context)
   kodi.PlayerRotateCounterClockwise()
-  response_text = render_template('confirmed').encode("utf-8")
+  response_text = render_template('short_confirm').encode("utf-8")
   return question(response_text)
 
 
@@ -1223,7 +1223,7 @@ def alexa_player_zoom_in():
 
   kodi = Kodi(config, context)
   kodi.PlayerZoomIn()
-  response_text = render_template('confirmed').encode("utf-8")
+  response_text = render_template('short_confirm').encode("utf-8")
   return question(response_text)
 
 
@@ -1236,7 +1236,7 @@ def alexa_player_zoom_in_move_up():
   kodi = Kodi(config, context)
   kodi.PlayerZoomIn()
   kodi.PlayerMoveUp()
-  response_text = render_template('confirmed').encode("utf-8")
+  response_text = render_template('short_confirm').encode("utf-8")
   return question(response_text)
 
 
@@ -1249,7 +1249,7 @@ def alexa_player_zoom_in_move_down():
   kodi = Kodi(config, context)
   kodi.PlayerZoomIn()
   kodi.PlayerMoveDown()
-  response_text = render_template('confirmed').encode("utf-8")
+  response_text = render_template('short_confirm').encode("utf-8")
   return question(response_text)
 
 
@@ -1262,7 +1262,7 @@ def alexa_player_zoom_in_move_left():
   kodi = Kodi(config, context)
   kodi.PlayerZoomIn()
   kodi.PlayerMoveLeft()
-  response_text = render_template('confirmed').encode("utf-8")
+  response_text = render_template('short_confirm').encode("utf-8")
   return question(response_text)
 
 
@@ -1275,7 +1275,7 @@ def alexa_player_zoom_in_move_right():
   kodi = Kodi(config, context)
   kodi.PlayerZoomIn()
   kodi.PlayerMoveRight()
-  response_text = render_template('confirmed').encode("utf-8")
+  response_text = render_template('short_confirm').encode("utf-8")
   return question(response_text)
 
 
@@ -1287,7 +1287,7 @@ def alexa_player_zoom_out():
 
   kodi = Kodi(config, context)
   kodi.PlayerZoomOut()
-  response_text = render_template('confirmed').encode("utf-8")
+  response_text = render_template('short_confirm').encode("utf-8")
   return question(response_text)
 
 
@@ -1300,7 +1300,7 @@ def alexa_player_zoom_out_move_up():
   kodi = Kodi(config, context)
   kodi.PlayerZoomOut()
   kodi.PlayerMoveUp()
-  response_text = render_template('confirmed').encode("utf-8")
+  response_text = render_template('short_confirm').encode("utf-8")
   return question(response_text)
 
 
@@ -1313,7 +1313,7 @@ def alexa_player_zoom_out_move_down():
   kodi = Kodi(config, context)
   kodi.PlayerZoomOut()
   kodi.PlayerMoveDown()
-  response_text = render_template('confirmed').encode("utf-8")
+  response_text = render_template('short_confirm').encode("utf-8")
   return question(response_text)
 
 
@@ -1326,7 +1326,7 @@ def alexa_player_zoom_out_move_left():
   kodi = Kodi(config, context)
   kodi.PlayerZoomOut()
   kodi.PlayerMoveLeft()
-  response_text = render_template('confirmed').encode("utf-8")
+  response_text = render_template('short_confirm').encode("utf-8")
   return question(response_text)
 
 
@@ -1339,7 +1339,7 @@ def alexa_player_zoom_out_move_right():
   kodi = Kodi(config, context)
   kodi.PlayerZoomOut()
   kodi.PlayerMoveRight()
-  response_text = render_template('confirmed').encode("utf-8")
+  response_text = render_template('short_confirm').encode("utf-8")
   return question(response_text)
 
 
@@ -1351,7 +1351,7 @@ def alexa_player_zoom_reset():
 
   kodi = Kodi(config, context)
   kodi.PlayerZoom(1)
-  response_text = render_template('confirmed').encode("utf-8")
+  response_text = render_template('short_confirm').encode("utf-8")
   return question(response_text)
 
 
@@ -1362,7 +1362,7 @@ def alexa_context_menu():
 
   kodi = Kodi(config, context)
   kodi.Menu()
-  response_text = render_template('confirmed').encode("utf-8")
+  response_text = render_template('short_confirm').encode("utf-8")
   return question(response_text)
 
 
@@ -1373,7 +1373,7 @@ def alexa_go_home():
 
   kodi = Kodi(config, context)
   kodi.Home()
-  response_text = render_template('confirmed').encode("utf-8")
+  response_text = render_template('short_confirm').encode("utf-8")
   return question(response_text)
 
 
@@ -1384,7 +1384,7 @@ def alexa_select():
 
   kodi = Kodi(config, context)
   kodi.Select()
-  response_text = render_template('confirmed').encode("utf-8")
+  response_text = render_template('short_confirm').encode("utf-8")
   return question(response_text)
 
 
@@ -1395,7 +1395,7 @@ def alexa_pageup():
 
   kodi = Kodi(config, context)
   kodi.PageUp()
-  response_text = render_template('confirmed').encode("utf-8")
+  response_text = render_template('short_confirm').encode("utf-8")
   return question(response_text)
 
 
@@ -1406,7 +1406,7 @@ def alexa_pagedown():
 
   kodi = Kodi(config, context)
   kodi.PageDown()
-  response_text = render_template('confirmed').encode("utf-8")
+  response_text = render_template('short_confirm').encode("utf-8")
   return question(response_text)
 
 
@@ -1417,7 +1417,7 @@ def alexa_left():
 
   kodi = Kodi(config, context)
   kodi.Left()
-  response_text = render_template('confirmed').encode("utf-8")
+  response_text = render_template('short_confirm').encode("utf-8")
   return question(response_text)
 
 
@@ -1428,7 +1428,7 @@ def alexa_right():
 
   kodi = Kodi(config, context)
   kodi.Right()
-  response_text = render_template('confirmed').encode("utf-8")
+  response_text = render_template('short_confirm').encode("utf-8")
   return question(response_text)
 
 
@@ -1439,7 +1439,7 @@ def alexa_up():
 
   kodi = Kodi(config, context)
   kodi.Up()
-  response_text = render_template('confirmed').encode("utf-8")
+  response_text = render_template('short_confirm').encode("utf-8")
   return question(response_text)
 
 
@@ -1450,7 +1450,7 @@ def alexa_down():
 
   kodi = Kodi(config, context)
   kodi.Down()
-  response_text = render_template('confirmed').encode("utf-8")
+  response_text = render_template('short_confirm').encode("utf-8")
   return question(response_text)
 
 
@@ -1461,7 +1461,7 @@ def alexa_back():
 
   kodi = Kodi(config, context)
   kodi.Back()
-  response_text = render_template('confirmed').encode("utf-8")
+  response_text = render_template('short_confirm').encode("utf-8")
   return question(response_text)
 
 

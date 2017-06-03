@@ -318,7 +318,7 @@ remaining_time: ", und die Wiedergabe wird um {{ end_time }} enden"
 ##   General Templates    ##
 ############################
 
-confirmed: " "
+short_confirm: " "
 
 and_more: ", und mehr"
 
