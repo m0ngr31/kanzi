@@ -2073,8 +2073,11 @@ def alexa_what_new_albums():
 # Handle the WhatNewMovies intent.
 @ask.intent('WhatNewMovies')
 def alexa_what_new_movies(Genre):
-  genre_located = None
   kodi = Kodi(config, context)
+
+  genre_located = None
+  new_movies = None
+
   # If a genre has been specified, match the genre for use in selecting random films
   if Genre:
     card_title = render_template('newly_added_movies_genre', genre=Genre).encode("utf-8")
@@ -2082,18 +2085,18 @@ def alexa_what_new_movies(Genre):
     if 'result' in genres and 'genres' in genres['result']:
       genres_list = genres['result']['genres']
       genre_located = kodi.matchHeard(Genre, genres_list)
+      if genre_located:
+        new_movies = kodi.GetUnwatchedMoviesByGenre(genre_located['label'])
   else:
     card_title = render_template('newly_added_movies').encode("utf-8")
+    new_movies = kodi.GetUnwatchedMovies()
   print card_title
 
-  # Select from specified genre if one was matched
-  if genre_located:
-    new_movies = kodi.GetUnwatchedMoviesByGenre(genre_located['label'])
+  if new_movies:
+    new_movie_names = list(set([u'%s' % (x['title']) for x in new_movies]))
+    num_movies = len(new_movie_names)
   else:
-    new_movies = kodi.GetUnwatchedMovies()
-
-  new_movie_names = list(set([u'%s' % (x['title']) for x in new_movies]))
-  num_movies = len(new_movie_names)
+    num_movies = 0
 
   if num_movies == 0:
     # There's been nothing added to Kodi recently
