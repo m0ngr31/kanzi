@@ -523,37 +523,58 @@ WatchNextEpisode play the next episode of {Show}
 WatchNextEpisode watch next episode of {Show}
 WatchNextEpisode watch the next episode of {Show}
 WatchPVRBroadcast change channel to {Broadcast}
-WatchPVRBroadcast find the broadcast called {Broadcast}
-WatchPVRBroadcast find the broadcast {Broadcast}
-WatchPVRBroadcast find the program called {Broadcast}
-WatchPVRBroadcast find the program {Broadcast}
-WatchPVRBroadcast jump to {Broadcast}
-WatchPVRBroadcast look for the broadcast called {Broadcast}
-WatchPVRBroadcast look for the broadcast {Broadcast}
-WatchPVRBroadcast look for the program called {Broadcast}
-WatchPVRBroadcast look for the program {Broadcast}
-WatchPVRBroadcast play the broadcast called {Broadcast}
+WatchPVRBroadcast play broadcast {Broadcast}
+WatchPVRBroadcast play live t. v. broadcast {Broadcast}
+WatchPVRBroadcast play live t. v. program {Broadcast}
+WatchPVRBroadcast play program {Broadcast}
+WatchPVRBroadcast play t. v. broadcast {Broadcast}
+WatchPVRBroadcast play t. v. program {Broadcast}
 WatchPVRBroadcast play the broadcast {Broadcast}
-WatchPVRBroadcast play the program called {Broadcast}
+WatchPVRBroadcast play the live t. v. broadcast {Broadcast}
+WatchPVRBroadcast play the live t. v. program {Broadcast}
 WatchPVRBroadcast play the program {Broadcast}
-WatchPVRBroadcast watch the broadcast called {Broadcast}
+WatchPVRBroadcast play the t. v. broadcast {Broadcast}
+WatchPVRBroadcast play the t. v. program {Broadcast}
+WatchPVRBroadcast watch broadcast {Broadcast}
+WatchPVRBroadcast watch live t. v. broadcast {Broadcast}
+WatchPVRBroadcast watch live t. v. program {Broadcast}
+WatchPVRBroadcast watch program {Broadcast}
+WatchPVRBroadcast watch t. v. broadcast {Broadcast}
+WatchPVRBroadcast watch t. v. program {Broadcast}
 WatchPVRBroadcast watch the broadcast {Broadcast}
-WatchPVRBroadcast watch the program called {Broadcast}
+WatchPVRBroadcast watch the live t. v. broadcast {Broadcast}
+WatchPVRBroadcast watch the live t. v. program {Broadcast}
 WatchPVRBroadcast watch the program {Broadcast}
+WatchPVRBroadcast watch the t. v. broadcast {Broadcast}
+WatchPVRBroadcast watch the t. v. program {Broadcast}
 WatchPVRChannel play channel {Channel}
-WatchPVRChannel play live t.v. channel {Channel}
-WatchPVRChannel play live t.v. {Channel}
-WatchPVRChannel play p.v.r. channel {Channel}
-WatchPVRChannel play p.v.r. {Channel}
-WatchPVRChannel play t.v. channel {Channel}
-WatchPVRChannel play t.v. {Channel}
+WatchPVRChannel play live t. v. channel {Channel}
+WatchPVRChannel play live t. v. {Channel}
+WatchPVRChannel play p. v. r. channel {Channel}
+WatchPVRChannel play p. v. r. {Channel}
+WatchPVRChannel play t. v. channel {Channel}
+WatchPVRChannel play t. v. {Channel}
+WatchPVRChannel play the channel {Channel}
+WatchPVRChannel play the live t. v. channel {Channel}
+WatchPVRChannel play the live t. v. {Channel}
+WatchPVRChannel play the p. v. r. channel {Channel}
+WatchPVRChannel play the p. v. r. {Channel}
+WatchPVRChannel play the t. v. channel {Channel}
+WatchPVRChannel play the t. v. {Channel}
 WatchPVRChannel watch channel {Channel}
-WatchPVRChannel watch live t.v. channel {Channel}
-WatchPVRChannel watch live t.v. {Channel}
-WatchPVRChannel watch p.v.r. channel {Channel}
-WatchPVRChannel watch p.v.r. {Channel}
-WatchPVRChannel watch t.v. channel {Channel}
-WatchPVRChannel watch t.v. {Channel}
+WatchPVRChannel watch live t. v. channel {Channel}
+WatchPVRChannel watch live t. v. {Channel}
+WatchPVRChannel watch p. v. r. channel {Channel}
+WatchPVRChannel watch p. v. r. {Channel}
+WatchPVRChannel watch t. v. channel {Channel}
+WatchPVRChannel watch t. v. {Channel}
+WatchPVRChannel watch the channel {Channel}
+WatchPVRChannel watch the live t. v. channel {Channel}
+WatchPVRChannel watch the live t. v. {Channel}
+WatchPVRChannel watch the p. v. r. channel {Channel}
+WatchPVRChannel watch the p. v. r. {Channel}
+WatchPVRChannel watch the t. v. channel {Channel}
+WatchPVRChannel watch the t. v. {Channel}
 WatchRandomEpisode play episode of {Show}
 WatchRandomEpisode play random episode of {Show}
 WatchRandomEpisode watch episode of {Show}
