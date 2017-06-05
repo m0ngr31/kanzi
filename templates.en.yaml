@@ -34,6 +34,22 @@ searching: "Searching for {{ heard_name }}"
 
 opening: "Opening {{ heard_name }}"
 
+no_recommendations: "I'm sorry, I have nothing to recommend"
+
+recommend_movie: "How about the movie {{ movie_name }}?"
+
+recommend_show: "How about the show {{ show_name }}?"
+
+recommend_episode: "How about season {{ season }} episode {{ episode }} of {{ show_name }}?"
+
+recommend_musicvideo: "How about the music video {{ musicvideo_name }} by {{ artist_name }}?"
+
+recommend_artist: "How about music by {{ artist_name }}?"
+
+recommend_album: "How about the album {{ album_name }} by {{ artist_name }}?"
+
+recommend_song: "How about some of your recently added songs?"
+
 playing: "Playing {{ heard_name }}"
 
 playing_album: "Playing album {{ album_name }}"
@@ -317,6 +333,8 @@ remaining_time: ", and it will end at {{ end_time }}"
 ############################
 ##   General Templates    ##
 ############################
+
+okay: "Okay"
 
 short_confirm: " "
 

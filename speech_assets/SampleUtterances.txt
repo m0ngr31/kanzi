@@ -401,6 +401,40 @@ PlayerZoomReset normal zoom
 PlayerZoomReset reset zoom
 Reboot reboot
 Reboot reboot system
+RecommendAlbum recommend album
+RecommendAlbum suggest album
+RecommendArtist recommend artist
+RecommendArtist recommend band
+RecommendArtist recommend music artist
+RecommendArtist recommend musician
+RecommendArtist suggest artist
+RecommendArtist suggest band
+RecommendArtist suggest music artist
+RecommendArtist suggest musician
+RecommendEpisode recommend episode
+RecommendEpisode recommend t. v. episode
+RecommendEpisode suggest episode
+RecommendEpisode suggest t. v. episode
+RecommendMedia recommend something
+RecommendMedia suggest something
+RecommendMovie recommend film
+RecommendMovie recommend movie
+RecommendMovie suggest film
+RecommendMovie suggest movie
+RecommendMusicVideo recommend music video
+RecommendMusicVideo suggest music video
+RecommendShow recommend show
+RecommendShow recommend t. v. show
+RecommendShow suggest show
+RecommendShow suggest t. v. show
+RecommendSong recommend music
+RecommendSong recommend some music
+RecommendSong recommend some songs
+RecommendSong recommend songs
+RecommendSong suggest music
+RecommendSong suggest some music
+RecommendSong suggest some songs
+RecommendSong suggest songs
 Right go right
 Right navigate right
 Right right

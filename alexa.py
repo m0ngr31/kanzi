@@ -144,12 +144,11 @@ def alexa_resume():
   return alexa_play_pause()
 
 
-def alexa_stop_cancel():
+def alexa_stop_cancel(kodi):
   if session.new:
     card_title = render_template('stopping').encode("utf-8")
     print card_title
 
-    kodi = Kodi(config, context)
     kodi.PlayerStop()
     response_text = render_template('playback_stopped').encode("utf-8")
 
@@ -161,25 +160,34 @@ def alexa_stop_cancel():
 # Handle the AMAZON.StopIntent intent.
 @ask.intent('AMAZON.StopIntent')
 def alexa_stop():
-  return alexa_stop_cancel()
+  kodi = Kodi(config, context)
+  return alexa_stop_cancel(kodi)
 
 
 # Handle the AMAZON.CancelIntent intent.
 @ask.intent('AMAZON.CancelIntent')
 def alexa_cancel():
-  return alexa_stop_cancel()
+  kodi = Kodi(config, context)
+  return alexa_stop_cancel(kodi)
 
 
 # Handle the AMAZON.NoIntent intent.
 @ask.intent('AMAZON.NoIntent')
 def alexa_no():
-  return alexa_stop_cancel()
+  kodi = Kodi(config, context)
+  if 'play_media_type' in session.attributes and session.attributes['play_media_type'] != 'song':
+    item = kodi.GetRecommendedItem(session.attributes['play_media_type'] + 's')
+    return alexa_recommend_item(kodi, item)
+  return alexa_stop_cancel(kodi)
 
 
 # Handle the AMAZON.YesIntent intent.
 @ask.intent('AMAZON.YesIntent')
 def alexa_yes():
+  card_title = None
+
   kodi = Kodi(config, context)
+
   if 'shutting_down' in session.attributes:
     quit = config.get(kodi.dev_cfg_section, 'shutdown')
     if quit and quit == 'quit':
@@ -197,6 +205,44 @@ def alexa_yes():
   elif 'suspending' in session.attributes:
     card_title = render_template('suspending_system').encode("utf-8")
     kodi.SystemSuspend()
+
+  if 'play_media_type' in session.attributes:
+    media_type = session.attributes['play_media_type']
+    media_id = session.attributes['play_media_id']
+    if media_type == 'movie':
+      kodi.PlayMovie(media_id)
+    elif media_type == 'tvshow':
+      # Try the next unwatched episode first
+      episode_id = kodi.GetNextUnwatchedEpisode(media_id)
+      if not episode_id:
+        # All episodes already watched, so just play a random episode
+        episodes_result = kodi.GetEpisodesFromShow(media_id)
+        for episode in episodes_result['result']['episodes']:
+          episodes_array.append(episode['episodeid'])
+        episode_id = random.choice(episodes_array)
+      kodi.PlayEpisode(episode_id)
+    elif media_type == 'episode':
+      kodi.PlayEpisode(media_id)
+    elif media_type == 'artist':
+      songs_result = kodi.GetArtistSongs(media_id)
+      songs = songs_result['result']['songs']
+      songs_array = []
+      for song in songs:
+        songs_array.append(song['songid'])
+
+      kodi.PlayerStop()
+      kodi.ClearAudioPlaylist()
+      # Always shuffle when generically requesting an Artist
+      kodi.AddSongsToPlaylist(songs_array, True)
+      kodi.StartAudioPlaylist()
+    elif media_type == 'album':
+      kodi.PlayerStop()
+      kodi.ClearAudioPlaylist()
+      kodi.AddAlbumToPlaylist(media_id)
+      kodi.StartAudioPlaylist()
+    elif media_type == 'song':
+      alexa_listen_recently_added_songs()
+    return statement(render_template('okay').encode("utf-8"))
 
   if card_title:
     print card_title
@@ -1943,6 +1989,106 @@ def alexa_shuffle_playlist(VideoPlaylist, AudioPlaylist):
     response_text = render_template('error_parsing_results').encode("utf-8")
 
   return statement(response_text).simple_card(card_title, response_text)
+
+
+def alexa_recommend_item(kodi, item=None):
+  response_text = render_template('no_recommendations').encode("utf-8")
+
+  if item[0] == 'movie':
+    response_text = render_template('recommend_movie', movie_name=item[1]).encode("utf-8")
+  elif item[0] == 'tvshow':
+    response_text = render_template('recommend_show', show_name=item[1]).encode("utf-8")
+  elif item[0] == 'episode':
+    episode_details = kodi.GetEpisodeDetails(item[2])
+    response_text = render_template('recommend_episode', season=episode_details['season'], episode=episode_details['episode'], show_name=episode_details['showtitle']).encode("utf-8")
+  elif item[0] == 'musicvideo':
+    musicvideo_details = kodi.GetMusicVideoDetails(item[2])
+    response_text = render_template('recommend_musicvideo', musicvideo_name=item[1], artist_name=musicvideo_details['artist'][0]).encode("utf-8")
+  elif item[0] == 'artist':
+    response_text = render_template('recommend_artist', artist_name=item[1]).encode("utf-8")
+  elif item[0] == 'album':
+    album_details = kodi.GetAlbumDetails(item[2])
+    response_text = render_template('recommend_album', album_name=item[1], artist_name=album_details['artist'][0]).encode("utf-8")
+  elif item[0] == 'song':
+    # XXX script.skin.helper doesn't return any recommended songs atm,
+    # so just offer to play recently added songs
+    response_text = render_template('recommend_song').encode("utf-8")
+
+  session.attributes['play_media_type'] = item[0]
+  session.attributes['play_media_id'] = item[2]
+  return question(response_text)
+
+
+# Handle the RecommendMedia intent.
+@ask.intent('RecommendMedia')
+def alexa_recommend_media():
+  print "Recommending media"
+  kodi = Kodi(config, context)
+  item = kodi.GetRecommendedItem()
+  return alexa_recommend_item(kodi, item)
+
+
+# Handle the RecommendMovie intent.
+@ask.intent('RecommendMovie')
+def alexa_recommend_movie():
+  print "Recommending movie"
+  kodi = Kodi(config, context)
+  item = kodi.GetRecommendedItem('movies')
+  return alexa_recommend_item(kodi, item)
+
+
+# Handle the RecommendShow intent.
+@ask.intent('RecommendShow')
+def alexa_recommend_show():
+  print "Recommending show"
+  kodi = Kodi(config, context)
+  item = kodi.GetRecommendedItem('tvshows')
+  return alexa_recommend_item(kodi, item)
+
+
+# Handle the RecommendEpisode intent.
+@ask.intent('RecommendEpisode')
+def alexa_recommend_episode():
+  print "Recommending episode"
+  kodi = Kodi(config, context)
+  item = kodi.GetRecommendedItem('episodes')
+  return alexa_recommend_item(kodi, item)
+
+
+# Handle the RecommendMusicVideo intent.
+@ask.intent('RecommendMusicVideo')
+def alexa_recommend_music_video():
+  print "Recommending music video"
+  kodi = Kodi(config, context)
+  item = kodi.GetRecommendedItem('musicvideos')
+  return alexa_recommend_item(kodi, item)
+
+
+# Handle the RecommendArtist intent.
+@ask.intent('RecommendArtist')
+def alexa_recommend_artist():
+  print "Recommending artist"
+  kodi = Kodi(config, context)
+  item = kodi.GetRecommendedItem('artists')
+  return alexa_recommend_item(kodi, item)
+
+
+# Handle the RecommendAlbum intent.
+@ask.intent('RecommendAlbum')
+def alexa_recommend_album():
+  print "Recommending album"
+  kodi = Kodi(config, context)
+  item = kodi.GetRecommendedItem('albums')
+  return alexa_recommend_item(kodi, item)
+
+
+# Handle the RecommendSong intent.
+@ask.intent('RecommendSong')
+def alexa_recommend_song():
+  print "Recommending song"
+  kodi = Kodi(config, context)
+  item = kodi.GetRecommendedItem('songs')
+  return alexa_recommend_item(kodi, item)
 
 
 # Handle the WhatNewAlbums intent.
