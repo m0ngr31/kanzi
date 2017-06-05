@@ -661,6 +661,43 @@ def alexa_shuffle_album(Album, Artist):
   return alexa_listen_album(Album, Artist, True)
 
 
+# Handle the ListenToLatestAlbum intent (Play latest album by a specific artist).
+@ask.intent('ListenToLatestAlbum')
+def alexa_listen_latest_album(Artist, shuffle=False):
+  if shuffle:
+    card_title = render_template('shuffling_latest_album_card', heard_artist=Artist).encode("utf-8")
+  else:
+    card_title = render_template('playing_latest_album_card', heard_artist=Artist).encode("utf-8")
+  print card_title
+
+  kodi = Kodi(config, context)
+  artist_id, artist_label = kodi.FindArtist(Artist)
+  if artist_id:
+    album_id = kodi.GetNewestAlbumFromArtist(artist_id)
+    if album_id:
+      album_label = kodi.GetAlbumDetails(album_id)['label']
+      kodi.PlayerStop()
+      kodi.ClearAudioPlaylist()
+      kodi.AddAlbumToPlaylist(album_id, shuffle)
+      kodi.StartAudioPlaylist()
+      if shuffle:
+        response_text = render_template('shuffling_album_artist', album_name=album_label, artist=artist_label).encode("utf-8")
+      else:
+        response_text = render_template('playing_album_artist', album_name=album_label, artist=artist_label).encode("utf-8")
+    else:
+      response_text = render_template('could_not_find_artist', artist_name=artist_label).encode("utf-8")
+  else:
+    response_text = render_template('could_not_find', heard_name=Artist).encode("utf-8")
+
+  return statement(response_text).simple_card(card_title, response_text)
+
+
+# Handle the ShuffleLatestAlbum intent (Shuffle latest album by a specific artist).
+@ask.intent('ShuffleLatestAlbum')
+def alexa_shuffle_latest_album(Artist):
+  return alexa_listen_latest_album(Artist, True)
+
+
 # Handle the ListenToSong intent (Play a song, or song by a specific artist).
 @ask.intent('ListenToSong')
 def alexa_listen_song(Song, Artist):
@@ -1036,7 +1073,7 @@ def alexa_subtitles_off():
 
   kodi = Kodi(config, context)
   kodi.PlayerSubtitlesOff()
-  response_text = kodi.GetCurrentSubtitles()
+  response_text = render_template('subtitles_disable').encode("utf-8")
 
   return statement(response_text).simple_card(card_title, response_text)
 
@@ -2026,7 +2063,7 @@ def alexa_what_new_albums():
       album_list += u', ' + one_album
     if num_albums > 5:
       album_list += u', ' + limited_new_album_names[-1] + render_template('and_more_similar')
-    else:
+    elif num_albums > 1:
       album_list += render_template('and') + limited_new_album_names[-1]
     response_text = render_template('you_have_list', items=album_list).encode("utf-8")
 
@@ -2036,8 +2073,11 @@ def alexa_what_new_albums():
 # Handle the WhatNewMovies intent.
 @ask.intent('WhatNewMovies')
 def alexa_what_new_movies(Genre):
-  genre_located = None
   kodi = Kodi(config, context)
+
+  genre_located = None
+  new_movies = None
+
   # If a genre has been specified, match the genre for use in selecting random films
   if Genre:
     card_title = render_template('newly_added_movies_genre', genre=Genre).encode("utf-8")
@@ -2045,18 +2085,18 @@ def alexa_what_new_movies(Genre):
     if 'result' in genres and 'genres' in genres['result']:
       genres_list = genres['result']['genres']
       genre_located = kodi.matchHeard(Genre, genres_list)
+      if genre_located:
+        new_movies = kodi.GetUnwatchedMoviesByGenre(genre_located['label'])
   else:
     card_title = render_template('newly_added_movies').encode("utf-8")
+    new_movies = kodi.GetUnwatchedMovies()
   print card_title
 
-  # Select from specified genre if one was matched
-  if genre_located:
-    new_movies = kodi.GetUnwatchedMoviesByGenre(genre_located['label'])
+  if new_movies:
+    new_movie_names = list(set([u'%s' % (x['title']) for x in new_movies]))
+    num_movies = len(new_movie_names)
   else:
-    new_movies = kodi.GetUnwatchedMovies()
-
-  new_movie_names = list(set([u'%s' % (x['title']) for x in new_movies]))
-  num_movies = len(new_movie_names)
+    num_movies = 0
 
   if num_movies == 0:
     # There's been nothing added to Kodi recently
@@ -2069,7 +2109,7 @@ def alexa_what_new_movies(Genre):
       movie_list += u', ' + one_movie
     if num_movies > 5:
       movie_list += u', ' + limited_new_movie_names[-1] + render_template('and_more_similar')
-    else:
+    elif num_movies > 1:
       movie_list += render_template('and') + limited_new_movie_names[-1]
     response_text = render_template('you_have_list', items=movie_list).encode("utf-8")
 
@@ -2113,7 +2153,7 @@ def alexa_what_new_episodes():
       show_list += u', ' + one_show
     if num_shows > 5:
       show_list += u', ' + limited_new_show_names[-1] + render_template('and_more_similar')
-    else:
+    elif num_shows > 1:
       show_list += render_template('and') + limited_new_show_names[-1]
     response_text = render_template('you_have_episode_list', items=show_list).encode("utf-8")
 

@@ -165,6 +165,14 @@ ListenToAudioPlaylistRecent shuffle recently added albums
 ListenToAudioPlaylistRecent shuffle recently added audio
 ListenToAudioPlaylistRecent shuffle recently added music
 ListenToAudioPlaylistRecent shuffle recently added songs
+ListenToLatestAlbum listen to latest album by {Artist}
+ListenToLatestAlbum listen to newest album by {Artist}
+ListenToLatestAlbum listen to the latest album by {Artist}
+ListenToLatestAlbum listen to the newest album by {Artist}
+ListenToLatestAlbum play latest album by {Artist}
+ListenToLatestAlbum play newest album by {Artist}
+ListenToLatestAlbum play the latest album by {Artist}
+ListenToLatestAlbum play the newest album by {Artist}
 ListenToSong listen to song {Song}
 ListenToSong listen to song {Song} by {Artist}
 ListenToSong listen to the song {Song}
@@ -422,6 +430,10 @@ ShuffleAudioPlaylist shuffle the song playlist {AudioPlaylist}
 ShuffleAudioPlaylist shuffle {AudioPlaylist} audio playlist
 ShuffleAudioPlaylist shuffle {AudioPlaylist} music playlist
 ShuffleAudioPlaylist shuffle {AudioPlaylist} song playlist
+ShuffleLatestAlbum shuffle latest album by {Artist}
+ShuffleLatestAlbum shuffle newest album by {Artist}
+ShuffleLatestAlbum shuffle the latest album by {Artist}
+ShuffleLatestAlbum shuffle the newest album by {Artist}
 ShuffleMedia shuffle {Show}
 ShufflePlaylist shuffle playlist {AudioPlaylist}
 ShufflePlaylist shuffle playlist {VideoPlaylist}

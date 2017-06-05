@@ -10,10 +10,6 @@ AddonGlobalSearch suche nach {Album}
 AddonGlobalSearch suche nach {Artist}
 AddonGlobalSearch suche nach {Movie}
 AddonGlobalSearch suche nach {Show}
-AddonGlobalSearch suche {Album}
-AddonGlobalSearch suche {Artist}
-AddonGlobalSearch suche {Movie}
-AddonGlobalSearch suche {Show}
 AudioStreamNext Sprache umschalten
 AudioStreamNext audio Stream umschalten
 AudioStreamNext nächste Sprache
@@ -31,13 +27,8 @@ CleanVideo Video Bibliothek säubern
 CleanVideo säuber Video Bibliothek
 CleanVideo säubere Video Bibliothek
 CurrentPlayItemInquiry was das ist
-CurrentPlayItemInquiry was gerade jetzt läuft
-CurrentPlayItemInquiry was gerade jetzt spielt
 CurrentPlayItemInquiry was gerade läuft
 CurrentPlayItemInquiry was gerade spielt
-CurrentPlayItemInquiry was in diesem Moment läuft
-CurrentPlayItemInquiry was in diesem Moment spielt
-CurrentPlayItemInquiry was ist das
 CurrentPlayItemInquiry was jetzt gerade läuft
 CurrentPlayItemInquiry was jetzt gerade spielt
 CurrentPlayItemInquiry was jetzt läuft
@@ -45,12 +36,8 @@ CurrentPlayItemInquiry was jetzt spielt
 CurrentPlayItemInquiry was läuft
 CurrentPlayItemInquiry was spielt
 CurrentPlayItemInquiry welche Episode das ist
-CurrentPlayItemInquiry welche Episode gerade jetzt läuft
-CurrentPlayItemInquiry welche Episode gerade jetzt spielt
 CurrentPlayItemInquiry welche Episode gerade läuft
 CurrentPlayItemInquiry welche Episode gerade spielt
-CurrentPlayItemInquiry welche Episode in diesem Moment läuft
-CurrentPlayItemInquiry welche Episode in diesem Moment spielt
 CurrentPlayItemInquiry welche Episode jetzt gerade läuft
 CurrentPlayItemInquiry welche Episode jetzt gerade spielt
 CurrentPlayItemInquiry welche Episode jetzt läuft
@@ -58,12 +45,8 @@ CurrentPlayItemInquiry welche Episode jetzt spielt
 CurrentPlayItemInquiry welche Episode läuft
 CurrentPlayItemInquiry welche Episode spielt
 CurrentPlayItemInquiry welche Folge das ist
-CurrentPlayItemInquiry welche Folge gerade jetzt läuft
-CurrentPlayItemInquiry welche Folge gerade jetzt spielt
 CurrentPlayItemInquiry welche Folge gerade läuft
 CurrentPlayItemInquiry welche Folge gerade spielt
-CurrentPlayItemInquiry welche Folge in diesem Moment läuft
-CurrentPlayItemInquiry welche Folge in diesem Moment spielt
 CurrentPlayItemInquiry welche Folge jetzt gerade läuft
 CurrentPlayItemInquiry welche Folge jetzt gerade spielt
 CurrentPlayItemInquiry welche Folge jetzt läuft
@@ -71,12 +54,8 @@ CurrentPlayItemInquiry welche Folge jetzt spielt
 CurrentPlayItemInquiry welche Folge läuft
 CurrentPlayItemInquiry welche Folge spielt
 CurrentPlayItemInquiry welche Serie das ist
-CurrentPlayItemInquiry welche Serie gerade jetzt läuft
-CurrentPlayItemInquiry welche Serie gerade jetzt spielt
 CurrentPlayItemInquiry welche Serie gerade läuft
 CurrentPlayItemInquiry welche Serie gerade spielt
-CurrentPlayItemInquiry welche Serie in diesem Moment läuft
-CurrentPlayItemInquiry welche Serie in diesem Moment spielt
 CurrentPlayItemInquiry welche Serie jetzt gerade läuft
 CurrentPlayItemInquiry welche Serie jetzt gerade spielt
 CurrentPlayItemInquiry welche Serie jetzt läuft
@@ -84,12 +63,8 @@ CurrentPlayItemInquiry welche Serie jetzt spielt
 CurrentPlayItemInquiry welche Serie läuft
 CurrentPlayItemInquiry welche Serie spielt
 CurrentPlayItemInquiry welche Staffel das ist
-CurrentPlayItemInquiry welche Staffel gerade jetzt läuft
-CurrentPlayItemInquiry welche Staffel gerade jetzt spielt
 CurrentPlayItemInquiry welche Staffel gerade läuft
 CurrentPlayItemInquiry welche Staffel gerade spielt
-CurrentPlayItemInquiry welche Staffel in diesem Moment läuft
-CurrentPlayItemInquiry welche Staffel in diesem Moment spielt
 CurrentPlayItemInquiry welche Staffel jetzt gerade läuft
 CurrentPlayItemInquiry welche Staffel jetzt gerade spielt
 CurrentPlayItemInquiry welche Staffel jetzt läuft
@@ -97,12 +72,8 @@ CurrentPlayItemInquiry welche Staffel jetzt spielt
 CurrentPlayItemInquiry welche Staffel läuft
 CurrentPlayItemInquiry welche Staffel spielt
 CurrentPlayItemInquiry welche das ist
-CurrentPlayItemInquiry welche gerade jetzt läuft
-CurrentPlayItemInquiry welche gerade jetzt spielt
 CurrentPlayItemInquiry welche gerade läuft
 CurrentPlayItemInquiry welche gerade spielt
-CurrentPlayItemInquiry welche in diesem Moment läuft
-CurrentPlayItemInquiry welche in diesem Moment spielt
 CurrentPlayItemInquiry welche jetzt gerade läuft
 CurrentPlayItemInquiry welche jetzt gerade spielt
 CurrentPlayItemInquiry welche jetzt läuft
@@ -110,12 +81,8 @@ CurrentPlayItemInquiry welche jetzt spielt
 CurrentPlayItemInquiry welche läuft
 CurrentPlayItemInquiry welche spielt
 CurrentPlayItemInquiry welcher Song das ist
-CurrentPlayItemInquiry welcher Song gerade jetzt läuft
-CurrentPlayItemInquiry welcher Song gerade jetzt spielt
 CurrentPlayItemInquiry welcher Song gerade läuft
 CurrentPlayItemInquiry welcher Song gerade spielt
-CurrentPlayItemInquiry welcher Song in diesem Moment läuft
-CurrentPlayItemInquiry welcher Song in diesem Moment spielt
 CurrentPlayItemInquiry welcher Song jetzt gerade läuft
 CurrentPlayItemInquiry welcher Song jetzt gerade spielt
 CurrentPlayItemInquiry welcher Song jetzt läuft
@@ -123,12 +90,8 @@ CurrentPlayItemInquiry welcher Song jetzt spielt
 CurrentPlayItemInquiry welcher Song läuft
 CurrentPlayItemInquiry welcher Song spielt
 CurrentPlayItemInquiry welcher das ist
-CurrentPlayItemInquiry welcher gerade jetzt läuft
-CurrentPlayItemInquiry welcher gerade jetzt spielt
 CurrentPlayItemInquiry welcher gerade läuft
 CurrentPlayItemInquiry welcher gerade spielt
-CurrentPlayItemInquiry welcher in diesem Moment läuft
-CurrentPlayItemInquiry welcher in diesem Moment spielt
 CurrentPlayItemInquiry welcher jetzt gerade läuft
 CurrentPlayItemInquiry welcher jetzt gerade spielt
 CurrentPlayItemInquiry welcher jetzt läuft
@@ -136,12 +99,8 @@ CurrentPlayItemInquiry welcher jetzt spielt
 CurrentPlayItemInquiry welcher läuft
 CurrentPlayItemInquiry welcher spielt
 CurrentPlayItemInquiry welches Lied das ist
-CurrentPlayItemInquiry welches Lied gerade jetzt läuft
-CurrentPlayItemInquiry welches Lied gerade jetzt spielt
 CurrentPlayItemInquiry welches Lied gerade läuft
 CurrentPlayItemInquiry welches Lied gerade spielt
-CurrentPlayItemInquiry welches Lied in diesem Moment läuft
-CurrentPlayItemInquiry welches Lied in diesem Moment spielt
 CurrentPlayItemInquiry welches Lied jetzt gerade läuft
 CurrentPlayItemInquiry welches Lied jetzt gerade spielt
 CurrentPlayItemInquiry welches Lied jetzt läuft
@@ -149,12 +108,8 @@ CurrentPlayItemInquiry welches Lied jetzt spielt
 CurrentPlayItemInquiry welches Lied läuft
 CurrentPlayItemInquiry welches Lied spielt
 CurrentPlayItemInquiry welches Video das ist
-CurrentPlayItemInquiry welches Video gerade jetzt läuft
-CurrentPlayItemInquiry welches Video gerade jetzt spielt
 CurrentPlayItemInquiry welches Video gerade läuft
 CurrentPlayItemInquiry welches Video gerade spielt
-CurrentPlayItemInquiry welches Video in diesem Moment läuft
-CurrentPlayItemInquiry welches Video in diesem Moment spielt
 CurrentPlayItemInquiry welches Video jetzt gerade läuft
 CurrentPlayItemInquiry welches Video jetzt gerade spielt
 CurrentPlayItemInquiry welches Video jetzt läuft
@@ -162,12 +117,8 @@ CurrentPlayItemInquiry welches Video jetzt spielt
 CurrentPlayItemInquiry welches Video läuft
 CurrentPlayItemInquiry welches Video spielt
 CurrentPlayItemInquiry welches das ist
-CurrentPlayItemInquiry welches gerade jetzt läuft
-CurrentPlayItemInquiry welches gerade jetzt spielt
 CurrentPlayItemInquiry welches gerade läuft
 CurrentPlayItemInquiry welches gerade spielt
-CurrentPlayItemInquiry welches in diesem Moment läuft
-CurrentPlayItemInquiry welches in diesem Moment spielt
 CurrentPlayItemInquiry welches jetzt gerade läuft
 CurrentPlayItemInquiry welches jetzt gerade spielt
 CurrentPlayItemInquiry welches jetzt läuft
@@ -175,332 +126,141 @@ CurrentPlayItemInquiry welches jetzt spielt
 CurrentPlayItemInquiry welches läuft
 CurrentPlayItemInquiry welches spielt
 CurrentPlayItemInquiry wer das ist
-CurrentPlayItemInquiry wer ist das
+CurrentPlayItemTimeRemaining um wieviel Uhr das Lied aus ist
+CurrentPlayItemTimeRemaining um wieviel Uhr das Lied aus sein wird
+CurrentPlayItemTimeRemaining um wieviel Uhr das Lied enden wird
+CurrentPlayItemTimeRemaining um wieviel Uhr das Lied endet
+CurrentPlayItemTimeRemaining um wieviel Uhr das Lied zuende ist
+CurrentPlayItemTimeRemaining um wieviel Uhr das Video aus ist
+CurrentPlayItemTimeRemaining um wieviel Uhr das Video aus sein wird
+CurrentPlayItemTimeRemaining um wieviel Uhr das Video enden wird
+CurrentPlayItemTimeRemaining um wieviel Uhr das Video endet
+CurrentPlayItemTimeRemaining um wieviel Uhr das Video zuende ist
+CurrentPlayItemTimeRemaining um wieviel Uhr der Film aus ist
+CurrentPlayItemTimeRemaining um wieviel Uhr der Film aus sein wird
+CurrentPlayItemTimeRemaining um wieviel Uhr der Film enden wird
+CurrentPlayItemTimeRemaining um wieviel Uhr der Film endet
+CurrentPlayItemTimeRemaining um wieviel Uhr der Film zuende ist
+CurrentPlayItemTimeRemaining um wieviel Uhr die Episode aus ist
+CurrentPlayItemTimeRemaining um wieviel Uhr die Episode aus sein wird
+CurrentPlayItemTimeRemaining um wieviel Uhr die Episode enden wird
+CurrentPlayItemTimeRemaining um wieviel Uhr die Episode endet
+CurrentPlayItemTimeRemaining um wieviel Uhr die Episode zuende ist
+CurrentPlayItemTimeRemaining um wieviel Uhr die Folge aus ist
+CurrentPlayItemTimeRemaining um wieviel Uhr die Folge aus sein wird
+CurrentPlayItemTimeRemaining um wieviel Uhr die Folge enden wird
+CurrentPlayItemTimeRemaining um wieviel Uhr die Folge endet
+CurrentPlayItemTimeRemaining um wieviel Uhr die Folge zuende ist
+CurrentPlayItemTimeRemaining um wieviel Uhr die Serie aus ist
+CurrentPlayItemTimeRemaining um wieviel Uhr die Serie aus sein wird
+CurrentPlayItemTimeRemaining um wieviel Uhr die Serie enden wird
+CurrentPlayItemTimeRemaining um wieviel Uhr die Serie endet
+CurrentPlayItemTimeRemaining um wieviel Uhr die Serie zuende ist
+CurrentPlayItemTimeRemaining wann das Lied aus ist
+CurrentPlayItemTimeRemaining wann das Lied aus sein wird
 CurrentPlayItemTimeRemaining wann das Lied enden wird
 CurrentPlayItemTimeRemaining wann das Lied endet
-CurrentPlayItemTimeRemaining wann das Lied zu ende ist
-CurrentPlayItemTimeRemaining wann das enden wird
-CurrentPlayItemTimeRemaining wann das endet
-CurrentPlayItemTimeRemaining wann das zu ende ist
+CurrentPlayItemTimeRemaining wann das Lied zuende ist
+CurrentPlayItemTimeRemaining wann das Video aus ist
+CurrentPlayItemTimeRemaining wann das Video aus sein wird
+CurrentPlayItemTimeRemaining wann das Video enden wird
+CurrentPlayItemTimeRemaining wann das Video endet
+CurrentPlayItemTimeRemaining wann das Video zuende ist
+CurrentPlayItemTimeRemaining wann der Film aus ist
+CurrentPlayItemTimeRemaining wann der Film aus sein wird
 CurrentPlayItemTimeRemaining wann der Film enden wird
 CurrentPlayItemTimeRemaining wann der Film endet
-CurrentPlayItemTimeRemaining wann der Film zu ende ist
+CurrentPlayItemTimeRemaining wann der Film zuende ist
+CurrentPlayItemTimeRemaining wann die Episode aus ist
+CurrentPlayItemTimeRemaining wann die Episode aus sein wird
 CurrentPlayItemTimeRemaining wann die Episode enden wird
 CurrentPlayItemTimeRemaining wann die Episode endet
-CurrentPlayItemTimeRemaining wann die Episode zu ende ist
+CurrentPlayItemTimeRemaining wann die Episode zuende ist
+CurrentPlayItemTimeRemaining wann die Folge aus ist
+CurrentPlayItemTimeRemaining wann die Folge aus sein wird
 CurrentPlayItemTimeRemaining wann die Folge enden wird
 CurrentPlayItemTimeRemaining wann die Folge endet
-CurrentPlayItemTimeRemaining wann die Folge zu ende ist
+CurrentPlayItemTimeRemaining wann die Folge zuende ist
+CurrentPlayItemTimeRemaining wann die Serie aus ist
+CurrentPlayItemTimeRemaining wann die Serie aus sein wird
 CurrentPlayItemTimeRemaining wann die Serie enden wird
 CurrentPlayItemTimeRemaining wann die Serie endet
-CurrentPlayItemTimeRemaining wann die Serie zu ende ist
-CurrentPlayItemTimeRemaining wann diese Episode enden wird
-CurrentPlayItemTimeRemaining wann diese Episode endet
-CurrentPlayItemTimeRemaining wann diese Episode zu ende ist
-CurrentPlayItemTimeRemaining wann diese Folge enden wird
-CurrentPlayItemTimeRemaining wann diese Folge endet
-CurrentPlayItemTimeRemaining wann diese Folge zu ende ist
-CurrentPlayItemTimeRemaining wann diese Serie enden wird
-CurrentPlayItemTimeRemaining wann diese Serie endet
-CurrentPlayItemTimeRemaining wann diese Serie zu ende ist
-CurrentPlayItemTimeRemaining wann dieser Film enden wird
-CurrentPlayItemTimeRemaining wann dieser Film endet
-CurrentPlayItemTimeRemaining wann dieser Film zu ende ist
-CurrentPlayItemTimeRemaining wann dieses Lied enden wird
-CurrentPlayItemTimeRemaining wann dieses Lied endet
-CurrentPlayItemTimeRemaining wann dieses Lied zu ende ist
-CurrentPlayItemTimeRemaining wann dieses audio enden wird
-CurrentPlayItemTimeRemaining wann dieses audio endet
-CurrentPlayItemTimeRemaining wann dieses audio zu ende ist
-CurrentPlayItemTimeRemaining wann dieses video enden wird
-CurrentPlayItemTimeRemaining wann dieses video endet
-CurrentPlayItemTimeRemaining wann dieses video zu ende ist
-CurrentPlayItemTimeRemaining wann mein Film enden wird
-CurrentPlayItemTimeRemaining wann mein Film endet
-CurrentPlayItemTimeRemaining wann mein Film zu ende ist
-CurrentPlayItemTimeRemaining wann mein Lied enden wird
-CurrentPlayItemTimeRemaining wann mein Lied endet
-CurrentPlayItemTimeRemaining wann mein Lied zu ende ist
-CurrentPlayItemTimeRemaining wann mein audio enden wird
-CurrentPlayItemTimeRemaining wann mein audio endet
-CurrentPlayItemTimeRemaining wann mein audio zu ende ist
-CurrentPlayItemTimeRemaining wann mein video enden wird
-CurrentPlayItemTimeRemaining wann mein video endet
-CurrentPlayItemTimeRemaining wann mein video zu ende ist
-CurrentPlayItemTimeRemaining wann meine Episode enden wird
-CurrentPlayItemTimeRemaining wann meine Episode endet
-CurrentPlayItemTimeRemaining wann meine Episode zu ende ist
-CurrentPlayItemTimeRemaining wann meine Folge enden wird
-CurrentPlayItemTimeRemaining wann meine Folge endet
-CurrentPlayItemTimeRemaining wann meine Folge zu ende ist
-CurrentPlayItemTimeRemaining wann meine Serie enden wird
-CurrentPlayItemTimeRemaining wann meine Serie endet
-CurrentPlayItemTimeRemaining wann meine Serie zu ende ist
-CurrentPlayItemTimeRemaining welche Uhrzeit das Lied enden wird
-CurrentPlayItemTimeRemaining welche Uhrzeit das Lied endet
-CurrentPlayItemTimeRemaining welche Uhrzeit das Lied zu ende ist
-CurrentPlayItemTimeRemaining welche Uhrzeit das enden wird
-CurrentPlayItemTimeRemaining welche Uhrzeit das endet
-CurrentPlayItemTimeRemaining welche Uhrzeit das zu ende ist
-CurrentPlayItemTimeRemaining welche Uhrzeit der Film enden wird
-CurrentPlayItemTimeRemaining welche Uhrzeit der Film endet
-CurrentPlayItemTimeRemaining welche Uhrzeit der Film zu ende ist
-CurrentPlayItemTimeRemaining welche Uhrzeit die Episode enden wird
-CurrentPlayItemTimeRemaining welche Uhrzeit die Episode endet
-CurrentPlayItemTimeRemaining welche Uhrzeit die Episode zu ende ist
-CurrentPlayItemTimeRemaining welche Uhrzeit die Folge enden wird
-CurrentPlayItemTimeRemaining welche Uhrzeit die Folge endet
-CurrentPlayItemTimeRemaining welche Uhrzeit die Folge zu ende ist
-CurrentPlayItemTimeRemaining welche Uhrzeit die Serie enden wird
-CurrentPlayItemTimeRemaining welche Uhrzeit die Serie endet
-CurrentPlayItemTimeRemaining welche Uhrzeit die Serie zu ende ist
-CurrentPlayItemTimeRemaining welche Uhrzeit diese Episode enden wird
-CurrentPlayItemTimeRemaining welche Uhrzeit diese Episode endet
-CurrentPlayItemTimeRemaining welche Uhrzeit diese Episode zu ende ist
-CurrentPlayItemTimeRemaining welche Uhrzeit diese Folge enden wird
-CurrentPlayItemTimeRemaining welche Uhrzeit diese Folge endet
-CurrentPlayItemTimeRemaining welche Uhrzeit diese Folge zu ende ist
-CurrentPlayItemTimeRemaining welche Uhrzeit diese Serie enden wird
-CurrentPlayItemTimeRemaining welche Uhrzeit diese Serie endet
-CurrentPlayItemTimeRemaining welche Uhrzeit diese Serie zu ende ist
-CurrentPlayItemTimeRemaining welche Uhrzeit dieser Film enden wird
-CurrentPlayItemTimeRemaining welche Uhrzeit dieser Film endet
-CurrentPlayItemTimeRemaining welche Uhrzeit dieser Film zu ende ist
-CurrentPlayItemTimeRemaining welche Uhrzeit dieses Lied enden wird
-CurrentPlayItemTimeRemaining welche Uhrzeit dieses Lied endet
-CurrentPlayItemTimeRemaining welche Uhrzeit dieses Lied zu ende ist
-CurrentPlayItemTimeRemaining welche Uhrzeit dieses audio enden wird
-CurrentPlayItemTimeRemaining welche Uhrzeit dieses audio endet
-CurrentPlayItemTimeRemaining welche Uhrzeit dieses audio zu ende ist
-CurrentPlayItemTimeRemaining welche Uhrzeit dieses video enden wird
-CurrentPlayItemTimeRemaining welche Uhrzeit dieses video endet
-CurrentPlayItemTimeRemaining welche Uhrzeit dieses video zu ende ist
-CurrentPlayItemTimeRemaining welche Uhrzeit mein Film enden wird
-CurrentPlayItemTimeRemaining welche Uhrzeit mein Film endet
-CurrentPlayItemTimeRemaining welche Uhrzeit mein Film zu ende ist
-CurrentPlayItemTimeRemaining welche Uhrzeit mein Lied enden wird
-CurrentPlayItemTimeRemaining welche Uhrzeit mein Lied endet
-CurrentPlayItemTimeRemaining welche Uhrzeit mein Lied zu ende ist
-CurrentPlayItemTimeRemaining welche Uhrzeit mein audio enden wird
-CurrentPlayItemTimeRemaining welche Uhrzeit mein audio endet
-CurrentPlayItemTimeRemaining welche Uhrzeit mein audio zu ende ist
-CurrentPlayItemTimeRemaining welche Uhrzeit mein video enden wird
-CurrentPlayItemTimeRemaining welche Uhrzeit mein video endet
-CurrentPlayItemTimeRemaining welche Uhrzeit mein video zu ende ist
-CurrentPlayItemTimeRemaining welche Uhrzeit meine Episode enden wird
-CurrentPlayItemTimeRemaining welche Uhrzeit meine Episode endet
-CurrentPlayItemTimeRemaining welche Uhrzeit meine Episode zu ende ist
-CurrentPlayItemTimeRemaining welche Uhrzeit meine Folge enden wird
-CurrentPlayItemTimeRemaining welche Uhrzeit meine Folge endet
-CurrentPlayItemTimeRemaining welche Uhrzeit meine Folge zu ende ist
-CurrentPlayItemTimeRemaining welche Uhrzeit meine Serie enden wird
-CurrentPlayItemTimeRemaining welche Uhrzeit meine Serie endet
-CurrentPlayItemTimeRemaining welche Uhrzeit meine Serie zu ende ist
+CurrentPlayItemTimeRemaining wann die Serie zuende ist
+CurrentPlayItemTimeRemaining wie lang das Lied geht
+CurrentPlayItemTimeRemaining wie lang das Lied ist
+CurrentPlayItemTimeRemaining wie lang das Lied läuft
+CurrentPlayItemTimeRemaining wie lang das Lied noch geht
+CurrentPlayItemTimeRemaining wie lang das Lied noch ist
+CurrentPlayItemTimeRemaining wie lang das Lied noch läuft
+CurrentPlayItemTimeRemaining wie lang das Video geht
+CurrentPlayItemTimeRemaining wie lang das Video ist
+CurrentPlayItemTimeRemaining wie lang das Video läuft
+CurrentPlayItemTimeRemaining wie lang das Video noch geht
+CurrentPlayItemTimeRemaining wie lang das Video noch ist
+CurrentPlayItemTimeRemaining wie lang das Video noch läuft
+CurrentPlayItemTimeRemaining wie lang der Film geht
+CurrentPlayItemTimeRemaining wie lang der Film ist
+CurrentPlayItemTimeRemaining wie lang der Film läuft
+CurrentPlayItemTimeRemaining wie lang der Film noch geht
+CurrentPlayItemTimeRemaining wie lang der Film noch ist
+CurrentPlayItemTimeRemaining wie lang der Film noch läuft
+CurrentPlayItemTimeRemaining wie lang die Episode geht
+CurrentPlayItemTimeRemaining wie lang die Episode ist
+CurrentPlayItemTimeRemaining wie lang die Episode läuft
+CurrentPlayItemTimeRemaining wie lang die Episode noch geht
+CurrentPlayItemTimeRemaining wie lang die Episode noch ist
+CurrentPlayItemTimeRemaining wie lang die Episode noch läuft
+CurrentPlayItemTimeRemaining wie lang die Folge geht
+CurrentPlayItemTimeRemaining wie lang die Folge ist
+CurrentPlayItemTimeRemaining wie lang die Folge läuft
+CurrentPlayItemTimeRemaining wie lang die Folge noch geht
+CurrentPlayItemTimeRemaining wie lang die Folge noch ist
+CurrentPlayItemTimeRemaining wie lang die Folge noch läuft
+CurrentPlayItemTimeRemaining wie lang die Serie geht
+CurrentPlayItemTimeRemaining wie lang die Serie ist
+CurrentPlayItemTimeRemaining wie lang die Serie läuft
+CurrentPlayItemTimeRemaining wie lang die Serie noch geht
+CurrentPlayItemTimeRemaining wie lang die Serie noch ist
+CurrentPlayItemTimeRemaining wie lang die Serie noch läuft
+CurrentPlayItemTimeRemaining wie lange das Lied geht
+CurrentPlayItemTimeRemaining wie lange das Lied ist
+CurrentPlayItemTimeRemaining wie lange das Lied läuft
+CurrentPlayItemTimeRemaining wie lange das Lied noch geht
+CurrentPlayItemTimeRemaining wie lange das Lied noch ist
+CurrentPlayItemTimeRemaining wie lange das Lied noch läuft
+CurrentPlayItemTimeRemaining wie lange das Video geht
+CurrentPlayItemTimeRemaining wie lange das Video ist
+CurrentPlayItemTimeRemaining wie lange das Video läuft
+CurrentPlayItemTimeRemaining wie lange das Video noch geht
+CurrentPlayItemTimeRemaining wie lange das Video noch ist
+CurrentPlayItemTimeRemaining wie lange das Video noch läuft
 CurrentPlayItemTimeRemaining wie lange das noch geht
 CurrentPlayItemTimeRemaining wie lange das noch ist
 CurrentPlayItemTimeRemaining wie lange das noch läuft
-CurrentPlayItemTimeRemaining wie viel länger das Lied geht
-CurrentPlayItemTimeRemaining wie viel länger das Lied ist
-CurrentPlayItemTimeRemaining wie viel länger das Lied läuft
-CurrentPlayItemTimeRemaining wie viel länger das Lied noch geht
-CurrentPlayItemTimeRemaining wie viel länger das Lied noch ist
-CurrentPlayItemTimeRemaining wie viel länger das Lied noch läuft
-CurrentPlayItemTimeRemaining wie viel länger das geht
-CurrentPlayItemTimeRemaining wie viel länger das ist
-CurrentPlayItemTimeRemaining wie viel länger das läuft
-CurrentPlayItemTimeRemaining wie viel länger das noch geht
-CurrentPlayItemTimeRemaining wie viel länger das noch ist
-CurrentPlayItemTimeRemaining wie viel länger das noch läuft
-CurrentPlayItemTimeRemaining wie viel länger der Film geht
-CurrentPlayItemTimeRemaining wie viel länger der Film ist
-CurrentPlayItemTimeRemaining wie viel länger der Film läuft
-CurrentPlayItemTimeRemaining wie viel länger der Film noch geht
-CurrentPlayItemTimeRemaining wie viel länger der Film noch ist
-CurrentPlayItemTimeRemaining wie viel länger der Film noch läuft
-CurrentPlayItemTimeRemaining wie viel länger die Episode geht
-CurrentPlayItemTimeRemaining wie viel länger die Episode ist
-CurrentPlayItemTimeRemaining wie viel länger die Episode läuft
-CurrentPlayItemTimeRemaining wie viel länger die Episode noch geht
-CurrentPlayItemTimeRemaining wie viel länger die Episode noch ist
-CurrentPlayItemTimeRemaining wie viel länger die Episode noch läuft
-CurrentPlayItemTimeRemaining wie viel länger die Folge geht
-CurrentPlayItemTimeRemaining wie viel länger die Folge ist
-CurrentPlayItemTimeRemaining wie viel länger die Folge läuft
-CurrentPlayItemTimeRemaining wie viel länger die Folge noch geht
-CurrentPlayItemTimeRemaining wie viel länger die Folge noch ist
-CurrentPlayItemTimeRemaining wie viel länger die Folge noch läuft
-CurrentPlayItemTimeRemaining wie viel länger die Serie geht
-CurrentPlayItemTimeRemaining wie viel länger die Serie ist
-CurrentPlayItemTimeRemaining wie viel länger die Serie läuft
-CurrentPlayItemTimeRemaining wie viel länger die Serie noch geht
-CurrentPlayItemTimeRemaining wie viel länger die Serie noch ist
-CurrentPlayItemTimeRemaining wie viel länger die Serie noch läuft
-CurrentPlayItemTimeRemaining wie viel länger diese Episode geht
-CurrentPlayItemTimeRemaining wie viel länger diese Episode ist
-CurrentPlayItemTimeRemaining wie viel länger diese Episode läuft
-CurrentPlayItemTimeRemaining wie viel länger diese Episode noch geht
-CurrentPlayItemTimeRemaining wie viel länger diese Episode noch ist
-CurrentPlayItemTimeRemaining wie viel länger diese Episode noch läuft
-CurrentPlayItemTimeRemaining wie viel länger diese Folge geht
-CurrentPlayItemTimeRemaining wie viel länger diese Folge ist
-CurrentPlayItemTimeRemaining wie viel länger diese Folge läuft
-CurrentPlayItemTimeRemaining wie viel länger diese Folge noch geht
-CurrentPlayItemTimeRemaining wie viel länger diese Folge noch ist
-CurrentPlayItemTimeRemaining wie viel länger diese Folge noch läuft
-CurrentPlayItemTimeRemaining wie viel länger diese Serie geht
-CurrentPlayItemTimeRemaining wie viel länger diese Serie ist
-CurrentPlayItemTimeRemaining wie viel länger diese Serie läuft
-CurrentPlayItemTimeRemaining wie viel länger diese Serie noch geht
-CurrentPlayItemTimeRemaining wie viel länger diese Serie noch ist
-CurrentPlayItemTimeRemaining wie viel länger diese Serie noch läuft
-CurrentPlayItemTimeRemaining wie viel länger dieser Film geht
-CurrentPlayItemTimeRemaining wie viel länger dieser Film ist
-CurrentPlayItemTimeRemaining wie viel länger dieser Film läuft
-CurrentPlayItemTimeRemaining wie viel länger dieser Film noch geht
-CurrentPlayItemTimeRemaining wie viel länger dieser Film noch ist
-CurrentPlayItemTimeRemaining wie viel länger dieser Film noch läuft
-CurrentPlayItemTimeRemaining wie viel länger dieses Lied geht
-CurrentPlayItemTimeRemaining wie viel länger dieses Lied ist
-CurrentPlayItemTimeRemaining wie viel länger dieses Lied läuft
-CurrentPlayItemTimeRemaining wie viel länger dieses Lied noch geht
-CurrentPlayItemTimeRemaining wie viel länger dieses Lied noch ist
-CurrentPlayItemTimeRemaining wie viel länger dieses Lied noch läuft
-CurrentPlayItemTimeRemaining wie viel länger dieses audio geht
-CurrentPlayItemTimeRemaining wie viel länger dieses audio ist
-CurrentPlayItemTimeRemaining wie viel länger dieses audio läuft
-CurrentPlayItemTimeRemaining wie viel länger dieses audio noch geht
-CurrentPlayItemTimeRemaining wie viel länger dieses audio noch ist
-CurrentPlayItemTimeRemaining wie viel länger dieses audio noch läuft
-CurrentPlayItemTimeRemaining wie viel länger dieses video geht
-CurrentPlayItemTimeRemaining wie viel länger dieses video ist
-CurrentPlayItemTimeRemaining wie viel länger dieses video läuft
-CurrentPlayItemTimeRemaining wie viel länger dieses video noch geht
-CurrentPlayItemTimeRemaining wie viel länger dieses video noch ist
-CurrentPlayItemTimeRemaining wie viel länger dieses video noch läuft
-CurrentPlayItemTimeRemaining wie viel länger mein Film geht
-CurrentPlayItemTimeRemaining wie viel länger mein Film ist
-CurrentPlayItemTimeRemaining wie viel länger mein Film läuft
-CurrentPlayItemTimeRemaining wie viel länger mein Film noch geht
-CurrentPlayItemTimeRemaining wie viel länger mein Film noch ist
-CurrentPlayItemTimeRemaining wie viel länger mein Film noch läuft
-CurrentPlayItemTimeRemaining wie viel länger mein Lied geht
-CurrentPlayItemTimeRemaining wie viel länger mein Lied ist
-CurrentPlayItemTimeRemaining wie viel länger mein Lied läuft
-CurrentPlayItemTimeRemaining wie viel länger mein Lied noch geht
-CurrentPlayItemTimeRemaining wie viel länger mein Lied noch ist
-CurrentPlayItemTimeRemaining wie viel länger mein Lied noch läuft
-CurrentPlayItemTimeRemaining wie viel länger mein audio geht
-CurrentPlayItemTimeRemaining wie viel länger mein audio ist
-CurrentPlayItemTimeRemaining wie viel länger mein audio läuft
-CurrentPlayItemTimeRemaining wie viel länger mein audio noch geht
-CurrentPlayItemTimeRemaining wie viel länger mein audio noch ist
-CurrentPlayItemTimeRemaining wie viel länger mein audio noch läuft
-CurrentPlayItemTimeRemaining wie viel länger mein video geht
-CurrentPlayItemTimeRemaining wie viel länger mein video ist
-CurrentPlayItemTimeRemaining wie viel länger mein video läuft
-CurrentPlayItemTimeRemaining wie viel länger mein video noch geht
-CurrentPlayItemTimeRemaining wie viel länger mein video noch ist
-CurrentPlayItemTimeRemaining wie viel länger mein video noch läuft
-CurrentPlayItemTimeRemaining wie viel länger meine Episode geht
-CurrentPlayItemTimeRemaining wie viel länger meine Episode ist
-CurrentPlayItemTimeRemaining wie viel länger meine Episode läuft
-CurrentPlayItemTimeRemaining wie viel länger meine Episode noch geht
-CurrentPlayItemTimeRemaining wie viel länger meine Episode noch ist
-CurrentPlayItemTimeRemaining wie viel länger meine Episode noch läuft
-CurrentPlayItemTimeRemaining wie viel länger meine Folge geht
-CurrentPlayItemTimeRemaining wie viel länger meine Folge ist
-CurrentPlayItemTimeRemaining wie viel länger meine Folge läuft
-CurrentPlayItemTimeRemaining wie viel länger meine Folge noch geht
-CurrentPlayItemTimeRemaining wie viel länger meine Folge noch ist
-CurrentPlayItemTimeRemaining wie viel länger meine Folge noch läuft
-CurrentPlayItemTimeRemaining wie viel länger meine Serie geht
-CurrentPlayItemTimeRemaining wie viel länger meine Serie ist
-CurrentPlayItemTimeRemaining wie viel länger meine Serie läuft
-CurrentPlayItemTimeRemaining wie viel länger meine Serie noch geht
-CurrentPlayItemTimeRemaining wie viel länger meine Serie noch ist
-CurrentPlayItemTimeRemaining wie viel länger meine Serie noch läuft
-CurrentPlayItemTimeRemaining wie viel noch verbleibt
-CurrentPlayItemTimeRemaining wie viel von dem Film noch verbleibt
-CurrentPlayItemTimeRemaining wie viel von dem Film verbleibt
-CurrentPlayItemTimeRemaining wie viel von dem Lied noch verbleibt
-CurrentPlayItemTimeRemaining wie viel von dem Lied verbleibt
-CurrentPlayItemTimeRemaining wie viel von dem noch verbleibt
-CurrentPlayItemTimeRemaining wie viel von dem verbleibt
-CurrentPlayItemTimeRemaining wie viel von der Episode noch verbleibt
-CurrentPlayItemTimeRemaining wie viel von der Episode verbleibt
-CurrentPlayItemTimeRemaining wie viel von der Folge noch verbleibt
-CurrentPlayItemTimeRemaining wie viel von der Folge verbleibt
-CurrentPlayItemTimeRemaining wie viel von der Serie noch verbleibt
-CurrentPlayItemTimeRemaining wie viel von der Serie verbleibt
-CurrentPlayItemTimeRemaining wie viel von diesem Film noch verbleibt
-CurrentPlayItemTimeRemaining wie viel von diesem Film verbleibt
-CurrentPlayItemTimeRemaining wie viel von diesem Lied noch verbleibt
-CurrentPlayItemTimeRemaining wie viel von diesem Lied verbleibt
-CurrentPlayItemTimeRemaining wie viel von diesem audio noch verbleibt
-CurrentPlayItemTimeRemaining wie viel von diesem audio verbleibt
-CurrentPlayItemTimeRemaining wie viel von diesem video noch verbleibt
-CurrentPlayItemTimeRemaining wie viel von diesem video verbleibt
-CurrentPlayItemTimeRemaining wie viel von dieser Episode noch verbleibt
-CurrentPlayItemTimeRemaining wie viel von dieser Episode verbleibt
-CurrentPlayItemTimeRemaining wie viel von dieser Folge noch verbleibt
-CurrentPlayItemTimeRemaining wie viel von dieser Folge verbleibt
-CurrentPlayItemTimeRemaining wie viel von dieser Serie noch verbleibt
-CurrentPlayItemTimeRemaining wie viel von dieser Serie verbleibt
-CurrentPlayItemTimeRemaining wie viel von meinem Film noch verbleibt
-CurrentPlayItemTimeRemaining wie viel von meinem Film verbleibt
-CurrentPlayItemTimeRemaining wie viel von meinem Lied noch verbleibt
-CurrentPlayItemTimeRemaining wie viel von meinem Lied verbleibt
-CurrentPlayItemTimeRemaining wie viel von meinem audio noch verbleibt
-CurrentPlayItemTimeRemaining wie viel von meinem audio verbleibt
-CurrentPlayItemTimeRemaining wie viel von meinem video noch verbleibt
-CurrentPlayItemTimeRemaining wie viel von meinem video verbleibt
-CurrentPlayItemTimeRemaining wie viel von meiner Episode noch verbleibt
-CurrentPlayItemTimeRemaining wie viel von meiner Episode verbleibt
-CurrentPlayItemTimeRemaining wie viel von meiner Folge noch verbleibt
-CurrentPlayItemTimeRemaining wie viel von meiner Folge verbleibt
-CurrentPlayItemTimeRemaining wie viel von meiner Serie noch verbleibt
-CurrentPlayItemTimeRemaining wie viel von meiner Serie verbleibt
-CurrentPlayItemTimeRemaining wie viel zeit noch verbleibt
-CurrentPlayItemTimeRemaining wie viel zeit von dem Film noch verbleibt
-CurrentPlayItemTimeRemaining wie viel zeit von dem Film verbleibt
-CurrentPlayItemTimeRemaining wie viel zeit von dem Lied noch verbleibt
-CurrentPlayItemTimeRemaining wie viel zeit von dem Lied verbleibt
-CurrentPlayItemTimeRemaining wie viel zeit von dem noch verbleibt
-CurrentPlayItemTimeRemaining wie viel zeit von dem verbleibt
-CurrentPlayItemTimeRemaining wie viel zeit von der Episode noch verbleibt
-CurrentPlayItemTimeRemaining wie viel zeit von der Episode verbleibt
-CurrentPlayItemTimeRemaining wie viel zeit von der Folge noch verbleibt
-CurrentPlayItemTimeRemaining wie viel zeit von der Folge verbleibt
-CurrentPlayItemTimeRemaining wie viel zeit von der Serie noch verbleibt
-CurrentPlayItemTimeRemaining wie viel zeit von der Serie verbleibt
-CurrentPlayItemTimeRemaining wie viel zeit von diesem Film noch verbleibt
-CurrentPlayItemTimeRemaining wie viel zeit von diesem Film verbleibt
-CurrentPlayItemTimeRemaining wie viel zeit von diesem Lied noch verbleibt
-CurrentPlayItemTimeRemaining wie viel zeit von diesem Lied verbleibt
-CurrentPlayItemTimeRemaining wie viel zeit von diesem audio noch verbleibt
-CurrentPlayItemTimeRemaining wie viel zeit von diesem audio verbleibt
-CurrentPlayItemTimeRemaining wie viel zeit von diesem video noch verbleibt
-CurrentPlayItemTimeRemaining wie viel zeit von diesem video verbleibt
-CurrentPlayItemTimeRemaining wie viel zeit von dieser Episode noch verbleibt
-CurrentPlayItemTimeRemaining wie viel zeit von dieser Episode verbleibt
-CurrentPlayItemTimeRemaining wie viel zeit von dieser Folge noch verbleibt
-CurrentPlayItemTimeRemaining wie viel zeit von dieser Folge verbleibt
-CurrentPlayItemTimeRemaining wie viel zeit von dieser Serie noch verbleibt
-CurrentPlayItemTimeRemaining wie viel zeit von dieser Serie verbleibt
-CurrentPlayItemTimeRemaining wie viel zeit von meinem Film noch verbleibt
-CurrentPlayItemTimeRemaining wie viel zeit von meinem Film verbleibt
-CurrentPlayItemTimeRemaining wie viel zeit von meinem Lied noch verbleibt
-CurrentPlayItemTimeRemaining wie viel zeit von meinem Lied verbleibt
-CurrentPlayItemTimeRemaining wie viel zeit von meinem audio noch verbleibt
-CurrentPlayItemTimeRemaining wie viel zeit von meinem audio verbleibt
-CurrentPlayItemTimeRemaining wie viel zeit von meinem video noch verbleibt
-CurrentPlayItemTimeRemaining wie viel zeit von meinem video verbleibt
-CurrentPlayItemTimeRemaining wie viel zeit von meiner Episode noch verbleibt
-CurrentPlayItemTimeRemaining wie viel zeit von meiner Episode verbleibt
-CurrentPlayItemTimeRemaining wie viel zeit von meiner Folge noch verbleibt
-CurrentPlayItemTimeRemaining wie viel zeit von meiner Folge verbleibt
-CurrentPlayItemTimeRemaining wie viel zeit von meiner Serie noch verbleibt
-CurrentPlayItemTimeRemaining wie viel zeit von meiner Serie verbleibt
+CurrentPlayItemTimeRemaining wie lange der Film geht
+CurrentPlayItemTimeRemaining wie lange der Film ist
+CurrentPlayItemTimeRemaining wie lange der Film läuft
+CurrentPlayItemTimeRemaining wie lange der Film noch geht
+CurrentPlayItemTimeRemaining wie lange der Film noch ist
+CurrentPlayItemTimeRemaining wie lange der Film noch läuft
+CurrentPlayItemTimeRemaining wie lange die Episode geht
+CurrentPlayItemTimeRemaining wie lange die Episode ist
+CurrentPlayItemTimeRemaining wie lange die Episode läuft
+CurrentPlayItemTimeRemaining wie lange die Episode noch geht
+CurrentPlayItemTimeRemaining wie lange die Episode noch ist
+CurrentPlayItemTimeRemaining wie lange die Episode noch läuft
+CurrentPlayItemTimeRemaining wie lange die Folge geht
+CurrentPlayItemTimeRemaining wie lange die Folge ist
+CurrentPlayItemTimeRemaining wie lange die Folge läuft
+CurrentPlayItemTimeRemaining wie lange die Folge noch geht
+CurrentPlayItemTimeRemaining wie lange die Folge noch ist
+CurrentPlayItemTimeRemaining wie lange die Folge noch läuft
+CurrentPlayItemTimeRemaining wie lange die Serie geht
+CurrentPlayItemTimeRemaining wie lange die Serie ist
+CurrentPlayItemTimeRemaining wie lange die Serie läuft
+CurrentPlayItemTimeRemaining wie lange die Serie noch geht
+CurrentPlayItemTimeRemaining wie lange die Serie noch ist
+CurrentPlayItemTimeRemaining wie lange die Serie noch läuft
 Down nach unten
 Down navigier nach unten
 Down navigier runter
@@ -677,6 +437,16 @@ ListenToAudioPlaylistRecent spiele neue Songs
 ListenToAudioPlaylistRecent spiele zuletzt hinzugefügte Lieder
 ListenToAudioPlaylistRecent spiele zuletzt hinzugefügte Musik
 ListenToAudioPlaylistRecent spiele zuletzt hinzugefügte Songs
+ListenToLatestAlbum spiele aktuelles Album von {Artist}
+ListenToLatestAlbum spiele aktuellstes Album von {Artist}
+ListenToLatestAlbum spiele das aktuelle Album von {Artist}
+ListenToLatestAlbum spiele das aktuellste Album von {Artist}
+ListenToLatestAlbum spiele das neue Album von {Artist}
+ListenToLatestAlbum spiele das neueste Album von {Artist}
+ListenToLatestAlbum spiele neues Album von {Artist}
+ListenToLatestAlbum spiele neuestes Album von {Artist}
+ListenToLatestAlbum spiele zuletzt das hinzugefügte Album von {Artist}
+ListenToLatestAlbum spiele zuletzt hinzugefügtes Album von {Artist}
 ListenToSong spiel das Lied {Song}
 ListenToSong spiel das Lied {Song} von {Artist}
 ListenToSong spiel den Song {Song}
@@ -1108,6 +878,21 @@ ShuffleAudioPlaylist zufallswiedergabe Audio playlist {AudioPlaylist}
 ShuffleAudioPlaylist zufallswiedergabe Musik playlist {AudioPlaylist}
 ShuffleAudioPlaylist zufallswiedergabe {AudioPlaylist} Audio playlist
 ShuffleAudioPlaylist zufallswiedergabe {AudioPlaylist} Musik playlist
+ShuffleLatestAlbum Zufallswiedergabe des aktuellen Albums von {Artist}
+ShuffleLatestAlbum Zufallswiedergabe des aktuellsten Albums von {Artist}
+ShuffleLatestAlbum Zufallswiedergabe des neuen Albums von {Artist}
+ShuffleLatestAlbum Zufallswiedergabe des neuesten Albums von {Artist}
+ShuffleLatestAlbum Zufallswiedergabe des zuletzt hinzugefügten Albums von {Artist}
+ShuffleLatestAlbum shuffle des aktuellen Albums von {Artist}
+ShuffleLatestAlbum shuffle des aktuellsten Albums von {Artist}
+ShuffleLatestAlbum shuffle des neuen Albums von {Artist}
+ShuffleLatestAlbum shuffle des neuesten Albums von {Artist}
+ShuffleLatestAlbum shuffle des zuletzt hinzugefügten Albums von {Artist}
+ShuffleLatestAlbum starte Zufallswiedergabe des aktuellen Albums von {Artist}
+ShuffleLatestAlbum starte Zufallswiedergabe des aktuellsten Albums von {Artist}
+ShuffleLatestAlbum starte Zufallswiedergabe des neuen Albums von {Artist}
+ShuffleLatestAlbum starte Zufallswiedergabe des neuesten Albums von {Artist}
+ShuffleLatestAlbum starte Zufallswiedergabe des zuletzt hinzugefügten Albums von {Artist}
 ShuffleMedia zufallswiedergabe {Show}
 ShufflePlaylist zufallswiedergabe playlist {AudioPlaylist}
 ShufflePlaylist zufallswiedergabe playlist {VideoPlaylist}
@@ -1230,70 +1015,12 @@ WhatAlbums welche Platten wir von {Artist} haben
 WhatAlbums welches Album du von {Artist} hast
 WhatAlbums welches Album ich von {Artist} habe
 WhatAlbums welches Album wir von {Artist} haben
-WhatNewAlbums welche Alben auf dem mediaserver sind
-WhatNewAlbums welche Alben auf dem server sind
-WhatNewAlbums welche Alben aufgenommen worden sind
-WhatNewAlbums welche Alben fertig sind
-WhatNewAlbums welche Alben warten
-WhatNewAlbums welche CD auf dem mediaserver ist
-WhatNewAlbums welche CD auf dem server ist
-WhatNewAlbums welche CD aufgenommen worden ist
-WhatNewAlbums welche CD fertig ist
-WhatNewAlbums welche CD wartet
-WhatNewAlbums welche CDs auf dem mediaserver sind
-WhatNewAlbums welche CDs auf dem server sind
-WhatNewAlbums welche CDs aufgenommen worden sind
-WhatNewAlbums welche CDs fertig sind
-WhatNewAlbums welche CDs warten
-WhatNewAlbums welche Platte auf dem mediaserver ist
-WhatNewAlbums welche Platte auf dem server ist
-WhatNewAlbums welche Platte aufgenommen worden ist
-WhatNewAlbums welche Platte fertig ist
-WhatNewAlbums welche Platte wartet
-WhatNewAlbums welche Platten auf dem mediaserver sind
-WhatNewAlbums welche Platten auf dem server sind
-WhatNewAlbums welche Platten aufgenommen worden sind
-WhatNewAlbums welche Platten fertig sind
-WhatNewAlbums welche Platten warten
-WhatNewAlbums welche neue CD auf dem mediaserver ist
-WhatNewAlbums welche neue CD auf dem server ist
-WhatNewAlbums welche neue CD aufgenommen worden ist
-WhatNewAlbums welche neue CD fertig ist
-WhatNewAlbums welche neue CD wartet
-WhatNewAlbums welche neue Platte auf dem mediaserver ist
-WhatNewAlbums welche neue Platte auf dem server ist
-WhatNewAlbums welche neue Platte aufgenommen worden ist
-WhatNewAlbums welche neue Platte fertig ist
-WhatNewAlbums welche neue Platte wartet
-WhatNewAlbums welche neuen Alben auf dem mediaserver sind
-WhatNewAlbums welche neuen Alben auf dem server sind
 WhatNewAlbums welche neuen Alben aufgenommen worden sind
 WhatNewAlbums welche neuen Alben fertig sind
 WhatNewAlbums welche neuen Alben warten
-WhatNewAlbums welche neuen CDs auf dem mediaserver sind
-WhatNewAlbums welche neuen CDs auf dem server sind
-WhatNewAlbums welche neuen CDs aufgenommen worden sind
-WhatNewAlbums welche neuen CDs fertig sind
-WhatNewAlbums welche neuen CDs warten
-WhatNewAlbums welche neuen Platten auf dem mediaserver sind
-WhatNewAlbums welche neuen Platten auf dem server sind
-WhatNewAlbums welche neuen Platten aufgenommen worden sind
-WhatNewAlbums welche neuen Platten fertig sind
-WhatNewAlbums welche neuen Platten warten
-WhatNewAlbums welches Album auf dem mediaserver ist
-WhatNewAlbums welches Album auf dem server ist
-WhatNewAlbums welches Album aufgenommen worden ist
-WhatNewAlbums welches Album fertig ist
-WhatNewAlbums welches Album wartet
-WhatNewAlbums welches neue Album auf dem mediaserver ist
-WhatNewAlbums welches neue Album auf dem server ist
 WhatNewAlbums welches neue Album aufgenommen worden ist
 WhatNewAlbums welches neue Album fertig ist
 WhatNewAlbums welches neue Album wartet
-WhatNewMovies ob du einen neuen Film hast
-WhatNewMovies ob du einen neuen {Genre} Film hast
-WhatNewMovies ob du neue Filme hast
-WhatNewMovies ob du neue {Genre} Filme hast
 WhatNewMovies ob es einen neuen Film gibt
 WhatNewMovies ob es einen neuen {Genre} Film gibt
 WhatNewMovies ob es neue Filme gibt
@@ -1302,95 +1029,48 @@ WhatNewMovies ob wir einen neuen Film haben
 WhatNewMovies ob wir einen neuen {Genre} Film haben
 WhatNewMovies ob wir neue Filme haben
 WhatNewMovies ob wir neue {Genre} Filme haben
-WhatNewMovies welche Filme auf dem mediaserver sind
-WhatNewMovies welche Filme auf dem server sind
 WhatNewMovies welche Filme aufgenommen worden sind
 WhatNewMovies welche Filme fertig sind
 WhatNewMovies welche Filme warten
-WhatNewMovies welche neuen Filme auf dem mediaserver sind
-WhatNewMovies welche neuen Filme auf dem server sind
 WhatNewMovies welche neuen Filme aufgenommen worden sind
 WhatNewMovies welche neuen Filme fertig sind
 WhatNewMovies welche neuen Filme warten
-WhatNewMovies welche neuen {Genre} Filme auf dem mediaserver sind
-WhatNewMovies welche neuen {Genre} Filme auf dem server sind
 WhatNewMovies welche neuen {Genre} Filme aufgenommen worden sind
 WhatNewMovies welche neuen {Genre} Filme fertig sind
 WhatNewMovies welche neuen {Genre} Filme warten
-WhatNewMovies welche {Genre} Filme auf dem mediaserver sind
-WhatNewMovies welche {Genre} Filme auf dem server sind
 WhatNewMovies welche {Genre} Filme aufgenommen worden sind
 WhatNewMovies welche {Genre} Filme fertig sind
 WhatNewMovies welche {Genre} Filme warten
-WhatNewMovies welcher Film auf dem mediaserver ist
-WhatNewMovies welcher Film auf dem server ist
 WhatNewMovies welcher Film aufgenommen worden ist
 WhatNewMovies welcher Film fertig ist
 WhatNewMovies welcher Film wartet
-WhatNewMovies welcher neue Film auf dem mediaserver ist
-WhatNewMovies welcher neue Film auf dem server ist
 WhatNewMovies welcher neue Film aufgenommen worden ist
 WhatNewMovies welcher neue Film fertig ist
 WhatNewMovies welcher neue Film wartet
-WhatNewMovies welcher neue {Genre} Film auf dem mediaserver ist
-WhatNewMovies welcher neue {Genre} Film auf dem server ist
 WhatNewMovies welcher neue {Genre} Film aufgenommen worden ist
 WhatNewMovies welcher neue {Genre} Film fertig ist
 WhatNewMovies welcher neue {Genre} Film wartet
-WhatNewMovies welcher {Genre} Film auf dem mediaserver ist
-WhatNewMovies welcher {Genre} Film auf dem server ist
 WhatNewMovies welcher {Genre} Film aufgenommen worden ist
 WhatNewMovies welcher {Genre} Film fertig ist
 WhatNewMovies welcher {Genre} Film wartet
-WhatNewShows welche Serie auf dem mediaserver ist
-WhatNewShows welche Serie auf dem server ist
 WhatNewShows welche Serie aufgenommen worden ist
-WhatNewShows welche Serie du hast
-WhatNewShows welche Serie es gibt
 WhatNewShows welche Serie fertig ist
-WhatNewShows welche Serie gibt es
-WhatNewShows welche Serie habe ich
-WhatNewShows welche Serie haben wir
-WhatNewShows welche Serie hast du
-WhatNewShows welche Serie ich habe
 WhatNewShows welche Serie wartet
-WhatNewShows welche Serie wir haben
-WhatNewShows welche Serien auf dem mediaserver sind
-WhatNewShows welche Serien auf dem server sind
-WhatNewShows welche Serien aufgenommen worden sind
-WhatNewShows welche Serien du hast
-WhatNewShows welche Serien es gibt
-WhatNewShows welche Serien fertig sind
-WhatNewShows welche Serien gibt es
-WhatNewShows welche Serien habe ich
-WhatNewShows welche Serien haben wir
-WhatNewShows welche Serien hast du
-WhatNewShows welche Serien ich habe
-WhatNewShows welche Serien warten
-WhatNewShows welche Serien wir haben
-WhatNewShows welche neue Serie auf dem mediaserver ist
-WhatNewShows welche neue Serie auf dem server ist
 WhatNewShows welche neue Serie aufgenommen worden ist
-WhatNewShows welche neue Serie du hast
 WhatNewShows welche neue Serie es gibt
 WhatNewShows welche neue Serie fertig ist
 WhatNewShows welche neue Serie gibt es
 WhatNewShows welche neue Serie habe ich
 WhatNewShows welche neue Serie haben wir
-WhatNewShows welche neue Serie hast du
 WhatNewShows welche neue Serie ich habe
 WhatNewShows welche neue Serie wartet
 WhatNewShows welche neue Serie wir haben
-WhatNewShows welche neuen Serien auf dem mediaserver sind
-WhatNewShows welche neuen Serien auf dem server sind
 WhatNewShows welche neuen Serien aufgenommen worden sind
-WhatNewShows welche neuen Serien du hast
 WhatNewShows welche neuen Serien es gibt
 WhatNewShows welche neuen Serien fertig sind
 WhatNewShows welche neuen Serien gibt es
 WhatNewShows welche neuen Serien habe ich
 WhatNewShows welche neuen Serien haben wir
-WhatNewShows welche neuen Serien hast du
 WhatNewShows welche neuen Serien ich habe
 WhatNewShows welche neuen Serien warten
 WhatNewShows welche neuen Serien wir haben

@@ -8,14 +8,17 @@ If you are updating from a previous version, **it is very important that you bro
 
 Here are some of the features supported by this skill:
 
-- Basic navigation (Up/Down, Left/Right, Page Up/Down, Select, Back, Open Menu)
+- Basic navigation (Up/Down, Left/Right, Page Up/Down, Select, Back, Menu, Zoom, Rotate, Move)
 - Remote control (Keeps session open so you can give multiple navication commands)
 - Playback control (Play/Pause, Skip, Previous, Stop, Step/Jump)
 - Adjust volume
-- Shuffle music by artist
-- Play specific album
-- Play audio playlists
+- Shuffle all music by an artist
+- Play/Shuffle specific album
+- Play/Shuffle the latest album by an artist
+- Play a specific song
+- Play/Shuffle audio and video playlists
 - "Party mode" for music (shuffle all)
+- Shuffle all episodes of a TV show
 - Play random unwatched episode of TV show
 - Play random unwatched movie
 - Play random movie from a specific genre
@@ -24,16 +27,17 @@ Here are some of the features supported by this skill:
 - Continue watching next episode of last show that was watched
 - Play next episode of a show
 - Play newest episode of a show
-- List recently added media
+- List/Play recently added media
 - List available albums by an artist
 - Clean/Update video and audio sources
 - "What's playing?" functionality for music, movies, and shows
+- Report time remaining on current media and when it will end
 - Cycle through audio and subtitle streams
 - Search for something in your library
 - Execute addons
 - Shutdown/reboot/sleep/hibernate system
 - Toggle fullscreen
-- Eject disc
+- Eject media
 
 ## Initial Computer Setup
 Unless you are going to host the skill on Heroku, there are a few things in the instructions that you will need to install before you can get started: 
@@ -136,7 +140,7 @@ Once you've set up your server, you'll need to configure a new Alexa skill. Head
 The initial setup page looks like this:
 ![Inital setup skill](http://i.imgur.com/AzufQxo.png)
 
-On the next page, you'll have to paste the contents of the `IntentSchema.json` file into the "Intent Schema" field, and paste the contents of the `SampleUtterances.txt` file in the "Sample Utterances" field. **Generate and save your Custom Slots first before pasting the Intents and Utterances to avoid errors when attempting to save**.
+On the next page, you'll have to paste the contents of the [IntentSchema.json](https://raw.githubusercontent.com/m0ngr31/kodi-alexa/master/speech_assets/IntentSchema.json) file into the "Intent Schema" field, and paste the contents of the [SampleUtterances.txt](https://raw.githubusercontent.com/m0ngr31/kodi-alexa/master/speech_assets/SampleUtterances.txt) or [SampleUtterances.german.txt](https://raw.githubusercontent.com/m0ngr31/kodi-alexa/master/speech_assets/SampleUtterances.german.txt) file in the "Sample Utterances" field. **Generate and save your Custom Slots first before pasting the Intents and Utterances to avoid errors when attempting to save**.
 
 You need to create 9 different slots:
 - MOVIES
@@ -151,7 +155,7 @@ You need to create 9 different slots:
 
 To make it as easy as possible, I wrote a little webapp that will give you the information you need: [here](https://slot-generator.herokuapp.com/).
 
-You can also get the information from running `python generate_custom_slots.py` in the project directory. This will create txt files with the relevant information. Note that this will communicate with the Kodi instance defined in the `[DEFAULT]` section in `kodi.config`.
+You can also get the information from running `python generate_custom_slots.py` in the project directory. This will create txt files with the relevant information. This will communicate with the Kodi instance defined in the `[DEFAULT]` section in `kodi.config`. *NOTE: If you're deploying to Heroku, you cannot use the python slot generator unless you create the kodi.config file.  It's best to use the webapp for generating slots in this case.*
 
 If one of your slots is empty, you can just enter the word 'Empty' or something so that it'll save.
 
@@ -166,7 +170,7 @@ The fourth tab is asking about the SSL certificate. If you are using Heroku or L
 
 After that is pretty much just information that you can just put whatever into. Don't submit it for certification since only you will be using your server.
 
-And now you should be set! Go ahead and try speaking a few commands to it and see if it works! If you can't get it working, try looking for support in [this thread](http://forum.kodi.tv/showthread.php?tid=254502) on the [Kodi](https://kodi.tv) forum, and if you have more techinical problems, submit and issue here on Github.
+And now you should be set! Go ahead and try speaking a few commands to it and see if it works! If you can't get it working, see the [Getting Help section](#getting-help).
 
 Thanks!
 
@@ -208,13 +212,13 @@ To verify that incoming requests are only allowed from your own copy of the skil
 
 # Extra settings for more functionality
 
-Setting the `timezone` configuration variable will make it so when you ask how long something has left playing, it'll respond for your correct time.
+Setting the `timezone` configuration variable will make it so when you ask how long something has left playing, it'll also tell you when it will end according to your local wall-clock time.
 
-Setting `scheme` to `https` allows you to talk to your [Kodi](https://kodi.tv) box securely, but this requires some work on your end to setup.
+Setting `scheme` to `https` allows you to talk to your [Kodi](https://kodi.tv) box securely, but this requires some work on your end to set up.
 
 By default, the skill allows very generic queries such as, `play 99 red balloons` or `shuffle the office`.  These very generic commands can be slow however, and may cause timeouts.  If these timeouts bother you, you can direct the skill to provide help playing media more specifically instead when it encounters these kinds of requests, by disabling `deep_search`.
 
-# Optimising search performance on large libraries (local installations only)
+# Optimising search performance on large libraries (self-host only)
 
 Matching what Alexa heard with content in your library isn't an exact science, and kodi-alexa uses fuzzy matching to try and help to do this reliably. It's possible if your libary is large that this may be a little slower than you'd like. If this is the case it's possible to improve the performance of the fuzzy matching module by installing the python-Levenshtein library. As it's compiled C you'll need to ensure you have python headers available on your machine and the tools required on your OS to compile the module. Using the Levenshtein module has only been tested when running the skill locally as a WSGI script. If all of the above is applicable to your deployment, you can opt to use this optimisation.
 

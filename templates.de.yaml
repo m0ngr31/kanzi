@@ -8,6 +8,8 @@ could_not_find: "Konnte {{ heard_name }} nicht finden"
 
 could_not_find_generic: "Konnte diese Formulierung nicht finden"
 
+could_not_find_artist: "Konnte keine Musik von {{ artist_name }} finden"
+
 could_not_find_album: "Konnte das Album {{ album_name }} nicht finden"
 
 could_not_find_album_artist: "Konnte das Album {{ album_name }} von {{ artist }} nicht finden"
@@ -276,6 +278,10 @@ playing_newest_episode: "Spiele die neueste Folge von {{ heard_show }}"
 playing_album_card: "Spiele Album"
 
 shuffling_album_card: "Zufälliges Album"
+
+playing_latest_album_card: "Spiele zuletzt hinzugefügtes Album von {{ heard_artist }}"
+
+shuffling_latest_album_card: "Zufallswiedergabe des zuletzt hinzugefügten Albums von {{ heard_artist }}"
 
 playing_song_card: "Spiele Song"
 

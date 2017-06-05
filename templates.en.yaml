@@ -8,6 +8,8 @@ could_not_find: "Could not find {{ heard_name }}"
 
 could_not_find_generic: "Could not find that phrase"
 
+could_not_find_artist: "Could not find anything by {{ artist_name }}"
+
 could_not_find_album: "Could not find album {{ album_name }}"
 
 could_not_find_album_artist: "Could not find album {{ album_name }} by {{ artist }}"
@@ -276,6 +278,10 @@ playing_newest_episode: "Playing the newest episode of {{ heard_show }}"
 playing_album_card: "Playing album"
 
 shuffling_album_card: "Shuffling album"
+
+playing_latest_album_card: "Playing latest album by {{ heard_artist }}"
+
+shuffling_latest_album_card: "Shuffling latest album by {{ heard_artist }}"
 
 playing_song_card: "Playing song"
 

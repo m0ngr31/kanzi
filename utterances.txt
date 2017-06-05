@@ -82,6 +82,8 @@ ListenToAudio listen to {Artist}
 
 ListenToArtist (play/listen to/shuffle) (music by/artist) {Artist}
 
+ListenToLatestAlbum (play/listen to) (/the) (latest/newest) album by {Artist}
+
 ListenToAlbum (play/listen to) (/the) album {Album}
 ListenToAlbum (play/listen to) (/the) album {Album} by {Artist}
 
@@ -121,6 +123,8 @@ WatchVideoPlaylist watch (/the) playlist {VideoPlaylist}
 WatchVideoPlaylist watch {VideoPlaylist} playlist
 
 ShuffleShow shuffle (/all) episodes of {Show}
+
+ShuffleLatestAlbum shuffle (/the) (latest/newest) album by {Artist}
 
 ShuffleAlbum shuffle (album/the album) {Album}
 ShuffleAlbum shuffle (/album/the album) {Album} by {Artist}

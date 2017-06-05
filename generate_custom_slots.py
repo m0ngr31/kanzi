@@ -24,7 +24,7 @@ if 'result' in retrieved and 'artists' in retrieved['result']:
 cleaned = list(set(all))
 cleaned = filter(None, cleaned)
 random.shuffle(cleaned)
-cleaned = cleaned[:300]
+cleaned = cleaned[:100]
 
 gfile = open('MUSICARTISTS', 'w')
 for a in cleaned:
@@ -47,7 +47,7 @@ if 'result' in retrieved and 'albums' in retrieved['result']:
 cleaned = list(set(all))
 cleaned = filter(None, cleaned)
 random.shuffle(cleaned)
-cleaned = cleaned[:300]
+cleaned = cleaned[:100]
 
 gfile = open('MUSICALBUMS', 'w')
 for a in cleaned:
@@ -70,7 +70,7 @@ if 'result' in retrieved and 'songs' in retrieved['result']:
 cleaned = list(set(all))
 cleaned = filter(None, cleaned)
 random.shuffle(cleaned)
-cleaned = cleaned[:300]
+cleaned = cleaned[:100]
 
 gfile = open('MUSICSONGS', 'w')
 for a in cleaned:
@@ -93,7 +93,7 @@ if 'result' in retrieved and 'files' in retrieved['result']:
 cleaned = list(set(all))
 cleaned = filter(None, cleaned)
 random.shuffle(cleaned)
-cleaned = cleaned[:300]
+cleaned = cleaned[:100]
 
 gfile = open('MUSICPLAYLISTS', 'w')
 for a in cleaned:
@@ -116,7 +116,7 @@ if 'result' in retrieved and 'files' in retrieved['result']:
 cleaned = list(set(all))
 cleaned = filter(None, cleaned)
 random.shuffle(cleaned)
-cleaned = cleaned[:300]
+cleaned = cleaned[:100]
 
 gfile = open('VIDEOPLAYLISTS', 'w')
 for a in cleaned:
@@ -139,7 +139,7 @@ if 'result' in retrieved and 'genres' in retrieved['result']:
 cleaned = list(set(all))
 cleaned = filter(None, cleaned)
 random.shuffle(cleaned)
-cleaned = cleaned[:300]
+cleaned = cleaned[:100]
 
 gfile = open('MOVIEGENRES', 'w')
 for a in cleaned:
@@ -162,7 +162,7 @@ if 'result' in retrieved and 'movies' in retrieved['result']:
 cleaned = list(set(all))
 cleaned = filter(None, cleaned)
 random.shuffle(cleaned)
-cleaned = cleaned[:300]
+cleaned = cleaned[:100]
 
 gfile = open('MOVIES', 'w')
 for a in cleaned:
@@ -185,7 +185,7 @@ if 'result' in retrieved and 'tvshows' in retrieved['result']:
 cleaned = list(set(all))
 cleaned = filter(None, cleaned)
 random.shuffle(cleaned)
-cleaned = cleaned[:300]
+cleaned = cleaned[:100]
 
 gfile = open('SHOWS', 'w')
 for a in cleaned:
@@ -209,7 +209,7 @@ for content in ['video', 'audio', 'image', 'executable']:
 cleaned = list(set(all))
 cleaned = filter(None, cleaned)
 random.shuffle(cleaned)
-cleaned = cleaned[:300]
+cleaned = cleaned[:100]
 
 gfile = open('ADDONS', 'w')
 for a in cleaned:
