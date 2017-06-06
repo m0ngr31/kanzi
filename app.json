@@ -11,7 +11,7 @@
       "value": ""
     },
     "KODI_PORT": {
-      "description": "Open port on your router that Kodi is port forwarded.",
+      "description": "Open port on your router that forwards to Kodi.",
       "value": ""
     },
     "KODI_USERNAME": {
@@ -54,7 +54,7 @@
     },
     "DEEP_SEARCH": {
       "description": "If you'd like to enable searching the entire library with generic play commands.",
-      "value": "",
+      "value": "yes",
       "required": false
     },
     "MAX_UNWATCHED_EPISODES": {
