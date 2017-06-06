@@ -56,6 +56,16 @@
       "description": "If you'd like to enable searching the entire library with generic play commands.",
       "value": "",
       "required": false
+    },
+    "MAX_UNWATCHED_EPISODES": {
+      "description": "Maximum number of items to fetch when looking for new episodes.",
+      "value": "90",
+      "required": false
+    },
+    "MAX_UNWATCHED_MOVIES": {
+      "description": "Maximum number of items to fetch when looking for new movies.",
+      "value": "90",
+      "required": false
     }
   },
   "image": "heroku/python"
