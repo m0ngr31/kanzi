@@ -30,10 +30,6 @@ could_not_find_show: "Could not find a show named {{ heard_show }}"
 
 could_not_find_episode_show: "Could not find season {{ season }} episode {{ episode }} of {{ show_name }}"
 
-searching: "Searching for {{ heard_name }}"
-
-opening: "Opening {{ heard_name }}"
-
 no_recommendations: "I'm sorry, I have nothing to recommend"
 
 recommend_movie: "How about the movie {{ movie_name }}?"
@@ -49,6 +45,10 @@ recommend_artist: "How about music by {{ artist_name }}?"
 recommend_album: "How about the album {{ album_name }} by {{ artist_name }}?"
 
 recommend_song: "How about some of your recently added songs?"
+
+searching: "Searching for {{ heard_name }}"
+
+opening: "Opening {{ heard_name }}"
 
 playing: "Playing {{ heard_name }}"
 

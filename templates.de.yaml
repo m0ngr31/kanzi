@@ -30,6 +30,22 @@ could_not_find_show: "Konnte die Serie {{ heard_show }} nicht finden"
 
 could_not_find_episode_show: "Konnte Staffel {{ season }} Folge {{ episode }} von {{ show_name }} nicht finden"
 
+no_recommendations: "Es tut mir leid, aber es gibt nichts zu empfehlen."
+
+recommend_movie: "Wie wäre es mit dem Film {{ movie_name }}?"
+
+recommend_show: "Wie wäre es mit der Serie {{ show_name }}?"
+
+recommend_episode: "Wie wäre es mit der Staffel {{ season }} Episode {{ episode }} von {{ show_name }}?"
+
+recommend_musicvideo: "Wie wäre es mit dem Musikvideo {{ musicvideo_name }} von {{ artist_name }}?"
+
+recommend_artist: "Wie wäre es mit Musik von {{ artist_name }}?"
+
+recommend_album: "Wie wäre es mit dem Album {{ album_name }} von {{ artist_name }}?"
+
+recommend_song: "Wie wäre es mit ein paar kürzlich hinzugefügten Songs?"
+
 searching: "Suche nach {{ heard_name }}"
 
 opening: "Öffne {{ heard_name }}"
@@ -317,6 +333,8 @@ remaining_time: ", und die Wiedergabe wird um {{ end_time }} enden"
 ############################
 ##   General Templates    ##
 ############################
+
+okay: "Okay"
 
 short_confirm: " "
 

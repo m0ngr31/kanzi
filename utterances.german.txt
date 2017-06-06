@@ -137,6 +137,15 @@ ShufflePlaylist zufallswiedergabe {AudioPlaylist} playlist
 ShufflePlaylist zufallswiedergabe playlist {VideoPlaylist}
 ShufflePlaylist zufallswiedergabe {VideoPlaylist} playlist
 
+RecommendMedia was es (/mir) (empfiehlt/vorschlägt)
+RecommendMovie welchen Film es (/mir) (empfiehlt/vorschlägt)
+RecommendShow welche Serie es (/mir) (empfiehlt/vorschlägt)
+RecommendEpisode welche (Folge/Episode) es (/mir) (empfiehlt/vorschlägt)
+RecommendMusicVideo welches Musikvideo es (/mir) (empfiehlt/vorschlägt)
+RecommendArtist welchen Interpreten es (/mir) (empfiehlt/vorschlägt)
+RecommendAlbum welches Album es (/mir) (empfiehlt/vorschlägt)
+RecommendSong (welches Lied/welchen Song) es (/mir) (empfiehlt/vorschlägt)
+
 WhatNewAlbums welches neue Album (wartet/(fertig/aufgenommen worden) ist)
 WhatNewAlbums welche neuen Alben (warten/(fertig/aufgenommen worden) sind)
 

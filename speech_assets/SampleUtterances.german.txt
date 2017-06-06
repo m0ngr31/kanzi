@@ -822,6 +822,46 @@ Reboot neustarten
 Reboot reboot
 Reboot system neustarten
 Reboot system reboot
+RecommendAlbum welches Album es empfiehlt
+RecommendAlbum welches Album es mir empfiehlt
+RecommendAlbum welches Album es mir vorschlägt
+RecommendAlbum welches Album es vorschlägt
+RecommendArtist welchen Interpreten es empfiehlt
+RecommendArtist welchen Interpreten es mir empfiehlt
+RecommendArtist welchen Interpreten es mir vorschlägt
+RecommendArtist welchen Interpreten es vorschlägt
+RecommendEpisode welche Episode es empfiehlt
+RecommendEpisode welche Episode es mir empfiehlt
+RecommendEpisode welche Episode es mir vorschlägt
+RecommendEpisode welche Episode es vorschlägt
+RecommendEpisode welche Folge es empfiehlt
+RecommendEpisode welche Folge es mir empfiehlt
+RecommendEpisode welche Folge es mir vorschlägt
+RecommendEpisode welche Folge es vorschlägt
+RecommendMedia was es empfiehlt
+RecommendMedia was es mir empfiehlt
+RecommendMedia was es mir vorschlägt
+RecommendMedia was es vorschlägt
+RecommendMovie welchen Film es empfiehlt
+RecommendMovie welchen Film es mir empfiehlt
+RecommendMovie welchen Film es mir vorschlägt
+RecommendMovie welchen Film es vorschlägt
+RecommendMusicVideo welches Musikvideo es empfiehlt
+RecommendMusicVideo welches Musikvideo es mir empfiehlt
+RecommendMusicVideo welches Musikvideo es mir vorschlägt
+RecommendMusicVideo welches Musikvideo es vorschlägt
+RecommendShow welche Serie es empfiehlt
+RecommendShow welche Serie es mir empfiehlt
+RecommendShow welche Serie es mir vorschlägt
+RecommendShow welche Serie es vorschlägt
+RecommendSong welchen Song es empfiehlt
+RecommendSong welchen Song es mir empfiehlt
+RecommendSong welchen Song es mir vorschlägt
+RecommendSong welchen Song es vorschlägt
+RecommendSong welches Lied es empfiehlt
+RecommendSong welches Lied es mir empfiehlt
+RecommendSong welches Lied es mir vorschlägt
+RecommendSong welches Lied es vorschlägt
 Right nach rechts
 Right navigier nach rechts
 Right navigier rechts
