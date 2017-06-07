@@ -9,7 +9,6 @@ If you are updating from a previous version, **it is very important that you bro
 Here are some of the features supported by this skill:
 
 - Basic navigation (Up/Down, Left/Right, Page Up/Down, Select, Back, Menu, Zoom, Rotate, Move)
-- Remote control (Keeps session open so you can give multiple navication commands)
 - Playback control (Play/Pause, Skip, Previous, Stop, Step/Jump)
 - Adjust volume
 - Shuffle all music by an artist
@@ -27,6 +26,7 @@ Here are some of the features supported by this skill:
 - Continue watching next episode of last show that was watched
 - Play next episode of a show
 - Play newest episode of a show
+- Recommend media to watch/listen to
 - List/Play recently added media
 - List available albums by an artist
 - Clean/Update video and audio sources

@@ -1,3 +1,13 @@
+v2.6.4 (06/06/2017)
+* Assume UTF-8 encoding in JSON responses (speed up)
+* New intents to recommend media
+- Requires script.skin.helper.widgets
+* New options in kodi.config to limit unwatched results
+* Queries now leave session open if it was already open
+* Remove OpenRemote Intent
+- All nav commands now leave session open
+- Or start a session with just "open kodi"
+
 v2.6.3 (06/01/2017)
 * Significantly improve matching for titles with numbers
 * Fix German utterances for AddonGlobalSearch
