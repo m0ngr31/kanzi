@@ -141,6 +141,12 @@ ListenToAudioPlaylist play the {AudioPlaylist} song playlist
 ListenToAudioPlaylist play {AudioPlaylist} audio playlist
 ListenToAudioPlaylist play {AudioPlaylist} music playlist
 ListenToAudioPlaylist play {AudioPlaylist} song playlist
+ListenToAudioPlaylistRecent listen to latest audio
+ListenToAudioPlaylistRecent listen to latest music
+ListenToAudioPlaylistRecent listen to latest songs
+ListenToAudioPlaylistRecent listen to newest audio
+ListenToAudioPlaylistRecent listen to newest music
+ListenToAudioPlaylistRecent listen to newest songs
 ListenToAudioPlaylistRecent listen to recent albums
 ListenToAudioPlaylistRecent listen to recent audio
 ListenToAudioPlaylistRecent listen to recent music
@@ -149,6 +155,14 @@ ListenToAudioPlaylistRecent listen to recently added albums
 ListenToAudioPlaylistRecent listen to recently added audio
 ListenToAudioPlaylistRecent listen to recently added music
 ListenToAudioPlaylistRecent listen to recently added songs
+ListenToAudioPlaylistRecent play latest albums
+ListenToAudioPlaylistRecent play latest audio
+ListenToAudioPlaylistRecent play latest music
+ListenToAudioPlaylistRecent play latest songs
+ListenToAudioPlaylistRecent play newest albums
+ListenToAudioPlaylistRecent play newest audio
+ListenToAudioPlaylistRecent play newest music
+ListenToAudioPlaylistRecent play newest songs
 ListenToAudioPlaylistRecent play recent albums
 ListenToAudioPlaylistRecent play recent audio
 ListenToAudioPlaylistRecent play recent music
@@ -157,6 +171,14 @@ ListenToAudioPlaylistRecent play recently added albums
 ListenToAudioPlaylistRecent play recently added audio
 ListenToAudioPlaylistRecent play recently added music
 ListenToAudioPlaylistRecent play recently added songs
+ListenToAudioPlaylistRecent shuffle latest albums
+ListenToAudioPlaylistRecent shuffle latest audio
+ListenToAudioPlaylistRecent shuffle latest music
+ListenToAudioPlaylistRecent shuffle latest songs
+ListenToAudioPlaylistRecent shuffle newest albums
+ListenToAudioPlaylistRecent shuffle newest audio
+ListenToAudioPlaylistRecent shuffle newest music
+ListenToAudioPlaylistRecent shuffle newest songs
 ListenToAudioPlaylistRecent shuffle recent albums
 ListenToAudioPlaylistRecent shuffle recent audio
 ListenToAudioPlaylistRecent shuffle recent music

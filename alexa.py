@@ -832,7 +832,7 @@ def alexa_listen_recently_added_songs():
     kodi.ClearAudioPlaylist()
     kodi.AddSongsToPlaylist(songs_array, True)
     kodi.StartAudioPlaylist()
-    response_text = ""
+    response_text = render_template('playing_recent_songs').encode("utf-8")
 
   return statement(response_text).simple_card(card_title, response_text)
 

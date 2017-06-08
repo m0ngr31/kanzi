@@ -100,6 +100,7 @@ ListenToAudioPlaylist listen to {AudioPlaylist} playlist
 
 ListenToAudioPlaylistRecent (play/listen to/shuffle) recent (songs/music/audio/albums)
 ListenToAudioPlaylistRecent (play/listen to/shuffle) recently added (songs/music/audio/albums)
+ListenToAudioPlaylistRecent (play/listen to/shuffle) (latest/newest) (songs/music/audio/albums)
 
 WatchVideo watch {Movie}
 
