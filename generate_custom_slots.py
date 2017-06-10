@@ -115,7 +115,7 @@ gfile.close()
 
 
 # Generate MOVIEGENRES Slot
-retrieved = kodi.GetMovieGenres()
+retrieved = kodi.GetVideoGenres()
 
 all = []
 
