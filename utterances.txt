@@ -149,6 +149,7 @@ RecommendMusicVideo (suggest/recommend) music video
 RecommendArtist (suggest/recommend) ((/music) artist/musician/band)
 RecommendAlbum (suggest/recommend) album
 RecommendSong (suggest/recommend) (/some) (songs/music)
+RecommendSong (suggest/recommend) a song
 
 WhatNewAlbums (if there are/are there/do i have) new albums (/to listen to)
 WhatNewAlbums (if there is/is there/do i have) a new album (/to listen to)

@@ -175,7 +175,7 @@ def alexa_cancel():
 @ask.intent('AMAZON.NoIntent')
 def alexa_no():
   kodi = Kodi(config, context)
-  if 'play_media_type' in session.attributes and session.attributes['play_media_type'] != 'song':
+  if 'play_media_type' in session.attributes and session.attributes['play_media_type'] != 'recentsongs':
     item = kodi.GetRecommendedItem(session.attributes['play_media_type'] + 's')
     return alexa_recommend_item(kodi, item)
   return alexa_stop_cancel(kodi)
@@ -232,7 +232,6 @@ def alexa_yes():
 
       kodi.PlayerStop()
       kodi.ClearAudioPlaylist()
-      # Always shuffle when generically requesting an Artist
       kodi.AddSongsToPlaylist(songs_array, True)
       kodi.StartAudioPlaylist()
     elif media_type == 'album':
@@ -241,6 +240,11 @@ def alexa_yes():
       kodi.AddAlbumToPlaylist(media_id)
       kodi.StartAudioPlaylist()
     elif media_type == 'song':
+      kodi.PlayerStop()
+      kodi.ClearAudioPlaylist()
+      kodi.AddSongToPlaylist(media_id)
+      kodi.StartAudioPlaylist()
+    elif media_type == 'recentsongs':
       alexa_listen_recently_added_songs()
     return statement(render_template('okay').encode("utf-8"))
 
@@ -1965,9 +1969,15 @@ def alexa_recommend_item(kodi, item=None):
     album_details = kodi.GetAlbumDetails(item[2])
     response_text = render_template('recommend_album', album_name=item[1], artist_name=album_details['artist'][0]).encode("utf-8")
   elif item[0] == 'song':
-    # XXX script.skin.helper doesn't return any recommended songs atm,
-    # so just offer to play recently added songs
-    response_text = render_template('recommend_song').encode("utf-8")
+    # XXX: skin helper widgets doesn't seem to do anything valid for
+    # recommended songs currently, so let's just try to do something
+    # reasonable.
+    if item[2] != 0:
+      song_details = kodi.GetSongDetails(item[2])
+      response_text = render_template('recommend_song', song_name=item[1], artist_name=song_details['artist'][0]).encode("utf-8")
+    else:
+      item[0] = 'recentsongs'
+      response_text = render_template('recommend_songs_recent').encode("utf-8")
 
   session.attributes['play_media_type'] = item[0]
   session.attributes['play_media_id'] = item[2]

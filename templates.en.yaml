@@ -44,7 +44,9 @@ recommend_artist: "How about music by {{ artist_name }}?"
 
 recommend_album: "How about the album {{ album_name }} by {{ artist_name }}?"
 
-recommend_song: "How about some of your recently added songs?"
+recommend_song: "How about the song {{ song_name }} by {{ artist_name }}?"
+
+recommend_songs_recent: "How about some of your recently added songs?"
 
 searching: "Searching for {{ heard_name }}"
 

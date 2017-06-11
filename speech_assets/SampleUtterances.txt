@@ -449,10 +449,12 @@ RecommendShow recommend show
 RecommendShow recommend t. v. show
 RecommendShow suggest show
 RecommendShow suggest t. v. show
+RecommendSong recommend a song
 RecommendSong recommend music
 RecommendSong recommend some music
 RecommendSong recommend some songs
 RecommendSong recommend songs
+RecommendSong suggest a song
 RecommendSong suggest music
 RecommendSong suggest some music
 RecommendSong suggest some songs
