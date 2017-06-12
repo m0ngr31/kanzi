@@ -4,6 +4,12 @@
       "intent": "RecommendMedia"
     },
     {
+      "intent": "RecommendVideo"
+    },
+    {
+      "intent": "RecommendAudio"
+    },
+    {
       "intent": "RecommendMovie"
     },
     {

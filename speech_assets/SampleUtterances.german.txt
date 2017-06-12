@@ -830,6 +830,10 @@ RecommendArtist welchen Interpreten es empfiehlt
 RecommendArtist welchen Interpreten es mir empfiehlt
 RecommendArtist welchen Interpreten es mir vorschlägt
 RecommendArtist welchen Interpreten es vorschlägt
+RecommendAudio welche Musik es empfiehlt
+RecommendAudio welche Musik es mir empfiehlt
+RecommendAudio welche Musik es mir vorschlägt
+RecommendAudio welche Musik es vorschlägt
 RecommendEpisode welche Episode es empfiehlt
 RecommendEpisode welche Episode es mir empfiehlt
 RecommendEpisode welche Episode es mir vorschlägt
@@ -862,6 +866,10 @@ RecommendSong welches Lied es empfiehlt
 RecommendSong welches Lied es mir empfiehlt
 RecommendSong welches Lied es mir vorschlägt
 RecommendSong welches Lied es vorschlägt
+RecommendVideo welches Video es empfiehlt
+RecommendVideo welches Video es mir empfiehlt
+RecommendVideo welches Video es mir vorschlägt
+RecommendVideo welches Video es vorschlägt
 Right nach rechts
 Right navigier nach rechts
 Right navigier rechts

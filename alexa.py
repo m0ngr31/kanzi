@@ -175,9 +175,18 @@ def alexa_cancel():
 @ask.intent('AMAZON.NoIntent')
 def alexa_no():
   kodi = Kodi(config, context)
-  if 'play_media_type' in session.attributes and session.attributes['play_media_type'] != 'recentsongs':
+
+  if 'play_media_generic_type' in session.attributes:
+    generic_type = session.attributes['play_media_generic_type']
+    if generic_type == 'video':
+      item = kodi.GetRecommendedVideoItem()
+    else:
+      item = kodi.GetRecommendedAudioItem()
+    return alexa_recommend_item(kodi, item, generic_type)
+  elif 'play_media_type' in session.attributes and session.attributes['play_media_type'] != 'recentsongs':
     item = kodi.GetRecommendedItem(session.attributes['play_media_type'] + 's')
     return alexa_recommend_item(kodi, item)
+
   return alexa_stop_cancel(kodi)
 
 
@@ -1950,7 +1959,7 @@ def alexa_shuffle_playlist(VideoPlaylist, AudioPlaylist):
   return statement(response_text).simple_card(card_title, response_text)
 
 
-def alexa_recommend_item(kodi, item=None):
+def alexa_recommend_item(kodi, item, generic_type=None):
   response_text = render_template('no_recommendations').encode("utf-8")
 
   if item[0] == 'movie':
@@ -1979,6 +1988,8 @@ def alexa_recommend_item(kodi, item=None):
       item[0] = 'recentsongs'
       response_text = render_template('recommend_songs_recent').encode("utf-8")
 
+  if generic_type:
+    session.attributes['play_media_generic_type'] = generic_type
   session.attributes['play_media_type'] = item[0]
   session.attributes['play_media_id'] = item[2]
   return question(response_text)
@@ -1991,6 +2002,24 @@ def alexa_recommend_media():
   kodi = Kodi(config, context)
   item = kodi.GetRecommendedItem()
   return alexa_recommend_item(kodi, item)
+
+
+# Handle the RecommendVideo intent.
+@ask.intent('RecommendVideo')
+def alexa_recommend_video():
+  print "Recommending video"
+  kodi = Kodi(config, context)
+  item = kodi.GetRecommendedVideoItem()
+  return alexa_recommend_item(kodi, item, 'video')
+
+
+# Handle the RecommendAudio intent.
+@ask.intent('RecommendAudio')
+def alexa_recommend_audio():
+  print "Recommending audio"
+  kodi = Kodi(config, context)
+  item = kodi.GetRecommendedAudioItem()
+  return alexa_recommend_item(kodi, item, 'audio')
 
 
 # Handle the RecommendMovie intent.
