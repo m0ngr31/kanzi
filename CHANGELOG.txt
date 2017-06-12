@@ -1,3 +1,10 @@
+v2.6.5 (06/12/2017)
+* Speed up matching for titles that do not contain numbers.
+* Support for recommended songs.
+* Add 'recommend something to watch' and 'recommend something to listen to'.
+* Shorten welcome message.
+* Allow (play/listen to/shuffle) (latest/newest) recently added songs.
+
 v2.6.4 (06/06/2017)
 * Assume UTF-8 encoding in JSON responses (speed up)
 * New intents to recommend media
