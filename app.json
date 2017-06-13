@@ -57,14 +57,19 @@
       "value": "yes",
       "required": false
     },
+    "MAX_PLAYLIST_ITEMS": {
+      "description": "Maximum number of items to add to playlists.  Empty means unlimited.",
+      "value": "100",
+      "required": false
+    },
     "MAX_UNWATCHED_EPISODES": {
       "description": "Maximum number of items to fetch when looking for new episodes.",
-      "value": "90",
+      "value": "100",
       "required": false
     },
     "MAX_UNWATCHED_MOVIES": {
       "description": "Maximum number of items to fetch when looking for new movies.",
-      "value": "90",
+      "value": "100",
       "required": false
     }
   },
