@@ -8,7 +8,7 @@ could_not_find: "Could not find {{ heard_name }}"
 
 could_not_find_generic: "Could not find that phrase"
 
-could_not_find_artist: "Could not find the anything by {{ artist_name }}"
+could_not_find_artist: "Could not find anything by {{ artist_name }}"
 
 could_not_find_album: "Could not find the album {{ album_name }}"
 
