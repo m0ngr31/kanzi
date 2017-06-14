@@ -18,6 +18,8 @@ could_not_find_song: "Could not find the song {{ song_name }}"
 
 could_not_find_song_artist: "Could not find the song {{ song_name }} by {{ artist }}"
 
+could_not_find_song_album: "Could not find the song {{ song_name }} on the album {{ album_name }}"
+
 could_not_find_multi: "Could not find {{ heard_name }} by {{ artist }}"
 
 could_not_find_playlist: "I could not find a playlist named {{ heard_name }}"
@@ -61,6 +63,8 @@ playing_album_artist: "Playing album {{ album_name }} by {{ artist }}"
 playing_song: "Playing the song {{ song_name }}"
 
 playing_song_artist: "Playing the song {{ song_name }} by {{ artist }}"
+
+playing_song_album: "Playing the song {{ song_name }} on the album {{ album_name }}"
 
 playing_playlist_audio: "{{ action }} the audio playlist {{ playlist_name }}"
 

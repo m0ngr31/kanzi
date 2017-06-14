@@ -215,6 +215,10 @@
         {
           "name": "Song",
           "type": "MUSICSONGS"
+        },
+        {
+          "name": "Album",
+          "type": "MUSICALBUMS"
         }
       ]
     },

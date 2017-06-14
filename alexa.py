@@ -719,9 +719,10 @@ def alexa_shuffle_latest_album(Artist):
   return alexa_listen_latest_album(Artist, True)
 
 
-# Handle the ListenToSong intent (Play a song, or song by a specific artist).
+# Handle the ListenToSong intent (Play a song, song by a specific artist,
+# or song on a specific album).
 @ask.intent('ListenToSong')
-def alexa_listen_song(Song, Artist):
+def alexa_listen_song(Song, Album, Artist):
   card_title = render_template('playing_song_card').encode("utf-8")
   print card_title
 
@@ -736,6 +737,16 @@ def alexa_listen_song(Song, Artist):
         response_text = render_template('could_not_find_song_artist', song_name=Song, artist=artist_label).encode("utf-8")
     else:
       response_text = render_template('could_not_find_song_artist', song_name=Song, artist=Artist).encode("utf-8")
+  elif Album:
+    album_id, album_label = kodi.FindAlbum(Album)
+    if album_id:
+      song_id, song_label = kodi.FindSong(Song, album_id=album_id)
+      if song_id:
+        response_text = render_template('playing_song_album', song_name=song_label, album_name=album_label).encode("utf-8")
+      else:
+        response_text = render_template('could_not_find_song_album', song_name=Song, album_name=album_label).encode("utf-8")
+    else:
+      response_text = render_template('could_not_find_song_album', song_name=Song, album_name=Album).encode("utf-8")
   else:
     song_id, song_label = kodi.FindSong(Song)
     if song_id:
