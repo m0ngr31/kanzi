@@ -199,12 +199,28 @@ ListenToLatestAlbum play the latest album by {Artist}
 ListenToLatestAlbum play the newest album by {Artist}
 ListenToSong listen to song {Song}
 ListenToSong listen to song {Song} by {Artist}
+ListenToSong listen to song {Song} from album {Album}
+ListenToSong listen to song {Song} from the album {Album}
+ListenToSong listen to song {Song} on album {Album}
+ListenToSong listen to song {Song} on the album {Album}
 ListenToSong listen to the song {Song}
 ListenToSong listen to the song {Song} by {Artist}
+ListenToSong listen to the song {Song} from album {Album}
+ListenToSong listen to the song {Song} from the album {Album}
+ListenToSong listen to the song {Song} on album {Album}
+ListenToSong listen to the song {Song} on the album {Album}
 ListenToSong play song {Song}
 ListenToSong play song {Song} by {Artist}
+ListenToSong play song {Song} from album {Album}
+ListenToSong play song {Song} from the album {Album}
+ListenToSong play song {Song} on album {Album}
+ListenToSong play song {Song} on the album {Album}
 ListenToSong play the song {Song}
 ListenToSong play the song {Song} by {Artist}
+ListenToSong play the song {Song} from album {Album}
+ListenToSong play the song {Song} from the album {Album}
+ListenToSong play the song {Song} on album {Album}
+ListenToSong play the song {Song} on the album {Album}
 Menu open menu
 Mute mute
 Mute set mute

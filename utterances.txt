@@ -89,6 +89,7 @@ ListenToAlbum (play/listen to) (/the) album {Album} by {Artist}
 
 ListenToSong (play/listen to) (/the) song {Song}
 ListenToSong (play/listen to) (/the) song {Song} by {Artist}
+ListenToSong (play/listen to) (/the) song {Song} (from/on) (/the) album {Album}
 
 ListenToAlbumOrSong (play/listen to) {Album} by {Artist}
 ListenToAlbumOrSong (play/listen to) {Song} by {Artist}
