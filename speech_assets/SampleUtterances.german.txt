@@ -448,15 +448,27 @@ ListenToLatestAlbum spiele neuestes Album von {Artist}
 ListenToLatestAlbum spiele zuletzt das hinzugefügte Album von {Artist}
 ListenToLatestAlbum spiele zuletzt hinzugefügtes Album von {Artist}
 ListenToSong spiel das Lied {Song}
+ListenToSong spiel das Lied {Song} auf dem Album {Album}
+ListenToSong spiel das Lied {Song} aus dem Album {Album}
+ListenToSong spiel das Lied {Song} vom Album {Album}
 ListenToSong spiel das Lied {Song} von dem Album {Album}
 ListenToSong spiel das Lied {Song} von {Artist}
 ListenToSong spiel den Song {Song}
+ListenToSong spiel den Song {Song} auf dem Album {Album}
+ListenToSong spiel den Song {Song} aus dem Album {Album}
+ListenToSong spiel den Song {Song} vom Album {Album}
 ListenToSong spiel den Song {Song} von dem Album {Album}
 ListenToSong spiel den Song {Song} von {Artist}
 ListenToSong spiele das Lied {Song}
+ListenToSong spiele das Lied {Song} auf dem Album {Album}
+ListenToSong spiele das Lied {Song} aus dem Album {Album}
+ListenToSong spiele das Lied {Song} vom Album {Album}
 ListenToSong spiele das Lied {Song} von dem Album {Album}
 ListenToSong spiele das Lied {Song} von {Artist}
 ListenToSong spiele den Song {Song}
+ListenToSong spiele den Song {Song} auf dem Album {Album}
+ListenToSong spiele den Song {Song} aus dem Album {Album}
+ListenToSong spiele den Song {Song} vom Album {Album}
 ListenToSong spiele den Song {Song} von dem Album {Album}
 ListenToSong spiele den Song {Song} von {Artist}
 Menu öffne Menü
