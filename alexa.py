@@ -10,7 +10,6 @@ import sys
 import time
 import os
 import re
-from multiprocessing import Process
 from flask import Flask, json, render_template
 from flask_ask import Ask, session, question, statement, audio, request, context
 from shutil import copyfile
@@ -1512,13 +1511,7 @@ def alexa_clean_video():
   print card_title
 
   kodi = Kodi(config, context)
-  # Use threading to prevent timeouts
-  c = Process(target=kodi.CleanVideo)
-  c.daemon = True
-  c.start()
-
-  time.sleep(2)
-
+  kodi.CleanVideo()
   return statement(card_title).simple_card(card_title, "")
 
 
@@ -1529,13 +1522,7 @@ def alexa_update_video():
   print card_title
 
   kodi = Kodi(config, context)
-  # Use threading to prevent timeouts
-  c = Process(target=kodi.UpdateVideo)
-  c.daemon = True
-  c.start()
-
-  time.sleep(2)
-
+  kodi.UpdateVideo()
   return statement(card_title).simple_card(card_title, "")
 
 
@@ -1546,13 +1533,7 @@ def alexa_clean_audio():
   print card_title
 
   kodi = Kodi(config, context)
-  # Use threading to prevent timeouts
-  c = Process(target=kodi.CleanMusic)
-  c.daemon = True
-  c.start()
-
-  time.sleep(2)
-
+  kodi.CleanMusic()
   return statement(card_title).simple_card(card_title, "")
 
 
@@ -1563,13 +1544,7 @@ def alexa_update_audio():
   print card_title
 
   kodi = Kodi(config, context)
-  # Use threading to prevent timeouts
-  c = Process(target=kodi.UpdateMusic)
-  c.daemon = True
-  c.start()
-
-  time.sleep(2)
-
+  kodi.UpdateMusic()
   return statement(card_title).simple_card(card_title, "")
 
 
