@@ -1,3 +1,8 @@
+v2.6.6 (06/20/2017)
+* Speed up speech responses for certain requests.
+* Add ability to specify an album when playing a song.
+* Add playlist_max_items option.
+
 v2.6.5 (06/12/2017)
 * Speed up matching for titles that do not contain numbers.
 * Support for recommended songs.
