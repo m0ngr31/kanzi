@@ -727,6 +727,8 @@ def alexa_listen_song(Song, Album, Artist):
   print card_title
 
   kodi = Kodi(config, context)
+
+  song_id = None
   if Artist:
     artist_id, artist_label = kodi.FindArtist(Artist)
     if artist_id:
