@@ -1,3 +1,8 @@
+v2.7.0 (06/26/2017)
+* Better matching for songs and albums in certain cases.
+* Return newest instead of most recently-added album when asking for newest
+  album by an artist.
+
 v2.6.6 (06/20/2017)
 * Speed up speech responses for certain requests.
 * Add ability to specify an album when playing a song.
