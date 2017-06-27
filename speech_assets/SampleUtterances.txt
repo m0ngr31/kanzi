@@ -231,6 +231,7 @@ Mute unmute
 PageDown go page down
 PageDown navigate page down
 PageDown page down
+PageDown show more
 PageUp go page up
 PageUp navigate page up
 PageUp page up

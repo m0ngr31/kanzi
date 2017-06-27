@@ -19,6 +19,7 @@ Right (/navigate/go) right
 Left (/navigate/go) left
 PageUp (/navigate/go) page up
 PageDown (/navigate/go) page down
+PageDown show more
 
 Select select
 
