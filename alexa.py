@@ -2309,7 +2309,7 @@ def alexa_launch():
 
 @ask.session_ended
 def session_ended():
-  return "", 200
+  return "{}", 200
 
 
 # End of intent methods
