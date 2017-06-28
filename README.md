@@ -26,14 +26,14 @@ Here are some of the features supported by this skill:
 - Continue watching next episode of last show that was watched
 - Play next episode of a show
 - Play newest episode of a show
-- Recommend media to watch/listen to
+- Recommend media to watch/listen to (*requires script.skin.helper.widgets addon*)
 - List/Play recently added media
 - List available albums by an artist
 - Clean/Update video and audio sources
 - "What's playing?" functionality for music, movies, and shows
 - Report time remaining on current media and when it will end
 - Cycle through audio and subtitle streams
-- Search for something in your library
+- Search for something in your library (*requires script.globalsearch addon*)
 - Execute addons
 - Shutdown/reboot/sleep/hibernate system
 - Toggle fullscreen
