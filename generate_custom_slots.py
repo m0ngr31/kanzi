@@ -15,7 +15,9 @@ def clean_results(resp, cat, key, limit=100):
   if 'result' in resp and cat in resp['result']:
     for v in retrieved['result'][cat]:
       name = kodi.sanitize_name(v[key], normalize=False)
-      all.append(name)
+      # omit titles with digits, as Amazon never passes numbers as digits
+      if not re.search(r'\d', name):
+        all.append(name)
 
   cleaned = list(set(all))
   cleaned = filter(None, cleaned)
