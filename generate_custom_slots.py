@@ -9,191 +9,82 @@ config = KodiConfigParser(config_file)
 
 kodi = Kodi(config)
 
-# Generate MUSICARTISTS Slot
-retrieved = kodi.GetMusicArtists()
 
-all = []
+def clean_results(resp, cat, key, limit=100):
+  all = []
+  if 'result' in resp and cat in resp['result']:
+    for v in retrieved['result'][cat]:
+      name = kodi.sanitize_name(v[key], normalize=False)
+      all.append(name)
 
-if 'result' in retrieved and 'artists' in retrieved['result']:
-  for v in retrieved['result']['artists']:
-    name = kodi.sanitize_name(v['artist'], normalize=False)
-    all.append(name)
+  cleaned = list(set(all))
+  cleaned = filter(None, cleaned)
+  random.shuffle(cleaned)
+  cleaned = cleaned[:limit]
 
-cleaned = list(set(all))
-cleaned = filter(None, cleaned)
-random.shuffle(cleaned)
-cleaned = cleaned[:100]
-
-gfile = open('MUSICARTISTS', 'w')
-for a in cleaned:
-  gfile.write("%s\n" % a.encode("utf-8"))
-gfile.close()
+  return all
 
 
-# Generate MUSICALBUMS Slot
-retrieved = kodi.GetAlbums()
-
-all = []
-
-if 'result' in retrieved and 'albums' in retrieved['result']:
-  for v in retrieved['result']['albums']:
-    name = kodi.sanitize_name(v['label'], normalize=False)
-    all.append(name)
-
-cleaned = list(set(all))
-cleaned = filter(None, cleaned)
-random.shuffle(cleaned)
-cleaned = cleaned[:100]
-
-gfile = open('MUSICALBUMS', 'w')
-for a in cleaned:
-  gfile.write("%s\n" % a.encode("utf-8"))
-gfile.close()
-
-
-# Generate MUSICSONGS Slot
-retrieved = kodi.GetSongs()
-
-all = []
-
-if 'result' in retrieved and 'songs' in retrieved['result']:
-  for v in retrieved['result']['songs']:
-    name = kodi.sanitize_name(v['label'], normalize=False)
-    all.append(name)
-
-cleaned = list(set(all))
-cleaned = filter(None, cleaned)
-random.shuffle(cleaned)
-cleaned = cleaned[:100]
-
-gfile = open('MUSICSONGS', 'w')
-for a in cleaned:
-  gfile.write("%s\n" % a.encode("utf-8"))
-gfile.close()
+def write_file(filename, items=[]):
+  f = open(filename, 'w')
+  for a in items:
+    f.write("%s\n" % a.encode("utf-8"))
+  f.close()
 
 
 # Generate MUSICPLAYLISTS Slot
 retrieved = kodi.GetMusicPlaylists()
+cl = clean_results(retrieved, 'files', 'label')
+write_file('MUSICPLAYLISTS', cl)
 
-all = []
 
-if 'result' in retrieved and 'files' in retrieved['result']:
-  for v in retrieved['result']['files']:
-    name = kodi.sanitize_name(v['label'], normalize=False)
-    all.append(name)
+# Generate MUSICARTISTS Slot
+retrieved = kodi.GetMusicArtists()
+cl = clean_results(retrieved, 'artists', 'artist')
+write_file('MUSICARTISTS', cl)
 
-cleaned = list(set(all))
-cleaned = filter(None, cleaned)
-random.shuffle(cleaned)
-cleaned = cleaned[:100]
 
-gfile = open('MUSICPLAYLISTS', 'w')
-for a in cleaned:
-  gfile.write("%s\n" % a.encode("utf-8"))
-gfile.close()
+# Generate MUSICALBUMS Slot
+retrieved = kodi.GetAlbums()
+cl = clean_results(retrieved, 'albums', 'label')
+write_file('MUSICALBUMS', cl)
+
+
+# Generate MUSICSONGS Slot
+retrieved = kodi.GetSongs()
+cl = clean_results(retrieved, 'songs', 'label')
+write_file('MUSICSONGS', cl)
 
 
 # Generate VIDEOPLAYLISTS Slot
 retrieved = kodi.GetVideoPlaylists()
-
-all = []
-
-if 'result' in retrieved and 'files' in retrieved['result']:
-  for v in retrieved['result']['files']:
-    name = kodi.sanitize_name(v['label'], normalize=False)
-    all.append(name)
-
-cleaned = list(set(all))
-cleaned = filter(None, cleaned)
-random.shuffle(cleaned)
-cleaned = cleaned[:100]
-
-gfile = open('VIDEOPLAYLISTS', 'w')
-for a in cleaned:
-  gfile.write("%s\n" % a.encode("utf-8"))
-gfile.close()
+cl = clean_results(retrieved, 'files', 'label')
+write_file('VIDEOPLAYLISTS', cl)
 
 
 # Generate MOVIEGENRES Slot
 retrieved = kodi.GetVideoGenres()
-
-all = []
-
-if 'result' in retrieved and 'genres' in retrieved['result']:
-  for v in retrieved['result']['genres']:
-    name = kodi.sanitize_name(v['label'], normalize=False)
-    all.append(name)
-
-cleaned = list(set(all))
-cleaned = filter(None, cleaned)
-random.shuffle(cleaned)
-cleaned = cleaned[:100]
-
-gfile = open('MOVIEGENRES', 'w')
-for a in cleaned:
-  gfile.write("%s\n" % a.encode("utf-8"))
-gfile.close()
+cl = clean_results(retrieved, 'genres', 'label')
+write_file('MOVIEGENRES', cl)
 
 
 # Generate MOVIES Slot
 retrieved = kodi.GetMovies()
-
-all = []
-
-if 'result' in retrieved and 'movies' in retrieved['result']:
-  for v in retrieved['result']['movies']:
-    name = kodi.sanitize_name(v['label'], normalize=False)
-    all.append(name)
-
-cleaned = list(set(all))
-cleaned = filter(None, cleaned)
-random.shuffle(cleaned)
-cleaned = cleaned[:100]
-
-gfile = open('MOVIES', 'w')
-for a in cleaned:
-  gfile.write("%s\n" % a.encode("utf-8"))
-gfile.close()
+cl = clean_results(retrieved, 'movies', 'label')
+write_file('MOVIES', cl)
 
 
 # Generate SHOWS Slot
 retrieved = kodi.GetTvShows()
-
-all = []
-
-if 'result' in retrieved and 'tvshows' in retrieved['result']:
-  for v in retrieved['result']['tvshows']:
-    name = kodi.sanitize_name(v['label'], normalize=False)
-    all.append(name)
-
-cleaned = list(set(all))
-cleaned = filter(None, cleaned)
-random.shuffle(cleaned)
-cleaned = cleaned[:100]
-
-gfile = open('SHOWS', 'w')
-for a in cleaned:
-  gfile.write("%s\n" % a.encode("utf-8"))
-gfile.close()
+cl = clean_results(retrieved, 'tvshows', 'label')
+write_file('SHOWS', cl)
 
 
 # Generate ADDONS Slot
-all = []
-
+retrieved = {'result': {'addons': []}}
 for content in ['video', 'audio', 'image', 'executable']:
-  retrieved = kodi.GetAddons(content)
-
-  if 'result' in retrieved and 'addons' in retrieved['result']:
-    for v in retrieved['result']['addons']:
-      name = kodi.sanitize_name(v['name'], normalize=False)
-      all.append(name)
-
-cleaned = list(set(all))
-cleaned = filter(None, cleaned)
-random.shuffle(cleaned)
-cleaned = cleaned[:100]
-
-gfile = open('ADDONS', 'w')
-for a in cleaned:
-  gfile.write("%s\n" % a.encode("utf-8"))
-gfile.close()
+  r = kodi.GetAddons(content)
+  if 'result' in r and 'addons' in r['result']:
+    retrieved['result']['addons'] += r['result']['addons']
+cl = clean_results(retrieved, 'addons', 'name')
+write_file('ADDONS', cl)
