@@ -16,10 +16,14 @@ Right (/navigier(/e)) (/nach) rechts
 Left (/navigier(/e)) (/nach) links
 PageUp (/navigier(/e)) Seite (hoch/nach oben)
 PageDown (/navigier(/e)) Seite (runter/nach unten)
-
 Select auswählen
-
 Menu öffne Menü
+ViewMovies (öffne/gehe zu) Filme
+ViewShows (öffne/gehe zu) Serien
+ViewMusic (öffne/gehe zu) Musik
+ViewArtists (öffne/gehe zu) (Künstler/Musiker/Interpreten)
+ViewAlbums (öffne/gehe zu) Alben
+ViewMusicVideos (öffne/gehe zu) Musikvideos
 
 Fullscreen vollbild (/umschalten)
 

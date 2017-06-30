@@ -20,10 +20,14 @@ Left (/navigate/go) left
 PageUp (/navigate/go) page up
 PageDown (/navigate/go) page down
 PageDown show more
-
 Select select
-
 Menu open menu
+ViewMovies (open/go to/show) movies
+ViewShows (open/go to/show) shows
+ViewMusic (open/go to/show) music
+ViewArtists (open/go to/show) (artists/music artists/musicians)
+ViewAlbums (open/go to/show) (/music) albums
+ViewMusicVideos (open/go to/show) music videos
 
 Fullscreen (/toggle) (fullscreen/visualizer)
 

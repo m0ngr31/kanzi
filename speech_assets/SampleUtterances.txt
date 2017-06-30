@@ -583,6 +583,33 @@ UpdateAudio update audio library
 UpdateAudio update music library
 UpdateVideo update library
 UpdateVideo update video library
+ViewAlbums go to albums
+ViewAlbums go to music albums
+ViewAlbums open albums
+ViewAlbums open music albums
+ViewAlbums show albums
+ViewAlbums show music albums
+ViewArtists go to artists
+ViewArtists go to music artists
+ViewArtists go to musicians
+ViewArtists open artists
+ViewArtists open music artists
+ViewArtists open musicians
+ViewArtists show artists
+ViewArtists show music artists
+ViewArtists show musicians
+ViewMovies go to movies
+ViewMovies open movies
+ViewMovies show movies
+ViewMusic go to music
+ViewMusic open music
+ViewMusic show music
+ViewMusicVideos go to music videos
+ViewMusicVideos open music videos
+ViewMusicVideos show music videos
+ViewShows go to shows
+ViewShows open shows
+ViewShows show shows
 VolumeDown down volume
 VolumeDown turn down volume
 VolumeDown turn volume down

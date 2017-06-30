@@ -985,6 +985,22 @@ UpdateVideo erneuere Video Bibliothek
 UpdateVideo refresh Video Bibliothek
 UpdateVideo refreshe Video Bibliothek
 UpdateVideo update Video Bibliothek
+ViewAlbums gehe zu Alben
+ViewAlbums öffne Alben
+ViewArtists gehe zu Interpreten
+ViewArtists gehe zu Künstler
+ViewArtists gehe zu Musiker
+ViewArtists öffne Interpreten
+ViewArtists öffne Künstler
+ViewArtists öffne Musiker
+ViewMovies gehe zu Filme
+ViewMovies öffne Filme
+ViewMusic gehe zu Musik
+ViewMusic öffne Musik
+ViewMusicVideos gehe zu Musikvideos
+ViewMusicVideos öffne Musikvideos
+ViewShows gehe zu Serien
+ViewShows öffne Serien
 VolumeDown leiser
 VolumeSet Lautstärke auf {Volume}
 VolumeSet Lautstärke {Volume}

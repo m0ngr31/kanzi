@@ -1486,6 +1486,72 @@ def alexa_back():
   return question(response_text)
 
 
+# Handle the ViewMovies intent.
+@ask.intent('ViewMovies')
+def alexa_show_movies():
+  print 'Navigate: Movies'
+
+  kodi = Kodi(config, context)
+  kodi.ShowMovies()
+  response_text = render_template('short_confirm').encode("utf-8")
+  return question(response_text)
+
+
+# Handle the ViewShows intent.
+@ask.intent('ViewShows')
+def alexa_show_shows():
+  print 'Navigate: Shows'
+
+  kodi = Kodi(config, context)
+  kodi.ShowTvShows()
+  response_text = render_template('short_confirm').encode("utf-8")
+  return question(response_text)
+
+
+# Handle the ViewMusic intent.
+@ask.intent('ViewMusic')
+def alexa_show_music():
+  print 'Navigate: Music'
+
+  kodi = Kodi(config, context)
+  kodi.ShowMusic()
+  response_text = render_template('short_confirm').encode("utf-8")
+  return question(response_text)
+
+
+# Handle the ViewArtists intent.
+@ask.intent('ViewArtists')
+def alexa_show_artists():
+  print 'Navigate: Artists'
+
+  kodi = Kodi(config, context)
+  kodi.ShowMusicArtists()
+  response_text = render_template('short_confirm').encode("utf-8")
+  return question(response_text)
+
+
+# Handle the ViewAlbums intent.
+@ask.intent('ViewAlbums')
+def alexa_show_albums():
+  print 'Navigate: Albums'
+
+  kodi = Kodi(config, context)
+  kodi.ShowMusicAlbums()
+  response_text = render_template('short_confirm').encode("utf-8")
+  return question(response_text)
+
+
+# Handle the ViewMusicVideos intent.
+@ask.intent('ViewMusicVideos')
+def alexa_show_music_videos():
+  print 'Navigate: MusicVideos'
+
+  kodi = Kodi(config, context)
+  kodi.ShowMusicVideos()
+  response_text = render_template('short_confirm').encode("utf-8")
+  return question(response_text)
+
+
 # Handle the Shutdown intent.
 @ask.intent('Shutdown')
 def alexa_shutdown():

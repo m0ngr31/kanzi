@@ -427,6 +427,24 @@
       "intent": "PageDown"
     },
     {
+      "intent": "ViewMovies"
+    },
+    {
+      "intent": "ViewShows"
+    },
+    {
+      "intent": "ViewMusic"
+    },
+    {
+      "intent": "ViewArtists"
+    },
+    {
+      "intent": "ViewAlbums"
+    },
+    {
+      "intent": "ViewMusicVideos"
+    },
+    {
       "intent": "Fullscreen"
     },
     {
