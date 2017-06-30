@@ -22,7 +22,7 @@ def clean_results(resp, cat, key, limit=100):
   random.shuffle(cleaned)
   cleaned = cleaned[:limit]
 
-  return all
+  return cleaned
 
 
 def write_file(filename, items=[]):
