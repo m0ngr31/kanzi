@@ -651,6 +651,14 @@ WatchMovie watch film {Movie}
 WatchMovie watch movie {Movie}
 WatchMovie watch the film {Movie}
 WatchMovie watch the movie {Movie}
+WatchMovieTrailer play preview for {Movie}
+WatchMovieTrailer play the preview for {Movie}
+WatchMovieTrailer play the trailer for {Movie}
+WatchMovieTrailer play trailer for {Movie}
+WatchMovieTrailer watch preview for {Movie}
+WatchMovieTrailer watch the preview for {Movie}
+WatchMovieTrailer watch the trailer for {Movie}
+WatchMovieTrailer watch trailer for {Movie}
 WatchNextEpisode play next episode of {Show}
 WatchNextEpisode play the next episode of {Show}
 WatchNextEpisode watch next episode of {Show}

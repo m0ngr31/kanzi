@@ -1766,6 +1766,27 @@ def alexa_watch_movie(Movie):
   return statement(response_text).simple_card(card_title, response_text)
 
 
+# Handle the WatchMovieTrailer intent.
+@ask.intent('WatchMovieTrailer')
+def alexa_watch_movie_trailer(Movie):
+  card_title = render_template('playing_movie_trailer').encode("utf-8")
+  print card_title
+
+  kodi = Kodi(config, context)
+  movie = kodi.FindMovie(Movie)
+  if len(movie) > 0:
+    movie_details = kodi.GetMovieDetails(movie[0][0])
+    if 'trailer' in movie_details and movie_details['trailer']:
+      kodi.PlayFile(movie_details['trailer'])
+      response_text = render_template('playing_trailer', heard_name=movie[0][1]).encode("utf-8")
+    else:
+      response_text = render_template('could_not_find_trailer', heard_name=Movie).encode("utf-8")
+  else:
+    response_text = render_template('could_not_find_movie', heard_movie=Movie).encode("utf-8")
+
+  return statement(response_text).simple_card(card_title, response_text)
+
+
 # Handle the ShuffleShow intent.
 @ask.intent('ShuffleShow')
 def alexa_shuffle_show(Show):

@@ -28,6 +28,8 @@ could_not_find_addon: "Could not find an addon called {{ heard_addon }}"
 
 could_not_find_movie: "Could not find a movie called {{ heard_movie }}"
 
+could_not_find_trailer: "Could not find a trailer for {{ heard_name }}"
+
 could_not_find_show: "Could not find a show named {{ heard_show }}"
 
 could_not_find_episode_show: "Could not find season {{ season }} episode {{ episode }} of {{ show_name }}"
@@ -75,6 +77,8 @@ playing_party: "Starting party play"
 playing_genre: "Playing the {{ genre }} movie {{ movie_name }}"
 
 playing_action: "{{ action }} {{ movie_name }}"
+
+playing_trailer: "Playing trailer for {{ heard_name }}"
 
 playing_episode_number: "Playing season {{ season }} episode {{ episode }} of {{ show_name }}"
 
@@ -283,7 +287,9 @@ playing_random_movie: "Playing a random movie"
 
 playing_random_movie_genre: "Playing a random {{ genre }} movie"
 
-playing_movie: "Playing Movie"
+playing_movie: "Playing movie"
+
+playing_movie_trailer: "Playing movie trailer"
 
 shuffling_episodes: "Shuffling episodes of {{ heard_show }}"
 

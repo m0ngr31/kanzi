@@ -357,6 +357,15 @@
       ]
     },
     {
+      "intent": "WatchMovieTrailer",
+      "slots": [
+        {
+          "name": "Movie",
+          "type": "MOVIES"
+        }
+      ]
+    },
+    {
       "intent": "WatchVideoPlaylist",
       "slots": [
         {

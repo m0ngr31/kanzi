@@ -1020,6 +1020,14 @@ WatchLatestEpisode zeige letzte Folge von {Show}
 WatchLatestEpisode zeige neueste Episode von {Show}
 WatchLatestEpisode zeige neueste Folge von {Show}
 WatchMovie zeige Film {Movie}
+WatchMovieTrailer spiele Trailer für {Movie}
+WatchMovieTrailer spiele Trailer von {Movie}
+WatchMovieTrailer spiele Vorschau für {Movie}
+WatchMovieTrailer spiele Vorschau von {Movie}
+WatchMovieTrailer zeige Trailer für {Movie}
+WatchMovieTrailer zeige Trailer von {Movie}
+WatchMovieTrailer zeige Vorschau für {Movie}
+WatchMovieTrailer zeige Vorschau von {Movie}
 WatchNextEpisode zeige nächste Episode von {Show}
 WatchNextEpisode zeige nächste Folge von {Show}
 WatchRandomEpisode zeige eine Episode von {Show}
