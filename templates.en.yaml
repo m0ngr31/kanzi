@@ -8,7 +8,11 @@ could_not_find: "Could not find {{ heard_name }}"
 
 could_not_find_generic: "Could not find that phrase"
 
+could_not_find_genre: "Could not find any {{ genre_name }} music"
+
 could_not_find_artist: "Could not find anything by {{ artist_name }}"
+
+could_not_find_genre_artist: "Could not find {{ genre_name }} music by {{ artist_name }}"
 
 could_not_find_album: "Could not find the album {{ album_name }}"
 
@@ -58,6 +62,10 @@ opening: "Opening {{ heard_name }}"
 
 playing: "Playing {{ heard_name }}"
 
+playing_genre: "Playing {{ genre_name }} music"
+
+playing_genre_artist: "Playing {{ genre_name }} music by {{ artist_name }}"
+
 playing_album: "Playing the album {{ album_name }}"
 
 playing_album_artist: "Playing album {{ album_name }} by {{ artist }}"
@@ -74,7 +82,7 @@ playing_playlist_video: "{{ action }} the video playlist {{ playlist_name }}"
 
 playing_party: "Starting party play"
 
-playing_genre: "Playing the {{ genre }} movie {{ movie_name }}"
+playing_genre_movie: "Playing the {{ genre_name }} movie {{ movie_name }}"
 
 playing_action: "{{ action }} {{ movie_name }}"
 
@@ -178,6 +186,8 @@ big_step_forward: "Big step forward"
 big_step_backward: "Big step backward"
 
 listen_artist: "Playing music by {{ heard_artist }}"
+
+listen_artist_genre: "Playing {{ heard_genre }} music by {{ heard_artist }}"
 
 newly_added_shows: "Newly added shows"
 

@@ -91,6 +91,12 @@ cl = clean_results(retrieved, 'files', 'label')
 write_file('MUSICPLAYLISTS', cl)
 
 
+# Generate MUSICGENRES Slot
+retrieved = kodi.GetMusicGenres()
+cl = clean_results(retrieved, 'genres', 'label')
+write_file('MUSICGENRES', cl)
+
+
 # Generate MUSICARTISTS Slot
 retrieved = kodi.GetMusicArtists()
 cl = clean_results(retrieved, 'artists', 'artist')

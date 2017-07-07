@@ -85,7 +85,9 @@ WhatAlbums what albums (/do) (we/i/you) have by {Artist}
 
 ListenToAudio listen to {Artist}
 
-ListenToArtist (play/listen to/shuffle) (music by/artist) {Artist}
+ListenToGenre (play/listen to/shuffle) {MusicGenre} (music/songs/genre)
+
+ListenToArtist (play/listen to/shuffle) (/{MusicGenre}) (music by/artist) {Artist}
 
 ListenToLatestAlbum (play/listen to) (/the) (latest/newest) album by {Artist}
 
@@ -109,7 +111,7 @@ ListenToAudioPlaylistRecent (play/listen to/shuffle) (latest/newest) (songs/musi
 
 WatchVideo watch {Movie}
 
-WatchRandomMovie (play/watch) (/a) random (/{Genre}) (movie/film)
+WatchRandomMovie (play/watch) (/a) random (/{MovieGenre}) (movie/film)
 
 WatchMovie (play/watch) (/the) (movie/film) {Movie}
 
@@ -167,9 +169,9 @@ WhatNewAlbums what new albums (do i have/are there) (/to listen to)
 WhatNewMovies (if there are/are there/do i have) new (movies/films) (/to watch)
 WhatNewMovies (if there is/is there/do i have) a new (movie/film) (/to watch)
 WhatNewMovies what new (movies/films) (do i have/are there) (/to watch)
-WhatNewMovies (if there are/are there/do (we/i) have) (/any/some) new {Genre} (movies/films) (/recorded) (/to watch) (/today/tonight)
-WhatNewMovies (if there is/is there/do (we/i) have) a new {Genre} (movie/film) (/recorded) (/to watch) (/today/tonight)
-WhatNewMovies what (/new) {Genre} (movies/films) ((/do) (we/i/you) have/are there)
+WhatNewMovies (if there are/are there/do (we/i) have) (/any/some) new {MovieGenre} (movies/films) (/recorded) (/to watch) (/today/tonight)
+WhatNewMovies (if there is/is there/do (we/i) have) a new {MovieGenre} (movie/film) (/recorded) (/to watch) (/today/tonight)
+WhatNewMovies what (/new) {MovieGenre} (movies/films) ((/do) (we/i/you) have/are there)
 
 WhatNewShows (if there are/are there/do i have) new shows (/to watch)
 WhatNewShows (if there is/is there/do i have) a new show (/to watch)

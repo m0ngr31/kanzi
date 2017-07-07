@@ -80,7 +80,9 @@ WhatAlbums (welches Album/welche (Alben/CD/CDs/Platte/Platten)) (ich von {Artist
 
 ListenToAudio {Artist} anhören
 
-ListenToArtist spiel(/e) (Musik/Lieder/Songs/Mucke) von (/dem Artist/der Artistin/dem Komponist/der Komponistin/dem Künstler/der Künstlerin/der Band/der Gruppe) {Artist}
+ListenToGenre spiel(/e) {MusicGenre} (Musik/Songs/Genre)
+
+ListenToArtist spiel(/e) (/{MusicGenre}) (Musik/Songs) von (/dem Artist/dem Komponisten/der Komponistin/dem Künstler/der Künstlerin/der Band/der Gruppe/dem Interpreten) {Artist}
 
 ListenToLatestAlbum spiele das (neueste/aktuellste/neue/aktuelle) Album von {Artist}
 ListenToLatestAlbum spiele (aktuelles/neues/neuestes/aktuellstes) Album von {Artist}
@@ -103,7 +105,7 @@ ListenToAudioPlaylistRecent spiel(/e) (zuletzt/kürzlich) hinzugefügte (Musik/L
 
 WatchVideo zeige {Movie}
 
-WatchRandomMovie zeige (/zufälligen) (/{Genre}) Film
+WatchRandomMovie zeige (/zufälligen) (/{MovieGenre}) Film
 
 WatchMovie zeige Film {Movie}
 
@@ -157,12 +159,12 @@ RecommendSong (welches Lied/welchen Song) es (/mir) (empfiehlt/vorschlägt)
 WhatNewAlbums welches neue Album (wartet/(fertig/aufgenommen worden) ist)
 WhatNewAlbums welche neuen Alben (warten/(fertig/aufgenommen worden) sind)
 
-WhatNewMovies welcher (/neue) (/{Genre}) Film (wartet/(fertig/aufgenommen worden) ist)
-WhatNewMovies welche (/neuen) (/{Genre}) Filme (warten/(fertig/aufgenommen worden) sind)
-WhatNewMovies ob es einen neuen (/{Genre}) Film gibt
-WhatNewMovies ob wir einen neuen (/{Genre}) Film haben
-WhatNewMovies ob es neue (/{Genre}) Filme gibt
-WhatNewMovies ob wir neue (/{Genre}) Filme haben
+WhatNewMovies welcher (/neue) (/{MovieGenre}) Film (wartet/(fertig/aufgenommen worden) ist)
+WhatNewMovies welche (/neuen) (/{MovieGenre}) Filme (warten/(fertig/aufgenommen worden) sind)
+WhatNewMovies ob es einen neuen (/{MovieGenre}) Film gibt
+WhatNewMovies ob wir einen neuen (/{MovieGenre}) Film haben
+WhatNewMovies ob es neue (/{MovieGenre}) Filme gibt
+WhatNewMovies ob wir neue (/{MovieGenre}) Filme haben
 
 WhatNewShows welche (/neue) Serie (wartet/(fertig/aufgenommen worden) ist)
 WhatNewShows welche neuen Serien (warten/(fertig/aufgenommen worden) sind)
