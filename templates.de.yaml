@@ -8,7 +8,11 @@ could_not_find: "Konnte {{ heard_name }} nicht finden"
 
 could_not_find_generic: "Konnte diese Formulierung nicht finden"
 
+could_not_find_genre: "Konnte keine {{ genre_name }} Musik finden"
+
 could_not_find_artist: "Konnte keine Musik von {{ artist_name }} finden"
+
+could_not_find_genre_artist: "Konnte keine {{ genre_name }} Musik von {{ artist_name }} finden"
 
 could_not_find_album: "Konnte das Album {{ album_name }} nicht finden"
 
@@ -58,6 +62,10 @@ opening: "Öffne {{ heard_name }}"
 
 playing: "Spiele {{ heard_name }}"
 
+playing_genre: "Spiele {{ genre_name }} Musik"
+
+playing_genre_artist: "Spiele {{ genre_name }} Musik von {{ artist_name }}"
+
 playing_album: "Spiele das Album {{ album_name }}"
 
 playing_album_artist: "Spiele das Album {{ album_name }} von {{ artist }}"
@@ -74,7 +82,7 @@ playing_playlist_video: "{{ action }} Video Playlist {{ playlist_name }}"
 
 playing_party: "Starte Party Play"
 
-playing_genre: "Spiele den {{ genre }} Film {{ movie_name }}"
+playing_genre_movie: "Spiele den {{ genre_name }} Film {{ movie_name }}"
 
 playing_action: "{{ action }} {{ movie_name }}"
 
@@ -186,6 +194,8 @@ big_step_forward: "einen großen Schritt vorwärts"
 big_step_backward: "einen großen Schritt zurück"
 
 listen_artist: "Spiele Musik von {{ heard_artist }}"
+
+listen_artist_genre: "Spiele {{ heard_genre }} Musik von {{ heard_artist }}"
 
 newly_added_shows: "Neu hinzugefügte Serien"
 

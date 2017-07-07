@@ -306,78 +306,78 @@ ListenToAlbum spiele die Platte {Album}
 ListenToAlbum spiele die Platte {Album} von {Artist}
 ListenToAlbumOrSong spiel {Song} von {Artist}
 ListenToAlbumOrSong spiele {Song} von {Artist}
-ListenToArtist spiel Lieder von dem Artist {Artist}
-ListenToArtist spiel Lieder von dem Komponist {Artist}
-ListenToArtist spiel Lieder von dem Künstler {Artist}
-ListenToArtist spiel Lieder von der Artistin {Artist}
-ListenToArtist spiel Lieder von der Band {Artist}
-ListenToArtist spiel Lieder von der Gruppe {Artist}
-ListenToArtist spiel Lieder von der Komponistin {Artist}
-ListenToArtist spiel Lieder von der Künstlerin {Artist}
-ListenToArtist spiel Lieder von {Artist}
-ListenToArtist spiel Mucke von dem Artist {Artist}
-ListenToArtist spiel Mucke von dem Komponist {Artist}
-ListenToArtist spiel Mucke von dem Künstler {Artist}
-ListenToArtist spiel Mucke von der Artistin {Artist}
-ListenToArtist spiel Mucke von der Band {Artist}
-ListenToArtist spiel Mucke von der Gruppe {Artist}
-ListenToArtist spiel Mucke von der Komponistin {Artist}
-ListenToArtist spiel Mucke von der Künstlerin {Artist}
-ListenToArtist spiel Mucke von {Artist}
 ListenToArtist spiel Musik von dem Artist {Artist}
-ListenToArtist spiel Musik von dem Komponist {Artist}
+ListenToArtist spiel Musik von dem Interpreten {Artist}
+ListenToArtist spiel Musik von dem Komponisten {Artist}
 ListenToArtist spiel Musik von dem Künstler {Artist}
-ListenToArtist spiel Musik von der Artistin {Artist}
 ListenToArtist spiel Musik von der Band {Artist}
 ListenToArtist spiel Musik von der Gruppe {Artist}
 ListenToArtist spiel Musik von der Komponistin {Artist}
 ListenToArtist spiel Musik von der Künstlerin {Artist}
 ListenToArtist spiel Musik von {Artist}
 ListenToArtist spiel Songs von dem Artist {Artist}
-ListenToArtist spiel Songs von dem Komponist {Artist}
+ListenToArtist spiel Songs von dem Interpreten {Artist}
+ListenToArtist spiel Songs von dem Komponisten {Artist}
 ListenToArtist spiel Songs von dem Künstler {Artist}
-ListenToArtist spiel Songs von der Artistin {Artist}
 ListenToArtist spiel Songs von der Band {Artist}
 ListenToArtist spiel Songs von der Gruppe {Artist}
 ListenToArtist spiel Songs von der Komponistin {Artist}
 ListenToArtist spiel Songs von der Künstlerin {Artist}
 ListenToArtist spiel Songs von {Artist}
-ListenToArtist spiele Lieder von dem Artist {Artist}
-ListenToArtist spiele Lieder von dem Komponist {Artist}
-ListenToArtist spiele Lieder von dem Künstler {Artist}
-ListenToArtist spiele Lieder von der Artistin {Artist}
-ListenToArtist spiele Lieder von der Band {Artist}
-ListenToArtist spiele Lieder von der Gruppe {Artist}
-ListenToArtist spiele Lieder von der Komponistin {Artist}
-ListenToArtist spiele Lieder von der Künstlerin {Artist}
-ListenToArtist spiele Lieder von {Artist}
-ListenToArtist spiele Mucke von dem Artist {Artist}
-ListenToArtist spiele Mucke von dem Komponist {Artist}
-ListenToArtist spiele Mucke von dem Künstler {Artist}
-ListenToArtist spiele Mucke von der Artistin {Artist}
-ListenToArtist spiele Mucke von der Band {Artist}
-ListenToArtist spiele Mucke von der Gruppe {Artist}
-ListenToArtist spiele Mucke von der Komponistin {Artist}
-ListenToArtist spiele Mucke von der Künstlerin {Artist}
-ListenToArtist spiele Mucke von {Artist}
+ListenToArtist spiel {MusicGenre} Musik von dem Artist {Artist}
+ListenToArtist spiel {MusicGenre} Musik von dem Interpreten {Artist}
+ListenToArtist spiel {MusicGenre} Musik von dem Komponisten {Artist}
+ListenToArtist spiel {MusicGenre} Musik von dem Künstler {Artist}
+ListenToArtist spiel {MusicGenre} Musik von der Band {Artist}
+ListenToArtist spiel {MusicGenre} Musik von der Gruppe {Artist}
+ListenToArtist spiel {MusicGenre} Musik von der Komponistin {Artist}
+ListenToArtist spiel {MusicGenre} Musik von der Künstlerin {Artist}
+ListenToArtist spiel {MusicGenre} Musik von {Artist}
+ListenToArtist spiel {MusicGenre} Songs von dem Artist {Artist}
+ListenToArtist spiel {MusicGenre} Songs von dem Interpreten {Artist}
+ListenToArtist spiel {MusicGenre} Songs von dem Komponisten {Artist}
+ListenToArtist spiel {MusicGenre} Songs von dem Künstler {Artist}
+ListenToArtist spiel {MusicGenre} Songs von der Band {Artist}
+ListenToArtist spiel {MusicGenre} Songs von der Gruppe {Artist}
+ListenToArtist spiel {MusicGenre} Songs von der Komponistin {Artist}
+ListenToArtist spiel {MusicGenre} Songs von der Künstlerin {Artist}
+ListenToArtist spiel {MusicGenre} Songs von {Artist}
 ListenToArtist spiele Musik von dem Artist {Artist}
-ListenToArtist spiele Musik von dem Komponist {Artist}
+ListenToArtist spiele Musik von dem Interpreten {Artist}
+ListenToArtist spiele Musik von dem Komponisten {Artist}
 ListenToArtist spiele Musik von dem Künstler {Artist}
-ListenToArtist spiele Musik von der Artistin {Artist}
 ListenToArtist spiele Musik von der Band {Artist}
 ListenToArtist spiele Musik von der Gruppe {Artist}
 ListenToArtist spiele Musik von der Komponistin {Artist}
 ListenToArtist spiele Musik von der Künstlerin {Artist}
 ListenToArtist spiele Musik von {Artist}
 ListenToArtist spiele Songs von dem Artist {Artist}
-ListenToArtist spiele Songs von dem Komponist {Artist}
+ListenToArtist spiele Songs von dem Interpreten {Artist}
+ListenToArtist spiele Songs von dem Komponisten {Artist}
 ListenToArtist spiele Songs von dem Künstler {Artist}
-ListenToArtist spiele Songs von der Artistin {Artist}
 ListenToArtist spiele Songs von der Band {Artist}
 ListenToArtist spiele Songs von der Gruppe {Artist}
 ListenToArtist spiele Songs von der Komponistin {Artist}
 ListenToArtist spiele Songs von der Künstlerin {Artist}
 ListenToArtist spiele Songs von {Artist}
+ListenToArtist spiele {MusicGenre} Musik von dem Artist {Artist}
+ListenToArtist spiele {MusicGenre} Musik von dem Interpreten {Artist}
+ListenToArtist spiele {MusicGenre} Musik von dem Komponisten {Artist}
+ListenToArtist spiele {MusicGenre} Musik von dem Künstler {Artist}
+ListenToArtist spiele {MusicGenre} Musik von der Band {Artist}
+ListenToArtist spiele {MusicGenre} Musik von der Gruppe {Artist}
+ListenToArtist spiele {MusicGenre} Musik von der Komponistin {Artist}
+ListenToArtist spiele {MusicGenre} Musik von der Künstlerin {Artist}
+ListenToArtist spiele {MusicGenre} Musik von {Artist}
+ListenToArtist spiele {MusicGenre} Songs von dem Artist {Artist}
+ListenToArtist spiele {MusicGenre} Songs von dem Interpreten {Artist}
+ListenToArtist spiele {MusicGenre} Songs von dem Komponisten {Artist}
+ListenToArtist spiele {MusicGenre} Songs von dem Künstler {Artist}
+ListenToArtist spiele {MusicGenre} Songs von der Band {Artist}
+ListenToArtist spiele {MusicGenre} Songs von der Gruppe {Artist}
+ListenToArtist spiele {MusicGenre} Songs von der Komponistin {Artist}
+ListenToArtist spiele {MusicGenre} Songs von der Künstlerin {Artist}
+ListenToArtist spiele {MusicGenre} Songs von {Artist}
 ListenToAudio {Artist} anhören
 ListenToAudioPlaylist spiel Lieder playlist {AudioPlaylist}
 ListenToAudioPlaylist spiel Musik playlist {AudioPlaylist}
@@ -409,6 +409,12 @@ ListenToAudioPlaylistRecent spiele neue Songs
 ListenToAudioPlaylistRecent spiele zuletzt hinzugefügte Lieder
 ListenToAudioPlaylistRecent spiele zuletzt hinzugefügte Musik
 ListenToAudioPlaylistRecent spiele zuletzt hinzugefügte Songs
+ListenToGenre spiel {MusicGenre} Genre
+ListenToGenre spiel {MusicGenre} Musik
+ListenToGenre spiel {MusicGenre} Songs
+ListenToGenre spiele {MusicGenre} Genre
+ListenToGenre spiele {MusicGenre} Musik
+ListenToGenre spiele {MusicGenre} Songs
 ListenToLatestAlbum spiele aktuelles Album von {Artist}
 ListenToLatestAlbum spiele aktuellstes Album von {Artist}
 ListenToLatestAlbum spiele das aktuelle Album von {Artist}
@@ -1012,8 +1018,8 @@ WatchRandomEpisode zeige eine zufällige Episode von {Show}
 WatchRandomEpisode zeige eine zufällige Folge von {Show}
 WatchRandomMovie zeige Film
 WatchRandomMovie zeige zufälligen Film
-WatchRandomMovie zeige zufälligen {Genre} Film
-WatchRandomMovie zeige {Genre} Film
+WatchRandomMovie zeige zufälligen {MovieGenre} Film
+WatchRandomMovie zeige {MovieGenre} Film
 WatchVideo zeige {Movie}
 WatchVideoPlaylist zeige Film playlist {VideoPlaylist}
 WatchVideoPlaylist zeige Serie playlist {VideoPlaylist}
@@ -1084,37 +1090,37 @@ WhatNewEpisodes ob wir neue Folgen {Show} haben
 WhatNewEpisodes ob wir neue von {Show} haben
 WhatNewEpisodes ob wir neue {Show} haben
 WhatNewMovies ob es einen neuen Film gibt
-WhatNewMovies ob es einen neuen {Genre} Film gibt
+WhatNewMovies ob es einen neuen {MovieGenre} Film gibt
 WhatNewMovies ob es neue Filme gibt
-WhatNewMovies ob es neue {Genre} Filme gibt
+WhatNewMovies ob es neue {MovieGenre} Filme gibt
 WhatNewMovies ob wir einen neuen Film haben
-WhatNewMovies ob wir einen neuen {Genre} Film haben
+WhatNewMovies ob wir einen neuen {MovieGenre} Film haben
 WhatNewMovies ob wir neue Filme haben
-WhatNewMovies ob wir neue {Genre} Filme haben
+WhatNewMovies ob wir neue {MovieGenre} Filme haben
 WhatNewMovies welche Filme aufgenommen worden sind
 WhatNewMovies welche Filme fertig sind
 WhatNewMovies welche Filme warten
 WhatNewMovies welche neuen Filme aufgenommen worden sind
 WhatNewMovies welche neuen Filme fertig sind
 WhatNewMovies welche neuen Filme warten
-WhatNewMovies welche neuen {Genre} Filme aufgenommen worden sind
-WhatNewMovies welche neuen {Genre} Filme fertig sind
-WhatNewMovies welche neuen {Genre} Filme warten
-WhatNewMovies welche {Genre} Filme aufgenommen worden sind
-WhatNewMovies welche {Genre} Filme fertig sind
-WhatNewMovies welche {Genre} Filme warten
+WhatNewMovies welche neuen {MovieGenre} Filme aufgenommen worden sind
+WhatNewMovies welche neuen {MovieGenre} Filme fertig sind
+WhatNewMovies welche neuen {MovieGenre} Filme warten
+WhatNewMovies welche {MovieGenre} Filme aufgenommen worden sind
+WhatNewMovies welche {MovieGenre} Filme fertig sind
+WhatNewMovies welche {MovieGenre} Filme warten
 WhatNewMovies welcher Film aufgenommen worden ist
 WhatNewMovies welcher Film fertig ist
 WhatNewMovies welcher Film wartet
 WhatNewMovies welcher neue Film aufgenommen worden ist
 WhatNewMovies welcher neue Film fertig ist
 WhatNewMovies welcher neue Film wartet
-WhatNewMovies welcher neue {Genre} Film aufgenommen worden ist
-WhatNewMovies welcher neue {Genre} Film fertig ist
-WhatNewMovies welcher neue {Genre} Film wartet
-WhatNewMovies welcher {Genre} Film aufgenommen worden ist
-WhatNewMovies welcher {Genre} Film fertig ist
-WhatNewMovies welcher {Genre} Film wartet
+WhatNewMovies welcher neue {MovieGenre} Film aufgenommen worden ist
+WhatNewMovies welcher neue {MovieGenre} Film fertig ist
+WhatNewMovies welcher neue {MovieGenre} Film wartet
+WhatNewMovies welcher {MovieGenre} Film aufgenommen worden ist
+WhatNewMovies welcher {MovieGenre} Film fertig ist
+WhatNewMovies welcher {MovieGenre} Film wartet
 WhatNewShows welche Serie aufgenommen worden ist
 WhatNewShows welche Serie fertig ist
 WhatNewShows welche Serie wartet

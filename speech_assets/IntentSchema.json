@@ -37,7 +37,7 @@
       "intent": "WhatNewMovies",
       "slots": [
         {
-          "name": "Genre",
+          "name": "MovieGenre",
           "type": "MOVIEGENRES"
         }
       ]
@@ -175,11 +175,24 @@
       ]
     },
     {
+      "intent": "ListenToGenre",
+      "slots": [
+        {
+          "name": "MusicGenre",
+          "type": "MUSICGENRES"
+        }
+      ]
+    },
+    {
       "intent": "ListenToArtist",
       "slots": [
         {
           "name": "Artist",
           "type": "MUSICARTISTS"
+        },
+        {
+          "name": "MusicGenre",
+          "type": "MUSICGENRES"
         }
       ]
     },
@@ -347,7 +360,7 @@
       "intent": "WatchRandomMovie",
       "slots": [
         {
-          "name": "Genre",
+          "name": "MovieGenre",
           "type": "MOVIEGENRES"
         }
       ]

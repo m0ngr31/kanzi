@@ -604,27 +604,71 @@ def alexa_listen_audio(Artist):
   return alexa_play_media(Artist=Artist, content=['audio'])
 
 
-# Handle the ListenToArtist intent (Shuffles all music by an artist).
-@ask.intent('ListenToArtist')
-def alexa_listen_artist(Artist):
-  card_title = render_template('listen_artist', heard_artist=Artist).encode("utf-8")
+# Handle the ListenToGenre intent (Shuffles all music of a specific genre).
+@ask.intent('ListenToGenre')
+def alexa_listen_genre(MusicGenre):
+  card_title = render_template('playing_genre', genre_name=MusicGenre).encode("utf-8")
   print card_title
 
   kodi = Kodi(config, context)
+  genre = kodi.FindMusicGenre(MusicGenre)
+  if len(genre) > 0:
+    songs_result = kodi.GetSongsByGenre(genre[0][1])
+    if 'songs' in songs_result['result']:
+      songs = songs_result['result']['songs']
+
+      songs_array = []
+      for song in songs:
+        songs_array.append(song['songid'])
+
+      kodi.PlayerStop()
+      kodi.ClearAudioPlaylist()
+      kodi.AddSongsToPlaylist(songs_array, True)
+      kodi.StartAudioPlaylist()
+      response_text = render_template('playing_genre', genre_name=genre[0][1]).encode("utf-8")
+    else:
+      response_text = render_template('could_not_find_genre', genre_name=genre[0][1]).encode("utf-8")
+  else:
+    response_text = render_template('could_not_find', heard_name=MusicGenre).encode("utf-8")
+
+  return statement(response_text).simple_card(card_title, response_text)
+
+
+# Handle the ListenToArtist intent (Shuffles all music by an artist, optionally of a specific genre).
+@ask.intent('ListenToArtist')
+def alexa_listen_artist(Artist, MusicGenre):
+  kodi = Kodi(config, context)
+  genre = []
+  if MusicGenre:
+    card_title = render_template('listen_artist_genre', heard_genre=MusicGenre, heard_artist=Artist).encode("utf-8")
+    genre = kodi.FindMusicGenre(MusicGenre)
+  else:
+    card_title = render_template('listen_artist', heard_artist=Artist).encode("utf-8")
+  print card_title
+
   artist = kodi.FindArtist(Artist)
   if len(artist) > 0:
-    songs_result = kodi.GetArtistSongs(artist[0][0])
-    songs = songs_result['result']['songs']
+    if len(genre) > 0:
+      songs_result = kodi.GetArtistSongsByGenre(artist[0][1], genre[0][1])
+      response_text = render_template('playing_genre_artist', genre_name=genre[0][1], artist_name=artist[0][1]).encode("utf-8")
+    else:
+      songs_result = kodi.GetArtistSongs(artist[0][0])
+      response_text = render_template('playing', heard_name=artist[0][1]).encode("utf-8")
+    if 'songs' in songs_result['result']:
+      songs = songs_result['result']['songs']
 
-    songs_array = []
-    for song in songs:
-      songs_array.append(song['songid'])
+      songs_array = []
+      for song in songs:
+        songs_array.append(song['songid'])
 
-    kodi.PlayerStop()
-    kodi.ClearAudioPlaylist()
-    kodi.AddSongsToPlaylist(songs_array, True)
-    kodi.StartAudioPlaylist()
-    response_text = render_template('playing', heard_name=artist[0][1]).encode("utf-8")
+      kodi.PlayerStop()
+      kodi.ClearAudioPlaylist()
+      kodi.AddSongsToPlaylist(songs_array, True)
+      kodi.StartAudioPlaylist()
+    elif len(genre) > 0:
+      response_text = render_template('could_not_find_genre_artist', genre_name=genre[0][1], artist_name=artist[0][1]).encode("utf-8")
+    else:
+      response_text = render_template('could_not_find_artist', artist_name=artist[0][1]).encode("utf-8")
   else:
     response_text = render_template('could_not_find', heard_name=Artist).encode("utf-8")
 
@@ -1700,13 +1744,13 @@ def alexa_watch_video(Movie):
 
 # Handle the WatchRandomMovie intent.
 @ask.intent('WatchRandomMovie')
-def alexa_watch_random_movie(Genre):
+def alexa_watch_random_movie(MovieGenre):
   kodi = Kodi(config, context)
   genre = []
   # If a genre has been specified, match the genre for use in selecting a random film
-  if Genre:
-    card_title = render_template('playing_random_movie_genre', genre=Genre).encode("utf-8")
-    genre = kodi.FindVideoGenre(Genre)
+  if MovieGenre:
+    card_title = render_template('playing_random_movie_genre', genre=MovieGenre).encode("utf-8")
+    genre = kodi.FindVideoGenre(MovieGenre)
   else:
     card_title = render_template('playing_random_movie').encode("utf-8")
   print card_title
@@ -1730,7 +1774,7 @@ def alexa_watch_random_movie(Genre):
 
     kodi.PlayMovie(random_movie['movieid'], False)
     if len(genre) > 0:
-      response_text = render_template('playing_genre', genre=genre[0][1], movie_name=random_movie['label']).encode("utf-8")
+      response_text = render_template('playing_genre_movie', genre=genre[0][1], movie_name=random_movie['label']).encode("utf-8")
     else:
       response_text = render_template('playing', heard_name=random_movie['label']).encode("utf-8")
   else:
@@ -2218,15 +2262,15 @@ def alexa_what_new_albums():
 
 # Handle the WhatNewMovies intent.
 @ask.intent('WhatNewMovies')
-def alexa_what_new_movies(Genre):
+def alexa_what_new_movies(MovieGenre):
   kodi = Kodi(config, context)
 
   new_movies = None
 
   # If a genre has been specified, match the genre for use in selecting random films
-  if Genre:
-    card_title = render_template('newly_added_movies_genre', genre=Genre).encode("utf-8")
-    genre = kodi.FindVideoGenre(Genre)
+  if MovieGenre:
+    card_title = render_template('newly_added_movies_genre', genre=MovieGenre).encode("utf-8")
+    genre = kodi.FindVideoGenre(MovieGenre)
     if len(genre) > 0:
       new_movies = kodi.GetUnwatchedMoviesByGenre(genre[0][1])
   else:
