@@ -114,7 +114,7 @@ WatchRandomMovie (play/watch) (/a) random (/{Genre}) (movie/film)
 
 WatchMovie (play/watch) (/the) (movie/film) {Movie}
 
-WatchMovieTrailer (play/watch) (/the) (trailer/preview) for {Movie}
+WatchMovieTrailer (play/watch) (/the) (trailer/preview) (/for {Movie})
 
 WatchEpisode (play/watch) (season/series) {Season} episode {Episode} of {Show}
 

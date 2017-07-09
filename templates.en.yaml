@@ -78,7 +78,7 @@ playing_genre: "Playing the {{ genre }} movie {{ movie_name }}"
 
 playing_action: "{{ action }} {{ movie_name }}"
 
-playing_trailer: "Playing trailer for {{ heard_name }}"
+playing_trailer: "Playing the trailer for {{ heard_name }}"
 
 playing_episode_number: "Playing season {{ season }} episode {{ episode }} of {{ show_name }}"
 

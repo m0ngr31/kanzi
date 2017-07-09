@@ -1773,12 +1773,22 @@ def alexa_watch_movie_trailer(Movie):
   print card_title
 
   kodi = Kodi(config, context)
-  movie = kodi.FindMovie(Movie)
-  if len(movie) > 0:
-    movie_details = kodi.GetMovieDetails(movie[0][0])
+
+  movie_id = None
+  # If we're currently recommending a movie to the user, let's assume that
+  # they're wanting to watch the trailer for that.
+  if 'play_media_type' in session.attributes and session.attributes['play_media_type'] == 'movie':
+    movie_id = session.attributes['play_media_id']
+  else:
+    movie = kodi.FindMovie(Movie)
+    if len(movie) > 0:
+      movie_id = movie[0][0]
+
+  if movie_id:
+    movie_details = kodi.GetMovieDetails(movie_id)
     if 'trailer' in movie_details and movie_details['trailer']:
       kodi.PlayFile(movie_details['trailer'])
-      response_text = render_template('playing_trailer', heard_name=movie[0][1]).encode("utf-8")
+      response_text = render_template('playing_trailer', heard_name=movie_details['label']).encode("utf-8")
     else:
       response_text = render_template('could_not_find_trailer', heard_name=Movie).encode("utf-8")
   else:

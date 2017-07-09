@@ -108,7 +108,7 @@ WatchRandomMovie zeige (/zufälligen) (/{Genre}) Film
 
 WatchMovie zeige Film {Movie}
 
-WatchMovieTrailer (spiele/zeige) (Trailer/Vorschau) (von/für) {Movie}
+WatchMovieTrailer (spiele/zeige) (Trailer/Vorschau) (/(von/für) {Movie})
 
 WatchEpisode zeige Staffel {Season} (Episode/Folge) {Episode} von {Show}
 
