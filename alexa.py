@@ -186,6 +186,10 @@ def alexa_no():
     item = kodi.GetRecommendedItem(session.attributes['play_media_type'] + 's')
     return alexa_recommend_item(kodi, item)
 
+  if 'entered_text' in session.attributes:
+    session.attributes['entered_text'] = None
+    return question(render_template('try_enter_text_again ').encode("utf-8"))
+
   return alexa_stop_cancel(kodi)
 
 
@@ -254,6 +258,11 @@ def alexa_yes():
       kodi.StartAudioPlaylist()
     elif media_type == 'recentsongs':
       alexa_listen_recently_added_songs()
+    return statement(render_template('okay').encode("utf-8"))
+
+  if 'entered_text' in session.attributes:
+    send_text = session.attributes['entered_text']
+    kodi.SendText(send_text)
     return statement(render_template('okay').encode("utf-8"))
 
   if card_title:
@@ -2375,6 +2384,16 @@ def alexa_what_albums(Artist):
     return statement(response_text).simple_card(card_title, response_text)
 
   return question(response_text)
+
+
+# Handle the EnterText intent.
+@ask.intent('EnterText')
+def alexa_enter_text(Phrase):
+  kodi = Kodi(config, context)
+  response_text = render_template('confirm_text_to_enter', heard_text=Phrase).encode("utf-8")
+  reprompt_text = render_template('confirm_text_to_enter_prompt', heard_text=Phrase).encode("utf-8")
+  session.attributes['entered_text'] = Phrase
+  return question(response_text).reprompt(reprompt_text)
 
 
 @ask.intent('AMAZON.HelpIntent')

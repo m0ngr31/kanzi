@@ -156,6 +156,25 @@ nothing_currently_playing: "Es läuft gerade nichts."
 
 
 ############################
+##   Question Templates   ##
+############################
+
+confirm_text_to_enter: |
+  <speak>
+      I heard the text:
+      <emphasis level="moderate">{{ heard_text }}</emphasis>.
+      Is this correct?
+  </speak>
+confirm_text_to_enter_prompt: |
+  <speak>
+      You want me to enter the text:
+      <emphasis level="moderate">{{ heard_text }}</emphasis>.
+      Yes?
+  </speak>
+try_enter_text_again: "Try again, say: Enter Text. followed by the text you want to enter."
+
+
+############################
 ##  Card Title Templates  ##
 ############################
 

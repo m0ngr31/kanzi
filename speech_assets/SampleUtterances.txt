@@ -1203,3 +1203,5 @@ WhatNewShows what new shows are there
 WhatNewShows what new shows are there to watch
 WhatNewShows what new shows do i have
 WhatNewShows what new shows do i have to watch
+EnterText enter the text {Phrase}
+EnterText enter text {Phrase}
