@@ -146,13 +146,14 @@ The initial setup page looks like this:
 
 On the next page, you'll have to paste the contents of the [IntentSchema.json](https://raw.githubusercontent.com/m0ngr31/kodi-alexa/master/speech_assets/IntentSchema.json) file into the "Intent Schema" field, and paste the contents of the [SampleUtterances.txt](https://raw.githubusercontent.com/m0ngr31/kodi-alexa/master/speech_assets/SampleUtterances.txt) or [SampleUtterances.german.txt](https://raw.githubusercontent.com/m0ngr31/kodi-alexa/master/speech_assets/SampleUtterances.german.txt) file in the "Sample Utterances" field. **Generate and save your Custom Slots first before pasting the Intents and Utterances to avoid errors when attempting to save**.
 
-You need to create 9 different slots:
+You need to create the following slots:
 - MOVIES
 - MOVIEGENRES
 - SHOWS
 - MUSICARTISTS
 - MUSICALBUMS
 - MUSICSONGS
+- MUSICGENRES
 - MUSICPLAYLISTS
 - VIDEOPLAYLISTS
 - ADDONS
