@@ -27,7 +27,19 @@ def sort_by_words(l, longest):
   return distributed
 
 
-def clean_results(resp, cat, key, limit=100):
+def clean_results(resp, cat, key, limit=None):
+  if not limit:
+    try:
+      limit = kodi.config.get('alexa', 'slot_items_max')
+      if limit and limit != 'None':
+        limit = int(limit)
+      else:
+        limit = None
+    except:
+      limit = None
+  if not limit:
+    limit = 100
+
   cleaned = []
   if 'result' in resp and cat in resp['result']:
     for v in retrieved['result'][cat]:
