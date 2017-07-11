@@ -103,9 +103,7 @@ ListenToAlbum play album {Album}
 ListenToAlbum play album {Album} by {Artist}
 ListenToAlbum play the album {Album}
 ListenToAlbum play the album {Album} by {Artist}
-ListenToAlbumOrSong listen to {Album} by {Artist}
 ListenToAlbumOrSong listen to {Song} by {Artist}
-ListenToAlbumOrSong play {Album} by {Artist}
 ListenToAlbumOrSong play {Song} by {Artist}
 ListenToArtist listen to artist {Artist}
 ListenToArtist listen to music by {Artist}

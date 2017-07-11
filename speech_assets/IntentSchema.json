@@ -230,10 +230,6 @@
           "type": "MUSICARTISTS"
         },
         {
-          "name": "Album",
-          "type": "MUSICALBUMS"
-        },
-        {
           "name": "Song",
           "type": "MUSICSONGS"
         }

@@ -304,35 +304,7 @@ ListenToAlbum spiele die CD {Album}
 ListenToAlbum spiele die CD {Album} von {Artist}
 ListenToAlbum spiele die Platte {Album}
 ListenToAlbum spiele die Platte {Album} von {Artist}
-ListenToAlbumOrSong spiel das Album {Album} von der Band {Artist}
-ListenToAlbumOrSong spiel das Album {Album} von der Gruppe {Artist}
-ListenToAlbumOrSong spiel das Album {Album} von {Artist}
-ListenToAlbumOrSong spiel das Lied {Song} von {Artist}
-ListenToAlbumOrSong spiel den Song {Song} von {Artist}
-ListenToAlbumOrSong spiel die CD {Album} von der Band {Artist}
-ListenToAlbumOrSong spiel die CD {Album} von der Gruppe {Artist}
-ListenToAlbumOrSong spiel die CD {Album} von {Artist}
-ListenToAlbumOrSong spiel die Platte {Album} von der Band {Artist}
-ListenToAlbumOrSong spiel die Platte {Album} von der Gruppe {Artist}
-ListenToAlbumOrSong spiel die Platte {Album} von {Artist}
-ListenToAlbumOrSong spiel {Album} von der Band {Artist}
-ListenToAlbumOrSong spiel {Album} von der Gruppe {Artist}
-ListenToAlbumOrSong spiel {Album} von {Artist}
 ListenToAlbumOrSong spiel {Song} von {Artist}
-ListenToAlbumOrSong spiele das Album {Album} von der Band {Artist}
-ListenToAlbumOrSong spiele das Album {Album} von der Gruppe {Artist}
-ListenToAlbumOrSong spiele das Album {Album} von {Artist}
-ListenToAlbumOrSong spiele das Lied {Song} von {Artist}
-ListenToAlbumOrSong spiele den Song {Song} von {Artist}
-ListenToAlbumOrSong spiele die CD {Album} von der Band {Artist}
-ListenToAlbumOrSong spiele die CD {Album} von der Gruppe {Artist}
-ListenToAlbumOrSong spiele die CD {Album} von {Artist}
-ListenToAlbumOrSong spiele die Platte {Album} von der Band {Artist}
-ListenToAlbumOrSong spiele die Platte {Album} von der Gruppe {Artist}
-ListenToAlbumOrSong spiele die Platte {Album} von {Artist}
-ListenToAlbumOrSong spiele {Album} von der Band {Artist}
-ListenToAlbumOrSong spiele {Album} von der Gruppe {Artist}
-ListenToAlbumOrSong spiele {Album} von {Artist}
 ListenToAlbumOrSong spiele {Song} von {Artist}
 ListenToArtist spiel Lieder von dem Artist {Artist}
 ListenToArtist spiel Lieder von dem Komponist {Artist}

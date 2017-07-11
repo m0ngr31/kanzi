@@ -777,12 +777,7 @@ def alexa_listen_song(Song, Album, Artist):
 
 # Handle the ListenToAlbumOrSong intent (Play whole album or song by a specific artist).
 @ask.intent('ListenToAlbumOrSong')
-def alexa_listen_album_or_song(Song, Album, Artist):
-  if Song:
-    heard_search = Song
-  elif Album:
-    heard_search = Album
-
+def alexa_listen_album_or_song(Song, Artist):
   card_title = render_template('playing_album_or_song').encode("utf-8")
   print card_title
 
@@ -794,7 +789,7 @@ def alexa_listen_album_or_song(Song, Album, Artist):
   if len(artist) > 0:
     for a in artist:
       print 'Searching songs and albums by "%s"' % (a[1].encode("utf-8"))
-      song = kodi.FindSong(heard_search, a[0])
+      song = kodi.FindSong(Song, a[0])
       if len(song) > 0:
         kodi.PlayerStop()
         kodi.ClearAudioPlaylist()
@@ -803,7 +798,7 @@ def alexa_listen_album_or_song(Song, Album, Artist):
         response_text = render_template('playing_song_artist', song_name=song[0][1], artist=a[1]).encode("utf-8")
         break
       else:
-        album = kodi.FindAlbum(heard_search, a[0])
+        album = kodi.FindAlbum(Song, a[0])
         if len(album) > 0:
           kodi.PlayerStop()
           kodi.ClearAudioPlaylist()
@@ -812,7 +807,7 @@ def alexa_listen_album_or_song(Song, Album, Artist):
           response_text = render_template('playing_album_artist', album_name=album[0][1], artist=a[1]).encode("utf-8")
           break
         elif response_text == '':
-          response_text = render_template('could_not_find_multi', heard_name=heard_search, artist=a[1]).encode("utf-8")
+          response_text = render_template('could_not_find_multi', heard_name=Song, artist=a[1]).encode("utf-8")
   else:
     response_text = render_template('could_not_find', heard_name=Artist).encode("utf-8")
 

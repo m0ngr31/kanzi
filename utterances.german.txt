@@ -93,8 +93,7 @@ ListenToSong spiel(/e) (das Lied/den Song) {Song}
 ListenToSong spiel(/e) (das Lied/den Song) {Song} von {Artist}
 ListenToSong spiel(/e) (das Lied/den Song) {Song} (auf dem/von dem/vom/aus dem) Album {Album}
 
-ListenToAlbumOrSong spiel(/e) (/das Album/die CD/die Platte) {Album} von (/der Band/der Gruppe) {Artist}
-ListenToAlbumOrSong spiel(/e) (/das Lied/den Song) {Song} von {Artist}
+ListenToAlbumOrSong spiel(/e) {Song} von {Artist}
 
 ListenToAudioPlaylist spiel(/e) (Musik/Lieder/Song) playlist {AudioPlaylist}
 ListenToAudioPlaylist spiel(/e) {AudioPlaylist} (Musik/Lieder/Song) playlist
