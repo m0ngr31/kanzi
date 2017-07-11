@@ -36,7 +36,7 @@ def clean_results(resp, cat, key, limit=100):
       if not re.search(r'\d', name):
         cleaned.append(name)
 
-  cleaned = list(set(cleaned))
+  cleaned = {v.lower(): v for v in cleaned}.values()
   cleaned = filter(None, cleaned)
   random.shuffle(cleaned)
 
