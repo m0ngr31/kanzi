@@ -1550,7 +1550,7 @@ def alexa_show_music_videos():
 # Handle the Shutdown intent.
 @ask.intent('Shutdown')
 def alexa_shutdown():
-  response_text = render_template('are_you_sure').encode("utf-8")
+  response_text = render_template('are_you_sure_shutdown').encode("utf-8")
   session.attributes['shutting_down'] = True
   return question(response_text).reprompt(response_text)
 
@@ -1558,7 +1558,7 @@ def alexa_shutdown():
 # Handle the Reboot intent.
 @ask.intent('Reboot')
 def alexa_reboot():
-  response_text = render_template('are_you_sure').encode("utf-8")
+  response_text = render_template('are_you_sure_reboot').encode("utf-8")
   session.attributes['rebooting'] = True
   return question(response_text).reprompt(response_text)
 
@@ -1566,7 +1566,7 @@ def alexa_reboot():
 # Handle the Hibernate intent.
 @ask.intent('Hibernate')
 def alexa_hibernate():
-  response_text = render_template('are_you_sure').encode("utf-8")
+  response_text = render_template('are_you_sure_hibernate').encode("utf-8")
   session.attributes['hibernating'] = True
   return question(response_text).reprompt(response_text)
 
@@ -1574,7 +1574,7 @@ def alexa_hibernate():
 # Handle the Suspend intent.
 @ask.intent('Suspend')
 def alexa_suspend():
-  response_text = render_template('are_you_sure').encode("utf-8")
+  response_text = render_template('are_you_sure_suspend').encode("utf-8")
   session.attributes['suspending'] = True
   return question(response_text).reprompt(response_text)
 

@@ -148,6 +148,14 @@ help_play: "Spezifiziere bitte den Medientyp mit dem Wiedergabebefehl, so wie Sp
 
 are_you_sure: "Bist du dir sicher?"
 
+are_you_sure_shutdown: "Bist du dir sicher, dass du das System herunterfahren möchtest?"
+
+are_you_sure_reboot: "Bist du dir sicher, dass du einen Neustart durchführen möchtest?"
+
+are_you_sure_hibernate: "Bist du dir sicher, dass das System in den Hibernate gehen soll?"
+
+are_you_sure_suspend: "Bist du dir sicher, dass das System in den Suspend gehen soll?"
+
 what_to_do: "Was möchtest Du tun?"
 
 welcome: "Willkommen zum Kodi Skill"

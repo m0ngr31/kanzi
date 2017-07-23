@@ -148,6 +148,14 @@ help_play: "Please specify the media type in your play command, such as, play th
 
 are_you_sure: "Are you sure?"
 
+are_you_sure_shutdown: "Are you sure you want to shut down?"
+
+are_you_sure_reboot: "Are you sure you want to reboot?"
+
+are_you_sure_hibernate: "Are you sure you want to hibernate?"
+
+are_you_sure_suspend: "Are you sure you want to suspend?"
+
 what_to_do: "What would you like to do?"
 
 welcome: "Welcome to Kodi."
