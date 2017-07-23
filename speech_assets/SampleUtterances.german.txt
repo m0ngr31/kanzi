@@ -914,6 +914,7 @@ Shutdown herunterfahren
 Shutdown shutdown
 Shutdown system herunterfahren
 Shutdown system shutdown
+SubtitlesDownload download Untertitel
 SubtitlesNext Untertitel umschalten
 SubtitlesNext nächster Untertitel
 SubtitlesOff Untertitel aus

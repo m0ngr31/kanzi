@@ -1167,6 +1167,17 @@ def alexa_subtitles_previous():
   return statement(response_text).simple_card(card_title, response_text)
 
 
+# Handle the SubtitlesDownload intent.
+@ask.intent('SubtitlesDownload')
+def alexa_subtitles_download():
+  card_title = render_template('subtitles_download').encode("utf-8")
+  print card_title
+
+  kodi = Kodi(config, context)
+  item = kodi.DownloadSubtitles()
+  return statement(card_title).simple_card(card_title, "")
+
+
 # Handle the AudioStreamNext intent.
 @ask.intent('AudioStreamNext')
 def alexa_audiostream_next():

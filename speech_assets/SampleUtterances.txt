@@ -573,6 +573,7 @@ ShuffleVideoPlaylist shuffle {VideoPlaylist} show playlist
 ShuffleVideoPlaylist shuffle {VideoPlaylist} video playlist
 Shutdown shut down
 Shutdown shut down system
+SubtitlesDownload download subtitles
 SubtitlesNext next subtitle language
 SubtitlesNext next subtitles
 SubtitlesNext switch subtitle language

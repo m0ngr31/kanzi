@@ -283,6 +283,8 @@ subtitles_disable: "Disabling subtitles"
 
 subtitles_enable: "Enabling subtitles"
 
+subtitles_download: "Downloading subtitles"
+
 adjusting_volume: "Adjusting volume"
 
 volume_down: "Turning volume down"

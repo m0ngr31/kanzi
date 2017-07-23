@@ -505,6 +505,9 @@
       "intent": "SubtitlesPrevious"
     },
     {
+      "intent": "SubtitlesDownload"
+    },
+    {
       "intent": "AudioStreamNext"
     },
     {

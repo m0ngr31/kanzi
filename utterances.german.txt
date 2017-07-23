@@ -37,6 +37,7 @@ SubtitlesOn Untertitel (an/anschalten)
 SubtitlesOff Untertitel (aus/ausschalten)
 SubtitlesNext (nächster Untertitel/Untertitel umschalten)
 SubtitlesPrevious voriger Untertitel
+SubtitlesDownload download Untertitel
 
 AudioStreamNext (audio Stream/Sprache) umschalten
 AudioStreamNext (nächster audio Stream/nächste Sprache)
