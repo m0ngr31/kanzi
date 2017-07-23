@@ -1205,3 +1205,7 @@ WhatNewShows what new shows do i have
 WhatNewShows what new shows do i have to watch
 EnterText enter the text {Phrase}
 EnterText enter text {Phrase}
+EnterText type the text {Phrase}
+EnterText type text {Phrase}
+EnterText send the text {Phrase}
+EnterText send text {Phrase}

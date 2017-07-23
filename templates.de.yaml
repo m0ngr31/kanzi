@@ -161,16 +161,17 @@ nothing_currently_playing: "Es läuft gerade nichts."
 
 confirm_text_to_enter: |
   <speak>
-      I heard the text:
+      Ich habe folgenden Text gehört:
       <emphasis level="moderate">{{ heard_text }}</emphasis>.
-      Is this correct?
+      Ist das korrekt?
   </speak>
 confirm_text_to_enter_prompt: |
   <speak>
-      You want me to enter the text:
+      Du möchtest dass ich folgenden Text eingebe:
       <emphasis level="moderate">{{ heard_text }}</emphasis>.
-      Yes?
+      Richtig?
   </speak>
+  
 try_enter_text_again: "Try again, say: Enter Text. followed by the text you want to enter."
 
 
