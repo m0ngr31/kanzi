@@ -146,7 +146,10 @@ help: "Du kannst mich fragen ob es neue Serien gibt, einen Film, Serie oder Sän
 
 help_play: "Spezifiziere bitte den Medientyp mit dem Wiedergabebefehl, so wie Spiele den Film Ghost Busters"
 
-are_you_sure: "Bist du dir sicher?"
+are_you_sure__shutdown: "Bist du dir sicher, dass du das System herunterfahren möchtest?"
+are_you_sure__reboot: "Bist du dir sicher, dass du einen Neustart durchführen möchtest?"
+are_you_sure__hibernate: "Bist du dir sicher, dass das System in den Hibernate gehen soll?"
+are_you_sure__suspend: "Bist du dir sicher, dass das System in den Suspend gehen soll?"
 
 what_to_do: "Was möchtest Du tun?"
 

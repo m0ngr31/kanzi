@@ -146,7 +146,10 @@ help: "You can ask me whether there are any new shows, to play a movie, tv show,
 
 help_play: "Please specify the media type in your play command, such as, play the movie ghost busters."
 
-are_you_sure: "Are you sure?"
+are_you_sure__shutdown: "Are you sure you want to Shutdown?"
+are_you_sure__reboot: "Are you sure you want to Reboot?"
+are_you_sure__hibernate: "Are you sure you want to Hibernate?"
+are_you_sure__suspend: "Are you sure you want to Suspend?"
 
 what_to_do: "What would you like to do?"
 
