@@ -492,6 +492,9 @@
       "intent": "SubtitlesPrevious"
     },
     {
+      "intent": "DownloadSubtitles"
+    },
+    {
       "intent": "AudioStreamNext"
     },
     {

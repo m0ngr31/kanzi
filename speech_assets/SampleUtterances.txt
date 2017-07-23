@@ -65,6 +65,10 @@ CurrentPlayItemTimeRemaining when will this end
 Down down
 Down go down
 Down navigate down
+DownloadSubtitles download subtitle language
+DownloadSubtitles download subtitles
+DownloadSubtitles search for subtitle language
+DownloadSubtitles search for subtitles
 EjectMedia eject
 EjectMedia eject audio disc
 EjectMedia eject blu-ray

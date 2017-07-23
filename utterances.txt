@@ -43,6 +43,7 @@ SubtitlesOn (enable/turn on) subtitles
 SubtitlesOff (disable/turn off) subtitles
 SubtitlesNext (next/switch) (subtitles/subtitle language)
 SubtitlesPrevious previous (subtitles/subtitle language)
+DownloadSubtitles (download/search for) (subtitles/subtitle language)
 
 AudioStreamNext (next/switch) audio (/stream)
 AudioStreamNext (next/switch) (/audio) language
