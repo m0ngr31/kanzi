@@ -146,7 +146,7 @@ The initial setup page looks like this:
 
 On the next page, you'll have to paste the contents of the [IntentSchema.json](https://raw.githubusercontent.com/m0ngr31/kodi-alexa/master/speech_assets/IntentSchema.json) file into the "Intent Schema" field, and paste the contents of the [SampleUtterances.txt](https://raw.githubusercontent.com/m0ngr31/kodi-alexa/master/speech_assets/SampleUtterances.txt) or [SampleUtterances.german.txt](https://raw.githubusercontent.com/m0ngr31/kodi-alexa/master/speech_assets/SampleUtterances.german.txt) file in the "Sample Utterances" field. **Generate and save your Custom Slots first before pasting the Intents and Utterances to avoid errors when attempting to save**.
 
-You need to create 9 different slots:
+You need to create the following slots:
 - MOVIES
 - MOVIEGENRES
 - SHOWS
@@ -160,9 +160,9 @@ You need to create 9 different slots:
 
 To make it as easy as possible, I wrote a little webapp that will give you the information you need: [here](https://slot-generator.herokuapp.com/).
 
-For "GENERICPHRASES" (used to send text to Kodi) use the sample data included the speech_assets folder.
-
 You can also get the information from running `python generate_custom_slots.py` in the project directory. This will create txt files with the relevant information. This will communicate with the Kodi instance defined in the `[DEFAULT]` section in `kodi.config`. *NOTE: If you're deploying to Heroku, you cannot use the python slot generator unless you create the kodi.config file.  It's best to use the webapp for generating slots in this case.*
+
+For "GENERICPHRASES" (used to send text to Kodi), use the sample data included the `speech_assets` folder.
 
 If one of your slots is empty, you can just enter the word 'Empty' or something so that it'll save.
 
