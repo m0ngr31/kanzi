@@ -171,8 +171,8 @@ confirm_text_to_enter_prompt: |
       <emphasis level="moderate">{{ heard_text }}</emphasis>.
       Richtig?
   </speak>
-  
-try_enter_text_again: "Try again, say: Enter Text. followed by the text you want to enter."
+
+try_enter_text_again: "Versuche es erneut, sage: gib Text ein, gefolgt von dem Text, den du eingeben möchtest."
 
 
 ############################
