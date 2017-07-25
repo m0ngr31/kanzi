@@ -2415,6 +2415,14 @@ def alexa_what_albums(Artist):
 
   return question(response_text)
 
+# Handle the DownloadSubtitles intent.
+@ask.intent('DownloadSubtitles')
+def alexa_download_subtitles():
+  print "Downloading subtitles"
+  kodi = Kodi(config, context)
+  item = kodi.DownloadSubtitles()
+  response_text = render_template('short_confirm').encode("utf-8")
+  return question(response_text)
 
 @ask.intent('AMAZON.HelpIntent')
 def prepare_help_message():
