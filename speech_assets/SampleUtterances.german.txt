@@ -1143,3 +1143,7 @@ WhatNewShows welche neuen Serien haben wir
 WhatNewShows welche neuen Serien ich habe
 WhatNewShows welche neuen Serien warten
 WhatNewShows welche neuen Serien wir haben
+EnterText schreibe Text {Phrase}
+EnterText schreibe (/den) Text {Phrase}
+EnterText gib den Text ein {Phrase}
+EnterText gib folgenden Text ein {Phrase}

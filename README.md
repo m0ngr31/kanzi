@@ -157,10 +157,13 @@ You need to create the following slots:
 - MUSICPLAYLISTS
 - VIDEOPLAYLISTS
 - ADDONS
+- GENERICPHRASES
 
 To make it as easy as possible, I wrote a little webapp that will give you the information you need: [here](https://slot-generator.herokuapp.com/).
 
 You can also get the information from running `python generate_custom_slots.py` in the project directory. This will create txt files with the relevant information. This will communicate with the Kodi instance defined in the `[DEFAULT]` section in `kodi.config`. *NOTE: If you're deploying to Heroku, you cannot use the python slot generator unless you create the kodi.config file.  It's best to use the webapp for generating slots in this case.*
+
+For "GENERICPHRASES" (used to send text to Kodi), use the sample data included the `speech_assets` folder.
 
 If one of your slots is empty, you can just enter the word 'Empty' or something so that it'll save.
 

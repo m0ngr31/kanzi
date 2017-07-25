@@ -227,3 +227,6 @@ AddonGlobalSearch suche nach {Show}
 AddonGlobalSearch suche nach {Movie}
 AddonGlobalSearch suche nach {Album}
 AddonGlobalSearch suche nach {Artist}
+
+EnterText schreibe (/den) Text {Phrase}
+EnterText gib (den/folgenden) Text ein {Phrase}

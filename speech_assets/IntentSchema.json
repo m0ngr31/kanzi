@@ -624,6 +624,15 @@
           "type": "SHOWS"
         }
       ]
+    },
+    {
+      "intent": "EnterText",
+      "slots": [
+        {
+          "name": "Phrase",
+          "type": "GENERICPHRASES"
+        }
+      ]
     }
   ]
 }
