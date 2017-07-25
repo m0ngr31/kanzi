@@ -1,3 +1,14 @@
+v2.7.5 (07/25/2017)
+* Add ability to download subtitles.
+* Add support for music genres.
+* Add ability to request movie trailers.
+* Add ability to open library views.
+* Make maximum slot items configurable.
+* Update slot generator.
+* Improve confirmation question for destructive commands.
+* Fix error response on session timeout.
+* Fix response when setting volume.
+
 v2.7.0 (06/26/2017)
 * Better matching for songs and albums in certain cases.
 * Return newest instead of most recently-added album when asking for newest
