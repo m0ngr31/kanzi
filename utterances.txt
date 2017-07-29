@@ -133,6 +133,9 @@ WatchVideoPlaylist (play/watch) {VideoPlaylist} (movie/show/video) playlist
 WatchVideoPlaylist watch (/the) playlist {VideoPlaylist}
 WatchVideoPlaylist watch {VideoPlaylist} playlist
 
+ViewVideoPlaylist (open/go to/show) (/the) video playlist {VideoPlaylist}
+ViewVideoPlaylist (open/go to/show) {VideoPlaylist} video playlist
+
 ShuffleShow shuffle (/all) episodes of {Show}
 
 ShuffleLatestAlbum shuffle (/the) (latest/newest) album by {Artist}

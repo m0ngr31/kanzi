@@ -253,7 +253,6 @@ PartyMode listen to random music
 PartyMode play all music
 PartyMode play random music
 PartyMode shuffle all music
-PlayMedia play {Movie}
 PlayerMoveDown move down
 PlayerMoveDown pan down
 PlayerMoveDown track down
@@ -453,6 +452,7 @@ PlayerZoomOutMoveUp zoom out and pan up
 PlayerZoomOutMoveUp zoom out and track up
 PlayerZoomReset normal zoom
 PlayerZoomReset reset zoom
+PlayMedia play {Movie}
 Reboot reboot
 Reboot reboot system
 RecommendAlbum recommend album
@@ -535,6 +535,15 @@ Right go right
 Right navigate right
 Right right
 Select select
+ShowVideoPlaylist open the video playlist {VideoPlaylist}
+ShowVideoPlaylist open video playlist {VideoPlaylist}
+ShowVideoPlaylist open {VideoPlaylist} video playlist
+ShowVideoPlaylist show me the video playlist {VideoPlaylist}
+ShowVideoPlaylist show me video playlist {VideoPlaylist}
+ShowVideoPlaylist show me {VideoPlaylist} video playlist
+ShowVideoPlaylist show the video playlist {VideoPlaylist}
+ShowVideoPlaylist show video playlist {VideoPlaylist}
+ShowVideoPlaylist show {VideoPlaylist} video playlist
 ShuffleAlbum shuffle album {Album}
 ShuffleAlbum shuffle album {Album} by {Artist}
 ShuffleAlbum shuffle the album {Album}
@@ -624,6 +633,15 @@ ViewMusicVideos show music videos
 ViewShows go to shows
 ViewShows open shows
 ViewShows show shows
+ViewVideoPlaylist go to the video playlist {VideoPlaylist}
+ViewVideoPlaylist go to video playlist {VideoPlaylist}
+ViewVideoPlaylist go to {VideoPlaylist} video playlist
+ViewVideoPlaylist open the video playlist {VideoPlaylist}
+ViewVideoPlaylist open video playlist {VideoPlaylist}
+ViewVideoPlaylist open {VideoPlaylist} video playlist
+ViewVideoPlaylist show the video playlist {VideoPlaylist}
+ViewVideoPlaylist show video playlist {VideoPlaylist}
+ViewVideoPlaylist show {VideoPlaylist} video playlist
 VolumeDown down volume
 VolumeDown turn down volume
 VolumeDown turn volume down

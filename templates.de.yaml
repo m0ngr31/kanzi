@@ -96,6 +96,8 @@ playing_empty: "Spiele"
 
 resuming_empty: "Setze fort"
 
+showing_empty: "Showing"
+
 shuffling: "Zufallswiedergabe {{ heard_name }}"
 
 shuffling_empty: "Zufallswiedergabe"

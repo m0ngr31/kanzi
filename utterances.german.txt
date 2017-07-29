@@ -134,6 +134,9 @@ WatchVideoPlaylist zeige {VideoPlaylist} (Film/Serie/Video) playlist
 WatchVideoPlaylist zeige playlist {VideoPlaylist}
 WatchVideoPlaylist zeige {VideoPlaylist} playlist
 
+ViewVideoPlaylist (öffne/gehe zu) video playlist {VideoPlaylist}
+ViewVideoPlaylist (öffne/gehe zu) {VideoPlaylist} video playlist
+
 ShuffleAudioPlaylist zufallswiedergabe (Musik/Audio) playlist {AudioPlaylist}
 ShuffleAudioPlaylist zufallswiedergabe {AudioPlaylist} (Musik/Audio) playlist
 

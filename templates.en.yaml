@@ -96,6 +96,8 @@ playing_empty: "Playing"
 
 resuming_empty: "Resuming"
 
+showing_empty: "Showing"
+
 shuffling: "Shuffling {{ heard_name }}"
 
 shuffling_empty: "Shuffling"
