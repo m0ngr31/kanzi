@@ -10,10 +10,10 @@ AddonGlobalSearch suche nach {Album}
 AddonGlobalSearch suche nach {Artist}
 AddonGlobalSearch suche nach {Movie}
 AddonGlobalSearch suche nach {Show}
-AudioStreamNext Sprache umschalten
 AudioStreamNext audio Stream umschalten
 AudioStreamNext nächste Sprache
 AudioStreamNext nächster audio Stream
+AudioStreamNext Sprache umschalten
 AudioStreamPrevious vorige Sprache
 AudioStreamPrevious voriger audio Stream
 Back zurück
@@ -23,9 +23,9 @@ CleanAudio säuber Audio Bibliothek
 CleanAudio säuber Musik Bibliothek
 CleanAudio säubere Audio Bibliothek
 CleanAudio säubere Musik Bibliothek
-CleanVideo Video Bibliothek säubern
 CleanVideo säuber Video Bibliothek
 CleanVideo säubere Video Bibliothek
+CleanVideo Video Bibliothek säubern
 CurrentPlayItemInquiry was das ist
 CurrentPlayItemInquiry was gerade läuft
 CurrentPlayItemInquiry was gerade spielt
@@ -35,6 +35,7 @@ CurrentPlayItemInquiry was jetzt läuft
 CurrentPlayItemInquiry was jetzt spielt
 CurrentPlayItemInquiry was läuft
 CurrentPlayItemInquiry was spielt
+CurrentPlayItemInquiry welche das ist
 CurrentPlayItemInquiry welche Episode das ist
 CurrentPlayItemInquiry welche Episode gerade läuft
 CurrentPlayItemInquiry welche Episode gerade spielt
@@ -53,6 +54,13 @@ CurrentPlayItemInquiry welche Folge jetzt läuft
 CurrentPlayItemInquiry welche Folge jetzt spielt
 CurrentPlayItemInquiry welche Folge läuft
 CurrentPlayItemInquiry welche Folge spielt
+CurrentPlayItemInquiry welche gerade läuft
+CurrentPlayItemInquiry welche gerade spielt
+CurrentPlayItemInquiry welche jetzt gerade läuft
+CurrentPlayItemInquiry welche jetzt gerade spielt
+CurrentPlayItemInquiry welche jetzt läuft
+CurrentPlayItemInquiry welche jetzt spielt
+CurrentPlayItemInquiry welche läuft
 CurrentPlayItemInquiry welche Serie das ist
 CurrentPlayItemInquiry welche Serie gerade läuft
 CurrentPlayItemInquiry welche Serie gerade spielt
@@ -62,6 +70,7 @@ CurrentPlayItemInquiry welche Serie jetzt läuft
 CurrentPlayItemInquiry welche Serie jetzt spielt
 CurrentPlayItemInquiry welche Serie läuft
 CurrentPlayItemInquiry welche Serie spielt
+CurrentPlayItemInquiry welche spielt
 CurrentPlayItemInquiry welche Staffel das ist
 CurrentPlayItemInquiry welche Staffel gerade läuft
 CurrentPlayItemInquiry welche Staffel gerade spielt
@@ -71,15 +80,14 @@ CurrentPlayItemInquiry welche Staffel jetzt läuft
 CurrentPlayItemInquiry welche Staffel jetzt spielt
 CurrentPlayItemInquiry welche Staffel läuft
 CurrentPlayItemInquiry welche Staffel spielt
-CurrentPlayItemInquiry welche das ist
-CurrentPlayItemInquiry welche gerade läuft
-CurrentPlayItemInquiry welche gerade spielt
-CurrentPlayItemInquiry welche jetzt gerade läuft
-CurrentPlayItemInquiry welche jetzt gerade spielt
-CurrentPlayItemInquiry welche jetzt läuft
-CurrentPlayItemInquiry welche jetzt spielt
-CurrentPlayItemInquiry welche läuft
-CurrentPlayItemInquiry welche spielt
+CurrentPlayItemInquiry welcher das ist
+CurrentPlayItemInquiry welcher gerade läuft
+CurrentPlayItemInquiry welcher gerade spielt
+CurrentPlayItemInquiry welcher jetzt gerade läuft
+CurrentPlayItemInquiry welcher jetzt gerade spielt
+CurrentPlayItemInquiry welcher jetzt läuft
+CurrentPlayItemInquiry welcher jetzt spielt
+CurrentPlayItemInquiry welcher läuft
 CurrentPlayItemInquiry welcher Song das ist
 CurrentPlayItemInquiry welcher Song gerade läuft
 CurrentPlayItemInquiry welcher Song gerade spielt
@@ -89,15 +97,14 @@ CurrentPlayItemInquiry welcher Song jetzt läuft
 CurrentPlayItemInquiry welcher Song jetzt spielt
 CurrentPlayItemInquiry welcher Song läuft
 CurrentPlayItemInquiry welcher Song spielt
-CurrentPlayItemInquiry welcher das ist
-CurrentPlayItemInquiry welcher gerade läuft
-CurrentPlayItemInquiry welcher gerade spielt
-CurrentPlayItemInquiry welcher jetzt gerade läuft
-CurrentPlayItemInquiry welcher jetzt gerade spielt
-CurrentPlayItemInquiry welcher jetzt läuft
-CurrentPlayItemInquiry welcher jetzt spielt
-CurrentPlayItemInquiry welcher läuft
 CurrentPlayItemInquiry welcher spielt
+CurrentPlayItemInquiry welches das ist
+CurrentPlayItemInquiry welches gerade läuft
+CurrentPlayItemInquiry welches gerade spielt
+CurrentPlayItemInquiry welches jetzt gerade läuft
+CurrentPlayItemInquiry welches jetzt gerade spielt
+CurrentPlayItemInquiry welches jetzt läuft
+CurrentPlayItemInquiry welches jetzt spielt
 CurrentPlayItemInquiry welches Lied das ist
 CurrentPlayItemInquiry welches Lied gerade läuft
 CurrentPlayItemInquiry welches Lied gerade spielt
@@ -107,6 +114,8 @@ CurrentPlayItemInquiry welches Lied jetzt läuft
 CurrentPlayItemInquiry welches Lied jetzt spielt
 CurrentPlayItemInquiry welches Lied läuft
 CurrentPlayItemInquiry welches Lied spielt
+CurrentPlayItemInquiry welches läuft
+CurrentPlayItemInquiry welches spielt
 CurrentPlayItemInquiry welches Video das ist
 CurrentPlayItemInquiry welches Video gerade läuft
 CurrentPlayItemInquiry welches Video gerade spielt
@@ -116,15 +125,6 @@ CurrentPlayItemInquiry welches Video jetzt läuft
 CurrentPlayItemInquiry welches Video jetzt spielt
 CurrentPlayItemInquiry welches Video läuft
 CurrentPlayItemInquiry welches Video spielt
-CurrentPlayItemInquiry welches das ist
-CurrentPlayItemInquiry welches gerade läuft
-CurrentPlayItemInquiry welches gerade spielt
-CurrentPlayItemInquiry welches jetzt gerade läuft
-CurrentPlayItemInquiry welches jetzt gerade spielt
-CurrentPlayItemInquiry welches jetzt läuft
-CurrentPlayItemInquiry welches jetzt spielt
-CurrentPlayItemInquiry welches läuft
-CurrentPlayItemInquiry welches spielt
 CurrentPlayItemInquiry wer das ist
 CurrentPlayItemTimeRemaining um wieviel Uhr das Lied aus ist
 CurrentPlayItemTimeRemaining um wieviel Uhr das Lied aus sein wird
@@ -228,15 +228,15 @@ CurrentPlayItemTimeRemaining wie lange das Lied läuft
 CurrentPlayItemTimeRemaining wie lange das Lied noch geht
 CurrentPlayItemTimeRemaining wie lange das Lied noch ist
 CurrentPlayItemTimeRemaining wie lange das Lied noch läuft
+CurrentPlayItemTimeRemaining wie lange das noch geht
+CurrentPlayItemTimeRemaining wie lange das noch ist
+CurrentPlayItemTimeRemaining wie lange das noch läuft
 CurrentPlayItemTimeRemaining wie lange das Video geht
 CurrentPlayItemTimeRemaining wie lange das Video ist
 CurrentPlayItemTimeRemaining wie lange das Video läuft
 CurrentPlayItemTimeRemaining wie lange das Video noch geht
 CurrentPlayItemTimeRemaining wie lange das Video noch ist
 CurrentPlayItemTimeRemaining wie lange das Video noch läuft
-CurrentPlayItemTimeRemaining wie lange das noch geht
-CurrentPlayItemTimeRemaining wie lange das noch ist
-CurrentPlayItemTimeRemaining wie lange das noch läuft
 CurrentPlayItemTimeRemaining wie lange der Film geht
 CurrentPlayItemTimeRemaining wie lange der Film ist
 CurrentPlayItemTimeRemaining wie lange der Film läuft
@@ -267,7 +267,6 @@ Down navigier runter
 Down navigiere nach unten
 Down navigiere runter
 Down runter
-EjectMedia Scheibe auswerfen
 EjectMedia audio cd auswerfen
 EjectMedia audio disc auswerfen
 EjectMedia auswerfen
@@ -277,6 +276,7 @@ EjectMedia cd auswerfen
 EjectMedia disc auswerfen
 EjectMedia dvd auswerfen
 EjectMedia medium auswerfen
+EjectMedia Scheibe auswerfen
 Fullscreen vollbild
 Fullscreen vollbild umschalten
 Hibernate hibernate
@@ -454,72 +454,72 @@ Mute ton an
 Mute ton anschalten
 Mute ton aus
 Mute ton ausschalten
-PageDown Seite nach unten
-PageDown Seite runter
 PageDown navigier Seite nach unten
 PageDown navigier Seite runter
 PageDown navigiere Seite nach unten
 PageDown navigiere Seite runter
-PageUp Seite hoch
-PageUp Seite nach oben
+PageDown Seite nach unten
+PageDown Seite runter
 PageUp navigier Seite hoch
 PageUp navigier Seite nach oben
 PageUp navigiere Seite hoch
 PageUp navigiere Seite nach oben
-PartyMode Party
-PartyMode Party Modus
-PartyMode leg Lieder auf
-PartyMode leg Mucke auf
-PartyMode leg Musik auf
-PartyMode leg Songs auf
+PageUp Seite hoch
+PageUp Seite nach oben
 PartyMode leg irgendetwas auf
 PartyMode leg irgendwas auf
 PartyMode leg irgendwelche Lieder auf
 PartyMode leg irgendwelche Mucke auf
 PartyMode leg irgendwelche Musik auf
 PartyMode leg irgendwelche Songs auf
+PartyMode leg Lieder auf
+PartyMode leg Mucke auf
+PartyMode leg Musik auf
+PartyMode leg Songs auf
 PartyMode leg was auf
 PartyMode leg zufällige Lieder auf
 PartyMode leg zufällige Mucke auf
 PartyMode leg zufällige Musik auf
 PartyMode leg zufällige Songs auf
-PartyMode lege Lieder auf
-PartyMode lege Mucke auf
-PartyMode lege Musik auf
-PartyMode lege Songs auf
 PartyMode lege irgendetwas auf
 PartyMode lege irgendwas auf
 PartyMode lege irgendwelche Lieder auf
 PartyMode lege irgendwelche Mucke auf
 PartyMode lege irgendwelche Musik auf
 PartyMode lege irgendwelche Songs auf
+PartyMode lege Lieder auf
+PartyMode lege Mucke auf
+PartyMode lege Musik auf
+PartyMode lege Songs auf
 PartyMode lege was auf
 PartyMode lege zufällige Lieder auf
 PartyMode lege zufällige Mucke auf
 PartyMode lege zufällige Musik auf
 PartyMode lege zufällige Songs auf
-PartyMode spiel Lieder
-PartyMode spiel Mucke
-PartyMode spiel Musik
-PartyMode spiel Songs
+PartyMode Party
+PartyMode Party Modus
 PartyMode spiel irgendwelche Lieder
 PartyMode spiel irgendwelche Mucke
 PartyMode spiel irgendwelche Musik
 PartyMode spiel irgendwelche Songs
+PartyMode spiel Lieder
+PartyMode spiel Mucke
+PartyMode spiel Musik
+PartyMode spiel Songs
 PartyMode spiel zufällige Lieder
 PartyMode spiel zufällige Mucke
 PartyMode spiel zufällige Musik
 PartyMode spiel zufällige Songs
-PartyMode spiele Lieder
-PartyMode spiele Mucke
-PartyMode spiele Musik
-PartyMode spiele Songs
 PartyMode spiele irgendetwas
 PartyMode spiele irgendwas
 PartyMode spiele irgendwelche Lieder
 PartyMode spiele irgendwelche Mucke
 PartyMode spiele irgendwelche Musik
 PartyMode spiele irgendwelche Songs
+PartyMode spiele Lieder
+PartyMode spiele Mucke
+PartyMode spiele Musik
+PartyMode spiele Songs
 PartyMode spiele zufällige Lieder
 PartyMode spiele zufällige Mucke
 PartyMode spiele zufällige Musik
@@ -528,8 +528,6 @@ PartyMode zufallswiedergabe Lieder
 PartyMode zufallswiedergabe Mucke
 PartyMode zufallswiedergabe Musik
 PartyMode zufallswiedergabe Songs
-PlayMedia spiel {Movie}
-PlayMedia spiele {Movie}
 PlayerMoveDown geh nach unten
 PlayerMoveDown geh runter
 PlayerMoveDown gehe nach unten
@@ -562,6 +560,8 @@ PlayerRotateClockwise rotiere im Uhrzeigersinn
 PlayerRotateClockwise rotiere neunzig grad
 PlayerRotateCounterClockwise drehe gegen den Uhrzeigersinn
 PlayerRotateCounterClockwise rotiere gegen den Uhrzeigersinn
+PlayerSeekBackward rückwärts Schritt um {BackwardDur}
+PlayerSeekBackward rückwärts Sprung um {BackwardDur}
 PlayerSeekBackward Schritt rückwärts um {BackwardDur}
 PlayerSeekBackward Schritt rückwärts {BackwardDur}
 PlayerSeekBackward Schritt zurück um {BackwardDur}
@@ -570,13 +570,13 @@ PlayerSeekBackward Sprung rückwärts um {BackwardDur}
 PlayerSeekBackward Sprung rückwärts {BackwardDur}
 PlayerSeekBackward Sprung zurück um {BackwardDur}
 PlayerSeekBackward Sprung zurück {BackwardDur}
-PlayerSeekBackward rückwärts Schritt um {BackwardDur}
-PlayerSeekBackward rückwärts Sprung um {BackwardDur}
 PlayerSeekBackward zurück Schritt um {BackwardDur}
 PlayerSeekBackward zurück Sprung um {BackwardDur}
 PlayerSeekBigBackward weiter zurück
 PlayerSeekBigBackward weiter zurückspringen
 PlayerSeekBigBackward weiter zurückspulen
+PlayerSeekBigForward großer rückwärts Schritt
+PlayerSeekBigForward großer rückwärts Sprung
 PlayerSeekBigForward großer Schritt rückwärts
 PlayerSeekBigForward großer Schritt vor
 PlayerSeekBigForward großer Schritt vorwärts
@@ -585,10 +585,10 @@ PlayerSeekBigForward großer Sprung rückwärts
 PlayerSeekBigForward großer Sprung vor
 PlayerSeekBigForward großer Sprung vorwärts
 PlayerSeekBigForward großer Sprung zurück
-PlayerSeekBigForward großer rückwärts Schritt
-PlayerSeekBigForward großer rückwärts Sprung
 PlayerSeekBigForward großer vorwärts Schritt
 PlayerSeekBigForward großer vorwärts Sprung
+PlayerSeekBigForward langer rückwärts Schritt
+PlayerSeekBigForward langer rückwärts Sprung
 PlayerSeekBigForward langer Schritt rückwärts
 PlayerSeekBigForward langer Schritt vor
 PlayerSeekBigForward langer Schritt vorwärts
@@ -597,10 +597,10 @@ PlayerSeekBigForward langer Sprung rückwärts
 PlayerSeekBigForward langer Sprung vor
 PlayerSeekBigForward langer Sprung vorwärts
 PlayerSeekBigForward langer Sprung zurück
-PlayerSeekBigForward langer rückwärts Schritt
-PlayerSeekBigForward langer rückwärts Sprung
 PlayerSeekBigForward langer vorwärts Schritt
 PlayerSeekBigForward langer vorwärts Sprung
+PlayerSeekBigForward weiter rückwärts Schritt
+PlayerSeekBigForward weiter rückwärts Sprung
 PlayerSeekBigForward weiter Schritt rückwärts
 PlayerSeekBigForward weiter Schritt vor
 PlayerSeekBigForward weiter Schritt vorwärts
@@ -609,8 +609,6 @@ PlayerSeekBigForward weiter Sprung rückwärts
 PlayerSeekBigForward weiter Sprung vor
 PlayerSeekBigForward weiter Sprung vorwärts
 PlayerSeekBigForward weiter Sprung zurück
-PlayerSeekBigForward weiter rückwärts Schritt
-PlayerSeekBigForward weiter rückwärts Sprung
 PlayerSeekBigForward weiter vor
 PlayerSeekBigForward weiter vorspringen
 PlayerSeekBigForward weiter vorspulen
@@ -630,36 +628,33 @@ PlayerSeekForward Sprung vorwärts {ForwardDur}
 PlayerSeekForward Sprung {ForwardDur}
 PlayerSeekForward vorwärts Schritt um {ForwardDur}
 PlayerSeekForward vorwärts Sprung um {ForwardDur}
-PlayerSeekSmallBackward Schritt rückwärts
-PlayerSeekSmallBackward Schritt zurück
-PlayerSeekSmallBackward Sprung rückwärts
-PlayerSeekSmallBackward Sprung zurück
 PlayerSeekSmallBackward kleiner Schritt rückwärts
 PlayerSeekSmallBackward kleiner Schritt zurück
 PlayerSeekSmallBackward kleiner Sprung rückwärts
 PlayerSeekSmallBackward kleiner Sprung zurück
 PlayerSeekSmallBackward rückwärts
+PlayerSeekSmallBackward Schritt rückwärts
+PlayerSeekSmallBackward Schritt zurück
+PlayerSeekSmallBackward Sprung rückwärts
+PlayerSeekSmallBackward Sprung zurück
 PlayerSeekSmallBackward zurück
 PlayerSeekSmallBackward zurückspulen
-PlayerSeekSmallForward Schritt vor
-PlayerSeekSmallForward Schritt vorwärts
-PlayerSeekSmallForward Sprung vor
-PlayerSeekSmallForward Sprung vorwärts
 PlayerSeekSmallForward kleiner Schritt vor
 PlayerSeekSmallForward kleiner Schritt vorwärts
 PlayerSeekSmallForward kleiner Sprung vor
 PlayerSeekSmallForward kleiner Sprung vorwärts
 PlayerSeekSmallForward kleiner vorwärts Schritt
 PlayerSeekSmallForward kleiner vorwärts Sprung
+PlayerSeekSmallForward Schritt vor
+PlayerSeekSmallForward Schritt vorwärts
+PlayerSeekSmallForward Sprung vor
+PlayerSeekSmallForward Sprung vorwärts
 PlayerSeekSmallForward vor
 PlayerSeekSmallForward vorspulen
 PlayerSeekSmallForward vorwärts
 PlayerSeekSmallForward vorwärts Schritt
 PlayerSeekSmallForward vorwärts Sprung
 PlayerZoomHold halte
-PlayerZoomHold halte Zoom
-PlayerZoomHold halte Zoom da
-PlayerZoomHold halte Zoom genau da
 PlayerZoomHold halte da
 PlayerZoomHold halte den Zoom
 PlayerZoomHold halte den Zoom da
@@ -668,6 +663,9 @@ PlayerZoomHold halte es
 PlayerZoomHold halte es da
 PlayerZoomHold halte es genau da
 PlayerZoomHold halte genau da
+PlayerZoomHold halte Zoom
+PlayerZoomHold halte Zoom da
+PlayerZoomHold halte Zoom genau da
 PlayerZoomIn rein zoomen
 PlayerZoomIn vergrößern
 PlayerZoomIn zoom rein
@@ -812,6 +810,8 @@ PlayerZoomOutMoveUp zoom raus und rauf
 PlayerZoomReset kein zoom
 PlayerZoomReset normal zoom
 PlayerZoomReset reset zoom
+PlayMedia spiel {Movie}
+PlayMedia spiele {Movie}
 Reboot neustarten
 Reboot reboot
 Reboot system neustarten
@@ -882,11 +882,6 @@ ShuffleAudioPlaylist zufallswiedergabe Audio playlist {AudioPlaylist}
 ShuffleAudioPlaylist zufallswiedergabe Musik playlist {AudioPlaylist}
 ShuffleAudioPlaylist zufallswiedergabe {AudioPlaylist} Audio playlist
 ShuffleAudioPlaylist zufallswiedergabe {AudioPlaylist} Musik playlist
-ShuffleLatestAlbum Zufallswiedergabe des aktuellen Albums von {Artist}
-ShuffleLatestAlbum Zufallswiedergabe des aktuellsten Albums von {Artist}
-ShuffleLatestAlbum Zufallswiedergabe des neuen Albums von {Artist}
-ShuffleLatestAlbum Zufallswiedergabe des neuesten Albums von {Artist}
-ShuffleLatestAlbum Zufallswiedergabe des zuletzt hinzugefügten Albums von {Artist}
 ShuffleLatestAlbum shuffle des aktuellen Albums von {Artist}
 ShuffleLatestAlbum shuffle des aktuellsten Albums von {Artist}
 ShuffleLatestAlbum shuffle des neuen Albums von {Artist}
@@ -897,6 +892,11 @@ ShuffleLatestAlbum starte Zufallswiedergabe des aktuellsten Albums von {Artist}
 ShuffleLatestAlbum starte Zufallswiedergabe des neuen Albums von {Artist}
 ShuffleLatestAlbum starte Zufallswiedergabe des neuesten Albums von {Artist}
 ShuffleLatestAlbum starte Zufallswiedergabe des zuletzt hinzugefügten Albums von {Artist}
+ShuffleLatestAlbum Zufallswiedergabe des aktuellen Albums von {Artist}
+ShuffleLatestAlbum Zufallswiedergabe des aktuellsten Albums von {Artist}
+ShuffleLatestAlbum Zufallswiedergabe des neuen Albums von {Artist}
+ShuffleLatestAlbum Zufallswiedergabe des neuesten Albums von {Artist}
+ShuffleLatestAlbum Zufallswiedergabe des zuletzt hinzugefügten Albums von {Artist}
 ShuffleMedia zufallswiedergabe {Show}
 ShufflePlaylist zufallswiedergabe playlist {AudioPlaylist}
 ShufflePlaylist zufallswiedergabe playlist {VideoPlaylist}
@@ -915,8 +915,8 @@ Shutdown shutdown
 Shutdown system herunterfahren
 Shutdown system shutdown
 SubtitlesDownload download Untertitel
-SubtitlesNext Untertitel umschalten
 SubtitlesNext nächster Untertitel
+SubtitlesNext Untertitel umschalten
 SubtitlesOff Untertitel aus
 SubtitlesOff Untertitel ausschalten
 SubtitlesOn Untertitel an
@@ -943,27 +943,27 @@ Up navigiere nach oben
 UpdateAudio Audio Bibliothek erneuern
 UpdateAudio Audio Bibliothek refreshen
 UpdateAudio Audio Bibliothek updaten
-UpdateAudio Musik Bibliothek erneuern
-UpdateAudio Musik Bibliothek refreshen
-UpdateAudio Musik Bibliothek updaten
 UpdateAudio erneuer Audio Bibliothek
 UpdateAudio erneuer Musik Bibliothek
 UpdateAudio erneuere Audio Bibliothek
 UpdateAudio erneuere Musik Bibliothek
+UpdateAudio Musik Bibliothek erneuern
+UpdateAudio Musik Bibliothek refreshen
+UpdateAudio Musik Bibliothek updaten
 UpdateAudio refresh Audio Bibliothek
 UpdateAudio refresh Musik Bibliothek
 UpdateAudio refreshe Audio Bibliothek
 UpdateAudio refreshe Musik Bibliothek
 UpdateAudio update Audio Bibliothek
 UpdateAudio update Musik Bibliothek
-UpdateVideo Video Bibliothek erneuern
-UpdateVideo Video Bibliothek refreshen
-UpdateVideo Video Bibliothek updaten
 UpdateVideo erneuer Video Bibliothek
 UpdateVideo erneuere Video Bibliothek
 UpdateVideo refresh Video Bibliothek
 UpdateVideo refreshe Video Bibliothek
 UpdateVideo update Video Bibliothek
+UpdateVideo Video Bibliothek erneuern
+UpdateVideo Video Bibliothek refreshen
+UpdateVideo Video Bibliothek updaten
 ViewAlbums gehe zu Alben
 ViewAlbums öffne Alben
 ViewArtists gehe zu Interpreten
@@ -980,6 +980,10 @@ ViewMusicVideos gehe zu Musikvideos
 ViewMusicVideos öffne Musikvideos
 ViewShows gehe zu Serien
 ViewShows öffne Serien
+ViewVideoPlaylist gehe zu video playlist {VideoPlaylist}
+ViewVideoPlaylist gehe zu {VideoPlaylist} video playlist
+ViewVideoPlaylist öffne video playlist {VideoPlaylist}
+ViewVideoPlaylist öffne {VideoPlaylist} video playlist
 VolumeDown leiser
 VolumeSet Lautstärke auf {Volume}
 VolumeSet Lautstärke {Volume}
@@ -992,8 +996,8 @@ VolumeSetPct stelle Lautstärke {Volume} Prozent
 VolumeUp lauter
 WatchEpisode zeige Staffel {Season} Episode {Episode} von {Show}
 WatchEpisode zeige Staffel {Season} Folge {Episode} von {Show}
-WatchLastShow weiter mit Serie
 WatchLastShow weiter mit letzter Serie
+WatchLastShow weiter mit Serie
 WatchLatestEpisode zeige letzte Episode von {Show}
 WatchLatestEpisode zeige letzte Folge von {Show}
 WatchLatestEpisode zeige neueste Episode von {Show}
@@ -1023,13 +1027,13 @@ WatchRandomMovie zeige zufälligen {MovieGenre} Film
 WatchRandomMovie zeige {MovieGenre} Film
 WatchVideo zeige {Movie}
 WatchVideoPlaylist zeige Film playlist {VideoPlaylist}
+WatchVideoPlaylist zeige playlist {VideoPlaylist}
 WatchVideoPlaylist zeige Serie playlist {VideoPlaylist}
 WatchVideoPlaylist zeige Video playlist {VideoPlaylist}
-WatchVideoPlaylist zeige playlist {VideoPlaylist}
 WatchVideoPlaylist zeige {VideoPlaylist} Film playlist
+WatchVideoPlaylist zeige {VideoPlaylist} playlist
 WatchVideoPlaylist zeige {VideoPlaylist} Serie playlist
 WatchVideoPlaylist zeige {VideoPlaylist} Video playlist
-WatchVideoPlaylist zeige {VideoPlaylist} playlist
 WhatAlbums welche Alben du von {Artist} hast
 WhatAlbums welche Alben ich von {Artist} habe
 WhatAlbums welche Alben wir von {Artist} haben
@@ -1122,9 +1126,6 @@ WhatNewMovies welcher neue {MovieGenre} Film wartet
 WhatNewMovies welcher {MovieGenre} Film aufgenommen worden ist
 WhatNewMovies welcher {MovieGenre} Film fertig ist
 WhatNewMovies welcher {MovieGenre} Film wartet
-WhatNewShows welche Serie aufgenommen worden ist
-WhatNewShows welche Serie fertig ist
-WhatNewShows welche Serie wartet
 WhatNewShows welche neue Serie aufgenommen worden ist
 WhatNewShows welche neue Serie es gibt
 WhatNewShows welche neue Serie fertig ist
@@ -1143,3 +1144,6 @@ WhatNewShows welche neuen Serien haben wir
 WhatNewShows welche neuen Serien ich habe
 WhatNewShows welche neuen Serien warten
 WhatNewShows welche neuen Serien wir haben
+WhatNewShows welche Serie aufgenommen worden ist
+WhatNewShows welche Serie fertig ist
+WhatNewShows welche Serie wartet

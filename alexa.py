@@ -2024,9 +2024,11 @@ def alexa_watch_last_show():
 
 # Handle the WatchVideoPlaylist intent.
 @ask.intent('WatchVideoPlaylist')
-def alexa_watch_video_playlist(VideoPlaylist, shuffle=False):
+def alexa_watch_video_playlist(VideoPlaylist, shuffle=False, show=False):
   if shuffle:
     op = render_template('shuffling_empty').encode("utf-8")
+  elif show:
+    op = render_template('showing_empty').encode("utf-8")
   else:
     op = render_template('playing_empty').encode("utf-8")
 
@@ -2046,6 +2048,8 @@ def alexa_watch_video_playlist(VideoPlaylist, shuffle=False):
       kodi.ClearVideoPlaylist()
       kodi.AddVideosToPlaylist(videos_array, True)
       kodi.StartVideoPlaylist()
+    elif show:
+      kodi.ViewVideoPlaylist(playlist[0][0])
     else:
       kodi.PlayerStop()
       kodi.StartVideoPlaylist(playlist[0][0])
@@ -2059,7 +2063,13 @@ def alexa_watch_video_playlist(VideoPlaylist, shuffle=False):
 # Handle the ShuffleVideoPlaylist intent.
 @ask.intent('ShuffleVideoPlaylist')
 def alexa_shuffle_video_playlist(VideoPlaylist):
-  return alexa_watch_video_playlist(VideoPlaylist, True)
+  return alexa_watch_video_playlist(VideoPlaylist, True, False)
+
+
+# Handle the ViewVideoPlaylist intent.
+@ask.intent('ViewVideoPlaylist')
+def alexa_view_video_playlist(VideoPlaylist):
+  return alexa_watch_video_playlist(VideoPlaylist, False, True)
 
 
 # Handle the ShufflePlaylist intent.

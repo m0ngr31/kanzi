@@ -384,6 +384,15 @@
       ]
     },
     {
+      "intent": "ViewVideoPlaylist",
+      "slots": [
+        {
+          "name": "VideoPlaylist",
+          "type": "VIDEOPLAYLISTS"
+        }
+      ]
+    },
+    {
       "intent": "ShuffleShow",
       "slots": [
         {
