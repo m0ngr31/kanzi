@@ -10,6 +10,7 @@ Here are some of the features supported by this skill:
 
 - Basic navigation (Up/Down, Left/Right, Page Up/Down, Select, Back, Menu, Zoom, Rotate, Move)
 - Open library views (Movies, Shows, Music, Artists, Albums, Music Videos, Playlists)
+- Open recently added playlists (Movies, Episodes, Albums, Music Videos)
 - Playback control (Play/Pause, Skip, Previous, Stop, Step/Jump)
 - Adjust volume
 - Shuffle all music by an artist

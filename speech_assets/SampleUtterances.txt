@@ -661,12 +661,132 @@ ViewAudioPlaylist show the {AudioPlaylist} song playlist
 ViewAudioPlaylist show {AudioPlaylist} audio playlist
 ViewAudioPlaylist show {AudioPlaylist} music playlist
 ViewAudioPlaylist show {AudioPlaylist} song playlist
+ViewAudioPlaylistRecent go to latest albums
+ViewAudioPlaylistRecent go to latest audio
+ViewAudioPlaylistRecent go to latest music
+ViewAudioPlaylistRecent go to latest songs
+ViewAudioPlaylistRecent go to newest albums
+ViewAudioPlaylistRecent go to newest audio
+ViewAudioPlaylistRecent go to newest music
+ViewAudioPlaylistRecent go to newest songs
+ViewAudioPlaylistRecent go to recent albums
+ViewAudioPlaylistRecent go to recent audio
+ViewAudioPlaylistRecent go to recent music
+ViewAudioPlaylistRecent go to recent songs
+ViewAudioPlaylistRecent go to recently added albums
+ViewAudioPlaylistRecent go to recently added audio
+ViewAudioPlaylistRecent go to recently added music
+ViewAudioPlaylistRecent go to recently added songs
+ViewAudioPlaylistRecent open latest albums
+ViewAudioPlaylistRecent open latest audio
+ViewAudioPlaylistRecent open latest music
+ViewAudioPlaylistRecent open latest songs
+ViewAudioPlaylistRecent open newest albums
+ViewAudioPlaylistRecent open newest audio
+ViewAudioPlaylistRecent open newest music
+ViewAudioPlaylistRecent open newest songs
+ViewAudioPlaylistRecent open recent albums
+ViewAudioPlaylistRecent open recent audio
+ViewAudioPlaylistRecent open recent music
+ViewAudioPlaylistRecent open recent songs
+ViewAudioPlaylistRecent open recently added albums
+ViewAudioPlaylistRecent open recently added audio
+ViewAudioPlaylistRecent open recently added music
+ViewAudioPlaylistRecent open recently added songs
+ViewAudioPlaylistRecent show latest albums
+ViewAudioPlaylistRecent show latest audio
+ViewAudioPlaylistRecent show latest music
+ViewAudioPlaylistRecent show latest songs
+ViewAudioPlaylistRecent show newest albums
+ViewAudioPlaylistRecent show newest audio
+ViewAudioPlaylistRecent show newest music
+ViewAudioPlaylistRecent show newest songs
+ViewAudioPlaylistRecent show recent albums
+ViewAudioPlaylistRecent show recent audio
+ViewAudioPlaylistRecent show recent music
+ViewAudioPlaylistRecent show recent songs
+ViewAudioPlaylistRecent show recently added albums
+ViewAudioPlaylistRecent show recently added audio
+ViewAudioPlaylistRecent show recently added music
+ViewAudioPlaylistRecent show recently added songs
+ViewEpisodePlaylistRecent go to latest episodes
+ViewEpisodePlaylistRecent go to latest shows
+ViewEpisodePlaylistRecent go to latest t. v. shows
+ViewEpisodePlaylistRecent go to newest episodes
+ViewEpisodePlaylistRecent go to newest shows
+ViewEpisodePlaylistRecent go to newest t. v. shows
+ViewEpisodePlaylistRecent go to recent episodes
+ViewEpisodePlaylistRecent go to recent shows
+ViewEpisodePlaylistRecent go to recent t. v. shows
+ViewEpisodePlaylistRecent go to recently added episodes
+ViewEpisodePlaylistRecent go to recently added shows
+ViewEpisodePlaylistRecent go to recently added t. v. shows
+ViewEpisodePlaylistRecent open latest episodes
+ViewEpisodePlaylistRecent open latest shows
+ViewEpisodePlaylistRecent open latest t. v. shows
+ViewEpisodePlaylistRecent open newest episodes
+ViewEpisodePlaylistRecent open newest shows
+ViewEpisodePlaylistRecent open newest t. v. shows
+ViewEpisodePlaylistRecent open recent episodes
+ViewEpisodePlaylistRecent open recent shows
+ViewEpisodePlaylistRecent open recent t. v. shows
+ViewEpisodePlaylistRecent open recently added episodes
+ViewEpisodePlaylistRecent open recently added shows
+ViewEpisodePlaylistRecent open recently added t. v. shows
+ViewEpisodePlaylistRecent show latest episodes
+ViewEpisodePlaylistRecent show latest shows
+ViewEpisodePlaylistRecent show latest t. v. shows
+ViewEpisodePlaylistRecent show newest episodes
+ViewEpisodePlaylistRecent show newest shows
+ViewEpisodePlaylistRecent show newest t. v. shows
+ViewEpisodePlaylistRecent show recent episodes
+ViewEpisodePlaylistRecent show recent shows
+ViewEpisodePlaylistRecent show recent t. v. shows
+ViewEpisodePlaylistRecent show recently added episodes
+ViewEpisodePlaylistRecent show recently added shows
+ViewEpisodePlaylistRecent show recently added t. v. shows
+ViewMoviePlaylistRecent go to latest movies
+ViewMoviePlaylistRecent go to latest videos
+ViewMoviePlaylistRecent go to newest movies
+ViewMoviePlaylistRecent go to newest videos
+ViewMoviePlaylistRecent go to recent movies
+ViewMoviePlaylistRecent go to recent videos
+ViewMoviePlaylistRecent go to recently added movies
+ViewMoviePlaylistRecent go to recently added videos
+ViewMoviePlaylistRecent open latest movies
+ViewMoviePlaylistRecent open latest videos
+ViewMoviePlaylistRecent open newest movies
+ViewMoviePlaylistRecent open newest videos
+ViewMoviePlaylistRecent open recent movies
+ViewMoviePlaylistRecent open recent videos
+ViewMoviePlaylistRecent open recently added movies
+ViewMoviePlaylistRecent open recently added videos
+ViewMoviePlaylistRecent show latest movies
+ViewMoviePlaylistRecent show latest videos
+ViewMoviePlaylistRecent show newest movies
+ViewMoviePlaylistRecent show newest videos
+ViewMoviePlaylistRecent show recent movies
+ViewMoviePlaylistRecent show recent videos
+ViewMoviePlaylistRecent show recently added movies
+ViewMoviePlaylistRecent show recently added videos
 ViewMovies go to movies
 ViewMovies open movies
 ViewMovies show movies
 ViewMusic go to music
 ViewMusic open music
 ViewMusic show music
+ViewMusicVideoPlaylistRecent go to latest music videos
+ViewMusicVideoPlaylistRecent go to newest music videos
+ViewMusicVideoPlaylistRecent go to recent music videos
+ViewMusicVideoPlaylistRecent go to recently added music videos
+ViewMusicVideoPlaylistRecent open latest music videos
+ViewMusicVideoPlaylistRecent open newest music videos
+ViewMusicVideoPlaylistRecent open recent music videos
+ViewMusicVideoPlaylistRecent open recently added music videos
+ViewMusicVideoPlaylistRecent show latest music videos
+ViewMusicVideoPlaylistRecent show newest music videos
+ViewMusicVideoPlaylistRecent show recent music videos
+ViewMusicVideoPlaylistRecent show recently added music videos
 ViewMusicVideos go to music videos
 ViewMusicVideos open music videos
 ViewMusicVideos show music videos

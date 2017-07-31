@@ -472,6 +472,15 @@
       ]
     },
     {
+      "intent": "ViewMoviePlaylistRecent"
+    },
+    {
+      "intent": "ViewEpisodePlaylistRecent"
+    },
+    {
+      "intent": "ViewMusicVideoPlaylistRecent"
+    },
+    {
       "intent": "ViewAudioPlaylist",
       "slots": [
         {
@@ -479,6 +488,9 @@
           "type": "MUSICPLAYLISTS"
         }
       ]
+    },
+    {
+      "intent": "ViewAudioPlaylistRecent"
     },
     {
       "intent": "ViewPlaylist",

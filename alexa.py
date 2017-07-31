@@ -1617,6 +1617,39 @@ def alexa_show_video_playlist(VideoPlaylist):
   return question(response_text)
 
 
+# Handle the ViewMoviePlaylistRecent intent.
+@ask.intent('ViewMoviePlaylistRecent')
+def alexa_show_recent_movies_playlist():
+  print 'Navigate: Recently Added Movies'
+
+  kodi = Kodi(config, context)
+  kodi.ShowVideoPlaylist('videodb://recentlyaddedmovies/')
+  response_text = render_template('short_confirm').encode("utf-8")
+  return question(response_text)
+
+
+# Handle the ViewEpisodePlaylistRecent intent.
+@ask.intent('ViewEpisodePlaylistRecent')
+def alexa_show_recent_episodes_playlist():
+  print 'Navigate: Recently Added Episodes'
+
+  kodi = Kodi(config, context)
+  kodi.ShowVideoPlaylist('videodb://recentlyaddedepisodes/')
+  response_text = render_template('short_confirm').encode("utf-8")
+  return question(response_text)
+
+
+# Handle the ViewMusicVideoPlaylistRecent intent.
+@ask.intent('ViewMusicVideoPlaylistRecent')
+def alexa_show_recent_musicvideos_playlist():
+  print 'Navigate: Recently Added Music Videos'
+
+  kodi = Kodi(config, context)
+  kodi.ShowVideoPlaylist('videodb://recentlyaddedmusicvideos/')
+  response_text = render_template('short_confirm').encode("utf-8")
+  return question(response_text)
+
+
 # Handle the ViewAudioPlaylist intent.
 @ask.intent('ViewAudioPlaylist')
 def alexa_show_audio_playlist(AudioPlaylist):
@@ -1626,6 +1659,17 @@ def alexa_show_audio_playlist(AudioPlaylist):
   playlist = kodi.FindAudioPlaylist(AudioPlaylist)
   if len(playlist) > 0:
     kodi.ShowMusicPlaylist(playlist[0][0])
+  response_text = render_template('short_confirm').encode("utf-8")
+  return question(response_text)
+
+
+# Handle the ViewAudioPlaylistRecent intent.
+@ask.intent('ViewAudioPlaylistRecent')
+def alexa_show_recent_audio_playlist():
+  print 'Navigate: Recently Added Albums'
+
+  kodi = Kodi(config, context)
+  kodi.ShowMusicPlaylist('musicdb://recentlyaddedalbums/')
   response_text = render_template('short_confirm').encode("utf-8")
   return question(response_text)
 
