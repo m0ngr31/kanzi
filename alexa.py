@@ -231,6 +231,8 @@ def alexa_yes():
       kodi.PlayEpisode(episode_id)
     elif media_type == 'episode':
       kodi.PlayEpisode(media_id)
+    elif media_type == 'musicvideo':
+      kodi.PlayMusicVideo(media_id)
     elif media_type == 'artist':
       songs_result = kodi.GetArtistSongs(media_id)
       songs = songs_result['result']['songs']
