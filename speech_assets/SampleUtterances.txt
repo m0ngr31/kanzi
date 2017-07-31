@@ -625,6 +625,42 @@ ViewArtists open musicians
 ViewArtists show artists
 ViewArtists show music artists
 ViewArtists show musicians
+ViewAudioPlaylist go to audio playlist {AudioPlaylist}
+ViewAudioPlaylist go to music playlist {AudioPlaylist}
+ViewAudioPlaylist go to song playlist {AudioPlaylist}
+ViewAudioPlaylist go to the audio playlist {AudioPlaylist}
+ViewAudioPlaylist go to the music playlist {AudioPlaylist}
+ViewAudioPlaylist go to the song playlist {AudioPlaylist}
+ViewAudioPlaylist go to the {AudioPlaylist} audio playlist
+ViewAudioPlaylist go to the {AudioPlaylist} music playlist
+ViewAudioPlaylist go to the {AudioPlaylist} song playlist
+ViewAudioPlaylist go to {AudioPlaylist} audio playlist
+ViewAudioPlaylist go to {AudioPlaylist} music playlist
+ViewAudioPlaylist go to {AudioPlaylist} song playlist
+ViewAudioPlaylist open audio playlist {AudioPlaylist}
+ViewAudioPlaylist open music playlist {AudioPlaylist}
+ViewAudioPlaylist open song playlist {AudioPlaylist}
+ViewAudioPlaylist open the audio playlist {AudioPlaylist}
+ViewAudioPlaylist open the music playlist {AudioPlaylist}
+ViewAudioPlaylist open the song playlist {AudioPlaylist}
+ViewAudioPlaylist open the {AudioPlaylist} audio playlist
+ViewAudioPlaylist open the {AudioPlaylist} music playlist
+ViewAudioPlaylist open the {AudioPlaylist} song playlist
+ViewAudioPlaylist open {AudioPlaylist} audio playlist
+ViewAudioPlaylist open {AudioPlaylist} music playlist
+ViewAudioPlaylist open {AudioPlaylist} song playlist
+ViewAudioPlaylist show audio playlist {AudioPlaylist}
+ViewAudioPlaylist show music playlist {AudioPlaylist}
+ViewAudioPlaylist show song playlist {AudioPlaylist}
+ViewAudioPlaylist show the audio playlist {AudioPlaylist}
+ViewAudioPlaylist show the music playlist {AudioPlaylist}
+ViewAudioPlaylist show the song playlist {AudioPlaylist}
+ViewAudioPlaylist show the {AudioPlaylist} audio playlist
+ViewAudioPlaylist show the {AudioPlaylist} music playlist
+ViewAudioPlaylist show the {AudioPlaylist} song playlist
+ViewAudioPlaylist show {AudioPlaylist} audio playlist
+ViewAudioPlaylist show {AudioPlaylist} music playlist
+ViewAudioPlaylist show {AudioPlaylist} song playlist
 ViewMovies go to movies
 ViewMovies open movies
 ViewMovies show movies
@@ -634,9 +670,54 @@ ViewMusic show music
 ViewMusicVideos go to music videos
 ViewMusicVideos open music videos
 ViewMusicVideos show music videos
+ViewPlaylist go to playlist {AudioPlaylist}
+ViewPlaylist go to playlist {VideoPlaylist}
+ViewPlaylist go to the playlist {AudioPlaylist}
+ViewPlaylist go to the playlist {VideoPlaylist}
+ViewPlaylist go to {AudioPlaylist} playlist
+ViewPlaylist go to {VideoPlaylist} playlist
+ViewPlaylist open playlist {AudioPlaylist}
+ViewPlaylist open playlist {VideoPlaylist}
+ViewPlaylist open the playlist {AudioPlaylist}
+ViewPlaylist open the playlist {VideoPlaylist}
+ViewPlaylist open {AudioPlaylist} playlist
+ViewPlaylist open {VideoPlaylist} playlist
+ViewPlaylist show playlist {AudioPlaylist}
+ViewPlaylist show playlist {VideoPlaylist}
+ViewPlaylist show the playlist {AudioPlaylist}
+ViewPlaylist show the playlist {VideoPlaylist}
+ViewPlaylist show {AudioPlaylist} playlist
+ViewPlaylist show {VideoPlaylist} playlist
 ViewShows go to shows
 ViewShows open shows
 ViewShows show shows
+ViewVideoPlaylist go to movie playlist {VideoPlaylist}
+ViewVideoPlaylist go to show playlist {VideoPlaylist}
+ViewVideoPlaylist go to the movie playlist {VideoPlaylist}
+ViewVideoPlaylist go to the show playlist {VideoPlaylist}
+ViewVideoPlaylist go to the video playlist {VideoPlaylist}
+ViewVideoPlaylist go to video playlist {VideoPlaylist}
+ViewVideoPlaylist go to {VideoPlaylist} movie playlist
+ViewVideoPlaylist go to {VideoPlaylist} show playlist
+ViewVideoPlaylist go to {VideoPlaylist} video playlist
+ViewVideoPlaylist open movie playlist {VideoPlaylist}
+ViewVideoPlaylist open show playlist {VideoPlaylist}
+ViewVideoPlaylist open the movie playlist {VideoPlaylist}
+ViewVideoPlaylist open the show playlist {VideoPlaylist}
+ViewVideoPlaylist open the video playlist {VideoPlaylist}
+ViewVideoPlaylist open video playlist {VideoPlaylist}
+ViewVideoPlaylist open {VideoPlaylist} movie playlist
+ViewVideoPlaylist open {VideoPlaylist} show playlist
+ViewVideoPlaylist open {VideoPlaylist} video playlist
+ViewVideoPlaylist show movie playlist {VideoPlaylist}
+ViewVideoPlaylist show show playlist {VideoPlaylist}
+ViewVideoPlaylist show the movie playlist {VideoPlaylist}
+ViewVideoPlaylist show the show playlist {VideoPlaylist}
+ViewVideoPlaylist show the video playlist {VideoPlaylist}
+ViewVideoPlaylist show video playlist {VideoPlaylist}
+ViewVideoPlaylist show {VideoPlaylist} movie playlist
+ViewVideoPlaylist show {VideoPlaylist} show playlist
+ViewVideoPlaylist show {VideoPlaylist} video playlist
 VolumeDown down volume
 VolumeDown turn down volume
 VolumeDown turn volume down

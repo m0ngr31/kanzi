@@ -463,6 +463,37 @@
       "intent": "ViewMusicVideos"
     },
     {
+      "intent": "ViewVideoPlaylist",
+      "slots": [
+        {
+          "name": "VideoPlaylist",
+          "type": "VIDEOPLAYLISTS"
+        }
+      ]
+    },
+    {
+      "intent": "ViewAudioPlaylist",
+      "slots": [
+        {
+          "name": "AudioPlaylist",
+          "type": "MUSICPLAYLISTS"
+        }
+      ]
+    },
+    {
+      "intent": "ViewPlaylist",
+      "slots": [
+        {
+          "name": "AudioPlaylist",
+          "type": "MUSICPLAYLISTS"
+        },
+        {
+          "name": "VideoPlaylist",
+          "type": "VIDEOPLAYLISTS"
+        }
+      ]
+    },
+    {
       "intent": "Fullscreen"
     },
     {

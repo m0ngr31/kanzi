@@ -28,6 +28,14 @@ ViewMusic (open/go to/show) music
 ViewArtists (open/go to/show) (artists/music artists/musicians)
 ViewAlbums (open/go to/show) (/music) albums
 ViewMusicVideos (open/go to/show) music videos
+ViewAudioPlaylist (open/go to/show) (/the) (song/music/audio) playlist {AudioPlaylist}
+ViewAudioPlaylist (open/go to/show) (/the) {AudioPlaylist} (song/music/audio) playlist
+ViewVideoPlaylist (open/go to/show) (/the) (movie/show/video) playlist {VideoPlaylist}
+ViewVideoPlaylist (open/go to/show) {VideoPlaylist} (movie/show/video) playlist
+ViewPlaylist (open/go to/show) (/the) playlist {AudioPlaylist}
+ViewPlaylist (open/go to/show) {AudioPlaylist} playlist
+ViewPlaylist (open/go to/show) (/the) playlist {VideoPlaylist}
+ViewPlaylist (open/go to/show) {VideoPlaylist} playlist
 
 Fullscreen (/toggle) (fullscreen/visualizer)
 

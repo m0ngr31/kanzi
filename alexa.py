@@ -1604,6 +1604,57 @@ def alexa_show_music_videos():
   return question(response_text)
 
 
+# Handle the ViewVideoPlaylist intent.
+@ask.intent('ViewVideoPlaylist')
+def alexa_show_video_playlist(VideoPlaylist):
+  print 'Navigate: Video Playlist'
+
+  kodi = Kodi(config, context)
+  playlist = kodi.FindVideoPlaylist(VideoPlaylist)
+  if len(playlist) > 0:
+    kodi.ShowVideoPlaylist(playlist[0][0])
+  response_text = render_template('short_confirm').encode("utf-8")
+  return question(response_text)
+
+
+# Handle the ViewAudioPlaylist intent.
+@ask.intent('ViewAudioPlaylist')
+def alexa_show_audio_playlist(AudioPlaylist):
+  print 'Navigate: Audio Playlist'
+
+  kodi = Kodi(config, context)
+  playlist = kodi.FindAudioPlaylist(AudioPlaylist)
+  if len(playlist) > 0:
+    kodi.ShowMusicPlaylist(playlist[0][0])
+  response_text = render_template('short_confirm').encode("utf-8")
+  return question(response_text)
+
+
+# Handle the ViewPlaylist intent.
+@ask.intent('ViewPlaylist')
+def alexa_show_playlist(VideoPlaylist, AudioPlaylist):
+  print 'Navigate: Playlist'
+
+  heard_search = ''
+  if VideoPlaylist:
+    heard_search = VideoPlaylist
+  elif AudioPlaylist:
+    heard_search = AudioPlaylist
+
+  kodi = Kodi(config, context)
+  if len(heard_search) > 0:
+    playlist = kodi.FindVideoPlaylist(heard_search)
+    if len(playlist) > 0:
+      kodi.ShowVideoPlaylist(playlist[0][0])
+    else:
+      playlist = kodi.FindAudioPlaylist(heard_search)
+      if len(playlist) > 0:
+        kodi.ShowMusicPlaylist(playlist[0][0])
+
+  response_text = render_template('short_confirm').encode("utf-8")
+  return question(response_text)
+
+
 # Handle the Shutdown intent.
 @ask.intent('Shutdown')
 def alexa_shutdown():
@@ -2077,7 +2128,7 @@ def alexa_shuffle_playlist(VideoPlaylist, AudioPlaylist):
   print card_title
 
   kodi = Kodi(config, context)
-  if (len(heard_search) > 0):
+  if len(heard_search) > 0:
     playlist = kodi.FindVideoPlaylist(heard_search)
     if len(playlist) > 0:
       videos = kodi.GetPlaylistItems(playlist[0][0])['result']['files']
