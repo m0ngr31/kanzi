@@ -91,6 +91,7 @@ Hibernate deep sleep system
 Hibernate hibernate
 Hibernate hibernate system
 Home go home
+Home home
 Home navigate home
 Left go left
 Left left
@@ -234,6 +235,8 @@ ListenToSong play the song {Song} from album {Album}
 ListenToSong play the song {Song} from the album {Album}
 ListenToSong play the song {Song} on album {Album}
 ListenToSong play the song {Song} on the album {Album}
+Menu context menu
+Menu menu
 Menu open menu
 Mute mute
 Mute set mute
