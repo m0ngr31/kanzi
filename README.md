@@ -249,6 +249,10 @@ Here are a few demo videos showing how to use it. Other commands you can do are 
 [![Amazon Echo - Kodi integration (demo 3) ](http://i.imgur.com/8UZbRMh.png)](https://www.youtube.com/watch?v=4xrrEkimPV4 "Amazon Echo - Kodi integration (demo 3) ")
 
 
-# Getting Help
+# Getting help
 
 If you run into an actual issue with the code, please open an Issue here on Github. If you need help getting a server going or configuring the Skill, please visit the [support thread on the Kodi forum.](http://forum.kodi.tv/showthread.php?tid=254502)
+
+# Developer discussion
+
+If you're interested in chatting with us about the development of the skill, we are on [Slack](https://kodi-alexa-slack.herokuapp.com/).
