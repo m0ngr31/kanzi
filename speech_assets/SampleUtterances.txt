@@ -16,6 +16,10 @@ AddonExecute run plug in {Addon}
 AddonExecute run plugin {Addon}
 AddonExecute run script {Addon}
 AddonExecute run {Addon}
+AddonGlobalSearch find {Album}
+AddonGlobalSearch find {Artist}
+AddonGlobalSearch find {Movie}
+AddonGlobalSearch find {Show}
 AddonGlobalSearch search for {Album}
 AddonGlobalSearch search for {Artist}
 AddonGlobalSearch search for {Movie}
