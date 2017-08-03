@@ -4,6 +4,12 @@ AddonExecute execute plug in {Addon}
 AddonExecute execute plugin {Addon}
 AddonExecute execute script {Addon}
 AddonExecute execute {Addon}
+AddonExecute launch add on {Addon}
+AddonExecute launch addon {Addon}
+AddonExecute launch plug in {Addon}
+AddonExecute launch plugin {Addon}
+AddonExecute launch script {Addon}
+AddonExecute launch {Addon}
 AddonExecute open add on {Addon}
 AddonExecute open addon {Addon}
 AddonExecute open plug in {Addon}

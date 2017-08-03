@@ -218,7 +218,7 @@ PlayerSeekSmallBackward (/small) (backward/back) (step/jump)
 PlayerSeekBigBackward (large/big/long) (step/jump) (backward/back)
 PlayerSeekBigBackward (large/big/long) (backward/back) (step/jump)
 
-AddonExecute (open/execute/run) (/addon/add on/plugin/plug in/script) {Addon}
+AddonExecute (open/execute/run/launch) (/addon/add on/plugin/plug in/script) {Addon}
 AddonGlobalSearch (find/search for) {Show}
 AddonGlobalSearch (find/search for) {Movie}
 AddonGlobalSearch (find/search for) {Album}
