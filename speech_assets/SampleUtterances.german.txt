@@ -972,14 +972,88 @@ ViewArtists gehe zu Musiker
 ViewArtists öffne Interpreten
 ViewArtists öffne Künstler
 ViewArtists öffne Musiker
+ViewAudioPlaylist gehe zu Lieder playlist {AudioPlaylist}
+ViewAudioPlaylist gehe zu Musik playlist {AudioPlaylist}
+ViewAudioPlaylist gehe zu Song playlist {AudioPlaylist}
+ViewAudioPlaylist gehe zu {AudioPlaylist} Lieder playlist
+ViewAudioPlaylist gehe zu {AudioPlaylist} Musik playlist
+ViewAudioPlaylist gehe zu {AudioPlaylist} Song playlist
+ViewAudioPlaylist öffne Lieder playlist {AudioPlaylist}
+ViewAudioPlaylist öffne Musik playlist {AudioPlaylist}
+ViewAudioPlaylist öffne Song playlist {AudioPlaylist}
+ViewAudioPlaylist öffne {AudioPlaylist} Lieder playlist
+ViewAudioPlaylist öffne {AudioPlaylist} Musik playlist
+ViewAudioPlaylist öffne {AudioPlaylist} Song playlist
+ViewAudioPlaylistRecent gehe zu kürzlich hinzugefügte Lieder
+ViewAudioPlaylistRecent gehe zu kürzlich hinzugefügte Musik
+ViewAudioPlaylistRecent gehe zu kürzlich hinzugefügte Songs
+ViewAudioPlaylistRecent gehe zu neue Lieder
+ViewAudioPlaylistRecent gehe zu neue Musik
+ViewAudioPlaylistRecent gehe zu neue Songs
+ViewAudioPlaylistRecent gehe zu zuletzt hinzugefügte Lieder
+ViewAudioPlaylistRecent gehe zu zuletzt hinzugefügte Musik
+ViewAudioPlaylistRecent gehe zu zuletzt hinzugefügte Songs
+ViewAudioPlaylistRecent öffne kürzlich hinzugefügte Lieder
+ViewAudioPlaylistRecent öffne kürzlich hinzugefügte Musik
+ViewAudioPlaylistRecent öffne kürzlich hinzugefügte Songs
+ViewAudioPlaylistRecent öffne neue Lieder
+ViewAudioPlaylistRecent öffne neue Musik
+ViewAudioPlaylistRecent öffne neue Songs
+ViewAudioPlaylistRecent öffne zuletzt hinzugefügte Lieder
+ViewAudioPlaylistRecent öffne zuletzt hinzugefügte Musik
+ViewAudioPlaylistRecent öffne zuletzt hinzugefügte Songs
+ViewEpisodePlaylistRecent gehe zu kürzlich hinzugefügte Musikvideos
+ViewEpisodePlaylistRecent gehe zu kürzlich hinzugefügte Series
+ViewEpisodePlaylistRecent gehe zu neue Musikvideos
+ViewEpisodePlaylistRecent gehe zu neue Series
+ViewEpisodePlaylistRecent gehe zu zuletzt hinzugefügte Musikvideos
+ViewEpisodePlaylistRecent gehe zu zuletzt hinzugefügte Series
+ViewEpisodePlaylistRecent öffne kürzlich hinzugefügte Musikvideos
+ViewEpisodePlaylistRecent öffne kürzlich hinzugefügte Series
+ViewEpisodePlaylistRecent öffne neue Musikvideos
+ViewEpisodePlaylistRecent öffne neue Series
+ViewEpisodePlaylistRecent öffne zuletzt hinzugefügte Musikvideos
+ViewEpisodePlaylistRecent öffne zuletzt hinzugefügte Series
+ViewMoviePlaylistRecent gehe zu kürzlich hinzugefügte Films
+ViewMoviePlaylistRecent gehe zu kürzlich hinzugefügte Videos
+ViewMoviePlaylistRecent gehe zu neue Films
+ViewMoviePlaylistRecent gehe zu neue Videos
+ViewMoviePlaylistRecent gehe zu zuletzt hinzugefügte Films
+ViewMoviePlaylistRecent gehe zu zuletzt hinzugefügte Videos
+ViewMoviePlaylistRecent öffne kürzlich hinzugefügte Films
+ViewMoviePlaylistRecent öffne kürzlich hinzugefügte Videos
+ViewMoviePlaylistRecent öffne neue Films
+ViewMoviePlaylistRecent öffne neue Videos
+ViewMoviePlaylistRecent öffne zuletzt hinzugefügte Films
+ViewMoviePlaylistRecent öffne zuletzt hinzugefügte Videos
 ViewMovies gehe zu Filme
 ViewMovies öffne Filme
 ViewMusic gehe zu Musik
 ViewMusic öffne Musik
 ViewMusicVideos gehe zu Musikvideos
 ViewMusicVideos öffne Musikvideos
+ViewPlaylist gehe zu playlist {AudioPlaylist}
+ViewPlaylist gehe zu playlist {VideoPlaylist}
+ViewPlaylist gehe zu {AudioPlaylist} playlist
+ViewPlaylist gehe zu {VideoPlaylist} playlist
+ViewPlaylist öffne playlist {AudioPlaylist}
+ViewPlaylist öffne playlist {VideoPlaylist}
+ViewPlaylist öffne {AudioPlaylist} playlist
+ViewPlaylist öffne {VideoPlaylist} playlist
 ViewShows gehe zu Serien
 ViewShows öffne Serien
+ViewVideoPlaylist gehe zu Film playlist {VideoPlaylist}
+ViewVideoPlaylist gehe zu Serie playlist {VideoPlaylist}
+ViewVideoPlaylist gehe zu Video playlist {VideoPlaylist}
+ViewVideoPlaylist gehe zu {VideoPlaylist} Film playlist
+ViewVideoPlaylist gehe zu {VideoPlaylist} Serie playlist
+ViewVideoPlaylist gehe zu {VideoPlaylist} Video playlist
+ViewVideoPlaylist öffne Film playlist {VideoPlaylist}
+ViewVideoPlaylist öffne Serie playlist {VideoPlaylist}
+ViewVideoPlaylist öffne Video playlist {VideoPlaylist}
+ViewVideoPlaylist öffne {VideoPlaylist} Film playlist
+ViewVideoPlaylist öffne {VideoPlaylist} Serie playlist
+ViewVideoPlaylist öffne {VideoPlaylist} Video playlist
 VolumeDown leiser
 VolumeSet Lautstärke auf {Volume}
 VolumeSet Lautstärke {Volume}

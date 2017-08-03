@@ -6,9 +6,7 @@
 # Tool to expand the single line into the usable list of utterances
 # http://www.makermusings.com/amazon-echo-utterance-expander/
 
-
 Home startseite
-
 Back zurück
 Up (/navigier(/e)) (hoch/nach oben)
 Down (/navigier(/e)) (runter/nach unten)
@@ -18,12 +16,29 @@ PageUp (/navigier(/e)) Seite (hoch/nach oben)
 PageDown (/navigier(/e)) Seite (runter/nach unten)
 Select auswählen
 Menu öffne Menü
+
 ViewMovies (öffne/gehe zu) Filme
 ViewShows (öffne/gehe zu) Serien
 ViewMusic (öffne/gehe zu) Musik
 ViewArtists (öffne/gehe zu) (Künstler/Musiker/Interpreten)
 ViewAlbums (öffne/gehe zu) Alben
 ViewMusicVideos (öffne/gehe zu) Musikvideos
+ViewAudioPlaylist (öffne/gehe zu) (Musik/Lieder/Song) playlist {AudioPlaylist}
+ViewAudioPlaylist (öffne/gehe zu) {AudioPlaylist} (Musik/Lieder/Song) playlist
+ViewAudioPlaylistRecent (öffne/gehe zu) neue (Musik/Lieder/Songs)
+ViewAudioPlaylistRecent (öffne/gehe zu) (zuletzt/kürzlich) hinzugefügte (Musik/Lieder/Songs)
+ViewVideoPlaylist (öffne/gehe zu) (Film/Serie/Video) playlist {VideoPlaylist}
+ViewVideoPlaylist (öffne/gehe zu) {VideoPlaylist} (Film/Serie/Video) playlist
+ViewMoviePlaylistRecent (öffne/gehe zu) neue (Films/Videos)
+ViewMoviePlaylistRecent (öffne/gehe zu) (zuletzt/kürzlich) hinzugefügte (Films/Videos)
+ViewEpisodePlaylistRecent (öffne/gehe zu) neue Series
+ViewEpisodePlaylistRecent (öffne/gehe zu) (zuletzt/kürzlich) hinzugefügte Series
+ViewEpisodePlaylistRecent (öffne/gehe zu) neue Musikvideos
+ViewEpisodePlaylistRecent (öffne/gehe zu) (zuletzt/kürzlich) hinzugefügte Musikvideos
+ViewPlaylist (öffne/gehe zu) playlist {AudioPlaylist}
+ViewPlaylist (öffne/gehe zu) {AudioPlaylist} playlist
+ViewPlaylist (öffne/gehe zu) playlist {VideoPlaylist}
+ViewPlaylist (öffne/gehe zu) {VideoPlaylist} playlist
 
 Fullscreen vollbild (/umschalten)
 
