@@ -556,6 +556,7 @@ def alexa_shuffle_media(Show=None):
 
   return statement(response_text).simple_card(card_title, response_text)
 
+
 # Handle the PlayMedia intent.
 #
 # Generic play function.  Tries to find media to play when the user didn't

@@ -127,6 +127,18 @@ cl = clean_results(retrieved, 'genres', 'label')
 write_file('MOVIEGENRES', cl)
 
 
+# Generate SHOWGENRES Slot
+retrieved = kodi.GetVideoGenres('tvshow')
+cl = clean_results(retrieved, 'genres', 'label')
+write_file('SHOWGENRES', cl)
+
+
+# Generate MUSICVIDEOGENRES Slot
+retrieved = kodi.GetVideoGenres('musicvideo')
+cl = clean_results(retrieved, 'genres', 'label')
+write_file('MUSICVIDEOGENRES', cl)
+
+
 # Generate MOVIES Slot
 retrieved = kodi.GetMovies()
 cl = clean_results(retrieved, 'movies', 'label')
