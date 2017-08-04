@@ -809,8 +809,11 @@ ViewPlaylist show the playlist {VideoPlaylist}
 ViewPlaylist show {AudioPlaylist} playlist
 ViewPlaylist show {VideoPlaylist} playlist
 ViewShows go to shows
+ViewShows go to t. v. shows
 ViewShows open shows
+ViewShows open t. v. shows
 ViewShows show shows
+ViewShows show t. v. shows
 ViewVideoPlaylist go to movie playlist {VideoPlaylist}
 ViewVideoPlaylist go to show playlist {VideoPlaylist}
 ViewVideoPlaylist go to the movie playlist {VideoPlaylist}

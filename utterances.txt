@@ -23,7 +23,7 @@ Select select
 Menu (/open/context) menu
 
 ViewMovies (open/go to/show) movies
-ViewShows (open/go to/show) shows
+ViewShows (open/go to/show) (/t. v.) shows
 ViewMusic (open/go to/show) music
 ViewArtists (open/go to/show) (artists/music artists/musicians)
 ViewAlbums (open/go to/show) (/music) albums
