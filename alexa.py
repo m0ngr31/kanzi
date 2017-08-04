@@ -1541,33 +1541,64 @@ def alexa_back():
 
 # Handle the ViewMovies intent.
 @ask.intent('ViewMovies')
-def alexa_show_movies():
+def alexa_show_movies(MovieGenre):
   print 'Navigate: Movies'
 
   kodi = Kodi(config, context)
-  kodi.ShowMovies()
+  genre = None
+  if MovieGenre:
+    g = kodi.FindVideoGenre(MovieGenre)
+    if len(g) > 0:
+      genre = g[0][0]
+  kodi.ShowMovies(genre)
   response_text = render_template('short_confirm').encode("utf-8")
   return question(response_text)
 
 
 # Handle the ViewShows intent.
 @ask.intent('ViewShows')
-def alexa_show_shows():
+def alexa_show_shows(ShowGenre):
   print 'Navigate: Shows'
 
   kodi = Kodi(config, context)
-  kodi.ShowTvShows()
+  genre = None
+  if ShowGenre:
+    g = kodi.FindVideoGenre(ShowGenre, 'tvshow')
+    if len(g) > 0:
+      genre = g[0][0]
+  kodi.ShowTvShows(genre)
+  response_text = render_template('short_confirm').encode("utf-8")
+  return question(response_text)
+
+
+# Handle the ViewMusicVideos intent.
+@ask.intent('ViewMusicVideos')
+def alexa_show_music_videos(MusicVideoGenre):
+  print 'Navigate: MusicVideos'
+
+  kodi = Kodi(config, context)
+  genre = None
+  if MusicVideoGenre:
+    g = kodi.FindVideoGenre(MusicVideoGenre, 'musicvideo')
+    if len(g) > 0:
+      genre = g[0][0]
+  kodi.ShowMusicVideos(genre)
   response_text = render_template('short_confirm').encode("utf-8")
   return question(response_text)
 
 
 # Handle the ViewMusic intent.
 @ask.intent('ViewMusic')
-def alexa_show_music():
+def alexa_show_music(MusicGenre):
   print 'Navigate: Music'
 
   kodi = Kodi(config, context)
-  kodi.ShowMusic()
+  genre = None
+  if MusicGenre:
+    g = kodi.FindMusicGenre(MusicGenre)
+    if len(g) > 0:
+      genre = g[0][0]
+  kodi.ShowMusic(genre)
   response_text = render_template('short_confirm').encode("utf-8")
   return question(response_text)
 
@@ -1590,17 +1621,6 @@ def alexa_show_albums():
 
   kodi = Kodi(config, context)
   kodi.ShowMusicAlbums()
-  response_text = render_template('short_confirm').encode("utf-8")
-  return question(response_text)
-
-
-# Handle the ViewMusicVideos intent.
-@ask.intent('ViewMusicVideos')
-def alexa_show_music_videos():
-  print 'Navigate: MusicVideos'
-
-  kodi = Kodi(config, context)
-  kodi.ShowMusicVideos()
   response_text = render_template('short_confirm').encode("utf-8")
   return question(response_text)
 

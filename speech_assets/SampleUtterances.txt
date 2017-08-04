@@ -769,12 +769,18 @@ ViewMoviePlaylistRecent show recent movies
 ViewMoviePlaylistRecent show recent videos
 ViewMoviePlaylistRecent show recently added movies
 ViewMoviePlaylistRecent show recently added videos
+ViewMovies find {MovieGenre} movies
 ViewMovies go to movies
 ViewMovies open movies
+ViewMovies search for {MovieGenre} movies
 ViewMovies show movies
+ViewMovies show {MovieGenre} movies
+ViewMusic find {MusicGenre} music
 ViewMusic go to music
 ViewMusic open music
+ViewMusic search for {MusicGenre} music
 ViewMusic show music
+ViewMusic show {MusicGenre} music
 ViewMusicVideoPlaylistRecent go to latest music videos
 ViewMusicVideoPlaylistRecent go to newest music videos
 ViewMusicVideoPlaylistRecent go to recent music videos
@@ -787,9 +793,12 @@ ViewMusicVideoPlaylistRecent show latest music videos
 ViewMusicVideoPlaylistRecent show newest music videos
 ViewMusicVideoPlaylistRecent show recent music videos
 ViewMusicVideoPlaylistRecent show recently added music videos
+ViewMusicVideos find {MusicVideoGenre} music videos
 ViewMusicVideos go to music videos
 ViewMusicVideos open music videos
+ViewMusicVideos search for {MusicVideoGenre} music videos
 ViewMusicVideos show music videos
+ViewMusicVideos show {MusicVideoGenre} music videos
 ViewPlaylist go to playlist {AudioPlaylist}
 ViewPlaylist go to playlist {VideoPlaylist}
 ViewPlaylist go to the playlist {AudioPlaylist}
@@ -808,12 +817,18 @@ ViewPlaylist show the playlist {AudioPlaylist}
 ViewPlaylist show the playlist {VideoPlaylist}
 ViewPlaylist show {AudioPlaylist} playlist
 ViewPlaylist show {VideoPlaylist} playlist
+ViewShows find {ShowGenre} shows
+ViewShows find {ShowGenre} t. v. shows
 ViewShows go to shows
 ViewShows go to t. v. shows
 ViewShows open shows
 ViewShows open t. v. shows
+ViewShows search for {ShowGenre} shows
+ViewShows search for {ShowGenre} t. v. shows
 ViewShows show shows
 ViewShows show t. v. shows
+ViewShows show {ShowGenre} shows
+ViewShows show {ShowGenre} t. v. shows
 ViewVideoPlaylist go to movie playlist {VideoPlaylist}
 ViewVideoPlaylist go to show playlist {VideoPlaylist}
 ViewVideoPlaylist go to the movie playlist {VideoPlaylist}
@@ -902,9 +917,9 @@ WatchNextEpisode play next episode of {Show}
 WatchNextEpisode play the next episode of {Show}
 WatchNextEpisode watch next episode of {Show}
 WatchNextEpisode watch the next episode of {Show}
-WatchRandomEpisode play episode of {Show}
+WatchRandomEpisode play a random episode of {Show}
 WatchRandomEpisode play random episode of {Show}
-WatchRandomEpisode watch episode of {Show}
+WatchRandomEpisode watch a random episode of {Show}
 WatchRandomEpisode watch random episode of {Show}
 WatchRandomMovie play a random film
 WatchRandomMovie play a random movie

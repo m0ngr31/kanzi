@@ -445,22 +445,46 @@
       "intent": "PageDown"
     },
     {
-      "intent": "ViewMovies"
+      "intent": "ViewMovies",
+      "slots": [
+        {
+          "name": "MovieGenre",
+          "type": "MOVIEGENRES"
+        }
+      ]
     },
     {
-      "intent": "ViewShows"
+      "intent": "ViewShows",
+      "slots": [
+        {
+          "name": "ShowGenre",
+          "type": "SHOWGENRES"
+        }
+      ]
     },
     {
-      "intent": "ViewMusic"
+      "intent": "ViewMusicVideos",
+      "slots": [
+        {
+          "name": "MusicVideoGenre",
+          "type": "MUSICVIDEOGENRES"
+        }
+      ]
+    },
+    {
+      "intent": "ViewMusic",
+      "slots": [
+        {
+          "name": "MusicGenre",
+          "type": "MUSICGENRES"
+        }
+      ]
     },
     {
       "intent": "ViewArtists"
     },
     {
       "intent": "ViewAlbums"
-    },
-    {
-      "intent": "ViewMusicVideos"
     },
     {
       "intent": "ViewVideoPlaylist",

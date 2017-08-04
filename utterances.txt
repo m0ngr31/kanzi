@@ -23,11 +23,15 @@ Select select
 Menu (/open/context) menu
 
 ViewMovies (open/go to/show) movies
+ViewMovies (show/find/search for) {MovieGenre} movies
 ViewShows (open/go to/show) (/t. v.) shows
+ViewShows (show/find/search for) {ShowGenre} (/t. v.) shows
 ViewMusic (open/go to/show) music
+ViewMusic (show/find/search for) {MusicGenre} music
 ViewArtists (open/go to/show) (artists/music artists/musicians)
 ViewAlbums (open/go to/show) (/music) albums
 ViewMusicVideos (open/go to/show) music videos
+ViewMusicVideos (show/find/search for) {MusicVideoGenre} music videos
 ViewAudioPlaylist (open/go to/show) (/the) (song/music/audio) playlist {AudioPlaylist}
 ViewAudioPlaylist (open/go to/show) (/the) {AudioPlaylist} (song/music/audio) playlist
 ViewAudioPlaylistRecent (open/go to/show) recent (albums/songs/music/audio)
@@ -132,15 +136,15 @@ ListenToAudioPlaylistRecent (play/listen to/shuffle) (latest/newest) (songs/musi
 
 WatchVideo watch {Movie}
 
-WatchRandomMovie (play/watch) (/a) random (/{MovieGenre}) (movie/film)
-
 WatchMovie (play/watch) (/the) (movie/film) {Movie}
+
+WatchRandomMovie (play/watch) (/a) random (/{MovieGenre}) (movie/film)
 
 WatchMovieTrailer (play/watch) (/the) (trailer/preview) (/for {Movie})
 
 WatchEpisode (play/watch) (season/series) {Season} episode {Episode} of {Show}
 
-WatchRandomEpisode (play/watch) (/random) episode of {Show}
+WatchRandomEpisode (play/watch) (/a) random episode of {Show}
 
 WatchNextEpisode (play/watch) (/the) next episode of {Show}
 
@@ -239,6 +243,7 @@ PlayerSeekBigBackward (large/big/long) (step/jump) (backward/back)
 PlayerSeekBigBackward (large/big/long) (backward/back) (step/jump)
 
 AddonExecute (open/execute/run/launch) (/addon/add on/plugin/plug in/script) {Addon}
+
 AddonGlobalSearch (find/search for) {Show}
 AddonGlobalSearch (find/search for) {Movie}
 AddonGlobalSearch (find/search for) {Album}
