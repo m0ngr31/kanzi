@@ -1095,6 +1095,10 @@ WatchRandomMovie zeige Film
 WatchRandomMovie zeige zufälligen Film
 WatchRandomMovie zeige zufälligen {MovieGenre} Film
 WatchRandomMovie zeige {MovieGenre} Film
+WatchRandomMusicVideo zeige Musikvideo
+WatchRandomMusicVideo zeige zufälligen Musikvideo
+WatchRandomMusicVideo zeige zufälligen {MusicVideoGenre} Musikvideo
+WatchRandomMusicVideo zeige {MusicVideoGenre} Musikvideo
 WatchVideo zeige {Movie}
 WatchVideoPlaylist zeige Film playlist {VideoPlaylist}
 WatchVideoPlaylist zeige Serie playlist {VideoPlaylist}

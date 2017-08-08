@@ -92,6 +92,10 @@ playing_episode_number: "Playing season {{ season }} episode {{ episode }} of {{
 
 playing_action_episode_number: "{{ action }} season {{ season }} episode {{ episode }} of {{ show_name }}"
 
+playing_genre_musicvideo: "Playing the {{ genre_name }} music video {{ musicvideo_name }} by {{ artist_name }}"
+
+playing_musicvideo: "Playing the music video {{ musicvideo_name }} by {{ artist_name }}"
+
 playing_empty: "Playing"
 
 resuming_empty: "Resuming"
@@ -320,6 +324,10 @@ playing_random_episode: "Playing a random episode of {{ heard_show }}"
 playing_next_unwatched_episode: "Playing the next unwatched episode of {{ heard_show }}"
 
 playing_newest_episode: "Playing the newest episode of {{ heard_show }}"
+
+playing_random_musicvideo: "Playing a random music video"
+
+playing_random_musicvideo_genre: "Playing a random {{ genre }} music video"
 
 playing_album_card: "Playing album"
 

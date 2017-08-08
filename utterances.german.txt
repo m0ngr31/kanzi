@@ -137,6 +137,8 @@ WatchLastShow weiter mit (/letzter) Serie
 
 WatchLatestEpisode zeige (neueste/letzte) (Episode/Folge) von {Show}
 
+WatchRandomMusicVideo zeige (/zufälligen) (/{MusicVideoGenre}) Musikvideo
+
 ShuffleShow zufallswiedergabe (/aller) episoden von {Show}
 
 ShuffleLatestAlbum (shuffle/(/starte) Zufallswiedergabe) des (aktuellen/neuen/aktuellsten/neuesten/zuletzt hinzugefügten) Albums von {Artist}

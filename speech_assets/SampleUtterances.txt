@@ -937,6 +937,14 @@ WatchRandomMovie watch random film
 WatchRandomMovie watch random movie
 WatchRandomMovie watch random {MovieGenre} film
 WatchRandomMovie watch random {MovieGenre} movie
+WatchRandomMusicVideo play a random music video
+WatchRandomMusicVideo play a random {MusicVideoGenre} music video
+WatchRandomMusicVideo play random music video
+WatchRandomMusicVideo play random {MusicVideoGenre} music video
+WatchRandomMusicVideo watch a random music video
+WatchRandomMusicVideo watch a random {MusicVideoGenre} music video
+WatchRandomMusicVideo watch random music video
+WatchRandomMusicVideo watch random {MusicVideoGenre} music video
 WatchVideo watch {Movie}
 WatchVideoPlaylist play movie playlist {VideoPlaylist}
 WatchVideoPlaylist play show playlist {VideoPlaylist}

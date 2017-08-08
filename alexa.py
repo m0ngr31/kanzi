@@ -1885,6 +1885,7 @@ def alexa_watch_random_movie(MovieGenre):
   print card_title
 
   # Select from specified genre if one was matched
+  movies_array = []
   if len(genre) > 0:
     movies_array = kodi.GetUnwatchedMoviesByGenre(genre[0][1])
   else:
@@ -2135,6 +2136,43 @@ def alexa_watch_last_show():
     else:
       response_text = render_template('no_new_episodes_show', show_name=last_show_obj['result']['episodes'][0]['showtitle']).encode("utf-8")
   except:
+    response_text = render_template('error_parsing_results').encode("utf-8")
+
+  return statement(response_text).simple_card(card_title, response_text)
+
+
+# Handle the WatchRandomMusicVideo intent.
+@ask.intent('WatchRandomMusicVideo')
+def alexa_watch_random_music_video(MusicVideoGenre):
+  kodi = Kodi(config, context)
+  genre = []
+  # If a genre has been specified, match the genre for use in selecting a random music video
+  if MusicVideoGenre:
+    card_title = render_template('playing_random_musicvideo_genre', genre=MusicVideoGenre).encode("utf-8")
+    genre = kodi.FindVideoGenre(MusicVideoGenre, 'musicvideo')
+  else:
+    card_title = render_template('playing_random_musicvideo').encode("utf-8")
+  print card_title
+
+  # Select from specified genre if one was matched
+  if len(genre) > 0:
+    musicvideos = kodi.GetMusicVideosByGenre(genre[0][1])
+  else:
+    musicvideos = kodi.GetMusicVideos()
+  musicvideos_array = []
+  if 'result' in musicvideos and 'musicvideos' in musicvideos['result']:
+    musicvideos_array = musicvideos['result']['musicvideos']
+
+  if len(musicvideos_array) > 0:
+    random_musicvideo = random.choice(musicvideos_array)
+    musicvideo_details = kodi.GetMusicVideoDetails(random_musicvideo['musicvideoid'])
+
+    kodi.PlayMusicVideo(random_musicvideo['musicvideoid'])
+    if len(genre) > 0:
+      response_text = render_template('playing_genre_musicvideo', genre_name=genre[0][1], musicvideo_name=random_musicvideo['label'], artist_name=musicvideo_details['artist'][0]).encode("utf-8")
+    else:
+      response_text = render_template('playing_musicvideo', musicvideo_name=random_musicvideo['label'], artist_name=musicvideo_details['artist'][0]).encode("utf-8")
+  else:
     response_text = render_template('error_parsing_results').encode("utf-8")
 
   return statement(response_text).simple_card(card_title, response_text)

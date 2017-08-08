@@ -92,6 +92,10 @@ playing_episode_number: "Spiele die Staffel {{ season }} Folge {{ episode }} von
 
 playing_action_episode_number: "{{ action }} Staffel {{ season }} Folge {{ episode }} von {{ show_name }}"
 
+playing_genre_musicvideo: "Spiele den {{ genre_name }} Musikvideo {{ musicvideo_name }} von {{ artist_name }}"
+
+playing_musicvideo: "Spiele den Musikvideo {{ musicvideo_name }} von {{ artist_name }}"
+
 playing_empty: "Spiele"
 
 resuming_empty: "Setze fort"
@@ -320,6 +324,10 @@ playing_random_episode: "Spiele eine zufällige Folge von {{ heard_show }}"
 playing_next_unwatched_episode: "Spiele die nächste ungesehene Folge von {{ heard_show }}"
 
 playing_newest_episode: "Spiele die neueste Folge von {{ heard_show }}"
+
+playing_random_musicvideo: "Spiele zufälligen Musikvideo"
+
+playing_random_musicvideo_genre: "Spiele zufälligen {{ genre }} Musikvideo"
 
 playing_album_card: "Spiele Album"
 

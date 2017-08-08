@@ -152,6 +152,8 @@ WatchLastShow continue (/watching/playing) (/last/the last) show
 
 WatchLatestEpisode (play/watch) (/the) (newest/latest) episode of {Show}
 
+WatchRandomMusicVideo (play/watch) (/a) random (/{MusicVideoGenre}) music video
+
 WatchVideoPlaylist (play/watch) (/the) (movie/show/video) playlist {VideoPlaylist}
 WatchVideoPlaylist (play/watch) {VideoPlaylist} (movie/show/video) playlist
 WatchVideoPlaylist watch (/the) playlist {VideoPlaylist}

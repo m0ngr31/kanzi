@@ -26,6 +26,8 @@ Here are some of the features supported by this skill:
 - Play specific movie
 - Play trailer for a movie in your library (*requires plugin.video.youtube addon*)
 - Play specific episode of a TV show ('Play season 4 episode 10 of The Office')
+- Play random music video
+- Play random music video from a specific genre
 - Continue watching next episode of last show that was watched
 - Play next episode of a show
 - Play newest episode of a show

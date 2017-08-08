@@ -375,6 +375,15 @@
       ]
     },
     {
+      "intent": "WatchRandomMusicVideo",
+      "slots": [
+        {
+          "name": "MusicVideoGenre",
+          "type": "MUSICVIDEOGENRES"
+        }
+      ]
+    },
+    {
       "intent": "WatchVideoPlaylist",
       "slots": [
         {
