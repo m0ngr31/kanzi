@@ -327,6 +327,15 @@
       ]
     },
     {
+      "intent": "WatchRandomShow",
+      "slots": [
+        {
+          "name": "ShowGenre",
+          "type": "SHOWGENRES"
+        }
+      ]
+    },
+    {
       "intent": "WatchLatestEpisode",
       "slots": [
         {

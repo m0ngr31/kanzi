@@ -321,6 +321,10 @@ playing_an_episode: "Playing an episode of {{ heard_show }}"
 
 playing_random_episode: "Playing a random episode of {{ heard_show }}"
 
+playing_random_show: "Playing a random show"
+
+playing_random_show_genre: "Playing a random {{ genre }} show"
+
 playing_next_unwatched_episode: "Playing the next unwatched episode of {{ heard_show }}"
 
 playing_newest_episode: "Playing the newest episode of {{ heard_show }}"

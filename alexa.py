@@ -2023,6 +2023,42 @@ def alexa_watch_random_episode(Show):
   return statement(response_text).simple_card(card_title, response_text)
 
 
+# Handle the WatchRandomShow intent.
+@ask.intent('WatchRandomShow')
+def alexa_watch_random_show(ShowGenre):
+  kodi = Kodi(config, context)
+  genre = []
+  # If a genre has been specified, match the genre for use in selecting a random show
+  if ShowGenre:
+    card_title = render_template('playing_random_show_genre', genre=ShowGenre).encode("utf-8")
+    genre = kodi.FindVideoGenre(ShowGenre, 'tvshow')
+  else:
+    card_title = render_template('playing_random_show').encode("utf-8")
+  print card_title
+
+  # Select from specified genre if one was matched
+  if len(genre) > 0:
+    shows_array = kodi.GetUnwatchedShowsByGenre(genre[0][1])
+  else:
+    shows_array = kodi.GetUnwatchedShows()
+  if not len(shows_array):
+    # Fall back to all shows if no unwatched available
+    if len(genre) > 0:
+      shows = kodi.GetShowsByGenre(genre[0][1])
+    else:
+      shows = kodi.GetShows()
+    if 'result' in shows and 'tvshows' in shows['result']:
+      shows_array = shows['result']['tvshows']
+
+  if len(shows_array) > 0:
+    random_show = random.choice(shows_array)
+    return alexa_watch_random_episode(random_show['label'])
+
+  response_text = render_template('could_not_find_show', heard_show=Show).encode("utf-8")
+  return statement(response_text).simple_card(card_title, response_text)
+
+
+
 # Handle the WatchEpisode intent.
 @ask.intent('WatchEpisode')
 def alexa_watch_episode(Show, Season, Episode):

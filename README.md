@@ -20,12 +20,13 @@ Here are some of the features supported by this skill:
 - Play/Shuffle audio and video playlists
 - "Party mode" for music (shuffle all)
 - Shuffle all episodes of a TV show
-- Play random unwatched episode of TV show
+- Play random unwatched TV show
+- Play random unwatched episode of a specific TV show
+- Play specific episode of a TV show ('Play season 4 episode 10 of The Office')
 - Play random unwatched movie
 - Play random movie from a specific genre
 - Play specific movie
 - Play trailer for a movie in your library (*requires plugin.video.youtube addon*)
-- Play specific episode of a TV show ('Play season 4 episode 10 of The Office')
 - Play random music video
 - Play random music video from a specific genre
 - Continue watching next episode of last show that was watched

@@ -321,6 +321,10 @@ playing_an_episode: "Spiele eine Folge von {{ heard_show }}"
 
 playing_random_episode: "Spiele eine zufällige Folge von {{ heard_show }}"
 
+playing_random_show: "Spiele zufälligen Serie"
+
+playing_random_show_genre: "Spiele zufälligen {{ genre }} Serie"
+
 playing_next_unwatched_episode: "Spiele die nächste ungesehene Folge von {{ heard_show }}"
 
 playing_newest_episode: "Spiele die neueste Folge von {{ heard_show }}"

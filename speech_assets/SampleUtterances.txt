@@ -945,6 +945,22 @@ WatchRandomMusicVideo watch a random music video
 WatchRandomMusicVideo watch a random {MusicVideoGenre} music video
 WatchRandomMusicVideo watch random music video
 WatchRandomMusicVideo watch random {MusicVideoGenre} music video
+WatchRandomShow play a random show
+WatchRandomShow play a random t. v. show
+WatchRandomShow play a random {ShowGenre} show
+WatchRandomShow play a random {ShowGenre} t. v. show
+WatchRandomShow play random show
+WatchRandomShow play random t. v. show
+WatchRandomShow play random {ShowGenre} show
+WatchRandomShow play random {ShowGenre} t. v. show
+WatchRandomShow watch a random show
+WatchRandomShow watch a random t. v. show
+WatchRandomShow watch a random {ShowGenre} show
+WatchRandomShow watch a random {ShowGenre} t. v. show
+WatchRandomShow watch random show
+WatchRandomShow watch random t. v. show
+WatchRandomShow watch random {ShowGenre} show
+WatchRandomShow watch random {ShowGenre} t. v. show
 WatchVideo watch {Movie}
 WatchVideoPlaylist play movie playlist {VideoPlaylist}
 WatchVideoPlaylist play show playlist {VideoPlaylist}

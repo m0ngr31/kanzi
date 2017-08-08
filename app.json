@@ -62,6 +62,11 @@
       "value": "100",
       "required": false
     },
+    "MAX_UNWATCHED_SHOWS": {
+      "description": "Maximum number of items to fetch when looking for new shows.",
+      "value": "100",
+      "required": false
+    },
     "MAX_UNWATCHED_EPISODES": {
       "description": "Maximum number of items to fetch when looking for new episodes.",
       "value": "100",

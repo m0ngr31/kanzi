@@ -146,6 +146,8 @@ WatchEpisode (play/watch) (season/series) {Season} episode {Episode} of {Show}
 
 WatchRandomEpisode (play/watch) (/a) random episode of {Show}
 
+WatchRandomShow (play/watch) (/a) random (/{ShowGenre}) (/t. v.) show
+
 WatchNextEpisode (play/watch) (/the) next episode of {Show}
 
 WatchLastShow continue (/watching/playing) (/last/the last) show
