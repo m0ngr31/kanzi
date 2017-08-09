@@ -2000,14 +2000,9 @@ def alexa_watch_random_episode(Show):
   kodi = Kodi(config, context)
   show = kodi.FindTvShow(Show)
   if len(show) > 0:
-    episodes_result = kodi.GetUnwatchedEpisodesFromShow(show[0][0])
-
-    if not 'episodes' in episodes_result['result']:
-      # Fall back to all episodes if no unwatched available
-      episodes_result = kodi.GetEpisodesFromShow(show[0][0])
+    episodes_result = kodi.GetEpisodesFromShow(show[0][0])
 
     episodes_array = []
-
     for episode in episodes_result['result']['episodes']:
       episodes_array.append(episode['episodeid'])
 
