@@ -10,6 +10,7 @@ Here are some of the features supported by this skill:
 
 - Basic navigation (Up/Down, Left/Right, Page Up/Down, Select, Back, Menu, Zoom, Rotate, Move)
 - Open library views (Movies, Shows, Music, Artists, Albums, Music Videos, Playlists)
+- Open library views by genre (Movies, Shows, Music, Music Videos)
 - Open recently added playlists (Movies, Episodes, Albums, Music Videos)
 - Playback control (Play/Pause, Skip, Previous, Stop, Step/Jump)
 - Adjust volume
@@ -20,10 +21,11 @@ Here are some of the features supported by this skill:
 - Play/Shuffle audio and video playlists
 - "Party mode" for music (shuffle all)
 - Shuffle all episodes of a TV show
-- Play random unwatched TV show
-- Play random unwatched episode of a specific TV show
+- Play random TV show
+- Play random TV show from a specific genre
+- Play random episode of a specific TV show
 - Play specific episode of a TV show ('Play season 4 episode 10 of The Office')
-- Play random unwatched movie
+- Play random movie
 - Play random movie from a specific genre
 - Play specific movie
 - Play trailer for a movie in your library (*requires plugin.video.youtube addon*)
