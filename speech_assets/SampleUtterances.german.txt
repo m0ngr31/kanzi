@@ -1095,14 +1095,14 @@ WatchRandomMovie zeige Film
 WatchRandomMovie zeige zufälligen Film
 WatchRandomMovie zeige zufälligen {MovieGenre} Film
 WatchRandomMovie zeige {MovieGenre} Film
-WatchRandomMusicVideo zeige Musikvideo
-WatchRandomMusicVideo zeige zufälligen Musikvideo
-WatchRandomMusicVideo zeige zufälligen {MusicVideoGenre} Musikvideo
-WatchRandomMusicVideo zeige {MusicVideoGenre} Musikvideo
-WatchRandomShow zeige Serie
-WatchRandomShow zeige zufälligen Serie
-WatchRandomShow zeige zufälligen {ShowGenre} Serie
-WatchRandomShow zeige {ShowGenre} Serie
+WatchRandomMusicVideo zeige ein Musikvideo
+WatchRandomMusicVideo zeige ein zufälliges Musikvideo
+WatchRandomMusicVideo zeige ein zufälliges {MusicVideoGenre} Musikvideo
+WatchRandomMusicVideo zeige ein {MusicVideoGenre} Musikvideo
+WatchRandomShow zeige eine Serie
+WatchRandomShow zeige eine zufällige Serie
+WatchRandomShow zeige eine zufällige {ShowGenre} Serie
+WatchRandomShow zeige eine {ShowGenre} Serie
 WatchVideo zeige {Movie}
 WatchVideoPlaylist zeige Film playlist {VideoPlaylist}
 WatchVideoPlaylist zeige Serie playlist {VideoPlaylist}

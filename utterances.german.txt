@@ -131,7 +131,7 @@ WatchEpisode zeige Staffel {Season} (Episode/Folge) {Episode} von {Show}
 
 WatchRandomEpisode zeige eine (/zufällige) (Episode/Folge) von {Show}
 
-WatchRandomShow zeige (/zufälligen) (/{ShowGenre}) Serie
+WatchRandomShow zeige eine (/zufällige) (/{ShowGenre}) Serie
 
 WatchNextEpisode zeige nächste (Episode/Folge) von {Show}
 
@@ -139,7 +139,7 @@ WatchLastShow weiter mit (/letzter) Serie
 
 WatchLatestEpisode zeige (neueste/letzte) (Episode/Folge) von {Show}
 
-WatchRandomMusicVideo zeige (/zufälligen) (/{MusicVideoGenre}) Musikvideo
+WatchRandomMusicVideo zeige ein (/zufälliges) (/{MusicVideoGenre}) Musikvideo
 
 ShuffleShow zufallswiedergabe (/aller) episoden von {Show}
 
