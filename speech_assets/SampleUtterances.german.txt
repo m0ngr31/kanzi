@@ -6,10 +6,18 @@ AddonExecute führe plugin {Addon} aus
 AddonExecute führe script {Addon} aus
 AddonExecute führe {Addon} aus
 AddonExecute öffne {Addon}
+AddonGlobalSearch finde {Album}
+AddonGlobalSearch finde {Artist}
+AddonGlobalSearch finde {Movie}
+AddonGlobalSearch finde {Show}
 AddonGlobalSearch suche nach {Album}
 AddonGlobalSearch suche nach {Artist}
 AddonGlobalSearch suche nach {Movie}
 AddonGlobalSearch suche nach {Show}
+AddonGlobalSearch suche {Album}
+AddonGlobalSearch suche {Artist}
+AddonGlobalSearch suche {Movie}
+AddonGlobalSearch suche {Show}
 AudioStreamNext Sprache umschalten
 AudioStreamNext audio Stream umschalten
 AudioStreamNext nächste Sprache
@@ -1003,34 +1011,43 @@ ViewAudioPlaylistRecent öffne zuletzt hinzugefügte Lieder
 ViewAudioPlaylistRecent öffne zuletzt hinzugefügte Musik
 ViewAudioPlaylistRecent öffne zuletzt hinzugefügte Songs
 ViewEpisodePlaylistRecent gehe zu kürzlich hinzugefügte Musikvideos
-ViewEpisodePlaylistRecent gehe zu kürzlich hinzugefügte Series
+ViewEpisodePlaylistRecent gehe zu kürzlich hinzugefügte Serien
 ViewEpisodePlaylistRecent gehe zu neue Musikvideos
-ViewEpisodePlaylistRecent gehe zu neue Series
+ViewEpisodePlaylistRecent gehe zu neue Serien
 ViewEpisodePlaylistRecent gehe zu zuletzt hinzugefügte Musikvideos
-ViewEpisodePlaylistRecent gehe zu zuletzt hinzugefügte Series
+ViewEpisodePlaylistRecent gehe zu zuletzt hinzugefügte Serien
 ViewEpisodePlaylistRecent öffne kürzlich hinzugefügte Musikvideos
-ViewEpisodePlaylistRecent öffne kürzlich hinzugefügte Series
+ViewEpisodePlaylistRecent öffne kürzlich hinzugefügte Serien
 ViewEpisodePlaylistRecent öffne neue Musikvideos
-ViewEpisodePlaylistRecent öffne neue Series
+ViewEpisodePlaylistRecent öffne neue Serien
 ViewEpisodePlaylistRecent öffne zuletzt hinzugefügte Musikvideos
-ViewEpisodePlaylistRecent öffne zuletzt hinzugefügte Series
-ViewMoviePlaylistRecent gehe zu kürzlich hinzugefügte Films
+ViewEpisodePlaylistRecent öffne zuletzt hinzugefügte Serien
+ViewMoviePlaylistRecent gehe zu kürzlich hinzugefügte Filme
 ViewMoviePlaylistRecent gehe zu kürzlich hinzugefügte Videos
-ViewMoviePlaylistRecent gehe zu neue Films
+ViewMoviePlaylistRecent gehe zu neue Filme
 ViewMoviePlaylistRecent gehe zu neue Videos
-ViewMoviePlaylistRecent gehe zu zuletzt hinzugefügte Films
+ViewMoviePlaylistRecent gehe zu zuletzt hinzugefügte Filme
 ViewMoviePlaylistRecent gehe zu zuletzt hinzugefügte Videos
-ViewMoviePlaylistRecent öffne kürzlich hinzugefügte Films
+ViewMoviePlaylistRecent öffne kürzlich hinzugefügte Filme
 ViewMoviePlaylistRecent öffne kürzlich hinzugefügte Videos
-ViewMoviePlaylistRecent öffne neue Films
+ViewMoviePlaylistRecent öffne neue Filme
 ViewMoviePlaylistRecent öffne neue Videos
-ViewMoviePlaylistRecent öffne zuletzt hinzugefügte Films
+ViewMoviePlaylistRecent öffne zuletzt hinzugefügte Filme
 ViewMoviePlaylistRecent öffne zuletzt hinzugefügte Videos
+ViewMovies finde {MovieGenre} Filme
 ViewMovies gehe zu Filme
+ViewMovies suche nach {MovieGenre} Filmen
+ViewMovies suche {MovieGenre} Filme
 ViewMovies öffne Filme
+ViewMusic finde {MusicGenre} Musik
 ViewMusic gehe zu Musik
+ViewMusic suche nach {MusicGenre} Musik
+ViewMusic suche {MusicGenre} Musik
 ViewMusic öffne Musik
+ViewMusicVideos finde {MusicVideoGenre} Musikvideos
 ViewMusicVideos gehe zu Musikvideos
+ViewMusicVideos suche nach {MusicVideoGenre} Musikvideos
+ViewMusicVideos suche {MusicVideoGenre} Musikvideos
 ViewMusicVideos öffne Musikvideos
 ViewPlaylist gehe zu playlist {AudioPlaylist}
 ViewPlaylist gehe zu playlist {VideoPlaylist}
@@ -1040,7 +1057,10 @@ ViewPlaylist öffne playlist {AudioPlaylist}
 ViewPlaylist öffne playlist {VideoPlaylist}
 ViewPlaylist öffne {AudioPlaylist} playlist
 ViewPlaylist öffne {VideoPlaylist} playlist
+ViewShows finde {ShowGenre} Serien
 ViewShows gehe zu Serien
+ViewShows suche nach {ShowGenre} Serien
+ViewShows suche {ShowGenre} Serien
 ViewShows öffne Serien
 ViewVideoPlaylist gehe zu Film playlist {VideoPlaylist}
 ViewVideoPlaylist gehe zu Serie playlist {VideoPlaylist}

@@ -18,21 +18,26 @@ Select auswählen
 Menu öffne Menü
 
 ViewMovies (öffne/gehe zu) Filme
+ViewMovies (suche/finde) {MovieGenre} Filme
+ViewMovies suche nach {MovieGenre} Filmen
 ViewShows (öffne/gehe zu) Serien
+ViewShows (suche/suche nach/finde) {ShowGenre} Serien
 ViewMusic (öffne/gehe zu) Musik
+ViewMusic (suche/suche nach/finde) {MusicGenre} Musik
 ViewArtists (öffne/gehe zu) (Künstler/Musiker/Interpreten)
 ViewAlbums (öffne/gehe zu) Alben
 ViewMusicVideos (öffne/gehe zu) Musikvideos
+ViewMusicVideos (suche/suche nach/finde) {MusicVideoGenre} Musikvideos
 ViewAudioPlaylist (öffne/gehe zu) (Musik/Lieder/Song) playlist {AudioPlaylist}
 ViewAudioPlaylist (öffne/gehe zu) {AudioPlaylist} (Musik/Lieder/Song) playlist
 ViewAudioPlaylistRecent (öffne/gehe zu) neue (Musik/Lieder/Songs)
 ViewAudioPlaylistRecent (öffne/gehe zu) (zuletzt/kürzlich) hinzugefügte (Musik/Lieder/Songs)
 ViewVideoPlaylist (öffne/gehe zu) (Film/Serie/Video) playlist {VideoPlaylist}
 ViewVideoPlaylist (öffne/gehe zu) {VideoPlaylist} (Film/Serie/Video) playlist
-ViewMoviePlaylistRecent (öffne/gehe zu) neue (Films/Videos)
-ViewMoviePlaylistRecent (öffne/gehe zu) (zuletzt/kürzlich) hinzugefügte (Films/Videos)
-ViewEpisodePlaylistRecent (öffne/gehe zu) neue Series
-ViewEpisodePlaylistRecent (öffne/gehe zu) (zuletzt/kürzlich) hinzugefügte Series
+ViewMoviePlaylistRecent (öffne/gehe zu) neue (Filme/Videos)
+ViewMoviePlaylistRecent (öffne/gehe zu) (zuletzt/kürzlich) hinzugefügte (Filme/Videos)
+ViewEpisodePlaylistRecent (öffne/gehe zu) neue Serien
+ViewEpisodePlaylistRecent (öffne/gehe zu) (zuletzt/kürzlich) hinzugefügte Serien
 ViewEpisodePlaylistRecent (öffne/gehe zu) neue Musikvideos
 ViewEpisodePlaylistRecent (öffne/gehe zu) (zuletzt/kürzlich) hinzugefügte Musikvideos
 ViewPlaylist (öffne/gehe zu) playlist {AudioPlaylist}
@@ -242,7 +247,7 @@ PlayerSeekBigBackward weiter zurück(/spulen/springen)
 AddonExecute öffne {Addon}
 AddonExecute führe (/addon/add on/plugin/plug in/script/erweiterung) {Addon} aus
 
-AddonGlobalSearch suche nach {Show}
-AddonGlobalSearch suche nach {Movie}
-AddonGlobalSearch suche nach {Album}
-AddonGlobalSearch suche nach {Artist}
+AddonGlobalSearch (suche/suche nach/finde) {Show}
+AddonGlobalSearch (suche/suche nach/finde) {Movie}
+AddonGlobalSearch (suche/suche nach/finde) {Album}
+AddonGlobalSearch (suche/suche nach/finde) {Artist}
