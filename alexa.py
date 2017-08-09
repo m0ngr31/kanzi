@@ -2036,7 +2036,10 @@ def alexa_watch_random_show(ShowGenre):
     shows_array = kodi.GetUnwatchedShowsByGenre(genre[0][1])
   else:
     shows_array = kodi.GetUnwatchedShows()
-  if not len(shows_array):
+  if len(shows_array) > 0:
+    random_show = random.choice(shows_array)
+    return alexa_watch_next_episode(random_show['label'])
+  else:
     # Fall back to all shows if no unwatched available
     if len(genre) > 0:
       shows = kodi.GetShowsByGenre(genre[0][1])
@@ -2044,12 +2047,10 @@ def alexa_watch_random_show(ShowGenre):
       shows = kodi.GetShows()
     if 'result' in shows and 'tvshows' in shows['result']:
       shows_array = shows['result']['tvshows']
+      random_show = random.choice(shows_array)
+      return alexa_watch_random_episode(random_show['label'])
 
-  if len(shows_array) > 0:
-    random_show = random.choice(shows_array)
-    return alexa_watch_random_episode(random_show['label'])
-
-  response_text = render_template('could_not_find_show', heard_show=Show).encode("utf-8")
+  response_text = render_template('error_parsing_results').encode("utf-8")
   return statement(response_text).simple_card(card_title, response_text)
 
 
