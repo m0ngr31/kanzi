@@ -570,6 +570,18 @@ ShuffleLatestAlbum shuffle newest album by {Artist}
 ShuffleLatestAlbum shuffle the latest album by {Artist}
 ShuffleLatestAlbum shuffle the newest album by {Artist}
 ShuffleMedia shuffle {Show}
+ShuffleMusicVideos play all music videos
+ShuffleMusicVideos play all {MusicVideoGenre} music videos
+ShuffleMusicVideos play music videos
+ShuffleMusicVideos play {MusicVideoGenre} music videos
+ShuffleMusicVideos shuffle all music videos
+ShuffleMusicVideos shuffle all {MusicVideoGenre} music videos
+ShuffleMusicVideos shuffle music videos
+ShuffleMusicVideos shuffle {MusicVideoGenre} music videos
+ShuffleMusicVideos watch all music videos
+ShuffleMusicVideos watch all {MusicVideoGenre} music videos
+ShuffleMusicVideos watch music videos
+ShuffleMusicVideos watch {MusicVideoGenre} music videos
 ShufflePlaylist shuffle playlist {AudioPlaylist}
 ShufflePlaylist shuffle playlist {VideoPlaylist}
 ShufflePlaylist shuffle the playlist {AudioPlaylist}

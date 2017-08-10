@@ -402,6 +402,15 @@
       ]
     },
     {
+      "intent": "ShuffleMusicVideos",
+      "slots": [
+        {
+          "name": "MusicVideoGenre",
+          "type": "MUSICVIDEOGENRES"
+        }
+      ]
+    },
+    {
       "intent": "ShuffleShow",
       "slots": [
         {

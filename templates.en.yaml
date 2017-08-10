@@ -329,6 +329,10 @@ playing_next_unwatched_episode: "Playing the next unwatched episode of {{ heard_
 
 playing_newest_episode: "Playing the newest episode of {{ heard_show }}"
 
+shuffling_musicvideos: "Shuffling music videos"
+
+shuffling_musicvideos_genre: "Shuffling {{ genre }} music videos"
+
 playing_random_musicvideo: "Playing a random music video"
 
 playing_random_musicvideo_genre: "Playing a random {{ genre }} music video"
