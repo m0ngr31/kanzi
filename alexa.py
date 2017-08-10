@@ -477,6 +477,14 @@ def find_and_play(kodi, needle, content=['video','audio'], shuffle=False, slot_h
           kodi.PlayEpisode(episode_id)
           return render_template('playing_episode_number', season=episode_details['season'], episode=episode_details['episode'], show_name=show[0][1]).encode("utf-8")
 
+  # Music Video?
+  if 'video' in content and 'MusicVideo' not in slot_ignore and (slot_hint == 'unknown' or slot_hint == 'MusicVideo'):
+    musicvideo = kodi.FindMusicVideo(needle)
+    if len(musicvideo) > 0:
+      musicvideo_details = kodi.GetMusicVideoDetails(musicvideo[0][0])
+      kodi.PlayMusicVideo(musicvideo[0][0])
+      return render_template('playing_musicvideo', musicvideo_name=musicvideo[0][1], artist_name=musicvideo_details['artist'][0]).encode("utf-8")
+
   # Artist?
   if 'audio' in content and 'Artist' not in slot_ignore and (slot_hint == 'unknown' or slot_hint == 'Artist'):
     artist = kodi.FindArtist(needle)
