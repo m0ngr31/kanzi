@@ -151,6 +151,12 @@ cl = clean_results(retrieved, 'tvshows', 'label')
 write_file('SHOWS', cl)
 
 
+# Generate MUSICVIDEOS Slot
+retrieved = kodi.GetMusicVideos()
+cl = clean_results(retrieved, 'musicvideos', 'label')
+write_file('MUSICVIDEOS', cl)
+
+
 # Generate ADDONS Slot
 retrieved = {'result': {'addons': []}}
 for content in ['video', 'audio', 'image', 'executable']:
