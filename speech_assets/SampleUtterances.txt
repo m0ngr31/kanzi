@@ -52,6 +52,9 @@ CleanVideo clean video library
 CurrentPlayItemInquiry what is currently playing
 CurrentPlayItemInquiry what is playing
 CurrentPlayItemInquiry what is this
+CurrentPlayItemInquiry who is currently playing
+CurrentPlayItemInquiry who is playing
+CurrentPlayItemInquiry who is this
 CurrentPlayItemTimeRemaining how much is left
 CurrentPlayItemTimeRemaining how much is left on this
 CurrentPlayItemTimeRemaining how much is remaining

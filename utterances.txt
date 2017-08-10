@@ -215,7 +215,7 @@ PartyMode play random music
 PartyMode play all music
 PartyMode shuffle all music
 
-CurrentPlayItemInquiry what is (this/playing/currently playing)
+CurrentPlayItemInquiry (what/who) is (this/playing/currently playing)
 
 CurrentPlayItemTimeRemaining how much (/time) is (left/remaining) (/on this)
 CurrentPlayItemTimeRemaining how much longer (/is this)
