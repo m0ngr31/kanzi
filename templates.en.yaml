@@ -38,6 +38,8 @@ could_not_find_show: "Could not find a show named {{ heard_show }}"
 
 could_not_find_episode_show: "Could not find season {{ season }} episode {{ episode }} of {{ show_name }}"
 
+could_not_find_musicvideo: "Could not find a music video called {{ heard_musicvideo }}"
+
 no_recommendations: "I'm sorry, I have nothing to recommend"
 
 recommend_movie: "How about the movie {{ movie_name }}?"
@@ -328,6 +330,8 @@ playing_random_show_genre: "Playing a random {{ genre }} show"
 playing_next_unwatched_episode: "Playing the next unwatched episode of {{ heard_show }}"
 
 playing_newest_episode: "Playing the newest episode of {{ heard_show }}"
+
+playing_musicvideo_card: "Playing music video"
 
 shuffling_musicvideos: "Shuffling music videos"
 

@@ -928,6 +928,10 @@ WatchMovieTrailer watch the trailer
 WatchMovieTrailer watch the trailer for {Movie}
 WatchMovieTrailer watch trailer
 WatchMovieTrailer watch trailer for {Movie}
+WatchMusicVideo play music video {MusicVideo}
+WatchMusicVideo play the music video {MusicVideo}
+WatchMusicVideo watch music video {MusicVideo}
+WatchMusicVideo watch the music video {MusicVideo}
 WatchNextEpisode play next episode of {Show}
 WatchNextEpisode play the next episode of {Show}
 WatchNextEpisode watch next episode of {Show}

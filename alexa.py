@@ -2218,6 +2218,24 @@ def alexa_watch_random_music_video(MusicVideoGenre):
   return statement(response_text).simple_card(card_title, response_text)
 
 
+# Handle the WatchMusicVideo intent.
+@ask.intent('WatchMusicVideo')
+def alexa_watch_music_video(MusicVideo):
+  card_title = render_template('playing_musicvideo_card').encode("utf-8")
+  print card_title
+
+  kodi = Kodi(config, context)
+  musicvideo = kodi.FindMusicVideo(MusicVideo)
+  if len(musicvideo) > 0:
+    musicvideo_details = kodi.GetMusicVideoDetails(musicvideo[0][0])
+    kodi.PlayMusicVideo(musicvideo[0][0])
+    response_text = render_template('playing_musicvideo', musicvideo_name=musicvideo[0][1], artist_name=musicvideo_details['artist'][0]).encode("utf-8")
+  else:
+    response_text = render_template('could_not_find_musicvideo', heard_musicvideo=MusicVideo).encode("utf-8")
+
+  return statement(response_text).simple_card(card_title, response_text)
+
+
 # Handle the ShuffleMusicVideos intent.
 @ask.intent('ShuffleMusicVideos')
 def alexa_shuffle_music_videos(MusicVideoGenre):

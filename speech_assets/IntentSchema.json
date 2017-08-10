@@ -384,6 +384,15 @@
       ]
     },
     {
+      "intent": "WatchMusicVideo",
+      "slots": [
+        {
+          "name": "MusicVideo",
+          "type": "MUSICVIDEOS"
+        }
+      ]
+    },
+    {
       "intent": "WatchRandomMusicVideo",
       "slots": [
         {
