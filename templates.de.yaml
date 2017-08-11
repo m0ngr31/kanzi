@@ -38,6 +38,8 @@ could_not_find_show: "Konnte die Serie {{ heard_show }} nicht finden"
 
 could_not_find_episode_show: "Konnte Staffel {{ season }} Folge {{ episode }} von {{ show_name }} nicht finden"
 
+could_not_find_musicvideo: "Konnte kein Musikvideo mit dem Namen {{ heard_musicvideo }} finden"
+
 no_recommendations: "Es tut mir leid, aber es gibt nichts zu empfehlen."
 
 recommend_movie: "Wie wäre es mit dem Film {{ movie_name }}?"
@@ -328,6 +330,12 @@ playing_random_show_genre: "Spiele eine zufällige {{ genre }} Serie"
 playing_next_unwatched_episode: "Spiele die nächste ungesehene Folge von {{ heard_show }}"
 
 playing_newest_episode: "Spiele die neueste Folge von {{ heard_show }}"
+
+playing_musicvideo_card: "Spiele Musikvideo"
+
+shuffling_musicvideos: "Spiele zufällige Musikvideos"
+
+shuffling_musicvideos_genre: "Spiele zufällige {{ genre }} Musikvideos"
 
 playing_random_musicvideo: "Spiele ein zufälliges Musikvideo"
 

@@ -906,6 +906,12 @@ ShuffleLatestAlbum starte Zufallswiedergabe des neuen Albums von {Artist}
 ShuffleLatestAlbum starte Zufallswiedergabe des neuesten Albums von {Artist}
 ShuffleLatestAlbum starte Zufallswiedergabe des zuletzt hinzugefügten Albums von {Artist}
 ShuffleMedia zufallswiedergabe {Show}
+ShuffleMusicVideos zeige Musikvideos
+ShuffleMusicVideos zeige alle Musikvideos
+ShuffleMusicVideos zeige alle {MusicVideoGenre} Musikvideos
+ShuffleMusicVideos zeige zufällige Musikvideos
+ShuffleMusicVideos zeige zufällige {MusicVideoGenre} Musikvideos
+ShuffleMusicVideos zeige {MusicVideoGenre} Musikvideos
 ShufflePlaylist zufallswiedergabe playlist {AudioPlaylist}
 ShufflePlaylist zufallswiedergabe playlist {VideoPlaylist}
 ShufflePlaylist zufallswiedergabe {AudioPlaylist} playlist
@@ -1105,6 +1111,8 @@ WatchMovieTrailer zeige Trailer von {Movie}
 WatchMovieTrailer zeige Vorschau
 WatchMovieTrailer zeige Vorschau für {Movie}
 WatchMovieTrailer zeige Vorschau von {Movie}
+WatchMusicVideo zeige Musikvideo {MusicVideo}
+WatchMusicVideo zeige das Musikvideo {MusicVideo}
 WatchNextEpisode zeige nächste Episode von {Show}
 WatchNextEpisode zeige nächste Folge von {Show}
 WatchRandomEpisode zeige eine Episode von {Show}
