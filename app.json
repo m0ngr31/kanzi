@@ -7,7 +7,7 @@
   "website": "https://github.com/m0ngr31/kodi-alexa",
   "env": {
     "KODI_ADDRESS": {
-      "description": "URL or IP adress to talk to Kodi.",
+      "description": "IP address or fully-qualified domain name to talk to Kodi.",
       "value": ""
     },
     "KODI_PORT": {
