@@ -183,7 +183,6 @@ ShufflePlaylist shuffle {AudioPlaylist} playlist
 ShufflePlaylist shuffle (/the) playlist {VideoPlaylist}
 ShufflePlaylist shuffle {VideoPlaylist} playlist
 
-RecommendMedia (suggest/recommend) something
 RecommendVideo (suggest/recommend) something to watch
 RecommendAudio (suggest/recommend) something to listen to
 RecommendMovie (suggest/recommend) (movie/film) (/to watch)

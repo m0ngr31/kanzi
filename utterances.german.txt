@@ -174,7 +174,6 @@ ShufflePlaylist zufallswiedergabe {AudioPlaylist} playlist
 ShufflePlaylist zufallswiedergabe playlist {VideoPlaylist}
 ShufflePlaylist zufallswiedergabe {VideoPlaylist} playlist
 
-RecommendMedia was es (/mir) (empfiehlt/vorschlägt)
 RecommendVideo welches Video es (/mir) (empfiehlt/vorschlägt)
 RecommendAudio welche Musik es (/mir) (empfiehlt/vorschlägt)
 RecommendMovie welchen Film es (/mir) (empfiehlt/vorschlägt)

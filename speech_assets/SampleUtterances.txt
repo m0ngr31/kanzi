@@ -501,8 +501,6 @@ RecommendEpisode suggest episode
 RecommendEpisode suggest episode to watch
 RecommendEpisode suggest t. v. episode
 RecommendEpisode suggest t. v. episode to watch
-RecommendMedia recommend something
-RecommendMedia suggest something
 RecommendMovie recommend film
 RecommendMovie recommend film to watch
 RecommendMovie recommend movie

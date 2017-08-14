@@ -2396,15 +2396,6 @@ def alexa_recommend_item(kodi, item, generic_type=None):
   return question(response_text)
 
 
-# Handle the RecommendMedia intent.
-@ask.intent('RecommendMedia')
-def alexa_recommend_media():
-  print "Recommending media"
-  kodi = Kodi(config, context)
-  item = kodi.GetRecommendedItem()
-  return alexa_recommend_item(kodi, item)
-
-
 # Handle the RecommendVideo intent.
 @ask.intent('RecommendVideo')
 def alexa_recommend_video():
