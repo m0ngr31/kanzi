@@ -389,6 +389,10 @@
         {
           "name": "MusicVideo",
           "type": "MUSICVIDEOS"
+        },
+        {
+          "name": "Artist",
+          "type": "MUSICARTISTS"
         }
       ]
     },
@@ -398,6 +402,10 @@
         {
           "name": "MusicVideoGenre",
           "type": "MUSICVIDEOGENRES"
+        },
+        {
+          "name": "Artist",
+          "type": "MUSICARTISTS"
         }
       ]
     },
@@ -416,6 +424,10 @@
         {
           "name": "MusicVideoGenre",
           "type": "MUSICVIDEOGENRES"
+        },
+        {
+          "name": "Artist",
+          "type": "MUSICARTISTS"
         }
       ]
     },

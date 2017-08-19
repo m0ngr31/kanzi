@@ -154,9 +154,9 @@ WatchLastShow continue (/watching/playing) (/last/the last) show
 
 WatchLatestEpisode (play/watch) (/the) (newest/latest) episode of {Show}
 
-WatchMusicVideo (play/watch) (/the) music video {MusicVideo}
+WatchMusicVideo (play/watch) (/the) music video {MusicVideo} (/by {Artist})
 
-WatchRandomMusicVideo (play/watch) (/a) random (/{MusicVideoGenre}) music video
+WatchRandomMusicVideo (play/watch) (/a) random (/{MusicVideoGenre}) music video (/by {Artist})
 
 WatchVideoPlaylist (play/watch) (/the) (movie/show/video) playlist {VideoPlaylist}
 WatchVideoPlaylist (play/watch) {VideoPlaylist} (movie/show/video) playlist
@@ -165,7 +165,7 @@ WatchVideoPlaylist watch {VideoPlaylist} playlist
 
 ShuffleShow shuffle (/all) episodes of {Show}
 
-ShuffleMusicVideos (play/watch/shuffle) (/all) (/{MusicVideoGenre}) music videos
+ShuffleMusicVideos (play/watch/shuffle) (/all) (/{MusicVideoGenre}) music videos (/by {Artist})
 
 ShuffleLatestAlbum shuffle (/the) (latest/newest) album by {Artist}
 

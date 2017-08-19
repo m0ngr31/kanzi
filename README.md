@@ -20,6 +20,9 @@ Here are some of the features supported by this skill:
 - Play a specific song
 - Play/Shuffle audio and video playlists
 - "Party mode" for music (shuffle all)
+- Play/Shuffle music videos
+- Play/Shuffle music videos from a specific genre
+- Play/Shuffle music videos by a specific artist
 - Shuffle all episodes of a TV show
 - Play random TV show
 - Play random TV show from a specific genre

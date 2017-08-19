@@ -94,8 +94,6 @@ playing_episode_number: "Spiele die Staffel {{ season }} Folge {{ episode }} von
 
 playing_action_episode_number: "{{ action }} Staffel {{ season }} Folge {{ episode }} von {{ show_name }}"
 
-playing_genre_musicvideo: "Spiele das {{ genre_name }} Musikvideo {{ musicvideo_name }} von {{ artist_name }}"
-
 playing_musicvideo: "Spiele das Musikvideo {{ musicvideo_name }} von {{ artist_name }}"
 
 playing_empty: "Spiele"

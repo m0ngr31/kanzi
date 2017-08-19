@@ -2183,35 +2183,58 @@ def alexa_watch_last_show():
 
 # Handle the WatchRandomMusicVideo intent.
 @ask.intent('WatchRandomMusicVideo')
-def alexa_watch_random_music_video(MusicVideoGenre):
-  kodi = Kodi(config, context)
-  genre = []
-  # If a genre has been specified, match the genre for use in selecting a random music video
+def alexa_watch_random_music_video(MusicVideoGenre, Artist):
+  if MusicVideoGenre and Artist:
+    card_title = render_template('playing_random_musicvideo_genre_artist', genre=MusicVideoGenre, artist=Artist).encode("utf-8")
   if MusicVideoGenre:
     card_title = render_template('playing_random_musicvideo_genre', genre=MusicVideoGenre).encode("utf-8")
-    genre = kodi.FindVideoGenre(MusicVideoGenre, 'musicvideo')
+  elif Artist:
+    card_title = render_template('playing_random_musicvideo_artist', artist=Artist).encode("utf-8")
   else:
     card_title = render_template('playing_random_musicvideo').encode("utf-8")
   print card_title
 
-  # Select from specified genre if one was matched
+  kodi = Kodi(config, context)
+
+  # Select from specified genre if specified
+  genre = []
+  if MusicVideoGenre:
+    genre = kodi.FindVideoGenre(MusicVideoGenre, 'musicvideo')
   if len(genre) > 0:
-    musicvideos = kodi.GetMusicVideosByGenre(genre[0][1])
+    mvs = kodi.GetMusicVideosByGenre(genre[0][1])
   else:
-    musicvideos = kodi.GetMusicVideos()
-  if 'result' in musicvideos and 'musicvideos' in musicvideos['result']:
-    musicvideos_array = musicvideos['result']['musicvideos']
-    if len(musicvideos_array) > 0:
-      random_musicvideo = random.choice(musicvideos_array)
+    mvs = kodi.GetMusicVideos()
+
+  if 'result' in mvs and 'musicvideos' in mvs['result']:
+    # Narrow down by artist if specified
+    if Artist:
+      musicvideos_result = kodi.FilterMusicVideosByArtist(mvs['result']['musicvideos'], Artist)
+    else:
+      musicvideos_result = mvs['result']['musicvideos']
+
+    if len(musicvideos_result) > 0:
+      random_musicvideo = random.choice(musicvideos_result)
       musicvideo_details = kodi.GetMusicVideoDetails(random_musicvideo['musicvideoid'])
 
       kodi.PlayMusicVideo(random_musicvideo['musicvideoid'])
-      if len(genre) > 0:
-        response_text = render_template('playing_genre_musicvideo', genre_name=genre[0][1], musicvideo_name=random_musicvideo['label'], artist_name=musicvideo_details['artist'][0]).encode("utf-8")
-      else:
-        response_text = render_template('playing_musicvideo', musicvideo_name=random_musicvideo['label'], artist_name=musicvideo_details['artist'][0]).encode("utf-8")
+
+      response_text = render_template('playing_musicvideo', musicvideo_name=random_musicvideo['label'], artist_name=musicvideo_details['artist'][0]).encode("utf-8")
+    elif len(genre) > 0 and Artist:
+      response_text = render_template('could_not_find_musicvideos_genre_artist', genre_name=genre[0][1], artist_name=Artist).encode("utf-8")
+    elif Genre and Artist:
+      response_text = render_template('could_not_find_musicvideos_genre_artist', genre_name=Genre, artist_name=Artist).encode("utf-8")
+    elif len(genre) > 0:
+      response_text = render_template('could_not_find_musicvideos_genre', genre_name=genre[0][1]).encode("utf-8")
+    elif Genre:
+      response_text = render_template('could_not_find_musicvideos_genre', genre_name=Genre).encode("utf-8")
+    elif Artist:
+      response_text = render_template('could_not_find_musicvideos_artist', artist_name=Artist).encode("utf-8")
     else:
       response_text = render_template('error_parsing_results').encode("utf-8")
+  elif len(genre) > 0:
+    response_text = render_template('could_not_find_musicvideos_genre', genre_name=genre[0][1]).encode("utf-8")
+  elif Genre:
+    response_text = render_template('could_not_find_musicvideos_genre', genre_name=Genre).encode("utf-8")
   else:
     response_text = render_template('error_parsing_results').encode("utf-8")
 
@@ -2220,16 +2243,18 @@ def alexa_watch_random_music_video(MusicVideoGenre):
 
 # Handle the WatchMusicVideo intent.
 @ask.intent('WatchMusicVideo')
-def alexa_watch_music_video(MusicVideo):
+def alexa_watch_music_video(MusicVideo, Artist):
   card_title = render_template('playing_musicvideo_card').encode("utf-8")
   print card_title
 
   kodi = Kodi(config, context)
-  musicvideo = kodi.FindMusicVideo(MusicVideo)
+  musicvideo = kodi.FindMusicVideo(MusicVideo, Artist)
   if len(musicvideo) > 0:
     musicvideo_details = kodi.GetMusicVideoDetails(musicvideo[0][0])
     kodi.PlayMusicVideo(musicvideo[0][0])
     response_text = render_template('playing_musicvideo', musicvideo_name=musicvideo[0][1], artist_name=musicvideo_details['artist'][0]).encode("utf-8")
+  elif Artist:
+    response_text = render_template('could_not_find_musicvideo_artist', heard_musicvideo=MusicVideo, heard_artist=Artist).encode("utf-8")
   else:
     response_text = render_template('could_not_find_musicvideo', heard_musicvideo=MusicVideo).encode("utf-8")
 
@@ -2238,34 +2263,69 @@ def alexa_watch_music_video(MusicVideo):
 
 # Handle the ShuffleMusicVideos intent.
 @ask.intent('ShuffleMusicVideos')
-def alexa_shuffle_music_videos(MusicVideoGenre):
-  kodi = Kodi(config, context)
-  genre = []
-  if MusicVideoGenre:
+def alexa_shuffle_music_videos(MusicVideoGenre, Artist):
+  if MusicVideoGenre and Artist:
+    card_title = render_template('shuffling_musicvideos_genre_artist', genre=MusicVideoGenre, artist=Artist).encode("utf-8")
+  elif MusicVideoGenre:
     card_title = render_template('shuffling_musicvideos_genre', genre=MusicVideoGenre).encode("utf-8")
-    genre = kodi.FindVideoGenre(MusicVideoGenre, 'musicvideo')
+  elif Artist:
+    card_title = render_template('shuffling_musicvideos_artist', artist=Artist).encode("utf-8")
   else:
     card_title = render_template('shuffling_musicvideos').encode("utf-8")
   print card_title
 
-  # Select from specified genre if one was matched
-  if len(genre) > 0:
-    musicvideos_result = kodi.GetMusicVideosByGenre(genre[0][1])
-  else:
-    musicvideos_result = kodi.GetMusicVideos()
-  if 'result' in musicvideos_result and 'musicvideos' in musicvideos_result['result']:
-    musicvideos_array = []
-    for musicvideo in musicvideos_result['result']['musicvideos']:
-      musicvideos_array.append(musicvideo['musicvideoid'])
+  kodi = Kodi(config, context)
 
-    kodi.PlayerStop()
-    kodi.ClearVideoPlaylist()
-    kodi.AddMusicVideosToPlaylist(musicvideos_array, True)
-    kodi.StartVideoPlaylist()
-    if len(genre) > 0:
-      response_text = render_template('shuffling_musicvideos_genre', genre=genre[0][1]).encode("utf-8")
+  # Select from specified genre if specified
+  genre = []
+  if MusicVideoGenre:
+    genre = kodi.FindVideoGenre(MusicVideoGenre, 'musicvideo')
+  if len(genre) > 0:
+    mvs = kodi.GetMusicVideosByGenre(genre[0][1])
+  else:
+    mvs = kodi.GetMusicVideos()
+
+  if 'result' in mvs and 'musicvideos' in mvs['result']:
+    # Narrow down by artist if specified
+    if Artist:
+      musicvideos_result = kodi.FilterMusicVideosByArtist(mvs['result']['musicvideos'], Artist)
     else:
-      response_text = render_template('shuffling_musicvideos').encode("utf-8")
+      musicvideos_result = mvs['result']['musicvideos']
+
+    if len(musicvideos_result) > 0:
+      musicvideos_array = []
+      for musicvideo in musicvideos_result:
+        musicvideos_array.append(musicvideo['musicvideoid'])
+
+      kodi.PlayerStop()
+      kodi.ClearVideoPlaylist()
+      kodi.AddMusicVideosToPlaylist(musicvideos_array, True)
+      kodi.StartVideoPlaylist()
+
+      if len(genre) > 0 and Artist:
+        response_text = render_template('shuffling_musicvideos_genre_artist', genre=genre[0][1], artist=musicvideos_result[0]['artist']).encode("utf-8")
+      elif len(genre) > 0:
+        response_text = render_template('shuffling_musicvideos_genre', genre=genre[0][1]).encode("utf-8")
+      elif Artist:
+        response_text = render_template('shuffling_musicvideos_artist', artist=musicvideos_result[0]['artist']).encode("utf-8")
+      else:
+        response_text = render_template('shuffling_musicvideos').encode("utf-8")
+    elif len(genre) > 0 and Artist:
+      response_text = render_template('could_not_find_musicvideos_genre_artist', genre_name=genre[0][1], artist_name=Artist).encode("utf-8")
+    elif Genre and Artist:
+      response_text = render_template('could_not_find_musicvideos_genre_artist', genre_name=Genre, artist_name=Artist).encode("utf-8")
+    elif len(genre) > 0:
+      response_text = render_template('could_not_find_musicvideos_genre', genre_name=genre[0][1]).encode("utf-8")
+    elif Genre:
+      response_text = render_template('could_not_find_musicvideos_genre', genre_name=Genre).encode("utf-8")
+    elif Artist:
+      response_text = render_template('could_not_find_musicvideos_artist', artist_name=Artist).encode("utf-8")
+    else:
+      response_text = render_template('error_parsing_results').encode("utf-8")
+  elif len(genre) > 0:
+    response_text = render_template('could_not_find_musicvideos_genre', genre_name=genre[0][1]).encode("utf-8")
+  elif Genre:
+    response_text = render_template('could_not_find_musicvideos_genre', genre_name=Genre).encode("utf-8")
   else:
     response_text = render_template('error_parsing_results').encode("utf-8")
 

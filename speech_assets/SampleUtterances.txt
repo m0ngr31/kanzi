@@ -623,17 +623,29 @@ ShuffleLatestAlbum shuffle the latest album by {Artist}
 ShuffleLatestAlbum shuffle the newest album by {Artist}
 ShuffleMedia shuffle {Show}
 ShuffleMusicVideos play all music videos
+ShuffleMusicVideos play all music videos by {Artist}
 ShuffleMusicVideos play all {MusicVideoGenre} music videos
+ShuffleMusicVideos play all {MusicVideoGenre} music videos by {Artist}
 ShuffleMusicVideos play music videos
+ShuffleMusicVideos play music videos by {Artist}
 ShuffleMusicVideos play {MusicVideoGenre} music videos
+ShuffleMusicVideos play {MusicVideoGenre} music videos by {Artist}
 ShuffleMusicVideos shuffle all music videos
+ShuffleMusicVideos shuffle all music videos by {Artist}
 ShuffleMusicVideos shuffle all {MusicVideoGenre} music videos
+ShuffleMusicVideos shuffle all {MusicVideoGenre} music videos by {Artist}
 ShuffleMusicVideos shuffle music videos
+ShuffleMusicVideos shuffle music videos by {Artist}
 ShuffleMusicVideos shuffle {MusicVideoGenre} music videos
+ShuffleMusicVideos shuffle {MusicVideoGenre} music videos by {Artist}
 ShuffleMusicVideos watch all music videos
+ShuffleMusicVideos watch all music videos by {Artist}
 ShuffleMusicVideos watch all {MusicVideoGenre} music videos
+ShuffleMusicVideos watch all {MusicVideoGenre} music videos by {Artist}
 ShuffleMusicVideos watch music videos
+ShuffleMusicVideos watch music videos by {Artist}
 ShuffleMusicVideos watch {MusicVideoGenre} music videos
+ShuffleMusicVideos watch {MusicVideoGenre} music videos by {Artist}
 ShufflePlaylist shuffle playlist {AudioPlaylist}
 ShufflePlaylist shuffle playlist {VideoPlaylist}
 ShufflePlaylist shuffle the playlist {AudioPlaylist}
@@ -981,9 +993,13 @@ WatchMovieTrailer watch the trailer for {Movie}
 WatchMovieTrailer watch trailer
 WatchMovieTrailer watch trailer for {Movie}
 WatchMusicVideo play music video {MusicVideo}
+WatchMusicVideo play music video {MusicVideo} by {Artist}
 WatchMusicVideo play the music video {MusicVideo}
+WatchMusicVideo play the music video {MusicVideo} by {Artist}
 WatchMusicVideo watch music video {MusicVideo}
+WatchMusicVideo watch music video {MusicVideo} by {Artist}
 WatchMusicVideo watch the music video {MusicVideo}
+WatchMusicVideo watch the music video {MusicVideo} by {Artist}
 WatchNextEpisode play next episode of {Show}
 WatchNextEpisode play the next episode of {Show}
 WatchNextEpisode watch next episode of {Show}
@@ -1009,13 +1025,21 @@ WatchRandomMovie watch random movie
 WatchRandomMovie watch random {MovieGenre} film
 WatchRandomMovie watch random {MovieGenre} movie
 WatchRandomMusicVideo play a random music video
+WatchRandomMusicVideo play a random music video by {Artist}
 WatchRandomMusicVideo play a random {MusicVideoGenre} music video
+WatchRandomMusicVideo play a random {MusicVideoGenre} music video by {Artist}
 WatchRandomMusicVideo play random music video
+WatchRandomMusicVideo play random music video by {Artist}
 WatchRandomMusicVideo play random {MusicVideoGenre} music video
+WatchRandomMusicVideo play random {MusicVideoGenre} music video by {Artist}
 WatchRandomMusicVideo watch a random music video
+WatchRandomMusicVideo watch a random music video by {Artist}
 WatchRandomMusicVideo watch a random {MusicVideoGenre} music video
+WatchRandomMusicVideo watch a random {MusicVideoGenre} music video by {Artist}
 WatchRandomMusicVideo watch random music video
+WatchRandomMusicVideo watch random music video by {Artist}
 WatchRandomMusicVideo watch random {MusicVideoGenre} music video
+WatchRandomMusicVideo watch random {MusicVideoGenre} music video by {Artist}
 WatchRandomShow play a random show
 WatchRandomShow play a random t. v. show
 WatchRandomShow play a random {ShowGenre} show

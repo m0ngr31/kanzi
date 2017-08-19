@@ -40,6 +40,14 @@ could_not_find_episode_show: "Could not find season {{ season }} episode {{ epis
 
 could_not_find_musicvideo: "Could not find a music video called {{ heard_musicvideo }}"
 
+could_not_find_musicvideo_artist: "Could not find a music video called {{ heard_musicvideo }} by {{ heard_artist }}"
+
+could_not_find_musicvideos_genre: "Could not find any {{ genre_name }} music videos"
+
+could_not_find_musicvideos_artist: "Could not find any music videos by {{ artist_name }}"
+
+could_not_find_musicvideos_genre_artist: "Could not find any {{ genre_name }} music videos by {{ artist_name }}"
+
 no_recommendations: "I'm sorry, I have nothing to recommend"
 
 recommend_movie: "How about the movie {{ movie_name }}?"
@@ -93,8 +101,6 @@ playing_trailer: "Playing the trailer for {{ heard_name }}"
 playing_episode_number: "Playing season {{ season }} episode {{ episode }} of {{ show_name }}"
 
 playing_action_episode_number: "{{ action }} season {{ season }} episode {{ episode }} of {{ show_name }}"
-
-playing_genre_musicvideo: "Playing the {{ genre_name }} music video {{ musicvideo_name }} by {{ artist_name }}"
 
 playing_musicvideo: "Playing the music video {{ musicvideo_name }} by {{ artist_name }}"
 
@@ -337,9 +343,17 @@ shuffling_musicvideos: "Shuffling music videos"
 
 shuffling_musicvideos_genre: "Shuffling {{ genre }} music videos"
 
+shuffling_musicvideos_artist: "Shuffling music videos by {{ artist }}"
+
+shuffling_musicvideos_genre_artist: "Shuffling {{ genre }} music videos by {{ artist }}"
+
 playing_random_musicvideo: "Playing a random music video"
 
 playing_random_musicvideo_genre: "Playing a random {{ genre }} music video"
+
+playing_random_musicvideo_artist: "Playing a random music video by {{ artist }}"
+
+playing_random_musicvideo_genre_artist: "Playing a random {{ genre }} music video by {{ artist }}"
 
 playing_album_card: "Playing album"
 
