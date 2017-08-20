@@ -1,3 +1,6 @@
+v2.8.5 (08/xx/2017)
+* Add support for playing music videos.
+
 v2.8.0 (08/09/2017)
 * Add ability to play a random TV show.
 * Add ability to play a random music video.
