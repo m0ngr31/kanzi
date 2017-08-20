@@ -40,6 +40,14 @@ could_not_find_episode_show: "Konnte Staffel {{ season }} Folge {{ episode }} vo
 
 could_not_find_musicvideo: "Konnte kein Musikvideo mit dem Namen {{ heard_musicvideo }} finden"
 
+could_not_find_musicvideo_artist: "Konnte kein Musikvideo mit dem Titel {{ heard_musicvideo }} von {{ heard_artist }} finden"
+
+could_not_find_musicvideos_genre: "Konnte keine {{ genre_name }} Musikvideos finden"
+
+could_not_find_musicvideos_artist: "Konnte keine Musikvideos von {{ artist_name }} finden"
+
+could_not_find_musicvideos_genre_artist: "Konnte keine {{ genre_name }} Musikvideos von {{ artist_name }} finden"
+
 no_recommendations: "Es tut mir leid, aber es gibt nichts zu empfehlen."
 
 recommend_movie: "Wie wäre es mit dem Film {{ movie_name }}?"
@@ -335,9 +343,17 @@ shuffling_musicvideos: "Spiele zufällige Musikvideos"
 
 shuffling_musicvideos_genre: "Spiele zufällige {{ genre }} Musikvideos"
 
+shuffling_musicvideos_artist: "Zufällige Wiedergabe von Musikvideos von {{ artist }}"
+
+shuffling_musicvideos_genre_artist: "Zufällige Wiedergabe von {{ genre }} Musikvideos von {{ artist }}"
+
 playing_random_musicvideo: "Spiele ein zufälliges Musikvideo"
 
 playing_random_musicvideo_genre: "Spiele ein zufälliges {{ genre }} Musikvideo"
+
+playing_random_musicvideo_artist: "Spiele ein zufälliges Musikvideo von {{ artist }}"
+
+playing_random_musicvideo_genre_artist: "Spiele ein zufälliges {{ genre }} Musikvideo von {{ artist }}"
 
 playing_album_card: "Spiele Album"
 

@@ -902,12 +902,22 @@ ShuffleLatestAlbum starte Zufallswiedergabe des neuen Albums von {Artist}
 ShuffleLatestAlbum starte Zufallswiedergabe des neuesten Albums von {Artist}
 ShuffleLatestAlbum starte Zufallswiedergabe des zuletzt hinzugefügten Albums von {Artist}
 ShuffleMedia zufallswiedergabe {Show}
-ShuffleMusicVideos zeige Musikvideos
+ShuffleMusicVideos spiele alle Musikvideos
+ShuffleMusicVideos spiele alle Musikvideos von {Artist}
+ShuffleMusicVideos spiele alle {MusicVideoGenre} Musikvideos
+ShuffleMusicVideos spiele alle {MusicVideoGenre} Musikvideos von {Artist}
+ShuffleMusicVideos spiele zufällige Musikvideos
+ShuffleMusicVideos spiele zufällige Musikvideos von {Artist}
+ShuffleMusicVideos spiele zufällige {MusicVideoGenre} Musikvideos
+ShuffleMusicVideos spiele zufällige {MusicVideoGenre} Musikvideos von {Artist}
 ShuffleMusicVideos zeige alle Musikvideos
+ShuffleMusicVideos zeige alle Musikvideos von {Artist}
 ShuffleMusicVideos zeige alle {MusicVideoGenre} Musikvideos
+ShuffleMusicVideos zeige alle {MusicVideoGenre} Musikvideos von {Artist}
 ShuffleMusicVideos zeige zufällige Musikvideos
+ShuffleMusicVideos zeige zufällige Musikvideos von {Artist}
 ShuffleMusicVideos zeige zufällige {MusicVideoGenre} Musikvideos
-ShuffleMusicVideos zeige {MusicVideoGenre} Musikvideos
+ShuffleMusicVideos zeige zufällige {MusicVideoGenre} Musikvideos von {Artist}
 ShufflePlaylist zufallswiedergabe playlist {AudioPlaylist}
 ShufflePlaylist zufallswiedergabe playlist {VideoPlaylist}
 ShufflePlaylist zufallswiedergabe {AudioPlaylist} playlist
@@ -1108,7 +1118,9 @@ WatchMovieTrailer zeige Vorschau
 WatchMovieTrailer zeige Vorschau für {Movie}
 WatchMovieTrailer zeige Vorschau von {Movie}
 WatchMusicVideo zeige Musikvideo {MusicVideo}
+WatchMusicVideo zeige Musikvideo {MusicVideo} von {Artist}
 WatchMusicVideo zeige das Musikvideo {MusicVideo}
+WatchMusicVideo zeige das Musikvideo {MusicVideo} von {Artist}
 WatchNextEpisode zeige nächste Episode von {Show}
 WatchNextEpisode zeige nächste Folge von {Show}
 WatchRandomEpisode zeige eine Episode von {Show}
@@ -1119,10 +1131,22 @@ WatchRandomMovie zeige Film
 WatchRandomMovie zeige zufälligen Film
 WatchRandomMovie zeige zufälligen {MovieGenre} Film
 WatchRandomMovie zeige {MovieGenre} Film
-WatchRandomMusicVideo zeige ein Musikvideo
+WatchRandomMusicVideo spiele ein zufälliges Musikvideo
+WatchRandomMusicVideo spiele ein zufälliges Musikvideo von {Artist}
+WatchRandomMusicVideo spiele ein zufälliges {MusicVideoGenre} Musikvideo
+WatchRandomMusicVideo spiele ein zufälliges {MusicVideoGenre} Musikvideo von {Artist}
+WatchRandomMusicVideo spiele zufälliges Musikvideo
+WatchRandomMusicVideo spiele zufälliges Musikvideo von {Artist}
+WatchRandomMusicVideo spiele zufälliges {MusicVideoGenre} Musikvideo
+WatchRandomMusicVideo spiele zufälliges {MusicVideoGenre} Musikvideo von {Artist}
 WatchRandomMusicVideo zeige ein zufälliges Musikvideo
+WatchRandomMusicVideo zeige ein zufälliges Musikvideo von {Artist}
 WatchRandomMusicVideo zeige ein zufälliges {MusicVideoGenre} Musikvideo
-WatchRandomMusicVideo zeige ein {MusicVideoGenre} Musikvideo
+WatchRandomMusicVideo zeige ein zufälliges {MusicVideoGenre} Musikvideo von {Artist}
+WatchRandomMusicVideo zeige zufälliges Musikvideo
+WatchRandomMusicVideo zeige zufälliges Musikvideo von {Artist}
+WatchRandomMusicVideo zeige zufälliges {MusicVideoGenre} Musikvideo
+WatchRandomMusicVideo zeige zufälliges {MusicVideoGenre} Musikvideo von {Artist}
 WatchRandomShow zeige eine Serie
 WatchRandomShow zeige eine zufällige Serie
 WatchRandomShow zeige eine zufällige {ShowGenre} Serie
