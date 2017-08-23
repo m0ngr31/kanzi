@@ -2221,20 +2221,20 @@ def alexa_watch_random_music_video(MusicVideoGenre, Artist):
       response_text = render_template('playing_musicvideo', musicvideo_name=random_musicvideo['label'], artist_name=musicvideo_details['artist'][0]).encode("utf-8")
     elif len(genre) > 0 and Artist:
       response_text = render_template('could_not_find_musicvideos_genre_artist', genre_name=genre[0][1], artist_name=Artist).encode("utf-8")
-    elif Genre and Artist:
-      response_text = render_template('could_not_find_musicvideos_genre_artist', genre_name=Genre, artist_name=Artist).encode("utf-8")
+    elif MusicVideoGenre and Artist:
+      response_text = render_template('could_not_find_musicvideos_genre_artist', genre_name=MusicVideoGenre, artist_name=Artist).encode("utf-8")
     elif len(genre) > 0:
       response_text = render_template('could_not_find_musicvideos_genre', genre_name=genre[0][1]).encode("utf-8")
-    elif Genre:
-      response_text = render_template('could_not_find_musicvideos_genre', genre_name=Genre).encode("utf-8")
+    elif MusicVideoGenre:
+      response_text = render_template('could_not_find_musicvideos_genre', genre_name=MusicVideoGenre).encode("utf-8")
     elif Artist:
       response_text = render_template('could_not_find_musicvideos_artist', artist_name=Artist).encode("utf-8")
     else:
       response_text = render_template('error_parsing_results').encode("utf-8")
   elif len(genre) > 0:
     response_text = render_template('could_not_find_musicvideos_genre', genre_name=genre[0][1]).encode("utf-8")
-  elif Genre:
-    response_text = render_template('could_not_find_musicvideos_genre', genre_name=Genre).encode("utf-8")
+  elif MusicVideoGenre:
+    response_text = render_template('could_not_find_musicvideos_genre', genre_name=MusicVideoGenre).encode("utf-8")
   else:
     response_text = render_template('error_parsing_results').encode("utf-8")
 
@@ -2312,20 +2312,20 @@ def alexa_shuffle_music_videos(MusicVideoGenre, Artist):
         response_text = render_template('shuffling_musicvideos').encode("utf-8")
     elif len(genre) > 0 and Artist:
       response_text = render_template('could_not_find_musicvideos_genre_artist', genre_name=genre[0][1], artist_name=Artist).encode("utf-8")
-    elif Genre and Artist:
-      response_text = render_template('could_not_find_musicvideos_genre_artist', genre_name=Genre, artist_name=Artist).encode("utf-8")
+    elif MusicVideoGenre and Artist:
+      response_text = render_template('could_not_find_musicvideos_genre_artist', genre_name=MusicVideoGenre, artist_name=Artist).encode("utf-8")
     elif len(genre) > 0:
       response_text = render_template('could_not_find_musicvideos_genre', genre_name=genre[0][1]).encode("utf-8")
-    elif Genre:
-      response_text = render_template('could_not_find_musicvideos_genre', genre_name=Genre).encode("utf-8")
+    elif MusicVideoGenre:
+      response_text = render_template('could_not_find_musicvideos_genre', genre_name=MusicVideoGenre).encode("utf-8")
     elif Artist:
       response_text = render_template('could_not_find_musicvideos_artist', artist_name=Artist).encode("utf-8")
     else:
       response_text = render_template('error_parsing_results').encode("utf-8")
   elif len(genre) > 0:
     response_text = render_template('could_not_find_musicvideos_genre', genre_name=genre[0][1]).encode("utf-8")
-  elif Genre:
-    response_text = render_template('could_not_find_musicvideos_genre', genre_name=Genre).encode("utf-8")
+  elif MusicVideoGenre:
+    response_text = render_template('could_not_find_musicvideos_genre', genre_name=MusicVideoGenre).encode("utf-8")
   else:
     response_text = render_template('error_parsing_results').encode("utf-8")
 
