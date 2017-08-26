@@ -255,3 +255,6 @@ AddonGlobalSearch (find/search for) {Show}
 AddonGlobalSearch (find/search for) {Movie}
 AddonGlobalSearch (find/search for) {Album}
 AddonGlobalSearch (find/search for) {Artist}
+
+AMAZON.HelpIntent what can (you do/i ask you)
+AMAZON.HelpIntent things to try

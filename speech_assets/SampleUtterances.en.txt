@@ -1,3 +1,6 @@
+AMAZON.HelpIntent things to try
+AMAZON.HelpIntent what can i ask you
+AMAZON.HelpIntent what can you do
 AddonExecute execute add on {Addon}
 AddonExecute execute addon {Addon}
 AddonExecute execute plug in {Addon}

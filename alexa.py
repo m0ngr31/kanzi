@@ -10,6 +10,7 @@ import sys
 import time
 import os
 import re
+import codecs
 from flask import Flask, json, render_template
 from flask_ask import Ask, session, question, statement, audio, request, context
 from shutil import copyfile
@@ -29,6 +30,7 @@ LANGUAGE = config.get('global', 'language')
 if LANGUAGE and LANGUAGE != 'None' and LANGUAGE == 'de':
   TEMPLATE_FILE = "templates.de.yaml"
 else:
+  LANGUAGE = 'en'
   TEMPLATE_FILE = "templates.en.yaml"
 
 # According to this: https://alexatutorial.com/flask-ask/configuration.html
@@ -2728,24 +2730,86 @@ def alexa_what_albums(Artist):
   return question(response_text)
 
 
+def get_help_samples(limit=7):
+  # read example slot values from language-specific file.
+  sample_slotvals = {}
+  fn = os.path.join(os.path.dirname(__file__), 'sample_slotvals.%s.txt' % (LANGUAGE))
+  f = codecs.open(fn, 'rb', 'utf-8')
+  for line in f:
+    media_type, media_title = line.encode("utf-8").strip().split(' ', 1)
+    sample_slotvals[media_type] = media_title.strip()
+  f.close()
+
+  # don't suggest utterances for the following intents, because they depend on
+  # context to make any sense:
+  ignore_intents = [
+    'PlayerMoveUp',
+    'PlayerMoveDown',
+    'PlayerMoveLeft',
+    'PlayerMoveRight',
+    'PlayerRotateClockwise',
+    'PlayerRotateCounterClockwise',
+    'PlayerZoomHold',
+    'PlayerZoomIn',
+    'PlayerZoomInMoveUp',
+    'PlayerZoomInMoveDown',
+    'PlayerZoomInMoveLeft',
+    'PlayerZoomInMoveRight',
+    'PlayerZoomOut',
+    'PlayerZoomOutMoveUp',
+    'PlayerZoomOutMoveDown',
+    'PlayerZoomOutMoveLeft',
+    'PlayerZoomOutMoveRight',
+    'PlayerZoomReset'
+  ]
+
+  # build complete list of possible utterances from file.
+  utterances = {}
+  fn = os.path.join(os.path.dirname(__file__), 'speech_assets/SampleUtterances.%s.txt' % (LANGUAGE))
+  f = codecs.open(fn, 'rb', 'utf-8')
+  for line in f:
+    intent, utterance = line.encode("utf-8").strip().split(' ', 1)
+    if intent in ignore_intents: continue
+    if intent not in utterances:
+      utterances[intent] = []
+    utterances[intent].append(utterance)
+  f.close()
+
+  # pick random utterances to return, up to the specified limit.
+  sample_utterances = {}
+  for k in random.sample(utterances.keys(), limit):
+    # substitute slot references for sample media titles.
+    sample_utterances[k] = re.sub(r'{(\w+)?}', lambda m: sample_slotvals.get(m.group(1), m.group(1)), random.choice(utterances[k])).decode("utf-8")
+
+  return sample_utterances
+
+
 @ask.intent('AMAZON.HelpIntent')
 def prepare_help_message():
-  response_text = render_template('help').encode("utf-8")
-  reprompt_text = render_template('what_to_do').encode("utf-8")
+  sample_utterances = get_help_samples()
+
+  response_text = render_template('help', example=sample_utterances.popitem()[1]).encode("utf-8")
+  reprompt_text = render_template('help_short', example=sample_utterances.popitem()[1]).encode("utf-8")
   card_title = render_template('help_card').encode("utf-8")
+  samples = ''
+  for sample in sample_utterances.values():
+    samples += '"%s"\n' % (sample)
+  card_text = render_template('help_text', examples=samples).encode("utf-8")
   print card_title
 
   if not 'queries_keep_open' in session.attributes:
-    return statement(response_text).simple_card(card_title, response_text)
+    return statement(response_text).simple_card(card_title, card_text)
 
-  return question(response_text).reprompt(reprompt_text)
+  return question(response_text).reprompt(reprompt_text).simple_card(card_title, card_text)
 
 
 # No intents invoked
 @ask.launch
 def alexa_launch():
+  sample_utterances = get_help_samples()
+
   response_text = render_template('welcome').encode("utf-8")
-  reprompt_text = render_template('what_to_do').encode("utf-8")
+  reprompt_text = render_template('help_short', example=sample_utterances.popitem()[1]).encode("utf-8")
   card_title = response_text
   print card_title
 

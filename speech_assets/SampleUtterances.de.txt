@@ -1,3 +1,7 @@
+AMAZON.HelpIntent nach was ich es fragen kann
+AMAZON.HelpIntent was es alles kann
+AMAZON.HelpIntent was es kann
+AMAZON.HelpIntent was ich es fragen kann
 AddonExecute führe add on {Addon} aus
 AddonExecute führe addon {Addon} aus
 AddonExecute führe erweiterung {Addon} aus

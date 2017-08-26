@@ -162,7 +162,15 @@ you_have_episode_list: "There are new episodes of {{ items }}"
 
 volume_set: "Volume set to {{ num }}"
 
-help: "You can ask me whether there are any new shows, to play a movie, tv show, or artist, or control playback of media."
+help: "You can ask me whether there are any new shows, to play a movie, t. v. show, or artist, control playback of media, and more. For example, {{ example }}. I've sent more examples to your Alexa app."
+
+help_short: "What would you like to do?  Try something like, {{ example }}."
+
+help_text: "Kodi-Alexa allows you to fully control one or more Kodi installations with your voice.  Here are some examples of things you can say:\n
+\xa0\n
+{{ examples }}
+\xa0\n
+For a complete list of supported requests, please see the README file on Github (https://github.com/m0ngr31/kodi-alexa/README.md)."
 
 help_play: "Please specify the media type in your play command, such as, play the movie ghost busters."
 
@@ -175,8 +183,6 @@ are_you_sure_reboot: "Are you sure you want to reboot?"
 are_you_sure_hibernate: "Are you sure you want to hibernate?"
 
 are_you_sure_suspend: "Are you sure you want to suspend?"
-
-what_to_do: "What would you like to do?"
 
 welcome: "Welcome to Kodi."
 

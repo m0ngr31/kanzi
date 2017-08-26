@@ -162,7 +162,15 @@ you_have_episode_list: "Es gibt neue Folgen für {{ items }}"
 
 volume_set: "Lautstärke auf {{ num }} gestellt"
 
-help: "Du kannst mich fragen ob es neue Serien gibt, einen Film, Serie oder Sänger zu spielen, oder die Wiedergabe von Medien zu bedienen"
+help: "Du kannst mich fragen, ob es neue Serien gibt, mich bitten einen Film, eine Serie oder die Musik eines Interpreten abzuspielen oder die Wiedergabe von Medien zu steuern und vieles mehr. Zum Beispiel {{ example }}. Ich habe dir weitere Beispiele an deine Alexa App geschickt."
+
+help_short: "Was möchtest du tun? Probiere etwas wie {{ example }}."
+
+help_text: "Kodi-Alexa ermöglicht es dir eine oder mehrere Kodi Installtionen mit deiner Stimme zu steuern. Hier sind einige Beispiele, die du sagen kannst:\n
+\xa0\n
+{{ example }}
+\xa0\n
+Für eine komplette Liste der unterstützten Kommandos, lese bitte die README Datei auf Github (https://github.com/m0ngr31/kodi-alexa/README.md)."
 
 help_play: "Spezifiziere bitte den Medientyp mit dem Wiedergabebefehl, so wie Spiele den Film Ghost Busters"
 
@@ -175,8 +183,6 @@ are_you_sure_reboot: "Bist du dir sicher, dass du einen Neustart durchführen m�
 are_you_sure_hibernate: "Bist du dir sicher, dass das System in den Hibernate gehen soll?"
 
 are_you_sure_suspend: "Bist du dir sicher, dass das System in den Suspend gehen soll?"
-
-what_to_do: "Was möchtest Du tun?"
 
 welcome: "Willkommen zum Kodi Skill"
 

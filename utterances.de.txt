@@ -254,3 +254,6 @@ AddonGlobalSearch (suche/suche nach/finde) {Show}
 AddonGlobalSearch (suche/suche nach/finde) {Movie}
 AddonGlobalSearch (suche/suche nach/finde) {Album}
 AddonGlobalSearch (suche/suche nach/finde) {Artist}
+
+AMAZON.HelpIntent (/nach) was ich es fragen kann
+AMAZON.HelpIntent was es (/alles) kann
