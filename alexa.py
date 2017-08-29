@@ -553,8 +553,7 @@ def alexa_shuffle_media(Show=None):
   card_title = render_template('shuffling', heard_name=Show).encode("utf-8")
   print card_title
 
-  disable_ds = os.getenv('DISABLE_DEEP_SEARCH')
-  if disable_ds and disable_ds != 'None':
+  if not config.getboolean('global', 'deep_search'):
     response_text = render_template('help_play').encode("utf-8")
   else:
     response_text = find_and_play(kodi, Show, shuffle=True, slot_hint='Show', slot_ignore=ignore_slots)
