@@ -32,6 +32,16 @@
       "value": "",
       "required": false
     },
+    "READ_TIMEOUT": {
+      "description": "How long to wait for responses from Kodi.  Don't change unless you know what you're doing.",
+      "value": "120",
+      "required": false
+    },
+    "READ_TIMEOUT_ASYNC": {
+      "description": "Read timeout for 'fire-and-forget' commands.  Increase gradually only if Kodi is sometimes not executing commands.",
+      "value": "0.01",
+      "required": false
+    },
     "SKILL_APPID": {
       "description": "Add this to enable verification of requests.",
       "value": "",
