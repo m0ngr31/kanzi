@@ -706,6 +706,8 @@ ShuffleVideoPlaylist shuffle {VideoPlaylist} show playlist
 ShuffleVideoPlaylist shuffle {VideoPlaylist} video playlist
 Shutdown shut down
 Shutdown shut down system
+StereoscopicMode toggle stereoscopic mode
+StereoscopicMode toggle three d. mode
 SubtitlesDownload download subtitles
 SubtitlesNext next subtitle language
 SubtitlesNext next subtitles

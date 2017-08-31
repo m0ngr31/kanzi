@@ -581,6 +581,9 @@
       "intent": "Fullscreen"
     },
     {
+      "intent": "StereoscopicMode"
+    },
+    {
       "intent": "Mute"
     },
     {

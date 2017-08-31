@@ -313,6 +313,8 @@ mute_unmute: "Toggling mute"
 
 toggle_fullscreen: "Toggling fullscreen"
 
+toggle_stereoscopic_mode: "Toggling stereoscopic mode"
+
 playing_previous: "Playing previous item"
 
 playing_next: "Playing next item"

@@ -54,6 +54,7 @@ ViewPlaylist (open/go to/show) (/the) playlist {VideoPlaylist}
 ViewPlaylist (open/go to/show) {VideoPlaylist} playlist
 
 Fullscreen (/toggle) (fullscreen/visualizer)
+StereoscopicMode toggle (stereoscopic/three d.) mode
 
 Mute (/toggle/set) (mute/unmute)
 VolumeUp (/turn) volume up

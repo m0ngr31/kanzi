@@ -1062,6 +1062,19 @@ def alexa_fullscreen():
   return statement(response_text).simple_card(card_title, response_text)
 
 
+# Handle the StereoscopicMode intent.
+@ask.intent('StereoscopicMode')
+def alexa_stereoscopic_mode():
+  card_title = render_template('toggle_stereoscopic_mode').encode("utf-8")
+  print card_title
+
+  kodi = Kodi(config, context)
+  kodi.ToggleStereoscopicMode()
+  response_text = ""
+
+  return statement(response_text).simple_card(card_title, response_text)
+
+
 # Handle the Mute intent.
 @ask.intent('Mute')
 def alexa_mute():
