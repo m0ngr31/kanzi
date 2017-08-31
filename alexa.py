@@ -1075,6 +1075,19 @@ def alexa_stereoscopic_mode():
   return statement(response_text).simple_card(card_title, response_text)
 
 
+# Handle the AudioPassthrough intent.
+@ask.intent('AudioPassthrough')
+def alexa_audio_passthrough():
+  card_title = render_template('toggle_audio_passthrough').encode("utf-8")
+  print card_title
+
+  kodi = Kodi(config, context)
+  kodi.ToggleAudioPassthrough()
+  response_text = ""
+
+  return statement(response_text).simple_card(card_title, response_text)
+
+
 # Handle the Mute intent.
 @ask.intent('Mute')
 def alexa_mute():

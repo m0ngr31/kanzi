@@ -584,6 +584,9 @@
       "intent": "StereoscopicMode"
     },
     {
+      "intent": "AudioPassthrough"
+    },
+    {
       "intent": "Mute"
     },
     {

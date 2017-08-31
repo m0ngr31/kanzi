@@ -303,6 +303,8 @@ subtitles_enable: "Enabling subtitles"
 
 subtitles_download: "Downloading subtitles"
 
+toggle_audio_passthrough: "Toggling audio passthrough"
+
 adjusting_volume: "Adjusting volume"
 
 volume_down: "Turning volume down"
