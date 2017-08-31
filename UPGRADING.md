@@ -15,4 +15,17 @@ Just delete the existing app from your Heroku Dashboard, and create another with
 
 ## AWS Lambda
 
-If you are not using Zappa yet, please go back to the README file there and start from scratch. If you are already using Zappa, browse to the application directory in your terminal, make sure that your virtual environment is enabled and run `git pull origin master`, `pip install -r requirements.txt`, and `zappa update dev`.
+If you are not using Zappa yet, please go back to the README file there and start from scratch.
+
+If you are already using Zappa, browse to the application directory in your terminal.  Then activate the virtualenv with:
+
+`virtualenv venv` and `source venv/bin/activate` (if you are on Windows, that's `venv\Scripts\activate.bat` or `venv\Scripts\activate.ps1` for Powershell).
+
+Finally, execute all of the following:
+
+```
+git pull origin master
+pip install zappa --upgrade
+pip install -r requirements.txt
+zappa update dev
+```
