@@ -146,7 +146,7 @@ write_file('MOVIES', cl)
 
 
 # Generate SHOWS Slot
-retrieved = kodi.GetTvShows()
+retrieved = kodi.GetShows()
 cl = clean_results(retrieved, 'tvshows', 'label')
 write_file('SHOWS', cl)
 
