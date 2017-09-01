@@ -236,18 +236,18 @@ Suspend go to sleep
 EjectMedia eject (/media/disc/compact disc/audio disc/blu-ray/blu-ray disc/c. d./d. v. d.)
 EjectMedia eject the (media/disc/compact disc/audio disc/blu-ray/blu-ray disc/c. d./d. v. d.)
 
-PlayerSeekForward (step/jump) (/forward) (/by) {ForwardDur}
+PlayerSeekForward (step/jump) (/forward/forwards) (/by) {ForwardDur}
 PlayerSeekForward forward (step/jump) by {ForwardDur}
-PlayerSeekSmallForward (/small) (step/jump) forward
+PlayerSeekSmallForward (/small) (step/jump) (forward/forwards)
 PlayerSeekSmallForward (/small) forward (step/jump)
-PlayerSeekBigForward (large/big/long) (step/jump) forward
+PlayerSeekBigForward (large/big/long) (step/jump) (forward/forwards)
 PlayerSeekBigForward (large/big/long) forward (step/jump)
-PlayerSeekBackward (step/jump) (backward/back) (/by) {BackwardDur}
-PlayerSeekBackward (backward/back) (step/jump) by {BackwardDur}
-PlayerSeekSmallBackward (/small) (step/jump) (backward/back)
-PlayerSeekSmallBackward (/small) (backward/back) (step/jump)
-PlayerSeekBigBackward (large/big/long) (step/jump) (backward/back)
-PlayerSeekBigBackward (large/big/long) (backward/back) (step/jump)
+PlayerSeekBackward (step/jump) (backward/backwards/back) (/by) {BackwardDur}
+PlayerSeekBackward (backward/backwards) (step/jump) by {BackwardDur}
+PlayerSeekSmallBackward (/small) (step/jump) (backward/backwards/back)
+PlayerSeekSmallBackward (/small) (backward/backwards/back) (step/jump)
+PlayerSeekBigBackward (large/big/long) (step/jump) (backward/backwards/back)
+PlayerSeekBigBackward (large/big/long) (backward/backwards/back) (step/jump)
 
 AddonExecute (open/execute/run/launch) (/addon/add on/plugin/plug in/script) {Addon}
 

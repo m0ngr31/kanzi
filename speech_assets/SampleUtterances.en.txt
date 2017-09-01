@@ -289,88 +289,126 @@ PlayerRotateClockwise rotate
 PlayerRotateClockwise rotate clockwise
 PlayerRotateClockwise rotate ninety degrees
 PlayerRotateCounterClockwise rotate counter clockwise
-PlayerSeekBackward back jump by {BackwardDur}
-PlayerSeekBackward back step by {BackwardDur}
 PlayerSeekBackward backward jump by {BackwardDur}
 PlayerSeekBackward backward step by {BackwardDur}
+PlayerSeekBackward backwards jump by {BackwardDur}
+PlayerSeekBackward backwards step by {BackwardDur}
 PlayerSeekBackward jump back by {BackwardDur}
 PlayerSeekBackward jump back {BackwardDur}
 PlayerSeekBackward jump backward by {BackwardDur}
 PlayerSeekBackward jump backward {BackwardDur}
+PlayerSeekBackward jump backwards by {BackwardDur}
+PlayerSeekBackward jump backwards {BackwardDur}
 PlayerSeekBackward step back by {BackwardDur}
 PlayerSeekBackward step back {BackwardDur}
 PlayerSeekBackward step backward by {BackwardDur}
 PlayerSeekBackward step backward {BackwardDur}
+PlayerSeekBackward step backwards by {BackwardDur}
+PlayerSeekBackward step backwards {BackwardDur}
 PlayerSeekBigBackward big back jump
 PlayerSeekBigBackward big back step
 PlayerSeekBigBackward big backward jump
 PlayerSeekBigBackward big backward step
+PlayerSeekBigBackward big backwards jump
+PlayerSeekBigBackward big backwards step
 PlayerSeekBigBackward big jump back
 PlayerSeekBigBackward big jump backward
+PlayerSeekBigBackward big jump backwards
 PlayerSeekBigBackward big step back
 PlayerSeekBigBackward big step backward
+PlayerSeekBigBackward big step backwards
 PlayerSeekBigBackward large back jump
 PlayerSeekBigBackward large back step
 PlayerSeekBigBackward large backward jump
 PlayerSeekBigBackward large backward step
+PlayerSeekBigBackward large backwards jump
+PlayerSeekBigBackward large backwards step
 PlayerSeekBigBackward large jump back
 PlayerSeekBigBackward large jump backward
+PlayerSeekBigBackward large jump backwards
 PlayerSeekBigBackward large step back
 PlayerSeekBigBackward large step backward
+PlayerSeekBigBackward large step backwards
 PlayerSeekBigBackward long back jump
 PlayerSeekBigBackward long back step
 PlayerSeekBigBackward long backward jump
 PlayerSeekBigBackward long backward step
+PlayerSeekBigBackward long backwards jump
+PlayerSeekBigBackward long backwards step
 PlayerSeekBigBackward long jump back
 PlayerSeekBigBackward long jump backward
+PlayerSeekBigBackward long jump backwards
 PlayerSeekBigBackward long step back
 PlayerSeekBigBackward long step backward
+PlayerSeekBigBackward long step backwards
 PlayerSeekBigForward big forward jump
 PlayerSeekBigForward big forward step
 PlayerSeekBigForward big jump forward
+PlayerSeekBigForward big jump forwards
 PlayerSeekBigForward big step forward
+PlayerSeekBigForward big step forwards
 PlayerSeekBigForward large forward jump
 PlayerSeekBigForward large forward step
 PlayerSeekBigForward large jump forward
+PlayerSeekBigForward large jump forwards
 PlayerSeekBigForward large step forward
+PlayerSeekBigForward large step forwards
 PlayerSeekBigForward long forward jump
 PlayerSeekBigForward long forward step
 PlayerSeekBigForward long jump forward
+PlayerSeekBigForward long jump forwards
 PlayerSeekBigForward long step forward
+PlayerSeekBigForward long step forwards
 PlayerSeekForward forward jump by {ForwardDur}
 PlayerSeekForward forward step by {ForwardDur}
 PlayerSeekForward jump by {ForwardDur}
 PlayerSeekForward jump forward by {ForwardDur}
 PlayerSeekForward jump forward {ForwardDur}
+PlayerSeekForward jump forwards by {ForwardDur}
+PlayerSeekForward jump forwards {ForwardDur}
 PlayerSeekForward jump {ForwardDur}
 PlayerSeekForward step by {ForwardDur}
 PlayerSeekForward step forward by {ForwardDur}
 PlayerSeekForward step forward {ForwardDur}
+PlayerSeekForward step forwards by {ForwardDur}
+PlayerSeekForward step forwards {ForwardDur}
 PlayerSeekForward step {ForwardDur}
 PlayerSeekSmallBackward back jump
 PlayerSeekSmallBackward back step
 PlayerSeekSmallBackward backward jump
 PlayerSeekSmallBackward backward step
+PlayerSeekSmallBackward backwards jump
+PlayerSeekSmallBackward backwards step
 PlayerSeekSmallBackward jump back
 PlayerSeekSmallBackward jump backward
+PlayerSeekSmallBackward jump backwards
 PlayerSeekSmallBackward small back jump
 PlayerSeekSmallBackward small back step
 PlayerSeekSmallBackward small backward jump
 PlayerSeekSmallBackward small backward step
+PlayerSeekSmallBackward small backwards jump
+PlayerSeekSmallBackward small backwards step
 PlayerSeekSmallBackward small jump back
 PlayerSeekSmallBackward small jump backward
+PlayerSeekSmallBackward small jump backwards
 PlayerSeekSmallBackward small step back
 PlayerSeekSmallBackward small step backward
+PlayerSeekSmallBackward small step backwards
 PlayerSeekSmallBackward step back
 PlayerSeekSmallBackward step backward
+PlayerSeekSmallBackward step backwards
 PlayerSeekSmallForward forward jump
 PlayerSeekSmallForward forward step
 PlayerSeekSmallForward jump forward
+PlayerSeekSmallForward jump forwards
 PlayerSeekSmallForward small forward jump
 PlayerSeekSmallForward small forward step
 PlayerSeekSmallForward small jump forward
+PlayerSeekSmallForward small jump forwards
 PlayerSeekSmallForward small step forward
+PlayerSeekSmallForward small step forwards
 PlayerSeekSmallForward step forward
+PlayerSeekSmallForward step forwards
 PlayerZoomHold give me a hard copy right there
 PlayerZoomHold give me a hard copy there
 PlayerZoomHold hold
