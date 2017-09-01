@@ -184,7 +184,7 @@ def alexa_no():
     else:
       item = kodi.GetRecommendedAudioItem()
     return alexa_recommend_item(kodi, item, generic_type)
-  elif 'play_media_type' in session.attributes and session.attributes['play_media_type'] != 'recentsongs':
+  elif 'play_media_type' in session.attributes:
     item = kodi.GetRecommendedItem(session.attributes['play_media_type'] + 's')
     return alexa_recommend_item(kodi, item)
 
@@ -222,15 +222,7 @@ def alexa_yes():
     if media_type == 'movie':
       kodi.PlayMovie(media_id)
     elif media_type == 'tvshow':
-      # Try the next unwatched episode first
-      episode_id = kodi.GetNextUnwatchedEpisode(media_id)
-      if not episode_id:
-        # All episodes already watched, so just play a random episode
-        episodes_result = kodi.GetEpisodesFromShow(media_id)
-        for episode in episodes_result['result']['episodes']:
-          episodes_array.append(episode['episodeid'])
-        episode_id = random.choice(episodes_array)
-      kodi.PlayEpisode(episode_id)
+      kodi.PlayEpisode(media_id)
     elif media_type == 'episode':
       kodi.PlayEpisode(media_id)
     elif media_type == 'musicvideo':
@@ -256,8 +248,6 @@ def alexa_yes():
       kodi.ClearAudioPlaylist()
       kodi.AddSongToPlaylist(media_id)
       kodi.StartAudioPlaylist()
-    elif media_type == 'recentsongs':
-      alexa_listen_recently_added_songs()
     return statement(render_template('okay').encode("utf-8"))
 
   if card_title:
@@ -2470,6 +2460,8 @@ def alexa_recommend_item(kodi, item, generic_type=None):
   elif item[0] == 'song':
     song_details = kodi.GetSongDetails(item[2])
     response_text = render_template('recommend_song', song_name=item[1], artist_name=song_details['artist'][0]).encode("utf-8")
+  else:
+    return statement(response_text)
 
   if generic_type:
     session.attributes['play_media_generic_type'] = generic_type
@@ -2695,18 +2687,13 @@ def alexa_what_new_episodes(Show):
   kodi = Kodi(config, context)
   show = kodi.FindTvShow(Show)
   if len(show) > 0:
-    episodes_result = kodi.GetUnwatchedEpisodesFromShow(show[0][0])
+    num_unwatched = len(kodi.GetUnwatchedEpisodesFromShow(show[0][0]))
 
-    if not 'episodes' in episodes_result['result']:
-      num_of_unwatched = 0
-    else:
-      num_of_unwatched = len(episodes_result['result']['episodes'])
-
-    if num_of_unwatched > 0:
-      if num_of_unwatched == 1:
+    if num_unwatched > 0:
+      if num_unwatched == 1:
         response_text = render_template('one_unseen_show', show_name=show[0][1]).encode("utf-8")
       else:
-        response_text = render_template('multiple_unseen_show', show_name=show[0][1], num=num_of_unwatched).encode("utf-8")
+        response_text = render_template('multiple_unseen_show', show_name=show[0][1], num=num_unwatched).encode("utf-8")
     else:
       response_text = render_template('no_unseen_show', show_name=show[0][1]).encode("utf-8")
   else:
