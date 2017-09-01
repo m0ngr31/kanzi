@@ -1,34 +1,73 @@
 {
   "intents": [
     {
-      "intent": "RecommendMedia"
-    },
-    {
       "intent": "RecommendVideo"
     },
     {
       "intent": "RecommendAudio"
     },
     {
-      "intent": "RecommendMovie"
+      "intent": "RecommendMovie",
+      "slots": [
+        {
+          "name": "MovieGenre",
+          "type": "MOVIEGENRES"
+        }
+      ]
     },
     {
-      "intent": "RecommendShow"
+      "intent": "RecommendShow",
+      "slots": [
+        {
+          "name": "ShowGenre",
+          "type": "SHOWGENRES"
+        }
+      ]
     },
     {
-      "intent": "RecommendEpisode"
+      "intent": "RecommendEpisode",
+      "slots": [
+        {
+          "name": "ShowGenre",
+          "type": "SHOWGENRES"
+        }
+      ]
     },
     {
-      "intent": "RecommendMusicVideo"
+      "intent": "RecommendMusicVideo",
+      "slots": [
+        {
+          "name": "MusicVideoGenre",
+          "type": "MUSICVIDEOGENRES"
+        }
+      ]
     },
     {
-      "intent": "RecommendArtist"
+      "intent": "RecommendArtist",
+      "slots": [
+        {
+          "name": "MusicGenre",
+          "type": "MUSICGENRES"
+        }
+      ]
     },
     {
-      "intent": "RecommendAlbum"
+      "intent": "RecommendAlbum",
+      "slots": [
+        {
+          "name": "MusicGenre",
+          "type": "MUSICGENRES"
+        }
+      ]
     },
     {
-      "intent": "RecommendSong"
+      "intent": "RecommendSong",
+      "slots": [
+        {
+          "name": "MusicGenre",
+          "type": "MUSICGENRES"
+        }
+      ]
     },
     {
       "intent": "WhatNewAlbums"

@@ -185,7 +185,11 @@ def alexa_no():
       item = kodi.GetRecommendedAudioItem()
     return alexa_recommend_item(kodi, item, generic_type)
   elif 'play_media_type' in session.attributes:
-    item = kodi.GetRecommendedItem(session.attributes['play_media_type'] + 's')
+    genre = None
+    if 'play_media_genre' in session.attributes:
+      genre = session.attributes['play_media_genre']
+
+    item = kodi.GetRecommendedItem(session.attributes['play_media_type'] + 's', genre)
     return alexa_recommend_item(kodi, item)
 
   return alexa_stop_cancel(kodi)
@@ -2467,6 +2471,7 @@ def alexa_recommend_item(kodi, item, generic_type=None):
     session.attributes['play_media_generic_type'] = generic_type
   session.attributes['play_media_type'] = item[0]
   session.attributes['play_media_id'] = item[2]
+  session.attributes['play_media_genre'] = item[3]
   return question(response_text)
 
 
@@ -2474,6 +2479,7 @@ def alexa_recommend_item(kodi, item, generic_type=None):
 @ask.intent('RecommendVideo')
 def alexa_recommend_video():
   print "Recommending video"
+
   kodi = Kodi(config, context)
   item = kodi.GetRecommendedVideoItem()
   return alexa_recommend_item(kodi, item, 'video')
@@ -2483,6 +2489,7 @@ def alexa_recommend_video():
 @ask.intent('RecommendAudio')
 def alexa_recommend_audio():
   print "Recommending audio"
+
   kodi = Kodi(config, context)
   item = kodi.GetRecommendedAudioItem()
   return alexa_recommend_item(kodi, item, 'audio')
@@ -2490,64 +2497,106 @@ def alexa_recommend_audio():
 
 # Handle the RecommendMovie intent.
 @ask.intent('RecommendMovie')
-def alexa_recommend_movie():
+def alexa_recommend_movie(MovieGenre):
   print "Recommending movie"
+
   kodi = Kodi(config, context)
-  item = kodi.GetRecommendedItem('movies')
+  genre = None
+  if MovieGenre:
+    g = kodi.FindVideoGenre(MovieGenre)
+    if len(g) > 0:
+      genre = g[0][1]
+  item = kodi.GetRecommendedItem('movies', genre)
   return alexa_recommend_item(kodi, item)
 
 
 # Handle the RecommendShow intent.
 @ask.intent('RecommendShow')
-def alexa_recommend_show():
+def alexa_recommend_show(ShowGenre):
   print "Recommending show"
+
   kodi = Kodi(config, context)
-  item = kodi.GetRecommendedItem('tvshows')
+  genre = None
+  if ShowGenre:
+    g = kodi.FindVideoGenre(ShowGenre, 'tvshow')
+    if len(g) > 0:
+      genre = g[0][1]
+  item = kodi.GetRecommendedItem('tvshows', genre)
   return alexa_recommend_item(kodi, item)
 
 
 # Handle the RecommendEpisode intent.
 @ask.intent('RecommendEpisode')
-def alexa_recommend_episode():
+def alexa_recommend_episode(ShowGenre):
   print "Recommending episode"
+
   kodi = Kodi(config, context)
-  item = kodi.GetRecommendedItem('episodes')
+  genre = None
+  if ShowGenre:
+    g = kodi.FindVideoGenre(ShowGenre, 'tvshow')
+    if len(g) > 0:
+      genre = g[0][1]
+  item = kodi.GetRecommendedItem('episodes', genre)
   return alexa_recommend_item(kodi, item)
 
 
 # Handle the RecommendMusicVideo intent.
 @ask.intent('RecommendMusicVideo')
-def alexa_recommend_music_video():
+def alexa_recommend_music_video(MusicVideoGenre):
   print "Recommending music video"
+
   kodi = Kodi(config, context)
-  item = kodi.GetRecommendedItem('musicvideos')
+  genre = None
+  if MusicVideoGenre:
+    g = kodi.FindVideoGenre(MusicVideoGenre, 'musicvideo')
+    if len(g) > 0:
+      genre = g[0][1]
+  item = kodi.GetRecommendedItem('musicvideos', genre)
   return alexa_recommend_item(kodi, item)
 
 
 # Handle the RecommendArtist intent.
 @ask.intent('RecommendArtist')
-def alexa_recommend_artist():
+def alexa_recommend_artist(MusicGenre):
   print "Recommending artist"
+
   kodi = Kodi(config, context)
-  item = kodi.GetRecommendedItem('artists')
+  genre = None
+  if MusicGenre:
+    g = kodi.FindMusicGenre(MusicGenre)
+    if len(g) > 0:
+      genre = g[0][1]
+  item = kodi.GetRecommendedItem('artists', genre)
   return alexa_recommend_item(kodi, item)
 
 
 # Handle the RecommendAlbum intent.
 @ask.intent('RecommendAlbum')
-def alexa_recommend_album():
+def alexa_recommend_album(MusicGenre):
   print "Recommending album"
+
   kodi = Kodi(config, context)
-  item = kodi.GetRecommendedItem('albums')
+  genre = None
+  if MusicGenre:
+    g = kodi.FindMusicGenre(MusicGenre)
+    if len(g) > 0:
+      genre = g[0][1]
+  item = kodi.GetRecommendedItem('albums', genre)
   return alexa_recommend_item(kodi, item)
 
 
 # Handle the RecommendSong intent.
 @ask.intent('RecommendSong')
-def alexa_recommend_song():
+def alexa_recommend_song(MusicGenre):
   print "Recommending song"
+
   kodi = Kodi(config, context)
-  item = kodi.GetRecommendedItem('songs')
+  genre = None
+  if MusicGenre:
+    g = kodi.FindMusicGenre(MusicGenre)
+    if len(g) > 0:
+      genre = g[0][1]
+  item = kodi.GetRecommendedItem('songs', genre)
   return alexa_recommend_item(kodi, item)
 
 

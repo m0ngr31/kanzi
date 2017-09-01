@@ -188,14 +188,23 @@ ShufflePlaylist shuffle {VideoPlaylist} playlist
 
 RecommendVideo (suggest/recommend) something to watch
 RecommendAudio (suggest/recommend) something to listen to
-RecommendMovie (suggest/recommend) (/a) (movie/film) (/to watch)
-RecommendShow (suggest/recommend) (/a) (/t. v.) show (/to watch)
+RecommendMovie (suggest/recommend) (/a) (/{MovieGenre}) (movie/film) (/to watch)
+RecommendMovie (suggest/recommend) (/some) (/{MovieGenre}) (movies/films) (/to watch)
+RecommendShow (suggest/recommend) (/a) (/{ShowGenre}) (/t. v.) show (/to watch)
+RecommendShow (suggest/recommend) (/some) (/{ShowGenre}) (/t. v.) shows (/to watch)
 RecommendEpisode (suggest/recommend) (/a t. v./t. v./an) episode (/to watch)
-RecommendMusicVideo (suggest/recommend) (/a) music video (/to watch/to listen to)
+RecommendEpisode (suggest/recommend) (/a) {ShowGenre} (/t. v.) episode (/to watch)
+RecommendEpisode (suggest/recommend) (/some) (/{ShowGenre}) (/t. v.) episodes (/to watch)
+RecommendMusicVideo (suggest/recommend) (/a) (/{MusicVideoGenre}) music video (/to watch/to listen to)
+RecommendMusicVideo (suggest/recommend) (/some) (/{MusicVideoGenre}) music videos (/to watch/to listen to)
 RecommendArtist (suggest/recommend) ((/a) music artist/(/an) artist/(/a) musician/(/a) band) (/to listen to)
+RecommendArtist (suggest/recommend) (/a) {MusicGenre} (music artist/artist/musician/band) (/to listen to)
+RecommendArtist (suggest/recommend) (/some) (/{MusicGenre}) (music artists/artists/musicians/bands) (/to listen to)
 RecommendAlbum (suggest/recommend) (/an) album (/to listen to)
-RecommendSong (suggest/recommend) (/some) (songs/music) (/to listen to)
-RecommendSong (suggest/recommend) (/a) song (/to listen to)
+RecommendAlbum (suggest/recommend) (/a) {MusicGenre} album (/to listen to)
+RecommendAlbum (suggest/recommend) (/some) (/{MusicGenre}) albums (/to listen to)
+RecommendSong (suggest/recommend) (/a) (/{MusicGenre}) song (/to listen to)
+RecommendSong (suggest/recommend) (/some) (/{MusicGenre}) (songs/music) (/to listen to)
 
 WhatNewAlbums (if there are/are there/do i have) new albums (/to listen to)
 WhatNewAlbums (if there is/is there/do i have) a new album (/to listen to)
