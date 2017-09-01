@@ -2468,15 +2468,8 @@ def alexa_recommend_item(kodi, item, generic_type=None):
     album_details = kodi.GetAlbumDetails(item[2])
     response_text = render_template('recommend_album', album_name=item[1], artist_name=album_details['artist'][0]).encode("utf-8")
   elif item[0] == 'song':
-    # XXX: skin helper widgets doesn't seem to do anything valid for
-    # recommended songs currently, so let's just try to do something
-    # reasonable.
-    if item[2] != 0:
-      song_details = kodi.GetSongDetails(item[2])
-      response_text = render_template('recommend_song', song_name=item[1], artist_name=song_details['artist'][0]).encode("utf-8")
-    else:
-      item[0] = 'recentsongs'
-      response_text = render_template('recommend_songs_recent').encode("utf-8")
+    song_details = kodi.GetSongDetails(item[2])
+    response_text = render_template('recommend_song', song_name=item[1], artist_name=song_details['artist'][0]).encode("utf-8")
 
   if generic_type:
     session.attributes['play_media_generic_type'] = generic_type

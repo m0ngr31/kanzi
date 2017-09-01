@@ -37,7 +37,7 @@ Here are some of the features supported by this skill:
 - Continue watching next episode of last show that was watched
 - Play next episode of a show
 - Play newest episode of a show
-- Recommend media to watch/listen to (*requires script.skin.helper.widgets addon*)
+- Recommend media to watch/listen to
 - List/Play recently added media
 - List available albums by an artist
 - Clean/Update video and audio sources
