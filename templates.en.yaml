@@ -6,7 +6,7 @@ error_parsing_results: "Error parsing results"
 
 could_not_find: "Could not find {{ heard_name }}"
 
-could_not_find_generic: "Could not find that phrase"
+could_not_find_generic: "Could not find anything"
 
 could_not_find_genre: "Could not find any {{ genre_name }} music"
 

@@ -1957,7 +1957,7 @@ def alexa_watch_movie_trailer(Movie):
   # they're wanting to watch the trailer for that.
   if 'play_media_type' in session.attributes and session.attributes['play_media_type'] == 'movie':
     movie_id = session.attributes['play_media_id']
-  else:
+  elif Movie:
     movie = kodi.FindMovie(Movie)
     if len(movie) > 0:
       movie_id = movie[0][0]
@@ -1969,8 +1969,10 @@ def alexa_watch_movie_trailer(Movie):
       response_text = render_template('playing_trailer', heard_name=movie_details['label']).encode("utf-8")
     else:
       response_text = render_template('could_not_find_trailer', heard_name=Movie).encode("utf-8")
-  else:
+  elif Movie:
     response_text = render_template('could_not_find_movie', heard_movie=Movie).encode("utf-8")
+  else:
+    response_text = render_template('could_not_find_generic').encode("utf-8")
 
   return statement(response_text).simple_card(card_title, response_text)
 
