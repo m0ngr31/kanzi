@@ -1,3 +1,11 @@
+v2.9.0 (09/03/2017)
+* Add support for specifying genre in recommendations.
+* Optimize media recommendations.
+* Add ability to toggle stereoscopic mode.
+* Add ability to toggle audio passthrough.
+* Expand help to include example utterances.
+* Add read_timeout and read_timeout_async config variables.
+
 v2.8.5 (08/20/2017)
 * Add support for playing music videos.
 
