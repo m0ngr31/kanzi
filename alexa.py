@@ -226,7 +226,15 @@ def alexa_yes():
     if media_type == 'movie':
       kodi.PlayMovie(media_id)
     elif media_type == 'tvshow':
-      kodi.PlayEpisode(media_id)
+      # Try the next unwatched episode first
+      episode_id = kodi.GetNextUnwatchedEpisode(media_id)
+      if not episode_id:
+        # All episodes already watched, so just play a random episode
+        episodes_result = kodi.GetEpisodesFromShow(media_id)
+        for episode in episodes_result['result']['episodes']:
+          episodes_array.append(episode['episodeid'])
+        episode_id = random.choice(episodes_array)
+      kodi.PlayEpisode(episode_id)
     elif media_type == 'episode':
       kodi.PlayEpisode(media_id)
     elif media_type == 'musicvideo':
