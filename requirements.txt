@@ -2,3 +2,4 @@ gunicorn
 pytz
 flask-ask>=0.8.9
 kodi-voice>=0.9.9
+python-Levenshtein>=0.12.0
