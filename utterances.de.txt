@@ -46,7 +46,13 @@ ViewPlaylist (öffne/gehe zu) playlist {VideoPlaylist}
 ViewPlaylist (öffne/gehe zu) {VideoPlaylist} playlist
 
 Fullscreen vollbild (/umschalten)
+StereoscopicMode schalte auf 3D (/Modus) (/um)
+StereoscopicMode aktiviere 3D (/Modus)
 
+AudioPassthrough schalte (/Audioausgabe) auf (passthrough/digital) (/um)
+AudioPassthrough schalte Audioausgabe um
+AudioPassthrough schalte (passthrough/digital) (/um)
+AudioPassthrough aktiviere (passthrough/digital)
 Mute ton (aus/an)(/schalten)
 VolumeUp lauter
 VolumeDown leiser

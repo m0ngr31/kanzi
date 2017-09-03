@@ -22,6 +22,21 @@ AddonGlobalSearch suche {Album}
 AddonGlobalSearch suche {Artist}
 AddonGlobalSearch suche {Movie}
 AddonGlobalSearch suche {Show}
+AudioPassthrough aktiviere digital
+AudioPassthrough aktiviere passthrough
+AudioPassthrough schalte Audioausgabe auf digital
+AudioPassthrough schalte Audioausgabe auf digital um
+AudioPassthrough schalte Audioausgabe auf passthrough
+AudioPassthrough schalte Audioausgabe auf passthrough um
+AudioPassthrough schalte Audioausgabe um
+AudioPassthrough schalte auf digital
+AudioPassthrough schalte auf digital um
+AudioPassthrough schalte auf passthrough
+AudioPassthrough schalte auf passthrough um
+AudioPassthrough schalte digital
+AudioPassthrough schalte digital um
+AudioPassthrough schalte passthrough
+AudioPassthrough schalte passthrough um
 AudioStreamNext Sprache umschalten
 AudioStreamNext audio Stream umschalten
 AudioStreamNext nächste Sprache
@@ -938,6 +953,12 @@ Shutdown herunterfahren
 Shutdown shutdown
 Shutdown system herunterfahren
 Shutdown system shutdown
+StereoscopicMode aktiviere 3D
+StereoscopicMode aktiviere 3D Modus
+StereoscopicMode schalte auf 3D
+StereoscopicMode schalte auf 3D Modus
+StereoscopicMode schalte auf 3D Modus um
+StereoscopicMode schalte auf 3D um
 SubtitlesDownload download Untertitel
 SubtitlesNext Untertitel umschalten
 SubtitlesNext nächster Untertitel

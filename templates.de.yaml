@@ -303,6 +303,8 @@ subtitles_enable: "Untertitel einschalten"
 
 subtitles_download: "Herunterladen von Untertiteln"
 
+toggle_audio_passthrough: "Schalte Audio Passthrough um"
+
 adjusting_volume: "Lautstärke anpassen"
 
 volume_down: "Lautstärke verringern"
@@ -312,6 +314,8 @@ volume_up: "Lautstärke erhöhen"
 mute_unmute: "Stummschalten"
 
 toggle_fullscreen: "Vollbild umschalten"
+
+toggle_stereoscopic_mode: "Schalte 3D Modus um"
 
 playing_previous: "Spiele vorherigen Titel"
 
