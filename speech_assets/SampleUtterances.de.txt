@@ -847,10 +847,18 @@ RecommendAlbum welches Album es empfiehlt
 RecommendAlbum welches Album es mir empfiehlt
 RecommendAlbum welches Album es mir vorschlägt
 RecommendAlbum welches Album es vorschlägt
+RecommendAlbum welches {MusicGenre} Album es empfiehlt
+RecommendAlbum welches {MusicGenre} Album es mir empfiehlt
+RecommendAlbum welches {MusicGenre} Album es mir vorschlägt
+RecommendAlbum welches {MusicGenre} Album es vorschlägt
 RecommendArtist welchen Interpreten es empfiehlt
 RecommendArtist welchen Interpreten es mir empfiehlt
 RecommendArtist welchen Interpreten es mir vorschlägt
 RecommendArtist welchen Interpreten es vorschlägt
+RecommendArtist welchen {MusicGenre} Interpreten es empfiehlt
+RecommendArtist welchen {MusicGenre} Interpreten es mir empfiehlt
+RecommendArtist welchen {MusicGenre} Interpreten es mir vorschlägt
+RecommendArtist welchen {MusicGenre} Interpreten es vorschlägt
 RecommendAudio welche Musik es empfiehlt
 RecommendAudio welche Musik es mir empfiehlt
 RecommendAudio welche Musik es mir vorschlägt
@@ -863,26 +871,54 @@ RecommendEpisode welche Folge es empfiehlt
 RecommendEpisode welche Folge es mir empfiehlt
 RecommendEpisode welche Folge es mir vorschlägt
 RecommendEpisode welche Folge es vorschlägt
+RecommendEpisode welche {ShowGenre} Episode es empfiehlt
+RecommendEpisode welche {ShowGenre} Episode es mir empfiehlt
+RecommendEpisode welche {ShowGenre} Episode es mir vorschlägt
+RecommendEpisode welche {ShowGenre} Episode es vorschlägt
+RecommendEpisode welche {ShowGenre} Folge es empfiehlt
+RecommendEpisode welche {ShowGenre} Folge es mir empfiehlt
+RecommendEpisode welche {ShowGenre} Folge es mir vorschlägt
+RecommendEpisode welche {ShowGenre} Folge es vorschlägt
 RecommendMovie welchen Film es empfiehlt
 RecommendMovie welchen Film es mir empfiehlt
 RecommendMovie welchen Film es mir vorschlägt
 RecommendMovie welchen Film es vorschlägt
+RecommendMovie welchen {MovieGenre} Film es empfiehlt
+RecommendMovie welchen {MovieGenre} Film es mir empfiehlt
+RecommendMovie welchen {MovieGenre} Film es mir vorschlägt
+RecommendMovie welchen {MovieGenre} Film es vorschlägt
 RecommendMusicVideo welches Musikvideo es empfiehlt
 RecommendMusicVideo welches Musikvideo es mir empfiehlt
 RecommendMusicVideo welches Musikvideo es mir vorschlägt
 RecommendMusicVideo welches Musikvideo es vorschlägt
+RecommendMusicVideo welches {MusicVideoGenre} Musikvideo es empfiehlt
+RecommendMusicVideo welches {MusicVideoGenre} Musikvideo es mir empfiehlt
+RecommendMusicVideo welches {MusicVideoGenre} Musikvideo es mir vorschlägt
+RecommendMusicVideo welches {MusicVideoGenre} Musikvideo es vorschlägt
 RecommendShow welche Serie es empfiehlt
 RecommendShow welche Serie es mir empfiehlt
 RecommendShow welche Serie es mir vorschlägt
 RecommendShow welche Serie es vorschlägt
+RecommendShow welche {ShowGenre} Serie es empfiehlt
+RecommendShow welche {ShowGenre} Serie es mir empfiehlt
+RecommendShow welche {ShowGenre} Serie es mir vorschlägt
+RecommendShow welche {ShowGenre} Serie es vorschlägt
 RecommendSong welchen Song es empfiehlt
 RecommendSong welchen Song es mir empfiehlt
 RecommendSong welchen Song es mir vorschlägt
 RecommendSong welchen Song es vorschlägt
+RecommendSong welchen {MusicGenre} Song es empfiehlt
+RecommendSong welchen {MusicGenre} Song es mir empfiehlt
+RecommendSong welchen {MusicGenre} Song es mir vorschlägt
+RecommendSong welchen {MusicGenre} Song es vorschlägt
 RecommendSong welches Lied es empfiehlt
 RecommendSong welches Lied es mir empfiehlt
 RecommendSong welches Lied es mir vorschlägt
 RecommendSong welches Lied es vorschlägt
+RecommendSong welches {MusicGenre} Lied es empfiehlt
+RecommendSong welches {MusicGenre} Lied es mir empfiehlt
+RecommendSong welches {MusicGenre} Lied es mir vorschlägt
+RecommendSong welches {MusicGenre} Lied es vorschlägt
 RecommendVideo welches Video es empfiehlt
 RecommendVideo welches Video es mir empfiehlt
 RecommendVideo welches Video es mir vorschlägt
