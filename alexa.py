@@ -48,7 +48,6 @@ ask = Ask(app, "/", None, path=TEMPLATE_FILE)
 # Handle the CurrentPlayItemInquiry intent.
 @ask.intent('CurrentPlayItemInquiry')
 def alexa_current_playitem_inquiry():
-  print "Request: " + str(request)
   card_title = render_template('current_playing_item').encode("utf-8")
   print card_title
 
@@ -100,7 +99,6 @@ def alexa_current_playitem_inquiry():
 # Handle the CurrentPlayItemTimeRemaining intent.
 @ask.intent('CurrentPlayItemTimeRemaining')
 def alexa_current_playitem_time_remaining():
-  print "Request: " + str(request)
   card_title = render_template('time_left_playing').encode("utf-8")
   print card_title
 
@@ -127,7 +125,6 @@ def alexa_current_playitem_time_remaining():
 
 
 def alexa_play_pause():
-  print "Request: " + str(request)
   card_title = render_template('play_pause').encode("utf-8")
   print card_title
 
@@ -141,19 +138,16 @@ def alexa_play_pause():
 # Handle the AMAZON.PauseIntent intent.
 @ask.intent('AMAZON.PauseIntent')
 def alexa_pause():
-  print "Request: " + str(request)
   return alexa_play_pause()
 
 
 # Handle the AMAZON.ResumeIntent intent.
 @ask.intent('AMAZON.ResumeIntent')
 def alexa_resume():
-  print "Request: " + str(request)
   return alexa_play_pause()
 
 
 def alexa_stop_cancel(kodi):
-  print "Request: " + str(request)
   if session.new:
     card_title = render_template('stopping').encode("utf-8")
     print card_title
@@ -169,7 +163,6 @@ def alexa_stop_cancel(kodi):
 # Handle the AMAZON.StopIntent intent.
 @ask.intent('AMAZON.StopIntent')
 def alexa_stop():
-  print "Request: " + str(request)
   kodi = Kodi(config, context)
   return alexa_stop_cancel(kodi)
 
@@ -177,7 +170,6 @@ def alexa_stop():
 # Handle the AMAZON.CancelIntent intent.
 @ask.intent('AMAZON.CancelIntent')
 def alexa_cancel():
-  print "Request: " + str(request)
   kodi = Kodi(config, context)
   return alexa_stop_cancel(kodi)
 
@@ -185,7 +177,6 @@ def alexa_cancel():
 # Handle the AMAZON.NoIntent intent.
 @ask.intent('AMAZON.NoIntent')
 def alexa_no():
-  print "Request: " + str(request)
   kodi = Kodi(config, context)
 
   if 'play_media_generic_type' in session.attributes:
@@ -209,7 +200,6 @@ def alexa_no():
 # Handle the AMAZON.YesIntent intent.
 @ask.intent('AMAZON.YesIntent')
 def alexa_yes():
-  print "Request: " + str(request)
   card_title = None
 
   kodi = Kodi(config, context)
@@ -313,7 +303,6 @@ def duration_in_seconds(duration_str):
 # Handle the PlayerSeekForward intent.
 @ask.intent('PlayerSeekForward')
 def alexa_player_seek_forward(ForwardDur):
-  print "Request: " + str(request)
   card_title = render_template('step_forward').encode("utf-8")
   print card_title
 
@@ -331,7 +320,6 @@ def alexa_player_seek_forward(ForwardDur):
 # Handle the PlayerSeekBackward intent.
 @ask.intent('PlayerSeekBackward')
 def alexa_player_seek_backward(BackwardDur):
-  print "Request: " + str(request)
   card_title = render_template('step_backward').encode("utf-8")
   print card_title
 
@@ -349,7 +337,6 @@ def alexa_player_seek_backward(BackwardDur):
 # Handle the PlayerSeekSmallForward intent.
 @ask.intent('PlayerSeekSmallForward')
 def alexa_player_seek_smallforward():
-  print "Request: " + str(request)
   card_title = render_template('step_forward').encode("utf-8")
   print card_title
 
@@ -363,7 +350,6 @@ def alexa_player_seek_smallforward():
 # Handle the PlayerSeekSmallBackward intent.
 @ask.intent('PlayerSeekSmallBackward')
 def alexa_player_seek_smallbackward():
-  print "Request: " + str(request)
   card_title = render_template('step_backward').encode("utf-8")
   print card_title
 
@@ -377,7 +363,6 @@ def alexa_player_seek_smallbackward():
 # Handle the PlayerSeekBigForward intent.
 @ask.intent('PlayerSeekBigForward')
 def alexa_player_seek_bigforward():
-  print "Request: " + str(request)
   card_title = render_template('big_step_forward').encode("utf-8")
   print card_title
 
@@ -391,7 +376,6 @@ def alexa_player_seek_bigforward():
 # Handle the PlayerSeekBigBackward intent.
 @ask.intent('PlayerSeekBigBackward')
 def alexa_player_seek_bigbackward():
-  print "Request: " + str(request)
   card_title = render_template('big_step_backward').encode("utf-8")
   print card_title
 
@@ -565,7 +549,6 @@ def find_and_play(kodi, needle, content=['video','audio'], shuffle=False, slot_h
 # See find_and_play() for the order of the searches.
 @ask.intent('ShuffleMedia')
 def alexa_shuffle_media(Show=None):
-  print "Request: " + str(request)
   kodi = Kodi(config, context)
 
   # Some media types don't make sense when shuffling
@@ -600,7 +583,6 @@ def alexa_shuffle_media(Show=None):
 # See find_and_play() for the order of the searches.
 @ask.intent('PlayMedia')
 def alexa_play_media(Movie=None, Artist=None, content=None, shuffle=False):
-  print "Request: " + str(request)
   kodi = Kodi(config, context)
 
   if not content:
@@ -634,7 +616,6 @@ def alexa_play_media(Movie=None, Artist=None, content=None, shuffle=False):
 # Defaults to Artists, but will fuzzy match across the library if none found.
 @ask.intent('ListenToAudio')
 def alexa_listen_audio(Artist):
-  print "Request: " + str(request)
   print "Listen to audio..."
   return alexa_play_media(Artist=Artist, content=['audio'])
 
@@ -642,7 +623,6 @@ def alexa_listen_audio(Artist):
 # Handle the ListenToGenre intent (Shuffles all music of a specific genre).
 @ask.intent('ListenToGenre')
 def alexa_listen_genre(MusicGenre):
-  print "Request: " + str(request)
   card_title = render_template('playing_genre', genre_name=MusicGenre).encode("utf-8")
   print card_title
 
@@ -673,7 +653,6 @@ def alexa_listen_genre(MusicGenre):
 # Handle the ListenToArtist intent (Shuffles all music by an artist, optionally of a specific genre).
 @ask.intent('ListenToArtist')
 def alexa_listen_artist(Artist, MusicGenre):
-  print "Request: " + str(request)
   kodi = Kodi(config, context)
   genre = []
   if MusicGenre:
@@ -715,7 +694,6 @@ def alexa_listen_artist(Artist, MusicGenre):
 # Handle the ListenToAlbum intent (Play whole album, or whole album by a specific artist).
 @ask.intent('ListenToAlbum')
 def alexa_listen_album(Album, Artist, shuffle=False):
-  print "Request: " + str(request)
   if shuffle:
     card_title = render_template('shuffling_album_card').encode("utf-8")
   else:
@@ -764,14 +742,12 @@ def alexa_listen_album(Album, Artist, shuffle=False):
 # Handle the ShuffleAlbum intent (Shuffle whole album, or whole album by a specific artist).
 @ask.intent('ShuffleAlbum')
 def alexa_shuffle_album(Album, Artist):
-  print "Request: " + str(request)
   return alexa_listen_album(Album, Artist, True)
 
 
 # Handle the ListenToLatestAlbum intent (Play latest album by a specific artist).
 @ask.intent('ListenToLatestAlbum')
 def alexa_listen_latest_album(Artist, shuffle=False):
-  print "Request: " + str(request)
   if shuffle:
     card_title = render_template('shuffling_latest_album_card', heard_artist=Artist).encode("utf-8")
   else:
@@ -803,7 +779,6 @@ def alexa_listen_latest_album(Artist, shuffle=False):
 # Handle the ShuffleLatestAlbum intent (Shuffle latest album by a specific artist).
 @ask.intent('ShuffleLatestAlbum')
 def alexa_shuffle_latest_album(Artist):
-  print "Request: " + str(request)
   return alexa_listen_latest_album(Artist, True)
 
 
@@ -811,7 +786,6 @@ def alexa_shuffle_latest_album(Artist):
 # or song on a specific album).
 @ask.intent('ListenToSong')
 def alexa_listen_song(Song, Album, Artist):
-  print "Request: " + str(request)
   card_title = render_template('playing_song_card').encode("utf-8")
   print card_title
 
@@ -864,7 +838,6 @@ def alexa_listen_song(Song, Album, Artist):
 # Handle the ListenToAlbumOrSong intent (Play whole album or song by a specific artist).
 @ask.intent('ListenToAlbumOrSong')
 def alexa_listen_album_or_song(Song, Artist):
-  print "Request: " + str(request)
   card_title = render_template('playing_album_or_song').encode("utf-8")
   print card_title
 
@@ -904,7 +877,6 @@ def alexa_listen_album_or_song(Song, Artist):
 # Handle the ListenToAudioPlaylistRecent intent (Shuffle all recently added songs).
 @ask.intent('ListenToAudioPlaylistRecent')
 def alexa_listen_recently_added_songs():
-  print "Request: " + str(request)
   card_title = render_template('playing_recent_songs').encode("utf-8")
   response_text = render_template('no_recent_songs').encode("utf-8")
   print card_title
@@ -930,7 +902,6 @@ def alexa_listen_recently_added_songs():
 # Handle the ListenToAudioPlaylist intent.
 @ask.intent('ListenToAudioPlaylist')
 def alexa_listen_audio_playlist(AudioPlaylist, shuffle=False):
-  print "Request: " + str(request)
   if shuffle:
     op = render_template('shuffling_empty').encode("utf-8")
   else:
@@ -965,14 +936,12 @@ def alexa_listen_audio_playlist(AudioPlaylist, shuffle=False):
 # Handle the ShuffleAudioPlaylist intent.
 @ask.intent('ShuffleAudioPlaylist')
 def alexa_shuffle_audio_playlist(AudioPlaylist):
-  print "Request: " + str(request)
   return alexa_listen_audio_playlist(AudioPlaylist, True)
 
 
 # Handle the PartyMode intent.
 @ask.intent('PartyMode')
 def alexa_party_play():
-  print "Request: " + str(request)
   card_title = render_template('party_mode').encode("utf-8")
   print card_title
 
@@ -988,7 +957,6 @@ def alexa_party_play():
 # Handle the AMAZON.StartOverIntent intent.
 @ask.intent('AMAZON.StartOverIntent')
 def alexa_start_over():
-  print "Request: " + str(request)
   card_title = render_template('playing_same').encode("utf-8")
   print card_title
 
@@ -1002,7 +970,6 @@ def alexa_start_over():
 # Handle the AMAZON.NextIntent intent.
 @ask.intent('AMAZON.NextIntent')
 def alexa_next():
-  print "Request: " + str(request)
   card_title = render_template('playing_next').encode("utf-8")
   print card_title
 
@@ -1016,7 +983,6 @@ def alexa_next():
 # Handle the AMAZON.PreviousIntent intent.
 @ask.intent('AMAZON.PreviousIntent')
 def alexa_prev():
-  print "Request: " + str(request)
   card_title = render_template('playing_previous').encode("utf-8")
   print card_title
 
@@ -1030,7 +996,6 @@ def alexa_prev():
 # Handle the AMAZON.ShuffleOnIntent intent.
 @ask.intent('AMAZON.ShuffleOnIntent')
 def alexa_shuffle_on():
-  print "Request: " + str(request)
   card_title = render_template('shuffle_enable').encode("utf-8")
   print card_title
 
@@ -1044,7 +1009,6 @@ def alexa_shuffle_on():
 # Handle the AMAZON.ShuffleOffIntent intent.
 @ask.intent('AMAZON.ShuffleOffIntent')
 def alexa_shuffle_off():
-  print "Request: " + str(request)
   card_title = render_template('shuffle_disable').encode("utf-8")
   print card_title
 
@@ -1058,7 +1022,6 @@ def alexa_shuffle_off():
 # Handle the AMAZON.LoopOnIntent intent.
 @ask.intent('AMAZON.LoopOnIntent')
 def alexa_loop_on():
-  print "Request: " + str(request)
   card_title = render_template('loop_enable').encode("utf-8")
   print card_title
 
@@ -1080,7 +1043,6 @@ def alexa_loop_on():
 # Handle the AMAZON.LoopOffIntent intent.
 @ask.intent('AMAZON.LoopOffIntent')
 def alexa_loop_off():
-  print "Request: " + str(request)
   card_title = render_template('loop_disable').encode("utf-8")
   print card_title
 
@@ -1094,7 +1056,6 @@ def alexa_loop_off():
 # Handle the Fullscreen intent.
 @ask.intent('Fullscreen')
 def alexa_fullscreen():
-  print "Request: " + str(request)
   card_title = render_template('toggle_fullscreen').encode("utf-8")
   print card_title
 
@@ -1108,7 +1069,6 @@ def alexa_fullscreen():
 # Handle the StereoscopicMode intent.
 @ask.intent('StereoscopicMode')
 def alexa_stereoscopic_mode():
-  print "Request: " + str(request)
   card_title = render_template('toggle_stereoscopic_mode').encode("utf-8")
   print card_title
 
@@ -1122,7 +1082,6 @@ def alexa_stereoscopic_mode():
 # Handle the AudioPassthrough intent.
 @ask.intent('AudioPassthrough')
 def alexa_audio_passthrough():
-  print "Request: " + str(request)
   card_title = render_template('toggle_audio_passthrough').encode("utf-8")
   print card_title
 
@@ -1136,7 +1095,6 @@ def alexa_audio_passthrough():
 # Handle the Mute intent.
 @ask.intent('Mute')
 def alexa_mute():
-  print "Request: " + str(request)
   card_title = render_template('mute_unmute').encode("utf-8")
   print card_title
 
@@ -1150,7 +1108,6 @@ def alexa_mute():
 # Handle the VolumeUp intent.
 @ask.intent('VolumeUp')
 def alexa_volume_up():
-  print "Request: " + str(request)
   card_title = render_template('volume_up').encode("utf-8")
   print card_title
 
@@ -1164,7 +1121,6 @@ def alexa_volume_up():
 # Handle the VolumeDown intent.
 @ask.intent('VolumeDown')
 def alexa_volume_down():
-  print "Request: " + str(request)
   card_title = render_template('volume_down').encode("utf-8")
   print card_title
 
@@ -1178,7 +1134,6 @@ def alexa_volume_down():
 # Handle the VolumeSet intent.
 @ask.intent('VolumeSet')
 def alexa_volume_set(Volume):
-  print "Request: " + str(request)
   card_title = render_template('adjusting_volume').encode("utf-8")
   print card_title
 
@@ -1192,7 +1147,6 @@ def alexa_volume_set(Volume):
 # Handle the VolumeSetPct intent.
 @ask.intent('VolumeSetPct')
 def alexa_volume_set_pct(Volume):
-  print "Request: " + str(request)
   card_title = render_template('adjusting_volume').encode("utf-8")
   print card_title
 
@@ -1206,7 +1160,6 @@ def alexa_volume_set_pct(Volume):
 # Handle the SubtitlesOn intent.
 @ask.intent('SubtitlesOn')
 def alexa_subtitles_on():
-  print "Request: " + str(request)
   card_title = render_template('subtitles_enable').encode("utf-8")
   print card_title
 
@@ -1220,7 +1173,6 @@ def alexa_subtitles_on():
 # Handle the SubtitlesOff intent.
 @ask.intent('SubtitlesOff')
 def alexa_subtitles_off():
-  print "Request: " + str(request)
   card_title = render_template('subtitles_disable').encode("utf-8")
   print card_title
 
@@ -1234,7 +1186,6 @@ def alexa_subtitles_off():
 # Handle the SubtitlesNext intent.
 @ask.intent('SubtitlesNext')
 def alexa_subtitles_next():
-  print "Request: " + str(request)
   card_title = render_template('subtitles_next').encode("utf-8")
   print card_title
 
@@ -1248,7 +1199,6 @@ def alexa_subtitles_next():
 # Handle the SubtitlesPrevious intent.
 @ask.intent('SubtitlesPrevious')
 def alexa_subtitles_previous():
-  print "Request: " + str(request)
   card_title = render_template('subtitles_previous').encode("utf-8")
   print card_title
 
@@ -1262,7 +1212,6 @@ def alexa_subtitles_previous():
 # Handle the SubtitlesDownload intent.
 @ask.intent('SubtitlesDownload')
 def alexa_subtitles_download():
-  print "Request: " + str(request)
   card_title = render_template('subtitles_download').encode("utf-8")
   print card_title
 
@@ -1274,7 +1223,6 @@ def alexa_subtitles_download():
 # Handle the AudioStreamNext intent.
 @ask.intent('AudioStreamNext')
 def alexa_audiostream_next():
-  print "Request: " + str(request)
   card_title = render_template('audio_stream_next').encode("utf-8")
   print card_title
 
@@ -1288,7 +1236,6 @@ def alexa_audiostream_next():
 # Handle the AudioStreamPrevious intent.
 @ask.intent('AudioStreamPrevious')
 def alexa_audiostream_previous():
-  print "Request: " + str(request)
   card_title = render_template('audio_stream_previous').encode("utf-8")
   print card_title
 
@@ -1302,7 +1249,6 @@ def alexa_audiostream_previous():
 # Handle the PlayerMoveUp intent.
 @ask.intent('PlayerMoveUp')
 def alexa_player_move_up():
-  print "Request: " + str(request)
   card_title = render_template('player_move_up').encode("utf-8")
   print card_title
 
@@ -1315,7 +1261,6 @@ def alexa_player_move_up():
 # Handle the PlayerMoveDown intent.
 @ask.intent('PlayerMoveDown')
 def alexa_player_move_down():
-  print "Request: " + str(request)
   card_title = render_template('player_move_down').encode("utf-8")
   print card_title
 
@@ -1328,7 +1273,6 @@ def alexa_player_move_down():
 # Handle the PlayerMoveLeft intent.
 @ask.intent('PlayerMoveLeft')
 def alexa_player_move_left():
-  print "Request: " + str(request)
   card_title = render_template('player_move_left').encode("utf-8")
   print card_title
 
@@ -1341,7 +1285,6 @@ def alexa_player_move_left():
 # Handle the PlayerMoveRight intent.
 @ask.intent('PlayerMoveRight')
 def alexa_player_move_right():
-  print "Request: " + str(request)
   card_title = render_template('player_move_right').encode("utf-8")
   print card_title
 
@@ -1354,7 +1297,6 @@ def alexa_player_move_right():
 # Handle the PlayerRotateClockwise intent.
 @ask.intent('PlayerRotateClockwise')
 def alexa_player_rotate_clockwise():
-  print "Request: " + str(request)
   card_title = render_template('player_rotate').encode("utf-8")
   print card_title
 
@@ -1367,7 +1309,6 @@ def alexa_player_rotate_clockwise():
 # Handle the PlayerRotateCounterClockwise intent.
 @ask.intent('PlayerRotateCounterClockwise')
 def alexa_player_rotate_counterclockwise():
-  print "Request: " + str(request)
   card_title = render_template('player_rotate_cc').encode("utf-8")
   print card_title
 
@@ -1380,7 +1321,6 @@ def alexa_player_rotate_counterclockwise():
 # Handle the PlayerZoomHold intent.
 @ask.intent('PlayerZoomHold')
 def alexa_player_zoom_hold():
-  print "Request: " + str(request)
   card_title = render_template('player_zoom_hold').encode("utf-8")
   print card_title
 
@@ -1391,7 +1331,6 @@ def alexa_player_zoom_hold():
 # Handle the PlayerZoomIn intent.
 @ask.intent('PlayerZoomIn')
 def alexa_player_zoom_in():
-  print "Request: " + str(request)
   card_title = render_template('player_zoom_in').encode("utf-8")
   print card_title
 
@@ -1404,7 +1343,6 @@ def alexa_player_zoom_in():
 # Handle the PlayerZoomInMoveUp intent.
 @ask.intent('PlayerZoomInMoveUp')
 def alexa_player_zoom_in_move_up():
-  print "Request: " + str(request)
   card_title = render_template('player_zoom_in_up').encode("utf-8")
   print card_title
 
@@ -1418,7 +1356,6 @@ def alexa_player_zoom_in_move_up():
 # Handle the PlayerZoomInMoveDown intent.
 @ask.intent('PlayerZoomInMoveDown')
 def alexa_player_zoom_in_move_down():
-  print "Request: " + str(request)
   card_title = render_template('player_zoom_in_down').encode("utf-8")
   print card_title
 
@@ -1432,7 +1369,6 @@ def alexa_player_zoom_in_move_down():
 # Handle the PlayerZoomInMoveLeft intent.
 @ask.intent('PlayerZoomInMoveLeft')
 def alexa_player_zoom_in_move_left():
-  print "Request: " + str(request)
   card_title = render_template('player_zoom_in_left').encode("utf-8")
   print card_title
 
@@ -1446,7 +1382,6 @@ def alexa_player_zoom_in_move_left():
 # Handle the PlayerZoomInMoveRight intent.
 @ask.intent('PlayerZoomInMoveRight')
 def alexa_player_zoom_in_move_right():
-  print "Request: " + str(request)
   card_title = render_template('player_zoom_in_right').encode("utf-8")
   print card_title
 
@@ -1460,7 +1395,6 @@ def alexa_player_zoom_in_move_right():
 # Handle the PlayerZoomOut intent.
 @ask.intent('PlayerZoomOut')
 def alexa_player_zoom_out():
-  print "Request: " + str(request)
   card_title = render_template('player_zoom_out').encode("utf-8")
   print card_title
 
@@ -1473,7 +1407,6 @@ def alexa_player_zoom_out():
 # Handle the PlayerZoomOutMoveUp intent.
 @ask.intent('PlayerZoomOutMoveUp')
 def alexa_player_zoom_out_move_up():
-  print "Request: " + str(request)
   card_title = render_template('player_zoom_out_up').encode("utf-8")
   print card_title
 
@@ -1487,7 +1420,6 @@ def alexa_player_zoom_out_move_up():
 # Handle the PlayerZoomOutMoveDown intent.
 @ask.intent('PlayerZoomOutMoveDown')
 def alexa_player_zoom_out_move_down():
-  print "Request: " + str(request)
   card_title = render_template('player_zoom_out_down').encode("utf-8")
   print card_title
 
@@ -1501,7 +1433,6 @@ def alexa_player_zoom_out_move_down():
 # Handle the PlayerZoomOutMoveLeft intent.
 @ask.intent('PlayerZoomOutMoveLeft')
 def alexa_player_zoom_out_move_left():
-  print "Request: " + str(request)
   card_title = render_template('player_zoom_out_left').encode("utf-8")
   print card_title
 
@@ -1515,7 +1446,6 @@ def alexa_player_zoom_out_move_left():
 # Handle the PlayerZoomOutMoveRight intent.
 @ask.intent('PlayerZoomOutMoveRight')
 def alexa_player_zoom_out_move_right():
-  print "Request: " + str(request)
   card_title = render_template('player_zoom_out_right').encode("utf-8")
   print card_title
 
@@ -1529,7 +1459,6 @@ def alexa_player_zoom_out_move_right():
 # Handle the PlayerZoomReset intent.
 @ask.intent('PlayerZoomReset')
 def alexa_player_zoom_reset():
-  print "Request: " + str(request)
   card_title = render_template('player_zoom_normal').encode("utf-8")
   print card_title
 
@@ -1542,7 +1471,6 @@ def alexa_player_zoom_reset():
 # Handle the Menu intent.
 @ask.intent('Menu')
 def alexa_context_menu():
-  print "Request: " + str(request)
   print 'Navigate: Context Menu'
 
   kodi = Kodi(config, context)
@@ -1554,7 +1482,6 @@ def alexa_context_menu():
 # Handle the Home intent.
 @ask.intent('Home')
 def alexa_go_home():
-  print "Request: " + str(request)
   print 'Navigate: Home'
 
   kodi = Kodi(config, context)
@@ -1566,7 +1493,6 @@ def alexa_go_home():
 # Handle the Select intent.
 @ask.intent('Select')
 def alexa_select():
-  print "Request: " + str(request)
   print 'Navigate: Select'
 
   kodi = Kodi(config, context)
@@ -1578,7 +1504,6 @@ def alexa_select():
 # Handle the PageUp intent.
 @ask.intent('PageUp')
 def alexa_pageup():
-  print "Request: " + str(request)
   print 'Navigate: Page up'
 
   kodi = Kodi(config, context)
@@ -1590,7 +1515,6 @@ def alexa_pageup():
 # Handle the PageDown intent.
 @ask.intent('PageDown')
 def alexa_pagedown():
-  print "Request: " + str(request)
   print 'Navigate: Page down'
 
   kodi = Kodi(config, context)
@@ -1602,7 +1526,6 @@ def alexa_pagedown():
 # Handle the Left intent.
 @ask.intent('Left')
 def alexa_left():
-  print "Request: " + str(request)
   print 'Navigate: Left'
 
   kodi = Kodi(config, context)
@@ -1614,7 +1537,6 @@ def alexa_left():
 # Handle the Right intent.
 @ask.intent('Right')
 def alexa_right():
-  print "Request: " + str(request)
   print 'Navigate: Right'
 
   kodi = Kodi(config, context)
@@ -1626,7 +1548,6 @@ def alexa_right():
 # Handle the Up intent.
 @ask.intent('Up')
 def alexa_up():
-  print "Request: " + str(request)
   print 'Navigate: Up'
 
   kodi = Kodi(config, context)
@@ -1638,7 +1559,6 @@ def alexa_up():
 # Handle the Down intent.
 @ask.intent('Down')
 def alexa_down():
-  print "Request: " + str(request)
   print 'Navigate: Down'
 
   kodi = Kodi(config, context)
@@ -1650,7 +1570,6 @@ def alexa_down():
 # Handle the Back intent.
 @ask.intent('Back')
 def alexa_back():
-  print "Request: " + str(request)
   print 'Navigate: Back'
 
   kodi = Kodi(config, context)
@@ -1662,7 +1581,6 @@ def alexa_back():
 # Handle the ViewMovies intent.
 @ask.intent('ViewMovies')
 def alexa_show_movies(MovieGenre):
-  print "Request: " + str(request)
   print 'Navigate: Movies'
 
   kodi = Kodi(config, context)
@@ -1679,7 +1597,6 @@ def alexa_show_movies(MovieGenre):
 # Handle the ViewShows intent.
 @ask.intent('ViewShows')
 def alexa_show_shows(ShowGenre):
-  print "Request: " + str(request)
   print 'Navigate: Shows'
 
   kodi = Kodi(config, context)
@@ -1696,7 +1613,6 @@ def alexa_show_shows(ShowGenre):
 # Handle the ViewMusicVideos intent.
 @ask.intent('ViewMusicVideos')
 def alexa_show_music_videos(MusicVideoGenre):
-  print "Request: " + str(request)
   print 'Navigate: MusicVideos'
 
   kodi = Kodi(config, context)
@@ -1713,7 +1629,6 @@ def alexa_show_music_videos(MusicVideoGenre):
 # Handle the ViewMusic intent.
 @ask.intent('ViewMusic')
 def alexa_show_music(MusicGenre):
-  print "Request: " + str(request)
   print 'Navigate: Music'
 
   kodi = Kodi(config, context)
@@ -1730,7 +1645,6 @@ def alexa_show_music(MusicGenre):
 # Handle the ViewArtists intent.
 @ask.intent('ViewArtists')
 def alexa_show_artists():
-  print "Request: " + str(request)
   print 'Navigate: Artists'
 
   kodi = Kodi(config, context)
@@ -1742,7 +1656,6 @@ def alexa_show_artists():
 # Handle the ViewAlbums intent.
 @ask.intent('ViewAlbums')
 def alexa_show_albums():
-  print "Request: " + str(request)
   print 'Navigate: Albums'
 
   kodi = Kodi(config, context)
@@ -1754,7 +1667,6 @@ def alexa_show_albums():
 # Handle the ViewVideoPlaylist intent.
 @ask.intent('ViewVideoPlaylist')
 def alexa_show_video_playlist(VideoPlaylist):
-  print "Request: " + str(request)
   print 'Navigate: Video Playlist'
 
   kodi = Kodi(config, context)
@@ -1768,7 +1680,6 @@ def alexa_show_video_playlist(VideoPlaylist):
 # Handle the ViewMoviePlaylistRecent intent.
 @ask.intent('ViewMoviePlaylistRecent')
 def alexa_show_recent_movies_playlist():
-  print "Request: " + str(request)
   print 'Navigate: Recently Added Movies'
 
   kodi = Kodi(config, context)
@@ -1780,7 +1691,6 @@ def alexa_show_recent_movies_playlist():
 # Handle the ViewEpisodePlaylistRecent intent.
 @ask.intent('ViewEpisodePlaylistRecent')
 def alexa_show_recent_episodes_playlist():
-  print "Request: " + str(request)
   print 'Navigate: Recently Added Episodes'
 
   kodi = Kodi(config, context)
@@ -1792,7 +1702,6 @@ def alexa_show_recent_episodes_playlist():
 # Handle the ViewMusicVideoPlaylistRecent intent.
 @ask.intent('ViewMusicVideoPlaylistRecent')
 def alexa_show_recent_musicvideos_playlist():
-  print "Request: " + str(request)
   print 'Navigate: Recently Added Music Videos'
 
   kodi = Kodi(config, context)
@@ -1804,7 +1713,6 @@ def alexa_show_recent_musicvideos_playlist():
 # Handle the ViewAudioPlaylist intent.
 @ask.intent('ViewAudioPlaylist')
 def alexa_show_audio_playlist(AudioPlaylist):
-  print "Request: " + str(request)
   print 'Navigate: Audio Playlist'
 
   kodi = Kodi(config, context)
@@ -1818,7 +1726,6 @@ def alexa_show_audio_playlist(AudioPlaylist):
 # Handle the ViewAudioPlaylistRecent intent.
 @ask.intent('ViewAudioPlaylistRecent')
 def alexa_show_recent_audio_playlist():
-  print "Request: " + str(request)
   print 'Navigate: Recently Added Albums'
 
   kodi = Kodi(config, context)
@@ -1830,7 +1737,6 @@ def alexa_show_recent_audio_playlist():
 # Handle the ViewPlaylist intent.
 @ask.intent('ViewPlaylist')
 def alexa_show_playlist(VideoPlaylist, AudioPlaylist):
-  print "Request: " + str(request)
   print 'Navigate: Playlist'
 
   heard_search = ''
@@ -1856,7 +1762,6 @@ def alexa_show_playlist(VideoPlaylist, AudioPlaylist):
 # Handle the Shutdown intent.
 @ask.intent('Shutdown')
 def alexa_shutdown():
-  print "Request: " + str(request)
   response_text = render_template('are_you_sure_shutdown').encode("utf-8")
   session.attributes['shutting_down'] = True
   return question(response_text).reprompt(response_text)
@@ -1865,7 +1770,6 @@ def alexa_shutdown():
 # Handle the Reboot intent.
 @ask.intent('Reboot')
 def alexa_reboot():
-  print "Request: " + str(request)
   response_text = render_template('are_you_sure_reboot').encode("utf-8")
   session.attributes['rebooting'] = True
   return question(response_text).reprompt(response_text)
@@ -1874,7 +1778,6 @@ def alexa_reboot():
 # Handle the Hibernate intent.
 @ask.intent('Hibernate')
 def alexa_hibernate():
-  print "Request: " + str(request)
   response_text = render_template('are_you_sure_hibernate').encode("utf-8")
   session.attributes['hibernating'] = True
   return question(response_text).reprompt(response_text)
@@ -1883,7 +1786,6 @@ def alexa_hibernate():
 # Handle the Suspend intent.
 @ask.intent('Suspend')
 def alexa_suspend():
-  print "Request: " + str(request)
   response_text = render_template('are_you_sure_suspend').encode("utf-8")
   session.attributes['suspending'] = True
   return question(response_text).reprompt(response_text)
@@ -1892,7 +1794,6 @@ def alexa_suspend():
 # Handle the EjectMedia intent.
 @ask.intent('EjectMedia')
 def alexa_ejectmedia():
-  print "Request: " + str(request)
   card_title = render_template('ejecting_media').encode("utf-8")
   print card_title
 
@@ -1908,7 +1809,6 @@ def alexa_ejectmedia():
 # Handle the CleanVideo intent.
 @ask.intent('CleanVideo')
 def alexa_clean_video():
-  print "Request: " + str(request)
   card_title = render_template('clean_video').encode("utf-8")
   print card_title
 
@@ -1920,7 +1820,6 @@ def alexa_clean_video():
 # Handle the UpdateVideo intent.
 @ask.intent('UpdateVideo')
 def alexa_update_video():
-  print "Request: " + str(request)
   card_title = render_template('update_video').encode("utf-8")
   print card_title
 
@@ -1932,7 +1831,6 @@ def alexa_update_video():
 # Handle the CleanAudio intent.
 @ask.intent('CleanAudio')
 def alexa_clean_audio():
-  print "Request: " + str(request)
   card_title = render_template('clean_audio').encode("utf-8")
   print card_title
 
@@ -1944,7 +1842,6 @@ def alexa_clean_audio():
 # Handle the UpdateAudio intent.
 @ask.intent('UpdateAudio')
 def alexa_update_audio():
-  print "Request: " + str(request)
   card_title = render_template('update_audio').encode("utf-8")
   print card_title
 
@@ -1956,7 +1853,6 @@ def alexa_update_audio():
 # Handle the AddonExecute intent.
 @ask.intent('AddonExecute')
 def alexa_addon_execute(Addon):
-  print "Request: " + str(request)
   card_title = render_template('open_addon').encode("utf-8")
   print card_title
 
@@ -1975,7 +1871,6 @@ def alexa_addon_execute(Addon):
 # Handle the AddonGlobalSearch intent.
 @ask.intent('AddonGlobalSearch')
 def alexa_addon_globalsearch(Movie, Show, Artist, Album, Song):
-  print "Request: " + str(request)
   card_title = render_template('search').encode("utf-8")
   print card_title
   heard_search = ''
@@ -2011,7 +1906,6 @@ def alexa_addon_globalsearch(Movie, Show, Artist, Album, Song):
 # Defaults to Movies, but will fuzzy match across the library if none found.
 @ask.intent('WatchVideo')
 def alexa_watch_video(Movie):
-  print "Request: " + str(request)
   print "Watch a video..."
   return alexa_play_media(Movie=Movie, content=['video'])
 
@@ -2019,7 +1913,6 @@ def alexa_watch_video(Movie):
 # Handle the WatchRandomMovie intent.
 @ask.intent('WatchRandomMovie')
 def alexa_watch_random_movie(MovieGenre):
-  print "Request: " + str(request)
   kodi = Kodi(config, context)
   genre = []
   # If a genre has been specified, match the genre for use in selecting a random film
@@ -2062,7 +1955,6 @@ def alexa_watch_random_movie(MovieGenre):
 # Handle the WatchMovie intent.
 @ask.intent('WatchMovie')
 def alexa_watch_movie(Movie):
-  print "Request: " + str(request)
   card_title = render_template('playing_movie').encode("utf-8")
   print card_title
 
@@ -2085,7 +1977,6 @@ def alexa_watch_movie(Movie):
 # Handle the WatchMovieTrailer intent.
 @ask.intent('WatchMovieTrailer')
 def alexa_watch_movie_trailer(Movie):
-  print "Request: " + str(request)
   card_title = render_template('playing_movie_trailer').encode("utf-8")
   print card_title
 
@@ -2119,7 +2010,6 @@ def alexa_watch_movie_trailer(Movie):
 # Handle the ShuffleShow intent.
 @ask.intent('ShuffleShow')
 def alexa_shuffle_show(Show):
-  print "Request: " + str(request)
   card_title = render_template('shuffling_episodes', heard_show=Show).encode("utf-8")
   print card_title
 
@@ -2145,7 +2035,6 @@ def alexa_shuffle_show(Show):
 # Handle the WatchRandomEpisode intent.
 @ask.intent('WatchRandomEpisode')
 def alexa_watch_random_episode(Show):
-  print "Request: " + str(request)
   card_title = render_template('playing_random_episode', heard_show=Show).encode("utf-8")
   print card_title
 
@@ -2173,7 +2062,6 @@ def alexa_watch_random_episode(Show):
 # Handle the WatchRandomShow intent.
 @ask.intent('WatchRandomShow')
 def alexa_watch_random_show(ShowGenre):
-  print "Request: " + str(request)
   kodi = Kodi(config, context)
   genre = []
   # If a genre has been specified, match the genre for use in selecting a random show
@@ -2211,7 +2099,6 @@ def alexa_watch_random_show(ShowGenre):
 # Handle the WatchEpisode intent.
 @ask.intent('WatchEpisode')
 def alexa_watch_episode(Show, Season, Episode):
-  print "Request: " + str(request)
   card_title = render_template('playing_an_episode', heard_show=Show).encode("utf-8")
   print card_title
 
@@ -2240,7 +2127,6 @@ def alexa_watch_episode(Show, Season, Episode):
 # Handle the WatchNextEpisode intent.
 @ask.intent('WatchNextEpisode')
 def alexa_watch_next_episode(Show):
-  print "Request: " + str(request)
   card_title = render_template('playing_next_unwatched_episode', heard_show=Show).encode("utf-8")
   print card_title
 
@@ -2270,7 +2156,6 @@ def alexa_watch_next_episode(Show):
 # Handle the WatchLatestEpisode intent.
 @ask.intent('WatchLatestEpisode')
 def alexa_watch_newest_episode(Show):
-  print "Request: " + str(request)
   card_title = render_template('playing_newest_episode', heard_show=Show).encode("utf-8")
   print card_title
 
@@ -2301,7 +2186,6 @@ def alexa_watch_newest_episode(Show):
 # Handle the WatchLastShow intent.
 @ask.intent('WatchLastShow')
 def alexa_watch_last_show():
-  print "Request: " + str(request)
   card_title = render_template('last_unwatched').encode("utf-8")
   print card_title
 
@@ -2334,7 +2218,6 @@ def alexa_watch_last_show():
 # Handle the WatchRandomMusicVideo intent.
 @ask.intent('WatchRandomMusicVideo')
 def alexa_watch_random_music_video(MusicVideoGenre, Artist):
-  print "Request: " + str(request)
   if MusicVideoGenre and Artist:
     card_title = render_template('playing_random_musicvideo_genre_artist', genre=MusicVideoGenre, artist=Artist).encode("utf-8")
   if MusicVideoGenre:
@@ -2395,7 +2278,6 @@ def alexa_watch_random_music_video(MusicVideoGenre, Artist):
 # Handle the WatchMusicVideo intent.
 @ask.intent('WatchMusicVideo')
 def alexa_watch_music_video(MusicVideo, Artist):
-  print "Request: " + str(request)
   card_title = render_template('playing_musicvideo_card').encode("utf-8")
   print card_title
 
@@ -2416,7 +2298,6 @@ def alexa_watch_music_video(MusicVideo, Artist):
 # Handle the ShuffleMusicVideos intent.
 @ask.intent('ShuffleMusicVideos')
 def alexa_shuffle_music_videos(MusicVideoGenre, Artist):
-  print "Request: " + str(request)
   if MusicVideoGenre and Artist:
     card_title = render_template('shuffling_musicvideos_genre_artist', genre=MusicVideoGenre, artist=Artist).encode("utf-8")
   elif MusicVideoGenre:
@@ -2488,7 +2369,6 @@ def alexa_shuffle_music_videos(MusicVideoGenre, Artist):
 # Handle the WatchVideoPlaylist intent.
 @ask.intent('WatchVideoPlaylist')
 def alexa_watch_video_playlist(VideoPlaylist, shuffle=False):
-  print "Request: " + str(request)
   if shuffle:
     op = render_template('shuffling_empty').encode("utf-8")
   else:
@@ -2523,14 +2403,12 @@ def alexa_watch_video_playlist(VideoPlaylist, shuffle=False):
 # Handle the ShuffleVideoPlaylist intent.
 @ask.intent('ShuffleVideoPlaylist')
 def alexa_shuffle_video_playlist(VideoPlaylist):
-  print "Request: " + str(request)
   return alexa_watch_video_playlist(VideoPlaylist, True)
 
 
 # Handle the ShufflePlaylist intent.
 @ask.intent('ShufflePlaylist')
 def alexa_shuffle_playlist(VideoPlaylist, AudioPlaylist):
-  print "Request: " + str(request)
   heard_search = ''
   if VideoPlaylist:
     heard_search = VideoPlaylist
@@ -2577,7 +2455,6 @@ def alexa_shuffle_playlist(VideoPlaylist, AudioPlaylist):
 
 
 def alexa_recommend_item(kodi, item, generic_type=None):
-  print "Request: " + str(request)
   response_text = render_template('no_recommendations').encode("utf-8")
 
   if item[0] == 'movie':
@@ -2612,7 +2489,6 @@ def alexa_recommend_item(kodi, item, generic_type=None):
 # Handle the RecommendVideo intent.
 @ask.intent('RecommendVideo')
 def alexa_recommend_video():
-  print "Request: " + str(request)
   print "Recommending video"
 
   kodi = Kodi(config, context)
@@ -2623,7 +2499,6 @@ def alexa_recommend_video():
 # Handle the RecommendAudio intent.
 @ask.intent('RecommendAudio')
 def alexa_recommend_audio():
-  print "Request: " + str(request)
   print "Recommending audio"
 
   kodi = Kodi(config, context)
@@ -2634,7 +2509,6 @@ def alexa_recommend_audio():
 # Handle the RecommendMovie intent.
 @ask.intent('RecommendMovie')
 def alexa_recommend_movie(MovieGenre):
-  print "Request: " + str(request)
   print "Recommending movie"
 
   kodi = Kodi(config, context)
@@ -2650,7 +2524,6 @@ def alexa_recommend_movie(MovieGenre):
 # Handle the RecommendShow intent.
 @ask.intent('RecommendShow')
 def alexa_recommend_show(ShowGenre):
-  print "Request: " + str(request)
   print "Recommending show"
 
   kodi = Kodi(config, context)
@@ -2666,7 +2539,6 @@ def alexa_recommend_show(ShowGenre):
 # Handle the RecommendEpisode intent.
 @ask.intent('RecommendEpisode')
 def alexa_recommend_episode(ShowGenre):
-  print "Request: " + str(request)
   print "Recommending episode"
 
   kodi = Kodi(config, context)
@@ -2682,7 +2554,6 @@ def alexa_recommend_episode(ShowGenre):
 # Handle the RecommendMusicVideo intent.
 @ask.intent('RecommendMusicVideo')
 def alexa_recommend_music_video(MusicVideoGenre):
-  print "Request: " + str(request)
   print "Recommending music video"
 
   kodi = Kodi(config, context)
@@ -2698,7 +2569,6 @@ def alexa_recommend_music_video(MusicVideoGenre):
 # Handle the RecommendArtist intent.
 @ask.intent('RecommendArtist')
 def alexa_recommend_artist(MusicGenre):
-  print "Request: " + str(request)
   print "Recommending artist"
 
   kodi = Kodi(config, context)
@@ -2714,7 +2584,6 @@ def alexa_recommend_artist(MusicGenre):
 # Handle the RecommendAlbum intent.
 @ask.intent('RecommendAlbum')
 def alexa_recommend_album(MusicGenre):
-  print "Request: " + str(request)
   print "Recommending album"
 
   kodi = Kodi(config, context)
@@ -2730,7 +2599,6 @@ def alexa_recommend_album(MusicGenre):
 # Handle the RecommendSong intent.
 @ask.intent('RecommendSong')
 def alexa_recommend_song(MusicGenre):
-  print "Request: " + str(request)
   print "Recommending song"
 
   kodi = Kodi(config, context)
@@ -2746,7 +2614,6 @@ def alexa_recommend_song(MusicGenre):
 # Handle the WhatNewAlbums intent.
 @ask.intent('WhatNewAlbums')
 def alexa_what_new_albums():
-  print "Request: " + str(request)
   card_title = render_template('newly_added_albums').encode("utf-8")
   print card_title
 
@@ -2782,7 +2649,6 @@ def alexa_what_new_albums():
 # Handle the WhatNewMovies intent.
 @ask.intent('WhatNewMovies')
 def alexa_what_new_movies(MovieGenre):
-  print "Request: " + str(request)
   kodi = Kodi(config, context)
 
   new_movies = None
@@ -2828,7 +2694,6 @@ def alexa_what_new_movies(MovieGenre):
 # Handle the WhatNewShows intent.
 @ask.intent('WhatNewShows')
 def alexa_what_new_episodes():
-  print "Request: " + str(request)
   card_title = render_template('newly_added_shows').encode("utf-8")
   print card_title + " " + str(request)
 
@@ -2876,7 +2741,6 @@ def alexa_what_new_episodes():
 # Handle the WhatNewEpisodes intent.
 @ask.intent('WhatNewEpisodes')
 def alexa_what_new_episodes(Show):
-  print "Request: " + str(request)
   card_title = render_template('looking_for_show', heard_show=Show).encode("utf-8")
   print card_title
 
@@ -2904,7 +2768,6 @@ def alexa_what_new_episodes(Show):
 # Handle the WhatAlbums intent.
 @ask.intent('WhatAlbums')
 def alexa_what_albums(Artist):
-  print "Request: " + str(request)
   card_title = render_template('albums_by', heard_artist=Artist).encode("utf-8")
   print card_title
 
@@ -2935,7 +2798,6 @@ def alexa_what_albums(Artist):
 
 
 def get_help_samples(limit=7):
-  print "Request: " + str(request)
   # read example slot values from language-specific file.
   sample_slotvals = {}
   fn = os.path.join(os.path.dirname(__file__), 'sample_slotvals.%s.txt' % (LANGUAGE))
@@ -2991,7 +2853,6 @@ def get_help_samples(limit=7):
 
 @ask.intent('AMAZON.HelpIntent')
 def prepare_help_message():
-  print "Request: " + str(request)
   sample_utterances = get_help_samples()
 
   response_text = render_template('help', example=sample_utterances.popitem()[1]).encode("utf-8")
@@ -3012,7 +2873,6 @@ def prepare_help_message():
 # No intents invoked
 @ask.launch
 def alexa_launch():
-  print "Request: " + str(request)
   sample_utterances = get_help_samples()
 
   response_text = render_template('welcome').encode("utf-8")
