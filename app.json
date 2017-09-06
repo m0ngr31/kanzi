@@ -43,7 +43,7 @@
       "required": false
     },
     "SKILL_APPID": {
-      "description": "Add this to enable verification of requests.",
+      "description": "Add your skill's Application ID here to verify incomming requests are from your copy of the skill.",
       "value": "",
       "required": false
     },
@@ -85,6 +85,11 @@
     "MAX_UNWATCHED_MOVIES": {
       "description": "Maximum number of items to fetch when looking for new movies.",
       "value": "100",
+      "required": false
+    },
+    "SKILL_DEBUG": {
+      "description": "Set to 1 or higher to enable more verbose logging.",
+      "value": "0",
       "required": false
     }
   },
