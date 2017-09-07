@@ -96,7 +96,7 @@ Currently we do not support addressing multiple instances of [Kodi](https://kodi
 ### Setup
 After you've setup an Heroku account, click on this button below to provision a new server. Select a unique name to make upgrades easy.
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://www.heroku.com/deploy/?template=https://github.com/m0ngr31/kodi-alexa)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://www.heroku.com/deploy/?template=https://github.com/m0ngr31/kodi-alexa/tree/heroku-lambda)
 
 Now skip ahead to the [Skill setup section](#skill-setup).
 
