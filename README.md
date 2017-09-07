@@ -51,7 +51,7 @@ Here are some of the features supported by this skill:
 - Eject media
 
 ## Initial Computer Setup
-Unless you are going to host the skill on Heroku, there are a few things in the instructions that you will need to install before you can get started: 
+Unless you are going to host the skill on Heroku, there are a few things in the instructions that you will need to install before you can get started:
 
  - **Python 2.7 (Python 3 will not work)**
  - Git
@@ -127,7 +127,7 @@ After you've done that, run `pip install virtualenv`. This is required for a lat
 Now, clone my repo: `git clone https://github.com/m0ngr31/kodi-alexa.git` and `cd kodi-alexa`. Once you are inside the project directory, you're going to create a new "Virtual environement" and then activate it:
 `virtualenv venv` and `source venv/bin/activate` (if you are on Windows, that's `venv\Scripts\activate.bat` or `venv\Scripts\activate.ps1` for Powershell).
 
-After successful completion, run `pip install -r requirements.txt`, `pip install packaging`, and `pip install zappa`.
+After successful completion, run `pip install -r requirements.txt`, `pip install -r requirements-lambda.txt`.
 
 Before you deploy, you need to create the file `kodi.config` from the [kodi.config.example template](https://raw.githubusercontent.com/m0ngr31/kodi-voice/master/kodi_voice/kodi.config.example) and enter the correct information for: address, port, username, and password. I'll go over the other variables in another section below.
 

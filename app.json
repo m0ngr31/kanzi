@@ -4,7 +4,7 @@
   "repository": "https://github.com/m0ngr31/kodi-alexa",
   "logo": "http://i.imgur.com/BaBCo1t.png",
   "keywords": ["kodi", "alexa", "python", "flask-ask"],
-  "website": "https://github.com/m0ngr31/kodi-alexa",
+  "website": "https://github.com/m0ngr31/kodi-alexa/tree/heroku-lambda",
   "env": {
     "KODI_ADDRESS": {
       "description": "IP address or fully-qualified domain name to talk to Kodi.",
@@ -88,5 +88,10 @@
       "required": false
     }
   },
-  "image": "heroku/python"
+  "image": "heroku/python",
+  "buildpacks": [
+    {
+      "url": "https://github.com/m0ngr31/heroku-buildpack-python"
+    }
+  ]
 }
