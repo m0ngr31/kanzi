@@ -3,7 +3,6 @@ MAINTAINER Marius Boeru <mboeru@gmail.com>
 
 ENV INSTALL_PATH /kodi-alexa
 ENV GUNICORN_LOGLEVEL info
-ENV GUNICORN_WORKERS 2
 ENV CONFIG_DIR /config
 RUN mkdir -p $INSTALL_PATH
 
@@ -18,6 +17,7 @@ ADD entrypoint.sh /
 #install requirements
 RUN apt-get update && apt-get -y install libffi-dev libssl-dev gcc && \
     pip install -r requirements.txt  && \
+    pip install python-Levenshtein && \
     apt-get -y remove gcc && \
     apt-get -y autoremove
 

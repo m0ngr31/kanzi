@@ -10,13 +10,9 @@ if [ ! -f ${CONFIG_DIR}/server.crt ]; then
 fi
 
 if [ ! -L ${INSTALL_PATH}/kodi.config ]; then
-	if [ ! -f ${CONFIG_DIR}/kodi.config ]; then
-		cp ${INSTALL_PATH}/kodi.config.example ${CONFIG_DIR}/kodi.config
-	fi
 	ln -s ${CONFIG_DIR}/kodi.config ${INSTALL_PATH}/kodi.config
 fi
 
 cd ${INSTALL_PATH}
-#gunicorn --certfile ${CONFIG_DIR}/server.crt --keyfile ${CONFIG_DIR}/server.key --threads $GUNICORN_WORKERS --log-level $GUNICORN_LOGLEVEL -b 0.0.0.0:8000 alexa:app
 gunicorn --certfile ${CONFIG_DIR}/server.crt --keyfile ${CONFIG_DIR}/server.key --log-level $GUNICORN_LOGLEVEL -b 0.0.0.0:8000 alexa:app
 
