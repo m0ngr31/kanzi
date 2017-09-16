@@ -233,15 +233,47 @@ address = office-dot
 
 To verify that incoming requests are only allowed from your own copy of the skill, you can set the `skill_id` configuration variable to your own Application ID; e.g., `amzn1.ask.skill.deadbeef-4e4f-ad61-fe42-aee7d2de083d`
 
-# Extra settings for more functionality
+## Extra settings for more functionality
+
+### Set your timezone so Alexa can calculate what time things will end
 
 Setting the `timezone` configuration variable will make it so when you ask how long something has left playing, it'll also tell you when it will end according to your local wall-clock time.
 
-Setting `scheme` to `https` allows you to talk to your [Kodi](https://kodi.tv) box securely, but this requires some work on your end to set up.
+### Use HTTPS for a secure connection
 
-By default, the skill allows very generic queries such as, `play 99 red balloons` or `shuffle the office`.  These very generic commands can be slow however, and may cause timeouts.  If these timeouts bother you, you can direct the skill to provide help playing media more specifically instead when it encounters these kinds of requests, by disabling `deep_search`.
+Kodi doesn't support SSL, this means that the traffic between the Skill and your local network is not secure. If you want a secure connection you have to set this up yourself. There are a number of ways you can do this, Google "https local network" if you want a starting point, but you are your own as we can't support you. [This guide from htpcguides](https://www.htpcguides.com/secure-nginx-reverse-proxy-with-lets-encrypt-on-ubuntu-16-04-lts/) is also very useful 
 
-# Optimising search performance on large libraries (self-host only)
+If you have implemented https in the kodi.config file set `scheme` to `https` to talk to your local using  [Kodi](https://kodi.tv) box securely.
+
+### Disable "Deep search" and be more specific if requests are taking too long
+
+By default, the skill allows very generic commands such as
+
+* _play 99 red balloons_
+* _shuffle the office_
+* _play slippery when wet_
+
+A human would look at that and know that _99 Red Balloons_ is a song, _The Office_ is a TV show (with both US and UK versions) and _Slippery When Wet_ is a bitchin album by Bon Jovi.
+
+Alexa is stupid and doesn't know these things and will go off searching whatever she can trying to find the thing you asked for.
+
+You can help her out by giving her more information to work with, for example:
+
+* _play the song 99 red balloons_
+* _watch a random episode of the office_
+* _play the album slippery when wet_
+
+Being more specific might seem a little tedius, but you should get more accurate results. 
+
+#### Too many timeouts?
+
+If you have a large library this can mean searching through tens of thousands of items before finding a match. Search technology today is very fast, even this little Skill can whip through 40,000 items in a couple of seconds. But the Skill is seperate from your Kodi box, transfering the data from one to the other is the bigger problem.
+
+If you have a slow internet connection (specifically the upload speed) this might cause timeouts and you will hear "the requested skill took too long to respond".
+
+If these timeouts bother you disable `deep_search` which means you have to the state whether it is a movie, show, episode, song, album, artist etc
+
+### Optimising search performance on larger libraries (self-host only)
 
 Matching what Alexa heard with content in your library isn't an exact science, and kodi-alexa uses fuzzy matching to try and help to do this reliably. It's possible if your libary is large that this may be a little slower than you'd like. If this is the case it's possible to improve the performance of the fuzzy matching module by installing the python-Levenshtein library. As it's compiled C you'll need to ensure you have python headers available on your machine and the tools required on your OS to compile the module. Using the Levenshtein module has only been tested when running the skill locally as a WSGI script. If all of the above is applicable to your deployment, you can opt to use this optimisation.
 
@@ -249,6 +281,7 @@ In order to include the optional module add the following line to `requirements.
 
 `python-Levenshtein`
 
+----
 
 # Performing voice commands
 
