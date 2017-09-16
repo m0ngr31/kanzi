@@ -241,9 +241,10 @@ Setting the `timezone` configuration variable will make it so when you ask how l
 
 ### Use HTTPS for a secure connection
 
-Kodi doesn't support SSL, this means that the traffic between the Skill and your local network is not secure. If you want a secure connection you have to set this up yourself. There are a number of ways you can do this, Google "https local network" if you want a starting point, but you are your own as we can't support you. [This guide from htpcguides](https://www.htpcguides.com/secure-nginx-reverse-proxy-with-lets-encrypt-on-ubuntu-16-04-lts/) is also very useful 
+Kodi doesn't support SSL, this means that the traffic between the Skill and your local network is not secure. If you want a secure connection you have to set this up yourself. There are a number of ways you can do this, Google "https local network" if you want a starting point. [This guide from htpcguides](https://www.htpcguides.com/secure-nginx-reverse-proxy-with-lets-encrypt-on-ubuntu-16-04-lts/) is also very useful. But you are your own as we can't support you.
 
-If you have implemented https in the kodi.config file set `scheme` to `https` to talk to your local using  [Kodi](https://kodi.tv) box securely.
+Once you have your own https solution setup and working you need to change the `scheme` from `http` to `https` for each of the Kodi webservers you have added in your `kodi.config` file.
+
 
 ### Disable "Deep search" and be more specific if requests are taking too long
 
