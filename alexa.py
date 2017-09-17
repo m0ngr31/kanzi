@@ -2877,7 +2877,6 @@ def alexa_launch():
   card_title = response_text
   print card_title
 
-
   # All non-playback requests should keep the session open
   session.attributes['queries_keep_open'] = True
 

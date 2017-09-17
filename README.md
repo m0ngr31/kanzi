@@ -76,7 +76,7 @@ Once you get that setup, you'll have to have your own server to handle the reque
 
 - [Heroku](#heroku)
 - [AWS Lambda](#aws-lambda)
-- ~~[Docker](#docker)~~
+- [Docker](#docker)
 
 If you plan on running your own Apache/Nginx server, I'm sure you can figure that out yourself. Skip ahead to the [Skill setup section](#skill-setup). Keep in mind that you will have to generate a self-signed SSL cert (or Let's Encrypt) so that Amazon will allow you to use it.
 
@@ -142,13 +142,50 @@ Now skip ahead to the [Skill setup section](#skill-setup).
 
 ## Docker
 
-The Docker support files have been removed as there are no reports of anyone using it sucessfully. Though there were several reporting they were unable to get it to work:
+### 1. Manually creating the docker image
 
-https://lime-technology.com/forum/index.php?topic=53050.0
-https://forum.libreelec.tv/thread-2135.html
-https://forum.libreelec.tv/thread-1787.html
+```bash
+docker build -t kodi-alexa .
+```
 
-If you are curious or want to create a Docker version, go back to any release before 2.5.
+### 2. Running docker image using env variables
+```bash
+docker run --name=kodi-alexa -d --restart always -v ~/kodi-alexa-config:/config -p 8000:8000 -e "KODI_ADDRESS=192.168.54.14" -e "SKILL_APPID=xxx" -e "KODI_PORT=8080" kodi-alexa
+```
+where 
+ - KODI_ADDRESS is the ip address of the kodi media player
+ - KODI_PORT is the port the Kodi api is listening on
+
+ If you would like docker-compose yaml to create the container:
+```yaml
+   kodi-alexa:
+    container_name: kodi-alexa
+    image: kodi-alexa
+    network_mode: bridge
+    restart: always
+    ports:
+      - 8000:8000/tcp
+    environment:
+      - KODI_ADDRESS=192.168.54.127
+      - KODI_PORT=8080
+      - SKILL_APPID="XXXX"
+      - MAX_UNWATCHED_SHOWS=15
+      - MAX_UNWATCHED_EPISODES=15
+      - MAX_UNWATCHED_MOVIES=15
+    hostname: kodi-alexa
+    volumes:
+      - ~/kodi-alexa-config:/config
+```
+
+ The image autocreates a self signed certificate, so there is no need for you to do anything about that. If you have a valid cetficate just replace the one in the ~/kodi-alexa-config.
+ Any Heroku env variable is also available to add when creating the docker container.
+ If you want the more advanced setup, with kodi.config, just place that file inside ~/kodi-alexa-config directory and restart the container.
+
+ ### 3. Exporting kodi-alexa on the internet so the skill can access it.
+  - basically you will need to map port 443 on your router to your docker server, port 8000, as described. This way the amazon skill can access it directly, and in turn kodi-alexa can then issue a command to you local kodi instance/instances. There is a lot of info on how to do this, just google "port forward *your router model*". You can also get some info here: https://www.howtogeek.com/66214/how-to-forward-ports-on-your-router/
+  - If your IP address changes, then you will most likely need to setup a Dynamic DNS name. More info [here](https://en.wikipedia.org/wiki/Dynamic_DNS). I recommend [noip](https://www.noip.com/free) but any other free DDNS provider should do the job.
+
+
 
 # Skill Setup
 
@@ -187,7 +224,7 @@ If one of your slots is empty, you can just enter the word 'Empty' or something 
 The next tab has info about the server. Enter your Heroku, Lambda, or self-hosted URL here.
 ![3rd tab](http://i.imgur.com/GjFvKYv.png)
 
-The fourth tab is asking about the SSL certificate. If you are using Heroku or Lambda, select the middle option.
+The fourth tab is asking about the SSL certificate. If you are using Heroku, Lambda or Docker, select the middle option.
 
 ![3rd tab](http://i.imgur.com/moGJQrx.png)
 
