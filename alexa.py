@@ -17,7 +17,6 @@ from shutil import copyfile
 from kodi_voice import KodiConfigParser, Kodi
 
 
-
 app = Flask(__name__)
 
 config_file = os.path.join(os.path.dirname(__file__), "kodi.config")
@@ -40,7 +39,6 @@ else:
 
 # Needs to be instanced after app is configured
 ask = Ask(app, "/", None, path=TEMPLATE_FILE)
-
 
 
 # Start of intent methods
@@ -2159,7 +2157,6 @@ def alexa_watch_newest_episode(Show):
   card_title = render_template('playing_newest_episode', heard_show=Show).encode("utf-8")
   print card_title
 
-
   kodi = Kodi(config, context)
   show = kodi.FindTvShow(Show)
   if len(show) > 0:
@@ -2695,7 +2692,7 @@ def alexa_what_new_movies(MovieGenre):
 @ask.intent('WhatNewShows')
 def alexa_what_new_episodes():
   card_title = render_template('newly_added_shows').encode("utf-8")
-  print card_title + " " + str(request)
+  print card_title
 
   # Lists the shows that have had new episodes added to Kodi in the last 5 days
 
