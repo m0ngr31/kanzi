@@ -87,9 +87,9 @@
       "value": "100",
       "required": false
     },
-    "SKILL_DEBUG": {
-      "description": "Set to 1 or higher to enable more verbose logging.",
-      "value": "0",
+    "SKILL_LOGLEVEL": {
+      "description": "Set to CRITICAL, ERROR, WARNING, INFO, or DEBUG.",
+      "value": "INFO",
       "required": false
     }
   },
