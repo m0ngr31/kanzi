@@ -32,7 +32,7 @@
   - [Interaction Model](#interaction-model)
   - [Configuration](#configuration)
   - [SSL Certificate](#ssl-certificate)
-  - [Test and Beyond](#test-and-beyond)
+  - [Testing](#testing)
 - [Additional Validation of Requests](#additional-validation-of-requests)
 - [Extra Settings for More Functionality](#extra-settings-for-more-functionality)
 - [Controlling More Than One Instance of Kodi](#controlling-more-than-one-instance-of-kodi)
@@ -346,9 +346,11 @@ If you are using Heroku or Lambda, select the middle option:
 
 If you are self-hosting, select one of the outer options depending on how you've chosen to generate your certificate.
 
-## Test and Beyond
+## Testing
 
-From here, you can use the simulator to test requests.  There is no need to enter any further information, though.
+Setup is complete at this point.
+
+From here, you can use the simulator or any other Alexa-enabled device to test requests.  Note that the simulator has a few nuances and isn't identical to an actual device, so if a request fails in the simulator, please try it on a real Alexa-enabled device.
 
 If you can't manage to get valid responses at this point, see the [Getting Help](#getting-help) section.
 
