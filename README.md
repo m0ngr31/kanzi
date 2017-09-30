@@ -1,5 +1,48 @@
 # Alexa Integration With Kodi
 
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Contents**
+
+- [About](#about)
+  - [Kodi-Alexa in Action](#kodi-alexa-in-action)
+  - [Supported Commands](#supported-commands)
+  - [Getting Help](#getting-help)
+  - [Upgrading From a Previous Version](#upgrading-from-a-previous-version)
+- [Installation](#installation)
+  - [Initial Computer Setup](#initial-computer-setup)
+  - [Kodi Setup](#kodi-setup)
+    - [Note regarding MySQL and performance](#note-regarding-mysql-and-performance)
+  - [Obtaining Your Internet Address](#obtaining-your-internet-address)
+  - [Router Setup](#router-setup)
+- [Skill Deployment](#skill-deployment)
+  - [Choosing a Deployment Method for the Skill](#choosing-a-deployment-method-for-the-skill)
+  - [Heroku](#heroku)
+    - [Pricing](#pricing)
+    - [Limitations](#limitations)
+    - [Setup](#setup)
+  - [Docker](#docker)
+    - [Setup](#setup-1)
+  - [AWS Lambda](#aws-lambda)
+    - [Pricing](#pricing-1)
+    - [Setup](#setup-2)
+  - [Self Hosting](#self-hosting)
+- [Skill Setup](#skill-setup)
+  - [Skill Information](#skill-information)
+  - [Interaction Model](#interaction-model)
+  - [Configuration](#configuration)
+  - [SSL Certificate](#ssl-certificate)
+  - [Test and Beyond](#test-and-beyond)
+- [Additional Validation of Requests](#additional-validation-of-requests)
+- [Extra Settings for More Functionality](#extra-settings-for-more-functionality)
+- [Controlling More Than One Instance of Kodi](#controlling-more-than-one-instance-of-kodi)
+  - [Getting the device IDs](#getting-the-device-ids)
+- [Developer discussion](#developer-discussion)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
+# About Kodi-Alexa
+
 This is a skill for Amazon Alexa that allows you to control one or more instances of [Kodi](https://kodi.tv) with your voice.
 
 The process of setting up the skill may seem daunting at first, but the reward -- we feel -- is well worth the effort.  If you carefully follow the directions to the tee, you might find it is not as complicated as it seems.
@@ -137,6 +180,8 @@ And so on for each instance of [Kodi](https://kodi.tv) that you wish to control 
 
 For more information on port forwarding, see this [HowToGeek guide](https://www.howtogeek.com/66214/how-to-forward-ports-on-your-router/).
 
+# Skill Deployment
+
 ## Choosing a Deployment Method for the Skill
 
 When you ask an Amazon Alexa skill to do anything, it ultimately contacts another web server which executes code to process your request.  This skill isn't any different, and needs such a server as well.
@@ -150,15 +195,13 @@ You have a few choices, ordered by difficulty:
 
 Do note that while [Heroku](https://heroku.com/) is the easiest to setup, it does lack some features, such as support for multiple installations of [Kodi](https://kodi.tv).  If that is unimportant to you, we definitely recommend that you choose that deployment method.
 
-
-# Skill Deployment
-
 ## Heroku
+
 ### Pricing
 [Heroku](https://heroku.com/) is a great way to get a server running for free, but there is a small limitation with the free tier on Heroku where the 'dyno' will go to sleep after 30 minutes of in-activity. This might cause some commands to timeout, but so far it seems to be the best option for getting up and running as quickly as possibly. To get around this, you can either pay for a "Hobby" server which is only $7/month. If you really don't want to pay, there is a work-a-round where you get enough free hours per month to leave the server running 24/7 if you add your Credit Card to your account. Then you can use something like [Kaffeine](http://kaffeine.herokuapp.com/) to keep it from spinning down.
 
 ### Limitations
-Currently we do not support addressing multiple instances of [Kodi](https://kodi.tv) with [Heroku](https://heroku.com/).  If you wish to control multiple instances of [Kodi](https://kodi.tv), you will need to set up multiple copies of the skill to do so.
+Currently we do not support [addressing multiple instances](#controlling-more-than-one-instance-of-kodi) of [Kodi](https://kodi.tv) with [Heroku](https://heroku.com/).  If you wish to control multiple instances of [Kodi](https://kodi.tv), you will need to set up multiple copies of the skill to do so.
 
 ### Setup
 After you have set up an Heroku account, click on this button below to provision a new server. Select a unique name to make upgrades easy.
