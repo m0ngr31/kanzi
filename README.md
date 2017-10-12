@@ -1,5 +1,7 @@
 # Alexa Integration With Kodi
 
+[![Backers on Open Collective](https://opencollective.com/kodi-alexa/backers/badge.svg)](#backers) [![Sponsors on Open Collective](https://opencollective.com/kodi-alexa/sponsors/badge.svg)](#sponsors)
+
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Contents**
@@ -402,3 +404,33 @@ address = office-dot
 # Developer discussion
 
 If you're interested in chatting with us about the development of the skill, we are on [Slack](https://kodi-alexa-slack.herokuapp.com/).
+
+## Contributors
+
+This project exists thanks to all the people who contribute. [[Contribute]](CONTRIBUTING.md).
+<a href="graphs/contributors"><img src="https://opencollective.com/kodi-alexa/contributors.svg?width=890" /></a>
+
+
+## Backers
+
+Thank you to all our backers! 🙏 [[Become a backer](https://opencollective.com/kodi-alexa#backer)]
+
+<a href="https://opencollective.com/kodi-alexa#backers" target="_blank"><img src="https://opencollective.com/kodi-alexa/backers.svg?width=890"></a>
+
+
+## Sponsors
+
+Support this project by becoming a sponsor. Your logo will show up here with a link to your website. [[Become a sponsor](https://opencollective.com/kodi-alexa#sponsor)]
+
+<a href="https://opencollective.com/kodi-alexa/sponsor/0/website" target="_blank"><img src="https://opencollective.com/kodi-alexa/sponsor/0/avatar.svg"></a>
+<a href="https://opencollective.com/kodi-alexa/sponsor/1/website" target="_blank"><img src="https://opencollective.com/kodi-alexa/sponsor/1/avatar.svg"></a>
+<a href="https://opencollective.com/kodi-alexa/sponsor/2/website" target="_blank"><img src="https://opencollective.com/kodi-alexa/sponsor/2/avatar.svg"></a>
+<a href="https://opencollective.com/kodi-alexa/sponsor/3/website" target="_blank"><img src="https://opencollective.com/kodi-alexa/sponsor/3/avatar.svg"></a>
+<a href="https://opencollective.com/kodi-alexa/sponsor/4/website" target="_blank"><img src="https://opencollective.com/kodi-alexa/sponsor/4/avatar.svg"></a>
+<a href="https://opencollective.com/kodi-alexa/sponsor/5/website" target="_blank"><img src="https://opencollective.com/kodi-alexa/sponsor/5/avatar.svg"></a>
+<a href="https://opencollective.com/kodi-alexa/sponsor/6/website" target="_blank"><img src="https://opencollective.com/kodi-alexa/sponsor/6/avatar.svg"></a>
+<a href="https://opencollective.com/kodi-alexa/sponsor/7/website" target="_blank"><img src="https://opencollective.com/kodi-alexa/sponsor/7/avatar.svg"></a>
+<a href="https://opencollective.com/kodi-alexa/sponsor/8/website" target="_blank"><img src="https://opencollective.com/kodi-alexa/sponsor/8/avatar.svg"></a>
+<a href="https://opencollective.com/kodi-alexa/sponsor/9/website" target="_blank"><img src="https://opencollective.com/kodi-alexa/sponsor/9/avatar.svg"></a>
+
+
