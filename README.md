@@ -503,4 +503,4 @@ cache_bucket = kodi-alexa-4fae019a1f
 
 # Developer Discussion
 
-If you're interested in chatting with us about the development of the skill, we are on [Slack](https://kodi-alexa-slack.herokuapp.com/).
+If you're interested in chatting with us about the development of the skill, we are on [Slack](https://mediacenterio-slack.herokuapp.com/).
