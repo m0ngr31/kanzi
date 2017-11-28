@@ -2,6 +2,12 @@
 ##   Response Templates   ##
 ############################
 
+config_missing: "Could not find all the connection information I need. Please check your kodi.config file"
+
+hosted_config_missing: "Could not find all the connection information I need. Please update your information on https://media-center.io"
+
+not_logged_in: "Please link your account to use this skill"
+
 error_parsing_results: "Error parsing results"
 
 could_not_find: "Could not find {{ heard_name }}"
@@ -192,6 +198,8 @@ nothing_currently_playing: "Kodi isn't playing any music right now."
 ############################
 ##  Card Title Templates  ##
 ############################
+
+card_config_missing: "Invalid configuration"
 
 looking_for_show: "Looking for new episodes of {{ heard_show }}"
 
