@@ -22,7 +22,7 @@ def sort_by_words(l, longest):
   distributed = []
   for i in range(1, longest + 1):
     dl = [s for s in l if len(s.split()) == i]
-    if len(dl) > 0:
+    if dl:
       distributed.append(dl)
   return distributed
 
@@ -56,20 +56,20 @@ def clean_results(resp, cat, key, limit=None):
   if len(cleaned) > limit:
     longest = most_words(cleaned)
     distributed = sort_by_words(cleaned, longest)
-    if len(distributed) > 0:
+    if distributed:
       total = 0
       cleaned = []
       while total < limit:
         for l in distributed:
-          if len(l) > 0:
+          if l:
             total += 1
             cleaned.append(l.pop())
 
   # sort by number of words just for visibility
-  if len(cleaned) > 0:
+  if cleaned:
     longest = most_words(cleaned)
     distributed = sort_by_words(cleaned, longest)
-    if len(distributed) > 0:
+    if distributed:
       cleaned = []
       for dl in distributed:
         cleaned += [l for l in dl]

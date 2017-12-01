@@ -1,3 +1,8 @@
+v2.9.5 (10/19/2017)
+* Add ability to cache responses via Amazon S3 bucket or ownCloud/nextCloud.
+* Update documentation.
+* Add 'loglevel' and 'logsensitive' config options.
+
 v2.9.0 (09/03/2017)
 * Add support for specifying genre in recommendations.
 * Optimize media recommendations.
