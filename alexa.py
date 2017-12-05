@@ -38,8 +38,10 @@ if LOGSENSITIVE:
   requests_log.propagate = True
 
 SKILL_ID = config.get('alexa', 'skill_id')
-if SKILL_ID and SKILL_ID != 'None':
+if SKILL_ID and SKILL_ID != 'None' and not os.getenv('MEDIA_CENTER_SKILL_ID'):
   app.config['ASK_APPLICATION_ID'] = SKILL_ID
+elif os.getenv('MEDIA_CENTER_SKILL_ID'):
+  app.config['ASK_APPLICATION_ID'] = os.getenv('MEDIA_CENTER_SKILL_ID')
 
 LANGUAGE = config.get('global', 'language')
 if LANGUAGE and LANGUAGE != 'None' and LANGUAGE == 'de':

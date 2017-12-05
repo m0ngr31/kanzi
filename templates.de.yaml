@@ -4,7 +4,7 @@
 
 config_missing: "Verbindungsinformationen wurden nicht gefunden. Überprüfen deine Datei kodi.config bitte"
 
-hosted_config_missing: "Verbindungsinformationen wurden nicht gefunden. Aktualisieren deine Informationen bitte zu https://media-center.io"
+hosted_config_missing: "Verbindungsinformationen wurden nicht gefunden. Aktualisieren deine Informationen bitte zu app.media-center.io"
 
 not_logged_in: "Verknüpfe dein Konto bitte, um diese Fertigkeit zu nutzen"
 

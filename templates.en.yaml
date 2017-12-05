@@ -4,7 +4,7 @@
 
 config_missing: "Could not find all the connection information I need. Please check your kodi.config file"
 
-hosted_config_missing: "Could not find all the connection information I need. Please update your information on https://media-center.io"
+hosted_config_missing: "Could not find all the connection information I need. Please update your information on app.media-dash-center.io"
 
 not_logged_in: "Please link your account to use this skill"
 
