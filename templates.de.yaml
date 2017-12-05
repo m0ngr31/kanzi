@@ -2,6 +2,12 @@
 ##   Response Templates   ##
 ############################
 
+config_missing: "Verbindungsinformationen wurden nicht gefunden. Überprüfen deine Datei kodi.config bitte"
+
+hosted_config_missing: "Verbindungsinformationen wurden nicht gefunden. Aktualisieren deine Informationen bitte zu https://media-center.io"
+
+not_logged_in: "Verknüpfe dein Konto bitte, um diese Fertigkeit zu nutzen"
+
 error_parsing_results: "Konnte das nicht verarbeiten"
 
 could_not_find: "Konnte {{ heard_name }} nicht finden"
@@ -192,6 +198,8 @@ nothing_currently_playing: "Es läuft gerade nichts."
 ############################
 ##  Card Title Templates  ##
 ############################
+
+card_config_missing: "Ungültige Konfiguration"
 
 looking_for_show: "Such nach neuen Folgen von {{ heard_show }}"
 
