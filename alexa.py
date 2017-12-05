@@ -606,9 +606,7 @@ def alexa_shuffle_media(kodi, Show=None):
 # across the whole library if neither are found.
 #
 # See find_and_play() for the order of the searches.
-@ask.intent('PlayMedia')
-@preflight_check
-def alexa_play_media(kodi, Movie=None, Artist=None, content=None, shuffle=False):
+def _alexa_play_media(kodi, Movie=None, Artist=None, content=None, shuffle=False):
   if not content:
     content=['video','audio']
 
@@ -636,6 +634,12 @@ def alexa_play_media(kodi, Movie=None, Artist=None, content=None, shuffle=False)
   return statement(response_text).simple_card(card_title, response_text)
 
 
+@ask.intent('PlayMedia')
+@preflight_check
+def alexa_play_media(kodi, Movie=None, Artist=None):
+  return _alexa_play_media(kodi, Movie, Artist)
+
+
 # Handle the ListenToAudio intent.
 #
 # Defaults to Artists, but will fuzzy match across the library if none found.
@@ -643,7 +647,7 @@ def alexa_play_media(kodi, Movie=None, Artist=None, content=None, shuffle=False)
 @preflight_check
 def alexa_listen_audio(kodi, Artist):
   log.info('Listen to audio')
-  return alexa_play_media(Artist=Artist, content=['audio'])
+  return _alexa_play_media(kodi, Artist=Artist, content=['audio'])
 
 
 # Handle the ListenToGenre intent (Shuffles all music of a specific genre).
@@ -717,10 +721,7 @@ def alexa_listen_artist(kodi, Artist, MusicGenre):
   return statement(response_text).simple_card(card_title, response_text)
 
 
-# Handle the ListenToAlbum intent (Play whole album, or whole album by a specific artist).
-@ask.intent('ListenToAlbum')
-@preflight_check
-def alexa_listen_album(kodi, Album, Artist, shuffle=False):
+def _alexa_listen_album(kodi, Album, Artist, shuffle=False):
   if shuffle:
     card_title = render_template('shuffling_album_card').encode('utf-8')
   else:
@@ -764,17 +765,21 @@ def alexa_listen_album(kodi, Album, Artist, shuffle=False):
   return statement(response_text).simple_card(card_title, response_text)
 
 
+# Handle the ListenToAlbum intent (Play whole album, or whole album by a specific artist).
+@ask.intent('ListenToAlbum')
+@preflight_check
+def alexa_listen_album(kodi, Album, Artist):
+  return _alexa_listen_album(kodi, Album, Artist)
+
+
 # Handle the ShuffleAlbum intent (Shuffle whole album, or whole album by a specific artist).
 @ask.intent('ShuffleAlbum')
 @preflight_check
 def alexa_shuffle_album(kodi, Album, Artist):
-  return alexa_listen_album(Album, Artist, True)
+  return _alexa_listen_album(kodi, Album, Artist, True)
 
 
-# Handle the ListenToLatestAlbum intent (Play latest album by a specific artist).
-@ask.intent('ListenToLatestAlbum')
-@preflight_check
-def alexa_listen_latest_album(kodi, Artist, shuffle=False):
+def _alexa_listen_latest_album(kodi, Artist, shuffle=False):
   if shuffle:
     card_title = render_template('shuffling_latest_album_card', heard_artist=Artist).encode('utf-8')
   else:
@@ -802,11 +807,18 @@ def alexa_listen_latest_album(kodi, Artist, shuffle=False):
   return statement(response_text).simple_card(card_title, response_text)
 
 
+# Handle the ListenToLatestAlbum intent (Play latest album by a specific artist).
+@ask.intent('ListenToLatestAlbum')
+@preflight_check
+def alexa_listen_latest_album(kodi, Artist):
+  return _alexa_listen_latest_album(kodi, Artist)
+
+
 # Handle the ShuffleLatestAlbum intent (Shuffle latest album by a specific artist).
 @ask.intent('ShuffleLatestAlbum')
 @preflight_check
 def alexa_shuffle_latest_album(kodi, Artist):
-  return alexa_listen_latest_album(Artist, True)
+  return _alexa_listen_latest_album(kodi, Artist, True)
 
 
 # Handle the ListenToSong intent (Play a song, song by a specific artist,
@@ -925,10 +937,7 @@ def alexa_listen_recently_added_songs(kodi):
   return statement(response_text).simple_card(card_title, response_text)
 
 
-# Handle the ListenToAudioPlaylist intent.
-@ask.intent('ListenToAudioPlaylist')
-@preflight_check
-def alexa_listen_audio_playlist(kodi, AudioPlaylist, shuffle=False):
+def _alexa_listen_audio_playlist(kodi, AudioPlaylist, shuffle=False):
   if shuffle:
     op = render_template('shuffling_empty').encode('utf-8')
   else:
@@ -959,11 +968,18 @@ def alexa_listen_audio_playlist(kodi, AudioPlaylist, shuffle=False):
   return statement(response_text).simple_card(card_title, response_text)
 
 
+# Handle the ListenToAudioPlaylist intent.
+@ask.intent('ListenToAudioPlaylist')
+@preflight_check
+def alexa_listen_audio_playlist(kodi, AudioPlaylist):
+  return _alexa_listen_audio_playlist(kodi, AudioPlaylist)
+
+
 # Handle the ShuffleAudioPlaylist intent.
 @ask.intent('ShuffleAudioPlaylist')
 @preflight_check
 def alexa_shuffle_audio_playlist(kodi, AudioPlaylist):
-  return alexa_listen_audio_playlist(AudioPlaylist, True)
+  return _alexa_listen_audio_playlist(kodi, AudioPlaylist, True)
 
 
 # Handle the PartyMode intent.
@@ -1913,7 +1929,7 @@ def alexa_addon_globalsearch(kodi, Movie, Show, Artist, Album, Song):
 @preflight_check
 def alexa_watch_video(kodi, Movie):
   log.info('Watch a video...')
-  return alexa_play_media(Movie=Movie, content=['video'])
+  return _alexa_play_media(kodi, Movie=Movie, content=['video'])
 
 
 # Handle the WatchRandomMovie intent.
@@ -2035,10 +2051,7 @@ def alexa_shuffle_show(kodi, Show):
   return statement(response_text).simple_card(card_title, response_text)
 
 
-# Handle the WatchRandomEpisode intent.
-@ask.intent('WatchRandomEpisode')
-@preflight_check
-def alexa_watch_random_episode(kodi, Show):
+def _alexa_watch_random_episode(kodi, Show):
   card_title = render_template('playing_random_episode', heard_show=Show).encode('utf-8')
   log.info(card_title)
 
@@ -2061,6 +2074,13 @@ def alexa_watch_random_episode(kodi, Show):
   return statement(response_text).simple_card(card_title, response_text)
 
 
+# Handle the WatchRandomEpisode intent.
+@ask.intent('WatchRandomEpisode')
+@preflight_check
+def alexa_watch_random_episode(kodi, Show):
+  return _alexa_watch_random_episode(kodi, Show)
+
+
 # Handle the WatchRandomShow intent.
 @ask.intent('WatchRandomShow')
 @preflight_check
@@ -2081,7 +2101,7 @@ def alexa_watch_random_show(kodi, ShowGenre):
     shows_array = kodi.GetUnwatchedShows()
   if shows_array:
     random_show = random.choice(shows_array)
-    return alexa_watch_next_episode(random_show['label'])
+    return _alexa_watch_next_episode(kodi, random_show['label'])
   else:
     # Fall back to all shows if no unwatched available
     if genre:
@@ -2091,7 +2111,7 @@ def alexa_watch_random_show(kodi, ShowGenre):
     if 'result' in shows and 'tvshows' in shows['result']:
       shows_array = shows['result']['tvshows']
       random_show = random.choice(shows_array)
-      return alexa_watch_random_episode(random_show['label'])
+      return _alexa_watch_random_episode(kodi, random_show['label'])
 
   response_text = render_template('error_parsing_results').encode('utf-8')
   return statement(response_text).simple_card(card_title, response_text)
@@ -2124,10 +2144,7 @@ def alexa_watch_episode(kodi, Show, Season, Episode):
   return statement(response_text).simple_card(card_title, response_text)
 
 
-# Handle the WatchNextEpisode intent.
-@ask.intent('WatchNextEpisode')
-@preflight_check
-def alexa_watch_next_episode(kodi, Show):
+def _alexa_watch_next_episode(kodi, Show):
   card_title = render_template('playing_next_unwatched_episode', heard_show=Show).encode('utf-8')
   log.info(card_title)
 
@@ -2149,6 +2166,13 @@ def alexa_watch_next_episode(kodi, Show):
     response_text = render_template('could_not_find_show', heard_show=Show).encode('utf-8')
 
   return statement(response_text).simple_card(card_title, response_text)
+
+
+# Handle the WatchNextEpisode intent.
+@ask.intent('WatchNextEpisode')
+@preflight_check
+def alexa_watch_next_episode(kodi, Show):
+  return _alexa_watch_next_episode(kodi, Show)
 
 
 # Handle the WatchLatestEpisode intent.
@@ -2357,10 +2381,7 @@ def alexa_shuffle_music_videos(kodi, MusicVideoGenre, Artist):
   return statement(response_text).simple_card(card_title, response_text)
 
 
-# Handle the WatchVideoPlaylist intent.
-@ask.intent('WatchVideoPlaylist')
-@preflight_check
-def alexa_watch_video_playlist(kodi, VideoPlaylist, shuffle=False):
+def _alexa_watch_video_playlist(kodi, VideoPlaylist, shuffle=False):
   if shuffle:
     op = render_template('shuffling_empty').encode('utf-8')
   else:
@@ -2391,11 +2412,18 @@ def alexa_watch_video_playlist(kodi, VideoPlaylist, shuffle=False):
   return statement(response_text).simple_card(card_title, response_text)
 
 
+# Handle the WatchVideoPlaylist intent.
+@ask.intent('WatchVideoPlaylist')
+@preflight_check
+def alexa_watch_video_playlist(kodi, VideoPlaylist):
+  return _alexa_watch_video_playlist(kodi, VideoPlaylist, False)
+
+
 # Handle the ShuffleVideoPlaylist intent.
 @ask.intent('ShuffleVideoPlaylist')
 @preflight_check
 def alexa_shuffle_video_playlist(kodi, VideoPlaylist):
-  return alexa_watch_video_playlist(VideoPlaylist, True)
+  return _alexa_watch_video_playlist(kodi, VideoPlaylist, True)
 
 
 # Handle the ShufflePlaylist intent.
