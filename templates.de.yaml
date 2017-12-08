@@ -2,13 +2,23 @@
 ##   Response Templates   ##
 ############################
 
+config_missing: "Verbindungsinformationen wurden nicht gefunden. Überprüfen deine Datei kodi.config bitte"
+
+hosted_config_missing: "Verbindungsinformationen wurden nicht gefunden. Aktualisieren deine Informationen bitte zu app.media-center.io"
+
+not_logged_in: "Verknüpfe dein Konto bitte, um diese Fertigkeit zu nutzen"
+
 error_parsing_results: "Konnte das nicht verarbeiten"
 
 could_not_find: "Konnte {{ heard_name }} nicht finden"
 
 could_not_find_generic: "Konnte diese Formulierung nicht finden"
 
+could_not_find_genre: "Konnte keine {{ genre_name }} Musik finden"
+
 could_not_find_artist: "Konnte keine Musik von {{ artist_name }} finden"
+
+could_not_find_genre_artist: "Konnte keine {{ genre_name }} Musik von {{ artist_name }} finden"
 
 could_not_find_album: "Konnte das Album {{ album_name }} nicht finden"
 
@@ -34,6 +44,16 @@ could_not_find_show: "Konnte die Serie {{ heard_show }} nicht finden"
 
 could_not_find_episode_show: "Konnte Staffel {{ season }} Folge {{ episode }} von {{ show_name }} nicht finden"
 
+could_not_find_musicvideo: "Konnte kein Musikvideo mit dem Namen {{ heard_musicvideo }} finden"
+
+could_not_find_musicvideo_artist: "Konnte kein Musikvideo mit dem Titel {{ heard_musicvideo }} von {{ heard_artist }} finden"
+
+could_not_find_musicvideos_genre: "Konnte keine {{ genre_name }} Musikvideos finden"
+
+could_not_find_musicvideos_artist: "Konnte keine Musikvideos von {{ artist_name }} finden"
+
+could_not_find_musicvideos_genre_artist: "Konnte keine {{ genre_name }} Musikvideos von {{ artist_name }} finden"
+
 no_recommendations: "Es tut mir leid, aber es gibt nichts zu empfehlen."
 
 recommend_movie: "Wie wäre es mit dem Film {{ movie_name }}?"
@@ -58,6 +78,10 @@ opening: "Öffne {{ heard_name }}"
 
 playing: "Spiele {{ heard_name }}"
 
+playing_genre: "Spiele {{ genre_name }} Musik"
+
+playing_genre_artist: "Spiele {{ genre_name }} Musik von {{ artist_name }}"
+
 playing_album: "Spiele das Album {{ album_name }}"
 
 playing_album_artist: "Spiele das Album {{ album_name }} von {{ artist }}"
@@ -74,7 +98,7 @@ playing_playlist_video: "{{ action }} Video Playlist {{ playlist_name }}"
 
 playing_party: "Starte Party Play"
 
-playing_genre: "Spiele den {{ genre }} Film {{ movie_name }}"
+playing_genre_movie: "Spiele den {{ genre_name }} Film {{ movie_name }}"
 
 playing_action: "{{ action }} {{ movie_name }}"
 
@@ -83,6 +107,8 @@ playing_trailer: "Spiele Trailer von {{ heard_name }}"
 playing_episode_number: "Spiele die Staffel {{ season }} Folge {{ episode }} von {{ show_name }}"
 
 playing_action_episode_number: "{{ action }} Staffel {{ season }} Folge {{ episode }} von {{ show_name }}"
+
+playing_musicvideo: "Spiele das Musikvideo {{ musicvideo_name }} von {{ artist_name }}"
 
 playing_empty: "Spiele"
 
@@ -142,7 +168,15 @@ you_have_episode_list: "Es gibt neue Folgen für {{ items }}"
 
 volume_set: "Lautstärke auf {{ num }} gestellt"
 
-help: "Du kannst mich fragen ob es neue Serien gibt, einen Film, Serie oder Sänger zu spielen, oder die Wiedergabe von Medien zu bedienen"
+help: "Du kannst mich fragen, ob es neue Serien gibt, mich bitten einen Film, eine Serie oder die Musik eines Interpreten abzuspielen oder die Wiedergabe von Medien zu steuern und vieles mehr. Zum Beispiel {{ example }}. Ich habe dir weitere Beispiele an deine Alexa App geschickt."
+
+help_short: "Was möchtest du tun? Probiere etwas wie {{ example }}."
+
+help_text: "Kodi-Alexa ermöglicht es dir eine oder mehrere Kodi Installtionen mit deiner Stimme zu steuern. Hier sind einige Beispiele, die du sagen kannst:\n
+\xa0\n
+{{ example }}
+\xa0\n
+Für eine komplette Liste der unterstützten Kommandos, lese bitte die README Datei auf Github (https://github.com/m0ngr31/kodi-alexa/README.md)."
 
 help_play: "Spezifiziere bitte den Medientyp mit dem Wiedergabebefehl, so wie Spiele den Film Ghost Busters"
 
@@ -156,8 +190,6 @@ are_you_sure_hibernate: "Bist du dir sicher, dass das System in den Hibernate ge
 
 are_you_sure_suspend: "Bist du dir sicher, dass das System in den Suspend gehen soll?"
 
-what_to_do: "Was möchtest Du tun?"
-
 welcome: "Willkommen zum Kodi Skill"
 
 nothing_currently_playing: "Es läuft gerade nichts."
@@ -166,6 +198,8 @@ nothing_currently_playing: "Es läuft gerade nichts."
 ############################
 ##  Card Title Templates  ##
 ############################
+
+card_config_missing: "Ungültige Konfiguration"
 
 looking_for_show: "Such nach neuen Folgen von {{ heard_show }}"
 
@@ -186,6 +220,8 @@ big_step_forward: "einen großen Schritt vorwärts"
 big_step_backward: "einen großen Schritt zurück"
 
 listen_artist: "Spiele Musik von {{ heard_artist }}"
+
+listen_artist_genre: "Spiele {{ heard_genre }} Musik von {{ heard_artist }}"
 
 newly_added_shows: "Neu hinzugefügte Serien"
 
@@ -273,6 +309,10 @@ subtitles_disable: "Untertitel ausschalten"
 
 subtitles_enable: "Untertitel einschalten"
 
+subtitles_download: "Herunterladen von Untertiteln"
+
+toggle_audio_passthrough: "Schalte Audio Passthrough um"
+
 adjusting_volume: "Lautstärke anpassen"
 
 volume_down: "Lautstärke verringern"
@@ -282,6 +322,8 @@ volume_up: "Lautstärke erhöhen"
 mute_unmute: "Stummschalten"
 
 toggle_fullscreen: "Vollbild umschalten"
+
+toggle_stereoscopic_mode: "Schalte 3D Modus um"
 
 playing_previous: "Spiele vorherigen Titel"
 
@@ -305,9 +347,31 @@ playing_an_episode: "Spiele eine Folge von {{ heard_show }}"
 
 playing_random_episode: "Spiele eine zufällige Folge von {{ heard_show }}"
 
+playing_random_show: "Spiele eine zufällige Serie"
+
+playing_random_show_genre: "Spiele eine zufällige {{ genre }} Serie"
+
 playing_next_unwatched_episode: "Spiele die nächste ungesehene Folge von {{ heard_show }}"
 
 playing_newest_episode: "Spiele die neueste Folge von {{ heard_show }}"
+
+playing_musicvideo_card: "Spiele Musikvideo"
+
+shuffling_musicvideos: "Spiele zufällige Musikvideos"
+
+shuffling_musicvideos_genre: "Spiele zufällige {{ genre }} Musikvideos"
+
+shuffling_musicvideos_artist: "Zufällige Wiedergabe von Musikvideos von {{ artist }}"
+
+shuffling_musicvideos_genre_artist: "Zufällige Wiedergabe von {{ genre }} Musikvideos von {{ artist }}"
+
+playing_random_musicvideo: "Spiele ein zufälliges Musikvideo"
+
+playing_random_musicvideo_genre: "Spiele ein zufälliges {{ genre }} Musikvideo"
+
+playing_random_musicvideo_artist: "Spiele ein zufälliges Musikvideo von {{ artist }}"
+
+playing_random_musicvideo_genre_artist: "Spiele ein zufälliges {{ genre }} Musikvideo von {{ artist }}"
 
 playing_album_card: "Spiele Album"
 

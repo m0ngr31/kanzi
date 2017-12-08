@@ -7,7 +7,7 @@
   "website": "https://github.com/m0ngr31/kodi-alexa",
   "env": {
     "KODI_ADDRESS": {
-      "description": "URL or IP adress to talk to Kodi.",
+      "description": "IP address or fully-qualified domain name to talk to Kodi.",
       "value": ""
     },
     "KODI_PORT": {
@@ -32,8 +32,18 @@
       "value": "",
       "required": false
     },
+    "READ_TIMEOUT": {
+      "description": "How long to wait for responses from Kodi.  Don't change unless you know what you're doing.",
+      "value": "120",
+      "required": false
+    },
+    "READ_TIMEOUT_ASYNC": {
+      "description": "Read timeout for 'fire-and-forget' commands.  Increase gradually only if Kodi is sometimes not executing commands.",
+      "value": "0.01",
+      "required": false
+    },
     "SKILL_APPID": {
-      "description": "Add this to enable verification of requests.",
+      "description": "Add your skill's Application ID here to verify incomming requests are from your copy of the skill.",
       "value": "",
       "required": false
     },
@@ -62,6 +72,11 @@
       "value": "100",
       "required": false
     },
+    "MAX_UNWATCHED_SHOWS": {
+      "description": "Maximum number of items to fetch when looking for new shows.",
+      "value": "100",
+      "required": false
+    },
     "MAX_UNWATCHED_EPISODES": {
       "description": "Maximum number of items to fetch when looking for new episodes.",
       "value": "100",
@@ -70,6 +85,41 @@
     "MAX_UNWATCHED_MOVIES": {
       "description": "Maximum number of items to fetch when looking for new movies.",
       "value": "100",
+      "required": false
+    },
+    "SKILL_LOGLEVEL": {
+      "description": "Set to CRITICAL, ERROR, WARNING, INFO, or DEBUG.",
+      "value": "INFO",
+      "required": false
+    },
+    "CACHE_BUCKET": {
+      "description": "Amazon S3 bucket or directory name in which to cache responses, if you wish to do so.  Leave empty to disable.",
+      "value": "",
+      "required": false
+    },
+    "S3_CACHE_AWS_ACCESS_KEY_ID": {
+      "description": "AWS Access Key ID for the Amazon S3 cache bucket.",
+      "value": "",
+      "required": false
+    },
+    "S3_CACHE_AWS_SECRET_ACCESS_KEY": {
+      "description": "AWS Secret Access Key for the Amazon S3 cache bucket.",
+      "value": "",
+      "required": false
+    },
+    "OWNCLOUD_CACHE_URL": {
+      "description": "Base URL for ownCloud server where the cache will be located.",
+      "value": "",
+      "required": false
+    },
+    "OWNCLOUD_CACHE_USER": {
+      "description": "ownCloud user name.",
+      "value": "",
+      "required": false
+    },
+    "OWNCLOUD_CACHE_PASSWORD": {
+      "description": "ownCloud password.",
+      "value": "",
       "required": false
     }
   },

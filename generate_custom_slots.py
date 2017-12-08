@@ -22,7 +22,7 @@ def sort_by_words(l, longest):
   distributed = []
   for i in range(1, longest + 1):
     dl = [s for s in l if len(s.split()) == i]
-    if len(dl) > 0:
+    if dl:
       distributed.append(dl)
   return distributed
 
@@ -56,20 +56,20 @@ def clean_results(resp, cat, key, limit=None):
   if len(cleaned) > limit:
     longest = most_words(cleaned)
     distributed = sort_by_words(cleaned, longest)
-    if len(distributed) > 0:
+    if distributed:
       total = 0
       cleaned = []
       while total < limit:
         for l in distributed:
-          if len(l) > 0:
+          if l:
             total += 1
             cleaned.append(l.pop())
 
   # sort by number of words just for visibility
-  if len(cleaned) > 0:
+  if cleaned:
     longest = most_words(cleaned)
     distributed = sort_by_words(cleaned, longest)
-    if len(distributed) > 0:
+    if distributed:
       cleaned = []
       for dl in distributed:
         cleaned += [l for l in dl]
@@ -89,6 +89,12 @@ def write_file(filename, items=[]):
 retrieved = kodi.GetMusicPlaylists()
 cl = clean_results(retrieved, 'files', 'label')
 write_file('MUSICPLAYLISTS', cl)
+
+
+# Generate MUSICGENRES Slot
+retrieved = kodi.GetMusicGenres()
+cl = clean_results(retrieved, 'genres', 'label')
+write_file('MUSICGENRES', cl)
 
 
 # Generate MUSICARTISTS Slot
@@ -121,6 +127,18 @@ cl = clean_results(retrieved, 'genres', 'label')
 write_file('MOVIEGENRES', cl)
 
 
+# Generate SHOWGENRES Slot
+retrieved = kodi.GetVideoGenres('tvshow')
+cl = clean_results(retrieved, 'genres', 'label')
+write_file('SHOWGENRES', cl)
+
+
+# Generate MUSICVIDEOGENRES Slot
+retrieved = kodi.GetVideoGenres('musicvideo')
+cl = clean_results(retrieved, 'genres', 'label')
+write_file('MUSICVIDEOGENRES', cl)
+
+
 # Generate MOVIES Slot
 retrieved = kodi.GetMovies()
 cl = clean_results(retrieved, 'movies', 'label')
@@ -128,9 +146,15 @@ write_file('MOVIES', cl)
 
 
 # Generate SHOWS Slot
-retrieved = kodi.GetTvShows()
+retrieved = kodi.GetShows()
 cl = clean_results(retrieved, 'tvshows', 'label')
 write_file('SHOWS', cl)
+
+
+# Generate MUSICVIDEOS Slot
+retrieved = kodi.GetMusicVideos()
+cl = clean_results(retrieved, 'musicvideos', 'label')
+write_file('MUSICVIDEOS', cl)
 
 
 # Generate ADDONS Slot

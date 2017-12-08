@@ -1,34 +1,73 @@
 {
   "intents": [
     {
-      "intent": "RecommendMedia"
-    },
-    {
       "intent": "RecommendVideo"
     },
     {
       "intent": "RecommendAudio"
     },
     {
-      "intent": "RecommendMovie"
+      "intent": "RecommendMovie",
+      "slots": [
+        {
+          "name": "MovieGenre",
+          "type": "MOVIEGENRES"
+        }
+      ]
     },
     {
-      "intent": "RecommendShow"
+      "intent": "RecommendShow",
+      "slots": [
+        {
+          "name": "ShowGenre",
+          "type": "SHOWGENRES"
+        }
+      ]
     },
     {
-      "intent": "RecommendEpisode"
+      "intent": "RecommendEpisode",
+      "slots": [
+        {
+          "name": "ShowGenre",
+          "type": "SHOWGENRES"
+        }
+      ]
     },
     {
-      "intent": "RecommendMusicVideo"
+      "intent": "RecommendMusicVideo",
+      "slots": [
+        {
+          "name": "MusicVideoGenre",
+          "type": "MUSICVIDEOGENRES"
+        }
+      ]
     },
     {
-      "intent": "RecommendArtist"
+      "intent": "RecommendArtist",
+      "slots": [
+        {
+          "name": "MusicGenre",
+          "type": "MUSICGENRES"
+        }
+      ]
     },
     {
-      "intent": "RecommendAlbum"
+      "intent": "RecommendAlbum",
+      "slots": [
+        {
+          "name": "MusicGenre",
+          "type": "MUSICGENRES"
+        }
+      ]
     },
     {
-      "intent": "RecommendSong"
+      "intent": "RecommendSong",
+      "slots": [
+        {
+          "name": "MusicGenre",
+          "type": "MUSICGENRES"
+        }
+      ]
     },
     {
       "intent": "WhatNewAlbums"
@@ -37,7 +76,7 @@
       "intent": "WhatNewMovies",
       "slots": [
         {
-          "name": "Genre",
+          "name": "MovieGenre",
           "type": "MOVIEGENRES"
         }
       ]
@@ -175,11 +214,24 @@
       ]
     },
     {
+      "intent": "ListenToGenre",
+      "slots": [
+        {
+          "name": "MusicGenre",
+          "type": "MUSICGENRES"
+        }
+      ]
+    },
+    {
       "intent": "ListenToArtist",
       "slots": [
         {
           "name": "Artist",
           "type": "MUSICARTISTS"
+        },
+        {
+          "name": "MusicGenre",
+          "type": "MUSICGENRES"
         }
       ]
     },
@@ -314,6 +366,15 @@
       ]
     },
     {
+      "intent": "WatchRandomShow",
+      "slots": [
+        {
+          "name": "ShowGenre",
+          "type": "SHOWGENRES"
+        }
+      ]
+    },
+    {
       "intent": "WatchLatestEpisode",
       "slots": [
         {
@@ -347,7 +408,7 @@
       "intent": "WatchRandomMovie",
       "slots": [
         {
-          "name": "Genre",
+          "name": "MovieGenre",
           "type": "MOVIEGENRES"
         }
       ]
@@ -362,11 +423,50 @@
       ]
     },
     {
+      "intent": "WatchMusicVideo",
+      "slots": [
+        {
+          "name": "MusicVideo",
+          "type": "MUSICVIDEOS"
+        },
+        {
+          "name": "Artist",
+          "type": "MUSICARTISTS"
+        }
+      ]
+    },
+    {
+      "intent": "WatchRandomMusicVideo",
+      "slots": [
+        {
+          "name": "MusicVideoGenre",
+          "type": "MUSICVIDEOGENRES"
+        },
+        {
+          "name": "Artist",
+          "type": "MUSICARTISTS"
+        }
+      ]
+    },
+    {
       "intent": "WatchVideoPlaylist",
       "slots": [
         {
           "name": "VideoPlaylist",
           "type": "VIDEOPLAYLISTS"
+        }
+      ]
+    },
+    {
+      "intent": "ShuffleMusicVideos",
+      "slots": [
+        {
+          "name": "MusicVideoGenre",
+          "type": "MUSICVIDEOGENRES"
+        },
+        {
+          "name": "Artist",
+          "type": "MUSICARTISTS"
         }
       ]
     },
@@ -432,13 +532,40 @@
       "intent": "PageDown"
     },
     {
-      "intent": "ViewMovies"
+      "intent": "ViewMovies",
+      "slots": [
+        {
+          "name": "MovieGenre",
+          "type": "MOVIEGENRES"
+        }
+      ]
     },
     {
-      "intent": "ViewShows"
+      "intent": "ViewShows",
+      "slots": [
+        {
+          "name": "ShowGenre",
+          "type": "SHOWGENRES"
+        }
+      ]
     },
     {
-      "intent": "ViewMusic"
+      "intent": "ViewMusicVideos",
+      "slots": [
+        {
+          "name": "MusicVideoGenre",
+          "type": "MUSICVIDEOGENRES"
+        }
+      ]
+    },
+    {
+      "intent": "ViewMusic",
+      "slots": [
+        {
+          "name": "MusicGenre",
+          "type": "MUSICGENRES"
+        }
+      ]
     },
     {
       "intent": "ViewArtists"
@@ -447,10 +574,56 @@
       "intent": "ViewAlbums"
     },
     {
-      "intent": "ViewMusicVideos"
+      "intent": "ViewVideoPlaylist",
+      "slots": [
+        {
+          "name": "VideoPlaylist",
+          "type": "VIDEOPLAYLISTS"
+        }
+      ]
+    },
+    {
+      "intent": "ViewMoviePlaylistRecent"
+    },
+    {
+      "intent": "ViewEpisodePlaylistRecent"
+    },
+    {
+      "intent": "ViewMusicVideoPlaylistRecent"
+    },
+    {
+      "intent": "ViewAudioPlaylist",
+      "slots": [
+        {
+          "name": "AudioPlaylist",
+          "type": "MUSICPLAYLISTS"
+        }
+      ]
+    },
+    {
+      "intent": "ViewAudioPlaylistRecent"
+    },
+    {
+      "intent": "ViewPlaylist",
+      "slots": [
+        {
+          "name": "AudioPlaylist",
+          "type": "MUSICPLAYLISTS"
+        },
+        {
+          "name": "VideoPlaylist",
+          "type": "VIDEOPLAYLISTS"
+        }
+      ]
     },
     {
       "intent": "Fullscreen"
+    },
+    {
+      "intent": "StereoscopicMode"
+    },
+    {
+      "intent": "AudioPassthrough"
     },
     {
       "intent": "Mute"
@@ -490,6 +663,9 @@
     },
     {
       "intent": "SubtitlesPrevious"
+    },
+    {
+      "intent": "SubtitlesDownload"
     },
     {
       "intent": "AudioStreamNext"

@@ -1,3 +1,7 @@
+AMAZON.HelpIntent nach was ich es fragen kann
+AMAZON.HelpIntent was es alles kann
+AMAZON.HelpIntent was es kann
+AMAZON.HelpIntent was ich es fragen kann
 AddonExecute führe add on {Addon} aus
 AddonExecute führe addon {Addon} aus
 AddonExecute führe erweiterung {Addon} aus
@@ -6,10 +10,33 @@ AddonExecute führe plugin {Addon} aus
 AddonExecute führe script {Addon} aus
 AddonExecute führe {Addon} aus
 AddonExecute öffne {Addon}
+AddonGlobalSearch finde {Album}
+AddonGlobalSearch finde {Artist}
+AddonGlobalSearch finde {Movie}
+AddonGlobalSearch finde {Show}
 AddonGlobalSearch suche nach {Album}
 AddonGlobalSearch suche nach {Artist}
 AddonGlobalSearch suche nach {Movie}
 AddonGlobalSearch suche nach {Show}
+AddonGlobalSearch suche {Album}
+AddonGlobalSearch suche {Artist}
+AddonGlobalSearch suche {Movie}
+AddonGlobalSearch suche {Show}
+AudioPassthrough aktiviere digital
+AudioPassthrough aktiviere passthrough
+AudioPassthrough schalte Audioausgabe auf digital
+AudioPassthrough schalte Audioausgabe auf digital um
+AudioPassthrough schalte Audioausgabe auf passthrough
+AudioPassthrough schalte Audioausgabe auf passthrough um
+AudioPassthrough schalte Audioausgabe um
+AudioPassthrough schalte auf digital
+AudioPassthrough schalte auf digital um
+AudioPassthrough schalte auf passthrough
+AudioPassthrough schalte auf passthrough um
+AudioPassthrough schalte digital
+AudioPassthrough schalte digital um
+AudioPassthrough schalte passthrough
+AudioPassthrough schalte passthrough um
 AudioStreamNext Sprache umschalten
 AudioStreamNext audio Stream umschalten
 AudioStreamNext nächste Sprache
@@ -306,78 +333,78 @@ ListenToAlbum spiele die Platte {Album}
 ListenToAlbum spiele die Platte {Album} von {Artist}
 ListenToAlbumOrSong spiel {Song} von {Artist}
 ListenToAlbumOrSong spiele {Song} von {Artist}
-ListenToArtist spiel Lieder von dem Artist {Artist}
-ListenToArtist spiel Lieder von dem Komponist {Artist}
-ListenToArtist spiel Lieder von dem Künstler {Artist}
-ListenToArtist spiel Lieder von der Artistin {Artist}
-ListenToArtist spiel Lieder von der Band {Artist}
-ListenToArtist spiel Lieder von der Gruppe {Artist}
-ListenToArtist spiel Lieder von der Komponistin {Artist}
-ListenToArtist spiel Lieder von der Künstlerin {Artist}
-ListenToArtist spiel Lieder von {Artist}
-ListenToArtist spiel Mucke von dem Artist {Artist}
-ListenToArtist spiel Mucke von dem Komponist {Artist}
-ListenToArtist spiel Mucke von dem Künstler {Artist}
-ListenToArtist spiel Mucke von der Artistin {Artist}
-ListenToArtist spiel Mucke von der Band {Artist}
-ListenToArtist spiel Mucke von der Gruppe {Artist}
-ListenToArtist spiel Mucke von der Komponistin {Artist}
-ListenToArtist spiel Mucke von der Künstlerin {Artist}
-ListenToArtist spiel Mucke von {Artist}
 ListenToArtist spiel Musik von dem Artist {Artist}
-ListenToArtist spiel Musik von dem Komponist {Artist}
+ListenToArtist spiel Musik von dem Interpreten {Artist}
+ListenToArtist spiel Musik von dem Komponisten {Artist}
 ListenToArtist spiel Musik von dem Künstler {Artist}
-ListenToArtist spiel Musik von der Artistin {Artist}
 ListenToArtist spiel Musik von der Band {Artist}
 ListenToArtist spiel Musik von der Gruppe {Artist}
 ListenToArtist spiel Musik von der Komponistin {Artist}
 ListenToArtist spiel Musik von der Künstlerin {Artist}
 ListenToArtist spiel Musik von {Artist}
 ListenToArtist spiel Songs von dem Artist {Artist}
-ListenToArtist spiel Songs von dem Komponist {Artist}
+ListenToArtist spiel Songs von dem Interpreten {Artist}
+ListenToArtist spiel Songs von dem Komponisten {Artist}
 ListenToArtist spiel Songs von dem Künstler {Artist}
-ListenToArtist spiel Songs von der Artistin {Artist}
 ListenToArtist spiel Songs von der Band {Artist}
 ListenToArtist spiel Songs von der Gruppe {Artist}
 ListenToArtist spiel Songs von der Komponistin {Artist}
 ListenToArtist spiel Songs von der Künstlerin {Artist}
 ListenToArtist spiel Songs von {Artist}
-ListenToArtist spiele Lieder von dem Artist {Artist}
-ListenToArtist spiele Lieder von dem Komponist {Artist}
-ListenToArtist spiele Lieder von dem Künstler {Artist}
-ListenToArtist spiele Lieder von der Artistin {Artist}
-ListenToArtist spiele Lieder von der Band {Artist}
-ListenToArtist spiele Lieder von der Gruppe {Artist}
-ListenToArtist spiele Lieder von der Komponistin {Artist}
-ListenToArtist spiele Lieder von der Künstlerin {Artist}
-ListenToArtist spiele Lieder von {Artist}
-ListenToArtist spiele Mucke von dem Artist {Artist}
-ListenToArtist spiele Mucke von dem Komponist {Artist}
-ListenToArtist spiele Mucke von dem Künstler {Artist}
-ListenToArtist spiele Mucke von der Artistin {Artist}
-ListenToArtist spiele Mucke von der Band {Artist}
-ListenToArtist spiele Mucke von der Gruppe {Artist}
-ListenToArtist spiele Mucke von der Komponistin {Artist}
-ListenToArtist spiele Mucke von der Künstlerin {Artist}
-ListenToArtist spiele Mucke von {Artist}
+ListenToArtist spiel {MusicGenre} Musik von dem Artist {Artist}
+ListenToArtist spiel {MusicGenre} Musik von dem Interpreten {Artist}
+ListenToArtist spiel {MusicGenre} Musik von dem Komponisten {Artist}
+ListenToArtist spiel {MusicGenre} Musik von dem Künstler {Artist}
+ListenToArtist spiel {MusicGenre} Musik von der Band {Artist}
+ListenToArtist spiel {MusicGenre} Musik von der Gruppe {Artist}
+ListenToArtist spiel {MusicGenre} Musik von der Komponistin {Artist}
+ListenToArtist spiel {MusicGenre} Musik von der Künstlerin {Artist}
+ListenToArtist spiel {MusicGenre} Musik von {Artist}
+ListenToArtist spiel {MusicGenre} Songs von dem Artist {Artist}
+ListenToArtist spiel {MusicGenre} Songs von dem Interpreten {Artist}
+ListenToArtist spiel {MusicGenre} Songs von dem Komponisten {Artist}
+ListenToArtist spiel {MusicGenre} Songs von dem Künstler {Artist}
+ListenToArtist spiel {MusicGenre} Songs von der Band {Artist}
+ListenToArtist spiel {MusicGenre} Songs von der Gruppe {Artist}
+ListenToArtist spiel {MusicGenre} Songs von der Komponistin {Artist}
+ListenToArtist spiel {MusicGenre} Songs von der Künstlerin {Artist}
+ListenToArtist spiel {MusicGenre} Songs von {Artist}
 ListenToArtist spiele Musik von dem Artist {Artist}
-ListenToArtist spiele Musik von dem Komponist {Artist}
+ListenToArtist spiele Musik von dem Interpreten {Artist}
+ListenToArtist spiele Musik von dem Komponisten {Artist}
 ListenToArtist spiele Musik von dem Künstler {Artist}
-ListenToArtist spiele Musik von der Artistin {Artist}
 ListenToArtist spiele Musik von der Band {Artist}
 ListenToArtist spiele Musik von der Gruppe {Artist}
 ListenToArtist spiele Musik von der Komponistin {Artist}
 ListenToArtist spiele Musik von der Künstlerin {Artist}
 ListenToArtist spiele Musik von {Artist}
 ListenToArtist spiele Songs von dem Artist {Artist}
-ListenToArtist spiele Songs von dem Komponist {Artist}
+ListenToArtist spiele Songs von dem Interpreten {Artist}
+ListenToArtist spiele Songs von dem Komponisten {Artist}
 ListenToArtist spiele Songs von dem Künstler {Artist}
-ListenToArtist spiele Songs von der Artistin {Artist}
 ListenToArtist spiele Songs von der Band {Artist}
 ListenToArtist spiele Songs von der Gruppe {Artist}
 ListenToArtist spiele Songs von der Komponistin {Artist}
 ListenToArtist spiele Songs von der Künstlerin {Artist}
 ListenToArtist spiele Songs von {Artist}
+ListenToArtist spiele {MusicGenre} Musik von dem Artist {Artist}
+ListenToArtist spiele {MusicGenre} Musik von dem Interpreten {Artist}
+ListenToArtist spiele {MusicGenre} Musik von dem Komponisten {Artist}
+ListenToArtist spiele {MusicGenre} Musik von dem Künstler {Artist}
+ListenToArtist spiele {MusicGenre} Musik von der Band {Artist}
+ListenToArtist spiele {MusicGenre} Musik von der Gruppe {Artist}
+ListenToArtist spiele {MusicGenre} Musik von der Komponistin {Artist}
+ListenToArtist spiele {MusicGenre} Musik von der Künstlerin {Artist}
+ListenToArtist spiele {MusicGenre} Musik von {Artist}
+ListenToArtist spiele {MusicGenre} Songs von dem Artist {Artist}
+ListenToArtist spiele {MusicGenre} Songs von dem Interpreten {Artist}
+ListenToArtist spiele {MusicGenre} Songs von dem Komponisten {Artist}
+ListenToArtist spiele {MusicGenre} Songs von dem Künstler {Artist}
+ListenToArtist spiele {MusicGenre} Songs von der Band {Artist}
+ListenToArtist spiele {MusicGenre} Songs von der Gruppe {Artist}
+ListenToArtist spiele {MusicGenre} Songs von der Komponistin {Artist}
+ListenToArtist spiele {MusicGenre} Songs von der Künstlerin {Artist}
+ListenToArtist spiele {MusicGenre} Songs von {Artist}
 ListenToAudio {Artist} anhören
 ListenToAudioPlaylist spiel Lieder playlist {AudioPlaylist}
 ListenToAudioPlaylist spiel Musik playlist {AudioPlaylist}
@@ -409,6 +436,12 @@ ListenToAudioPlaylistRecent spiele neue Songs
 ListenToAudioPlaylistRecent spiele zuletzt hinzugefügte Lieder
 ListenToAudioPlaylistRecent spiele zuletzt hinzugefügte Musik
 ListenToAudioPlaylistRecent spiele zuletzt hinzugefügte Songs
+ListenToGenre spiel {MusicGenre} Genre
+ListenToGenre spiel {MusicGenre} Musik
+ListenToGenre spiel {MusicGenre} Songs
+ListenToGenre spiele {MusicGenre} Genre
+ListenToGenre spiele {MusicGenre} Musik
+ListenToGenre spiele {MusicGenre} Songs
 ListenToLatestAlbum spiele aktuelles Album von {Artist}
 ListenToLatestAlbum spiele aktuellstes Album von {Artist}
 ListenToLatestAlbum spiele das aktuelle Album von {Artist}
@@ -814,10 +847,18 @@ RecommendAlbum welches Album es empfiehlt
 RecommendAlbum welches Album es mir empfiehlt
 RecommendAlbum welches Album es mir vorschlägt
 RecommendAlbum welches Album es vorschlägt
+RecommendAlbum welches {MusicGenre} Album es empfiehlt
+RecommendAlbum welches {MusicGenre} Album es mir empfiehlt
+RecommendAlbum welches {MusicGenre} Album es mir vorschlägt
+RecommendAlbum welches {MusicGenre} Album es vorschlägt
 RecommendArtist welchen Interpreten es empfiehlt
 RecommendArtist welchen Interpreten es mir empfiehlt
 RecommendArtist welchen Interpreten es mir vorschlägt
 RecommendArtist welchen Interpreten es vorschlägt
+RecommendArtist welchen {MusicGenre} Interpreten es empfiehlt
+RecommendArtist welchen {MusicGenre} Interpreten es mir empfiehlt
+RecommendArtist welchen {MusicGenre} Interpreten es mir vorschlägt
+RecommendArtist welchen {MusicGenre} Interpreten es vorschlägt
 RecommendAudio welche Musik es empfiehlt
 RecommendAudio welche Musik es mir empfiehlt
 RecommendAudio welche Musik es mir vorschlägt
@@ -830,30 +871,54 @@ RecommendEpisode welche Folge es empfiehlt
 RecommendEpisode welche Folge es mir empfiehlt
 RecommendEpisode welche Folge es mir vorschlägt
 RecommendEpisode welche Folge es vorschlägt
-RecommendMedia was es empfiehlt
-RecommendMedia was es mir empfiehlt
-RecommendMedia was es mir vorschlägt
-RecommendMedia was es vorschlägt
+RecommendEpisode welche {ShowGenre} Episode es empfiehlt
+RecommendEpisode welche {ShowGenre} Episode es mir empfiehlt
+RecommendEpisode welche {ShowGenre} Episode es mir vorschlägt
+RecommendEpisode welche {ShowGenre} Episode es vorschlägt
+RecommendEpisode welche {ShowGenre} Folge es empfiehlt
+RecommendEpisode welche {ShowGenre} Folge es mir empfiehlt
+RecommendEpisode welche {ShowGenre} Folge es mir vorschlägt
+RecommendEpisode welche {ShowGenre} Folge es vorschlägt
 RecommendMovie welchen Film es empfiehlt
 RecommendMovie welchen Film es mir empfiehlt
 RecommendMovie welchen Film es mir vorschlägt
 RecommendMovie welchen Film es vorschlägt
+RecommendMovie welchen {MovieGenre} Film es empfiehlt
+RecommendMovie welchen {MovieGenre} Film es mir empfiehlt
+RecommendMovie welchen {MovieGenre} Film es mir vorschlägt
+RecommendMovie welchen {MovieGenre} Film es vorschlägt
 RecommendMusicVideo welches Musikvideo es empfiehlt
 RecommendMusicVideo welches Musikvideo es mir empfiehlt
 RecommendMusicVideo welches Musikvideo es mir vorschlägt
 RecommendMusicVideo welches Musikvideo es vorschlägt
+RecommendMusicVideo welches {MusicVideoGenre} Musikvideo es empfiehlt
+RecommendMusicVideo welches {MusicVideoGenre} Musikvideo es mir empfiehlt
+RecommendMusicVideo welches {MusicVideoGenre} Musikvideo es mir vorschlägt
+RecommendMusicVideo welches {MusicVideoGenre} Musikvideo es vorschlägt
 RecommendShow welche Serie es empfiehlt
 RecommendShow welche Serie es mir empfiehlt
 RecommendShow welche Serie es mir vorschlägt
 RecommendShow welche Serie es vorschlägt
+RecommendShow welche {ShowGenre} Serie es empfiehlt
+RecommendShow welche {ShowGenre} Serie es mir empfiehlt
+RecommendShow welche {ShowGenre} Serie es mir vorschlägt
+RecommendShow welche {ShowGenre} Serie es vorschlägt
 RecommendSong welchen Song es empfiehlt
 RecommendSong welchen Song es mir empfiehlt
 RecommendSong welchen Song es mir vorschlägt
 RecommendSong welchen Song es vorschlägt
+RecommendSong welchen {MusicGenre} Song es empfiehlt
+RecommendSong welchen {MusicGenre} Song es mir empfiehlt
+RecommendSong welchen {MusicGenre} Song es mir vorschlägt
+RecommendSong welchen {MusicGenre} Song es vorschlägt
 RecommendSong welches Lied es empfiehlt
 RecommendSong welches Lied es mir empfiehlt
 RecommendSong welches Lied es mir vorschlägt
 RecommendSong welches Lied es vorschlägt
+RecommendSong welches {MusicGenre} Lied es empfiehlt
+RecommendSong welches {MusicGenre} Lied es mir empfiehlt
+RecommendSong welches {MusicGenre} Lied es mir vorschlägt
+RecommendSong welches {MusicGenre} Lied es vorschlägt
 RecommendVideo welches Video es empfiehlt
 RecommendVideo welches Video es mir empfiehlt
 RecommendVideo welches Video es mir vorschlägt
@@ -892,6 +957,22 @@ ShuffleLatestAlbum starte Zufallswiedergabe des neuen Albums von {Artist}
 ShuffleLatestAlbum starte Zufallswiedergabe des neuesten Albums von {Artist}
 ShuffleLatestAlbum starte Zufallswiedergabe des zuletzt hinzugefügten Albums von {Artist}
 ShuffleMedia zufallswiedergabe {Show}
+ShuffleMusicVideos spiele alle Musikvideos
+ShuffleMusicVideos spiele alle Musikvideos von {Artist}
+ShuffleMusicVideos spiele alle {MusicVideoGenre} Musikvideos
+ShuffleMusicVideos spiele alle {MusicVideoGenre} Musikvideos von {Artist}
+ShuffleMusicVideos spiele zufällige Musikvideos
+ShuffleMusicVideos spiele zufällige Musikvideos von {Artist}
+ShuffleMusicVideos spiele zufällige {MusicVideoGenre} Musikvideos
+ShuffleMusicVideos spiele zufällige {MusicVideoGenre} Musikvideos von {Artist}
+ShuffleMusicVideos zeige alle Musikvideos
+ShuffleMusicVideos zeige alle Musikvideos von {Artist}
+ShuffleMusicVideos zeige alle {MusicVideoGenre} Musikvideos
+ShuffleMusicVideos zeige alle {MusicVideoGenre} Musikvideos von {Artist}
+ShuffleMusicVideos zeige zufällige Musikvideos
+ShuffleMusicVideos zeige zufällige Musikvideos von {Artist}
+ShuffleMusicVideos zeige zufällige {MusicVideoGenre} Musikvideos
+ShuffleMusicVideos zeige zufällige {MusicVideoGenre} Musikvideos von {Artist}
 ShufflePlaylist zufallswiedergabe playlist {AudioPlaylist}
 ShufflePlaylist zufallswiedergabe playlist {VideoPlaylist}
 ShufflePlaylist zufallswiedergabe {AudioPlaylist} playlist
@@ -908,6 +989,13 @@ Shutdown herunterfahren
 Shutdown shutdown
 Shutdown system herunterfahren
 Shutdown system shutdown
+StereoscopicMode aktiviere 3D
+StereoscopicMode aktiviere 3D Modus
+StereoscopicMode schalte auf 3D
+StereoscopicMode schalte auf 3D Modus
+StereoscopicMode schalte auf 3D Modus um
+StereoscopicMode schalte auf 3D um
+SubtitlesDownload download Untertitel
 SubtitlesNext Untertitel umschalten
 SubtitlesNext nächster Untertitel
 SubtitlesOff Untertitel aus
@@ -965,14 +1053,100 @@ ViewArtists gehe zu Musiker
 ViewArtists öffne Interpreten
 ViewArtists öffne Künstler
 ViewArtists öffne Musiker
+ViewAudioPlaylist gehe zu Lieder playlist {AudioPlaylist}
+ViewAudioPlaylist gehe zu Musik playlist {AudioPlaylist}
+ViewAudioPlaylist gehe zu Song playlist {AudioPlaylist}
+ViewAudioPlaylist gehe zu {AudioPlaylist} Lieder playlist
+ViewAudioPlaylist gehe zu {AudioPlaylist} Musik playlist
+ViewAudioPlaylist gehe zu {AudioPlaylist} Song playlist
+ViewAudioPlaylist öffne Lieder playlist {AudioPlaylist}
+ViewAudioPlaylist öffne Musik playlist {AudioPlaylist}
+ViewAudioPlaylist öffne Song playlist {AudioPlaylist}
+ViewAudioPlaylist öffne {AudioPlaylist} Lieder playlist
+ViewAudioPlaylist öffne {AudioPlaylist} Musik playlist
+ViewAudioPlaylist öffne {AudioPlaylist} Song playlist
+ViewAudioPlaylistRecent gehe zu kürzlich hinzugefügte Lieder
+ViewAudioPlaylistRecent gehe zu kürzlich hinzugefügte Musik
+ViewAudioPlaylistRecent gehe zu kürzlich hinzugefügte Songs
+ViewAudioPlaylistRecent gehe zu neue Lieder
+ViewAudioPlaylistRecent gehe zu neue Musik
+ViewAudioPlaylistRecent gehe zu neue Songs
+ViewAudioPlaylistRecent gehe zu zuletzt hinzugefügte Lieder
+ViewAudioPlaylistRecent gehe zu zuletzt hinzugefügte Musik
+ViewAudioPlaylistRecent gehe zu zuletzt hinzugefügte Songs
+ViewAudioPlaylistRecent öffne kürzlich hinzugefügte Lieder
+ViewAudioPlaylistRecent öffne kürzlich hinzugefügte Musik
+ViewAudioPlaylistRecent öffne kürzlich hinzugefügte Songs
+ViewAudioPlaylistRecent öffne neue Lieder
+ViewAudioPlaylistRecent öffne neue Musik
+ViewAudioPlaylistRecent öffne neue Songs
+ViewAudioPlaylistRecent öffne zuletzt hinzugefügte Lieder
+ViewAudioPlaylistRecent öffne zuletzt hinzugefügte Musik
+ViewAudioPlaylistRecent öffne zuletzt hinzugefügte Songs
+ViewEpisodePlaylistRecent gehe zu kürzlich hinzugefügte Musikvideos
+ViewEpisodePlaylistRecent gehe zu kürzlich hinzugefügte Serien
+ViewEpisodePlaylistRecent gehe zu neue Musikvideos
+ViewEpisodePlaylistRecent gehe zu neue Serien
+ViewEpisodePlaylistRecent gehe zu zuletzt hinzugefügte Musikvideos
+ViewEpisodePlaylistRecent gehe zu zuletzt hinzugefügte Serien
+ViewEpisodePlaylistRecent öffne kürzlich hinzugefügte Musikvideos
+ViewEpisodePlaylistRecent öffne kürzlich hinzugefügte Serien
+ViewEpisodePlaylistRecent öffne neue Musikvideos
+ViewEpisodePlaylistRecent öffne neue Serien
+ViewEpisodePlaylistRecent öffne zuletzt hinzugefügte Musikvideos
+ViewEpisodePlaylistRecent öffne zuletzt hinzugefügte Serien
+ViewMoviePlaylistRecent gehe zu kürzlich hinzugefügte Filme
+ViewMoviePlaylistRecent gehe zu kürzlich hinzugefügte Videos
+ViewMoviePlaylistRecent gehe zu neue Filme
+ViewMoviePlaylistRecent gehe zu neue Videos
+ViewMoviePlaylistRecent gehe zu zuletzt hinzugefügte Filme
+ViewMoviePlaylistRecent gehe zu zuletzt hinzugefügte Videos
+ViewMoviePlaylistRecent öffne kürzlich hinzugefügte Filme
+ViewMoviePlaylistRecent öffne kürzlich hinzugefügte Videos
+ViewMoviePlaylistRecent öffne neue Filme
+ViewMoviePlaylistRecent öffne neue Videos
+ViewMoviePlaylistRecent öffne zuletzt hinzugefügte Filme
+ViewMoviePlaylistRecent öffne zuletzt hinzugefügte Videos
+ViewMovies finde {MovieGenre} Filme
 ViewMovies gehe zu Filme
+ViewMovies suche nach {MovieGenre} Filmen
+ViewMovies suche {MovieGenre} Filme
 ViewMovies öffne Filme
+ViewMusic finde {MusicGenre} Musik
 ViewMusic gehe zu Musik
+ViewMusic suche nach {MusicGenre} Musik
+ViewMusic suche {MusicGenre} Musik
 ViewMusic öffne Musik
+ViewMusicVideos finde {MusicVideoGenre} Musikvideos
 ViewMusicVideos gehe zu Musikvideos
+ViewMusicVideos suche nach {MusicVideoGenre} Musikvideos
+ViewMusicVideos suche {MusicVideoGenre} Musikvideos
 ViewMusicVideos öffne Musikvideos
+ViewPlaylist gehe zu playlist {AudioPlaylist}
+ViewPlaylist gehe zu playlist {VideoPlaylist}
+ViewPlaylist gehe zu {AudioPlaylist} playlist
+ViewPlaylist gehe zu {VideoPlaylist} playlist
+ViewPlaylist öffne playlist {AudioPlaylist}
+ViewPlaylist öffne playlist {VideoPlaylist}
+ViewPlaylist öffne {AudioPlaylist} playlist
+ViewPlaylist öffne {VideoPlaylist} playlist
+ViewShows finde {ShowGenre} Serien
 ViewShows gehe zu Serien
+ViewShows suche nach {ShowGenre} Serien
+ViewShows suche {ShowGenre} Serien
 ViewShows öffne Serien
+ViewVideoPlaylist gehe zu Film playlist {VideoPlaylist}
+ViewVideoPlaylist gehe zu Serie playlist {VideoPlaylist}
+ViewVideoPlaylist gehe zu Video playlist {VideoPlaylist}
+ViewVideoPlaylist gehe zu {VideoPlaylist} Film playlist
+ViewVideoPlaylist gehe zu {VideoPlaylist} Serie playlist
+ViewVideoPlaylist gehe zu {VideoPlaylist} Video playlist
+ViewVideoPlaylist öffne Film playlist {VideoPlaylist}
+ViewVideoPlaylist öffne Serie playlist {VideoPlaylist}
+ViewVideoPlaylist öffne Video playlist {VideoPlaylist}
+ViewVideoPlaylist öffne {VideoPlaylist} Film playlist
+ViewVideoPlaylist öffne {VideoPlaylist} Serie playlist
+ViewVideoPlaylist öffne {VideoPlaylist} Video playlist
 VolumeDown leiser
 VolumeSet Lautstärke auf {Volume}
 VolumeSet Lautstärke {Volume}
@@ -1004,6 +1178,10 @@ WatchMovieTrailer zeige Trailer von {Movie}
 WatchMovieTrailer zeige Vorschau
 WatchMovieTrailer zeige Vorschau für {Movie}
 WatchMovieTrailer zeige Vorschau von {Movie}
+WatchMusicVideo zeige Musikvideo {MusicVideo}
+WatchMusicVideo zeige Musikvideo {MusicVideo} von {Artist}
+WatchMusicVideo zeige das Musikvideo {MusicVideo}
+WatchMusicVideo zeige das Musikvideo {MusicVideo} von {Artist}
 WatchNextEpisode zeige nächste Episode von {Show}
 WatchNextEpisode zeige nächste Folge von {Show}
 WatchRandomEpisode zeige eine Episode von {Show}
@@ -1012,8 +1190,28 @@ WatchRandomEpisode zeige eine zufällige Episode von {Show}
 WatchRandomEpisode zeige eine zufällige Folge von {Show}
 WatchRandomMovie zeige Film
 WatchRandomMovie zeige zufälligen Film
-WatchRandomMovie zeige zufälligen {Genre} Film
-WatchRandomMovie zeige {Genre} Film
+WatchRandomMovie zeige zufälligen {MovieGenre} Film
+WatchRandomMovie zeige {MovieGenre} Film
+WatchRandomMusicVideo spiele ein zufälliges Musikvideo
+WatchRandomMusicVideo spiele ein zufälliges Musikvideo von {Artist}
+WatchRandomMusicVideo spiele ein zufälliges {MusicVideoGenre} Musikvideo
+WatchRandomMusicVideo spiele ein zufälliges {MusicVideoGenre} Musikvideo von {Artist}
+WatchRandomMusicVideo spiele zufälliges Musikvideo
+WatchRandomMusicVideo spiele zufälliges Musikvideo von {Artist}
+WatchRandomMusicVideo spiele zufälliges {MusicVideoGenre} Musikvideo
+WatchRandomMusicVideo spiele zufälliges {MusicVideoGenre} Musikvideo von {Artist}
+WatchRandomMusicVideo zeige ein zufälliges Musikvideo
+WatchRandomMusicVideo zeige ein zufälliges Musikvideo von {Artist}
+WatchRandomMusicVideo zeige ein zufälliges {MusicVideoGenre} Musikvideo
+WatchRandomMusicVideo zeige ein zufälliges {MusicVideoGenre} Musikvideo von {Artist}
+WatchRandomMusicVideo zeige zufälliges Musikvideo
+WatchRandomMusicVideo zeige zufälliges Musikvideo von {Artist}
+WatchRandomMusicVideo zeige zufälliges {MusicVideoGenre} Musikvideo
+WatchRandomMusicVideo zeige zufälliges {MusicVideoGenre} Musikvideo von {Artist}
+WatchRandomShow zeige eine Serie
+WatchRandomShow zeige eine zufällige Serie
+WatchRandomShow zeige eine zufällige {ShowGenre} Serie
+WatchRandomShow zeige eine {ShowGenre} Serie
 WatchVideo zeige {Movie}
 WatchVideoPlaylist zeige Film playlist {VideoPlaylist}
 WatchVideoPlaylist zeige Serie playlist {VideoPlaylist}
@@ -1084,37 +1282,37 @@ WhatNewEpisodes ob wir neue Folgen {Show} haben
 WhatNewEpisodes ob wir neue von {Show} haben
 WhatNewEpisodes ob wir neue {Show} haben
 WhatNewMovies ob es einen neuen Film gibt
-WhatNewMovies ob es einen neuen {Genre} Film gibt
+WhatNewMovies ob es einen neuen {MovieGenre} Film gibt
 WhatNewMovies ob es neue Filme gibt
-WhatNewMovies ob es neue {Genre} Filme gibt
+WhatNewMovies ob es neue {MovieGenre} Filme gibt
 WhatNewMovies ob wir einen neuen Film haben
-WhatNewMovies ob wir einen neuen {Genre} Film haben
+WhatNewMovies ob wir einen neuen {MovieGenre} Film haben
 WhatNewMovies ob wir neue Filme haben
-WhatNewMovies ob wir neue {Genre} Filme haben
+WhatNewMovies ob wir neue {MovieGenre} Filme haben
 WhatNewMovies welche Filme aufgenommen worden sind
 WhatNewMovies welche Filme fertig sind
 WhatNewMovies welche Filme warten
 WhatNewMovies welche neuen Filme aufgenommen worden sind
 WhatNewMovies welche neuen Filme fertig sind
 WhatNewMovies welche neuen Filme warten
-WhatNewMovies welche neuen {Genre} Filme aufgenommen worden sind
-WhatNewMovies welche neuen {Genre} Filme fertig sind
-WhatNewMovies welche neuen {Genre} Filme warten
-WhatNewMovies welche {Genre} Filme aufgenommen worden sind
-WhatNewMovies welche {Genre} Filme fertig sind
-WhatNewMovies welche {Genre} Filme warten
+WhatNewMovies welche neuen {MovieGenre} Filme aufgenommen worden sind
+WhatNewMovies welche neuen {MovieGenre} Filme fertig sind
+WhatNewMovies welche neuen {MovieGenre} Filme warten
+WhatNewMovies welche {MovieGenre} Filme aufgenommen worden sind
+WhatNewMovies welche {MovieGenre} Filme fertig sind
+WhatNewMovies welche {MovieGenre} Filme warten
 WhatNewMovies welcher Film aufgenommen worden ist
 WhatNewMovies welcher Film fertig ist
 WhatNewMovies welcher Film wartet
 WhatNewMovies welcher neue Film aufgenommen worden ist
 WhatNewMovies welcher neue Film fertig ist
 WhatNewMovies welcher neue Film wartet
-WhatNewMovies welcher neue {Genre} Film aufgenommen worden ist
-WhatNewMovies welcher neue {Genre} Film fertig ist
-WhatNewMovies welcher neue {Genre} Film wartet
-WhatNewMovies welcher {Genre} Film aufgenommen worden ist
-WhatNewMovies welcher {Genre} Film fertig ist
-WhatNewMovies welcher {Genre} Film wartet
+WhatNewMovies welcher neue {MovieGenre} Film aufgenommen worden ist
+WhatNewMovies welcher neue {MovieGenre} Film fertig ist
+WhatNewMovies welcher neue {MovieGenre} Film wartet
+WhatNewMovies welcher {MovieGenre} Film aufgenommen worden ist
+WhatNewMovies welcher {MovieGenre} Film fertig ist
+WhatNewMovies welcher {MovieGenre} Film wartet
 WhatNewShows welche Serie aufgenommen worden ist
 WhatNewShows welche Serie fertig ist
 WhatNewShows welche Serie wartet
