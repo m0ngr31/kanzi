@@ -243,6 +243,10 @@ clean_video: "Cleaning video library"
 
 ejecting_media: "Ejecting media"
 
+switch_on_tv: "Switching on the TV"
+
+switch_off_tv: "Switching off the TV"
+
 quitting: "Quitting"
 
 suspending_system: "Suspending system"
