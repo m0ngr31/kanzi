@@ -5,4 +5,18 @@ script:
 - sudo apt-get install python-dev -y
 - pip install -r requirements.txt
 - pip install python-Levenshtein
-- ls ~/virtualenv/python2.7/lib/python2.7/site-packages
+- cd ~/virtualenv/python2.7/lib/python2.7/site-packages
+- zip -r9 ~/Release.zip *
+- cd $TRAVIS_BUILD_DIR
+- zip -g ~/Release.zip *
+- mkdir dist
+- mv ~/Release.zip dist/
+deploy:
+  provider: releases
+  skip_cleanup: true
+  api_key:
+    secure: G0WYufxJ5u9YiackSe8dKcFQdDqMf+5tRrKMOAlxvLdq3Sk2xrcdwDJZYdGUtwAxcBl1IlPq17wjmAKQw6AeEGrdWji/m6f0/yBeC9hyIzqhkXKJGjaRwRjJunWHl9E3pnEiBaVc54CaeuwoOY6QKK7qOfbZJnOOp1YS3iM5QlWqyusVCRK8ENma8qMLL/rDC28XzTRqq7Aj43HWZkXvwBmhNjnbfA7yTo9BJQdDzOlqEf9IP5X03CC19LaZvrI8YK3au8oFtvpT96uaJj1gsgZkWUOrW5mZsphc3mR0pVnunYmqWxPU+BC240BVtKxSd/TS3TYUAUDtV6dn4DMfm/oN0DQVERmmtqO7f2Q862f/iGYqgpiufLb19Abtsu4oHyDJakJLA8VGsgmS7Dmzk2FNVf5dT49XoEuwm4FcIGJlJX4DLhd3FzHo0rjF28fDwOq6BbVUby3o8iGBHRLxWk/Gbakn+iJQcU5t8ypVojfzEFmxw8/TLwirELerh39fvERFag1pMA8wb2STV5IR3xxCzF8zamY3rnQTKDmX3u9VGETHtLAbqauMqFs8oEFDePx4cq6MTqUn+camWhmHh0Ixori4gyoUr+fDfx+47MKH8OOCM8yAKj0WFM05H7dWmYj5YZ3Xn+lysTZeO9rhU39U2xlwO2/uYK2abFwR9ag=
+  file: $TRAVIS_BUILD_DIR/dist/Release.zip
+  on:
+    repo: m0ngr31/kodi-alexa
+git clean -fXd
