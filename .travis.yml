@@ -8,6 +8,7 @@ script:
 - cd ~/virtualenv/python2.7/lib/python2.7/site-packages
 - zip -r9 ~/Release.zip *
 - cd $TRAVIS_BUILD_DIR
+- git clean -fXd
 - zip -g ~/Release.zip *
 - mkdir dist
 - mv ~/Release.zip dist/
@@ -19,4 +20,3 @@ deploy:
   file: $TRAVIS_BUILD_DIR/dist/Release.zip
   on:
     repo: m0ngr31/kodi-alexa
-git clean -fXd
