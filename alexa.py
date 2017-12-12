@@ -38,8 +38,10 @@ if LOGSENSITIVE:
   requests_log.propagate = True
 
 SKILL_ID = config.get('alexa', 'skill_id')
-if SKILL_ID and SKILL_ID != 'None':
+if SKILL_ID and SKILL_ID != 'None' and not os.getenv('MEDIA_CENTER_SKILL_ID'):
   app.config['ASK_APPLICATION_ID'] = SKILL_ID
+elif os.getenv('MEDIA_CENTER_SKILL_ID'):
+  app.config['ASK_APPLICATION_ID'] = os.getenv('MEDIA_CENTER_SKILL_ID')
 
 LANGUAGE = config.get('global', 'language')
 if LANGUAGE and LANGUAGE != 'None' and LANGUAGE == 'de':
@@ -2714,7 +2716,7 @@ def alexa_what_new_movies(kodi, MovieGenre):
 # Lists the shows that have had new episodes added to Kodi in the last 5 days
 @ask.intent('WhatNewShows')
 @preflight_check
-def alexa_what_new_episodes(kodi):
+def alexa_what_new_shows(kodi):
   card_title = render_template('newly_added_shows').encode('utf-8')
   log.info(card_title)
 
