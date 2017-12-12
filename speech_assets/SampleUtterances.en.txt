@@ -1480,6 +1480,9 @@ WhatNewEpisodes if we have an episode of {Show}
 WhatNewEpisodes if we have any episodes of {Show}
 WhatNewEpisodes if we have any new episodes of {Show}
 WhatNewEpisodes is there a new episode of {Show}
+WhatNewEpisodes are there any new episodes of {Show}
+WhatNewEpisodes are there new episodes of {Show}
+WhatNewEpisodes is there new episodes of {Show}
 WhatNewEpisodes is there any new episodes of {Show}
 WhatNewEpisodes any new episodes of {Show}
 WhatNewMovies are there any new {MovieGenre} films
