@@ -1318,10 +1318,22 @@ VolumeUp turn up volume
 VolumeUp turn volume up
 VolumeUp up volume
 VolumeUp volume up
+WatchEpisode play episode {Episode} season {Season} of {Show}
+WatchEpisode play episode {Episode} series {Season} of {Show}
 WatchEpisode play season {Season} episode {Episode} of {Show}
 WatchEpisode play series {Season} episode {Episode} of {Show}
+WatchEpisode play {Show} episode {Episode} season {Season}
+WatchEpisode play {Show} episode {Episode} series {Season}
+WatchEpisode play {Show} season {Season} episode {Episode}
+WatchEpisode play {Show} series {Season} episode {Episode}
+WatchEpisode watch episode {Episode} season {Season} of {Show}
+WatchEpisode watch episode {Episode} series {Season} of {Show}
 WatchEpisode watch season {Season} episode {Episode} of {Show}
 WatchEpisode watch series {Season} episode {Episode} of {Show}
+WatchEpisode watch {Show} episode {Episode} season {Season}
+WatchEpisode watch {Show} episode {Episode} series {Season}
+WatchEpisode watch {Show} season {Season} episode {Episode}
+WatchEpisode watch {Show} series {Season} episode {Episode}
 WatchLastShow continue last show
 WatchLastShow continue playing last show
 WatchLastShow continue playing show
