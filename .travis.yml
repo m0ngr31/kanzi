@@ -1,8 +1,8 @@
 language: python
 python:
 - '2.7'
-before_install:
+script:
 - sudo apt-get install python-dev -y
-install:
 - pip install -r requirements.txt
 - pip install python-Levenshtein
+- ls ~/virtualenv/python2.7/lib/python2.7/site-packages
