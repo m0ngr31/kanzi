@@ -152,6 +152,11 @@ WatchEpisode (play/watch) {Show} episode {Episode} (season/series) {Season}
 
 WatchRandomEpisode (play/watch) (/a) random episode of {Show}
 
+WatchRandomEpisode play a random {Show} episode
+WatchRandomEpisode play random {Show} episode
+WatchRandomEpisode watch a random {Show} episode
+WatchRandomEpisode watch random {Show} episode
+
 WatchRandomShow (play/watch) (/a) random (/{ShowGenre}) (/t. v.) show
 
 WatchNextEpisode (play/watch) (/the) next episode of {Show}

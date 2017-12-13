@@ -1391,6 +1391,10 @@ WatchRandomEpisode play a random episode of {Show}
 WatchRandomEpisode play random episode of {Show}
 WatchRandomEpisode watch a random episode of {Show}
 WatchRandomEpisode watch random episode of {Show}
+WatchRandomEpisode play a random {Show} episode
+WatchRandomEpisode play random {Show} episode
+WatchRandomEpisode watch a random {Show} episode
+WatchRandomEpisode watch random {Show} episode
 WatchRandomMovie play a random film
 WatchRandomMovie play a random movie
 WatchRandomMovie play a random {MovieGenre} film
