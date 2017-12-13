@@ -1318,10 +1318,22 @@ VolumeUp turn up volume
 VolumeUp turn volume up
 VolumeUp up volume
 VolumeUp volume up
+WatchEpisode play episode {Episode} season {Season} of {Show}
+WatchEpisode play episode {Episode} series {Season} of {Show}
 WatchEpisode play season {Season} episode {Episode} of {Show}
 WatchEpisode play series {Season} episode {Episode} of {Show}
+WatchEpisode play {Show} episode {Episode} season {Season}
+WatchEpisode play {Show} episode {Episode} series {Season}
+WatchEpisode play {Show} season {Season} episode {Episode}
+WatchEpisode play {Show} series {Season} episode {Episode}
+WatchEpisode watch episode {Episode} season {Season} of {Show}
+WatchEpisode watch episode {Episode} series {Season} of {Show}
 WatchEpisode watch season {Season} episode {Episode} of {Show}
 WatchEpisode watch series {Season} episode {Episode} of {Show}
+WatchEpisode watch {Show} episode {Episode} season {Season}
+WatchEpisode watch {Show} episode {Episode} series {Season}
+WatchEpisode watch {Show} season {Season} episode {Episode}
+WatchEpisode watch {Show} series {Season} episode {Episode}
 WatchLastShow continue last show
 WatchLastShow continue playing last show
 WatchLastShow continue playing show
@@ -1379,6 +1391,10 @@ WatchRandomEpisode play a random episode of {Show}
 WatchRandomEpisode play random episode of {Show}
 WatchRandomEpisode watch a random episode of {Show}
 WatchRandomEpisode watch random episode of {Show}
+WatchRandomEpisode play a random {Show} episode
+WatchRandomEpisode play random {Show} episode
+WatchRandomEpisode watch a random {Show} episode
+WatchRandomEpisode watch random {Show} episode
 WatchRandomMovie play a random film
 WatchRandomMovie play a random movie
 WatchRandomMovie play a random {MovieGenre} film
@@ -1479,6 +1495,12 @@ WhatNewEpisodes if we have a new episode of {Show}
 WhatNewEpisodes if we have an episode of {Show}
 WhatNewEpisodes if we have any episodes of {Show}
 WhatNewEpisodes if we have any new episodes of {Show}
+WhatNewEpisodes is there a new episode of {Show}
+WhatNewEpisodes are there any new episodes of {Show}
+WhatNewEpisodes are there new episodes of {Show}
+WhatNewEpisodes is there new episodes of {Show}
+WhatNewEpisodes is there any new episodes of {Show}
+WhatNewEpisodes any new episodes of {Show}
 WhatNewMovies are there any new {MovieGenre} films
 WhatNewMovies are there any new {MovieGenre} films to watch
 WhatNewMovies are there any new {MovieGenre} movies

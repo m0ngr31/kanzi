@@ -146,8 +146,16 @@ WatchRandomMovie (play/watch) (/a) random (/{MovieGenre}) (movie/film)
 WatchMovieTrailer (play/watch) (/the) (trailer/preview) (/for {Movie})
 
 WatchEpisode (play/watch) (season/series) {Season} episode {Episode} of {Show}
+WatchEpisode (play/watch) episode {Episode} (season/series) {Season} of {Show}
+WatchEpisode (play/watch) {Show} (season/series) {Season} episode {Episode}
+WatchEpisode (play/watch) {Show} episode {Episode} (season/series) {Season}
 
 WatchRandomEpisode (play/watch) (/a) random episode of {Show}
+
+WatchRandomEpisode play a random {Show} episode
+WatchRandomEpisode play random {Show} episode
+WatchRandomEpisode watch a random {Show} episode
+WatchRandomEpisode watch random {Show} episode
 
 WatchRandomShow (play/watch) (/a) random (/{ShowGenre}) (/t. v.) show
 
@@ -223,6 +231,13 @@ WhatNewShows what new shows (do i have/are there) (/to watch)
 
 WhatNewEpisodes if (there is/we have) (a new/an) episode of {Show}
 WhatNewEpisodes if (there are/we have) any (/new) episodes of {Show}
+
+WhatNewEpisodes is there a new episode of {Show}
+WhatNewEpisodes are there any new episodes of {Show}
+WhatNewEpisodes are there new episodes of {Show}
+WhatNewEpisodes is there new episodes of {Show}
+WhatNewEpisodes is there any new episodes of {Show}
+WhatNewEpisodes any new episodes of {Show}
 
 PartyMode listen to random music
 PartyMode listen to all music
