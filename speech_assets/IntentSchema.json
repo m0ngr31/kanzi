@@ -508,6 +508,9 @@
       "intent": "Back"
     },
     {
+      "intent": "Info"
+    },
+    {
       "intent": "Up"
     },
     {

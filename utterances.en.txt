@@ -21,6 +21,7 @@ PageDown (/navigate/go) page down
 PageDown show more
 Select select
 Menu (/open/context) menu
+Info (/open/show) (info/information) (/dialog/window)
 
 ViewMovies (open/go to/show) movies
 ViewMovies (show/find/search for) {MovieGenre} movies

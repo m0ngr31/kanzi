@@ -113,6 +113,24 @@ Hibernate hibernate system
 Home go home
 Home home
 Home navigate home
+Info info
+Info info dialog
+Info info window
+Info information
+Info information dialog
+Info information window
+Info open info
+Info open info dialog
+Info open info window
+Info open information
+Info open information dialog
+Info open information window
+Info show info
+Info show info dialog
+Info show info window
+Info show information
+Info show information dialog
+Info show information window
 Left go left
 Left left
 Left navigate left

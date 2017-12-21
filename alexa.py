@@ -1598,6 +1598,17 @@ def alexa_back(kodi):
   return question(response_text)
 
 
+# Handle the Info intent.
+@ask.intent('Info')
+@preflight_check
+def alexa_info(kodi):
+  log.info('Navigate: Info')
+
+  kodi.Info()
+  response_text = render_template('short_confirm').encode('utf-8')
+  return question(response_text)
+
+
 # Handle the ViewMovies intent.
 @ask.intent('ViewMovies')
 @preflight_check
