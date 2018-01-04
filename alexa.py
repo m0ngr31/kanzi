@@ -635,6 +635,16 @@ def _alexa_play_media(kodi, Movie=None, Artist=None, content=None, shuffle=False
 
   return statement(response_text).simple_card(card_title, response_text)
 
+@ask.intent('PlayMedia')
+@preflight_check
+def alexa_play_media(kodi, Movie=None, Album=None):
+  card_title = render_template('stopping').encode('utf-8')
+  log.info(card_title)
+
+  kodi.PlayerStop()
+  response_text = render_template('playback_stopped').encode('utf-8')
+  return statement(response_text).simple_card(card_title, response_text)
+  return _alexa_play_media(kodi, Movie, Artist)
 
 @ask.intent('PlayMedia')
 @preflight_check
