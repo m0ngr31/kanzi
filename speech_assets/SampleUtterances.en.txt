@@ -1655,3 +1655,6 @@ WhatNewShows what new shows are there
 WhatNewShows what new shows are there to watch
 WhatNewShows what new shows do i have
 WhatNewShows what new shows do i have to watch
+Goto goto show {Show}
+Goto go to show {Show}
+Goto open show {Show}

@@ -2899,6 +2899,17 @@ def prepare_help_message(kodi):
 
   return question(response_text).reprompt(reprompt_text).simple_card(card_title, card_text)
 
+@ask.intent('Goto')
+@preflight_check
+def goto_show(kodi,Show):
+        show = kodi.FindTvShow(Show)
+        if show:
+                log.info("Show found %s,%d",show[0][1],show[0][0])
+                kodi.ShowTvShow(show[0][0])
+                return statement(render_template('opening', heard_name=show[0][1]).encode('utf-8')).simple_card('','')
+        else:
+                return statement('').simple_card('' , '')
+
 
 # No intents invoked
 @ask.launch
