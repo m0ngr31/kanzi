@@ -787,6 +787,15 @@
           "type": "SHOWS"
         }
       ]
+    },
+    {
+      "intent": "Goto",
+      "slots": [
+        {
+          "name": "Show",
+          "type": "SHOWS"
+        }
+      ]
     }
   ]
 }
