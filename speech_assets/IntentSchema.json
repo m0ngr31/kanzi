@@ -671,6 +671,12 @@
       "intent": "SubtitlesDownload"
     },
     {
+      "intent": "SubtitlesDelay"
+    },
+    {
+      "intent": "SubtitlesAdvance"
+    },
+    {
       "intent": "AudioStreamNext"
     },
     {

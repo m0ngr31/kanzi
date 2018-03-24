@@ -1065,6 +1065,8 @@ SubtitlesOn enable subtitles
 SubtitlesOn turn on subtitles
 SubtitlesPrevious previous subtitle language
 SubtitlesPrevious previous subtitles
+SubtitlesDelay delay subtitles
+SubtitlesAdvance advance subtitles
 Suspend go to sleep
 Suspend put system to sleep
 Suspend sleep

@@ -311,6 +311,10 @@ subtitles_enable: "Enabling subtitles"
 
 subtitles_download: "Downloading subtitles"
 
+subtitles_delay: "Delaying subtitles by one second"
+
+subtitles_advance: "Advancing subtitles by one second"
+
 toggle_audio_passthrough: "Toggling audio passthrough"
 
 adjusting_volume: "Adjusting volume"

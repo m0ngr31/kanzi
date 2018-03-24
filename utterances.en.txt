@@ -72,6 +72,8 @@ SubtitlesOff (disable/turn off) subtitles
 SubtitlesNext (next/switch) (subtitles/subtitle language)
 SubtitlesPrevious previous (subtitles/subtitle language)
 SubtitlesDownload download subtitles
+SubtitlesDelay delay subtitles
+SubtitlesAdvance advance subtitles
 
 AudioStreamNext (next/switch) audio (/stream)
 AudioStreamNext (next/switch) (/audio) language
