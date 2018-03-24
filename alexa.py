@@ -1263,6 +1263,28 @@ def alexa_subtitles_advance(kodi):
   return statement(card_title).simple_card(card_title, '')
 
 
+# Handle the SubtitlesDelayBy intent.
+@ask.intent('SubtitlesDelayBy')
+@preflight_check
+def alexa_subtitles_delay_by(kodi, Delay):
+  card_title = render_template('subtitles_delay_by', num=Delay).encode('utf-8')
+  log.info(card_title)
+
+  item = kodi.DelaySubtitles(float(Delay))
+  return statement(card_title).simple_card(card_title, '')
+
+
+# Handle the SubtitlesAdvanceBy intent.
+@ask.intent('SubtitlesAdvanceBy')
+@preflight_check
+def alexa_subtitles_advance_by(kodi, Advance):
+  card_title = render_template('subtitles_advance_by', num=Advance).encode('utf-8')
+  log.info(card_title)
+
+  item = kodi.AdvanceSubtitles(float(Advance))
+  return statement(card_title).simple_card(card_title, '')
+
+
 # Handle the AudioStreamNext intent.
 @ask.intent('AudioStreamNext')
 @preflight_check

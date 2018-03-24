@@ -677,6 +677,24 @@
       "intent": "SubtitlesAdvance"
     },
     {
+      "intent": "SubtitlesDelayBy",
+      "slots": [
+        {
+          "name": "Delay",
+          "type": "AMAZON.NUMBER"
+        }
+      ]
+    },
+    {
+      "intent": "SubtitlesAdvanceBy",
+      "slots": [
+        {
+          "name": "Advance",
+          "type": "AMAZON.NUMBER"
+        }
+      ]
+    },
+    {
       "intent": "AudioStreamNext"
     },
     {

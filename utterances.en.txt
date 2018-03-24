@@ -74,6 +74,8 @@ SubtitlesPrevious previous (subtitles/subtitle language)
 SubtitlesDownload download subtitles
 SubtitlesDelay delay subtitles
 SubtitlesAdvance advance subtitles
+SubtitlesDelayBy delay subtitles (/by) {Delay} (/seconds)
+SubtitlesAdvanceBy advance subtitles (/by) {Advance} (/seconds)
 
 AudioStreamNext (next/switch) audio (/stream)
 AudioStreamNext (next/switch) (/audio) language

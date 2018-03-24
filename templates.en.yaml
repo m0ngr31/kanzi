@@ -313,7 +313,11 @@ subtitles_download: "Downloading subtitles"
 
 subtitles_delay: "Delaying subtitles by one second"
 
+subtitles_delay_by: "Delaying subtitles by {{ num }} seconds"
+
 subtitles_advance: "Advancing subtitles by one second"
+
+subtitles_advance_by: "Advancing subtitles by {{ num }} seconds"
 
 toggle_audio_passthrough: "Toggling audio passthrough"
 
