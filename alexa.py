@@ -1598,6 +1598,17 @@ def alexa_back(kodi):
   return question(response_text)
 
 
+# Handle the Info intent.
+@ask.intent('Info')
+@preflight_check
+def alexa_info(kodi):
+  log.info('Navigate: Info')
+
+  kodi.Info()
+  response_text = render_template('short_confirm').encode('utf-8')
+  return question(response_text)
+
+
 # Handle the ViewMovies intent.
 @ask.intent('ViewMovies')
 @preflight_check
@@ -2716,7 +2727,7 @@ def alexa_what_new_movies(kodi, MovieGenre):
 # Lists the shows that have had new episodes added to Kodi in the last 5 days
 @ask.intent('WhatNewShows')
 @preflight_check
-def alexa_what_new_episodes(kodi):
+def alexa_what_new_shows(kodi):
   card_title = render_template('newly_added_shows').encode('utf-8')
   log.info(card_title)
 
