@@ -14,6 +14,10 @@ script:
 - zip -g ~/Release.zip *
 - mkdir dist
 - mv ~/Release.zip dist/
+before_deploy:
+  - git config --local user.name "m0ngr31"
+  - git config --local user.email "joe@ipson.me"
+  - git tag "$(date +'%m.%d.%Y')-$(git log --format=%h -1)"
 deploy:
   skip_cleanup: true
   provider: releases
@@ -22,4 +26,3 @@ deploy:
   file: $TRAVIS_BUILD_DIR/dist/Release.zip
   on:
     repo: m0ngr31/kodi-alexa
-    tags: true
