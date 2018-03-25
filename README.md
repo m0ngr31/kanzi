@@ -102,6 +102,8 @@ Most everything you can do with a remote or keyboard is supported in the skill, 
 - "What's playing?" functionality for music, movies, and shows
 - Report time remaining on current media and when it will end
 - Cycle through audio and subtitle streams
+- Download subtitles
+- Delay/advance subtitles
 - Search for something in your library (**requires script.globalsearch addon**)
 - Execute addons
 - Shutdown/reboot/sleep/hibernate system
