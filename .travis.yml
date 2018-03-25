@@ -1,0 +1,7 @@
+deploy:
+  provider: releases
+  api_key:
+    secure: Lb4ZQaf3l9YF3mBS8D7Rd7pfNN6BhWwYQg/RAHNMUREza0u+2mHMvsqoZj+ntlIQhFgL7lom/tb2yUdg/Emez+5Zuzgeu9wj8w2PvfQbPbP/zIXBTT6DC7JXopdFmbVkeXx+qddWu8956c3AcjU9CuIvC5Gdfu2/ezftXL5307p91CoiL4Hn1Vco4DrJl5zIbk0B2uNFuAdRX+JBTeZEKKhh9noh/3dO08MBoDn/wT1bUoWRquH0SwHAz6lO7+2P8aCzUx4vfUORO/WsWxLV/O5fCoeTG7zoE+5TLlbctqT3FrZ0r6HgpbDs1roPmRJSd8Azb4Fp9siuRNtU/PZw+SJToCENx+Z1WWuTqwGmMfFmKMaWKK7TDA20cam2CwYn2cxukHkHKZTul7V5CtS0mLHnPgvvG3QeePkwuZSpuEXNh4Tf++638kqM5p25xvcurzWmaePouCtCRRJDtG2vlxVr2THivP2VjbHhUsqD/Bd2LM9aGwsg6YMRA+BUhIsqf/nYWnxqgu2zn2utQwXDPa1CZ6T5Ms1PG5lZUMLsuI0OTJAnaj06VKFBOpsce3qrC6TorZ+I1pc8ipdhwJ02bFBTThm6D8blY288yyrtvlm8vi93PSepzl93IpPC46seVaGyLpUNwrL+hvu4aO1jrsXXLOjTRm4p1ego5Ic9ENE=
+  file: dist/Release.zip
+  on:
+    repo: m0ngr31/kodi-alexa
