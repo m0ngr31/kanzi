@@ -6,6 +6,8 @@ script:
 - pip install -r requirements.txt
 - pip install python-Levenshtein
 - cd ~/virtualenv/python2.7/lib/python2.7/site-packages
+- rm -rf numpy
+- ls |grep dist-info | xargs rm -rf
 - zip -r9 ~/Release.zip *
 - cd $TRAVIS_BUILD_DIR
 - git clean -fXd
@@ -20,3 +22,4 @@ deploy:
   file: $TRAVIS_BUILD_DIR/dist/Release.zip
   on:
     repo: m0ngr31/kodi-alexa
+    tags: true
