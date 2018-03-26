@@ -11,7 +11,7 @@ script:
 - zip -r9 ~/Release.zip *
 - cd $TRAVIS_BUILD_DIR
 - git clean -fXd
-- zip -g ~/Release.zip *
+- zip -g ~/Release.zip speech_assets/* *
 - mkdir dist
 - mv ~/Release.zip dist/
 before_deploy:
