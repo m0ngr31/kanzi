@@ -1,5 +1,7 @@
 # Alexa Integration With Kodi
 
+[![Build Status](https://travis-ci.org/m0ngr31/kodi-alexa.svg?branch=master)](https://travis-ci.org/m0ngr31/kodi-alexa)
+
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Contents**
