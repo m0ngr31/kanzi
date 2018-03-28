@@ -57,6 +57,12 @@ else:
 # Needs to be instanced after app is configured
 ask = Ask(app, "/", None, path=TEMPLATE_FILE)
 
+
+# Direct lambda handler
+def lambda_handler(event, _context):
+  return ask.run_aws_lambda(event)
+
+
 # Decorator to check your config for basic info and if your account is linked (when using the hosted skill)
 def preflight_check(f):
   @wraps(f)
