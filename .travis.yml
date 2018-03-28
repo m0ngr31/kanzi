@@ -3,15 +3,13 @@ python:
 - '2.7'
 script:
 - sudo apt-get install python-dev -y
-- pip install -r requirements.txt
-- pip install python-Levenshtein
-- cd ~/virtualenv/python2.7/lib/python2.7/site-packages
-- rm -rf numpy
-- ls |grep dist-info | xargs rm -rf
-- zip -r9 ~/Release.zip *
 - cd $TRAVIS_BUILD_DIR
 - git clean -fXd
-- zip -g ~/Release.zip speech_assets/* *
+- pip install -r requirements.txt -t .
+- pip install python-Levenshtein
+- rm -rf numpy boto* .git
+- ls | grep dist-info | xargs rm -rf
+- zip -r9 ~/Release.zip .
 - mkdir dist
 - mv ~/Release.zip dist/
 before_deploy:
