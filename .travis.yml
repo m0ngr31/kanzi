@@ -7,9 +7,9 @@ script:
 - git clean -fXd
 - pip install -r requirements.txt -t .
 - pip install python-Levenshtein
-- rm -rf numpy boto* .git
+- rm -rf numpy boto*
 - ls | grep dist-info | xargs rm -rf
-- zip -r9 ~/Release.zip .
+- zip -r9 ~/Release.zip -x \*.git\* . 
 - mkdir dist
 - mv ~/Release.zip dist/
 before_deploy:
