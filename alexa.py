@@ -1249,7 +1249,7 @@ def alexa_subtitles_delay(kodi):
   log.info(card_title)
 
   item = kodi.DelaySubtitles(0.5)
-  return statement(card_title).simple_card(card_title, '')
+  return statement('').simple_card(card_title, '')
 
 
 # Handle the SubtitlesAdvance intent.
@@ -1260,7 +1260,7 @@ def alexa_subtitles_advance(kodi):
   log.info(card_title)
 
   item = kodi.AdvanceSubtitles(0.5)
-  return statement(card_title).simple_card(card_title, '')
+  return statement('').simple_card(card_title, '')
 
 
 # Handle the SubtitlesDelayBy intent.
@@ -1274,7 +1274,7 @@ def alexa_subtitles_delay_by(kodi, Delay):
   log.info(card_title)
 
   item = kodi.DelaySubtitles(float(Delay))
-  return statement(card_title).simple_card(card_title, '')
+  return statement('').simple_card(card_title, '')
 
 
 # Handle the SubtitlesAdvanceBy intent.
@@ -1288,7 +1288,7 @@ def alexa_subtitles_advance_by(kodi, Advance):
   log.info(card_title)
 
   item = kodi.AdvanceSubtitles(float(Advance))
-  return statement(card_title).simple_card(card_title, '')
+  return statement('').simple_card(card_title, '')
 
 
 # Handle the AudioStreamNext intent.
