@@ -1,6 +1,8 @@
 # Alexa Integration With Kodi
 
 [![Build Status](https://travis-ci.org/m0ngr31/kodi-alexa.svg?branch=master)](https://travis-ci.org/m0ngr31/kodi-alexa)
+[![Backers on Open Collective](https://opencollective.com/lexigram/backers/badge.svg)](#backers)
+ [![Sponsors on Open Collective](https://opencollective.com/lexigram/sponsors/badge.svg)](#sponsors) 
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
@@ -506,3 +508,24 @@ cache_bucket = kodi-alexa-4fae019a1f
 # Developer Discussion
 
 If you're interested in chatting with us about the development of the skill, we are on [Slack](https://mediacenterio-slack.herokuapp.com/).
+
+## Credits
+### Contributors
+
+This project exists thanks to all the people who contribute. [[Contribute](CONTRIBUTING.md)].
+<a href="graphs/contributors"><img src="https://opencollective.com/lexigram/contributors.svg?width=890&button=false" /></a>
+
+
+### Backers
+
+Thank you to all our backers! 🙏 [[Become a backer](https://opencollective.com/lexigram#backer)]
+
+<a href="https://opencollective.com/lexigram#backers" target="_blank"><img src="https://opencollective.com/lexigram/backers.svg?width=890”></a>
+
+
+### Sponsors
+
+Support this project by becoming a sponsor. Your logo will show up here with a link to your website. [[Become a sponsor](https://opencollective.com/lexigram#sponsor)]
+
+<a href="https://opencollective.com/lexigram/sponsor/0/website" target="_blank"><img src="https://opencollective.com/lexigram/sponsor/0/avatar.svg"></a>
+
