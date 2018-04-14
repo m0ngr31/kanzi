@@ -9,7 +9,7 @@ script:
 - pip install python-Levenshtein
 - rm -rf numpy boto*
 - ls | grep dist-info | xargs rm -rf
-- sed -i 's/from io/from StringIO/' flask_ask/core.py
+- sed -i 's/StringIO/BytesIO/g' flask_ask/core.py
 - rm flask_ask/core.pyc
 - zip -r9 ~/Release.zip . -x \*.git\*
 - mkdir dist
