@@ -1,10 +1,10 @@
 {
   "name": "Kodi-Alexa Skill",
   "description": "An Alexa still that let's you control (almost) anything on a Kodi box.",
-  "repository": "https://github.com/m0ngr31/kodi-alexa",
-  "logo": "http://i.imgur.com/BaBCo1t.png",
+  "repository": "https://github.com/m0ngr31/kanzi",
+  "logo": "https://i.imgur.com/k0MOv2r.png",
   "keywords": ["kodi", "alexa", "python", "flask-ask"],
-  "website": "https://github.com/m0ngr31/kodi-alexa",
+  "website": "https://github.com/m0ngr31/kanzi",
   "env": {
     "KODI_ADDRESS": {
       "description": "IP address or fully-qualified domain name to talk to Kodi.",

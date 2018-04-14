@@ -1,13 +1,18 @@
-# Alexa Integration With Kodi
+# Kanzi: Alexa Integration With Kodi
 
-[![Build Status](https://travis-ci.org/m0ngr31/kodi-alexa.svg?branch=master)](https://travis-ci.org/m0ngr31/kodi-alexa)
+[![Buy Me A Coffee](https://www.buymeacoffee.com/assets/img/custom_images/white_img.png)](https://www.buymeacoffee.com/lexigram)
+[![Build Status](https://travis-ci.org/m0ngr31/kanzi.svg?branch=master)](https://travis-ci.org/m0ngr31/kanzi)
+
+<p align="center">
+  <img src="https://i.imgur.com/ztNTtIi.png"/>
+</p>
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Contents**
 
-- [About](#about)
-  - [Kodi-Alexa in Action](#kodi-alexa-in-action)
+- [About](#about-kanzi)
+  - [Kanzi in Action](#kanzi-in-action)
   - [Supported Commands](#supported-commands)
   - [Getting Help](#getting-help)
   - [Upgrading From a Previous Version](#upgrading-from-a-previous-version)
@@ -48,7 +53,7 @@
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-# About Kodi-Alexa
+# About Kanzi
 
 This is a skill for Amazon Alexa that allows you to control one or more instances of [Kodi](https://kodi.tv) with your voice.
 
@@ -58,7 +63,7 @@ Unfortunately, as of this moment, we cannot simply ship this skill normally as o
 
 However, we have made every effort to here to provide clear and concise documentation to allow you to make use of this skill now.
 
-## Kodi-Alexa in Action
+## Kanzi in Action
 
 [![Amazon Echo - Kodi integration (demo 1) ](http://i.imgur.com/BrXDYm6.png)](https://www.youtube.com/watch?v=Xar4byrlEvo "Amazon Echo - Kodi integration (demo 1) ")
 
@@ -213,7 +218,7 @@ Currently we do not support [addressing multiple instances](#controlling-more-th
 ### Setup
 After you have set up an Heroku account, click on this button below to provision a new server. Select a unique name to make upgrades easy.
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://www.heroku.com/deploy/?template=https://github.com/m0ngr31/kodi-alexa)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://www.heroku.com/deploy/?template=https://github.com/m0ngr31/kanzi)
 
 _Make note of the endpoint_
 
@@ -249,7 +254,7 @@ Next, run these commands to configure your computer for AWS service access:
 
 After you've done that, run `pip install virtualenv`. This is required for a later step.
 
-Now, clone my repo: `git clone https://github.com/m0ngr31/kodi-alexa.git` and `cd kodi-alexa`. Once you are inside the project directory, you're going to create a new "Virtual environement" and then activate it:
+Now, clone my repo: `git clone https://github.com/m0ngr31/kanzi.git` and `cd kanzi`. Once you are inside the project directory, you're going to create a new "Virtual environement" and then activate it:
 `virtualenv venv` and `source venv/bin/activate` (if you are on Windows, that's `venv\Scripts\activate.bat` or `venv\Scripts\activate.ps1` for Powershell).
 
 Next you need to create the file `kodi.config` from the [kodi.config.example template](https://raw.githubusercontent.com/m0ngr31/kodi-voice/master/kodi_voice/kodi.config.example) and enter the correct information for: address, port, username, and password. I'll go over the other variables in another section below.
@@ -333,9 +338,9 @@ Ultimately, you will end up adding the following Slots:
 
 _If one of your slots is empty, you can just enter the word 'Empty' or something so that it'll save._
 
-Next, you'll have to paste the contents of [IntentSchema.json](https://raw.githubusercontent.com/m0ngr31/kodi-alexa/master/speech_assets/IntentSchema.json) into the _Intent Schema_ field.
+Next, you'll have to paste the contents of [IntentSchema.json](https://raw.githubusercontent.com/m0ngr31/kanzi/master/speech_assets/IntentSchema.json) into the _Intent Schema_ field.
 
-Then, paste the contents of [SampleUtterances.en.txt](https://raw.githubusercontent.com/m0ngr31/kodi-alexa/master/speech_assets/SampleUtterances.en.txt) or [SampleUtterances.de.txt](https://raw.githubusercontent.com/m0ngr31/kodi-alexa/master/speech_assets/SampleUtterances.de.txt), depending on your native language, in the _Sample Utterances_ field.
+Then, paste the contents of [SampleUtterances.en.txt](https://raw.githubusercontent.com/m0ngr31/kanzi/master/speech_assets/SampleUtterances.en.txt) or [SampleUtterances.de.txt](https://raw.githubusercontent.com/m0ngr31/kanzi/master/speech_assets/SampleUtterances.de.txt), depending on your native language, in the _Sample Utterances_ field.
 
 ![2nd tab](http://i.imgur.com/WQYExdK.png)
 
@@ -449,11 +454,11 @@ A secondary consideration is that this can put your library items in public view
 
 The first thing you need to do is [sign up for Amazon S3](http://docs.aws.amazon.com/AmazonS3/latest/gsg/SigningUpforS3.html) if you haven't already.  Next, [create a unique bucket](http://docs.aws.amazon.com/AmazonS3/latest/gsg/CreatingABucket.html) in which the skill can store cache objects.  It is recommended that you use a randomized name for the bucket if possible.
 
-For the bucket you create, you definitely should not use your root credentials, and ideally, you shouldn't use admin credentials either.  If you deployed the skill via [AWS Lambda](#aws-lambda), 'admin credentials' would be the the keys for the `kodi-alexa` user described there.
+For the bucket you create, you definitely should not use your root credentials, and ideally, you shouldn't use admin credentials either.  If you deployed the skill via [AWS Lambda](#aws-lambda), 'admin credentials' would be the the keys for the `kanzi` user described there.
 
 It would be best to [create another user with only the ability to list buckets and administer the cache bucket](http://mikeferrier.com/2011/10/27/granting-access-to-a-single-s3-bucket-using-amazon-iam/) via the [IAM Management Console](https://console.aws.amazon.com/iam/home).
 
-However, if you don't use S3 for anything else that you consider important or private, you're welcome to use the `kodi-alexa` user credentials for the rest of this.
+However, if you don't use S3 for anything else that you consider important or private, you're welcome to use the `kanzi` user credentials for the rest of this.
 
 For each bucket you have created, you will need to add the following to either the `[DEFAULT]` section or the appropriate [device section](#controlling-more-than-one-instance-of-kodi):
 
@@ -467,13 +472,13 @@ For example:
 
 ```
 [DEFAULT]
-cache_bucket = kodi-alexa-7ce4fea901
+cache_bucket = kanzi-7ce4fea901
 s3_cache_aws_access_key_id = AKQJ56NSL3XGGLQYDT0L
 s3_cache_aws_secret_access_key = iCmj7ag+mdxkcDLcst/gAMDXrjkp0j7toMMDrrkJ
 
 # Office Echo Dot
 [amzn1.ask.device.AEFDXCGLSFJFNGCVF8SDJF90FID9G284JDJFGJGHH83358DJFFGIGD734JJDFGK211GDFFHHH23HGFJTYEFGJRT56KJDHDFJ5546DJDFFSWOPPP677P88P873EHZNZDFEIRTYIN2239NDFGIH724JDFKS2AA]
-cache_bucket = kodi-alexa-4fae019a1f
+cache_bucket = kanzi-4fae019a1f
 ```
 
 ## Configuring for ownCloud or nextCloud
@@ -493,16 +498,16 @@ For example:
 
 ```
 [DEFAULT]
-cache_bucket = kodi-alexa-7ce4fea901
+cache_bucket = kanzi-7ce4fea901
 owncloud_cache_url = https://my.owncloudserver.com/owncloud/
 owncloud_cache_user = username
 owncloud_cache_password = password
 
 # Office Echo Dot
 [amzn1.ask.device.AEFDXCGLSFJFNGCVF8SDJF90FID9G284JDJFGJGHH83358DJFFGIGD734JJDFGK211GDFFHHH23HGFJTYEFGJRT56KJDHDFJ5546DJDFFSWOPPP677P88P873EHZNZDFEIRTYIN2239NDFGIH724JDFKS2AA]
-cache_bucket = kodi-alexa-4fae019a1f
+cache_bucket = kanzi-4fae019a1f
 ```
 
 # Developer Discussion
 
-If you're interested in chatting with us about the development of the skill, we are on [Slack](https://mediacenterio-slack.herokuapp.com/).
+If you're interested in chatting with us about the development of the skill, we are on [Slack](https://lexigram-slack.herokuapp.com/).
