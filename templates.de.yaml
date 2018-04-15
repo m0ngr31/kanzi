@@ -172,11 +172,11 @@ help: "Du kannst mich fragen, ob es neue Serien gibt, mich bitten einen Film, ei
 
 help_short: "Was möchtest du tun? Probiere etwas wie {{ example }}."
 
-help_text: "Kodi-Alexa ermöglicht es dir eine oder mehrere Kodi Installtionen mit deiner Stimme zu steuern. Hier sind einige Beispiele, die du sagen kannst:\n
+help_text: "Kanzi ermöglicht es dir eine oder mehrere Kodi Installtionen mit deiner Stimme zu steuern. Hier sind einige Beispiele, die du sagen kannst:\n
 \xa0\n
 {{ example }}
 \xa0\n
-Für eine komplette Liste der unterstützten Kommandos, lese bitte die README Datei auf Github (https://github.com/m0ngr31/kodi-alexa/README.md)."
+Für eine komplette Liste der unterstützten Kommandos, lese bitte die README Datei auf Github (https://github.com/m0ngr31/kazni/README.md)."
 
 help_play: "Spezifiziere bitte den Medientyp mit dem Wiedergabebefehl, so wie Spiele den Film Ghost Busters"
 
@@ -190,7 +190,7 @@ are_you_sure_hibernate: "Bist du dir sicher, dass das System in den Hibernate ge
 
 are_you_sure_suspend: "Bist du dir sicher, dass das System in den Suspend gehen soll?"
 
-welcome: "Willkommen zum Kodi Skill"
+welcome: "Willkommen zum Kanzi Skill"
 
 nothing_currently_playing: "Es läuft gerade nichts."
 

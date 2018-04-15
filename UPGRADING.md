@@ -11,7 +11,7 @@ Almost anything else can change, too.  Please be sure to check the CHANGELOG and
 ## Heroku
 
 Just delete the existing app from your Heroku Dashboard, and create another with the button below with the same name you gave earlier.
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://www.heroku.com/deploy/?template=https://github.com/m0ngr31/kodi-alexa)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://www.heroku.com/deploy/?template=https://github.com/m0ngr31/kanzi)
 
 ## AWS Lambda
 

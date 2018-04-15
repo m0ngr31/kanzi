@@ -172,11 +172,11 @@ help: "You can ask me whether there are any new shows, to play a movie, t. v. sh
 
 help_short: "What would you like to do?  Try something like, {{ example }}."
 
-help_text: "Kodi-Alexa allows you to fully control one or more Kodi installations with your voice.  Here are some examples of things you can say:\n
+help_text: "Kanzi allows you to fully control one or more Kodi installations with your voice.  Here are some examples of things you can say:\n
 \xa0\n
 {{ examples }}
 \xa0\n
-For a complete list of supported requests, please see the README file on Github (https://github.com/m0ngr31/kodi-alexa/README.md)."
+For a complete list of supported requests, please see the README file on Github (https://github.com/m0ngr31/kanzi/README.md)."
 
 help_play: "Please specify the media type in your play command, such as, play the movie ghost busters."
 
@@ -190,7 +190,7 @@ are_you_sure_hibernate: "Are you sure you want to hibernate?"
 
 are_you_sure_suspend: "Are you sure you want to suspend?"
 
-welcome: "Welcome to Kodi."
+welcome: "Welcome to Kanzi."
 
 nothing_currently_playing: "Kodi isn't playing any music right now."
 
