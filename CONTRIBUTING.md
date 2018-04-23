@@ -2,7 +2,7 @@
 
 ## Please Read
 If you would like to contribute, please keep the following in mind:
- - If you make a change that affects the setup (ex. Adding a new custom slot type), make sure you're updating the README file.
+ - If you make a change that affects the setup (ex. Adding a new custom slot type), make sure you're updating the [docs site](https://github.com/m0ngr31/lexigr.am).
  - If you make a new intent, make sure that you follow the same syntax as the rest of the templates. DO NOT just put English text in `alexa.py` file.
    - Make sure you look at the translating guide below to get your intent ready for translation.
 
