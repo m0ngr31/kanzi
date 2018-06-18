@@ -152,7 +152,7 @@ WatchRandomEpisode (joue/démarre/regarde/lis) un épisode (de/d') {Show} au has
 
 WatchRandomShow (joue/démarre/regarde/lis) une série (/télé/TV/t.v.) (/(de/d'/) {ShowGenre})
 
-WatchNextEpisode (joue/démarre/regarde/lis) l'épisode suivant de {Show}
+WatchNextEpisode (joue/démarre/regarde/lis) (le prochain épisode/l'épisode suivant) (de/d') {Show}
 
 WatchLastShow continue (la lecture/de lire/de regarder/de jouer) (/la dernière) série (/télé/TV/t.v.)
 

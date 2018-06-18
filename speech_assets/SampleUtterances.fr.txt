@@ -2090,10 +2090,22 @@ WatchMusicVideo regarde le clip vidéo {MusicVideo}
 WatchMusicVideo regarde le clip vidéo {MusicVideo} d' {Artist}
 WatchMusicVideo regarde le clip vidéo {MusicVideo} de {Artist}
 WatchMusicVideo regarde le clip vidéo {MusicVideo} par {Artist}
+WatchNextEpisode démarre l'épisode suivant d' {Show}
 WatchNextEpisode démarre l'épisode suivant de {Show}
+WatchNextEpisode démarre le prochain épisode d' {Show}
+WatchNextEpisode démarre le prochain épisode de {Show}
+WatchNextEpisode joue l'épisode suivant d' {Show}
 WatchNextEpisode joue l'épisode suivant de {Show}
+WatchNextEpisode joue le prochain épisode d' {Show}
+WatchNextEpisode joue le prochain épisode de {Show}
+WatchNextEpisode lis l'épisode suivant d' {Show}
 WatchNextEpisode lis l'épisode suivant de {Show}
+WatchNextEpisode lis le prochain épisode d' {Show}
+WatchNextEpisode lis le prochain épisode de {Show}
+WatchNextEpisode regarde l'épisode suivant d' {Show}
 WatchNextEpisode regarde l'épisode suivant de {Show}
+WatchNextEpisode regarde le prochain épisode d' {Show}
+WatchNextEpisode regarde le prochain épisode de {Show}
 WatchRandomEpisode démarre un épisode au hasard d' {Show}
 WatchRandomEpisode démarre un épisode au hasard de {Show}
 WatchRandomEpisode démarre un épisode d' {Show} au hasard

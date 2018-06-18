@@ -231,7 +231,7 @@ newly_added_movies: "Films récemment ajoutés"
 
 newly_added_movies_genre: "Films de {{ genre }} récemment ajoutés"
 
-last_unwatched: "Lecture de l'épisode non vu suivant de la dernière série regardée"
+last_unwatched: "Lecture du prochain épisode de la dernière série regardée"
 
 update_audio: "Mise à jour de la bibliothèque audio"
 
