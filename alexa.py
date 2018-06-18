@@ -44,16 +44,14 @@ elif os.getenv('MEDIA_CENTER_SKILL_ID'):
   app.config['ASK_APPLICATION_ID'] = os.getenv('MEDIA_CENTER_SKILL_ID')
 
 LANGUAGE = config.get('global', 'language')
-if LANGUAGE and LANGUAGE != 'None':
-  if LANGUAGE == 'en':
-    TEMPLATE_FILE = "templates.en.yaml"
-  elif LANGUAGE == 'de':
-    TEMPLATE_FILE = "templates.de.yaml"
-  elif LANGUAGE == 'fr':
-    TEMPLATE_FILE = "templates.fr.yaml"
-else:
+if !LANGUAGE or LANGUAGE == 'None':
   LANGUAGE = 'en'
+if LANGUAGE == 'en':
   TEMPLATE_FILE = "templates.en.yaml"
+elif LANGUAGE == 'de':
+  TEMPLATE_FILE = "templates.de.yaml"
+elif LANGUAGE == 'fr':
+  TEMPLATE_FILE = "templates.fr.yaml"
 
 # According to this: https://alexatutorial.com/flask-ask/configuration.html
 # Timestamp based verification shouldn't be used in production. Use at own risk
