@@ -168,7 +168,7 @@ you_have_episode_list: "Il y a de nouveaux épisodes pour {{ items }}"
 
 volume_set: "Volume réglé sur {{ num }}"
 
-help: "Vous pouvez me demander s'il y a des nouvelles séries, de lire un film, une sérier ou un artiste, contrôler la lecture des médias et plus encore. Par exemple, {{ example }}. J'ai envoyé plus d'exemple à votre application Alexa."
+help: "Vous pouvez me demander s'il y a des nouvelles séries, de lire un film, une sérier ou un artiste, contrôler la lecture des médias et plus encore. Par exemple, {{ example }}. J'ai envoyé plus d'exemples à votre application Alexa."
 
 help_short: "Que voulez-vous faire ? Essayez quelque chose comme {{ example }}."
 
@@ -203,7 +203,7 @@ card_config_missing: "Configuration invalide"
 
 looking_for_show: "Recherche de nouveaux épisodes de {{ heard_show }}"
 
-current_playing_item: "Élement en cours de lecture"
+current_playing_item: "Élément en cours de lecture"
 
 time_left_playing: "Temps restant sur l'élément en cours de lecture"
 
