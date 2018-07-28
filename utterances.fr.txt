@@ -1,0 +1,250 @@
+# A list of utterance variations written in a shorthand syntax
+
+# Syntax and information
+# http://www.makermusings.com/2015/07/21/defining-utterances-for-the-alexa-skills-kit/
+
+# Tool to expand the single line into the usable list of utterances
+# http://www.makermusings.com/amazon-echo-utterance-expander/
+
+# Utterances that include a reference to a Slot are more specific than
+# others because, in testing, Alexa appears to not fuzzy match these
+# as well as those that have no slot references.
+
+Home (/va à l'/retourne à l') accueil
+Back (/va/retourne) (/en) arrière
+Up (va en haut/monte/haut)
+Down (va en bas/descend/bas)
+Right (/va à) droite
+Left (/va à) gauche
+PageUp (/va à la page) précédente
+PageDown (/va à la page) suivante
+PageDown montre plus
+Select (sélectionne/choisis)
+Menu (/ouvre le) menu
+Info (/ouvre/montre) (/le dialogue d'/la fenêtre d') (info/informations)
+
+ViewMovies (ouvre les/va aux/affiche les/montre les) films
+ViewMovies (montre/cherche/recherche) des films (de/d') {MovieGenre}
+ViewShows (ouvre/va/affiche/montre) les séries (/télé/TV/t.v.)
+ViewShows (montre/cherche/recherche) des séries (/télé/TV/t.v.) (de/d') {ShowGenre}
+ViewMusic (ouvre/va à/affiche/montre) la musique
+ViewMusic (montre/cherche/recherche) (de la musique/des chansons) {MusicGenre}
+ViewArtists (ouvre/va/affiche/montre) les (artistes/musiciens)
+ViewAlbums (ouvre/va/affiche/montre) les albums (/musicaux)
+ViewMusicVideos (ouvre/va/affiche/montre) les clips
+ViewMusicVideos (montre/cherche/recherche) des clips (de/d') {MusicVideoGenre}
+ViewAudioPlaylist (ouvre/va/affiche/montre) la liste de lecture (musicale/audio) {AudioPlaylist}
+ViewAudioPlaylistRecent (ouvre/va/affiche/montre) (les albums/les chansons/la musique) (/les plus) (récents/récentes)
+ViewAudioPlaylistRecent (ouvre/va/affiche/montre) (les albums/les chansons/la musique) (ajoutés/ajoutées) récemment
+ViewAudioPlaylistRecent (ouvre/va/affiche/montre) les (derniers/dernières/plus récents/plus récentes) (albums/chansons/musiques)
+ViewVideoPlaylist (ouvre/va/affiche/montre) la liste de lecture (vidéo/de films/de séries) {VideoPlaylist}
+ViewMoviePlaylistRecent (ouvre/va/affiche/montre) les (films/vidéos) (récents/récentes)
+ViewMoviePlaylistRecent (ouvre/va/affiche/montre) les (films/vidéos) récemment (ajoutés/ajoutées)
+ViewMoviePlaylistRecent (ouvre/va/affiche/montre) (derniers films/dernières vidéos)
+ViewEpisodePlaylistRecent (ouvre/va/affiche/montre) les (épisodes/séries) (/TV/télé/t.v.) (/les plus) (récents/récentes)
+ViewEpisodePlaylistRecent (ouvre/va/affiche/montre) les (épisodes/séries) (/TV/télé/t.v.) (ajoutés/ajoutées) récemment
+ViewEpisodePlaylistRecent (ouvre/va/affiche/montre) les deniers (épisodes/séries) (/TV/télé/t.v.)
+ViewMusicVideoPlaylistRecent (ouvre/va/affiche/montre) les clips (/les plus) récents
+ViewMusicVideoPlaylistRecent (ouvre/va/affiche/montre) les clips ajoutés récemment
+ViewMusicVideoPlaylistRecent (ouvre/va/affiche/montre) les derniers clips
+ViewPlaylist (ouvre/va/affiche/montre) la (liste de lecture/playlist) {AudioPlaylist}
+ViewPlaylist (ouvre/va/affiche/montre) la (liste de lecture/playlist) {VideoPlaylist}
+
+Fullscreen (passe en/active le/désactive le) plein écran
+Fullscreen (active/désactive) la visualisation
+StereoscopicMode (active/désactive) la (trois D/stéréoscopie)
+StereoscopicMode (active/désactive) le mode (trois D/stéréoscopie/stéréoscopique)
+
+AudioPassthrough (active/désactive) l'audio (passthrough/digital)
+AudioPassthrough (active/désactive) le passthrough (digital/audio)
+Mute (active/désactive/bascule) la sourdine
+Mute (active/désactive/bascule) le mode muet
+VolumeUp monte le (volume/son)
+VolumeDown baisse le (volume/son)
+VolumeSet (passe/met) le (volume/son) à {Volume}
+VolumeSetPct (passe/met) le (volume/son) à {Volume} pourcents
+
+SubtitlesOn (active/affiche/allume/met) les sous-titres
+SubtitlesOff (désactive/cache/masque/éteint) les sous-titres
+SubtitlesNext (/passe aux) sous-titres suivants
+SubtitlesNext (/passe à la) langue de sous-titres suivante
+SubtitlesPrevious (/passe aux) sous-titres précédents
+SubtitlesPrevious (/passe à la) langue de sous-titres précédente
+SubtitlesDownload (télécharge/download) (les/des) sous-titres
+
+AudioStreamNext (/stream/flux) audio suivant
+AudioStreamNext langue (/audio) suivante
+AudioStreamPrevious (/stream/flux) audio précédent
+AudioStreamPrevious langue (/audio) précédente
+
+PlayerMoveUp (déplace/bouge) vers le haut
+PlayerMoveDown (déplace/bouge) vers le bas
+PlayerMoveLeft (déplace/bouge) vers la gauche
+PlayerMoveRight (déplace/bouge) vers la droite
+PlayerRotateClockwise tourne (/dans le sens des aiguilles (/d'une montre)/de quatre-vingt-dix degrés)
+PlayerRotateCounterClockwise tourne dans le sens inverse des aiguilles (/d'une montre)
+PlayerZoomHold ne bouge (pas/plus)
+PlayerZoomHold arrête de bouger
+PlayerZoomIn zoome (/l'image)
+PlayerZoomInMoveUp zoome (/l'image) et (déplace/bouge) vers le haut
+PlayerZoomInMoveDown zoome (/l'image) et (déplace/bouge) vers le bas
+PlayerZoomInMoveLeft zoome (/l'image) et (déplace/bouge) vers la gauche
+PlayerZoomInMoveRight zoome (/l'image) et (déplace/bouge) vers la droite
+PlayerZoomOut dézoome
+PlayerZoomOutMoveUp dézoome (/l'image) et (déplace/bouge) vers le haut
+PlayerZoomOutMoveDown dézoome (/l'image) et (déplace/bouge) vers le bas
+PlayerZoomOutMoveLeft dézoome (/l'image) et (déplace/bouge) vers la gauche
+PlayerZoomOutMoveRight dézoome (/l'image) et (déplace/bouge) vers la droite
+PlayerZoomReset zoom normal
+PlayerZoomReset réinitialise le zoom
+
+CleanVideo nettoie la bibliothèque (/vidéo)
+
+UpdateVideo (met à jour/update) la bibliothèque (/vidéo)
+
+CleanAudio nettoie la bibliothèque (audio/musicale/de musique/de chansons)
+
+UpdateAudio (met à jour/update) la bibliothèque (audio/musicale/de musique/de chansons)
+
+PlayMedia (joue/lis/ouvre) {Movie}
+ShuffleMedia mélange {Show}
+
+WhatAlbums quels albums (par/de/d') {Artist} (ai-je/as-tu/j'ai/tu as)
+
+ListenToAudio écoute (/du) {Artist}
+
+ListenToGenre (lis/écoute/mélange/joue) (des chansons/de la musique/du/de la) {MusicGenre}
+
+ListenToArtist (lis/écoute/mélange/joue) (des chansons/de la musique/du/de la) (/{MusicGenre}) (de/d'/par) {Artist}
+
+ListenToLatestAlbum (lis/joue/écoute) le (dernier/plus récent) album (de/d'/par) {Artist}
+
+ListenToAlbum (lis/joue/écoute) l'album {Album}
+ListenToAlbum (lis/joue/écoute) l'album {Album} (par/de/d') {Artist}
+
+ListenToSong (lis/joue/écoute) la (chanson/piste/musique) {Song}
+ListenToSong (lis/joue/écoute) la (chanson/piste/musique) {Song} (par/de/d') {Artist}
+ListenToSong (lis/joue/écoute) la (chanson/piste/musique) {Song} (de/sur) l'album {Album}
+
+ListenToAlbumOrSong (lis/joue/écoute) la (chanson/piste/musique) {Song} (par/de/d') {Artist}
+
+ListenToAudioPlaylist (lis/joue/écoute) la liste (/de lecture) (/audio/musicale/de musique) {AudioPlaylist}
+
+ListenToAudioPlaylistRecent (lis/joue/écoute/mélange) les (chansons/musiques/pistes/albums) (/les plus) (nouveaux/nouvelles/récents/récentes)
+ListenToAudioPlaylistRecent (lis/joue/écoute/mélange) les (chansons/musiques/pistes/albums) (/les plus) récemment (ajoutés/ajoutées)
+ListenToAudioPlaylistRecent (lis/joue/écoute/mélange) les (chansons/musiques/pistes/albums) (ajoutés/ajoutées) récemment
+ListenToAudioPlaylistRecent (lis/joue/écoute/mélange) (nouveaux/nouvelles/derniers/dernières) (chansons/musiques/pistes/albums)
+
+WatchVideo regarde {Movie}
+
+WatchMovie (joue/démarre/regarde/lis) le film {Movie}
+
+WatchRandomMovie (joue/démarre/regarde/lis) un film (/(de/d') {MovieGenre}) au hasard
+
+WatchMovieTrailer (joue/démarre/regarde/lis) (le/la) (trailer/bande-annonce) (/(de/d') {Movie})
+
+WatchEpisode (joue/démarre/regarde/lis) l'épisode {Episode} de la saison {Season} de {Show}
+WatchEpisode (joue/démarre/regarde/lis) {Show} saison {Season} épisode {Episode}
+WatchEpisode (joue/démarre/regarde/lis) {Show} épisode {Episode} (saison) {Season}
+
+WatchRandomEpisode (joue/démarre/regarde/lis) un épisode au hasard (de/d') {Show}
+WatchRandomEpisode (joue/démarre/regarde/lis) un épisode (de/d') {Show} au hasard
+
+WatchRandomShow (joue/démarre/regarde/lis) une série (/télé/TV/t.v.) (/(de/d'/) {ShowGenre})
+
+WatchNextEpisode (joue/démarre/regarde/lis) (le prochain épisode/l'épisode suivant) (de/d') {Show}
+
+WatchLastShow continue (la lecture/de lire/de regarder/de jouer) (/la dernière) série (/télé/TV/t.v.)
+
+WatchLatestEpisode (joue/démarre/regarde/lis) le (dernier/plus récent) épisode de {Show}
+
+WatchMusicVideo (joue/démarre/regarde/lis) le clip (vidéo/musical/de musique) {MusicVideo} (/(par/de/d') {Artist})
+
+WatchRandomMusicVideo (joue/démarre/regarde/lis) un clip (vidéo/musical/de musique) (/(de/d') {MusicVideoGenre}) (/(par/de/d') {Artist}) au hasard
+
+WatchVideoPlaylist (joue/démarre/regarde/lis) (/the) (movie/show/video) playlist {VideoPlaylist}
+WatchVideoPlaylist (joue/démarre/regarde/lis) {VideoPlaylist} (movie/show/video) playlist
+WatchVideoPlaylist watch (/the) playlist {VideoPlaylist}
+WatchVideoPlaylist watch {VideoPlaylist} playlist
+
+ShuffleShow mélange (/tous) les épisodes de {Show}
+
+ShuffleMusicVideos (joue/regarde/mélange) (/tous) les clips (/(de/d') {MusicVideoGenre}) (/(par/de/d') {Artist})
+
+ShuffleLatestAlbum mélange le (dernier/plus récent) album (par/de/d') {Artist}
+
+ShuffleAlbum mélange l'album {Album} (/(par/de/d') {Artist})
+
+ShuffleAudioPlaylist mélange la liste (/de lecture) (musicale/audio/de chansons) {AudioPlaylist}
+
+ShuffleVideoPlaylist mélange la liste (/de lecture) (de films/de séries/video) {VideoPlaylist}
+
+ShufflePlaylist mélange la liste de lecture {AudioPlaylist}
+ShufflePlaylist mélange la liste de lecture {VideoPlaylist}
+
+RecommendVideo (suggère/recommande) quelque chose à regarder
+RecommendAudio (suggère/recommande) quelque chose à écouter
+RecommendMovie (suggère/recommande) un film (/(de/d'/à/à l') {MovieGenre}) (/à regarder)
+RecommendShow (suggère/recommande) une série (/télé/TV/t.v.) (/(de/d'/à/à l') {ShowGenre}) (/à regarder)
+RecommendEpisode (suggère/recommande) un épisode (/de série (/télé/TV/t.v.)) (/à regarder)
+RecommendEpisode (suggère/recommande) un épisode (/de série (/télé/TV/t.v.))  (/(de/d'/à/à l') {ShowGenre}) (/à regarder) (/à regarder)
+RecommendMusicVideo (suggère/recommande) un clip (/(de/d') {MusicVideoGenre}) (/à regarder/à écouter)
+RecommendArtist (suggère/recommande) un (musicien/artiste/groupe (/de musique)) (/à écouter)
+RecommendArtist (suggère/recommande) un (musicien/artiste/groupe (/de musique)) (de/d') {MusicGenre} (/à écouter)
+RecommendAlbum (suggère/recommande) un album (/à écouter)
+RecommendAlbum (suggère/recommande) un album (de/d') {MusicGenre} (/à écouter)
+RecommendSong (suggère/recommande) (une chanson/un morceau (/de musique)) (/(de/d') {MusicGenre}) (/à écouter)
+
+WhatNewAlbums (s'il y a/y-a-t'il/si j'ai/ai-je/est-ce qu'il y a/est-ce que j'ai) (de/des) nouveaux albums (/à écouter)
+WhatNewAlbums (s'il y a/y-a-t'il/si j'ai/ai-je/est-ce qu'il y a/est-ce que j'ai) un nouvel album (/à écouter)
+WhatNewAlbums quels nouveaux albums (j'ai/ai-je/y-a-t'il/il y a) (/à écouter)
+
+WhatNewMovies (s'il y a/y-a-t'il/si j'ai/ai-je/est-ce qu'il y a/est-ce que j'ai) (de/des) nouveaux films (/à regarder)
+WhatNewMovies (s'il y a/y-a-t'il/si j'ai/ai-je/est-ce qu'il y a/est-ce que j'ai) un nouveau film (/à regarder)
+WhatNewMovies quels nouveaux films (j'ai/ai-je/y-a-t'il/il y a) (/à regarder)
+WhatNewMovies (s'il y a/y-a-t'il/si j'ai/ai-je/est-ce qu'il y a/est-ce que j'ai) (de/des) nouveaux films (de/d'/à l') {MovieGenre} (/à regarder)
+WhatNewMovies (s'il y a/y-a-t'il/si j'ai/ai-je/est-ce qu'il y a/est-ce que j'ai) un nouveau film (de/d'/à l') {MovieGenre} (/à regarder)
+WhatNewMovies quels nouveaux films (j'ai/ai-je/y-a-t'il/il y a) (/à regarder)
+
+WhatNewShows (s'il y a/y-a-t'il/si j'ai/ai-je/est-ce qu'il y a/est-ce que j'ai) (de/des) nouvelles séries (/télé/TV/t.v.) (/à regarder)
+WhatNewShows (s'il y a/y-a-t'il/si j'ai/ai-je/est-ce qu'il y a/est-ce que j'ai) une nouvelle série (/télé/TV/t.v.) (/à regarder)
+WhatNewShows quelles nouvelles séries (/télé/TV/t.v.) (j'ai/ai-je/y-a-t'il/il y a) (/à regarder)
+
+WhatNewEpisodes (s'il y a un/si j'ai) un (/nouveau/nouvel) épisode (de/d') {Show} (/à regarder)
+WhatNewEpisodes (s'il y a un/si j'ai) (/de nouveaux/des nouveaux) épisodes (de/d') {Show} (/à regarder)
+
+PartyMode (joue/écoute) de la musique au (hasard/pif)
+PartyMode (joue/écoute) toute (la/ma) musique
+PartyMode mélange toute (la/ma) musique
+
+CurrentPlayItemInquiry (qu'/qui/qu'est-ce qui) en en (train/cours) (de jouer/d'être joué)
+
+CurrentPlayItemTimeRemaining combien (/de temps) (reste-t-il/il reste) (/à jouer) (/de ça)
+CurrentPlayItemTimeRemaining (quand/à quelle heure) (cela/ça) (se termine/va se terminer/finit/va finir/se terminera/finira)
+
+Hibernate (hiberne/(mets/passe) en veille prolongée) (/le système)
+Reboot (redémarre/reboot) (/le système)
+Shutdown éteins (/le système)
+Suspend (suspend/mets en veille) (/le système)
+Suspend de s'endormir
+
+EjectMedia éjecte le (/média/disque/disque compact/disc audio/blu-ray/disque blu-ray/CD/c. d./DVD/d. v. d.)
+
+PlayerSeekForward (avance/saute) de {ForwardDur}
+PlayerSeekSmallForward avance un (/petit) peu
+PlayerSeekBigForward avance beaucoup
+PlayerSeekBackward recule de {BackwardDur}
+PlayerSeekSmallBackward recule un (/petit) peu
+PlayerSeekSmallBackward (/small) (backward/backwards/back) (step/jump)
+PlayerSeekBigBackward recule beaucoup
+
+AddonExecute (ouvre/exécute/lance/démarre) (/l'addon/l'extension/le plugin/le script) {Addon}
+
+AddonGlobalSearch (cherche/recherche) {Show}
+AddonGlobalSearch (cherche/recherche) {Movie}
+AddonGlobalSearch (cherche/recherche) {Album}
+AddonGlobalSearch (cherche/recherche) {Artist}
+
+AMAZON.HelpIntent (que puis-je/qu'est-ce que je peux) te demander
+AMAZON.HelpIntent (que peux-tu/qu'est-ce que tu peux) faire
+AMAZON.HelpIntent choses à essayer

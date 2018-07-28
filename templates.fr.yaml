@@ -1,0 +1,449 @@
+############################
+##   Response Templates   ##
+############################
+
+config_missing: "Je n'ai pas trouvé toutes les informations de connexion dont j'ai besoin. Veuillez vérifier votre fichier kodi.config"
+
+hosted_config_missing: "Je n'ai pas trouvé toutes les informations de connexion dont j'ai besoin. Veuillez mettre à jour vos informations sur app.media-dash-center.io"
+
+not_logged_in: "Veuillez lier votre compte pour utiliser cette skill"
+
+error_parsing_results: "Erreur lors de l'analyse syntaxique des résultats"
+
+could_not_find: "Je n'ai pas trouvé {{ heard_name }}"
+
+could_not_find_generic: "Je n'ai rien trouvé'"
+
+could_not_find_genre: "Je n'ai pas trouvé de musique {{ genre_name }}"
+
+could_not_find_artist: "Je n'ai rien trouvé par {{ artist_name }}"
+
+could_not_find_genre_artist: "Je n'ai pas trouvé de musique {{ genre_name }} par {{ artist_name }}"
+
+could_not_find_album: "Je n'ai pas trouvé l'album {{ album_name }}"
+
+could_not_find_album_artist: "Je n'ai pas trouvé l'album {{ album_name }} par {{ artist }}"
+
+could_not_find_song: "Je n'ai pas trouvé la chanson {{ song_name }}"
+
+could_not_find_song_artist: "Je n'ai pas trouvé la chanson {{ song_name }} par {{ artist }}"
+
+could_not_find_song_album: "Je n'ai pas trouvé la chanson {{ song_name }} de l'album {{ album_name }}"
+
+could_not_find_multi: "Je n'ai pas trouvé {{ heard_name }} par {{ artist }}"
+
+could_not_find_playlist: "Je n'ai pas trouvé la liste de lecture {{ heard_name }}"
+
+could_not_find_addon: "Je n'ai pas trouvé l'extension {{ heard_addon }}"
+
+could_not_find_movie: "Je n'ai pas trouvé le film {{ heard_movie }}"
+
+could_not_find_trailer: "Je n'ai pas trouvé de bande-annonce pour {{ heard_name }}"
+
+could_not_find_show: "Je n'ai pas trouvé la série {{ heard_show }}"
+
+could_not_find_episode_show: "Je n'ai pas trouvé l'épisode {{ episode }} de la saison {{ season }} de {{ show_name }}"
+
+could_not_find_musicvideo: "Je n'ai pas trouvé le clip {{ heard_musicvideo }}"
+
+could_not_find_musicvideo_artist: "Je n'ai pas trouvé le clip {{ heard_musicvideo }} par {{ heard_artist }}"
+
+could_not_find_musicvideos_genre: "Je n'ai trouvé aucun clip de {{ genre_name }}"
+
+could_not_find_musicvideos_artist: "Je n'ai trouvé aucun clip par {{ artist_name }}"
+
+could_not_find_musicvideos_genre_artist: "Je n'ai trouvé aucun clip de {{ genre_name }} par {{ artist_name }}"
+
+no_recommendations: "Désolé, je n'ai rien à recommander"
+
+recommend_movie: "Pourquoi pas le film {{ movie_name }} ?"
+
+recommend_show: "Pourquoi pas la série {{ show_name }} ?"
+
+recommend_episode: "Pourquoi pas l'épisode {{ episode }} de la saison {{ season }} de {{ show_name }} ?"
+
+recommend_musicvideo: "Pourquoi pas le clip {{ musicvideo_name }} par {{ artist_name }} ?"
+
+recommend_artist: "Pourquoi pas de la musique par {{ artist_name }} ?"
+
+recommend_album: "Pourquoi pas l'album {{ album_name }} par {{ artist_name }} ?"
+
+recommend_song: "Pourquoi pas la chanson {{ song_name }} par {{ artist_name }} ?"
+
+recommend_songs_recent: "Pourquoi pas des chansons ajoutées récemment ?"
+
+searching: "Recherche de {{ heard_name }}"
+
+opening: "Ouverture de {{ heard_name }}"
+
+playing: "Lecture de {{ heard_name }}"
+
+playing_genre: "Lecture de musique {{ genre_name }}"
+
+playing_genre_artist: "Lecture de musique {{ genre_name }} par {{ artist_name }}"
+
+playing_album: "Lecture de l'album {{ album_name }}"
+
+playing_album_artist: "Lecture de l'album {{ album_name }} par {{ artist }}"
+
+playing_song: "Lecture de la chanson {{ song_name }}"
+
+playing_song_artist: "Lecture de la chanson {{ song_name }} par {{ artist }}"
+
+playing_song_album: "Lecture de la chanson {{ song_name }} de l'album {{ album_name }}"
+
+playing_playlist_audio: "{{ action }} de la liste de lecture audio {{ playlist_name }}"
+
+playing_playlist_video: "{{ action }} de la liste de lecture vidéo {{ playlist_name }}"
+
+playing_party: "Démarrage de la lecture en mode fête"
+
+playing_genre_movie: "Lecture du film de {{ genre_name }} {{ movie_name }}"
+
+playing_action: "{{ action }} de {{ movie_name }}"
+
+playing_trailer: "Lecture de la bande-annonce de {{ heard_name }}"
+
+playing_episode_number: "Lecture de l'épisode {{ episode }} de la saison {{ season }} de {{ show_name }}"
+
+playing_action_episode_number: "{{ action }} de l'épisode {{ episode }} de la saison {{ season }} de {{ show_name }}"
+
+playing_musicvideo: "Lecture du clip {{ musicvideo_name }} par {{ artist_name }}"
+
+playing_empty: "Lecture"
+
+resuming_empty: "Reprise"
+
+shuffling: "Mélange de {{ heard_name }}"
+
+shuffling_empty: "Mélange"
+
+shuffling_playlist_video: "Mélange de la liste de lecture vidéo {{ playlist_name }}"
+
+shuffling_playlist_audio: "Mélange de la liste de lecture audio {{ playlist_name }}"
+
+shuffling_playlist: "Mélange de la liste de lecture {{ playlist_name }}"
+
+shuffling_album: "Mélange de l'album {{ album_name }}"
+
+shuffling_album_artist: "Mélange de l'album {{ album_name }} par {{ artist }}"
+
+shuffle_on: "Lecture aléatoire activée"
+
+shuffle_off: "Lecture aléatoire désactivée"
+
+loop_one: "Lecture en boucle d'un élément"
+
+loop_all: "Lecture en boucle de tout"
+
+loop_off: "Lecture en boucle désactivée"
+
+no_new_episodes_show: "Pas de nouvel épisode pour {{ show_name }}"
+
+no_albums_artist: "Vous n'avez pas d'album par {{ artist }}"
+
+no_new_albums: "Vous n'avez pas de nouvel album à écouter"
+
+no_new_movies: "Vous n'avez pas de nouveau film à regarder'"
+
+no_new_shows: "Vous n'avez pas de nouvelle série à regarder'"
+
+no_recent_songs: "Aucune chanson ajoutée récemment n'a été trouvée"
+
+no_unseen_show: "Il n'y a pas d'épisode non vu de {{ show_name }}"
+
+one_unseen_show: "Il y a un épisode non vu de {{ show_name }}"
+
+multiple_unseen_show: "Il y a {{ num }} épisodes non vus {{ show_name }}"
+
+one_new_episode: "Il y a un nouvel épisode de {{ show_name }}"
+
+two_new_episodes: "Il y a deux nouveaux épisodes de {{ show_name }}"
+
+multiple_new_episodes: "Il y a {{ count }} nouveaux épisodes de {{ show_name }}"
+
+you_have_list: "Vous avez {{ items }}"
+
+you_have_episode_list: "Il y a de nouveaux épisodes pour {{ items }}"
+
+volume_set: "Volume réglé sur {{ num }}"
+
+help: "Vous pouvez me demander s'il y a des nouvelles séries, de lire un film, une sérier ou un artiste, contrôler la lecture des médias et plus encore. Par exemple, {{ example }}. J'ai envoyé plus d'exemples à votre application Alexa."
+
+help_short: "Que voulez-vous faire ? Essayez quelque chose comme {{ example }}."
+
+help_text: "Kanzi vous permet d'entièrement contrôler une ou plusieurs installations de Kodi par la voix. Voici quelques exemples de ce que vous pouvez dire :\n
+\xa0\n
+{{ examples }}
+\xa0\n
+Veuillez lire le fichier README sur Github (https://github.com/m0ngr31/kanzi/README.md) pour une liste complète des commandes supportées."
+
+help_play: "Veuillez préciser le type de média dans votre commande de lecture, comme par exemple, lis le film SOS Fantômes."
+
+are_you_sure: "Êtes-vous sûr ?"
+
+are_you_sure_shutdown: "Êtes-vous sûr de vouloir éteindre ?"
+
+are_you_sure_reboot: "Êtes-vous sûr de vouloir redémarrer ?"
+
+are_you_sure_hibernate: "Êtes-vous sûr de vouloir passer en veille prolongée ?"
+
+are_you_sure_suspend: "Êtes-vous sûr de vouloire passer en veille ?"
+
+welcome: "Bienvenue sur Kanzi."
+
+nothing_currently_playing: "Kodi ne joue aucune musique pour l'instant."
+
+
+############################
+##  Card Title Templates  ##
+############################
+
+card_config_missing: "Configuration invalide"
+
+looking_for_show: "Recherche de nouveaux épisodes de {{ heard_show }}"
+
+current_playing_item: "Élément en cours de lecture"
+
+time_left_playing: "Temps restant sur l'élément en cours de lecture"
+
+play_pause: "Lecture/Pause"
+
+stopping: "Arrêt de la lecture"
+
+step_forward: "Avance"
+
+step_backward: "Recule"
+
+big_step_forward: "Avance beaucoup"
+
+big_step_backward: "Recule beaucoup"
+
+listen_artist: "Lecture de musique par {{ heard_artist }}"
+
+listen_artist_genre: "Lecture de musique {{ heard_genre }} par {{ heard_artist }}"
+
+newly_added_shows: "Séries récemment ajoutées"
+
+newly_added_albums: "Albums récemment ajoutés"
+
+newly_added_movies: "Films récemment ajoutés"
+
+newly_added_movies_genre: "Films de {{ genre }} récemment ajoutés"
+
+last_unwatched: "Lecture du prochain épisode de la dernière série regardée"
+
+update_audio: "Mise à jour de la bibliothèque audio"
+
+update_video: "Mise à jour de la bibliothèque vidéo"
+
+clean_audio: "Nettoyage de la bibliothèque audio"
+
+clean_video: "Nettoyage de la bibliothèque vidéo"
+
+ejecting_media: "Éjection du media"
+
+quitting: "Quitte"
+
+suspending_system: "Mise en veille du système"
+
+shutting_down: "Extinction du système"
+
+rebooting: "Redémarrage du système"
+
+hibernating: "Mise en veille prolongée du système"
+
+player_zoom_normal: "Zoom du lecteur normal"
+
+player_zoom_out: "Dézoom du lecteur"
+
+player_zoom_out_right: "Dézoom du lecteur et déplacement vers la droite"
+
+player_zoom_out_left: "Dézoom du lecteur et déplacement vers la gauche"
+
+player_zoom_out_down: "Dézoom du lecteur et déplacement vers le bas"
+
+player_zoom_out_up: "Dézoom du lecteur et déplacement vers le haut"
+
+player_zoom_in: "Zoom du lecteur"
+
+player_zoom_in_right: "Zoom du lecteur et déplacement vers la droite"
+
+player_zoom_in_left: "Zoom du lecteur et déplacement vers la  gauche"
+
+player_zoom_in_down: "Zoom du lecteur et déplacement vers le bas"
+
+player_zoom_in_up: "Zoom du lecteur et déplacement vers le haut"
+
+player_zoom_hold: "Maintien du zoom du lecteur"
+
+player_rotate_cc: "Rotation du lecteur dans le sens inverse des aiguilles d'une montre"
+
+player_rotate: "Rotation du lecteur dans le sens des aiguilles d'une montre"
+
+player_move_right: "Déplacement du lecteur vers la droite"
+
+player_move_left: "Déplacement du lecteur vers la gauche"
+
+player_move_down: "Déplacement du lecteur vers le bas"
+
+player_move_up: "Déplacement du lecteur vers le haut"
+
+shuffle_disable: "Désactivation de la lecture aléatoire"
+
+shuffle_enable: "Activation de la lecture aléatoire"
+
+loop_disable: "Désactivation de la répétition"
+
+loop_enable: "Activation de la répétition"
+
+audio_stream_next: "Passage au flux audio suivant"
+
+audio_stream_previous: "Passage au flux audio précédent"
+
+subtitles_next: "Passage aux sous-titres suivants"
+
+subtitles_previous: "Passage aux sous-titres précédents"
+
+subtitles_disable: "Désactivation des sous-titres"
+
+subtitles_enable: "Activation des sous-titres"
+
+subtitles_download: "Téléchargement des sous-titres"
+
+toggle_audio_passthrough: "Bascule du passthrough audio"
+
+adjusting_volume: "Ajustement du volume"
+
+volume_down: "Baisse du volume"
+
+volume_up: "Augementation du volume"
+
+mute_unmute: "Bascule du mode muet"
+
+toggle_fullscreen: "Bascule du mode plein écran"
+
+toggle_stereoscopic_mode: "Bascule du mode stéréoscopique"
+
+playing_previous: "Lecture de l'élément précédent"
+
+playing_next: "Lecture de l'élément suivant"
+
+playing_same: "Redémarrage de la lecture de l'élément courant"
+
+playing_recent_songs: "Lecture des chansons récemment ajoutées"
+
+playing_random_movie: "Lecture d'un film au hasard"
+
+playing_random_movie_genre: "Lecture d'un film de {{ genre }} au hasard"
+
+playing_movie: "Lecture d'un film"
+
+playing_movie_trailer: "Lecture d'une bande annonce de film'"
+
+shuffling_episodes: "Mélange des épisode des {{ heard_show }}"
+
+playing_an_episode: "Lecture des épisodes de {{ heard_show }}"
+
+playing_random_episode: "Lecture d'un épisode de {{ heard_show }} au hasard"
+
+playing_random_show: "Lecture d'une série au hasard"
+
+playing_random_show_genre: "Lecture d'une série de {{ genre }} au hasard"
+
+playing_next_unwatched_episode: "Lecture du prochain épisode non vu de  {{ heard_show }}"
+
+playing_newest_episode: "Lecture du plus récent épisode de {{ heard_show }}"
+
+playing_musicvideo_card: "Lecture d'un clip"
+
+shuffling_musicvideos: "Mélange des clips"
+
+shuffling_musicvideos_genre: "Mélange des clip de {{ genre }}"
+
+shuffling_musicvideos_artist: "Mélange des clips par {{ artist }}"
+
+shuffling_musicvideos_genre_artist: "Mélange des clips de {{ genre }} par {{ artist }}"
+
+playing_random_musicvideo: "Lecture d'un clip au hasard"
+
+playing_random_musicvideo_genre: "Lecture d'un clip de {{ genre }} au hasard"
+
+playing_random_musicvideo_artist: "Lecture d'un clip par {{ artist }} au hasard"
+
+playing_random_musicvideo_genre_artist: "Lecture d'un clip de {{ genre }} par {{ artist }} au hasard"
+
+playing_album_card: "Lecture d'un album"
+
+shuffling_album_card: "Mélange d'un album"
+
+playing_latest_album_card: "Lecture du dernier album par {{ heard_artist }}"
+
+shuffling_latest_album_card: "Mélange du dernier album par {{ heard_artist }}"
+
+playing_song_card: "Lecture d'une chanson'"
+
+playing_album_or_song: "Lecture d'un album ou d'une chanson"
+
+action_audio_playlist: "{{ action }} de la liste de lecture audio"
+
+action_video_playlist: "{{ action }} de la liste de lecture vidéo"
+
+party_mode: "Mode fête"
+
+albums_by: "Albums par {{ heard_artist }}"
+
+open_addon: "Ouverture de l'extension"
+
+search: "Recherche"
+
+help_card: "Aide"
+
+playback_stopped: "Lecture arrêtée"
+
+unknown_playing: "L'élément en cours de lecture m'est inconnu"
+
+nothing_playing: "Rien n'est actuellement en cours de lecture"
+
+remaining_close: "C'est presque fini'"
+
+remaining_mins: "Il reste {{ minutes }} minutes"
+
+remaining_min: "Il reste une minute"
+
+remaining_time: ", et se terminera à {{ end_time }}"
+
+
+############################
+##   General Templates    ##
+############################
+
+okay: "Okay"
+
+short_confirm: " "
+
+and_more: ", et plus"
+
+and_more_similar: ", et plus"
+
+and: ", et "
+
+by: "par"
+
+no_more_songs: "Il n'y a plus de chanson en attente"
+
+no_songs_history: "Il n'y a pas de chanson dans votre historique de listes de lecture"
+
+no_current_song: "Il n'y a pas de chanson pour l'instant'"
+
+current_show_is: "La série en cours de lecture est"
+
+season: "saison"
+
+episode: "épisode"
+
+current_song_is: "La chanson en cours de lecture est"
+
+on_the_album: "sur l'album'"
+
+current_movie_is: "Le film en cours de lecture est"

@@ -1,5 +1,5 @@
 gunicorn
 pytz
 flask-ask>=0.9.8
-kodi-voice>=1.1.0
+kodi-voice>=1.1.3
 cryptography==2.1.4
