@@ -1249,6 +1249,56 @@ def alexa_subtitles_download(kodi):
   return statement(card_title).simple_card(card_title, '')
 
 
+# Handle the SubtitlesDelay intent.
+@ask.intent('SubtitlesDelay')
+@preflight_check
+def alexa_subtitles_delay(kodi):
+  card_title = render_template('subtitles_delay').encode('utf-8')
+  log.info(card_title)
+
+  item = kodi.DelaySubtitles(0.5)
+  return statement('').simple_card(card_title, '')
+
+
+# Handle the SubtitlesAdvance intent.
+@ask.intent('SubtitlesAdvance')
+@preflight_check
+def alexa_subtitles_advance(kodi):
+  card_title = render_template('subtitles_advance').encode('utf-8')
+  log.info(card_title)
+
+  item = kodi.AdvanceSubtitles(0.5)
+  return statement('').simple_card(card_title, '')
+
+
+# Handle the SubtitlesDelayBy intent.
+@ask.intent('SubtitlesDelayBy')
+@preflight_check
+def alexa_subtitles_delay_by(kodi, Delay):
+  if float(Delay) == 1:
+    card_title = render_template('subtitles_delay_by1').encode('utf-8')
+  else:
+    card_title = render_template('subtitles_delay_by', num=Delay).encode('utf-8')
+  log.info(card_title)
+
+  item = kodi.DelaySubtitles(float(Delay))
+  return statement('').simple_card(card_title, '')
+
+
+# Handle the SubtitlesAdvanceBy intent.
+@ask.intent('SubtitlesAdvanceBy')
+@preflight_check
+def alexa_subtitles_advance_by(kodi, Advance):
+  if float(Advance) == 1:
+    card_title = render_template('subtitles_advance_by1').encode('utf-8')
+  else:
+    card_title = render_template('subtitles_advance_by', num=Advance).encode('utf-8')
+  log.info(card_title)
+
+  item = kodi.AdvanceSubtitles(float(Advance))
+  return statement('').simple_card(card_title, '')
+
+
 # Handle the AudioStreamNext intent.
 @ask.intent('AudioStreamNext')
 @preflight_check

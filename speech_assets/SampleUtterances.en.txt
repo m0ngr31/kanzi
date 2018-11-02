@@ -1065,6 +1065,16 @@ SubtitlesOn enable subtitles
 SubtitlesOn turn on subtitles
 SubtitlesPrevious previous subtitle language
 SubtitlesPrevious previous subtitles
+SubtitlesDelay delay subtitles
+SubtitlesAdvance advance subtitles
+SubtitlesAdvanceBy advance subtitles by {Advance}
+SubtitlesAdvanceBy advance subtitles by {Advance} seconds
+SubtitlesAdvanceBy advance subtitles {Advance}
+SubtitlesAdvanceBy advance subtitles {Advance} seconds
+SubtitlesDelayBy delay subtitles by {Delay}
+SubtitlesDelayBy delay subtitles by {Delay} seconds
+SubtitlesDelayBy delay subtitles {Delay}
+SubtitlesDelayBy delay subtitles {Delay} seconds
 Suspend go to sleep
 Suspend put system to sleep
 Suspend sleep
