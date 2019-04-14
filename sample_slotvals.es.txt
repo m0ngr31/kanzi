@@ -1,0 +1,18 @@
+Addon YouTube
+MovieGenre Comedia
+Movie Tropic Thunder una guerra muy perra
+Artist Camilo Sexto
+Album 19 días y 500 noches
+MusicGenre Pop
+AudioPlaylist Vacaciones
+Song El perro verde
+Show Farscape
+VideoPlaylist HD videos
+ShowGenre Ciencia ficción
+MusicVideoGenre Pop
+MusicVideo La Macarena
+Volume stenta y cinco
+Season dos
+Episode ocho
+ForwardDur un minuto
+BackwardDur 30 segundos

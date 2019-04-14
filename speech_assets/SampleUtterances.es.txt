@@ -1,0 +1,1549 @@
+# A list of utterance variations written in a shorthand syntax
+# Syntax and information
+# Tool to expand the single line into the usable list of utterances
+# Utterances that include a reference to a Slot are more specific than
+# as well as those that have no slot references.
+# http://www.makermusings.com/amazon-echo-utterance-expander/
+# http://www.makermusings.com/two thousand fifteen/seven/twenty one/defining-utterances-for-the-alexa-skills-kit/
+# others because, in testing, Alexa appears to not fuzzy match these
+AMAZON.HelpIntent cosas que probar
+AMAZON.HelpIntent que puedes hacer
+AddonExecute abrir add on {Addon}
+AddonExecute abrir addon {Addon}
+AddonExecute abrir plug in {Addon}
+AddonExecute abrir plugin {Addon}
+AddonExecute abrir script {Addon}
+AddonExecute abrir {Addon}
+AddonExecute ejecutar add on {Addon}
+AddonExecute ejecutar addon {Addon}
+AddonExecute ejecutar plug in {Addon}
+AddonExecute ejecutar plugin {Addon}
+AddonExecute ejecutar script {Addon}
+AddonExecute ejecutar {Addon}
+AddonExecute lanzar add on {Addon}
+AddonExecute lanzar addon {Addon}
+AddonExecute lanzar plug in {Addon}
+AddonExecute lanzar plugin {Addon}
+AddonExecute lanzar script {Addon}
+AddonExecute lanzar {Addon}
+AddonGlobalSearch buscar {Album}
+AddonGlobalSearch buscar {Artist}
+AddonGlobalSearch buscar {Movie}
+AddonGlobalSearch buscar {Show}
+AddonGlobalSearch encontrar {Album}
+AddonGlobalSearch encontrar {Artist}
+AddonGlobalSearch encontrar {Movie}
+AddonGlobalSearch encontrar {Show}
+AudioPassthrough activar el audio digital
+AudioPassthrough activar el audio passthrough
+AudioPassthrough activar el passthrough
+AudioPassthrough desactivar el audio digital
+AudioPassthrough desactivar el audio passthrough
+AudioPassthrough desactivar el passthrough
+AudioStreamNext cambiar
+AudioStreamNext cambiar audio
+AudioStreamNext cambiar flujo de
+AudioStreamNext cambiar flujo de audio
+AudioStreamNext cambiar idioma
+AudioStreamNext cambiar idioma del audio
+AudioStreamNext siguiente
+AudioStreamNext siguiente audio
+AudioStreamNext siguiente flujo de
+AudioStreamNext siguiente flujo de audio
+AudioStreamNext siguiente idioma
+AudioStreamNext siguiente idioma del audio
+AudioStreamPrevious anterior
+AudioStreamPrevious anterior audio
+AudioStreamPrevious anterior flujo de
+AudioStreamPrevious anterior flujo de audio
+AudioStreamPrevious anterior idioma
+AudioStreamPrevious flujo anterior
+AudioStreamPrevious flujode audio anterior
+AudioStreamPrevious idioma anterior
+Back atras
+Back ir atras
+Back navegar atras
+CleanAudio limpiar biblioteca de audio
+CleanAudio limpiar biblioteca de musica
+CleanVideo limpiar biblioteca
+CleanVideo limpiar biblioteca de video
+CurrentPlayItemInquiry que esta actualmente reproduciendo
+CurrentPlayItemInquiry que esta reproduciendo
+CurrentPlayItemInquiry quien esta actualmente reproduciendo
+CurrentPlayItemInquiry quien esta reproduciendo
+CurrentPlayItemTimeRemaining cuando acaba esto
+CurrentPlayItemTimeRemaining cuando acabara esto
+CurrentPlayItemTimeRemaining cuanto le queda
+CurrentPlayItemTimeRemaining cuanto le queda a esto
+CurrentPlayItemTimeRemaining cuanto queda
+CurrentPlayItemTimeRemaining cuanto queda a esto
+CurrentPlayItemTimeRemaining cuanto tiempo le queda
+CurrentPlayItemTimeRemaining cuanto tiempo le queda a esto
+CurrentPlayItemTimeRemaining cuanto tiempo queda
+CurrentPlayItemTimeRemaining cuanto tiempo queda a esto
+Down abajo
+Down ir abajo
+Down navegar abajo
+EjectMedia sacar
+EjectMedia sacar blu-ray
+EjectMedia sacar blu-ray disc
+EjectMedia sacar c. d.
+EjectMedia sacar compact disc
+EjectMedia sacar d. v. d.
+EjectMedia sacar disco
+EjectMedia sacar el blu-ray
+EjectMedia sacar el blu-ray disc
+EjectMedia sacar el c. d.
+EjectMedia sacar el compact disc
+EjectMedia sacar el d. v. d.
+EjectMedia sacar el disco
+Fullscreen activar la visualizacion
+Fullscreen active la pantalla completa
+Fullscreen active pantalla completa
+Fullscreen desactivar la pantalla completa
+Fullscreen desactivar la visualizacion
+Fullscreen desactivar pantalla completa
+Fullscreen ir a la pantalla completa
+Fullscreen ir a pantalla completa
+Fullscreen pasar a la pantalla completa
+Fullscreen pasar a pantalla completa
+Hibernate hibernar
+Hibernate hibernar sistema
+Home a pantalla principal
+Home ir a pantalla principal
+Home navegar a pantalla principal
+Info abrir de info
+Info abrir de informacion
+Info abrir el dialogo de info
+Info abrir el dialogo de informacion
+Info abrir la ventana de info
+Info abrir la ventana de informacion
+Info de info
+Info de informacion
+Info el dialogo de info
+Info el dialogo de informacion
+Info la ventana de info
+Info la ventana de informacion
+Info ver de info
+Info ver de informacion
+Info ver el dialogo de info
+Info ver el dialogo de informacion
+Info ver la ventana de info
+Info ver la ventana de informacion
+Left ir izquierda
+Left izquierda
+Left navegar izquierda
+ListenToAlbum escuchar album {Album}
+ListenToAlbum escuchar album {Album} de {Artist}
+ListenToAlbum escuchar el album {Album}
+ListenToAlbum escuchar el album {Album} de {Artist}
+ListenToAlbum reproducir album {Album}
+ListenToAlbum reproducir album {Album} de {Artist}
+ListenToAlbum reproducir el album {Album}
+ListenToAlbum reproducir el album {Album} de {Artist}
+ListenToAlbumOrSong escuchar {Song} de {Artist}
+ListenToAlbumOrSong reproducir {Song} de {Artist}
+ListenToArtist barajar de {Artist}
+ListenToArtist barajar musica de {Artist}
+ListenToArtist barajar musica {Artist}
+ListenToArtist barajar musica {MusicGenre} de {Artist}
+ListenToArtist barajar musica {MusicGenre} {Artist}
+ListenToArtist barajar {Artist}
+ListenToArtist barajar {MusicGenre} de {Artist}
+ListenToArtist barajar {MusicGenre} {Artist}
+ListenToArtist escuchar de {Artist}
+ListenToArtist escuchar musica de {Artist}
+ListenToArtist escuchar musica {Artist}
+ListenToArtist escuchar musica {MusicGenre} de {Artist}
+ListenToArtist escuchar musica {MusicGenre} {Artist}
+ListenToArtist escuchar {Artist}
+ListenToArtist escuchar {MusicGenre} de {Artist}
+ListenToArtist escuchar {MusicGenre} {Artist}
+ListenToArtist reproducir de {Artist}
+ListenToArtist reproducir musica de {Artist}
+ListenToArtist reproducir musica {Artist}
+ListenToArtist reproducir musica {MusicGenre} de {Artist}
+ListenToArtist reproducir musica {MusicGenre} {Artist}
+ListenToArtist reproducir {Artist}
+ListenToArtist reproducir {MusicGenre} de {Artist}
+ListenToArtist reproducir {MusicGenre} {Artist}
+ListenToAudio escuchar a {Artist}
+ListenToAudio escuchar {Artist}
+ListenToAudioPlaylist escuchar la lista de musica {AudioPlaylist}
+ListenToAudioPlaylist escuchar la lista de reproduccion {AudioPlaylist}
+ListenToAudioPlaylist escuchar la lista {AudioPlaylist}
+ListenToAudioPlaylist escuchar lista de musica {AudioPlaylist}
+ListenToAudioPlaylist escuchar lista de reproduccion {AudioPlaylist}
+ListenToAudioPlaylist escuchar lista {AudioPlaylist}
+ListenToAudioPlaylist escuchar {AudioPlaylist}
+ListenToAudioPlaylist reproducir la lista de musica {AudioPlaylist}
+ListenToAudioPlaylist reproducir la lista de reproduccion {AudioPlaylist}
+ListenToAudioPlaylist reproducir la lista {AudioPlaylist}
+ListenToAudioPlaylist reproducir lista de musica {AudioPlaylist}
+ListenToAudioPlaylist reproducir lista de reproduccion {AudioPlaylist}
+ListenToAudioPlaylist reproducir lista {AudioPlaylist}
+ListenToAudioPlaylistRecent barajar la musica nueva
+ListenToAudioPlaylistRecent barajar la ultima musica
+ListenToAudioPlaylistRecent barajar las nuevas canciones
+ListenToAudioPlaylistRecent barajar las ultimas canciones
+ListenToAudioPlaylistRecent barajar recent audio reciente
+ListenToAudioPlaylistRecent barajar recent musica reciente
+ListenToAudioPlaylistRecent escuchar la musica nueva
+ListenToAudioPlaylistRecent escuchar la ultima musica
+ListenToAudioPlaylistRecent escuchar las nuevas canciones
+ListenToAudioPlaylistRecent escuchar las ultimas canciones
+ListenToAudioPlaylistRecent escuchar recent audio reciente
+ListenToAudioPlaylistRecent escuchar recent musica reciente
+ListenToAudioPlaylistRecent reproducir la musica nueva
+ListenToAudioPlaylistRecent reproducir la ultima musica
+ListenToAudioPlaylistRecent reproducir las nuevas canciones
+ListenToAudioPlaylistRecent reproducir las ultimas canciones
+ListenToAudioPlaylistRecent reproducir recent audio reciente
+ListenToAudioPlaylistRecent reproducir recent musica reciente
+ListenToGenre barajar canciones {MusicGenre}
+ListenToGenre barajar genero {MusicGenre}
+ListenToGenre barajar musica {MusicGenre}
+ListenToGenre escuchar canciones {MusicGenre}
+ListenToGenre escuchar genero {MusicGenre}
+ListenToGenre escuchar musica {MusicGenre}
+ListenToGenre reproducir canciones {MusicGenre}
+ListenToGenre reproducir genero {MusicGenre}
+ListenToGenre reproducir musica {MusicGenre}
+ListenToLatestAlbum escuchar el nuevo album de {Artist}
+ListenToLatestAlbum escuchar el ultimo album de {Artist}
+ListenToLatestAlbum escuchar nuevo album de {Artist}
+ListenToLatestAlbum escuchar ultimo album de {Artist}
+ListenToLatestAlbum reproducir el nuevo album de {Artist}
+ListenToLatestAlbum reproducir el ultimo album de {Artist}
+ListenToLatestAlbum reproducir nuevo album de {Artist}
+ListenToLatestAlbum reproducir ultimo album de {Artist}
+ListenToSong escuchar cancion {Song}
+ListenToSong escuchar cancion {Song} album {Album}
+ListenToSong escuchar cancion {Song} de {Artist}
+ListenToSong escuchar cancion {Song} del album {Album}
+ListenToSong escuchar la cancion {Song}
+ListenToSong escuchar la cancion {Song} album {Album}
+ListenToSong escuchar la cancion {Song} de {Artist}
+ListenToSong escuchar la cancion {Song} del album {Album}
+ListenToSong reproducir cancion {Song}
+ListenToSong reproducir cancion {Song} album {Album}
+ListenToSong reproducir cancion {Song} de {Artist}
+ListenToSong reproducir cancion {Song} del album {Album}
+ListenToSong reproducir la cancion {Song}
+ListenToSong reproducir la cancion {Song} album {Album}
+ListenToSong reproducir la cancion {Song} de {Artist}
+ListenToSong reproducir la cancion {Song} del album {Album}
+Menu abrir menu
+Menu context menu
+Menu menu
+Mute mutear
+Mute silenciar
+PageDown a la pagina siguiente
+PageDown ir a la pagina siguiente
+PageDown navegar a la pagina siguiente
+PageDown ver mas
+PageUp a la pagina anterior
+PageUp ir a la pagina anterior
+PageUp navegar a la pagina anterior
+PartyMode barajar toda la musica
+PartyMode escuchar musica aleatoria
+PartyMode escuchar toda la musica
+PartyMode reproducir musica aleatoria
+PartyMode reproducir toda la musica
+PlayMedia abrir {Movie}
+PlayMedia reproducir {Movie}
+PlayMedia ver {Movie}
+PlayerMoveDown mover abajo
+PlayerMoveDown mover hacia abajo
+PlayerMoveLeft mover hacia la izquierda
+PlayerMoveLeft mover izquierda
+PlayerMoveRight mover derecha
+PlayerMoveRight mover hacia la derecha
+PlayerMoveUp mover arriba
+PlayerMoveUp mover hacia arriba
+PlayerRotateClockwise rotar
+PlayerRotateClockwise rotar noventa grados
+PlayerRotateClockwise rotar segun las agujas del reloj
+PlayerRotateCounterClockwise rotar en sentido inverso a las agujas del reloj
+PlayerSeekBackward atrasar {BackwardDur}
+PlayerSeekBackward ir atras {BackwardDur}
+PlayerSeekBackward ir hacia atras {BackwardDur}
+PlayerSeekBackward rebobinar {BackwardDur}
+PlayerSeekBackward retroceder {BackwardDur}
+PlayerSeekBackward saltar atras {BackwardDur}
+PlayerSeekBackward saltar hacia atras {BackwardDur}
+PlayerSeekBackward volver {BackwardDur}
+PlayerSeekBigBackward ir atras mucho {BackwardDur}
+PlayerSeekBigBackward ir atras {BackwardDur}
+PlayerSeekBigBackward ir hacia atras mucho {BackwardDur}
+PlayerSeekBigBackward ir hacia atras {BackwardDur}
+PlayerSeekBigBackward saltar atras mucho {BackwardDur}
+PlayerSeekBigBackward saltar atras {BackwardDur}
+PlayerSeekBigBackward saltar hacia atras mucho {BackwardDur}
+PlayerSeekBigBackward saltar hacia atras {BackwardDur}
+PlayerSeekBigForward adelantar mucho {ForwardDur}
+PlayerSeekBigForward adelantar {ForwardDur}
+PlayerSeekBigForward ir adelante {ForwardDur}
+PlayerSeekBigForward ir hacia adelante {ForwardDur}
+PlayerSeekBigForward ir mucho adelante {ForwardDur}
+PlayerSeekBigForward ir mucho hacia adelante {ForwardDur}
+PlayerSeekBigForward ir mucho {ForwardDur}
+PlayerSeekBigForward ir {ForwardDur}
+PlayerSeekBigForward saltar adelante {ForwardDur}
+PlayerSeekBigForward saltar hacia adelante {ForwardDur}
+PlayerSeekBigForward saltar mucho adelante {ForwardDur}
+PlayerSeekBigForward saltar mucho hacia adelante {ForwardDur}
+PlayerSeekBigForward saltar mucho {ForwardDur}
+PlayerSeekBigForward saltar {ForwardDur}
+PlayerSeekForward adelantar {ForwardDur}
+PlayerSeekForward ir adelante {ForwardDur}
+PlayerSeekForward ir hacia adelante {ForwardDur}
+PlayerSeekForward ir {ForwardDur}
+PlayerSeekForward saltar adelante {ForwardDur}
+PlayerSeekForward saltar hacia adelante {ForwardDur}
+PlayerSeekForward saltar {ForwardDur}
+PlayerSeekSmallBackward atrasar un poco {BackwardDur}
+PlayerSeekSmallBackward atrasar {BackwardDur}
+PlayerSeekSmallBackward ir atras un poco {BackwardDur}
+PlayerSeekSmallBackward ir atras {BackwardDur}
+PlayerSeekSmallBackward ir hacia atras un poco {BackwardDur}
+PlayerSeekSmallBackward ir hacia atras {BackwardDur}
+PlayerSeekSmallBackward rebobinar un poco {BackwardDur}
+PlayerSeekSmallBackward rebobinar {BackwardDur}
+PlayerSeekSmallBackward retroceder un poco {BackwardDur}
+PlayerSeekSmallBackward retroceder {BackwardDur}
+PlayerSeekSmallBackward saltar atras un poco {BackwardDur}
+PlayerSeekSmallBackward saltar atras {BackwardDur}
+PlayerSeekSmallBackward saltar hacia atras un poco {BackwardDur}
+PlayerSeekSmallBackward saltar hacia atras {BackwardDur}
+PlayerSeekSmallBackward volver un poco {BackwardDur}
+PlayerSeekSmallBackward volver {BackwardDur}
+PlayerSeekSmallForward adelantar un poco {ForwardDur}
+PlayerSeekSmallForward adelantar {ForwardDur}
+PlayerSeekSmallForward ir adelante {ForwardDur}
+PlayerSeekSmallForward ir hacia adelante {ForwardDur}
+PlayerSeekSmallForward ir un poco adelante {ForwardDur}
+PlayerSeekSmallForward ir un poco hacia adelante {ForwardDur}
+PlayerSeekSmallForward ir un poco {ForwardDur}
+PlayerSeekSmallForward ir {ForwardDur}
+PlayerSeekSmallForward saltar adelante {ForwardDur}
+PlayerSeekSmallForward saltar hacia adelante {ForwardDur}
+PlayerSeekSmallForward saltar un poco adelante {ForwardDur}
+PlayerSeekSmallForward saltar un poco hacia adelante {ForwardDur}
+PlayerSeekSmallForward saltar un poco {ForwardDur}
+PlayerSeekSmallForward saltar {ForwardDur}
+PlayerZoomHold bloquear zoom
+PlayerZoomHold mantener zoom
+PlayerZoomIn acercar zoom
+PlayerZoomIn agrandar zoom
+PlayerZoomIn aumentar zoom
+PlayerZoomInMoveDown acercar zoom y abajo
+PlayerZoomInMoveDown acercar zoom y bajar
+PlayerZoomInMoveDown agrandar zoom y abajo
+PlayerZoomInMoveDown agrandar zoom y bajar
+PlayerZoomInMoveDown aumentar zoom y abajo
+PlayerZoomInMoveDown aumentar zoom y bajar
+PlayerZoomInMoveLeft acercar zoom y a la izquierda
+PlayerZoomInMoveLeft agrandar zoom y a la izquierda
+PlayerZoomInMoveLeft aumentar zoom y a la izquierda
+PlayerZoomInMoveRight acercar zoom y a la derecha
+PlayerZoomInMoveRight agrandar zoom y a la derecha
+PlayerZoomInMoveRight aumentar zoom y a la derecha
+PlayerZoomInMoveUp acercar zoom y arriba
+PlayerZoomInMoveUp acercar zoom y subir
+PlayerZoomInMoveUp agrandar zoom y arriba
+PlayerZoomInMoveUp agrandar zoom y subir
+PlayerZoomInMoveUp aumentar zoom y arriba
+PlayerZoomInMoveUp aumentar zoom y subir
+PlayerZoomOut alejar zoom
+PlayerZoomOut reducir zoom
+PlayerZoomOutMoveDown alejar zoom y abajo
+PlayerZoomOutMoveDown alejar zoom y bajar
+PlayerZoomOutMoveDown reducir zoom y abajo
+PlayerZoomOutMoveDown reducir zoom y bajar
+PlayerZoomOutMoveLeft alejar zoom y a la izquierda
+PlayerZoomOutMoveLeft reducir zoom y a la izquierda
+PlayerZoomOutMoveRight alejar zoom y a la derecha
+PlayerZoomOutMoveRight reducir zoom y a la derecha
+PlayerZoomOutMoveUp alejar zoom y arriba
+PlayerZoomOutMoveUp alejar zoom y subir
+PlayerZoomOutMoveUp reducir zoom y arriba
+PlayerZoomOutMoveUp reducir zoom y subir
+PlayerZoomReset resetear zoom
+PlayerZoomReset zoom normal
+Reboot reiniciar
+Reboot reiniciar sistema
+RecommendAlbum recomendar album
+RecommendAlbum recomendar album de {MusicGenre}
+RecommendAlbum recomendar album de {MusicGenre} para escuchar
+RecommendAlbum recomendar album de {MusicGenre} que escuchar
+RecommendAlbum recomendar album para escuchar
+RecommendAlbum recomendar album que escuchar
+RecommendAlbum recomendar algun album
+RecommendAlbum recomendar algun album de {MusicGenre}
+RecommendAlbum recomendar algun album de {MusicGenre} para escuchar
+RecommendAlbum recomendar algun album de {MusicGenre} que escuchar
+RecommendAlbum recomendar algun album para escuchar
+RecommendAlbum recomendar algun album que escuchar
+RecommendAlbum recomendar un album
+RecommendAlbum recomendar un album de {MusicGenre}
+RecommendAlbum recomendar un album de {MusicGenre} para escuchar
+RecommendAlbum recomendar un album de {MusicGenre} que escuchar
+RecommendAlbum recomendar un album para escuchar
+RecommendAlbum recomendar un album que escuchar
+RecommendAlbum sugerir album
+RecommendAlbum sugerir album de {MusicGenre}
+RecommendAlbum sugerir album de {MusicGenre} para escuchar
+RecommendAlbum sugerir album de {MusicGenre} que escuchar
+RecommendAlbum sugerir album para escuchar
+RecommendAlbum sugerir album que escuchar
+RecommendAlbum sugerir algun album
+RecommendAlbum sugerir algun album de {MusicGenre}
+RecommendAlbum sugerir algun album de {MusicGenre} para escuchar
+RecommendAlbum sugerir algun album de {MusicGenre} que escuchar
+RecommendAlbum sugerir algun album para escuchar
+RecommendAlbum sugerir algun album que escuchar
+RecommendAlbum sugerir un album
+RecommendAlbum sugerir un album de {MusicGenre}
+RecommendAlbum sugerir un album de {MusicGenre} para escuchar
+RecommendAlbum sugerir un album de {MusicGenre} que escuchar
+RecommendAlbum sugerir un album para escuchar
+RecommendAlbum sugerir un album que escuchar
+RecommendArtist recomendar artista
+RecommendArtist recomendar artista para escuchar
+RecommendArtist recomendar artista que escuchar
+RecommendArtist recomendar grupo
+RecommendArtist recomendar grupo para escuchar
+RecommendArtist recomendar grupo que escuchar
+RecommendArtist recomendar musico
+RecommendArtist recomendar musico para escuchar
+RecommendArtist recomendar musico que escuchar
+RecommendArtist recomendar un artista
+RecommendArtist recomendar un artista para escuchar
+RecommendArtist recomendar un artista que escuchar
+RecommendArtist recomendar un grupo
+RecommendArtist recomendar un grupo para escuchar
+RecommendArtist recomendar un grupo que escuchar
+RecommendArtist recomendar un musico
+RecommendArtist recomendar un musico para escuchar
+RecommendArtist recomendar un musico que escuchar
+RecommendArtist sugerir artista
+RecommendArtist sugerir artista para escuchar
+RecommendArtist sugerir artista que escuchar
+RecommendArtist sugerir grupo
+RecommendArtist sugerir grupo para escuchar
+RecommendArtist sugerir grupo que escuchar
+RecommendArtist sugerir musico
+RecommendArtist sugerir musico para escuchar
+RecommendArtist sugerir musico que escuchar
+RecommendArtist sugerir un artista
+RecommendArtist sugerir un artista para escuchar
+RecommendArtist sugerir un artista que escuchar
+RecommendArtist sugerir un grupo
+RecommendArtist sugerir un grupo para escuchar
+RecommendArtist sugerir un grupo que escuchar
+RecommendArtist sugerir un musico
+RecommendArtist sugerir un musico para escuchar
+RecommendArtist sugerir un musico que escuchar
+RecommendAudio recomendar algo que escuchar
+RecommendAudio sugerir algo que escuchar
+RecommendEpisode recomendar algun episodio
+RecommendEpisode recomendar algun episodio de {ShowGenre}
+RecommendEpisode recomendar algun episodio de {ShowGenre} para ver
+RecommendEpisode recomendar algun episodio de {ShowGenre} que ver
+RecommendEpisode recomendar algun episodio para ver
+RecommendEpisode recomendar algun episodio que ver
+RecommendEpisode recomendar episodio
+RecommendEpisode recomendar episodio de {ShowGenre}
+RecommendEpisode recomendar episodio de {ShowGenre} para ver
+RecommendEpisode recomendar episodio de {ShowGenre} que ver
+RecommendEpisode recomendar episodio para ver
+RecommendEpisode recomendar episodio que ver
+RecommendEpisode recomendar un episodio
+RecommendEpisode recomendar un episodio de {ShowGenre}
+RecommendEpisode recomendar un episodio de {ShowGenre} para ver
+RecommendEpisode recomendar un episodio de {ShowGenre} que ver
+RecommendEpisode recomendar un episodio para ver
+RecommendEpisode recomendar un episodio que ver
+RecommendEpisode sugerir algun episodio
+RecommendEpisode sugerir algun episodio de {ShowGenre}
+RecommendEpisode sugerir algun episodio de {ShowGenre} para ver
+RecommendEpisode sugerir algun episodio de {ShowGenre} que ver
+RecommendEpisode sugerir algun episodio para ver
+RecommendEpisode sugerir algun episodio que ver
+RecommendEpisode sugerir episodio
+RecommendEpisode sugerir episodio de {ShowGenre}
+RecommendEpisode sugerir episodio de {ShowGenre} para ver
+RecommendEpisode sugerir episodio de {ShowGenre} que ver
+RecommendEpisode sugerir episodio para ver
+RecommendEpisode sugerir episodio que ver
+RecommendEpisode sugerir un episodio
+RecommendEpisode sugerir un episodio de {ShowGenre}
+RecommendEpisode sugerir un episodio de {ShowGenre} para ver
+RecommendEpisode sugerir un episodio de {ShowGenre} que ver
+RecommendEpisode sugerir un episodio para ver
+RecommendEpisode sugerir un episodio que ver
+RecommendMovie recomendar alguna films
+RecommendMovie recomendar alguna films de {MovieGenre}
+RecommendMovie recomendar alguna films de {MovieGenre} para ver
+RecommendMovie recomendar alguna films de {MovieGenre} que ver
+RecommendMovie recomendar alguna films para ver
+RecommendMovie recomendar alguna films que ver
+RecommendMovie recomendar alguna peliculas
+RecommendMovie recomendar alguna peliculas de {MovieGenre}
+RecommendMovie recomendar alguna peliculas de {MovieGenre} para ver
+RecommendMovie recomendar alguna peliculas de {MovieGenre} que ver
+RecommendMovie recomendar alguna peliculas para ver
+RecommendMovie recomendar alguna peliculas que ver
+RecommendMovie recomendar films
+RecommendMovie recomendar films de {MovieGenre}
+RecommendMovie recomendar films de {MovieGenre} para ver
+RecommendMovie recomendar films de {MovieGenre} que ver
+RecommendMovie recomendar films para ver
+RecommendMovie recomendar films que ver
+RecommendMovie recomendar peli
+RecommendMovie recomendar peli de {MovieGenre}
+RecommendMovie recomendar peli de {MovieGenre} para ver
+RecommendMovie recomendar peli de {MovieGenre} que ver
+RecommendMovie recomendar peli para ver
+RecommendMovie recomendar peli que ver
+RecommendMovie recomendar pelicula
+RecommendMovie recomendar pelicula de {MovieGenre}
+RecommendMovie recomendar pelicula de {MovieGenre} para ver
+RecommendMovie recomendar pelicula de {MovieGenre} que ver
+RecommendMovie recomendar pelicula para ver
+RecommendMovie recomendar pelicula que ver
+RecommendMovie recomendar peliculas
+RecommendMovie recomendar peliculas de {MovieGenre}
+RecommendMovie recomendar peliculas de {MovieGenre} para ver
+RecommendMovie recomendar peliculas de {MovieGenre} que ver
+RecommendMovie recomendar peliculas para ver
+RecommendMovie recomendar peliculas que ver
+RecommendMovie recomendar una peli
+RecommendMovie recomendar una peli de {MovieGenre}
+RecommendMovie recomendar una peli de {MovieGenre} para ver
+RecommendMovie recomendar una peli de {MovieGenre} que ver
+RecommendMovie recomendar una peli para ver
+RecommendMovie recomendar una peli que ver
+RecommendMovie recomendar una pelicula
+RecommendMovie recomendar una pelicula de {MovieGenre}
+RecommendMovie recomendar una pelicula de {MovieGenre} para ver
+RecommendMovie recomendar una pelicula de {MovieGenre} que ver
+RecommendMovie recomendar una pelicula para ver
+RecommendMovie recomendar una pelicula que ver
+RecommendMovie sugerir alguna films
+RecommendMovie sugerir alguna films de {MovieGenre}
+RecommendMovie sugerir alguna films de {MovieGenre} para ver
+RecommendMovie sugerir alguna films de {MovieGenre} que ver
+RecommendMovie sugerir alguna films para ver
+RecommendMovie sugerir alguna films que ver
+RecommendMovie sugerir alguna peliculas
+RecommendMovie sugerir alguna peliculas de {MovieGenre}
+RecommendMovie sugerir alguna peliculas de {MovieGenre} para ver
+RecommendMovie sugerir alguna peliculas de {MovieGenre} que ver
+RecommendMovie sugerir alguna peliculas para ver
+RecommendMovie sugerir alguna peliculas que ver
+RecommendMovie sugerir films
+RecommendMovie sugerir films de {MovieGenre}
+RecommendMovie sugerir films de {MovieGenre} para ver
+RecommendMovie sugerir films de {MovieGenre} que ver
+RecommendMovie sugerir films para ver
+RecommendMovie sugerir films que ver
+RecommendMovie sugerir peli
+RecommendMovie sugerir peli de {MovieGenre}
+RecommendMovie sugerir peli de {MovieGenre} para ver
+RecommendMovie sugerir peli de {MovieGenre} que ver
+RecommendMovie sugerir peli para ver
+RecommendMovie sugerir peli que ver
+RecommendMovie sugerir pelicula
+RecommendMovie sugerir pelicula de {MovieGenre}
+RecommendMovie sugerir pelicula de {MovieGenre} para ver
+RecommendMovie sugerir pelicula de {MovieGenre} que ver
+RecommendMovie sugerir pelicula para ver
+RecommendMovie sugerir pelicula que ver
+RecommendMovie sugerir peliculas
+RecommendMovie sugerir peliculas de {MovieGenre}
+RecommendMovie sugerir peliculas de {MovieGenre} para ver
+RecommendMovie sugerir peliculas de {MovieGenre} que ver
+RecommendMovie sugerir peliculas para ver
+RecommendMovie sugerir peliculas que ver
+RecommendMovie sugerir una peli
+RecommendMovie sugerir una peli de {MovieGenre}
+RecommendMovie sugerir una peli de {MovieGenre} para ver
+RecommendMovie sugerir una peli de {MovieGenre} que ver
+RecommendMovie sugerir una peli para ver
+RecommendMovie sugerir una peli que ver
+RecommendMovie sugerir una pelicula
+RecommendMovie sugerir una pelicula de {MovieGenre}
+RecommendMovie sugerir una pelicula de {MovieGenre} para ver
+RecommendMovie sugerir una pelicula de {MovieGenre} que ver
+RecommendMovie sugerir una pelicula para ver
+RecommendMovie sugerir una pelicula que ver
+RecommendMusicVideo recomendar algun videoclip
+RecommendMusicVideo recomendar algun videoclip de {MusicVideoGenre}
+RecommendMusicVideo recomendar algun videoclip de {MusicVideoGenre} para escuchar
+RecommendMusicVideo recomendar algun videoclip de {MusicVideoGenre} para ver
+RecommendMusicVideo recomendar algun videoclip para escuchar
+RecommendMusicVideo recomendar algun videoclip para ver
+RecommendMusicVideo recomendar un videoclip
+RecommendMusicVideo recomendar un videoclip de {MusicVideoGenre}
+RecommendMusicVideo recomendar un videoclip de {MusicVideoGenre} para escuchar
+RecommendMusicVideo recomendar un videoclip de {MusicVideoGenre} para ver
+RecommendMusicVideo recomendar un videoclip para escuchar
+RecommendMusicVideo recomendar un videoclip para ver
+RecommendMusicVideo recomendar videoclip
+RecommendMusicVideo recomendar videoclip de {MusicVideoGenre}
+RecommendMusicVideo recomendar videoclip de {MusicVideoGenre} para escuchar
+RecommendMusicVideo recomendar videoclip de {MusicVideoGenre} para ver
+RecommendMusicVideo recomendar videoclip para escuchar
+RecommendMusicVideo recomendar videoclip para ver
+RecommendMusicVideo sugerir algun videoclip
+RecommendMusicVideo sugerir algun videoclip de {MusicVideoGenre}
+RecommendMusicVideo sugerir algun videoclip de {MusicVideoGenre} para escuchar
+RecommendMusicVideo sugerir algun videoclip de {MusicVideoGenre} para ver
+RecommendMusicVideo sugerir algun videoclip para escuchar
+RecommendMusicVideo sugerir algun videoclip para ver
+RecommendMusicVideo sugerir un videoclip
+RecommendMusicVideo sugerir un videoclip de {MusicVideoGenre}
+RecommendMusicVideo sugerir un videoclip de {MusicVideoGenre} para escuchar
+RecommendMusicVideo sugerir un videoclip de {MusicVideoGenre} para ver
+RecommendMusicVideo sugerir un videoclip para escuchar
+RecommendMusicVideo sugerir un videoclip para ver
+RecommendMusicVideo sugerir videoclip
+RecommendMusicVideo sugerir videoclip de {MusicVideoGenre}
+RecommendMusicVideo sugerir videoclip de {MusicVideoGenre} para escuchar
+RecommendMusicVideo sugerir videoclip de {MusicVideoGenre} para ver
+RecommendMusicVideo sugerir videoclip para escuchar
+RecommendMusicVideo sugerir videoclip para ver
+RecommendShow recomendar alguna serie
+RecommendShow recomendar alguna serie de {ShowGenre}
+RecommendShow recomendar alguna serie de {ShowGenre} para ver
+RecommendShow recomendar alguna serie de {ShowGenre} que ver
+RecommendShow recomendar alguna serie para ver
+RecommendShow recomendar alguna serie que ver
+RecommendShow recomendar serie
+RecommendShow recomendar serie de {ShowGenre}
+RecommendShow recomendar serie de {ShowGenre} para ver
+RecommendShow recomendar serie de {ShowGenre} que ver
+RecommendShow recomendar serie para ver
+RecommendShow recomendar serie que ver
+RecommendShow recomendar una serie
+RecommendShow recomendar una serie de {ShowGenre}
+RecommendShow recomendar una serie de {ShowGenre} para ver
+RecommendShow recomendar una serie de {ShowGenre} que ver
+RecommendShow recomendar una serie para ver
+RecommendShow recomendar una serie que ver
+RecommendShow sugerir alguna serie
+RecommendShow sugerir alguna serie de {ShowGenre}
+RecommendShow sugerir alguna serie de {ShowGenre} para ver
+RecommendShow sugerir alguna serie de {ShowGenre} que ver
+RecommendShow sugerir alguna serie para ver
+RecommendShow sugerir alguna serie que ver
+RecommendShow sugerir serie
+RecommendShow sugerir serie de {ShowGenre}
+RecommendShow sugerir serie de {ShowGenre} para ver
+RecommendShow sugerir serie de {ShowGenre} que ver
+RecommendShow sugerir serie para ver
+RecommendShow sugerir serie que ver
+RecommendShow sugerir una serie
+RecommendShow sugerir una serie de {ShowGenre}
+RecommendShow sugerir una serie de {ShowGenre} para ver
+RecommendShow sugerir una serie de {ShowGenre} que ver
+RecommendShow sugerir una serie para ver
+RecommendShow sugerir una serie que ver
+RecommendSong recomendar algun cancion
+RecommendSong recomendar algun cancion de {MusicGenre}
+RecommendSong recomendar algun cancion de {MusicGenre} para escuchar
+RecommendSong recomendar algun cancion de {MusicGenre} que escuchar
+RecommendSong recomendar algun cancion para escuchar
+RecommendSong recomendar algun cancion que escuchar
+RecommendSong recomendar cancion
+RecommendSong recomendar cancion de {MusicGenre}
+RecommendSong recomendar cancion de {MusicGenre} para escuchar
+RecommendSong recomendar cancion de {MusicGenre} que escuchar
+RecommendSong recomendar cancion para escuchar
+RecommendSong recomendar cancion que escuchar
+RecommendSong recomendar un cancion
+RecommendSong recomendar un cancion de {MusicGenre}
+RecommendSong recomendar un cancion de {MusicGenre} para escuchar
+RecommendSong recomendar un cancion de {MusicGenre} que escuchar
+RecommendSong recomendar un cancion para escuchar
+RecommendSong recomendar un cancion que escuchar
+RecommendSong sugerir algun cancion
+RecommendSong sugerir algun cancion de {MusicGenre}
+RecommendSong sugerir algun cancion de {MusicGenre} para escuchar
+RecommendSong sugerir algun cancion de {MusicGenre} que escuchar
+RecommendSong sugerir algun cancion para escuchar
+RecommendSong sugerir algun cancion que escuchar
+RecommendSong sugerir cancion
+RecommendSong sugerir cancion de {MusicGenre}
+RecommendSong sugerir cancion de {MusicGenre} para escuchar
+RecommendSong sugerir cancion de {MusicGenre} que escuchar
+RecommendSong sugerir cancion para escuchar
+RecommendSong sugerir cancion que escuchar
+RecommendSong sugerir un cancion
+RecommendSong sugerir un cancion de {MusicGenre}
+RecommendSong sugerir un cancion de {MusicGenre} para escuchar
+RecommendSong sugerir un cancion de {MusicGenre} que escuchar
+RecommendSong sugerir un cancion para escuchar
+RecommendSong sugerir un cancion que escuchar
+RecommendVideo recomendar algo para ver
+RecommendVideo sugerir algo para ver
+Right derecha
+Right ir derecha
+Right navegar derecha
+Select seleccionar
+ShuffleAlbum barajar album {Album}
+ShuffleAlbum barajar album {Album} de {Artist}
+ShuffleAlbum barajar el album {Album}
+ShuffleAlbum barajar el album {Album} de {Artist}
+ShuffleAlbum barajar {Album} de {Artist}
+ShuffleAudioPlaylist barajar el audio de la lista de reproduccion {AudioPlaylist}
+ShuffleAudioPlaylist barajar el audio de lista de reproduccion {AudioPlaylist}
+ShuffleAudioPlaylist barajar la lista de reproduccion {AudioPlaylist}
+ShuffleAudioPlaylist barajar la musica de la lista de reproduccion {AudioPlaylist}
+ShuffleAudioPlaylist barajar la musica de lista de reproduccion {AudioPlaylist}
+ShuffleAudioPlaylist barajar las canciones de la lista de reproduccion {AudioPlaylist}
+ShuffleAudioPlaylist barajar las canciones de lista de reproduccion {AudioPlaylist}
+ShuffleAudioPlaylist barajar lista de reproduccion {AudioPlaylist}
+ShuffleLatestAlbum barajar el nuevo album de {Artist}
+ShuffleLatestAlbum barajar el ultimo album de {Artist}
+ShuffleLatestAlbum barajar nuevo album de {Artist}
+ShuffleLatestAlbum barajar ultimo album de {Artist}
+ShuffleMedia barajar {Show}
+ShuffleMusicVideos barajar los videoclips
+ShuffleMusicVideos barajar los videoclips de {Artist}
+ShuffleMusicVideos barajar los videoclips de {MusicVideoGenre}
+ShuffleMusicVideos barajar los videoclips de {MusicVideoGenre} de {Artist}
+ShuffleMusicVideos barajar todos los videoclips
+ShuffleMusicVideos barajar todos los videoclips de {Artist}
+ShuffleMusicVideos barajar todos los videoclips de {MusicVideoGenre}
+ShuffleMusicVideos barajar todos los videoclips de {MusicVideoGenre} de {Artist}
+ShuffleMusicVideos barajar todos videoclips
+ShuffleMusicVideos barajar todos videoclips de {Artist}
+ShuffleMusicVideos barajar todos videoclips de {MusicVideoGenre}
+ShuffleMusicVideos barajar todos videoclips de {MusicVideoGenre} de {Artist}
+ShuffleMusicVideos barajar videoclips
+ShuffleMusicVideos barajar videoclips de {Artist}
+ShuffleMusicVideos barajar videoclips de {MusicVideoGenre}
+ShuffleMusicVideos barajar videoclips de {MusicVideoGenre} de {Artist}
+ShuffleMusicVideos reproducir los videoclips
+ShuffleMusicVideos reproducir los videoclips de {Artist}
+ShuffleMusicVideos reproducir los videoclips de {MusicVideoGenre}
+ShuffleMusicVideos reproducir los videoclips de {MusicVideoGenre} de {Artist}
+ShuffleMusicVideos reproducir todos los videoclips
+ShuffleMusicVideos reproducir todos los videoclips de {Artist}
+ShuffleMusicVideos reproducir todos los videoclips de {MusicVideoGenre}
+ShuffleMusicVideos reproducir todos los videoclips de {MusicVideoGenre} de {Artist}
+ShuffleMusicVideos reproducir todos videoclips
+ShuffleMusicVideos reproducir todos videoclips de {Artist}
+ShuffleMusicVideos reproducir todos videoclips de {MusicVideoGenre}
+ShuffleMusicVideos reproducir todos videoclips de {MusicVideoGenre} de {Artist}
+ShuffleMusicVideos reproducir videoclips
+ShuffleMusicVideos reproducir videoclips de {Artist}
+ShuffleMusicVideos reproducir videoclips de {MusicVideoGenre}
+ShuffleMusicVideos reproducir videoclips de {MusicVideoGenre} de {Artist}
+ShuffleMusicVideos ver los videoclips
+ShuffleMusicVideos ver los videoclips de {Artist}
+ShuffleMusicVideos ver los videoclips de {MusicVideoGenre}
+ShuffleMusicVideos ver los videoclips de {MusicVideoGenre} de {Artist}
+ShuffleMusicVideos ver todos los videoclips
+ShuffleMusicVideos ver todos los videoclips de {Artist}
+ShuffleMusicVideos ver todos los videoclips de {MusicVideoGenre}
+ShuffleMusicVideos ver todos los videoclips de {MusicVideoGenre} de {Artist}
+ShuffleMusicVideos ver todos videoclips
+ShuffleMusicVideos ver todos videoclips de {Artist}
+ShuffleMusicVideos ver todos videoclips de {MusicVideoGenre}
+ShuffleMusicVideos ver todos videoclips de {MusicVideoGenre} de {Artist}
+ShuffleMusicVideos ver videoclips
+ShuffleMusicVideos ver videoclips de {Artist}
+ShuffleMusicVideos ver videoclips de {MusicVideoGenre}
+ShuffleMusicVideos ver videoclips de {MusicVideoGenre} de {Artist}
+ShufflePlaylist barajar la lista de reproduccion {AudioPlaylist}
+ShufflePlaylist barajar la lista {AudioPlaylist}
+ShufflePlaylist barajar lista de reproduccion {AudioPlaylist}
+ShufflePlaylist barajar lista {AudioPlaylist}
+ShufflePlaylist barajar {AudioPlaylist} lista de reproduccion
+ShuffleShow barajar episodios de {Show}
+ShuffleShow barajar los episodios de {Show}
+ShuffleShow barajar todos episodios de {Show}
+ShuffleShow barajar todos los episodios de {Show}
+ShuffleVideoPlaylist barajar la lista de peliculas {VideoPlaylist}
+ShuffleVideoPlaylist barajar la lista de reproduccion {VideoPlaylist}
+ShuffleVideoPlaylist barajar la lista de series {VideoPlaylist}
+ShuffleVideoPlaylist barajar la lista de videos {VideoPlaylist}
+ShuffleVideoPlaylist barajar lista de peliculas {VideoPlaylist}
+ShuffleVideoPlaylist barajar lista de reproduccion {VideoPlaylist}
+ShuffleVideoPlaylist barajar lista de series {VideoPlaylist}
+ShuffleVideoPlaylist barajar lista de videos {VideoPlaylist}
+Shutdown apagar
+Shutdown apagar sistema
+StereoscopicMode activar estereoscopico
+StereoscopicMode activar modo estereoscopico
+StereoscopicMode activar modo tres D
+StereoscopicMode activar tres D
+StereoscopicMode desactivar estereoscopico
+StereoscopicMode desactivar modo estereoscopico
+StereoscopicMode desactivar modo tres D
+StereoscopicMode desactivar tres D
+SubtitlesDownload descargar subtitulos
+SubtitlesNext cambiar subtitulo
+SubtitlesNext cambiar subtitulos
+SubtitlesNext subtitulo
+SubtitlesNext subtitulo siguiente
+SubtitlesNext subtitulos
+SubtitlesNext subtitulos siguientes
+SubtitlesOff apagar subtitulos
+SubtitlesOff desactivar subtitulos
+SubtitlesOn activar subtitulos
+SubtitlesOn encender subtitulos
+SubtitlesPrevious subtitulo anterior
+SubtitlesPrevious subtitulos anteriores
+Suspend poner en suspension
+Suspend suspender
+Suspend suspender sistema
+Up arriba
+Up ir arriba
+Up navegar arriba
+UpdateAudio actualizar biblioteca de audio
+UpdateAudio actualizar biblioteca de musica
+UpdateVideo actualizar biblioteca
+UpdateVideo actualizar biblioteca de video
+ViewAlbums abrir albums
+ViewAlbums abrir albums de musica
+ViewAlbums ir a albums
+ViewAlbums ir a albums de musica
+ViewAlbums ver albums
+ViewAlbums ver albums de musica
+ViewArtists abrir artistas
+ViewArtists abrir musicos
+ViewArtists ir a artistas
+ViewArtists ir a musicos
+ViewArtists ver artistas
+ViewArtists ver musicos
+ViewAudioPlaylist abrir la lista de audio {AudioPlaylist}
+ViewAudioPlaylist abrir la lista de canciones {AudioPlaylist}
+ViewAudioPlaylist abrir la lista de musica {AudioPlaylist}
+ViewAudioPlaylist abrir la lista de reproduccion {AudioPlaylist}
+ViewAudioPlaylist abrir la playlist {AudioPlaylist}
+ViewAudioPlaylist abrir la {AudioPlaylist} lista de audio
+ViewAudioPlaylist abrir la {AudioPlaylist} lista de canciones
+ViewAudioPlaylist abrir la {AudioPlaylist} lista de musica
+ViewAudioPlaylist abrir la {AudioPlaylist} lista de playlist
+ViewAudioPlaylist abrir la {AudioPlaylist} lista de reproduccion
+ViewAudioPlaylist abrir lista de audio {AudioPlaylist}
+ViewAudioPlaylist abrir lista de canciones {AudioPlaylist}
+ViewAudioPlaylist abrir lista de musica {AudioPlaylist}
+ViewAudioPlaylist abrir lista de reproduccion {AudioPlaylist}
+ViewAudioPlaylist abrir playlist {AudioPlaylist}
+ViewAudioPlaylist abrir {AudioPlaylist} lista de audio
+ViewAudioPlaylist abrir {AudioPlaylist} lista de canciones
+ViewAudioPlaylist abrir {AudioPlaylist} lista de musica
+ViewAudioPlaylist abrir {AudioPlaylist} lista de playlist
+ViewAudioPlaylist abrir {AudioPlaylist} lista de reproduccion
+ViewAudioPlaylist ir a la lista de audio {AudioPlaylist}
+ViewAudioPlaylist ir a la lista de canciones {AudioPlaylist}
+ViewAudioPlaylist ir a la lista de musica {AudioPlaylist}
+ViewAudioPlaylist ir a la lista de reproduccion {AudioPlaylist}
+ViewAudioPlaylist ir a la playlist {AudioPlaylist}
+ViewAudioPlaylist ir a la {AudioPlaylist} lista de audio
+ViewAudioPlaylist ir a la {AudioPlaylist} lista de canciones
+ViewAudioPlaylist ir a la {AudioPlaylist} lista de musica
+ViewAudioPlaylist ir a la {AudioPlaylist} lista de playlist
+ViewAudioPlaylist ir a la {AudioPlaylist} lista de reproduccion
+ViewAudioPlaylist ir a lista de audio {AudioPlaylist}
+ViewAudioPlaylist ir a lista de canciones {AudioPlaylist}
+ViewAudioPlaylist ir a lista de musica {AudioPlaylist}
+ViewAudioPlaylist ir a lista de reproduccion {AudioPlaylist}
+ViewAudioPlaylist ir a playlist {AudioPlaylist}
+ViewAudioPlaylist ir a {AudioPlaylist} lista de audio
+ViewAudioPlaylist ir a {AudioPlaylist} lista de canciones
+ViewAudioPlaylist ir a {AudioPlaylist} lista de musica
+ViewAudioPlaylist ir a {AudioPlaylist} lista de playlist
+ViewAudioPlaylist ir a {AudioPlaylist} lista de reproduccion
+ViewAudioPlaylist ver la lista de audio {AudioPlaylist}
+ViewAudioPlaylist ver la lista de canciones {AudioPlaylist}
+ViewAudioPlaylist ver la lista de musica {AudioPlaylist}
+ViewAudioPlaylist ver la lista de reproduccion {AudioPlaylist}
+ViewAudioPlaylist ver la playlist {AudioPlaylist}
+ViewAudioPlaylist ver la {AudioPlaylist} lista de audio
+ViewAudioPlaylist ver la {AudioPlaylist} lista de canciones
+ViewAudioPlaylist ver la {AudioPlaylist} lista de musica
+ViewAudioPlaylist ver la {AudioPlaylist} lista de playlist
+ViewAudioPlaylist ver la {AudioPlaylist} lista de reproduccion
+ViewAudioPlaylist ver lista de audio {AudioPlaylist}
+ViewAudioPlaylist ver lista de canciones {AudioPlaylist}
+ViewAudioPlaylist ver lista de musica {AudioPlaylist}
+ViewAudioPlaylist ver lista de reproduccion {AudioPlaylist}
+ViewAudioPlaylist ver playlist {AudioPlaylist}
+ViewAudioPlaylist ver {AudioPlaylist} lista de audio
+ViewAudioPlaylist ver {AudioPlaylist} lista de canciones
+ViewAudioPlaylist ver {AudioPlaylist} lista de musica
+ViewAudioPlaylist ver {AudioPlaylist} lista de playlist
+ViewAudioPlaylist ver {AudioPlaylist} lista de reproduccion
+ViewAudioPlaylistRecent abrir albums recientes
+ViewAudioPlaylistRecent abrir audio nuevo
+ViewAudioPlaylistRecent abrir audio reciente
+ViewAudioPlaylistRecent abrir canciones nuevas
+ViewAudioPlaylistRecent abrir canciones recientes
+ViewAudioPlaylistRecent abrir la ultima musica
+ViewAudioPlaylistRecent abrir musica nueva
+ViewAudioPlaylistRecent abrir musica reciente
+ViewAudioPlaylistRecent abrir nuevas canciones
+ViewAudioPlaylistRecent abrir nuevo audio
+ViewAudioPlaylistRecent abrir nuevos albums
+ViewAudioPlaylistRecent abrir ultimas canciones
+ViewAudioPlaylistRecent abrir ultimos albums
+ViewAudioPlaylistRecent ir a albums recientes
+ViewAudioPlaylistRecent ir a audio nuevo
+ViewAudioPlaylistRecent ir a audio reciente
+ViewAudioPlaylistRecent ir a canciones nuevas
+ViewAudioPlaylistRecent ir a canciones recientes
+ViewAudioPlaylistRecent ir a la ultima musica
+ViewAudioPlaylistRecent ir a musica nueva
+ViewAudioPlaylistRecent ir a musica reciente
+ViewAudioPlaylistRecent ir a nuevas canciones
+ViewAudioPlaylistRecent ir a nuevo audio
+ViewAudioPlaylistRecent ir a nuevos albums
+ViewAudioPlaylistRecent ir a ultimas canciones
+ViewAudioPlaylistRecent ir a ultimos albums
+ViewAudioPlaylistRecent ver albums recientes
+ViewAudioPlaylistRecent ver audio nuevo
+ViewAudioPlaylistRecent ver audio reciente
+ViewAudioPlaylistRecent ver canciones nuevas
+ViewAudioPlaylistRecent ver canciones recientes
+ViewAudioPlaylistRecent ver la ultima musica
+ViewAudioPlaylistRecent ver musica nueva
+ViewAudioPlaylistRecent ver musica reciente
+ViewAudioPlaylistRecent ver nuevas canciones
+ViewAudioPlaylistRecent ver nuevo audio
+ViewAudioPlaylistRecent ver nuevos albums
+ViewAudioPlaylistRecent ver ultimas canciones
+ViewAudioPlaylistRecent ver ultimos albums
+ViewEpisodePlaylistRecent abrir episodios recientes
+ViewEpisodePlaylistRecent abrir las nuevas series
+ViewEpisodePlaylistRecent abrir las ultimas series
+ViewEpisodePlaylistRecent abrir los nuevos episodios
+ViewEpisodePlaylistRecent abrir los ultimos episodios
+ViewEpisodePlaylistRecent abrir nuevas series
+ViewEpisodePlaylistRecent abrir nuevos episodios
+ViewEpisodePlaylistRecent abrir series recientes
+ViewEpisodePlaylistRecent abrir ultimas series
+ViewEpisodePlaylistRecent abrir ultimos episodios
+ViewEpisodePlaylistRecent ir a episodios recientes
+ViewEpisodePlaylistRecent ir a las nuevas series
+ViewEpisodePlaylistRecent ir a las ultimas series
+ViewEpisodePlaylistRecent ir a los nuevos episodios
+ViewEpisodePlaylistRecent ir a los ultimos episodios
+ViewEpisodePlaylistRecent ir a nuevas series
+ViewEpisodePlaylistRecent ir a nuevos episodios
+ViewEpisodePlaylistRecent ir a series recientes
+ViewEpisodePlaylistRecent ir a ultimas series
+ViewEpisodePlaylistRecent ir a ultimos episodios
+ViewEpisodePlaylistRecent ver episodios recientes
+ViewEpisodePlaylistRecent ver las nuevas series
+ViewEpisodePlaylistRecent ver las ultimas series
+ViewEpisodePlaylistRecent ver los nuevos episodios
+ViewEpisodePlaylistRecent ver los ultimos episodios
+ViewEpisodePlaylistRecent ver nuevas series
+ViewEpisodePlaylistRecent ver nuevos episodios
+ViewEpisodePlaylistRecent ver series recientes
+ViewEpisodePlaylistRecent ver ultimas series
+ViewEpisodePlaylistRecent ver ultimos episodios
+ViewMoviePlaylistRecent abrir las nuevas peliculas
+ViewMoviePlaylistRecent abrir las peliculas recientes
+ViewMoviePlaylistRecent abrir las ultimas peliculas
+ViewMoviePlaylistRecent abrir los nuevos videos
+ViewMoviePlaylistRecent abrir los ultimos videos
+ViewMoviePlaylistRecent abrir los videos recientes
+ViewMoviePlaylistRecent abrir nuevas peliculas
+ViewMoviePlaylistRecent abrir nuevos videos
+ViewMoviePlaylistRecent abrir peliculas recientes
+ViewMoviePlaylistRecent abrir ultimas peliculas
+ViewMoviePlaylistRecent abrir ultimos videos
+ViewMoviePlaylistRecent abrir videos recientes
+ViewMoviePlaylistRecent ir a las nuevas peliculas
+ViewMoviePlaylistRecent ir a las peliculas recientes
+ViewMoviePlaylistRecent ir a las ultimas peliculas
+ViewMoviePlaylistRecent ir a los nuevos videos
+ViewMoviePlaylistRecent ir a los ultimos videos
+ViewMoviePlaylistRecent ir a los videos recientes
+ViewMoviePlaylistRecent ir a nuevas peliculas
+ViewMoviePlaylistRecent ir a nuevos videos
+ViewMoviePlaylistRecent ir a peliculas recientes
+ViewMoviePlaylistRecent ir a ultimas peliculas
+ViewMoviePlaylistRecent ir a ultimos videos
+ViewMoviePlaylistRecent ir a videos recientes
+ViewMoviePlaylistRecent ver las nuevas peliculas
+ViewMoviePlaylistRecent ver las peliculas recientes
+ViewMoviePlaylistRecent ver las ultimas peliculas
+ViewMoviePlaylistRecent ver los nuevos videos
+ViewMoviePlaylistRecent ver los ultimos videos
+ViewMoviePlaylistRecent ver los videos recientes
+ViewMoviePlaylistRecent ver nuevas peliculas
+ViewMoviePlaylistRecent ver nuevos videos
+ViewMoviePlaylistRecent ver peliculas recientes
+ViewMoviePlaylistRecent ver ultimas peliculas
+ViewMoviePlaylistRecent ver ultimos videos
+ViewMoviePlaylistRecent ver videos recientes
+ViewMovies abrir peliculas
+ViewMovies buscar peliculas de {MovieGenre}
+ViewMovies encontrar peliculas de {MovieGenre}
+ViewMovies ir a peliculas
+ViewMovies ver peliculas
+ViewMovies ver peliculas de {MovieGenre}
+ViewMusic abrir musica
+ViewMusic buscar musica {MusicGenre}
+ViewMusic encontrar musica {MusicGenre}
+ViewMusic escuchar musica {MusicGenre}
+ViewMusic ir a musica
+ViewMusic ver musica
+ViewMusicVideoPlaylistRecent abrir los nuevos videoclips
+ViewMusicVideoPlaylistRecent abrir los ultimos videoclips
+ViewMusicVideoPlaylistRecent abrir nuevos videoclips
+ViewMusicVideoPlaylistRecent abrir ultimos videoclips
+ViewMusicVideoPlaylistRecent abrir videoclips recientes
+ViewMusicVideoPlaylistRecent ir a los nuevos videoclips
+ViewMusicVideoPlaylistRecent ir a los ultimos videoclips
+ViewMusicVideoPlaylistRecent ir a nuevos videoclips
+ViewMusicVideoPlaylistRecent ir a ultimos videoclips
+ViewMusicVideoPlaylistRecent ir a videoclips recientes
+ViewMusicVideoPlaylistRecent ver los nuevos videoclips
+ViewMusicVideoPlaylistRecent ver los ultimos videoclips
+ViewMusicVideoPlaylistRecent ver nuevos videoclips
+ViewMusicVideoPlaylistRecent ver ultimos videoclips
+ViewMusicVideoPlaylistRecent ver videoclips recientes
+ViewMusicVideos abrir videoclips
+ViewMusicVideos buscar videoclips de {MusicVideoGenre}
+ViewMusicVideos encontrar videoclips de {MusicVideoGenre}
+ViewMusicVideos ir a videoclips
+ViewMusicVideos ver videoclips
+ViewMusicVideos ver videoclips de {MusicVideoGenre}
+ViewPlaylist abrir la lista de reproduccion {AudioPlaylist}
+ViewPlaylist abrir la lista de reproduccion {VideoPlaylist}
+ViewPlaylist abrir lista de reproduccion {AudioPlaylist}
+ViewPlaylist abrir lista de reproduccion {VideoPlaylist}
+ViewPlaylist abrir {AudioPlaylist} lista de reproduccion
+ViewPlaylist abrir {VideoPlaylist} lista de reproduccion
+ViewPlaylist ir a la lista de reproduccion {AudioPlaylist}
+ViewPlaylist ir a la lista de reproduccion {VideoPlaylist}
+ViewPlaylist ir a lista de reproduccion {AudioPlaylist}
+ViewPlaylist ir a lista de reproduccion {VideoPlaylist}
+ViewPlaylist ir a {AudioPlaylist} lista de reproduccion
+ViewPlaylist ir a {VideoPlaylist} lista de reproduccion
+ViewPlaylist ver la lista de reproduccion {AudioPlaylist}
+ViewPlaylist ver la lista de reproduccion {VideoPlaylist}
+ViewPlaylist ver lista de reproduccion {AudioPlaylist}
+ViewPlaylist ver lista de reproduccion {VideoPlaylist}
+ViewPlaylist ver {AudioPlaylist} lista de reproduccion
+ViewPlaylist ver {VideoPlaylist} lista de reproduccion
+ViewShows abrir series
+ViewShows buscar series de {ShowGenre}
+ViewShows encontrar series de {ShowGenre}
+ViewShows ir a series
+ViewShows ver series
+ViewShows ver series de {ShowGenre}
+ViewVideoPlaylist abrir la lista de peliculas {VideoPlaylist}
+ViewVideoPlaylist abrir la lista de video {VideoPlaylist}
+ViewVideoPlaylist abrir la lista de videos {VideoPlaylist}
+ViewVideoPlaylist abrir la playlist {VideoPlaylist}
+ViewVideoPlaylist abrir lista de peliculas {VideoPlaylist}
+ViewVideoPlaylist abrir lista de video {VideoPlaylist}
+ViewVideoPlaylist abrir lista de videos {VideoPlaylist}
+ViewVideoPlaylist abrir playlist {VideoPlaylist}
+ViewVideoPlaylist ir a la lista de peliculas {VideoPlaylist}
+ViewVideoPlaylist ir a la lista de video {VideoPlaylist}
+ViewVideoPlaylist ir a la lista de videos {VideoPlaylist}
+ViewVideoPlaylist ir a la playlist {VideoPlaylist}
+ViewVideoPlaylist ir a lista de peliculas {VideoPlaylist}
+ViewVideoPlaylist ir a lista de video {VideoPlaylist}
+ViewVideoPlaylist ir a lista de videos {VideoPlaylist}
+ViewVideoPlaylist ir a playlist {VideoPlaylist}
+ViewVideoPlaylist ver la lista de peliculas {VideoPlaylist}
+ViewVideoPlaylist ver la lista de video {VideoPlaylist}
+ViewVideoPlaylist ver la lista de videos {VideoPlaylist}
+ViewVideoPlaylist ver la playlist {VideoPlaylist}
+ViewVideoPlaylist ver lista de peliculas {VideoPlaylist}
+ViewVideoPlaylist ver lista de video {VideoPlaylist}
+ViewVideoPlaylist ver lista de videos {VideoPlaylist}
+ViewVideoPlaylist ver playlist {VideoPlaylist}
+VolumeDown bajar el audio
+VolumeDown bajar el sonido
+VolumeDown bajar el volumen
+VolumeSet poner el volumen al {Volume}
+VolumeSet poner el volumen al {Volume} por ciento
+VolumeSet poner el volumen {Volume}
+VolumeSet poner el volumen {Volume} por ciento
+VolumeSet volumen al {Volume}
+VolumeSet volumen al {Volume} por ciento
+VolumeSet volumen {Volume}
+VolumeSet volumen {Volume} por ciento
+VolumeUp subir el audio
+VolumeUp subir el sonido
+VolumeUp subir el volumen
+WatchEpisode reproducir episodio {Episode} de la temporada {Season} de la serie {Show}
+WatchEpisode reproducir episodio {Episode} de la temporada {Season} de {Show}
+WatchEpisode reproducir episodio {Episode} temporada {Season} de la serie {Show}
+WatchEpisode reproducir episodio {Episode} temporada {Season} de {Show}
+WatchEpisode reproducir la temporada {Season} episodio {Episode} de la serie {Show}
+WatchEpisode reproducir la temporada {Season} episodio {Episode} de {Show}
+WatchEpisode reproducir temporada {Season} episodio {Episode} de la serie {Show}
+WatchEpisode reproducir temporada {Season} episodio {Episode} de {Show}
+WatchEpisode reproducir {Show} episodio {Episode} temporada {Season}
+WatchEpisode reproducir {Show} temporada {Season} episodio {Episode}
+WatchEpisode ver episodio {Episode} de la temporada {Season} de la serie {Show}
+WatchEpisode ver episodio {Episode} de la temporada {Season} de {Show}
+WatchEpisode ver episodio {Episode} temporada {Season} de la serie {Show}
+WatchEpisode ver episodio {Episode} temporada {Season} de {Show}
+WatchEpisode ver la temporada {Season} episodio {Episode} de la serie {Show}
+WatchEpisode ver la temporada {Season} episodio {Episode} de {Show}
+WatchEpisode ver temporada {Season} episodio {Episode} de la serie {Show}
+WatchEpisode ver temporada {Season} episodio {Episode} de {Show}
+WatchEpisode ver {Show} episodio {Episode} temporada {Season}
+WatchEpisode ver {Show} temporada {Season} episodio {Episode}
+WatchLastShow continuar la serie
+WatchLastShow continuar la ultima serie
+WatchLastShow continuar reproduciendo la serie
+WatchLastShow continuar reproduciendo la ultima serie
+WatchLastShow continuar reproduciendo serie
+WatchLastShow continuar reproduciendo ultima serie
+WatchLastShow continuar serie
+WatchLastShow continuar ultima serie
+WatchLastShow continuar viendo la serie
+WatchLastShow continuar viendo la ultima serie
+WatchLastShow continuar viendo serie
+WatchLastShow continuar viendo ultima serie
+WatchLatestEpisode reproducir el nuevo episodio de {Show}
+WatchLatestEpisode reproducir el ultimo episodio de {Show}
+WatchLatestEpisode reproducir nuevo episodio de {Show}
+WatchLatestEpisode reproducir ultimo episodio de {Show}
+WatchLatestEpisode ver el nuevo episodio de {Show}
+WatchLatestEpisode ver el ultimo episodio de {Show}
+WatchLatestEpisode ver nuevo episodio de {Show}
+WatchLatestEpisode ver ultimo episodio de {Show}
+WatchMovie reproducir la peli {Movie}
+WatchMovie reproducir la pelicula {Movie}
+WatchMovie reproducir peli {Movie}
+WatchMovie reproducir pelicula {Movie}
+WatchMovie ver la peli {Movie}
+WatchMovie ver la pelicula {Movie}
+WatchMovie ver peli {Movie}
+WatchMovie ver pelicula {Movie}
+WatchMovieTrailer reproducir el trailer
+WatchMovieTrailer reproducir el trailer de {Movie}
+WatchMovieTrailer reproducir trailer
+WatchMovieTrailer reproducir trailer de {Movie}
+WatchMovieTrailer ver el trailer
+WatchMovieTrailer ver el trailer de {Movie}
+WatchMovieTrailer ver trailer
+WatchMovieTrailer ver trailer de {Movie}
+WatchMusicVideo reproducir el videoclip {MusicVideo}
+WatchMusicVideo reproducir el videoclip {MusicVideo} de {Artist}
+WatchMusicVideo reproducir el videoclip {MusicVideo} del {Artist}
+WatchMusicVideo reproducir videoclip {MusicVideo}
+WatchMusicVideo reproducir videoclip {MusicVideo} de {Artist}
+WatchMusicVideo reproducir videoclip {MusicVideo} del {Artist}
+WatchMusicVideo ver el videoclip {MusicVideo}
+WatchMusicVideo ver el videoclip {MusicVideo} de {Artist}
+WatchMusicVideo ver el videoclip {MusicVideo} del {Artist}
+WatchMusicVideo ver videoclip {MusicVideo}
+WatchMusicVideo ver videoclip {MusicVideo} de {Artist}
+WatchMusicVideo ver videoclip {MusicVideo} del {Artist}
+WatchNextEpisode reproducir el proximo episodio de {Show}
+WatchNextEpisode reproducir el siguiente episodio de {Show}
+WatchNextEpisode reproducir proximo episodio de {Show}
+WatchNextEpisode reproducir siguiente episodio de {Show}
+WatchNextEpisode ver el proximo episodio de {Show}
+WatchNextEpisode ver el siguiente episodio de {Show}
+WatchNextEpisode ver proximo episodio de {Show}
+WatchNextEpisode ver siguiente episodio de {Show}
+WatchRandomEpisode reproducir un episodio aleatorio de {Show}
+WatchRandomEpisode reproducir un episodio de {Show}
+WatchRandomEpisode ver un episodio aleatorio de {Show}
+WatchRandomEpisode ver un episodio de {Show}
+WatchRandomMovie reproducir peli aleatoria
+WatchRandomMovie reproducir peli aleatoria de {MovieGenre}
+WatchRandomMovie reproducir peli de {MovieGenre} aleatoria
+WatchRandomMovie reproducir pelicula aleatoria
+WatchRandomMovie reproducir pelicula aleatoria de {MovieGenre}
+WatchRandomMovie reproducir pelicula de {MovieGenre} aleatoria
+WatchRandomMovie reproducir una peli aleatoria
+WatchRandomMovie reproducir una peli aleatoria de {MovieGenre}
+WatchRandomMovie reproducir una peli de {MovieGenre} aleatoria
+WatchRandomMovie reproducir una pelicula aleatoria
+WatchRandomMovie reproducir una pelicula aleatoria de {MovieGenre}
+WatchRandomMovie reproducir una pelicula de {MovieGenre} aleatoria
+WatchRandomMovie ver peli aleatoria
+WatchRandomMovie ver peli aleatoria de {MovieGenre}
+WatchRandomMovie ver peli de {MovieGenre} aleatoria
+WatchRandomMovie ver pelicula aleatoria
+WatchRandomMovie ver pelicula aleatoria de {MovieGenre}
+WatchRandomMovie ver pelicula de {MovieGenre} aleatoria
+WatchRandomMovie ver una peli aleatoria
+WatchRandomMovie ver una peli aleatoria de {MovieGenre}
+WatchRandomMovie ver una peli de {MovieGenre} aleatoria
+WatchRandomMovie ver una pelicula aleatoria
+WatchRandomMovie ver una pelicula aleatoria de {MovieGenre}
+WatchRandomMovie ver una pelicula de {MovieGenre} aleatoria
+WatchRandomMusicVideo reproducir un videoclip de aleatorio
+WatchRandomMusicVideo reproducir un videoclip de aleatorio de {Artist}
+WatchRandomMusicVideo reproducir un videoclip de aleatorio del {Artist}
+WatchRandomMusicVideo reproducir un videoclip de {MusicVideoGenre} aleatorio
+WatchRandomMusicVideo reproducir un videoclip de {MusicVideoGenre} aleatorio de {Artist}
+WatchRandomMusicVideo reproducir un videoclip de {MusicVideoGenre} aleatorio del {Artist}
+WatchRandomMusicVideo reproducir videoclip de aleatorio
+WatchRandomMusicVideo reproducir videoclip de aleatorio de {Artist}
+WatchRandomMusicVideo reproducir videoclip de aleatorio del {Artist}
+WatchRandomMusicVideo reproducir videoclip de {MusicVideoGenre} aleatorio
+WatchRandomMusicVideo reproducir videoclip de {MusicVideoGenre} aleatorio de {Artist}
+WatchRandomMusicVideo reproducir videoclip de {MusicVideoGenre} aleatorio del {Artist}
+WatchRandomMusicVideo ver un videoclip de aleatorio
+WatchRandomMusicVideo ver un videoclip de aleatorio de {Artist}
+WatchRandomMusicVideo ver un videoclip de aleatorio del {Artist}
+WatchRandomMusicVideo ver un videoclip de {MusicVideoGenre} aleatorio
+WatchRandomMusicVideo ver un videoclip de {MusicVideoGenre} aleatorio de {Artist}
+WatchRandomMusicVideo ver un videoclip de {MusicVideoGenre} aleatorio del {Artist}
+WatchRandomMusicVideo ver videoclip de aleatorio
+WatchRandomMusicVideo ver videoclip de aleatorio de {Artist}
+WatchRandomMusicVideo ver videoclip de aleatorio del {Artist}
+WatchRandomMusicVideo ver videoclip de {MusicVideoGenre} aleatorio
+WatchRandomMusicVideo ver videoclip de {MusicVideoGenre} aleatorio de {Artist}
+WatchRandomMusicVideo ver videoclip de {MusicVideoGenre} aleatorio del {Artist}
+WatchRandomShow reproducir una serie
+WatchRandomShow reproducir una serie de {ShowGenre}
+WatchRandomShow ver una serie
+WatchRandomShow ver una serie de {ShowGenre}
+WatchVideo ver el video {Movie}
+WatchVideo ver {Movie}
+WatchVideoPlaylist reproducir la lista de peliculas {VideoPlaylist}
+WatchVideoPlaylist reproducir la lista de reproduccion {VideoPlaylist}
+WatchVideoPlaylist reproducir la lista de series {VideoPlaylist}
+WatchVideoPlaylist reproducir la lista de videos {VideoPlaylist}
+WatchVideoPlaylist reproducir lista de peliculas {VideoPlaylist}
+WatchVideoPlaylist reproducir lista de reproduccion {VideoPlaylist}
+WatchVideoPlaylist reproducir lista de series {VideoPlaylist}
+WatchVideoPlaylist reproducir lista de videos {VideoPlaylist}
+WatchVideoPlaylist ver la lista de peliculas {VideoPlaylist}
+WatchVideoPlaylist ver la lista de reproduccion {VideoPlaylist}
+WatchVideoPlaylist ver la lista de series {VideoPlaylist}
+WatchVideoPlaylist ver la lista de videos {VideoPlaylist}
+WatchVideoPlaylist ver lista de peliculas {VideoPlaylist}
+WatchVideoPlaylist ver lista de reproduccion {VideoPlaylist}
+WatchVideoPlaylist ver lista de series {VideoPlaylist}
+WatchVideoPlaylist ver lista de videos {VideoPlaylist}
+WhatAlbums que albums tengo de {Artist}
+WhatNewAlbums hay nuevos albums
+WhatNewAlbums hay nuevos albums para escuchar
+WhatNewAlbums hay nuevos albums que escuchar
+WhatNewAlbums hay un nuevo album
+WhatNewAlbums hay un nuevo album para escuchar
+WhatNewAlbums hay un nuevo album que escuchar
+WhatNewAlbums que nuevos albums hay
+WhatNewAlbums que nuevos albums hay para escuchar
+WhatNewAlbums que nuevos albums hay que escuchar
+WhatNewAlbums que nuevos albums tengo
+WhatNewAlbums que nuevos albums tengo para escuchar
+WhatNewAlbums que nuevos albums tengo que escuchar
+WhatNewAlbums si hay nuevos albums
+WhatNewAlbums si hay nuevos albums para escuchar
+WhatNewAlbums si hay nuevos albums que escuchar
+WhatNewAlbums si hay un nuevo album
+WhatNewAlbums si hay un nuevo album para escuchar
+WhatNewAlbums si hay un nuevo album que escuchar
+WhatNewAlbums tengo nuevos albums
+WhatNewAlbums tengo nuevos albums para escuchar
+WhatNewAlbums tengo nuevos albums que escuchar
+WhatNewAlbums tengo un nuevo album
+WhatNewAlbums tengo un nuevo album para escuchar
+WhatNewAlbums tengo un nuevo album que escuchar
+WhatNewEpisodes hay algun episodio de {Show}
+WhatNewEpisodes hay algun nuevo episodio de {Show}
+WhatNewEpisodes hay un episodio de {Show}
+WhatNewEpisodes hay un nuevo episodio de {Show}
+WhatNewEpisodes si hay algun episodio de {Show}
+WhatNewEpisodes si hay algun nuevo episodio de {Show}
+WhatNewEpisodes si hay un episodio de {Show}
+WhatNewEpisodes si hay un nuevo episodio de {Show}
+WhatNewEpisodes tengo algun episodio de {Show}
+WhatNewEpisodes tengo algun nuevo episodio de {Show}
+WhatNewEpisodes tengo un episodio de {Show}
+WhatNewEpisodes tengo un nuevo episodio de {Show}
+WhatNewMovies hay alguna nueva peliculas
+WhatNewMovies hay alguna nueva peliculas de {MovieGenre}
+WhatNewMovies hay alguna nueva peliculas de {MovieGenre} para ver
+WhatNewMovies hay alguna nueva peliculas de {MovieGenre} que ver
+WhatNewMovies hay alguna nueva peliculas para ver
+WhatNewMovies hay alguna nueva peliculas que ver
+WhatNewMovies hay alguna nueva pelis
+WhatNewMovies hay alguna nueva pelis de {MovieGenre}
+WhatNewMovies hay alguna nueva pelis de {MovieGenre} para ver
+WhatNewMovies hay alguna nueva pelis de {MovieGenre} que ver
+WhatNewMovies hay alguna nueva pelis para ver
+WhatNewMovies hay alguna nueva pelis que ver
+WhatNewMovies hay alguna nuevas peliculas
+WhatNewMovies hay alguna nuevas peliculas de {MovieGenre}
+WhatNewMovies hay alguna nuevas peliculas de {MovieGenre} para ver
+WhatNewMovies hay alguna nuevas peliculas de {MovieGenre} que ver
+WhatNewMovies hay alguna nuevas peliculas para ver
+WhatNewMovies hay alguna nuevas peliculas que ver
+WhatNewMovies hay alguna nuevas pelis
+WhatNewMovies hay alguna nuevas pelis de {MovieGenre}
+WhatNewMovies hay alguna nuevas pelis de {MovieGenre} para ver
+WhatNewMovies hay alguna nuevas pelis de {MovieGenre} que ver
+WhatNewMovies hay alguna nuevas pelis para ver
+WhatNewMovies hay alguna nuevas pelis que ver
+WhatNewMovies hay algunas nueva peliculas
+WhatNewMovies hay algunas nueva peliculas de {MovieGenre}
+WhatNewMovies hay algunas nueva peliculas de {MovieGenre} para ver
+WhatNewMovies hay algunas nueva peliculas de {MovieGenre} que ver
+WhatNewMovies hay algunas nueva peliculas para ver
+WhatNewMovies hay algunas nueva peliculas que ver
+WhatNewMovies hay algunas nueva pelis
+WhatNewMovies hay algunas nueva pelis de {MovieGenre}
+WhatNewMovies hay algunas nueva pelis de {MovieGenre} para ver
+WhatNewMovies hay algunas nueva pelis de {MovieGenre} que ver
+WhatNewMovies hay algunas nueva pelis para ver
+WhatNewMovies hay algunas nueva pelis que ver
+WhatNewMovies hay algunas nuevas peliculas
+WhatNewMovies hay algunas nuevas peliculas de {MovieGenre}
+WhatNewMovies hay algunas nuevas peliculas de {MovieGenre} para ver
+WhatNewMovies hay algunas nuevas peliculas de {MovieGenre} que ver
+WhatNewMovies hay algunas nuevas peliculas para ver
+WhatNewMovies hay algunas nuevas peliculas que ver
+WhatNewMovies hay algunas nuevas pelis
+WhatNewMovies hay algunas nuevas pelis de {MovieGenre}
+WhatNewMovies hay algunas nuevas pelis de {MovieGenre} para ver
+WhatNewMovies hay algunas nuevas pelis de {MovieGenre} que ver
+WhatNewMovies hay algunas nuevas pelis para ver
+WhatNewMovies hay algunas nuevas pelis que ver
+WhatNewMovies hay nueva peli
+WhatNewMovies hay nueva peli para ver
+WhatNewMovies hay nueva peli que ver
+WhatNewMovies hay nueva pelicula
+WhatNewMovies hay nueva pelicula para ver
+WhatNewMovies hay nueva pelicula que ver
+WhatNewMovies hay nueva peliculas
+WhatNewMovies hay nueva peliculas de {MovieGenre}
+WhatNewMovies hay nueva peliculas de {MovieGenre} para ver
+WhatNewMovies hay nueva peliculas de {MovieGenre} que ver
+WhatNewMovies hay nueva peliculas para ver
+WhatNewMovies hay nueva peliculas que ver
+WhatNewMovies hay nueva pelis
+WhatNewMovies hay nueva pelis de {MovieGenre}
+WhatNewMovies hay nueva pelis de {MovieGenre} para ver
+WhatNewMovies hay nueva pelis de {MovieGenre} que ver
+WhatNewMovies hay nueva pelis para ver
+WhatNewMovies hay nueva pelis que ver
+WhatNewMovies hay nuevas peliculas
+WhatNewMovies hay nuevas peliculas de {MovieGenre}
+WhatNewMovies hay nuevas peliculas de {MovieGenre} para ver
+WhatNewMovies hay nuevas peliculas de {MovieGenre} que ver
+WhatNewMovies hay nuevas peliculas para ver
+WhatNewMovies hay nuevas peliculas que ver
+WhatNewMovies hay nuevas pelis
+WhatNewMovies hay nuevas pelis de {MovieGenre}
+WhatNewMovies hay nuevas pelis de {MovieGenre} para ver
+WhatNewMovies hay nuevas pelis de {MovieGenre} que ver
+WhatNewMovies hay nuevas pelis para ver
+WhatNewMovies hay nuevas pelis que ver
+WhatNewMovies que nuevas peliculas are there
+WhatNewMovies que nuevas peliculas are there para ver
+WhatNewMovies que nuevas peliculas are there que ver
+WhatNewMovies que nuevas peliculas do i have
+WhatNewMovies que nuevas peliculas do i have para ver
+WhatNewMovies que nuevas peliculas do i have que ver
+WhatNewMovies que nuevas pelis are there
+WhatNewMovies que nuevas pelis are there para ver
+WhatNewMovies que nuevas pelis are there que ver
+WhatNewMovies que nuevas pelis do i have
+WhatNewMovies que nuevas pelis do i have para ver
+WhatNewMovies que nuevas pelis do i have que ver
+WhatNewMovies si hay alguna nueva peliculas
+WhatNewMovies si hay alguna nueva peliculas de {MovieGenre}
+WhatNewMovies si hay alguna nueva peliculas de {MovieGenre} para ver
+WhatNewMovies si hay alguna nueva peliculas de {MovieGenre} que ver
+WhatNewMovies si hay alguna nueva peliculas para ver
+WhatNewMovies si hay alguna nueva peliculas que ver
+WhatNewMovies si hay alguna nueva pelis
+WhatNewMovies si hay alguna nueva pelis de {MovieGenre}
+WhatNewMovies si hay alguna nueva pelis de {MovieGenre} para ver
+WhatNewMovies si hay alguna nueva pelis de {MovieGenre} que ver
+WhatNewMovies si hay alguna nueva pelis para ver
+WhatNewMovies si hay alguna nueva pelis que ver
+WhatNewMovies si hay alguna nuevas peliculas
+WhatNewMovies si hay alguna nuevas peliculas de {MovieGenre}
+WhatNewMovies si hay alguna nuevas peliculas de {MovieGenre} para ver
+WhatNewMovies si hay alguna nuevas peliculas de {MovieGenre} que ver
+WhatNewMovies si hay alguna nuevas peliculas para ver
+WhatNewMovies si hay alguna nuevas peliculas que ver
+WhatNewMovies si hay alguna nuevas pelis
+WhatNewMovies si hay alguna nuevas pelis de {MovieGenre}
+WhatNewMovies si hay alguna nuevas pelis de {MovieGenre} para ver
+WhatNewMovies si hay alguna nuevas pelis de {MovieGenre} que ver
+WhatNewMovies si hay alguna nuevas pelis para ver
+WhatNewMovies si hay alguna nuevas pelis que ver
+WhatNewMovies si hay algunas nueva peliculas
+WhatNewMovies si hay algunas nueva peliculas de {MovieGenre}
+WhatNewMovies si hay algunas nueva peliculas de {MovieGenre} para ver
+WhatNewMovies si hay algunas nueva peliculas de {MovieGenre} que ver
+WhatNewMovies si hay algunas nueva peliculas para ver
+WhatNewMovies si hay algunas nueva peliculas que ver
+WhatNewMovies si hay algunas nueva pelis
+WhatNewMovies si hay algunas nueva pelis de {MovieGenre}
+WhatNewMovies si hay algunas nueva pelis de {MovieGenre} para ver
+WhatNewMovies si hay algunas nueva pelis de {MovieGenre} que ver
+WhatNewMovies si hay algunas nueva pelis para ver
+WhatNewMovies si hay algunas nueva pelis que ver
+WhatNewMovies si hay algunas nuevas peliculas
+WhatNewMovies si hay algunas nuevas peliculas de {MovieGenre}
+WhatNewMovies si hay algunas nuevas peliculas de {MovieGenre} para ver
+WhatNewMovies si hay algunas nuevas peliculas de {MovieGenre} que ver
+WhatNewMovies si hay algunas nuevas peliculas para ver
+WhatNewMovies si hay algunas nuevas peliculas que ver
+WhatNewMovies si hay algunas nuevas pelis
+WhatNewMovies si hay algunas nuevas pelis de {MovieGenre}
+WhatNewMovies si hay algunas nuevas pelis de {MovieGenre} para ver
+WhatNewMovies si hay algunas nuevas pelis de {MovieGenre} que ver
+WhatNewMovies si hay algunas nuevas pelis para ver
+WhatNewMovies si hay algunas nuevas pelis que ver
+WhatNewMovies si hay nueva peli
+WhatNewMovies si hay nueva peli para ver
+WhatNewMovies si hay nueva peli que ver
+WhatNewMovies si hay nueva pelicula
+WhatNewMovies si hay nueva pelicula para ver
+WhatNewMovies si hay nueva pelicula que ver
+WhatNewMovies si hay nueva peliculas
+WhatNewMovies si hay nueva peliculas de {MovieGenre}
+WhatNewMovies si hay nueva peliculas de {MovieGenre} para ver
+WhatNewMovies si hay nueva peliculas de {MovieGenre} que ver
+WhatNewMovies si hay nueva peliculas para ver
+WhatNewMovies si hay nueva peliculas que ver
+WhatNewMovies si hay nueva pelis
+WhatNewMovies si hay nueva pelis de {MovieGenre}
+WhatNewMovies si hay nueva pelis de {MovieGenre} para ver
+WhatNewMovies si hay nueva pelis de {MovieGenre} que ver
+WhatNewMovies si hay nueva pelis para ver
+WhatNewMovies si hay nueva pelis que ver
+WhatNewMovies si hay nuevas peliculas
+WhatNewMovies si hay nuevas peliculas de {MovieGenre}
+WhatNewMovies si hay nuevas peliculas de {MovieGenre} para ver
+WhatNewMovies si hay nuevas peliculas de {MovieGenre} que ver
+WhatNewMovies si hay nuevas peliculas para ver
+WhatNewMovies si hay nuevas peliculas que ver
+WhatNewMovies si hay nuevas pelis
+WhatNewMovies si hay nuevas pelis de {MovieGenre}
+WhatNewMovies si hay nuevas pelis de {MovieGenre} para ver
+WhatNewMovies si hay nuevas pelis de {MovieGenre} que ver
+WhatNewMovies si hay nuevas pelis para ver
+WhatNewMovies si hay nuevas pelis que ver
+WhatNewMovies tengo alguna nueva peliculas
+WhatNewMovies tengo alguna nueva peliculas de {MovieGenre}
+WhatNewMovies tengo alguna nueva peliculas de {MovieGenre} para ver
+WhatNewMovies tengo alguna nueva peliculas de {MovieGenre} que ver
+WhatNewMovies tengo alguna nueva peliculas para ver
+WhatNewMovies tengo alguna nueva peliculas que ver
+WhatNewMovies tengo alguna nueva pelis
+WhatNewMovies tengo alguna nueva pelis de {MovieGenre}
+WhatNewMovies tengo alguna nueva pelis de {MovieGenre} para ver
+WhatNewMovies tengo alguna nueva pelis de {MovieGenre} que ver
+WhatNewMovies tengo alguna nueva pelis para ver
+WhatNewMovies tengo alguna nueva pelis que ver
+WhatNewMovies tengo alguna nuevas peliculas
+WhatNewMovies tengo alguna nuevas peliculas de {MovieGenre}
+WhatNewMovies tengo alguna nuevas peliculas de {MovieGenre} para ver
+WhatNewMovies tengo alguna nuevas peliculas de {MovieGenre} que ver
+WhatNewMovies tengo alguna nuevas peliculas para ver
+WhatNewMovies tengo alguna nuevas peliculas que ver
+WhatNewMovies tengo alguna nuevas pelis
+WhatNewMovies tengo alguna nuevas pelis de {MovieGenre}
+WhatNewMovies tengo alguna nuevas pelis de {MovieGenre} para ver
+WhatNewMovies tengo alguna nuevas pelis de {MovieGenre} que ver
+WhatNewMovies tengo alguna nuevas pelis para ver
+WhatNewMovies tengo alguna nuevas pelis que ver
+WhatNewMovies tengo algunas nueva peliculas
+WhatNewMovies tengo algunas nueva peliculas de {MovieGenre}
+WhatNewMovies tengo algunas nueva peliculas de {MovieGenre} para ver
+WhatNewMovies tengo algunas nueva peliculas de {MovieGenre} que ver
+WhatNewMovies tengo algunas nueva peliculas para ver
+WhatNewMovies tengo algunas nueva peliculas que ver
+WhatNewMovies tengo algunas nueva pelis
+WhatNewMovies tengo algunas nueva pelis de {MovieGenre}
+WhatNewMovies tengo algunas nueva pelis de {MovieGenre} para ver
+WhatNewMovies tengo algunas nueva pelis de {MovieGenre} que ver
+WhatNewMovies tengo algunas nueva pelis para ver
+WhatNewMovies tengo algunas nueva pelis que ver
+WhatNewMovies tengo algunas nuevas peliculas
+WhatNewMovies tengo algunas nuevas peliculas de {MovieGenre}
+WhatNewMovies tengo algunas nuevas peliculas de {MovieGenre} para ver
+WhatNewMovies tengo algunas nuevas peliculas de {MovieGenre} que ver
+WhatNewMovies tengo algunas nuevas peliculas para ver
+WhatNewMovies tengo algunas nuevas peliculas que ver
+WhatNewMovies tengo algunas nuevas pelis
+WhatNewMovies tengo algunas nuevas pelis de {MovieGenre}
+WhatNewMovies tengo algunas nuevas pelis de {MovieGenre} para ver
+WhatNewMovies tengo algunas nuevas pelis de {MovieGenre} que ver
+WhatNewMovies tengo algunas nuevas pelis para ver
+WhatNewMovies tengo algunas nuevas pelis que ver
+WhatNewMovies tengo nueva peli
+WhatNewMovies tengo nueva peli para ver
+WhatNewMovies tengo nueva peli que ver
+WhatNewMovies tengo nueva pelicula
+WhatNewMovies tengo nueva pelicula para ver
+WhatNewMovies tengo nueva pelicula que ver
+WhatNewMovies tengo nueva peliculas
+WhatNewMovies tengo nueva peliculas de {MovieGenre}
+WhatNewMovies tengo nueva peliculas de {MovieGenre} para ver
+WhatNewMovies tengo nueva peliculas de {MovieGenre} que ver
+WhatNewMovies tengo nueva peliculas para ver
+WhatNewMovies tengo nueva peliculas que ver
+WhatNewMovies tengo nueva pelis
+WhatNewMovies tengo nueva pelis de {MovieGenre}
+WhatNewMovies tengo nueva pelis de {MovieGenre} para ver
+WhatNewMovies tengo nueva pelis de {MovieGenre} que ver
+WhatNewMovies tengo nueva pelis para ver
+WhatNewMovies tengo nueva pelis que ver
+WhatNewMovies tengo nuevas peliculas
+WhatNewMovies tengo nuevas peliculas de {MovieGenre}
+WhatNewMovies tengo nuevas peliculas de {MovieGenre} para ver
+WhatNewMovies tengo nuevas peliculas de {MovieGenre} que ver
+WhatNewMovies tengo nuevas peliculas para ver
+WhatNewMovies tengo nuevas peliculas que ver
+WhatNewMovies tengo nuevas pelis
+WhatNewMovies tengo nuevas pelis de {MovieGenre}
+WhatNewMovies tengo nuevas pelis de {MovieGenre} para ver
+WhatNewMovies tengo nuevas pelis de {MovieGenre} que ver
+WhatNewMovies tengo nuevas pelis para ver
+WhatNewMovies tengo nuevas pelis que ver
+WhatNewShows hay nueva serie
+WhatNewShows hay nueva serie para ver
+WhatNewShows hay nueva serie que ver
+WhatNewShows hay nuevas series
+WhatNewShows hay nuevas series para ver
+WhatNewShows hay nuevas series que ver
+WhatNewShows hay una nueva serie
+WhatNewShows hay una nueva serie para ver
+WhatNewShows hay una nueva serie que ver
+WhatNewShows que nuevas series hay
+WhatNewShows que nuevas series hay para ver
+WhatNewShows que nuevas series hay que ver
+WhatNewShows que nuevas series tengo
+WhatNewShows que nuevas series tengo para ver
+WhatNewShows que nuevas series tengo que ver
+WhatNewShows si hay nueva serie
+WhatNewShows si hay nueva serie para ver
+WhatNewShows si hay nueva serie que ver
+WhatNewShows si hay nuevas series
+WhatNewShows si hay nuevas series para ver
+WhatNewShows si hay nuevas series que ver
+WhatNewShows si hay una nueva serie
+WhatNewShows si hay una nueva serie para ver
+WhatNewShows si hay una nueva serie que ver
+WhatNewShows tengo nueva serie
+WhatNewShows tengo nueva serie para ver
+WhatNewShows tengo nueva serie que ver
+WhatNewShows tengo nuevas series
+WhatNewShows tengo nuevas series para ver
+WhatNewShows tengo nuevas series que ver
+WhatNewShows tengo una nueva serie
+WhatNewShows tengo una nueva serie para ver
+WhatNewShows tengo una nueva serie que ver
