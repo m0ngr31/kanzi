@@ -273,28 +273,35 @@ PlayerSeekBackward retroceder {BackwardDur}
 PlayerSeekBackward saltar atras {BackwardDur}
 PlayerSeekBackward saltar hacia atras {BackwardDur}
 PlayerSeekBackward volver {BackwardDur}
-PlayerSeekBigBackward ir atras mucho {BackwardDur}
-PlayerSeekBigBackward ir atras {BackwardDur}
-PlayerSeekBigBackward ir hacia atras mucho {BackwardDur}
-PlayerSeekBigBackward ir hacia atras {BackwardDur}
-PlayerSeekBigBackward saltar atras mucho {BackwardDur}
-PlayerSeekBigBackward saltar atras {BackwardDur}
-PlayerSeekBigBackward saltar hacia atras mucho {BackwardDur}
-PlayerSeekBigBackward saltar hacia atras {BackwardDur}
-PlayerSeekBigForward adelantar mucho {ForwardDur}
-PlayerSeekBigForward adelantar {ForwardDur}
-PlayerSeekBigForward ir adelante {ForwardDur}
-PlayerSeekBigForward ir hacia adelante {ForwardDur}
-PlayerSeekBigForward ir mucho adelante {ForwardDur}
-PlayerSeekBigForward ir mucho hacia adelante {ForwardDur}
-PlayerSeekBigForward ir mucho {ForwardDur}
-PlayerSeekBigForward ir {ForwardDur}
-PlayerSeekBigForward saltar adelante {ForwardDur}
-PlayerSeekBigForward saltar hacia adelante {ForwardDur}
-PlayerSeekBigForward saltar mucho adelante {ForwardDur}
-PlayerSeekBigForward saltar mucho hacia adelante {ForwardDur}
-PlayerSeekBigForward saltar mucho {ForwardDur}
-PlayerSeekBigForward saltar {ForwardDur}
+PlayerSeekBigBackward ir atras bastante
+PlayerSeekBigBackward ir atras mucho
+PlayerSeekBigBackward ir hacia atras bastante
+PlayerSeekBigBackward ir hacia atras mucho
+PlayerSeekBigBackward saltar atras bastante
+PlayerSeekBigBackward saltar atras mucho
+PlayerSeekBigBackward saltar hacia atras bastante
+PlayerSeekBigBackward saltar hacia atras mucho
+PlayerSeekBigForward adelantar
+PlayerSeekBigForward adelantar bastante
+PlayerSeekBigForward adelantar mucho
+PlayerSeekBigForward ir
+PlayerSeekBigForward ir adelante
+PlayerSeekBigForward ir bastante
+PlayerSeekBigForward ir bastante adelante
+PlayerSeekBigForward ir bastante hacia adelante
+PlayerSeekBigForward ir hacia adelante
+PlayerSeekBigForward ir mucho
+PlayerSeekBigForward ir mucho adelante
+PlayerSeekBigForward ir mucho hacia adelante
+PlayerSeekBigForward saltar
+PlayerSeekBigForward saltar adelante
+PlayerSeekBigForward saltar bastante
+PlayerSeekBigForward saltar bastante adelante
+PlayerSeekBigForward saltar bastante hacia adelante
+PlayerSeekBigForward saltar hacia adelante
+PlayerSeekBigForward saltar mucho
+PlayerSeekBigForward saltar mucho adelante
+PlayerSeekBigForward saltar mucho hacia adelante
 PlayerSeekForward adelantar {ForwardDur}
 PlayerSeekForward ir adelante {ForwardDur}
 PlayerSeekForward ir hacia adelante {ForwardDur}
@@ -302,36 +309,36 @@ PlayerSeekForward ir {ForwardDur}
 PlayerSeekForward saltar adelante {ForwardDur}
 PlayerSeekForward saltar hacia adelante {ForwardDur}
 PlayerSeekForward saltar {ForwardDur}
-PlayerSeekSmallBackward atrasar un poco {BackwardDur}
-PlayerSeekSmallBackward atrasar {BackwardDur}
-PlayerSeekSmallBackward ir atras un poco {BackwardDur}
-PlayerSeekSmallBackward ir atras {BackwardDur}
-PlayerSeekSmallBackward ir hacia atras un poco {BackwardDur}
-PlayerSeekSmallBackward ir hacia atras {BackwardDur}
-PlayerSeekSmallBackward rebobinar un poco {BackwardDur}
-PlayerSeekSmallBackward rebobinar {BackwardDur}
-PlayerSeekSmallBackward retroceder un poco {BackwardDur}
-PlayerSeekSmallBackward retroceder {BackwardDur}
-PlayerSeekSmallBackward saltar atras un poco {BackwardDur}
-PlayerSeekSmallBackward saltar atras {BackwardDur}
-PlayerSeekSmallBackward saltar hacia atras un poco {BackwardDur}
-PlayerSeekSmallBackward saltar hacia atras {BackwardDur}
-PlayerSeekSmallBackward volver un poco {BackwardDur}
-PlayerSeekSmallBackward volver {BackwardDur}
-PlayerSeekSmallForward adelantar un poco {ForwardDur}
-PlayerSeekSmallForward adelantar {ForwardDur}
-PlayerSeekSmallForward ir adelante {ForwardDur}
-PlayerSeekSmallForward ir hacia adelante {ForwardDur}
-PlayerSeekSmallForward ir un poco adelante {ForwardDur}
-PlayerSeekSmallForward ir un poco hacia adelante {ForwardDur}
-PlayerSeekSmallForward ir un poco {ForwardDur}
-PlayerSeekSmallForward ir {ForwardDur}
-PlayerSeekSmallForward saltar adelante {ForwardDur}
-PlayerSeekSmallForward saltar hacia adelante {ForwardDur}
-PlayerSeekSmallForward saltar un poco adelante {ForwardDur}
-PlayerSeekSmallForward saltar un poco hacia adelante {ForwardDur}
-PlayerSeekSmallForward saltar un poco {ForwardDur}
-PlayerSeekSmallForward saltar {ForwardDur}
+PlayerSeekSmallBackward atrasar
+PlayerSeekSmallBackward atrasar un poco
+PlayerSeekSmallBackward ir atras
+PlayerSeekSmallBackward ir atras un poco
+PlayerSeekSmallBackward ir hacia atras
+PlayerSeekSmallBackward ir hacia atras un poco
+PlayerSeekSmallBackward rebobinar
+PlayerSeekSmallBackward rebobinar un poco
+PlayerSeekSmallBackward retroceder
+PlayerSeekSmallBackward retroceder un poco
+PlayerSeekSmallBackward saltar atras
+PlayerSeekSmallBackward saltar atras un poco
+PlayerSeekSmallBackward saltar hacia atras
+PlayerSeekSmallBackward saltar hacia atras un poco
+PlayerSeekSmallBackward volver
+PlayerSeekSmallBackward volver un poco
+PlayerSeekSmallForward adelantar
+PlayerSeekSmallForward adelantar un poco
+PlayerSeekSmallForward ir
+PlayerSeekSmallForward ir adelante
+PlayerSeekSmallForward ir hacia adelante
+PlayerSeekSmallForward ir un poco
+PlayerSeekSmallForward ir un poco adelante
+PlayerSeekSmallForward ir un poco hacia adelante
+PlayerSeekSmallForward saltar
+PlayerSeekSmallForward saltar adelante
+PlayerSeekSmallForward saltar hacia adelante
+PlayerSeekSmallForward saltar un poco
+PlayerSeekSmallForward saltar un poco adelante
+PlayerSeekSmallForward saltar un poco hacia adelante
 PlayerZoomHold bloquear zoom
 PlayerZoomHold mantener zoom
 PlayerZoomIn acercar zoom
@@ -410,39 +417,75 @@ RecommendAlbum sugerir un album de {MusicGenre} que escuchar
 RecommendAlbum sugerir un album para escuchar
 RecommendAlbum sugerir un album que escuchar
 RecommendArtist recomendar artista
+RecommendArtist recomendar artista de {MusicGenre}
+RecommendArtist recomendar artista de {MusicGenre} para escuchar
+RecommendArtist recomendar artista de {MusicGenre} que escuchar
 RecommendArtist recomendar artista para escuchar
 RecommendArtist recomendar artista que escuchar
 RecommendArtist recomendar grupo
+RecommendArtist recomendar grupo de {MusicGenre}
+RecommendArtist recomendar grupo de {MusicGenre} para escuchar
+RecommendArtist recomendar grupo de {MusicGenre} que escuchar
 RecommendArtist recomendar grupo para escuchar
 RecommendArtist recomendar grupo que escuchar
 RecommendArtist recomendar musico
+RecommendArtist recomendar musico de {MusicGenre}
+RecommendArtist recomendar musico de {MusicGenre} para escuchar
+RecommendArtist recomendar musico de {MusicGenre} que escuchar
 RecommendArtist recomendar musico para escuchar
 RecommendArtist recomendar musico que escuchar
 RecommendArtist recomendar un artista
+RecommendArtist recomendar un artista de {MusicGenre}
+RecommendArtist recomendar un artista de {MusicGenre} para escuchar
+RecommendArtist recomendar un artista de {MusicGenre} que escuchar
 RecommendArtist recomendar un artista para escuchar
 RecommendArtist recomendar un artista que escuchar
 RecommendArtist recomendar un grupo
+RecommendArtist recomendar un grupo de {MusicGenre}
+RecommendArtist recomendar un grupo de {MusicGenre} para escuchar
+RecommendArtist recomendar un grupo de {MusicGenre} que escuchar
 RecommendArtist recomendar un grupo para escuchar
 RecommendArtist recomendar un grupo que escuchar
 RecommendArtist recomendar un musico
+RecommendArtist recomendar un musico de {MusicGenre}
+RecommendArtist recomendar un musico de {MusicGenre} para escuchar
+RecommendArtist recomendar un musico de {MusicGenre} que escuchar
 RecommendArtist recomendar un musico para escuchar
 RecommendArtist recomendar un musico que escuchar
 RecommendArtist sugerir artista
+RecommendArtist sugerir artista de {MusicGenre}
+RecommendArtist sugerir artista de {MusicGenre} para escuchar
+RecommendArtist sugerir artista de {MusicGenre} que escuchar
 RecommendArtist sugerir artista para escuchar
 RecommendArtist sugerir artista que escuchar
 RecommendArtist sugerir grupo
+RecommendArtist sugerir grupo de {MusicGenre}
+RecommendArtist sugerir grupo de {MusicGenre} para escuchar
+RecommendArtist sugerir grupo de {MusicGenre} que escuchar
 RecommendArtist sugerir grupo para escuchar
 RecommendArtist sugerir grupo que escuchar
 RecommendArtist sugerir musico
+RecommendArtist sugerir musico de {MusicGenre}
+RecommendArtist sugerir musico de {MusicGenre} para escuchar
+RecommendArtist sugerir musico de {MusicGenre} que escuchar
 RecommendArtist sugerir musico para escuchar
 RecommendArtist sugerir musico que escuchar
 RecommendArtist sugerir un artista
+RecommendArtist sugerir un artista de {MusicGenre}
+RecommendArtist sugerir un artista de {MusicGenre} para escuchar
+RecommendArtist sugerir un artista de {MusicGenre} que escuchar
 RecommendArtist sugerir un artista para escuchar
 RecommendArtist sugerir un artista que escuchar
 RecommendArtist sugerir un grupo
+RecommendArtist sugerir un grupo de {MusicGenre}
+RecommendArtist sugerir un grupo de {MusicGenre} para escuchar
+RecommendArtist sugerir un grupo de {MusicGenre} que escuchar
 RecommendArtist sugerir un grupo para escuchar
 RecommendArtist sugerir un grupo que escuchar
 RecommendArtist sugerir un musico
+RecommendArtist sugerir un musico de {MusicGenre}
+RecommendArtist sugerir un musico de {MusicGenre} para escuchar
+RecommendArtist sugerir un musico de {MusicGenre} que escuchar
 RecommendArtist sugerir un musico para escuchar
 RecommendArtist sugerir un musico que escuchar
 RecommendAudio recomendar algo que escuchar
@@ -760,10 +803,15 @@ ShuffleMusicVideos ver videoclips de {Artist}
 ShuffleMusicVideos ver videoclips de {MusicVideoGenre}
 ShuffleMusicVideos ver videoclips de {MusicVideoGenre} de {Artist}
 ShufflePlaylist barajar la lista de reproduccion {AudioPlaylist}
+ShufflePlaylist barajar la lista de reproduccion {VideoPlaylist}
 ShufflePlaylist barajar la lista {AudioPlaylist}
+ShufflePlaylist barajar la lista {VideoPlaylist}
 ShufflePlaylist barajar lista de reproduccion {AudioPlaylist}
+ShufflePlaylist barajar lista de reproduccion {VideoPlaylist}
 ShufflePlaylist barajar lista {AudioPlaylist}
+ShufflePlaylist barajar lista {VideoPlaylist}
 ShufflePlaylist barajar {AudioPlaylist} lista de reproduccion
+ShufflePlaylist barajar {VideoPlaylist} lista de reproduccion
 ShuffleShow barajar episodios de {Show}
 ShuffleShow barajar los episodios de {Show}
 ShuffleShow barajar todos episodios de {Show}
@@ -1071,13 +1119,13 @@ VolumeDown bajar el audio
 VolumeDown bajar el sonido
 VolumeDown bajar el volumen
 VolumeSet poner el volumen al {Volume}
-VolumeSet poner el volumen al {Volume} por ciento
 VolumeSet poner el volumen {Volume}
-VolumeSet poner el volumen {Volume} por ciento
 VolumeSet volumen al {Volume}
-VolumeSet volumen al {Volume} por ciento
 VolumeSet volumen {Volume}
-VolumeSet volumen {Volume} por ciento
+VolumeSetPct poner el volumen al {Volume} por ciento
+VolumeSetPct poner el volumen {Volume} por ciento
+VolumeSetPct volumen al {Volume} por ciento
+VolumeSetPct volumen {Volume} por ciento
 VolumeUp subir el audio
 VolumeUp subir el sonido
 VolumeUp subir el volumen

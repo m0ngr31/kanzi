@@ -79,7 +79,7 @@ Mute (mutear/silenciar)
 VolumeUp subir el (volumen/sonido/audio)
 VolumeDown bajar el (volumen/sonido/audio)
 VolumeSet (/poner el) volumen (/al) {Volume}
-VolumeSet (/poner el) volumen (/al) {Volume} por ciento
+VolumeSetPct (/poner el) volumen (/al) {Volume} por ciento
 
 SubtitlesOn (activar/encender) subtitulos
 SubtitlesOff (desactivar/apagar) subtitulos
@@ -202,6 +202,8 @@ ShuffleVideoPlaylist barajar (/la) lista de (reproduccion/series/videos/pelicula
 
 ShufflePlaylist barajar (/la) lista (/de reproduccion) {AudioPlaylist}
 ShufflePlaylist barajar {AudioPlaylist} lista de reproduccion
+ShufflePlaylist barajar (/la) lista (/de reproduccion) {VideoPlaylist}
+ShufflePlaylist barajar {VideoPlaylist} lista de reproduccion
 
 RecommendVideo (sugerir/recomendar) algo para ver
 RecommendAudio (sugerir/recomendar) algo que escuchar
@@ -215,6 +217,7 @@ RecommendEpisode (sugerir/recomendar) (/algun) episodio (/de {ShowGenre}) (/para
 RecommendMusicVideo (sugerir/recomendar) (/un) videoclip (/de {MusicVideoGenre}) (/para ver/para escuchar)
 RecommendMusicVideo (sugerir/recomendar) (/algun) videoclip (/de {MusicVideoGenre}) (/para ver/para escuchar)
 RecommendArtist (sugerir/recomendar) ((/un) artista/(/un) musico/(/un) grupo) (/que escuchar/para escuchar)
+RecommendArtist (sugerir/recomendar) ((/un) artista/(/un) musico/(/un) grupo) de {MusicGenre} (/que escuchar/para escuchar)
 RecommendAlbum (sugerir/recomendar) (/un) album (/que escuchar/para escuchar)
 RecommendAlbum (sugerir/recomendar) (/un/algun) album (/de {MusicGenre}) (/que escuchar/para escuchar)
 RecommendSong (sugerir/recomendar) (/un/algun) cancion (/de {MusicGenre}) (/que escuchar/para escuchar)
@@ -254,16 +257,16 @@ EjectMedia sacar el (disco/compact disc/blu-ray/blu-ray disc/c. d./d. v. d.)
 
 PlayerSeekForward (ir/saltar) (/hacia adelante/adelante) {ForwardDur}
 PlayerSeekForward adelantar {ForwardDur}
-PlayerSeekSmallForward (ir/saltar) (/un poco) (/hacia adelante/adelante) {ForwardDur}
-PlayerSeekSmallForward adelantar (/un poco) {ForwardDur}
-PlayerSeekBigForward (ir/saltar) (/mucho) (/hacia adelante/adelante) {ForwardDur}
-PlayerSeekBigForward adelantar (/mucho) {ForwardDur}
+PlayerSeekSmallForward (ir/saltar) (/un poco) (/hacia adelante/adelante)
+PlayerSeekSmallForward adelantar (/un poco)
+PlayerSeekBigForward (ir/saltar) (/mucho/bastante) (/hacia adelante/adelante)
+PlayerSeekBigForward adelantar (/mucho/bastante) 
 PlayerSeekBackward (ir/saltar) (atras/hacia atras) {BackwardDur}
 PlayerSeekBackward (atrasar/volver/retroceder/rebobinar) {BackwardDur}
-PlayerSeekSmallBackward (ir/saltar) (atras/hacia atras)  (/un poco) {BackwardDur}
-PlayerSeekSmallBackward (atrasar/volver/retroceder/rebobinar)  (/un poco) {BackwardDur}
-PlayerSeekBigBackward (ir/saltar) (atras/hacia atras)  (/mucho) {BackwardDur}
-PlayerSeekBigBackward (ir/saltar) (atras/hacia atras)  (/mucho) {BackwardDur}
+PlayerSeekSmallBackward (ir/saltar) (atras/hacia atras)  (/un poco)
+PlayerSeekSmallBackward (atrasar/volver/retroceder/rebobinar)  (/un poco)
+PlayerSeekBigBackward (ir/saltar) (atras/hacia atras)  (mucho/bastante)
+PlayerSeekBigBackward (ir/saltar) (atras/hacia atras)  (mucho/bastante)
 
 AddonExecute (abrir/ejecutar/lanzar) (/addon/add on/plugin/plug in/script) {Addon}
 
