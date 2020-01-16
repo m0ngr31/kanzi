@@ -1,0 +1,18 @@
+Addon YouTube
+MovieGenre Commedia
+Movie Tropic Thunder
+Artist Daniele Silvestri
+Album Monetine
+MusicGenre Pop
+AudioPlaylist Vacanza
+Song Sogno-B
+Show Titans
+VideoPlaylist Video HD
+ShowGenre Fantascienza
+MusicVideoGenre Pop
+MusicVideo a-ha MTV Unplugged
+Volume settantacinque
+Season due
+Episode otto
+ForwardDur due minuti
+BackwardDur trenta secondi
