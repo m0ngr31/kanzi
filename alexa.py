@@ -50,6 +50,8 @@ elif LANGUAGE == 'fr':
   TEMPLATE_FILE = "templates.fr.yaml"  
 elif LANGUAGE == 'es':
   TEMPLATE_FILE = "templates.es.yaml"
+elif LANGUAGE == 'it':
+  TEMPLATE_FILE = "templates.it.yaml"
 else:
   LANGUAGE = 'en'
   TEMPLATE_FILE = "templates.en.yaml"
