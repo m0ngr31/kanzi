@@ -10,73 +10,66 @@
 # others because, in testing, Alexa appears to not fuzzy match these
 # as well as those that have no slot references.
 
-Home (/navigate/go) home
-Back (/navigate/go) back
-Up (/navigate/go) up
-Down (/navigate/go) down
-Right (/navigate/go) right
-Left (/navigate/go) left
-PageUp (/navigate/go) page up
-PageDown (/navigate/go) page down
-PageDown show more
-Select select
-Menu (/open/context) menu
-Info (/open/show) (info/information) (/dialog/window)
+Home (/naviga/vai/spostati) (/a/verso/alla) home
+Back (/naviga/vai/spostati) (/a/verso/alla) indietro
+Up (/naviga/vai/spostati) (/a/verso/alla) (su/sopra/l'alto)
+Down (/naviga/vai/spostati) (/a/verso/alla) (giu/sotto/il basso)
+Right (/naviga/vai/spostati) (/a/verso/alla) destra
+Left (/naviga/vai/spostati) (/a/verso/alla) sinistra
+PageUp (/naviga/vai/spostati) (/a/verso/alla) (/la/il) (pagina/livello) (su/superiore)
+PageDown (/naviga/vai/spostati) (/a/verso/alla) (/la/il) (pagina/livello) (giu/inferiore)
+PageDown mostra di piu
+Select seleziona
+Menu (/apri/mostra/viualizza) menu (/contestuale)
+Info (/apri/mostra/visualizza) (/la finestra/il menu) (/info/informazioni)
 
-ViewMovies (open/go to/show) movies
-ViewMovies (show/find/search for) {MovieGenre} movies
-ViewShows (open/go to/show) (/t. v.) shows
-ViewShows (show/find/search for) {ShowGenre} (/t. v.) shows
-ViewMusic (open/go to/show) music
-ViewMusic (show/find/search for) {MusicGenre} music
-ViewArtists (open/go to/show) (artists/music artists/musicians)
-ViewAlbums (open/go to/show) (/music) albums
-ViewMusicVideos (open/go to/show) music videos
-ViewMusicVideos (show/find/search for) {MusicVideoGenre} music videos
-ViewAudioPlaylist (open/go to/show) (/the) (song/music/audio) playlist {AudioPlaylist}
-ViewAudioPlaylist (open/go to/show) (/the) {AudioPlaylist} (song/music/audio) playlist
-ViewAudioPlaylistRecent (open/go to/show) recent (albums/songs/music/audio)
-ViewAudioPlaylistRecent (open/go to/show) recently added (albums/songs/music/audio)
-ViewAudioPlaylistRecent (open/go to/show) (latest/newest) (albums/songs/music/audio)
-ViewVideoPlaylist (open/go to/show) (/the) (movie/show/video) playlist {VideoPlaylist}
-ViewVideoPlaylist (open/go to/show) {VideoPlaylist} (movie/show/video) playlist
-ViewMoviePlaylistRecent (open/go to/show) recent (movies/videos)
-ViewMoviePlaylistRecent (open/go to/show) recently added (movies/videos)
-ViewMoviePlaylistRecent (open/go to/show) (latest/newest) (movies/videos)
-ViewEpisodePlaylistRecent (open/go to/show) recent ((/t. v.) shows/episodes)
-ViewEpisodePlaylistRecent (open/go to/show) recently added ((/t. v.) shows/episodes)
-ViewEpisodePlaylistRecent (open/go to/show) (latest/newest) ((/t. v.) shows/episodes)
-ViewMusicVideoPlaylistRecent (open/go to/show) recent music videos
-ViewMusicVideoPlaylistRecent (open/go to/show) recently added music videos
-ViewMusicVideoPlaylistRecent (open/go to/show) (latest/newest) music videos
-ViewPlaylist (open/go to/show) (/the) playlist {AudioPlaylist}
-ViewPlaylist (open/go to/show) {AudioPlaylist} playlist
-ViewPlaylist (open/go to/show) (/the) playlist {VideoPlaylist}
-ViewPlaylist (open/go to/show) {VideoPlaylist} playlist
+ViewMovies (apri/vai (a/ai)/mostra/visualizza) (/i) film
+ViewMovies (mostra/visualizza/trova/cerca) (/i) film {MovieGenre}
+ViewShows (apri/vai (a/alle)/mostra/visualizza) (/le) serie (/t. v.)
+ViewShows (mostra/visualizza/trova/cerca) (/le) serie (/t. v.) {ShowGenre}
+ViewMusic (apri/vai (a/ai)/mostra/visualizza) (/la) musica
+ViewMusic (mostra/visualizza/trova/cerca) (/la) musica {MusicGenre}
+ViewArtists (apri/vai (a/ai/agli)/mostra/visualizza) (artisti/artisti musicali/musicisti)
+ViewAlbums (apri/vai a/mostra/visualizza) (/gli) album (/musicali)
+ViewMusicVideos (apri/vai (a/ai)/mostra/visualizza) (/i) video musicali
+ViewMusicVideos (mostra/visualizza/trova/cerca) (/i) video musicali {MusicVideoGenre}
+ViewAudioPlaylist (apri/vai (a/alla)/mostra/visualizza) (/la) playlist (audio/musicale/di canzoni) {AudioPlaylist}
+ViewAudioPlaylistRecent (apri/vai (a/ai/agli/alla/all)/mostra/visualizza) (album/brani/musica/audio) (recent(i/e)/aggiunt(e/i) di recente)
+ViewAudioPlaylistRecent (apri/vai (a/al)/mostra/visualizza) (/l/gli/la) ultim(i/a/o) (album/brani/musica/audio) (/aggiunt(i/a/o)
+ViewVideoPlaylist (apri/vai (a/al)/mostra/visualizza) (/la) playlist (di film/di serie (/t. v.)/video) {VideoPlaylist}
+ViewMoviePlaylistRecent (apri/vai (a/ai)/mostra/visualizza) (/i) (film/video) (recenti/aggiunti di recente)
+ViewMoviePlaylistRecent (apri/vai a/mostra/visualizza) (/gli) ultimi (film/video) (/aggiunti)
+ViewEpisodePlaylistRecent (apri/vai (a/al)/mostra/visualizza) (/gli/le) ultim(i/e) (episodi/serie (/t. v.)) (/aggiunt(i/e)
+ViewEpisodePlaylistRecent (apri/vai (a/al)/mostra/visualizza) ((/gli) episodi/(/le) serie (/t. v.)) (recenti/aggiunt(e/i) di recente)
+ViewMusicVideoPlaylistRecent (apri/vai (a/ai)/mostra/visualizza) video musicali (/piu) recenti
+ViewMusicVideoPlaylistRecent (apri/vai a/mostra/visualizza) (/gli) ultimi video musicali (/aggiunti)
+ViewPlaylist (apri/vai (a/alla)/mostra/visualizza) (/la) playlist {AudioPlaylist}
+ViewPlaylist (apri/vai (a/alla)/mostra/visualizza) (/la) playlist {VideoPlaylist}
 
-Fullscreen (/toggle) (fullscreen/visualizer)
-StereoscopicMode toggle (stereoscopic/three d.) mode
+Fullscreen (/cambia) (pieno schermo/schermo pieno/visualizzazione)
+StereoscopicMode (/cambia) modalità (stereoscopica/tre d.)
 
-AudioPassthrough toggle (passthrough/digital) audio
-AudioPassthrough toggle (digital/audio) passthrough
-Mute (/toggle/set) (mute/unmute)
-VolumeUp (/turn) volume up
-VolumeUp (/turn) up volume
-VolumeDown (/turn) volume down
-VolumeDown (/turn) down volume
-VolumeSet (/set) volume {Volume}
-VolumeSetPct (/set) volume {Volume} percent
+AudioPassthrough cambia audio (passthrough/digitale)
+Mute (/imposta/setta) (muto/sonoro)
+VolumeUp (alza/aumenta) (/il) volume
+VolumeUp volume su
+VolumeDown (abbassa/diminuisci) (/il) volume
+VolumeDown volume giu
+VolumeSet (/setta/imposta) (/il) volume (/a) {Volume}
+VolumeSetPct (/setta/imposta) (/il) volume (/a) {Volume} per cento
 
-SubtitlesOn (enable/turn on) subtitles
-SubtitlesOff (disable/turn off) subtitles
-SubtitlesNext (next/switch) (subtitles/subtitle language)
-SubtitlesPrevious previous (subtitles/subtitle language)
-SubtitlesDownload download subtitles
+SubtitlesOn (abilita/attiva) (/i) sottotitoli
+SubtitlesOff (disabilita/disattiva) (/i) sottotitoli
+SubtitlesNext (prossim(i/o/a)/cambia) (/lingua de(i/l)) sottotitol(i/o)
+SubtitlesPrevious (/lingua de(i/l)) sottotitol(i/o) precedente
+SubtitlesDownload (download/scarica) sottotitol(o/i)
 
-AudioStreamNext (next/switch) audio (/stream)
-AudioStreamNext (next/switch) (/audio) language
-AudioStreamPrevious previous audio (/stream)
-AudioStreamPrevious previous (/audio) language
+AudioStreamNext (prossim(o/a)/cambia) (/traccia) audio
+AudioStreamNext (/traccia) audio (prossima/successiva)
+AudioStreamNext (prossima/cambia) lingua (/audio)
+AudioStreamNext lingua (/audio) successiva
+AudioStreamPrevious (/traccia) audio precedente
+AudioStreamPrevious lingua (/audio) precedente
 
 PlayerMoveUp (track/pan/move) up
 PlayerMoveDown (track/pan/move) down
@@ -99,16 +92,16 @@ PlayerZoomOutMoveLeft (pull out/pull back/move out/zoom out) and (track/pan/move
 PlayerZoomOutMoveRight (pull out/pull back/move out/zoom out) and (track/pan/move) right
 PlayerZoomReset (normal/reset) zoom
 
-CleanVideo clean (/video) library
+CleanVideo (/ri)pulisci archivio (/video)
 
-UpdateVideo update (/video) library
+UpdateVideo aggiorna archivio (/video)
 
-CleanAudio clean (audio/music) library
+CleanAudio (/ri)pulisci archivio (audio/musicale)
 
-UpdateAudio update (audio/music) library
+UpdateAudio aggiorna archivio (audio/musicale)
 
-PlayMedia play {Movie}
-ShuffleMedia shuffle {Show}
+PlayMedia (riproduci/avvia) {Movie}
+ShuffleMedia (mescola/mischia) {Show}
 
 WhatAlbums what albums (/do) (we/i/you) have by {Artist}
 
