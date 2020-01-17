@@ -233,13 +233,13 @@ newly_added_movies_genre: "Film {{ genre }} aggiunti di recente"
 
 last_unwatched: "Riproduzione del primo episodio non visto dell'ultima serie vista"
 
-update_audio: "Aggiornamento libreria audio"
+update_audio: "Aggiornamento archivio audio"
 
-update_video: "Aggiornamento libreria video"
+update_video: "Aggiornamento archivio video"
 
-clean_audio: "Pulizia libreria audio"
+clean_audio: "Pulizia archivio audio"
 
-clean_video: "Pulizia libreria video"
+clean_video: "Pulizia archivio video"
 
 ejecting_media: "Rimozione periferica"
 
