@@ -71,12 +71,12 @@ AudioStreamNext lingua (/audio) successiva
 AudioStreamPrevious (/traccia) audio precedente
 AudioStreamPrevious lingua (/audio) precedente
 
-PlayerMoveUp (track/pan/move) up
-PlayerMoveDown (track/pan/move) down
-PlayerMoveLeft (track/pan/move) left
-PlayerMoveRight (track/pan/move) right
-PlayerRotateClockwise rotate (/clockwise/ninety degrees)
-PlayerRotateCounterClockwise rotate counter clockwise
+PlayerMoveUp sposta (/vista/visuale/schermo) (su/(in/verso l') alto)
+PlayerMoveDown sposta (/vista/visuale/schermo) (giu/(in/verso il) basso)
+PlayerMoveLeft sposta (/vista/visuale/schermo) (a/verso) sinistra
+PlayerMoveRight sposta (/vista/visuale/schermo) (a/verso) destra
+PlayerRotateClockwise ruota (/vista/visuale/schermo) (/in senso orario/di novanta gradi)
+PlayerRotateCounterClockwise ruota (/vista/visuale/schermo) in senso antiorario
 PlayerZoomHold hold (/it) (/there/right there)
 PlayerZoomHold give me a hard copy there
 PlayerZoomHold give me a hard copy right there
@@ -90,7 +90,8 @@ PlayerZoomOutMoveUp (pull out/pull back/move out/zoom out) and (track/pan/move) 
 PlayerZoomOutMoveDown (pull out/pull back/move out/zoom out) and (track/pan/move) down
 PlayerZoomOutMoveLeft (pull out/pull back/move out/zoom out) and (track/pan/move) left
 PlayerZoomOutMoveRight (pull out/pull back/move out/zoom out) and (track/pan/move) right
-PlayerZoomReset (normal/reset) zoom
+PlayerZoomReset zoom normale
+PlayerZoomReset resetta zoom
 
 CleanVideo (/ri)pulisci archivio (/video)
 
@@ -103,9 +104,9 @@ UpdateAudio aggiorna archivio (audio/musicale)
 PlayMedia (riproduci/avvia) {Movie}
 ShuffleMedia (mescola/mischia) {Show}
 
-WhatAlbums what albums (/do) (we/i/you) have by {Artist}
+WhatAlbums (che/quali) album (di/dei/degli) {Artist} (abbiamo/ci sono) (/in archivio/a disposizione)
 
-ListenToAudio listen to {Artist}
+ListenToAudio ascolta {Artist}
 
 ListenToGenre (play/listen to/shuffle) {MusicGenre} (music/songs/genre)
 
