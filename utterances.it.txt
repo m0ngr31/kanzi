@@ -77,19 +77,18 @@ PlayerMoveLeft sposta (/vista/visuale/schermo) (a/verso) sinistra
 PlayerMoveRight sposta (/vista/visuale/schermo) (a/verso) destra
 PlayerRotateClockwise ruota (/vista/visuale/schermo) (/in senso orario/di novanta gradi)
 PlayerRotateCounterClockwise ruota (/vista/visuale/schermo) in senso antiorario
-PlayerZoomHold hold (/it) (/there/right there)
-PlayerZoomHold give me a hard copy there
-PlayerZoomHold give me a hard copy right there
+PlayerZoomHold blocca(/ti) (/li/dove sei)
+PlayerZoomHold dammi un fermo immagine (/li/dove sei)
 PlayerZoomIn (enhance/move in/zoom in)
-PlayerZoomInMoveUp (enhance/move in/zoom in) and (track/pan/move) up
-PlayerZoomInMoveDown (enhance/move in/zoom in) and (track/pan/move) down
-PlayerZoomInMoveLeft (enhance/move in/zoom in) and (track/pan/move) left
-PlayerZoomInMoveRight (enhance/move in/zoom in) and (track/pan/move) right
-PlayerZoomOut (pull out/pull back/move out/zoom out)
-PlayerZoomOutMoveUp (pull out/pull back/move out/zoom out) and (track/pan/move) up
-PlayerZoomOutMoveDown (pull out/pull back/move out/zoom out) and (track/pan/move) down
-PlayerZoomOutMoveLeft (pull out/pull back/move out/zoom out) and (track/pan/move) left
-PlayerZoomOutMoveRight (pull out/pull back/move out/zoom out) and (track/pan/move) right
+PlayerZoomInMoveUp (ingrandisci/(zoom/zooma) (/avanti)) e sposta (/vista/visuale/schermo) (su/(in/verso l') alto)
+PlayerZoomInMoveDown (ingrandisci/(zoom/zooma) (/avanti)) e sposta (/vista/visuale/schermo) (giu/(in/verso il) basso)
+PlayerZoomInMoveLeft (ingrandisci/(zoom/zooma) (/avanti)) e sposta (/vista/visuale/schermo) (a/verso) sinistra
+PlayerZoomInMoveRight (ingrandisci/(zoom/zooma) (/avanti)) e sposta (/vista/visuale/schermo) (a/verso) destra
+PlayerZoomOut (indietreggia/riduci/(zoom/zooma) indietro)
+PlayerZoomOutMoveUp (indietreggia/riduci/(zoom/zooma) indietro) e sposta (/vista/visuale/schermo) (su/(in/verso l') alto)
+PlayerZoomOutMoveDown (indietreggia/riduci/(zoom/zooma) indietro) e sposta (/vista/visuale/schermo) (giu/(in/verso il) basso)
+PlayerZoomOutMoveLeft (indietreggia/riduci/(zoom/zooma) indietro) e sposta (/vista/visuale/schermo) (a/verso) sinistra
+PlayerZoomOutMoveRight (indietreggia/riduci/(zoom/zooma) indietro) e sposta (/vista/visuale/schermo) (a/verso) destra
 PlayerZoomReset zoom normale
 PlayerZoomReset resetta zoom
 
@@ -102,7 +101,7 @@ CleanAudio (/ri)pulisci archivio (audio/musicale)
 UpdateAudio aggiorna archivio (audio/musicale)
 
 PlayMedia (riproduci/avvia) {Movie}
-ShuffleMedia (mescola/mischia) {Show}
+ShuffleMedia (mescola/mischia) (/(/gli) episodi (/di)) {Show}
 
 WhatAlbums (che/quali) album (di/dei/degli) {Artist} (abbiamo/ci sono) (/in archivio/a disposizione)
 
