@@ -107,31 +107,29 @@ WhatAlbums (che/quali) album (di/dei/degli) {Artist} (abbiamo/ci sono) (/in arch
 
 ListenToAudio ascolta {Artist}
 
-ListenToGenre (play/listen to/shuffle) {MusicGenre} (music/songs/genre)
+ListenToGenre (ascolta/metti (/su)/mischia/mescola) (musica/pezzi/brani) {MusicGenre} (/a caso/casual(e/i))
 
-ListenToArtist (play/listen to/shuffle) (/{MusicGenre}) (music by/artist) {Artist}
+ListenToArtist (ascolta/metti (/su)/mischia/mescola) (musica/pezzi/brani) (/{MusicGenre}) (di/dei/degli/delle) {Artist}
 
-ListenToLatestAlbum (play/listen to) (/the) (latest/newest) album by {Artist}
+ListenToLatestAlbum (ascolta/metti (/su)) l'ultimo album (di/dei/degli/delle) {Artist}
+ListenToLatestAlbum (ascolta/metti (/su)) l'album più (nuovo/recente) (di/dei/degli/delle) {Artist}
 
-ListenToAlbum (play/listen to) (/the) album {Album}
-ListenToAlbum (play/listen to) (/the) album {Album} by {Artist}
+ListenToAlbum (ascolta/metti (/su)) (/l')album {Album}
+ListenToAlbum (ascolta/metti (/su)) (/l')album {Album} (di/dei/degli/delle) {Artist}
 
-ListenToSong (play/listen to) (/the) song {Song}
-ListenToSong (play/listen to) (/the) song {Song} by {Artist}
-ListenToSong (play/listen to) (/the) song {Song} (from/on) (/the) album {Album}
+ListenToSong (ascolta/metti (/su)) ((/la) canzone/(/il) brano/(/il) pezzo) {Song}
+ListenToSong (ascolta/metti (/su)) ((/la) canzone/(/il) brano/(/il) pezzo) {Song} (di/dei/degli/delle) {Artist}
+ListenToSong (ascolta/metti (/su)) ((/la) canzone/(/il) brano/(/il) pezzo) {Song} (dall'/nell')album {Album}
 
-ListenToAlbumOrSong (play/listen to) {Song} by {Artist}
+ListenToAlbumOrSong (ascolta/metti (/su)) {Song} (di/dei/degli/delle) {Artist}
 
-ListenToAudioPlaylist (play/listen to) (/the) (song/music/audio) playlist {AudioPlaylist}
-ListenToAudioPlaylist (play/listen to) (/the) {AudioPlaylist} (song/music/audio) playlist
-ListenToAudioPlaylist listen to (/the) playlist {AudioPlaylist}
-ListenToAudioPlaylist listen to {AudioPlaylist} playlist
+ListenToAudioPlaylist (ascolta/metti (/su)) (/la) playlist (/musicale/audio/di canzoni) {AudioPlaylist}
 
-ListenToAudioPlaylistRecent (play/listen to/shuffle) recent (songs/music/audio/albums)
-ListenToAudioPlaylistRecent (play/listen to/shuffle) recently added (songs/music/audio/albums)
-ListenToAudioPlaylistRecent (play/listen to/shuffle) (latest/newest) (songs/music/audio/albums)
+ListenToAudioPlaylistRecent (ascolta/metti (/su)/mischia/mescola) ((/le) canzoni/(/gli) album) ((/piu) recenti/aggiunt(e/i) di recente)
+ListenToAudioPlaylistRecent (ascolta/metti (/su)/mischia/mescola) ((/la) musica/(/l')audio) ((/piu) recente/aggiunt(o/a) di recente)
+ListenToAudioPlaylistRecent (ascolta/metti (/su)/mischia/mescola) (latest/newest) (songs/music/audio/albums)
 
-WatchVideo watch {Movie}
+WatchVideo (guarda/vedi) {Movie}
 
 WatchMovie (play/watch) (/the) (movie/film) {Movie}
 
