@@ -14,7 +14,7 @@ Home (/naviga/vai/spostati) (/a/verso (/la)/alla) home
 Back (/naviga/vai/spostati) (/verso/all') indietro
 Up (/naviga/vai/spostati) ((/in) su/(/in) sopra/in alto)
 Up (/naviga/vai/spostati) verso (su/sopra/l'alto)
-Down (/naviga/vai/spostati) (/in) ((/in) giu/(/in) sotto/in basso)
+Down (/naviga/vai/spostati) ((/in) giu/(/in) sotto/in basso)
 Down (/naviga/vai/spostati) verso (giu/sotto/il basso)
 Right (/naviga/vai/spostati) (/a/verso/alla) destra
 Left (/naviga/vai/spostati) (/a/verso/alla) sinistra
