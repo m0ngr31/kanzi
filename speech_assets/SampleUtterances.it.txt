@@ -93,28 +93,28 @@ CleanVideo pulisci archivio
 CleanVideo pulisci archivio video
 CleanVideo ripulisci archivio
 CleanVideo ripulisci archivio video
-CurrentPlayItemInquiry chi e attualmente in esecuzione
-CurrentPlayItemInquiry chi e attualmente in riproduzione
-CurrentPlayItemInquiry chi e in esecuzione
-CurrentPlayItemInquiry chi e in riproduzione
-CurrentPlayItemInquiry chi e questo
-CurrentPlayItemInquiry cosa e attualmente in esecuzione
-CurrentPlayItemInquiry cosa e attualmente in riproduzione
-CurrentPlayItemInquiry cosa e in esecuzione
-CurrentPlayItemInquiry cosa e in riproduzione
-CurrentPlayItemInquiry cosa e questo
-CurrentPlayItemTimeRemaining a che ora finira questo
+CurrentPlayItemInquiry chi è attualmente in esecuzione
+CurrentPlayItemInquiry chi è attualmente in riproduzione
+CurrentPlayItemInquiry chi è in esecuzione
+CurrentPlayItemInquiry chi è in riproduzione
+CurrentPlayItemInquiry chi è questo
+CurrentPlayItemInquiry cosa è attualmente in esecuzione
+CurrentPlayItemInquiry cosa è attualmente in riproduzione
+CurrentPlayItemInquiry cosa è in esecuzione
+CurrentPlayItemInquiry cosa è in riproduzione
+CurrentPlayItemInquiry cosa è questo
+CurrentPlayItemTimeRemaining a che ora finirà questo
 CurrentPlayItemTimeRemaining a che ora finisce questo
 CurrentPlayItemTimeRemaining a che ora termina questo
-CurrentPlayItemTimeRemaining a che ora terminera questo
-CurrentPlayItemTimeRemaining quando finira questo
+CurrentPlayItemTimeRemaining a che ora terminerà questo
+CurrentPlayItemTimeRemaining quando finirà questo
 CurrentPlayItemTimeRemaining quando finisce questo
 CurrentPlayItemTimeRemaining quando termina questo
-CurrentPlayItemTimeRemaining quando terminera questo
-CurrentPlayItemTimeRemaining quanto c'e
-CurrentPlayItemTimeRemaining quanto c'e ancora
-CurrentPlayItemTimeRemaining quanto c'e ancora di questo
-CurrentPlayItemTimeRemaining quanto c'e di questo
+CurrentPlayItemTimeRemaining quando terminerà questo
+CurrentPlayItemTimeRemaining quanto c'è
+CurrentPlayItemTimeRemaining quanto c'è ancora
+CurrentPlayItemTimeRemaining quanto c'è ancora di questo
+CurrentPlayItemTimeRemaining quanto c'è di questo
 CurrentPlayItemTimeRemaining quanto manca
 CurrentPlayItemTimeRemaining quanto manca alla fine di questo
 CurrentPlayItemTimeRemaining quanto manca di questo
@@ -139,36 +139,36 @@ CurrentPlayItemTimeRemaining quanto tempo rimane
 CurrentPlayItemTimeRemaining quanto tempo rimane alla fine di questo
 CurrentPlayItemTimeRemaining quanto tempo rimane di questo
 CurrentPlayItemTimeRemaining quanto tempo rimane per la fine di questo
-Down giu
+Down giù
 Down in basso
-Down in giu
+Down in giù
 Down in sotto
-Down naviga giu
+Down naviga giù
 Down naviga in basso
-Down naviga in giu
+Down naviga in giù
 Down naviga in sotto
 Down naviga sotto
-Down naviga verso giu
+Down naviga verso giù
 Down naviga verso il basso
 Down naviga verso sotto
 Down sotto
-Down spostati giu
+Down spostati giù
 Down spostati in basso
-Down spostati in giu
+Down spostati in giù
 Down spostati in sotto
 Down spostati sotto
-Down spostati verso giu
+Down spostati verso giù
 Down spostati verso il basso
 Down spostati verso sotto
-Down vai giu
+Down vai giù
 Down vai in basso
-Down vai in giu
+Down vai in giù
 Down vai in sotto
 Down vai sotto
-Down vai verso giu
+Down vai verso giù
 Down vai verso il basso
 Down vai verso sotto
-Down verso giu
+Down verso giù
 Down verso il basso
 Down verso sotto
 EjectMedia espelli
@@ -197,9 +197,9 @@ Fullscreen visualizzazione
 Hibernate iberna
 Hibernate iberna il sistema
 Hibernate iberna sistema
-Hibernate metti il sistema in modalita ibernazione
-Hibernate metti modalita ibernazione
-Hibernate metti sistema in modalita ibernazione
+Hibernate metti il sistema in modalità ibernazione
+Hibernate metti modalità ibernazione
+Hibernate metti sistema in modalità ibernazione
 Home a home
 Home alla home
 Home home
@@ -488,189 +488,189 @@ ListenToAudioPlaylist metti su playlist di canzoni {AudioPlaylist}
 ListenToAudioPlaylist metti su playlist musicale {AudioPlaylist}
 ListenToAudioPlaylist metti su playlist {AudioPlaylist}
 ListenToAudioPlaylistRecent ascolta album aggiunti di recente
-ListenToAudioPlaylistRecent ascolta album piu recenti
+ListenToAudioPlaylistRecent ascolta album più recenti
 ListenToAudioPlaylistRecent ascolta album recenti
 ListenToAudioPlaylistRecent ascolta audio aggiunto di recente
-ListenToAudioPlaylistRecent ascolta audio piu recente
+ListenToAudioPlaylistRecent ascolta audio più recente
 ListenToAudioPlaylistRecent ascolta audio recente
 ListenToAudioPlaylistRecent ascolta canzoni aggiunte di recente
-ListenToAudioPlaylistRecent ascolta canzoni piu recenti
+ListenToAudioPlaylistRecent ascolta canzoni più recenti
 ListenToAudioPlaylistRecent ascolta canzoni recenti
 ListenToAudioPlaylistRecent ascolta gli album aggiunti di recente
-ListenToAudioPlaylistRecent ascolta gli album piu nuovi
-ListenToAudioPlaylistRecent ascolta gli album piu recenti
+ListenToAudioPlaylistRecent ascolta gli album più nuovi
+ListenToAudioPlaylistRecent ascolta gli album più recenti
 ListenToAudioPlaylistRecent ascolta gli album recenti
 ListenToAudioPlaylistRecent ascolta gli ultimi album
 ListenToAudioPlaylistRecent ascolta gli ultimi album aggiunti
 ListenToAudioPlaylistRecent ascolta gli ultimi pezzi
 ListenToAudioPlaylistRecent ascolta gli ultimi pezzi aggiunti
-ListenToAudioPlaylistRecent ascolta i pezzi piu nuovi
-ListenToAudioPlaylistRecent ascolta i pezzi piu recenti
+ListenToAudioPlaylistRecent ascolta i pezzi più nuovi
+ListenToAudioPlaylistRecent ascolta i pezzi più recenti
 ListenToAudioPlaylistRecent ascolta l'audio aggiunto di recente
-ListenToAudioPlaylistRecent ascolta l'audio piu recente
+ListenToAudioPlaylistRecent ascolta l'audio più recente
 ListenToAudioPlaylistRecent ascolta l'audio recente
 ListenToAudioPlaylistRecent ascolta l'ultima musica
 ListenToAudioPlaylistRecent ascolta l'ultima musica aggiunta
 ListenToAudioPlaylistRecent ascolta la musica aggiunta di recente
-ListenToAudioPlaylistRecent ascolta la musica piu nuova
-ListenToAudioPlaylistRecent ascolta la musica piu recente
+ListenToAudioPlaylistRecent ascolta la musica più nuova
+ListenToAudioPlaylistRecent ascolta la musica più recente
 ListenToAudioPlaylistRecent ascolta la musica recente
 ListenToAudioPlaylistRecent ascolta le canzoni aggiunte di recente
-ListenToAudioPlaylistRecent ascolta le canzoni piu nuove
-ListenToAudioPlaylistRecent ascolta le canzoni piu recenti
+ListenToAudioPlaylistRecent ascolta le canzoni più nuove
+ListenToAudioPlaylistRecent ascolta le canzoni più recenti
 ListenToAudioPlaylistRecent ascolta le canzoni recenti
 ListenToAudioPlaylistRecent ascolta le ultime canzoni
 ListenToAudioPlaylistRecent ascolta le ultime canzoni aggiunte
 ListenToAudioPlaylistRecent ascolta musica aggiunta di recente
-ListenToAudioPlaylistRecent ascolta musica piu recente
+ListenToAudioPlaylistRecent ascolta musica più recente
 ListenToAudioPlaylistRecent ascolta musica recente
 ListenToAudioPlaylistRecent mescola album aggiunti di recente
-ListenToAudioPlaylistRecent mescola album piu recenti
+ListenToAudioPlaylistRecent mescola album più recenti
 ListenToAudioPlaylistRecent mescola album recenti
 ListenToAudioPlaylistRecent mescola audio aggiunto di recente
-ListenToAudioPlaylistRecent mescola audio piu recente
+ListenToAudioPlaylistRecent mescola audio più recente
 ListenToAudioPlaylistRecent mescola audio recente
 ListenToAudioPlaylistRecent mescola canzoni aggiunte di recente
-ListenToAudioPlaylistRecent mescola canzoni piu recenti
+ListenToAudioPlaylistRecent mescola canzoni più recenti
 ListenToAudioPlaylistRecent mescola canzoni recenti
 ListenToAudioPlaylistRecent mescola gli album aggiunti di recente
-ListenToAudioPlaylistRecent mescola gli album piu nuovi
-ListenToAudioPlaylistRecent mescola gli album piu recenti
+ListenToAudioPlaylistRecent mescola gli album più nuovi
+ListenToAudioPlaylistRecent mescola gli album più recenti
 ListenToAudioPlaylistRecent mescola gli album recenti
 ListenToAudioPlaylistRecent mescola gli ultimi album
 ListenToAudioPlaylistRecent mescola gli ultimi album aggiunti
 ListenToAudioPlaylistRecent mescola gli ultimi pezzi
 ListenToAudioPlaylistRecent mescola gli ultimi pezzi aggiunti
-ListenToAudioPlaylistRecent mescola i pezzi piu nuovi
-ListenToAudioPlaylistRecent mescola i pezzi piu recenti
+ListenToAudioPlaylistRecent mescola i pezzi più nuovi
+ListenToAudioPlaylistRecent mescola i pezzi più recenti
 ListenToAudioPlaylistRecent mescola l'audio aggiunto di recente
-ListenToAudioPlaylistRecent mescola l'audio piu recente
+ListenToAudioPlaylistRecent mescola l'audio più recente
 ListenToAudioPlaylistRecent mescola l'audio recente
 ListenToAudioPlaylistRecent mescola l'ultima musica
 ListenToAudioPlaylistRecent mescola l'ultima musica aggiunta
 ListenToAudioPlaylistRecent mescola la musica aggiunta di recente
-ListenToAudioPlaylistRecent mescola la musica piu nuova
-ListenToAudioPlaylistRecent mescola la musica piu recente
+ListenToAudioPlaylistRecent mescola la musica più nuova
+ListenToAudioPlaylistRecent mescola la musica più recente
 ListenToAudioPlaylistRecent mescola la musica recente
 ListenToAudioPlaylistRecent mescola le canzoni aggiunte di recente
-ListenToAudioPlaylistRecent mescola le canzoni piu nuove
-ListenToAudioPlaylistRecent mescola le canzoni piu recenti
+ListenToAudioPlaylistRecent mescola le canzoni più nuove
+ListenToAudioPlaylistRecent mescola le canzoni più recenti
 ListenToAudioPlaylistRecent mescola le canzoni recenti
 ListenToAudioPlaylistRecent mescola le ultime canzoni
 ListenToAudioPlaylistRecent mescola le ultime canzoni aggiunte
 ListenToAudioPlaylistRecent mescola musica aggiunta di recente
-ListenToAudioPlaylistRecent mescola musica piu recente
+ListenToAudioPlaylistRecent mescola musica più recente
 ListenToAudioPlaylistRecent mescola musica recente
 ListenToAudioPlaylistRecent metti album aggiunti di recente
-ListenToAudioPlaylistRecent metti album piu recenti
+ListenToAudioPlaylistRecent metti album più recenti
 ListenToAudioPlaylistRecent metti album recenti
 ListenToAudioPlaylistRecent metti audio aggiunto di recente
-ListenToAudioPlaylistRecent metti audio piu recente
+ListenToAudioPlaylistRecent metti audio più recente
 ListenToAudioPlaylistRecent metti audio recente
 ListenToAudioPlaylistRecent metti canzoni aggiunte di recente
-ListenToAudioPlaylistRecent metti canzoni piu recenti
+ListenToAudioPlaylistRecent metti canzoni più recenti
 ListenToAudioPlaylistRecent metti canzoni recenti
 ListenToAudioPlaylistRecent metti gli album aggiunti di recente
-ListenToAudioPlaylistRecent metti gli album piu nuovi
-ListenToAudioPlaylistRecent metti gli album piu recenti
+ListenToAudioPlaylistRecent metti gli album più nuovi
+ListenToAudioPlaylistRecent metti gli album più recenti
 ListenToAudioPlaylistRecent metti gli album recenti
 ListenToAudioPlaylistRecent metti gli ultimi album
 ListenToAudioPlaylistRecent metti gli ultimi album aggiunti
 ListenToAudioPlaylistRecent metti gli ultimi pezzi
 ListenToAudioPlaylistRecent metti gli ultimi pezzi aggiunti
-ListenToAudioPlaylistRecent metti i pezzi piu nuovi
-ListenToAudioPlaylistRecent metti i pezzi piu recenti
+ListenToAudioPlaylistRecent metti i pezzi più nuovi
+ListenToAudioPlaylistRecent metti i pezzi più recenti
 ListenToAudioPlaylistRecent metti l'audio aggiunto di recente
-ListenToAudioPlaylistRecent metti l'audio piu recente
+ListenToAudioPlaylistRecent metti l'audio più recente
 ListenToAudioPlaylistRecent metti l'audio recente
 ListenToAudioPlaylistRecent metti l'ultima musica
 ListenToAudioPlaylistRecent metti l'ultima musica aggiunta
 ListenToAudioPlaylistRecent metti la musica aggiunta di recente
-ListenToAudioPlaylistRecent metti la musica piu nuova
-ListenToAudioPlaylistRecent metti la musica piu recente
+ListenToAudioPlaylistRecent metti la musica più nuova
+ListenToAudioPlaylistRecent metti la musica più recente
 ListenToAudioPlaylistRecent metti la musica recente
 ListenToAudioPlaylistRecent metti le canzoni aggiunte di recente
-ListenToAudioPlaylistRecent metti le canzoni piu nuove
-ListenToAudioPlaylistRecent metti le canzoni piu recenti
+ListenToAudioPlaylistRecent metti le canzoni più nuove
+ListenToAudioPlaylistRecent metti le canzoni più recenti
 ListenToAudioPlaylistRecent metti le canzoni recenti
 ListenToAudioPlaylistRecent metti le ultime canzoni
 ListenToAudioPlaylistRecent metti le ultime canzoni aggiunte
 ListenToAudioPlaylistRecent metti musica aggiunta di recente
-ListenToAudioPlaylistRecent metti musica piu recente
+ListenToAudioPlaylistRecent metti musica più recente
 ListenToAudioPlaylistRecent metti musica recente
 ListenToAudioPlaylistRecent metti su album aggiunti di recente
-ListenToAudioPlaylistRecent metti su album piu recenti
+ListenToAudioPlaylistRecent metti su album più recenti
 ListenToAudioPlaylistRecent metti su album recenti
 ListenToAudioPlaylistRecent metti su audio aggiunto di recente
-ListenToAudioPlaylistRecent metti su audio piu recente
+ListenToAudioPlaylistRecent metti su audio più recente
 ListenToAudioPlaylistRecent metti su audio recente
 ListenToAudioPlaylistRecent metti su canzoni aggiunte di recente
-ListenToAudioPlaylistRecent metti su canzoni piu recenti
+ListenToAudioPlaylistRecent metti su canzoni più recenti
 ListenToAudioPlaylistRecent metti su canzoni recenti
 ListenToAudioPlaylistRecent metti su gli album aggiunti di recente
-ListenToAudioPlaylistRecent metti su gli album piu nuovi
-ListenToAudioPlaylistRecent metti su gli album piu recenti
+ListenToAudioPlaylistRecent metti su gli album più nuovi
+ListenToAudioPlaylistRecent metti su gli album più recenti
 ListenToAudioPlaylistRecent metti su gli album recenti
 ListenToAudioPlaylistRecent metti su gli ultimi album
 ListenToAudioPlaylistRecent metti su gli ultimi album aggiunti
 ListenToAudioPlaylistRecent metti su gli ultimi pezzi
 ListenToAudioPlaylistRecent metti su gli ultimi pezzi aggiunti
-ListenToAudioPlaylistRecent metti su i pezzi piu nuovi
-ListenToAudioPlaylistRecent metti su i pezzi piu recenti
+ListenToAudioPlaylistRecent metti su i pezzi più nuovi
+ListenToAudioPlaylistRecent metti su i pezzi più recenti
 ListenToAudioPlaylistRecent metti su l'audio aggiunto di recente
-ListenToAudioPlaylistRecent metti su l'audio piu recente
+ListenToAudioPlaylistRecent metti su l'audio più recente
 ListenToAudioPlaylistRecent metti su l'audio recente
 ListenToAudioPlaylistRecent metti su l'ultima musica
 ListenToAudioPlaylistRecent metti su l'ultima musica aggiunta
 ListenToAudioPlaylistRecent metti su la musica aggiunta di recente
-ListenToAudioPlaylistRecent metti su la musica piu nuova
-ListenToAudioPlaylistRecent metti su la musica piu recente
+ListenToAudioPlaylistRecent metti su la musica più nuova
+ListenToAudioPlaylistRecent metti su la musica più recente
 ListenToAudioPlaylistRecent metti su la musica recente
 ListenToAudioPlaylistRecent metti su le canzoni aggiunte di recente
-ListenToAudioPlaylistRecent metti su le canzoni piu nuove
-ListenToAudioPlaylistRecent metti su le canzoni piu recenti
+ListenToAudioPlaylistRecent metti su le canzoni più nuove
+ListenToAudioPlaylistRecent metti su le canzoni più recenti
 ListenToAudioPlaylistRecent metti su le canzoni recenti
 ListenToAudioPlaylistRecent metti su le ultime canzoni
 ListenToAudioPlaylistRecent metti su le ultime canzoni aggiunte
 ListenToAudioPlaylistRecent metti su musica aggiunta di recente
-ListenToAudioPlaylistRecent metti su musica piu recente
+ListenToAudioPlaylistRecent metti su musica più recente
 ListenToAudioPlaylistRecent metti su musica recente
 ListenToAudioPlaylistRecent mischia album aggiunti di recente
-ListenToAudioPlaylistRecent mischia album piu recenti
+ListenToAudioPlaylistRecent mischia album più recenti
 ListenToAudioPlaylistRecent mischia album recenti
 ListenToAudioPlaylistRecent mischia audio aggiunto di recente
-ListenToAudioPlaylistRecent mischia audio piu recente
+ListenToAudioPlaylistRecent mischia audio più recente
 ListenToAudioPlaylistRecent mischia audio recente
 ListenToAudioPlaylistRecent mischia canzoni aggiunte di recente
-ListenToAudioPlaylistRecent mischia canzoni piu recenti
+ListenToAudioPlaylistRecent mischia canzoni più recenti
 ListenToAudioPlaylistRecent mischia canzoni recenti
 ListenToAudioPlaylistRecent mischia gli album aggiunti di recente
-ListenToAudioPlaylistRecent mischia gli album piu nuovi
-ListenToAudioPlaylistRecent mischia gli album piu recenti
+ListenToAudioPlaylistRecent mischia gli album più nuovi
+ListenToAudioPlaylistRecent mischia gli album più recenti
 ListenToAudioPlaylistRecent mischia gli album recenti
 ListenToAudioPlaylistRecent mischia gli ultimi album
 ListenToAudioPlaylistRecent mischia gli ultimi album aggiunti
 ListenToAudioPlaylistRecent mischia gli ultimi pezzi
 ListenToAudioPlaylistRecent mischia gli ultimi pezzi aggiunti
-ListenToAudioPlaylistRecent mischia i pezzi piu nuovi
-ListenToAudioPlaylistRecent mischia i pezzi piu recenti
+ListenToAudioPlaylistRecent mischia i pezzi più nuovi
+ListenToAudioPlaylistRecent mischia i pezzi più recenti
 ListenToAudioPlaylistRecent mischia l'audio aggiunto di recente
-ListenToAudioPlaylistRecent mischia l'audio piu recente
+ListenToAudioPlaylistRecent mischia l'audio più recente
 ListenToAudioPlaylistRecent mischia l'audio recente
 ListenToAudioPlaylistRecent mischia l'ultima musica
 ListenToAudioPlaylistRecent mischia l'ultima musica aggiunta
 ListenToAudioPlaylistRecent mischia la musica aggiunta di recente
-ListenToAudioPlaylistRecent mischia la musica piu nuova
-ListenToAudioPlaylistRecent mischia la musica piu recente
+ListenToAudioPlaylistRecent mischia la musica più nuova
+ListenToAudioPlaylistRecent mischia la musica più recente
 ListenToAudioPlaylistRecent mischia la musica recente
 ListenToAudioPlaylistRecent mischia le canzoni aggiunte di recente
-ListenToAudioPlaylistRecent mischia le canzoni piu nuove
-ListenToAudioPlaylistRecent mischia le canzoni piu recenti
+ListenToAudioPlaylistRecent mischia le canzoni più nuove
+ListenToAudioPlaylistRecent mischia le canzoni più recenti
 ListenToAudioPlaylistRecent mischia le canzoni recenti
 ListenToAudioPlaylistRecent mischia le ultime canzoni
 ListenToAudioPlaylistRecent mischia le ultime canzoni aggiunte
 ListenToAudioPlaylistRecent mischia musica aggiunta di recente
-ListenToAudioPlaylistRecent mischia musica piu recente
+ListenToAudioPlaylistRecent mischia musica più recente
 ListenToAudioPlaylistRecent mischia musica recente
 ListenToGenre ascolta brani {MusicGenre}
 ListenToGenre ascolta brani {MusicGenre} a caso
@@ -732,38 +732,38 @@ ListenToGenre mischia musica {MusicGenre} casuale
 ListenToGenre mischia pezzi {MusicGenre}
 ListenToGenre mischia pezzi {MusicGenre} a caso
 ListenToGenre mischia pezzi {MusicGenre} casuali
-ListenToLatestAlbum ascolta l'album piu nuovo degli {Artist}
-ListenToLatestAlbum ascolta l'album piu nuovo dei {Artist}
-ListenToLatestAlbum ascolta l'album piu nuovo delle {Artist}
-ListenToLatestAlbum ascolta l'album piu nuovo di {Artist}
-ListenToLatestAlbum ascolta l'album piu recente degli {Artist}
-ListenToLatestAlbum ascolta l'album piu recente dei {Artist}
-ListenToLatestAlbum ascolta l'album piu recente delle {Artist}
-ListenToLatestAlbum ascolta l'album piu recente di {Artist}
+ListenToLatestAlbum ascolta l'album più nuovo degli {Artist}
+ListenToLatestAlbum ascolta l'album più nuovo dei {Artist}
+ListenToLatestAlbum ascolta l'album più nuovo delle {Artist}
+ListenToLatestAlbum ascolta l'album più nuovo di {Artist}
+ListenToLatestAlbum ascolta l'album più recente degli {Artist}
+ListenToLatestAlbum ascolta l'album più recente dei {Artist}
+ListenToLatestAlbum ascolta l'album più recente delle {Artist}
+ListenToLatestAlbum ascolta l'album più recente di {Artist}
 ListenToLatestAlbum ascolta l'ultimo album degli {Artist}
 ListenToLatestAlbum ascolta l'ultimo album dei {Artist}
 ListenToLatestAlbum ascolta l'ultimo album delle {Artist}
 ListenToLatestAlbum ascolta l'ultimo album di {Artist}
-ListenToLatestAlbum metti l'album piu nuovo degli {Artist}
-ListenToLatestAlbum metti l'album piu nuovo dei {Artist}
-ListenToLatestAlbum metti l'album piu nuovo delle {Artist}
-ListenToLatestAlbum metti l'album piu nuovo di {Artist}
-ListenToLatestAlbum metti l'album piu recente degli {Artist}
-ListenToLatestAlbum metti l'album piu recente dei {Artist}
-ListenToLatestAlbum metti l'album piu recente delle {Artist}
-ListenToLatestAlbum metti l'album piu recente di {Artist}
+ListenToLatestAlbum metti l'album più nuovo degli {Artist}
+ListenToLatestAlbum metti l'album più nuovo dei {Artist}
+ListenToLatestAlbum metti l'album più nuovo delle {Artist}
+ListenToLatestAlbum metti l'album più nuovo di {Artist}
+ListenToLatestAlbum metti l'album più recente degli {Artist}
+ListenToLatestAlbum metti l'album più recente dei {Artist}
+ListenToLatestAlbum metti l'album più recente delle {Artist}
+ListenToLatestAlbum metti l'album più recente di {Artist}
 ListenToLatestAlbum metti l'ultimo album degli {Artist}
 ListenToLatestAlbum metti l'ultimo album dei {Artist}
 ListenToLatestAlbum metti l'ultimo album delle {Artist}
 ListenToLatestAlbum metti l'ultimo album di {Artist}
-ListenToLatestAlbum metti su l'album piu nuovo degli {Artist}
-ListenToLatestAlbum metti su l'album piu nuovo dei {Artist}
-ListenToLatestAlbum metti su l'album piu nuovo delle {Artist}
-ListenToLatestAlbum metti su l'album piu nuovo di {Artist}
-ListenToLatestAlbum metti su l'album piu recente degli {Artist}
-ListenToLatestAlbum metti su l'album piu recente dei {Artist}
-ListenToLatestAlbum metti su l'album piu recente delle {Artist}
-ListenToLatestAlbum metti su l'album piu recente di {Artist}
+ListenToLatestAlbum metti su l'album più nuovo degli {Artist}
+ListenToLatestAlbum metti su l'album più nuovo dei {Artist}
+ListenToLatestAlbum metti su l'album più nuovo delle {Artist}
+ListenToLatestAlbum metti su l'album più nuovo di {Artist}
+ListenToLatestAlbum metti su l'album più recente degli {Artist}
+ListenToLatestAlbum metti su l'album più recente dei {Artist}
+ListenToLatestAlbum metti su l'album più recente delle {Artist}
+ListenToLatestAlbum metti su l'album più recente di {Artist}
 ListenToLatestAlbum metti su l'ultimo album degli {Artist}
 ListenToLatestAlbum metti su l'ultimo album dei {Artist}
 ListenToLatestAlbum metti su l'ultimo album delle {Artist}
@@ -908,86 +908,86 @@ Mute muto
 Mute setta muto
 Mute setta sonoro
 Mute sonoro
-PageDown a livello giu
+PageDown a livello giù
 PageDown a livello inferiore
-PageDown a pagina giu
+PageDown a pagina giù
 PageDown a pagina inferiore
-PageDown al livello giu
+PageDown al livello giù
 PageDown al livello inferiore
-PageDown alla pagina giu
+PageDown alla pagina giù
 PageDown alla pagina inferiore
-PageDown livello giu
+PageDown livello giù
 PageDown livello inferiore
-PageDown mostra di piu
-PageDown naviga a livello giu
+PageDown mostra di più
+PageDown naviga a livello giù
 PageDown naviga a livello inferiore
-PageDown naviga a pagina giu
+PageDown naviga a pagina giù
 PageDown naviga a pagina inferiore
-PageDown naviga al livello giu
+PageDown naviga al livello giù
 PageDown naviga al livello inferiore
-PageDown naviga alla pagina giu
+PageDown naviga alla pagina giù
 PageDown naviga alla pagina inferiore
-PageDown naviga livello giu
+PageDown naviga livello giù
 PageDown naviga livello inferiore
-PageDown naviga pagina giu
+PageDown naviga pagina giù
 PageDown naviga pagina inferiore
-PageDown naviga verso il livello giu
+PageDown naviga verso il livello giù
 PageDown naviga verso il livello inferiore
-PageDown naviga verso la pagina giu
+PageDown naviga verso la pagina giù
 PageDown naviga verso la pagina inferiore
-PageDown naviga verso livello giu
+PageDown naviga verso livello giù
 PageDown naviga verso livello inferiore
-PageDown naviga verso pagina giu
+PageDown naviga verso pagina giù
 PageDown naviga verso pagina inferiore
-PageDown pagina giu
+PageDown pagina giù
 PageDown pagina inferiore
-PageDown spostati a livello giu
+PageDown spostati a livello giù
 PageDown spostati a livello inferiore
-PageDown spostati a pagina giu
+PageDown spostati a pagina giù
 PageDown spostati a pagina inferiore
-PageDown spostati al livello giu
+PageDown spostati al livello giù
 PageDown spostati al livello inferiore
-PageDown spostati alla pagina giu
+PageDown spostati alla pagina giù
 PageDown spostati alla pagina inferiore
-PageDown spostati livello giu
+PageDown spostati livello giù
 PageDown spostati livello inferiore
-PageDown spostati pagina giu
+PageDown spostati pagina giù
 PageDown spostati pagina inferiore
-PageDown spostati verso il livello giu
+PageDown spostati verso il livello giù
 PageDown spostati verso il livello inferiore
-PageDown spostati verso la pagina giu
+PageDown spostati verso la pagina giù
 PageDown spostati verso la pagina inferiore
-PageDown spostati verso livello giu
+PageDown spostati verso livello giù
 PageDown spostati verso livello inferiore
-PageDown spostati verso pagina giu
+PageDown spostati verso pagina giù
 PageDown spostati verso pagina inferiore
-PageDown vai a livello giu
+PageDown vai a livello giù
 PageDown vai a livello inferiore
-PageDown vai a pagina giu
+PageDown vai a pagina giù
 PageDown vai a pagina inferiore
-PageDown vai al livello giu
+PageDown vai al livello giù
 PageDown vai al livello inferiore
-PageDown vai alla pagina giu
+PageDown vai alla pagina giù
 PageDown vai alla pagina inferiore
-PageDown vai livello giu
+PageDown vai livello giù
 PageDown vai livello inferiore
-PageDown vai pagina giu
+PageDown vai pagina giù
 PageDown vai pagina inferiore
-PageDown vai verso il livello giu
+PageDown vai verso il livello giù
 PageDown vai verso il livello inferiore
-PageDown vai verso la pagina giu
+PageDown vai verso la pagina giù
 PageDown vai verso la pagina inferiore
-PageDown vai verso livello giu
+PageDown vai verso livello giù
 PageDown vai verso livello inferiore
-PageDown vai verso pagina giu
+PageDown vai verso pagina giù
 PageDown vai verso pagina inferiore
-PageDown verso il livello giu
+PageDown verso il livello giù
 PageDown verso il livello inferiore
-PageDown verso la pagina giu
+PageDown verso la pagina giù
 PageDown verso la pagina inferiore
-PageDown verso livello giu
+PageDown verso livello giù
 PageDown verso livello inferiore
-PageDown verso pagina giu
+PageDown verso pagina giù
 PageDown verso pagina inferiore
 PageUp a livello su
 PageUp a livello superiore
@@ -1077,24 +1077,24 @@ PartyMode metti musica a caso
 PartyMode metti musica casuale
 PartyMode metti su tutta la musica
 PartyMode metti tutta la musica
-PartyMode mettisu musica a caso
-PartyMode mettisu musica casuale
+PartyMode metti su musica a caso
+PartyMode metti su musica casuale
 PartyMode mischia tutta la musica
 PartyMode suona musica a caso
 PartyMode suona musica casuale
 PartyMode suona tutta la musica
 PlayMedia avvia {Movie}
 PlayMedia riproduci {Movie}
-PlayerMoveDown sposta giu
+PlayerMoveDown sposta giù
 PlayerMoveDown sposta in basso
-PlayerMoveDown sposta schermo giu
+PlayerMoveDown sposta schermo giù
 PlayerMoveDown sposta schermo in basso
 PlayerMoveDown sposta schermo verso il basso
 PlayerMoveDown sposta verso il basso
-PlayerMoveDown sposta vista giu
+PlayerMoveDown sposta vista giù
 PlayerMoveDown sposta vista in basso
 PlayerMoveDown sposta vista verso il basso
-PlayerMoveDown sposta visuale giu
+PlayerMoveDown sposta visuale giù
 PlayerMoveDown sposta visuale in basso
 PlayerMoveDown sposta visuale verso il basso
 PlayerMoveLeft sposta a sinistra
@@ -1243,64 +1243,64 @@ PlayerZoomHold dammi un fermo immagine li
 PlayerZoomIn ingrandisci
 PlayerZoomIn zoom
 PlayerZoomIn zooma
-PlayerZoomInMoveDown ingrandisci e sposta giu
+PlayerZoomInMoveDown ingrandisci e sposta giù
 PlayerZoomInMoveDown ingrandisci e sposta in basso
-PlayerZoomInMoveDown ingrandisci e sposta schermo giu
+PlayerZoomInMoveDown ingrandisci e sposta schermo giù
 PlayerZoomInMoveDown ingrandisci e sposta schermo in basso
 PlayerZoomInMoveDown ingrandisci e sposta schermo verso il basso
 PlayerZoomInMoveDown ingrandisci e sposta verso il basso
-PlayerZoomInMoveDown ingrandisci e sposta vista giu
+PlayerZoomInMoveDown ingrandisci e sposta vista giù
 PlayerZoomInMoveDown ingrandisci e sposta vista in basso
 PlayerZoomInMoveDown ingrandisci e sposta vista verso il basso
-PlayerZoomInMoveDown ingrandisci e sposta visuale giu
+PlayerZoomInMoveDown ingrandisci e sposta visuale giù
 PlayerZoomInMoveDown ingrandisci e sposta visuale in basso
 PlayerZoomInMoveDown ingrandisci e sposta visuale verso il basso
-PlayerZoomInMoveDown zoom avanti e sposta giu
+PlayerZoomInMoveDown zoom avanti e sposta giù
 PlayerZoomInMoveDown zoom avanti e sposta in basso
-PlayerZoomInMoveDown zoom avanti e sposta schermo giu
+PlayerZoomInMoveDown zoom avanti e sposta schermo giù
 PlayerZoomInMoveDown zoom avanti e sposta schermo in basso
 PlayerZoomInMoveDown zoom avanti e sposta schermo verso il basso
 PlayerZoomInMoveDown zoom avanti e sposta verso il basso
-PlayerZoomInMoveDown zoom avanti e sposta vista giu
+PlayerZoomInMoveDown zoom avanti e sposta vista giù
 PlayerZoomInMoveDown zoom avanti e sposta vista in basso
 PlayerZoomInMoveDown zoom avanti e sposta vista verso il basso
-PlayerZoomInMoveDown zoom avanti e sposta visuale giu
+PlayerZoomInMoveDown zoom avanti e sposta visuale giù
 PlayerZoomInMoveDown zoom avanti e sposta visuale in basso
 PlayerZoomInMoveDown zoom avanti e sposta visuale verso il basso
-PlayerZoomInMoveDown zoom e sposta giu
+PlayerZoomInMoveDown zoom e sposta giù
 PlayerZoomInMoveDown zoom e sposta in basso
-PlayerZoomInMoveDown zoom e sposta schermo giu
+PlayerZoomInMoveDown zoom e sposta schermo giù
 PlayerZoomInMoveDown zoom e sposta schermo in basso
 PlayerZoomInMoveDown zoom e sposta schermo verso il basso
 PlayerZoomInMoveDown zoom e sposta verso il basso
-PlayerZoomInMoveDown zoom e sposta vista giu
+PlayerZoomInMoveDown zoom e sposta vista giù
 PlayerZoomInMoveDown zoom e sposta vista in basso
 PlayerZoomInMoveDown zoom e sposta vista verso il basso
-PlayerZoomInMoveDown zoom e sposta visuale giu
+PlayerZoomInMoveDown zoom e sposta visuale giù
 PlayerZoomInMoveDown zoom e sposta visuale in basso
 PlayerZoomInMoveDown zoom e sposta visuale verso il basso
-PlayerZoomInMoveDown zooma avanti e sposta giu
+PlayerZoomInMoveDown zooma avanti e sposta giù
 PlayerZoomInMoveDown zooma avanti e sposta in basso
-PlayerZoomInMoveDown zooma avanti e sposta schermo giu
+PlayerZoomInMoveDown zooma avanti e sposta schermo giù
 PlayerZoomInMoveDown zooma avanti e sposta schermo in basso
 PlayerZoomInMoveDown zooma avanti e sposta schermo verso il basso
 PlayerZoomInMoveDown zooma avanti e sposta verso il basso
-PlayerZoomInMoveDown zooma avanti e sposta vista giu
+PlayerZoomInMoveDown zooma avanti e sposta vista giù
 PlayerZoomInMoveDown zooma avanti e sposta vista in basso
 PlayerZoomInMoveDown zooma avanti e sposta vista verso il basso
-PlayerZoomInMoveDown zooma avanti e sposta visuale giu
+PlayerZoomInMoveDown zooma avanti e sposta visuale giù
 PlayerZoomInMoveDown zooma avanti e sposta visuale in basso
 PlayerZoomInMoveDown zooma avanti e sposta visuale verso il basso
-PlayerZoomInMoveDown zooma e sposta giu
+PlayerZoomInMoveDown zooma e sposta giù
 PlayerZoomInMoveDown zooma e sposta in basso
-PlayerZoomInMoveDown zooma e sposta schermo giu
+PlayerZoomInMoveDown zooma e sposta schermo giù
 PlayerZoomInMoveDown zooma e sposta schermo in basso
 PlayerZoomInMoveDown zooma e sposta schermo verso il basso
 PlayerZoomInMoveDown zooma e sposta verso il basso
-PlayerZoomInMoveDown zooma e sposta vista giu
+PlayerZoomInMoveDown zooma e sposta vista giù
 PlayerZoomInMoveDown zooma e sposta vista in basso
 PlayerZoomInMoveDown zooma e sposta vista verso il basso
-PlayerZoomInMoveDown zooma e sposta visuale giu
+PlayerZoomInMoveDown zooma e sposta visuale giù
 PlayerZoomInMoveDown zooma e sposta visuale in basso
 PlayerZoomInMoveDown zooma e sposta visuale verso il basso
 PlayerZoomInMoveLeft ingrandisci e sposta a sinistra
@@ -1447,52 +1447,52 @@ PlayerZoomOut indietreggia
 PlayerZoomOut riduci
 PlayerZoomOut zoom indietro
 PlayerZoomOut zooma indietro
-PlayerZoomOutMoveDown indietreggia e sposta giu
+PlayerZoomOutMoveDown indietreggia e sposta giù
 PlayerZoomOutMoveDown indietreggia e sposta in basso
-PlayerZoomOutMoveDown indietreggia e sposta schermo giu
+PlayerZoomOutMoveDown indietreggia e sposta schermo giù
 PlayerZoomOutMoveDown indietreggia e sposta schermo in basso
 PlayerZoomOutMoveDown indietreggia e sposta schermo verso il basso
 PlayerZoomOutMoveDown indietreggia e sposta verso il basso
-PlayerZoomOutMoveDown indietreggia e sposta vista giu
+PlayerZoomOutMoveDown indietreggia e sposta vista giù
 PlayerZoomOutMoveDown indietreggia e sposta vista in basso
 PlayerZoomOutMoveDown indietreggia e sposta vista verso il basso
-PlayerZoomOutMoveDown indietreggia e sposta visuale giu
+PlayerZoomOutMoveDown indietreggia e sposta visuale giù
 PlayerZoomOutMoveDown indietreggia e sposta visuale in basso
 PlayerZoomOutMoveDown indietreggia e sposta visuale verso il basso
-PlayerZoomOutMoveDown riduci e sposta giu
+PlayerZoomOutMoveDown riduci e sposta giù
 PlayerZoomOutMoveDown riduci e sposta in basso
-PlayerZoomOutMoveDown riduci e sposta schermo giu
+PlayerZoomOutMoveDown riduci e sposta schermo giù
 PlayerZoomOutMoveDown riduci e sposta schermo in basso
 PlayerZoomOutMoveDown riduci e sposta schermo verso il basso
 PlayerZoomOutMoveDown riduci e sposta verso il basso
-PlayerZoomOutMoveDown riduci e sposta vista giu
+PlayerZoomOutMoveDown riduci e sposta vista giù
 PlayerZoomOutMoveDown riduci e sposta vista in basso
 PlayerZoomOutMoveDown riduci e sposta vista verso il basso
-PlayerZoomOutMoveDown riduci e sposta visuale giu
+PlayerZoomOutMoveDown riduci e sposta visuale giù
 PlayerZoomOutMoveDown riduci e sposta visuale in basso
 PlayerZoomOutMoveDown riduci e sposta visuale verso il basso
-PlayerZoomOutMoveDown zoom indietro e sposta giu
+PlayerZoomOutMoveDown zoom indietro e sposta giù
 PlayerZoomOutMoveDown zoom indietro e sposta in basso
-PlayerZoomOutMoveDown zoom indietro e sposta schermo giu
+PlayerZoomOutMoveDown zoom indietro e sposta schermo giù
 PlayerZoomOutMoveDown zoom indietro e sposta schermo in basso
 PlayerZoomOutMoveDown zoom indietro e sposta schermo verso il basso
 PlayerZoomOutMoveDown zoom indietro e sposta verso il basso
-PlayerZoomOutMoveDown zoom indietro e sposta vista giu
+PlayerZoomOutMoveDown zoom indietro e sposta vista giù
 PlayerZoomOutMoveDown zoom indietro e sposta vista in basso
 PlayerZoomOutMoveDown zoom indietro e sposta vista verso il basso
-PlayerZoomOutMoveDown zoom indietro e sposta visuale giu
+PlayerZoomOutMoveDown zoom indietro e sposta visuale giù
 PlayerZoomOutMoveDown zoom indietro e sposta visuale in basso
 PlayerZoomOutMoveDown zoom indietro e sposta visuale verso il basso
-PlayerZoomOutMoveDown zooma indietro e sposta giu
+PlayerZoomOutMoveDown zooma indietro e sposta giù
 PlayerZoomOutMoveDown zooma indietro e sposta in basso
-PlayerZoomOutMoveDown zooma indietro e sposta schermo giu
+PlayerZoomOutMoveDown zooma indietro e sposta schermo giù
 PlayerZoomOutMoveDown zooma indietro e sposta schermo in basso
 PlayerZoomOutMoveDown zooma indietro e sposta schermo verso il basso
 PlayerZoomOutMoveDown zooma indietro e sposta verso il basso
-PlayerZoomOutMoveDown zooma indietro e sposta vista giu
+PlayerZoomOutMoveDown zooma indietro e sposta vista giù
 PlayerZoomOutMoveDown zooma indietro e sposta vista in basso
 PlayerZoomOutMoveDown zooma indietro e sposta vista verso il basso
-PlayerZoomOutMoveDown zooma indietro e sposta visuale giu
+PlayerZoomOutMoveDown zooma indietro e sposta visuale giù
 PlayerZoomOutMoveDown zooma indietro e sposta visuale in basso
 PlayerZoomOutMoveDown zooma indietro e sposta visuale verso il basso
 PlayerZoomOutMoveLeft indietreggia e sposta a sinistra
@@ -2217,14 +2217,14 @@ ShuffleAudioPlaylist mischia la playlist musicale {AudioPlaylist}
 ShuffleAudioPlaylist mischia playlist audio {AudioPlaylist}
 ShuffleAudioPlaylist mischia playlist di canzoni {AudioPlaylist}
 ShuffleAudioPlaylist mischia playlist musicale {AudioPlaylist}
-ShuffleLatestAlbum mescola album piu recente degli {Artist}
-ShuffleLatestAlbum mescola album piu recente dei {Artist}
-ShuffleLatestAlbum mescola album piu recente delle {Artist}
-ShuffleLatestAlbum mescola album piu recente di {Artist}
-ShuffleLatestAlbum mescola l' album piu recente degli {Artist}
-ShuffleLatestAlbum mescola l' album piu recente dei {Artist}
-ShuffleLatestAlbum mescola l' album piu recente delle {Artist}
-ShuffleLatestAlbum mescola l' album piu recente di {Artist}
+ShuffleLatestAlbum mescola album più recente degli {Artist}
+ShuffleLatestAlbum mescola album più recente dei {Artist}
+ShuffleLatestAlbum mescola album più recente delle {Artist}
+ShuffleLatestAlbum mescola album più recente di {Artist}
+ShuffleLatestAlbum mescola l' album più recente degli {Artist}
+ShuffleLatestAlbum mescola l' album più recente dei {Artist}
+ShuffleLatestAlbum mescola l' album più recente delle {Artist}
+ShuffleLatestAlbum mescola l' album più recente di {Artist}
 ShuffleLatestAlbum mescola l' ultimo album degli {Artist}
 ShuffleLatestAlbum mescola l' ultimo album dei {Artist}
 ShuffleLatestAlbum mescola l' ultimo album delle {Artist}
@@ -2233,14 +2233,14 @@ ShuffleLatestAlbum mescola ultimo album degli {Artist}
 ShuffleLatestAlbum mescola ultimo album dei {Artist}
 ShuffleLatestAlbum mescola ultimo album delle {Artist}
 ShuffleLatestAlbum mescola ultimo album di {Artist}
-ShuffleLatestAlbum mischia album piu recente degli {Artist}
-ShuffleLatestAlbum mischia album piu recente dei {Artist}
-ShuffleLatestAlbum mischia album piu recente delle {Artist}
-ShuffleLatestAlbum mischia album piu recente di {Artist}
-ShuffleLatestAlbum mischia l' album piu recente degli {Artist}
-ShuffleLatestAlbum mischia l' album piu recente dei {Artist}
-ShuffleLatestAlbum mischia l' album piu recente delle {Artist}
-ShuffleLatestAlbum mischia l' album piu recente di {Artist}
+ShuffleLatestAlbum mischia album più recente degli {Artist}
+ShuffleLatestAlbum mischia album più recente dei {Artist}
+ShuffleLatestAlbum mischia album più recente delle {Artist}
+ShuffleLatestAlbum mischia album più recente di {Artist}
+ShuffleLatestAlbum mischia l' album più recente degli {Artist}
+ShuffleLatestAlbum mischia l' album più recente dei {Artist}
+ShuffleLatestAlbum mischia l' album più recente delle {Artist}
+ShuffleLatestAlbum mischia l' album più recente di {Artist}
 ShuffleLatestAlbum mischia l' ultimo album degli {Artist}
 ShuffleLatestAlbum mischia l' ultimo album dei {Artist}
 ShuffleLatestAlbum mischia l' ultimo album delle {Artist}
@@ -2413,10 +2413,10 @@ Shutdown arresta sistema
 Shutdown spegni
 Shutdown spegni il sistema
 Shutdown spegni sistema
-StereoscopicMode cambia modalita stereoscopica
-StereoscopicMode cambia modalita tre d.
-StereoscopicMode modalita stereoscopica
-StereoscopicMode modalita tre d.
+StereoscopicMode cambia modalità stereoscopica
+StereoscopicMode cambia modalità tre d.
+StereoscopicMode modalità stereoscopica
+StereoscopicMode modalità tre d.
 SubtitlesDownload download sottotitoli
 SubtitlesDownload download sottotitolo
 SubtitlesDownload scarica sottotitoli
@@ -2439,11 +2439,11 @@ SubtitlesPrevious lingua dei sottotitoli precedente
 SubtitlesPrevious lingua del sottotitolo precedente
 SubtitlesPrevious sottotitoli precedente
 SubtitlesPrevious sottotitolo precedente
-Suspend metti il sistema in modalita sleep
+Suspend metti il sistema in modalità sleep
 Suspend metti il sistema in sospensione
-Suspend metti in modalita sleep
+Suspend metti in modalità sleep
 Suspend metti in sospensione
-Suspend metti sistema in modalita sleep
+Suspend metti sistema in modalità sleep
 Suspend metti sistema in sospensione
 Suspend sospendi
 Suspend sospendi il sistema
@@ -2878,35 +2878,35 @@ ViewMusic visualizza musica
 ViewMusic visualizza musica {MusicGenre}
 ViewMusicVideoPlaylistRecent apri glii ultimi video musicali
 ViewMusicVideoPlaylistRecent apri glii ultimi video musicali aggiunti
-ViewMusicVideoPlaylistRecent apri i video musicali piu recenti
+ViewMusicVideoPlaylistRecent apri i video musicali più recenti
 ViewMusicVideoPlaylistRecent apri i video musicali recenti
 ViewMusicVideoPlaylistRecent apri ultimi video musicali
 ViewMusicVideoPlaylistRecent apri ultimi video musicali aggiunti
-ViewMusicVideoPlaylistRecent apri video musicali piu recenti
+ViewMusicVideoPlaylistRecent apri video musicali più recenti
 ViewMusicVideoPlaylistRecent apri video musicali recenti
 ViewMusicVideoPlaylistRecent mostra gli ultimi video musicali
 ViewMusicVideoPlaylistRecent mostra gli ultimi video musicali aggiunti
-ViewMusicVideoPlaylistRecent mostra i video musicali piu recenti
+ViewMusicVideoPlaylistRecent mostra i video musicali più recenti
 ViewMusicVideoPlaylistRecent mostra i video musicali recenti
 ViewMusicVideoPlaylistRecent mostra ultimi video musicali
 ViewMusicVideoPlaylistRecent mostra ultimi video musicali aggiunti
-ViewMusicVideoPlaylistRecent mostra video musicali piu recenti
+ViewMusicVideoPlaylistRecent mostra video musicali più recenti
 ViewMusicVideoPlaylistRecent mostra video musicali recenti
 ViewMusicVideoPlaylistRecent vai a ultimi video musicali
 ViewMusicVideoPlaylistRecent vai a ultimi video musicali aggiunti
-ViewMusicVideoPlaylistRecent vai a video musicali piu recenti
+ViewMusicVideoPlaylistRecent vai a video musicali più recenti
 ViewMusicVideoPlaylistRecent vai a video musicali recenti
 ViewMusicVideoPlaylistRecent vai agli ultimi video musicali
 ViewMusicVideoPlaylistRecent vai agli ultimi video musicali aggiunti
-ViewMusicVideoPlaylistRecent vai ai video musicali piu recenti
+ViewMusicVideoPlaylistRecent vai ai video musicali più recenti
 ViewMusicVideoPlaylistRecent vai ai video musicali recenti
 ViewMusicVideoPlaylistRecent visualizza gli ultimi video musicali
 ViewMusicVideoPlaylistRecent visualizza gli ultimi video musicali aggiunti
-ViewMusicVideoPlaylistRecent visualizza i video musicali piu recenti
+ViewMusicVideoPlaylistRecent visualizza i video musicali più recenti
 ViewMusicVideoPlaylistRecent visualizza i video musicali recenti
 ViewMusicVideoPlaylistRecent visualizza ultimi video musicali
 ViewMusicVideoPlaylistRecent visualizza ultimi video musicali aggiunti
-ViewMusicVideoPlaylistRecent visualizza video musicali piu recenti
+ViewMusicVideoPlaylistRecent visualizza video musicali più recenti
 ViewMusicVideoPlaylistRecent visualizza video musicali recenti
 ViewMusicVideos apri i video musicali
 ViewMusicVideos apri video musicali
@@ -3008,7 +3008,7 @@ VolumeDown abbassa il volume
 VolumeDown abbassa volume
 VolumeDown diminuisci il volume
 VolumeDown diminuisci volume
-VolumeDown volume giu
+VolumeDown volume giù
 VolumeSet il volume a {Volume}
 VolumeSet il volume {Volume}
 VolumeSet imposta il volume a {Volume}
@@ -3116,28 +3116,28 @@ WatchLastShow continua serie
 WatchLastShow continua serie t. v.
 WatchLastShow continua ultima serie
 WatchLastShow continua ultima serie t. v.
-WatchLatestEpisode guarda episodio piu nuovo di {Show}
-WatchLatestEpisode guarda episodio piu recente di {Show}
-WatchLatestEpisode guarda l' episodio piu nuovo di {Show}
-WatchLatestEpisode guarda l' episodio piu recente di {Show}
+WatchLatestEpisode guarda episodio più nuovo di {Show}
+WatchLatestEpisode guarda episodio più recente di {Show}
+WatchLatestEpisode guarda l' episodio più nuovo di {Show}
+WatchLatestEpisode guarda l' episodio più recente di {Show}
 WatchLatestEpisode guarda l' ultimo episodio di {Show}
 WatchLatestEpisode guarda ultimo episodio di {Show}
-WatchLatestEpisode metti episodio piu nuovo di {Show}
-WatchLatestEpisode metti episodio piu recente di {Show}
-WatchLatestEpisode metti l' episodio piu nuovo di {Show}
-WatchLatestEpisode metti l' episodio piu recente di {Show}
+WatchLatestEpisode metti episodio più nuovo di {Show}
+WatchLatestEpisode metti episodio più recente di {Show}
+WatchLatestEpisode metti l' episodio più nuovo di {Show}
+WatchLatestEpisode metti l' episodio più recente di {Show}
 WatchLatestEpisode metti l' ultimo episodio di {Show}
-WatchLatestEpisode metti su episodio piu nuovo di {Show}
-WatchLatestEpisode metti su episodio piu recente di {Show}
-WatchLatestEpisode metti su l' episodio piu nuovo di {Show}
-WatchLatestEpisode metti su l' episodio piu recente di {Show}
+WatchLatestEpisode metti su episodio più nuovo di {Show}
+WatchLatestEpisode metti su episodio più recente di {Show}
+WatchLatestEpisode metti su l' episodio più nuovo di {Show}
+WatchLatestEpisode metti su l' episodio più recente di {Show}
 WatchLatestEpisode metti su l' ultimo episodio di {Show}
 WatchLatestEpisode metti su ultimo episodio di {Show}
 WatchLatestEpisode metti ultimo episodio di {Show}
-WatchLatestEpisode vedi episodio piu nuovo di {Show}
-WatchLatestEpisode vedi episodio piu recente di {Show}
-WatchLatestEpisode vedi l' episodio piu nuovo di {Show}
-WatchLatestEpisode vedi l' episodio piu recente di {Show}
+WatchLatestEpisode vedi episodio più nuovo di {Show}
+WatchLatestEpisode vedi episodio più recente di {Show}
+WatchLatestEpisode vedi l' episodio più nuovo di {Show}
+WatchLatestEpisode vedi l' episodio più recente di {Show}
 WatchLatestEpisode vedi l' ultimo episodio di {Show}
 WatchLatestEpisode vedi ultimo episodio di {Show}
 WatchMovieTrailer guarda il trailer
@@ -3594,8 +3594,8 @@ WhatNewAlbums abbiamo nuovi album
 WhatNewAlbums abbiamo nuovi album da ascoltare
 WhatNewAlbums abbiamo un nuovo album
 WhatNewAlbums abbiamo un nuovo album da ascoltare
-WhatNewAlbums c'e un nuovo album
-WhatNewAlbums c'e un nuovo album da ascoltare
+WhatNewAlbums c'è un nuovo album
+WhatNewAlbums c'è un nuovo album da ascoltare
 WhatNewAlbums che nuovi album abbiamo
 WhatNewAlbums che nuovi album abbiamo da ascoltare
 WhatNewAlbums che nuovi album ci sono
@@ -3618,8 +3618,8 @@ WhatNewAlbums se abbiamo nuovi album
 WhatNewAlbums se abbiamo nuovi album da ascoltare
 WhatNewAlbums se abbiamo un nuovo album
 WhatNewAlbums se abbiamo un nuovo album da ascoltare
-WhatNewAlbums se c'e un nuovo album
-WhatNewAlbums se c'e un nuovo album da ascoltare
+WhatNewAlbums se c'è un nuovo album
+WhatNewAlbums se c'è un nuovo album da ascoltare
 WhatNewAlbums se ci sono dei nuovi album
 WhatNewAlbums se ci sono dei nuovi album da ascoltare
 WhatNewAlbums se ci sono nuovi album
@@ -3634,10 +3634,10 @@ WhatNewEpisodes abbiamo qualche episodio di {Show}
 WhatNewEpisodes abbiamo qualche episodio nuovo di {Show}
 WhatNewEpisodes abbiamo un episodio di {Show}
 WhatNewEpisodes abbiamo un episodio nuovo di {Show}
-WhatNewEpisodes c'e qualche episodio di {Show}
-WhatNewEpisodes c'e qualche episodio nuovo di {Show}
-WhatNewEpisodes c'e un episodio di {Show}
-WhatNewEpisodes c'e un episodio nuovo di {Show}
+WhatNewEpisodes c'è qualche episodio di {Show}
+WhatNewEpisodes c'è qualche episodio nuovo di {Show}
+WhatNewEpisodes c'è un episodio di {Show}
+WhatNewEpisodes c'è un episodio nuovo di {Show}
 WhatNewEpisodes ho qualche episodio di {Show}
 WhatNewEpisodes ho qualche episodio nuovo di {Show}
 WhatNewEpisodes ho un episodio di {Show}
@@ -3646,10 +3646,10 @@ WhatNewEpisodes se abbiamo qualche episodio di {Show}
 WhatNewEpisodes se abbiamo qualche episodio nuovo di {Show}
 WhatNewEpisodes se abbiamo un episodio di {Show}
 WhatNewEpisodes se abbiamo un episodio nuovo di {Show}
-WhatNewEpisodes se c'e qualche episodio di {Show}
-WhatNewEpisodes se c'e qualche episodio nuovo di {Show}
-WhatNewEpisodes se c'e un episodio di {Show}
-WhatNewEpisodes se c'e un episodio nuovo di {Show}
+WhatNewEpisodes se c'è qualche episodio di {Show}
+WhatNewEpisodes se c'è qualche episodio nuovo di {Show}
+WhatNewEpisodes se c'è un episodio di {Show}
+WhatNewEpisodes se c'è un episodio nuovo di {Show}
 WhatNewEpisodes se ho qualche episodio di {Show}
 WhatNewEpisodes se ho qualche episodio nuovo di {Show}
 WhatNewEpisodes se ho un episodio di {Show}
@@ -3666,10 +3666,10 @@ WhatNewMovies abbiamo un nuovo film
 WhatNewMovies abbiamo un nuovo film da vedere
 WhatNewMovies abbiamo un nuovo film {MovieGenre}
 WhatNewMovies abbiamo un nuovo film {MovieGenre} da vedere
-WhatNewMovies c'e un nuovo film
-WhatNewMovies c'e un nuovo film da vedere
-WhatNewMovies c'e un nuovo film {MovieGenre}
-WhatNewMovies c'e un nuovo film {MovieGenre} da vedere
+WhatNewMovies c'è un nuovo film
+WhatNewMovies c'è un nuovo film da vedere
+WhatNewMovies c'è un nuovo film {MovieGenre}
+WhatNewMovies c'è un nuovo film {MovieGenre} da vedere
 WhatNewMovies che nuovi film abbiamo
 WhatNewMovies che nuovi film abbiamo da vedere
 WhatNewMovies che nuovi film ci sono
@@ -3714,10 +3714,10 @@ WhatNewMovies se abbiamo un nuovo film
 WhatNewMovies se abbiamo un nuovo film da vedere
 WhatNewMovies se abbiamo un nuovo film {MovieGenre}
 WhatNewMovies se abbiamo un nuovo film {MovieGenre} da vedere
-WhatNewMovies se c'e un nuovo film
-WhatNewMovies se c'e un nuovo film da vedere
-WhatNewMovies se c'e un nuovo film {MovieGenre}
-WhatNewMovies se c'e un nuovo film {MovieGenre} da vedere
+WhatNewMovies se c'è un nuovo film
+WhatNewMovies se c'è un nuovo film da vedere
+WhatNewMovies se c'è un nuovo film {MovieGenre}
+WhatNewMovies se c'è un nuovo film {MovieGenre} da vedere
 WhatNewMovies se ci sono dei nuovi film
 WhatNewMovies se ci sono dei nuovi film da vedere
 WhatNewMovies se ci sono dei nuovi film {MovieGenre}
@@ -3750,10 +3750,10 @@ WhatNewShows abbiamo una nuova serie
 WhatNewShows abbiamo una nuova serie da vedere
 WhatNewShows abbiamo una nuova serie t. v.
 WhatNewShows abbiamo una nuova serie t. v. da vedere
-WhatNewShows c'e una nuova serie
-WhatNewShows c'e una nuova serie da vedere
-WhatNewShows c'e una nuova serie t. v.
-WhatNewShows c'e una nuova serie t. v. da vedere
+WhatNewShows c'è una nuova serie
+WhatNewShows c'è una nuova serie da vedere
+WhatNewShows c'è una nuova serie t. v.
+WhatNewShows c'è una nuova serie t. v. da vedere
 WhatNewShows che nuove serie abbiamo
 WhatNewShows che nuove serie abbiamo da vedere
 WhatNewShows che nuove serie ci sono
@@ -3798,10 +3798,10 @@ WhatNewShows se abbiamo una nuova serie
 WhatNewShows se abbiamo una nuova serie da vedere
 WhatNewShows se abbiamo una nuova serie t. v.
 WhatNewShows se abbiamo una nuova serie t. v. da vedere
-WhatNewShows se c'e una nuova serie
-WhatNewShows se c'e una nuova serie da vedere
-WhatNewShows se c'e una nuova serie t. v.
-WhatNewShows se c'e una nuova serie t. v. da vedere
+WhatNewShows se c'è una nuova serie
+WhatNewShows se c'è una nuova serie da vedere
+WhatNewShows se c'è una nuova serie t. v.
+WhatNewShows se c'è una nuova serie t. v. da vedere
 WhatNewShows se ci sono delle nuove serie
 WhatNewShows se ci sono delle nuove serie da vedere
 WhatNewShows se ci sono delle nuove serie t. v.
