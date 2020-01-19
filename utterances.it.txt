@@ -4,7 +4,7 @@
 # http://www.makermusings.com/2015/07/21/defining-utterances-for-the-alexa-skills-kit/
 
 # Tool to expand the single line into the usable list of utterances
-# http://www.makermusings.com/amazon-echo-utterance-expander/
+# http://www.makermusings.com/amazon-echo-uttera+++nce-expander/
 
 # Utterances that include a reference to a Slot are more specific than
 # others because, in testing, Alexa appears to not fuzzy match these
@@ -112,14 +112,14 @@ ListenToGenre (ascolta/metti (/su)/mischia/mescola) (musica/pezzi/brani) {MusicG
 ListenToArtist (ascolta/metti (/su)/mischia/mescola) (musica/pezzi/brani) (/{MusicGenre}) (di/dei/degli/delle) {Artist}
 
 ListenToLatestAlbum (ascolta/metti (/su)) l'ultimo album (di/dei/degli/delle) {Artist}
-ListenToLatestAlbum (ascolta/metti (/su)) l'album più (nuovo/recente) (di/dei/degli/delle) {Artist}
+ListenToLatestAlbum (ascolta/metti (/su)) l'album piu (nuovo/recente) (di/dei/degli/delle) {Artist}
 
 ListenToAlbum (ascolta/metti (/su)) (/l')album {Album}
 ListenToAlbum (ascolta/metti (/su)) (/l')album {Album} (di/dei/degli/delle) {Artist}
 
 ListenToSong (ascolta/metti (/su)) ((/la) canzone/(/il) brano/(/il) pezzo) {Song}
 ListenToSong (ascolta/metti (/su)) ((/la) canzone/(/il) brano/(/il) pezzo) {Song} (di/dei/degli/delle) {Artist}
-ListenToSong (ascolta/metti (/su)) ((/la) canzone/(/il) brano/(/il) pezzo) {Song} (dall'/nell')album {Album}
+ListenToSong (ascolta/metti (/su)) ((/la) canzone/(/il) brano/(/il) pezzo) {Song} (dall'/nell') album {Album}
 
 ListenToAlbumOrSong (ascolta/metti (/su)) {Song} (di/dei/degli/delle) {Artist}
 
@@ -127,104 +127,91 @@ ListenToAudioPlaylist (ascolta/metti (/su)) (/la) playlist (/musicale/audio/di c
 
 ListenToAudioPlaylistRecent (ascolta/metti (/su)/mischia/mescola) ((/le) canzoni/(/gli) album) ((/piu) recenti/aggiunt(e/i) di recente)
 ListenToAudioPlaylistRecent (ascolta/metti (/su)/mischia/mescola) ((/la) musica/(/l')audio) ((/piu) recente/aggiunt(o/a) di recente)
-ListenToAudioPlaylistRecent (ascolta/metti (/su)/mischia/mescola) (latest/newest) (songs/music/audio/albums)
+ListenToAudioPlaylistRecent (ascolta/metti (/su)/mischia/mescola) gli ultimi (pezzi/album) (/aggiunti)
+ListenToAudioPlaylistRecent (ascolta/metti (/su)/mischia/mescola) l'ultima musica (/aggiunta)
+ListenToAudioPlaylistRecent (ascolta/metti (/su)/mischia/mescola) le ultime canzoni (/aggiunte)
+ListenToAudioPlaylistRecent (ascolta/metti (/su)/mischia/mescola) (i pezzi/gli album) piu (nuovi/recenti)
+ListenToAudioPlaylistRecent (ascolta/metti (/su)/mischia/mescola) la musica piu (nuova/recente)
+ListenToAudioPlaylistRecent (ascolta/metti (/su)/mischia/mescola) le canzoni piu (nuove/recenti)
 
-WatchVideo (guarda/vedi) {Movie}
+WatchVideo (guarda/vedi/metti (/su)) {Movie}
 
-WatchMovie (play/watch) (/the) (movie/film) {Movie}
+WatchVideo (guarda/vedi/metti (/su)) (/(/il) film) {Movie}
 
-WatchRandomMovie (play/watch) (/a) random (/{MovieGenre}) (movie/film)
+WatchRandomMovie (guarda/vedi/metti (/su)) (/un) film (/{MovieGenre}) (a caso/casuale)
 
-WatchMovieTrailer (play/watch) (/the) (trailer/preview) (/for {Movie})
+WatchMovieTrailer (guarda/vedi/metti (/su)) (/il) trailer (/(di/per) {Movie})
 
-WatchEpisode (play/watch) (season/series) {Season} episode {Episode} of {Show}
-WatchEpisode (play/watch) episode {Episode} (season/series) {Season} of {Show}
-WatchEpisode (play/watch) {Show} (season/series) {Season} episode {Episode}
-WatchEpisode (play/watch) {Show} episode {Episode} (season/series) {Season}
+WatchEpisode (guarda/vedi/metti (/su)) ((/la) (stagione/serie)) {Season} episodio {Episode} di {Show}
+WatchEpisode (guarda/vedi/metti (/su)) (/l') episodio {Episode} ((/della) stagione/serie) {Season} di {Show}
+WatchEpisode (guarda/vedi/metti (/su)) {Show} (stagione/serie) {Season} episodio {Episode}
+WatchEpisode (guarda/vedi/metti (/su)) {Show} episodio {Episode} (stagione/serie) {Season}
+WatchEpisode (guarda/vedi/metti (/su)) {Show} {Season} per {Episode}
 
-WatchRandomEpisode (play/watch) (a random/an) episode of {Show}
-WatchRandomEpisode (play/watch) (a random/a/an) {Show} episode
+WatchRandomEpisode (guarda/vedi/metti (/su)) (/un) episodio (/a caso/casuale) di {Show}
 
-WatchRandomShow (play/watch) (/a) random (/{ShowGenre}) (/t. v.) show
+WatchRandomShow (guarda/vedi/metti (/su)) (/una) serie (/t. v.) (/{ShowGenre}) (a caso/casuale)
 
-WatchNextEpisode (play/watch) (/the) next episode of {Show}
+WatchNextEpisode (guarda/vedi/metti (/su)) ((/il) prossimo episodio/(/l') episodio successivo) di {Show}
 
-WatchLastShow continue (/watching/playing) (/last/the last) show
+WatchLastShow continua (/a vedere/a guardare) (/(/l')ultima) serie (/t. v.)
 
-WatchLatestEpisode (play/watch) (/the) (newest/latest) episode of {Show}
+WatchLatestEpisode (guarda/vedi/metti (/su)) (/l') ultimo episodio di {Show}
+WatchLatestEpisode (guarda/vedi/metti (/su)) (/l') episodio (piu nuovo/piu recente) di {Show}
 
-WatchMusicVideo (play/watch) (/the) music video {MusicVideo} (/by {Artist})
+WatchMusicVideo (guarda/vedi/metti (/su)) (/il) video musicale {MusicVideo} (/(di/dei/degli/delle) {Artist})
 
-WatchRandomMusicVideo (play/watch) (/a) random (/{MusicVideoGenre}) music video (/by {Artist})
+WatchRandomMusicVideo (guarda/vedi/metti (/su)) (/un) video musicale (/{MusicVideoGenre}) (a caso/casuale) (/(di/dei/degli/delle) {Artist})
 
-WatchVideoPlaylist (play/watch) (/the) (movie/show/video) playlist {VideoPlaylist}
-WatchVideoPlaylist (play/watch) {VideoPlaylist} (movie/show/video) playlist
-WatchVideoPlaylist watch (/the) playlist {VideoPlaylist}
-WatchVideoPlaylist watch {VideoPlaylist} playlist
+WatchVideoPlaylist (guarda/vedi/metti (/su)) (/la) playlist (/di film/di serie (/t. v.)/video) {VideoPlaylist}
 
-ShuffleShow shuffle (/all) episodes of {Show}
+ShuffleShow (mescola/mischia) (/tutti gli) episodi di {Show}
 
-ShuffleMusicVideos (play/watch/shuffle) (/all) (/{MusicVideoGenre}) music videos (/by {Artist})
+ShuffleMusicVideos (guarda/vedi/metti (/su)/mescola/mischia) (/tutti i) video musicali (/{MusicVideoGenre}) (/(di/dei/degli/delle) {Artist})
 
-ShuffleLatestAlbum shuffle (/the) (latest/newest) album by {Artist}
+ShuffleLatestAlbum (mescola/mischia) (/l') ultimo album (di/dei/degli/delle) {Artist}
+ShuffleLatestAlbum (mescola/mischia) (/l') album piu recente (di/dei/degli/delle) {Artist}
 
-ShuffleAlbum shuffle (album/the album) {Album}
-ShuffleAlbum shuffle (/album/the album) {Album} by {Artist}
+ShuffleAlbum (mescola/mischia) (album/the album) {Album}
+ShuffleAlbum (mescola/mischia) (/(/l') album) {Album} (di/dei/degli/delle) {Artist}
 
-ShuffleAudioPlaylist shuffle (/the) (song/music/audio) playlist {AudioPlaylist}
-ShuffleAudioPlaylist shuffle {AudioPlaylist} (song/music/audio) playlist
+ShuffleAudioPlaylist (mescola/mischia) (/la) playlist (audio/musicale/di canzoni) {AudioPlaylist}
 
-ShuffleVideoPlaylist shuffle (/the) (movie/show/video) playlist {VideoPlaylist}
-ShuffleVideoPlaylist shuffle {VideoPlaylist} (movie/show/video) playlist
+ShuffleVideoPlaylist (mescola/mischia) (/la) playlist (di film/di serie(/t. v.)/video) playlist {VideoPlaylist}
 
-ShufflePlaylist shuffle (/the) playlist {AudioPlaylist}
-ShufflePlaylist shuffle {AudioPlaylist} playlist
-ShufflePlaylist shuffle (/the) playlist {VideoPlaylist}
-ShufflePlaylist shuffle {VideoPlaylist} playlist
+ShufflePlaylist (mescola/mischia) (/la) playlist {AudioPlaylist}
+ShufflePlaylist (mescola/mischia) (/la) playlist {VideoPlaylist}
 
-RecommendVideo (suggest/recommend) something to watch
-RecommendAudio (suggest/recommend) something to listen to
-RecommendMovie (suggest/recommend) (/a) (/{MovieGenre}) (movie/film) (/to watch)
-RecommendMovie (suggest/recommend) (/some) (/{MovieGenre}) (movies/films) (/to watch)
-RecommendShow (suggest/recommend) (/a) (/{ShowGenre}) (/t. v.) show (/to watch)
-RecommendShow (suggest/recommend) (/some) (/{ShowGenre}) (/t. v.) shows (/to watch)
-RecommendEpisode (suggest/recommend) (/a t. v./t. v./an) episode (/to watch)
-RecommendEpisode (suggest/recommend) (/a) {ShowGenre} (/t. v.) episode (/to watch)
-RecommendEpisode (suggest/recommend) (/some) (/{ShowGenre}) (/t. v.) episodes (/to watch)
-RecommendMusicVideo (suggest/recommend) (/a) (/{MusicVideoGenre}) music video (/to watch/to listen to)
-RecommendMusicVideo (suggest/recommend) (/some) (/{MusicVideoGenre}) music videos (/to watch/to listen to)
-RecommendArtist (suggest/recommend) ((/a) music artist/(/an) artist/(/a) musician/(/a) band) (/to listen to)
-RecommendArtist (suggest/recommend) (/a) {MusicGenre} (music artist/artist/musician/band) (/to listen to)
-RecommendArtist (suggest/recommend) (/some) (/{MusicGenre}) (music artists/artists/musicians/bands) (/to listen to)
-RecommendAlbum (suggest/recommend) (/an) album (/to listen to)
-RecommendAlbum (suggest/recommend) (/a) {MusicGenre} album (/to listen to)
-RecommendAlbum (suggest/recommend) (/some) (/{MusicGenre}) albums (/to listen to)
-RecommendSong (suggest/recommend) (/a) (/{MusicGenre}) song (/to listen to)
-RecommendSong (suggest/recommend) (/some) (/{MusicGenre}) (songs/music) (/to listen to)
+RecommendVideo (suggeriscimi/raccomandami) qualcosa da vedere
+RecommendAudio (suggeriscimi/raccomandami) qualcosa da ascoltare
+RecommendMovie (suggeriscimi/raccomandami) (/un/qualche) film (/{MovieGenre}) (/da vedere)
+RecommendShow (suggeriscimi/raccomandami) (/una/qualche) serie (/t. v.) (/{ShowGenre}) (/da vedere)
+RecommendEpisode (suggeriscimi/raccomandami) (/un/qualche) episodio (/di (/una) serie (/t. v.)) (/{ShowGenre}) (/da vedere)
+RecommendMusicVideo (suggeriscimi/raccomandami) (/un/qualche) video musicale (/{MusicVideoGenre}) (/da vedere/da ascoltare)
+RecommendMusicVideo (suggeriscimi/raccomandami) video musicali (/{MusicVideoGenre}) (/da vedere/da ascoltare)
+RecommendArtist (suggeriscimi/raccomandami) ((/un/qualche) (artista (/musicale)/musicista/cantante/gruppo/band)) (/{MusicGenre}) (/da ascoltare)
+RecommendArtist (suggeriscimi/raccomandami) (artisti (/musicali)/musicisti/cantanti/gruppi) (/{MusicGenre}) (/da ascoltare)
+RecommendAlbum (suggeriscimi/raccomandami) (/un/qualche) album (/{MusicGenre}) (/da ascoltare)
+RecommendSong (suggeriscimi/raccomandami) (/un/qualche) (pezzo/brano) (/{MusicGenre}) (/da ascoltare)
+RecommendSong (suggeriscimi/raccomandami) (pezzi/brani/canzoni) (/{MusicGenre}) (/da ascoltare)
+RecommendSong (suggeriscimi/raccomandami) (/una/qualche) canzone (/{MusicGenre}) (/da ascoltare)
 
-WhatNewAlbums (if there are/are there/do i have) new albums (/to listen to)
-WhatNewAlbums (if there is/is there/do i have) a new album (/to listen to)
-WhatNewAlbums what new albums (do i have/are there) (/to listen to)
+WhatNewAlbums ((/se) (ci sono/ho/abbiamo) (/dei)) nuovi album (/da ascoltare)
+WhatNewAlbums ((/se) (c'e/ho/abbiamo)) un nuovo album (/da ascoltare)
+WhatNewAlbums che nuovi album (ho/ci sono/abbiamo) (/da ascoltare)
 
-WhatNewMovies (if there are/are there/do i have) new (movies/films) (/to watch)
-WhatNewMovies (if there is/is there/do i have) a new (movie/film) (/to watch)
-WhatNewMovies what new (movies/films) (do i have/are there) (/to watch)
-WhatNewMovies (if there are/are there/do (we/i) have) (/any/some) new {MovieGenre} (movies/films) (/to watch)
-WhatNewMovies (if there is/is there/do (we/i) have) a new {MovieGenre} (movie/film) (/to watch)
-WhatNewMovies what (/new) {MovieGenre} (movies/films) ((/do) (we/i/you) have/are there)
+WhatNewMovies ((/se) (ci sono/ho/abbiamo) (/dei)) nuovi film (/{MovieGenre}) (/da vedere)
+WhatNewMovies ((/se) (c'e/ho/abbiamo)) un nuovo film (/{MovieGenre}) (/da vedere)
+WhatNewMovies che nuovi film (/{MovieGenre}) (ci sono/ho/abbiamo) (/da vedere)
 
-WhatNewShows (if there are/are there/do i have) new shows (/to watch)
-WhatNewShows (if there is/is there/do i have) a new show (/to watch)
-WhatNewShows what new shows (do i have/are there) (/to watch)
+WhatNewShows ((/se) (ci sono/ho/abbiamo) (/delle)) nuove serie (/t. v.) (/da vedere)
+WhatNewShows ((/se) (c'e/ho/abbiamo)) una nuova serie (/t. v.) (/da vedere)
+WhatNewShows che nuove serie (/t. v.) (ci sono/ho/abbiamo) (/da vedere)
 
-WhatNewEpisodes if (there is/we have) (a new/an) episode of {Show}
-WhatNewEpisodes if (there are/we have) any (/new) episodes of {Show}
+WhatNewEpisodes ((/se) (c'e/ho/abbiamo)) (un/qualche) episodio (/nuovo) di {Show}
 
-PartyMode listen to random music
-PartyMode listen to all music
-PartyMode play random music
-PartyMode play all music
-PartyMode shuffle all music
+PartyMode (ascolta/suona/metti(/su)) musica (a caso/casuale)
+PartyMode (mescola/mischia/ascolta/suona/metti (/su)) tutta la musica
 
 CurrentPlayItemInquiry (what/who) is (this/playing/currently playing)
 
