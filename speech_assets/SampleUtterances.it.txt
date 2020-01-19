@@ -142,16 +142,10 @@ CurrentPlayItemTimeRemaining quanto tempo rimane per la fine di questo
 Down giu
 Down in basso
 Down in giu
-Down in in basso
-Down in in giu
-Down in in sotto
 Down in sotto
 Down naviga giu
 Down naviga in basso
 Down naviga in giu
-Down naviga in in basso
-Down naviga in in giu
-Down naviga in in sotto
 Down naviga in sotto
 Down naviga sotto
 Down naviga verso giu
@@ -161,9 +155,6 @@ Down sotto
 Down spostati giu
 Down spostati in basso
 Down spostati in giu
-Down spostati in in basso
-Down spostati in in giu
-Down spostati in in sotto
 Down spostati in sotto
 Down spostati sotto
 Down spostati verso giu
@@ -172,9 +163,6 @@ Down spostati verso sotto
 Down vai giu
 Down vai in basso
 Down vai in giu
-Down vai in in basso
-Down vai in in giu
-Down vai in in sotto
 Down vai in sotto
 Down vai sotto
 Down vai verso giu
