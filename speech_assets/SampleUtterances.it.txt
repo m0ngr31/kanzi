@@ -1,11 +1,3 @@
-# A list of utterance variations written in a shorthand syntax
-# Syntax and information
-# Tool to expand the single line into the usable list of utterances
-# Utterances that include a reference to a Slot are more specific than
-# as well as those that have no slot references.
-# http://www.makermusings.com/amazon-echo-uttera+++nce-expander/
-# http://www.makermusings.com/two thousand fifteen/seven/twenty one/defining-utterances-for-the-alexa-skills-kit/
-# others because, in testing, Alexa appears to not fuzzy match these
 AMAZON.HelpIntent cosa posso chiederti
 AMAZON.HelpIntent cosa puoi fare
 AMAZON.HelpIntent cose da provare
