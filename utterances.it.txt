@@ -12,9 +12,9 @@
 
 Home (/naviga/vai/spostati) (/a/verso (/la)/alla) home
 Back (/naviga/vai/spostati) (/verso/all') indietro
-Up (/naviga/vai/spostati) (/in) (su/sopra/alto)
+Up (/naviga/vai/spostati) ((/in) su/(/in) sopra/in alto)
 Up (/naviga/vai/spostati) verso (su/sopra/l'alto)
-Down (/naviga/vai/spostati) (/in) (giu/sotto/basso)
+Down (/naviga/vai/spostati) (/in) ((/in) giu/(/in) sotto/in basso)
 Down (/naviga/vai/spostati) verso (giu/sotto/il basso)
 Right (/naviga/vai/spostati) (/a/verso/alla) destra
 Left (/naviga/vai/spostati) (/a/verso/alla) sinistra
@@ -29,7 +29,7 @@ Info (/apri/mostra/visualizza) (/la finestra/il menu) (info/informazioni)
 
 ViewMovies (apri (/i)/vai (a/ai)/mostra (/i)/visualizza (/i)) film
 ViewMovies (mostra/visualizza/trova/cerca) (/i) film {MovieGenre}
-ViewShows (apri/vai (a/alle)/mostra/visualizza) (/le) serie (/t. v.)
+ViewShows (apri (/le)/vai (a/alle)/mostra (/le)/visualizza (/le)) serie (/t. v.)
 ViewShows (mostra/visualizza/trova/cerca) (/le) serie (/t. v.) {ShowGenre}
 ViewMusic (apri (/la)/vai (a/alla)/mostra (/la)/visualizza (/la)) musica
 ViewMusic (mostra/visualizza/trova/cerca) (/la) musica {MusicGenre}
@@ -39,9 +39,9 @@ ViewAlbums (apri (/gli)/vai a(/gli)/mostra (/gli)/visualizza (/gli)) album (/mus
 ViewMusicVideos (apri (/i)/vai (a/ai)/mostra (/i)/visualizza (/i)) video musicali
 ViewMusicVideos (mostra/visualizza/trova/cerca) (/i) video musicali {MusicVideoGenre}
 ViewAudioPlaylist (apri (/la)/vai (a/alla)/mostra (/la)/visualizza (/la)) playlist (audio/musicale/di canzoni) {AudioPlaylist}
-ViewAudioPlaylistRecent (apri (/gli)/vai a(/gli))/mostra (/gli)/visualizza (/gli)) album (recenti/aggiunti di recente)
+ViewAudioPlaylistRecent (apri (/gli)/vai a(/gli)/mostra (/gli)/visualizza (/gli)) album (recenti/aggiunti di recente)
 ViewAudioPlaylistRecent (apri (/i)/vai (a/ai)/mostra (/i)/visualizza (/i)) brani (recenti/aggiunti di recente)
-ViewAudioPlaylistRecent (apri (/la)/vai (a/alla)/mostra (/la)/visualizza (/la) musica (recente/aggiunta di recente)
+ViewAudioPlaylistRecent (apri (/la)/vai (a/alla)/mostra (/la)/visualizza (/la)) musica (recente/aggiunta di recente)
 ViewAudioPlaylistRecent (apri (/l')/vai (a/all')/mostra (/l')/visualizza (/l')) audio (recente/aggiunto di recente)
 ViewAudioPlaylistRecent (apri (/gli)/vai (a/agli)/mostra (/gli)/visualizza (/gli)) ultimi (album/brani/audio) (/aggiunti)
 ViewAudioPlaylistRecent (apri (/l')/vai (a/all')/mostra (/l')/visualizza (/l')) ultima musica (/aggiunta)
@@ -50,7 +50,7 @@ ViewMoviePlaylistRecent (apri (/i)/vai (a/ai)/mostra (/i)/visualizza (/i)) (film
 ViewMoviePlaylistRecent (apri (/gli)/vai a(/gli)/mostra (/gli)/visualizza (/gli)) ultimi (film/video) (/aggiunti)
 ViewEpisodePlaylistRecent (apri (/gli)/vai (a(/gli))/mostra (/gli)/visualizza (/gli)) ultimi episodi (/aggiunti)
 ViewEpisodePlaylistRecent (apri (/le)/vai (a/alle)/mostra (/le)/visualizza (/le)) ultime serie (/t. v.) (/aggiunte)
-ViewEpisodePlaylistRecent (apri (/gli)/vai (a(/gli)/mostra (/gli)/visualizza (/gli)) episodi (recenti/aggiunti di recente)
+ViewEpisodePlaylistRecent (apri (/gli)/vai (a(/gli))/mostra (/gli)/visualizza (/gli)) episodi (recenti/aggiunti di recente)
 ViewEpisodePlaylistRecent (apri (/le)/vai (a/alle)/mostra (/le)/visualizza (/le)) serie (/t. v.) (recenti/aggiunte di recente)
 ViewMusicVideoPlaylistRecent (apri (/i)/vai (a/ai)/mostra (/i)/visualizza (/i)) video musicali (/piu) recenti
 ViewMusicVideoPlaylistRecent (apri (/glii)/vai a(/gli)/mostra (/gli)/visualizza (/gli)) ultimi video musicali (/aggiunti)
@@ -58,7 +58,7 @@ ViewPlaylist (apri (/la)/vai (a/alla)/mostra (/la)/visualizza (/la)) playlist {A
 ViewPlaylist (apri (/la)/vai (a/alla)/mostra (/la)/visualizza (/la)) playlist {VideoPlaylist}
 
 Fullscreen (/cambia) (pieno schermo/schermo pieno/visualizzazione)
-StereoscopicMode (/cambia) modalità (stereoscopica/tre d.)
+StereoscopicMode (/cambia) modalita (stereoscopica/tre d.)
 
 AudioPassthrough cambia audio (passthrough/digitale)
 Mute (/imposta/setta) (muto/sonoro)
