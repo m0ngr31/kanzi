@@ -313,6 +313,24 @@ Hibernate system ruhezustand
 Hibernate system tiefschlaf
 Hibernate tiefschlaf
 Home startseite
+Info info
+Info info dialog
+Info info fenster
+Info information
+Info informations dialog
+Info informations fenster
+Info öffne info
+Info öffne info dialog
+Info öffne info fenster
+Info öffne information
+Info öffne informations dialog
+Info öffne informations fenster
+Info zeige info
+Info zeige info dialog
+Info zeige info fenster
+Info zeige information
+Info zeige informations dialog
+Info zeige informations fenster
 Left links
 Left nach links
 Left navigier links
