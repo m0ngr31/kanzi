@@ -787,6 +787,15 @@
           "type": "SHOWS"
         }
       ]
+    },
+    {
+      "intent": "InsertText",
+      "slots": [
+        {
+          "name": "someText",
+          "type": "AMAZON.SearchQuery"
+        }
+      ]
     }
   ]
 }

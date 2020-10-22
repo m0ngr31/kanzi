@@ -244,6 +244,8 @@ Info visualizza info
 Info visualizza informazioni
 Info visualizza la finestra info
 Info visualizza la finestra informazioni
+InsertText scrivi {someText}
+InsertText inserisci {someText}
 Left a sinistra
 Left alla sinistra
 Left naviga a sinistra

@@ -62,6 +62,7 @@ Most everything you can do with a remote or keyboard is supported in the skill, 
 - Shutdown/reboot/sleep/hibernate system
 - Toggle fullscreen
 - Eject media
+- Send text
 
 Instead of providing the exact verbiage here for each command, we strive to make the experience as natural as we can.  Simply try asking for what you want in a way that feels _right_ to you.  If a particular phrase doesn't work and you think it should, see [Getting Help](#getting-help) to notify us and we will see what we can do to accommodate the phrase you prefer.
 

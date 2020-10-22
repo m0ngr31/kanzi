@@ -313,6 +313,8 @@ Hibernate system ruhezustand
 Hibernate system tiefschlaf
 Hibernate tiefschlaf
 Home startseite
+InsertText schreibst {someText}
+InsertText eingeben {someText}
 Left links
 Left nach links
 Left navigier links

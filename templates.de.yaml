@@ -413,6 +413,8 @@ remaining_min: "Es ist noch eine Minute übrig"
 
 remaining_time: ", und die Wiedergabe wird um {{ end_time }} enden"
 
+sending_text: "Senden {{ textToBeSent }}"
+
 
 ############################
 ##   General Templates    ##

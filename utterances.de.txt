@@ -263,3 +263,5 @@ AddonGlobalSearch (suche/suche nach/finde) {Artist}
 
 AMAZON.HelpIntent (/nach) was ich es fragen kann
 AMAZON.HelpIntent was es (/alles) kann
+
+InsertText (schreibst/eingeben) {someText}

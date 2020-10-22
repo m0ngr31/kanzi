@@ -413,6 +413,8 @@ remaining_min: "Manca un minuto"
 
 remaining_time: ", e terminerà alle {{ end_time }}"
 
+sending_text: "Sto inviando {{ textToBeSent }}"
+
 
 ############################
 ##   General Templates    ##
