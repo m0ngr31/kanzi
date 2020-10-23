@@ -61,7 +61,7 @@ Fullscreen (/cambia) (pieno schermo/schermo pieno/visualizzazione)
 StereoscopicMode (/cambia) modalità (stereoscopica/tre d.)
 
 AudioPassthrough cambia audio (passthrough/digitale)
-Mute (/imposta/setta) (muto/sonoro)
+Mute (/imposta/setta/metti/inserisci) (muto/sonoro)
 VolumeUp (alza/aumenta) (/il) volume
 VolumeUp (alza/aumenta) (/la) voce
 VolumeUp volume su

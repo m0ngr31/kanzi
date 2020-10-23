@@ -914,6 +914,8 @@ Mute muto
 Mute setta muto
 Mute setta sonoro
 Mute sonoro
+Mute metti il muto
+Mute inserisci il muto
 PageDown a livello giù
 PageDown a livello inferiore
 PageDown a pagina giù
