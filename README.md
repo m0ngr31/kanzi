@@ -96,6 +96,7 @@ I would like to thank and name all the contributors who have donated their preci
  - [mcl22](https://github.com/mcl22)
  - [nemik](https://github.com/nemik)
  - [ruben0909](https://github.com/ruben0909)
+ - [YantCaccia](https://github.com/YantCaccia)
 
 ## Donate
 [![Buy Me A Coffee](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/lexigram)
