@@ -2,4 +2,4 @@ gunicorn
 pytz
 git+git://github.com/johnwheeler/flask-ask@master#egg=flask-ask
 git+git://github.com/m0ngr31/kodi-voice@master#egg=kodi-voice
-cryptography==2.1.4
+cryptography==3.2
