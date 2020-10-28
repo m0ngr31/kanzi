@@ -130,6 +130,8 @@ Info ver el dialogo de info
 Info ver el dialogo de informacion
 Info ver la ventana de info
 Info ver la ventana de informacion
+InsertText escribes {someText}
+InsertText insertar {someText}
 Left ir izquierda
 Left izquierda
 Left navegar izquierda

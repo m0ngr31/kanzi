@@ -131,6 +131,8 @@ Info show info window
 Info show information
 Info show information dialog
 Info show information window
+InsertText write {someText}
+InsertText insert {someText}
 Left go left
 Left left
 Left navigate left

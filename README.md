@@ -62,6 +62,7 @@ Most everything you can do with a remote or keyboard is supported in the skill, 
 - Shutdown/reboot/sleep/hibernate system
 - Toggle fullscreen
 - Eject media
+- Send text
 
 Instead of providing the exact verbiage here for each command, we strive to make the experience as natural as we can.  Simply try asking for what you want in a way that feels _right_ to you.  If a particular phrase doesn't work and you think it should, see [Getting Help](#getting-help) to notify us and we will see what we can do to accommodate the phrase you prefer.
 
@@ -95,6 +96,7 @@ I would like to thank and name all the contributors who have donated their preci
  - [mcl22](https://github.com/mcl22)
  - [nemik](https://github.com/nemik)
  - [ruben0909](https://github.com/ruben0909)
+ - [YantCaccia](https://github.com/YantCaccia)
 
 ## Donate
 [![Buy Me A Coffee](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/lexigram)

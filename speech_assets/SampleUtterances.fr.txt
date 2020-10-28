@@ -167,6 +167,8 @@ Info ouvre la fenêtre d' info
 Info ouvre la fenêtre d' informations
 Info ouvre le dialogue d' info
 Info ouvre le dialogue d' informations
+InsertText ecrivez {someText}
+InsertText entrez {someText}
 Left gauche
 Left va à gauche
 ListenToAlbum joue l'album {Album}

@@ -1,6 +1,8 @@
 AMAZON.HelpIntent cosa posso chiederti
 AMAZON.HelpIntent cosa puoi fare
 AMAZON.HelpIntent cose da provare
+AMAZON.StopIntent stop
+AMAZON.StopIntent interrompi
 AddonExecute apri add on {Addon}
 AddonExecute apri addon {Addon}
 AddonExecute apri il plug in {Addon}
@@ -244,6 +246,10 @@ Info visualizza info
 Info visualizza informazioni
 Info visualizza la finestra info
 Info visualizza la finestra informazioni
+InsertText scrivi {someText}
+InsertText inserisci {someText}
+InsertText di scrivere {someText}
+InsertText di inserire {someText}
 Left a sinistra
 Left alla sinistra
 Left naviga a sinistra
@@ -908,6 +914,8 @@ Mute muto
 Mute setta muto
 Mute setta sonoro
 Mute sonoro
+Mute metti il muto
+Mute inserisci il muto
 PageDown a livello giù
 PageDown a livello inferiore
 PageDown a pagina giù
@@ -3009,6 +3017,9 @@ VolumeDown abbassa volume
 VolumeDown diminuisci il volume
 VolumeDown diminuisci volume
 VolumeDown volume giù
+VolumeDown voce giù
+VolumeDown abbassa la voce
+VolumeDown diminuisci la voce
 VolumeSet il volume a {Volume}
 VolumeSet il volume {Volume}
 VolumeSet imposta il volume a {Volume}
@@ -3035,9 +3046,11 @@ VolumeSetPct volume a {Volume} per cento
 VolumeSetPct volume {Volume} per cento
 VolumeUp alza il volume
 VolumeUp alza volume
+VolumeUp alza la voce
 VolumeUp aumenta il volume
 VolumeUp aumenta volume
 VolumeUp volume su
+VolumeUp voce su
 WatchEpisode guarda episodio {Episode} della stagione {Season} di {Show}
 WatchEpisode guarda episodio {Episode} serie {Season} di {Show}
 WatchEpisode guarda episodio {Episode} stagione {Season} di {Show}
