@@ -11,67 +11,67 @@
 # as well as those that have no slot references.
 
 Home (/navegar/ir) a pantalla principal
-Back (/navegar/ir) atras
+Back (/navegar/ir) atrás
 Up (/navegar/ir) arriba
 Down (/navegar/ir) abajo
 Right (/navegar/ir) derecha
 Left (/navegar/ir) izquierda
-PageUp (/navegar/ir) a la pagina anterior
-PageDown (/navegar/ir) a la pagina siguiente
-PageDown ver mas
+PageUp (/navegar/ir) a la página anterior
+PageDown (/navegar/ir) a la página siguiente
+PageDown ver más
 Select seleccionar
-Menu (/abrir/context) menu
-Info (/abrir/ver) (/el dialogo/la ventana) de (info/informacion) 
+Menu (/abrir/context) menú
+Info (/abrir/ver) (/el diálogo/la ventana) de (info/información) 
 
-ViewMovies (abrir/ir a/ver) peliculas
-ViewMovies (ver/encontrar/buscar) peliculas de {MovieGenre} 
-ViewShows (abrir/ir a/ver)  series
+ViewMovies (abrir/ir a/ver) películas
+ViewMovies (ver/encontrar/buscar) películas de {MovieGenre} 
+ViewShows (abrir/ir a/ver) series
 ViewShows (ver/encontrar/buscar) series de {ShowGenre}
-ViewMusic (abrir/ir a/ver) musica
-ViewMusic (escuchar/encontrar/buscar) musica {MusicGenre} 
-ViewArtists (abrir/ir a/ver) (artistas/musicos)
-ViewAlbums (abrir/ir a/ver) albums (/de musica) 
+ViewMusic (abrir/ir a/ver) música
+ViewMusic (escuchar/encontrar/buscar) música {MusicGenre} 
+ViewArtists (abrir/ir a/ver) (artistas/músicos)
+ViewAlbums (abrir/ir a/ver) (álbums/álbumes) (/de música) 
 ViewMusicVideos (abrir/ir a/ver) videoclips
 ViewMusicVideos (ver/encontrar/buscar) videoclips de {MusicVideoGenre} 
-ViewAudioPlaylist (abrir/ir a/ver) (/la)  lista de (canciones/musica/audio/reproduccion) {AudioPlaylist}
+ViewAudioPlaylist (abrir/ir a/ver) (/la) lista de (canciones/música/audio/reproducción) {AudioPlaylist}
 ViewAudioPlaylist (abrir/ir a/ver) (/la) playlist {AudioPlaylist}
-ViewAudioPlaylist (abrir/ir a/ver) (/la) {AudioPlaylist} lista de (canciones/musica/audio/reproduccion/playlist)
-ViewAudioPlaylistRecent (abrir/ir a/ver) (albums/canciones) recientes
-ViewAudioPlaylistRecent (abrir/ir a/ver) (musica/audio) reciente
-ViewAudioPlaylistRecent (abrir/ir a/ver) musica nueva
-ViewAudioPlaylistRecent (abrir/ir a/ver) la ultima musica 
-ViewAudioPlaylistRecent (abrir/ir a/ver) musica nueva
+ViewAudioPlaylist (abrir/ir a/ver) (/la) {AudioPlaylist} lista de (canciones/música/audio/reproducción/playlist)
+ViewAudioPlaylistRecent (abrir/ir a/ver) (álbums/canciones) recientes
+ViewAudioPlaylistRecent (abrir/ir a/ver) (música/audio) reciente
+ViewAudioPlaylistRecent (abrir/ir a/ver) música nueva
+ViewAudioPlaylistRecent (abrir/ir a/ver) la última música 
+ViewAudioPlaylistRecent (abrir/ir a/ver) música nueva
 ViewAudioPlaylistRecent (abrir/ir a/ver) canciones nuevas
 ViewAudioPlaylistRecent (abrir/ir a/ver) nuevas canciones
-ViewAudioPlaylistRecent (abrir/ir a/ver) ultimas canciones
+ViewAudioPlaylistRecent (abrir/ir a/ver) últimas canciones
 ViewAudioPlaylistRecent (abrir/ir a/ver) audio nuevo
 ViewAudioPlaylistRecent (abrir/ir a/ver) nuevo audio
-ViewAudioPlaylistRecent (abrir/ir a/ver) nuevos albums
-ViewAudioPlaylistRecent (abrir/ir a/ver) ultimos albums
-ViewVideoPlaylist (abrir/ir a/ver) (/la) lista de (video/peliculas/videos) {VideoPlaylist}
+ViewAudioPlaylistRecent (abrir/ir a/ver) nuevos álbums
+ViewAudioPlaylistRecent (abrir/ir a/ver) últimos álbums
+ViewVideoPlaylist (abrir/ir a/ver) (/la) lista de (vídeo/video/películas/vídeos/videos) {VideoPlaylist}
 ViewVideoPlaylist (abrir/ir a/ver) (/la) playlist {VideoPlaylist}
-ViewMoviePlaylistRecent (abrir/ir a/ver) (/las) peliculas recientes
-ViewMoviePlaylistRecent (abrir/ir a/ver) (/los) videos recientes
-ViewMoviePlaylistRecent (abrir/ir a/ver) (/los) ultimos videos
-ViewMoviePlaylistRecent (abrir/ir a/ver) (/los) nuevos videos
-ViewMoviePlaylistRecent (abrir/ir a/ver) (/las) ultimas peliculas
-ViewMoviePlaylistRecent (abrir/ir a/ver) (/las) nuevas peliculas
+ViewMoviePlaylistRecent (abrir/ir a/ver) (/las) películas recientes
+ViewMoviePlaylistRecent (abrir/ir a/ver) (/los) (vídeos/videos) recientes
+ViewMoviePlaylistRecent (abrir/ir a/ver) (/los) últimos (vídeos/videos)
+ViewMoviePlaylistRecent (abrir/ir a/ver) (/los) nuevos (vídeos/videos)
+ViewMoviePlaylistRecent (abrir/ir a/ver) (/las) últimas películas
+ViewMoviePlaylistRecent (abrir/ir a/ver) (/las) nuevas películas
 ViewEpisodePlaylistRecent (abrir/ir a/ver) (series/episodios) recientes
-ViewEpisodePlaylistRecent (abrir/ir a/ver) (/las) ultimas series 
-ViewEpisodePlaylistRecent (abrir/ir a/ver) (/los) ultimos episodios
-ViewEpisodePlaylistRecent (abrir/ir a/ver) (/las) nuevas  series 
+ViewEpisodePlaylistRecent (abrir/ir a/ver) (/las) últimas series 
+ViewEpisodePlaylistRecent (abrir/ir a/ver) (/los) últimos episodios
+ViewEpisodePlaylistRecent (abrir/ir a/ver) (/las) nuevas series 
 ViewEpisodePlaylistRecent (abrir/ir a/ver) (/los) nuevos episodios
 ViewMusicVideoPlaylistRecent (abrir/ir a/ver) videoclips recientes
-ViewMusicVideoPlaylistRecent (abrir/ir a/ver) (/los) ultimos videoclips 
+ViewMusicVideoPlaylistRecent (abrir/ir a/ver) (/los) últimos videoclips 
 ViewMusicVideoPlaylistRecent (abrir/ir a/ver) (/los) nuevos videoclips 
-ViewPlaylist (abrir/ir a/ver) (/la) lista de reproduccion {AudioPlaylist}
-ViewPlaylist (abrir/ir a/ver) {AudioPlaylist} lista de reproduccion
-ViewPlaylist (abrir/ir a/ver) (/la) lista de reproduccion {VideoPlaylist}
-ViewPlaylist (abrir/ir a/ver) {VideoPlaylist} lista de reproduccion
+ViewPlaylist (abrir/ir a/ver) (/la) lista de reproducción {AudioPlaylist}
+ViewPlaylist (abrir/ir a/ver) {AudioPlaylist} lista de reproducción
+ViewPlaylist (abrir/ir a/ver) (/la) lista de reproducción {VideoPlaylist}
+ViewPlaylist (abrir/ir a/ver) {VideoPlaylist} lista de reproducción
 
 Fullscreen (ir a/pasar a/active/desactivar) (/la) pantalla completa
-Fullscreen (activar/desactivar) la visualizacion
-StereoscopicMode (activar/desactivar) (/modo) (estereoscopico/tres D) 
+Fullscreen (activar/desactivar) la visualización
+StereoscopicMode (activar/desactivar) (/modo) (estereoscópico/tres D) 
 
 AudioPassthrough (activar/desactivar) el audio (passthrough/digital) 
 AudioPassthrough (activar/desactivar) el passthrough
@@ -81,20 +81,20 @@ VolumeDown bajar el (volumen/sonido/audio)
 VolumeSet (/poner el) volumen (/al) {Volume}
 VolumeSetPct (/poner el) volumen (/al) {Volume} por ciento
 
-SubtitlesOn (activar/encender) subtitulos
-SubtitlesOff (desactivar/apagar) subtitulos
-SubtitlesNext (/cambiar) subtitulos 
-SubtitlesNext (/cambiar) subtitulo
-SubtitlesNext subtitulos siguientes
-SubtitlesNext subtitulo siguiente
-SubtitlesPrevious subtitulo anterior
-SubtitlesPrevious subtitulos anteriores
-SubtitlesDownload descargar subtitulos
+SubtitlesOn (activar/encender) subtítulos
+SubtitlesOff (desactivar/apagar) subtítulos
+SubtitlesNext (/cambiar) subtítulos
+SubtitlesNext (/cambiar) subtítulo
+SubtitlesNext subtítulos siguientes
+SubtitlesNext subtítulo siguiente
+SubtitlesPrevious subtítulo anterior
+SubtitlesPrevious subtítulos anteriores
+SubtitlesDownload descargar subtítulos
 
 AudioStreamNext (siguiente/cambiar) (/flujo de) (/audio)
 AudioStreamNext (siguiente/cambiar) idioma (/del audio)
 AudioStreamPrevious anterior (/flujo de) (/audio)
-AudioStreamPrevious flujo(/de audio) anterior
+AudioStreamPrevious flujo (/de audio) anterior
 AudioStreamPrevious idioma anterior
 AudioStreamPrevious anterior idioma
 
@@ -102,8 +102,8 @@ PlayerMoveUp mover (/hacia) arriba
 PlayerMoveDown mover (/hacia) abajo
 PlayerMoveLeft mover (/hacia la) izquierda
 PlayerMoveRight mover (/hacia la) derecha
-PlayerRotateClockwise rotar (/segun las agujas del reloj/noventa grados)
-PlayerRotateCounterClockwise rotar en sentido inverso a las agujas del reloj
+PlayerRotateClockwise rotar (/según las agujas del reloj/noventa grados)
+PlayerRotateCounterClockwise rotar en sentido (inverso/contrario) a las agujas del reloj
 PlayerZoomHold (mantener/bloquear) zoom
 PlayerZoomIn (acercar/agrandar/aumentar) zoom
 PlayerZoomInMoveUp (acercar/agrandar/aumentar) zoom y (subir/arriba)
@@ -118,53 +118,53 @@ PlayerZoomOutMoveRight (alejar/reducir) zoom y a la derecha
 PlayerZoomReset zoom normal
 PlayerZoomReset resetear zoom
 
-CleanVideo limpiar biblioteca (/de video)
+CleanVideo limpiar biblioteca (/de vídeo/de video)
 
-UpdateVideo actualizar biblioteca (/de video)
+UpdateVideo actualizar biblioteca (/de vídeo/de video)
 
-CleanAudio limpiar  biblioteca de (audio/musica)
+CleanAudio limpiar  biblioteca de (audio/música)
 
-UpdateAudio actualizar biblioteca de (audio/musica)
+UpdateAudio actualizar biblioteca de (audio/música)
 
 PlayMedia (ver/abrir/reproducir) {Movie}
 ShuffleMedia barajar {Show}
 
-WhatAlbums que albums tengo de {Artist}
+WhatAlbums que (álbums/álbumes) tengo de {Artist}
 
 ListenToAudio escuchar (/a) {Artist}
 
-ListenToGenre (reproducir/escuchar/barajar) (musica/canciones/genero) {MusicGenre}
+ListenToGenre (reproducir/escuchar/barajar) (música/canciones/género) {MusicGenre}
 
-ListenToArtist (reproducir/escuchar/barajar) (/musica) (/{MusicGenre})  (/de) {Artist}
+ListenToArtist (reproducir/escuchar/barajar) (/música) (/{MusicGenre}) (/de) {Artist}
 
-ListenToLatestAlbum (reproducir/escuchar) (/el) (ultimo/nuevo) album de {Artist}
+ListenToLatestAlbum (reproducir/escuchar) (/el) (último/nuevo) álbum de {Artist}
 
-ListenToAlbum (reproducir/escuchar) (/el) album {Album}
-ListenToAlbum (reproducir/escuchar) (/el) album {Album} de {Artist}
+ListenToAlbum (reproducir/escuchar) (/el) álbum {Album}
+ListenToAlbum (reproducir/escuchar) (/el) álbum {Album} de {Artist}
 
-ListenToSong (reproducir/escuchar) (/la) cancion {Song}
-ListenToSong (reproducir/escuchar) (/la) cancion {Song} de {Artist}
-ListenToSong (reproducir/escuchar) (/la) cancion {Song} (/del) album {Album}
+ListenToSong (reproducir/escuchar) (/la) canción {Song}
+ListenToSong (reproducir/escuchar) (/la) canción {Song} de {Artist}
+ListenToSong (reproducir/escuchar) (/la) canción {Song} (/del) álbum {Album}
 
 ListenToAlbumOrSong (reproducir/escuchar) {Song} de {Artist}
 
 ListenToAudioPlaylist (reproducir/escuchar) (/la) lista {AudioPlaylist}
-ListenToAudioPlaylist (reproducir/escuchar) (/la) lista de (musica/reproduccion) {AudioPlaylist}
+ListenToAudioPlaylist (reproducir/escuchar) (/la) lista de (música/reproducción) {AudioPlaylist}
 ListenToAudioPlaylist escuchar {AudioPlaylist}
 
-ListenToAudioPlaylistRecent (reproducir/escuchar/barajar) recent (musica/audio) reciente
-ListenToAudioPlaylistRecent (reproducir/escuchar/barajar) la ultima musica
-ListenToAudioPlaylistRecent (reproducir/escuchar/barajar) la musica nueva
-ListenToAudioPlaylistRecent (reproducir/escuchar/barajar) las (ultimas/nuevas) canciones
+ListenToAudioPlaylistRecent (reproducir/escuchar/barajar) recent (música/audio) reciente
+ListenToAudioPlaylistRecent (reproducir/escuchar/barajar) la última música
+ListenToAudioPlaylistRecent (reproducir/escuchar/barajar) la música nueva
+ListenToAudioPlaylistRecent (reproducir/escuchar/barajar) las (últimas/nuevas) canciones
 
-WatchVideo ver (/el video) {Movie}
+WatchVideo ver (/el vídeo/el video) {Movie}
 
-WatchMovie (reproducir/ver) (/la) (peli/pelicula) {Movie}
+WatchMovie (reproducir/ver) (/la) (peli/película) {Movie}
 
-WatchRandomMovie (reproducir/ver) (/una)  (peli/pelicula) aleatoria (/de {MovieGenre})
-WatchRandomMovie (reproducir/ver) (/una)  (peli/pelicula) (/de {MovieGenre}) aleatoria
+WatchRandomMovie (reproducir/ver) (/una) (peli/película) aleatoria (/de {MovieGenre})
+WatchRandomMovie (reproducir/ver) (/una) (peli/película) (/de {MovieGenre}) aleatoria
 
-WatchMovieTrailer (reproducir/ver) (/el) (trailer) (/de {Movie})
+WatchMovieTrailer (reproducir/ver) (/el) (tráiler) (/de {Movie})
 
 WatchEpisode (reproducir/ver) (/la) temporada {Season} episodio {Episode} de (/la serie) {Show}
 WatchEpisode (reproducir/ver) episodio {Episode} (/de la) temporada {Season} de (/la serie) {Show}
@@ -175,85 +175,87 @@ WatchRandomEpisode (reproducir/ver) un episodio (/aleatorio) de {Show}
 
 WatchRandomShow (reproducir/ver) una serie (/de {ShowGenre})
 
-WatchNextEpisode (reproducir/ver) (/el) (proximo/siguiente) episodio de {Show}
+WatchNextEpisode (reproducir/ver) (/el) (próximo/siguiente) episodio de {Show}
 
-WatchLastShow continuar (/viendo/reproduciendo) (/la) (/ultima) serie
+WatchLastShow continuar (/viendo/reproduciendo) (/la) (/última) serie
 
-WatchLatestEpisode (reproducir/ver) (/el) (nuevo/ultimo) episodio de {Show}
+WatchLatestEpisode (reproducir/ver) (/el) (nuevo/último) episodio de {Show}
 
 WatchMusicVideo (reproducir/ver) (/el) videoclip {MusicVideo} (/de {Artist}/del {Artist})
 
 WatchRandomMusicVideo (reproducir/ver) (/un) videoclip de (/{MusicVideoGenre}) aleatorio (/de {Artist}/del {Artist})
 
-WatchVideoPlaylist (reproducir/ver) (/la) lista de (reproduccion/series/videos/peliculas) {VideoPlaylist}
+WatchVideoPlaylist (reproducir/ver) (/la) lista de (reproducción/series/vídeos/videos/películas) {VideoPlaylist}
 
 ShuffleShow barajar (/todos) (/los) episodios de {Show}
 
 ShuffleMusicVideos (reproducir/ver/barajar) (/todos) (/los) videoclips (/de {MusicVideoGenre}) (/de {Artist})
 
-ShuffleLatestAlbum barajar (/el) (ultimo/nuevo) album de {Artist}
+ShuffleLatestAlbum barajar (/el) (último/nuevo) álbum de {Artist}
 
-ShuffleAlbum barajar (album/el album) {Album}
-ShuffleAlbum barajar (/album/el album) {Album} de {Artist}
+ShuffleAlbum barajar (álbum/el álbum) {Album}
+ShuffleAlbum barajar (/álbum/el álbum) {Album} de {Artist}
 
-ShuffleAudioPlaylist barajar (/las canciones de/la musica de/el audio de) (/la) lista de reproduccion {AudioPlaylist}
+ShuffleAudioPlaylist barajar (/las canciones de/la música de/el audio de) (/la) lista de reproducción {AudioPlaylist}
 
-ShuffleVideoPlaylist barajar (/la) lista de (reproduccion/series/videos/peliculas) {VideoPlaylist}
+ShuffleVideoPlaylist barajar (/la) lista de (reproducción/series/vídeos/videos/películas) {VideoPlaylist}
 
-ShufflePlaylist barajar (/la) lista (/de reproduccion) {AudioPlaylist}
-ShufflePlaylist barajar {AudioPlaylist} lista de reproduccion
-ShufflePlaylist barajar (/la) lista (/de reproduccion) {VideoPlaylist}
-ShufflePlaylist barajar {VideoPlaylist} lista de reproduccion
+ShufflePlaylist barajar (/la) lista (/de reproducción) {AudioPlaylist}
+ShufflePlaylist barajar {AudioPlaylist} lista de reproducción
+ShufflePlaylist barajar (/la) lista (/de reproducción) {VideoPlaylist}
+ShufflePlaylist barajar {VideoPlaylist} lista de reproducción
 
 RecommendVideo (sugerir/recomendar) algo para ver
 RecommendAudio (sugerir/recomendar) algo que escuchar
-RecommendMovie (sugerir/recomendar) (/una) (peli/pelicula) (/de {MovieGenre}) (/para ver/que ver)
-RecommendMovie (sugerir/recomendar) (/alguna) (peliculas/films) (/de {MovieGenre}) (/para ver/que ver)
+RecommendMovie (sugerir/recomendar) (/una) (peli/película) (/de {MovieGenre}) (/para ver/que ver)
+RecommendMovie (sugerir/recomendar) (/alguna) (películas/films) (/de {MovieGenre}) (/para ver/que ver)
 RecommendShow (sugerir/recomendar) (/una) serie (/de {ShowGenre}) (/para ver/que ver)
 RecommendShow (sugerir/recomendar) (/alguna) serie (/de {ShowGenre}) (/para ver/que ver)
 RecommendEpisode (sugerir/recomendar) (/un) episodio (/para ver/que ver)
 RecommendEpisode (sugerir/recomendar) (/un) episodio (/de {ShowGenre}) (/para ver/que ver)
-RecommendEpisode (sugerir/recomendar) (/algun) episodio (/de {ShowGenre}) (/para ver/que ver)
+RecommendEpisode (sugerir/recomendar) (/algún) episodio (/de {ShowGenre}) (/para ver/que ver)
 RecommendMusicVideo (sugerir/recomendar) (/un) videoclip (/de {MusicVideoGenre}) (/para ver/para escuchar)
-RecommendMusicVideo (sugerir/recomendar) (/algun) videoclip (/de {MusicVideoGenre}) (/para ver/para escuchar)
-RecommendArtist (sugerir/recomendar) ((/un) artista/(/un) musico/(/un) grupo) (/que escuchar/para escuchar)
-RecommendArtist (sugerir/recomendar) ((/un) artista/(/un) musico/(/un) grupo) de {MusicGenre} (/que escuchar/para escuchar)
-RecommendAlbum (sugerir/recomendar) (/un) album (/que escuchar/para escuchar)
-RecommendAlbum (sugerir/recomendar) (/un/algun) album (/de {MusicGenre}) (/que escuchar/para escuchar)
-RecommendSong (sugerir/recomendar) (/un/algun) cancion (/de {MusicGenre}) (/que escuchar/para escuchar)
+RecommendMusicVideo (sugerir/recomendar) (/algún) videoclip (/de {MusicVideoGenre}) (/para ver/para escuchar)
+RecommendArtist (sugerir/recomendar) ((/un) artista/(/un) músico/(/un) grupo) (/que escuchar/para escuchar)
+RecommendArtist (sugerir/recomendar) ((/un) artista/(/un) músico/(/un) grupo) de {MusicGenre} (/que escuchar/para escuchar)
+RecommendAlbum (sugerir/recomendar) (/un) álbum (/que escuchar/para escuchar)
+RecommendAlbum (sugerir/recomendar) (/un/algún) álbum (/de {MusicGenre}) (/que escuchar/para escuchar)
+RecommendSong (sugerir/recomendar) (/un/algún) canción (/de {MusicGenre}) (/que escuchar/para escuchar)
 
-WhatNewAlbums (si hay/hay/tengo) nuevos albums (/que escuchar/para escuchar)
-WhatNewAlbums (si hay/hay/tengo) un nuevo album (/que escuchar/para escuchar)
-WhatNewAlbums que nuevos albums (hay/tengo) (/que escuchar/para escuchar)
+WhatNewAlbums (si hay/hay/tengo) nuevos (álbums/álbumes) (/que escuchar/para escuchar)
+WhatNewAlbums (si hay/hay/tengo) un nuevo álbum (/que escuchar/para escuchar)
+WhatNewAlbums que nuevos (álbums/álbumes) (hay/tengo) (/que escuchar/para escuchar)
 
-WhatNewMovies (si hay/hay/tengo) nuevas (peliculas/pelis) (/para ver/que ver)
-WhatNewMovies (si hay/hay/tengo) nueva (peli/pelicula) (/para ver/que ver)
-WhatNewMovies que nuevas (peliculas/pelis) (do i have/are there) (/para ver/que ver)
-WhatNewMovies (si hay/hay/tengo) (/alguna/algunas) (nueva/nuevas)  (peliculas/pelis) (/de {MovieGenre}) (/para ver/que ver)
+WhatNewMovies (si hay/hay/tengo) nuevas (películas/pelis) (/para ver/que ver)
+WhatNewMovies (si hay/hay/tengo) nueva (peli/película) (/para ver/que ver)
+WhatNewMovies qué nuevas (películas/pelis) (tengo/hay) (/para ver/que ver)
+WhatNewMovies (si hay/hay/tengo) (/alguna/algunas) (nueva/nuevas) (películas/pelis) (/de {MovieGenre}) (/para ver/que ver)
 
 WhatNewShows (si hay/hay/tengo) nuevas series (/para ver/que ver)
 WhatNewShows (si hay/hay/tengo) (/una) nueva serie (/para ver/que ver)
-WhatNewShows que nuevas series (hay/tengo) (/para ver/que ver)
+WhatNewShows qué nuevas series (hay/tengo) (/para ver/que ver)
 
 WhatNewEpisodes (si hay/hay/tengo) (un nuevo/un) episodio de {Show}
-WhatNewEpisodes (si hay/hay/tengo) algun (/nuevo) episodio de {Show}
+WhatNewEpisodes (si hay/hay/tengo) algún (/nuevo) episodio de {Show}
 
-PartyMode (reproducir/escuchar) musica aleatoria
-PartyMode (reproducir/escuchar/barajar) toda la musica
+PartyMode (reproducir/escuchar) música aleatoria
+PartyMode (reproducir/escuchar/barajar) toda la música
 
-CurrentPlayItemInquiry (que/quien) esta (reproduciendo/actualmente reproduciendo)
+CurrentPlayItemInquiry (qué/quién) está (reproduciendo/actualmente reproduciendo)
 
-CurrentPlayItemTimeRemaining cuanto (/tiempo) (/le) queda (/a esto)
-CurrentPlayItemTimeRemaining cuando (acaba/acabara) esto
+CurrentPlayItemTimeRemaining cuánto (/tiempo) (/le) queda (/a ésto)
+CurrentPlayItemTimeRemaining cuando (acaba/acabará) ésto
 
 Hibernate hibernar (/sistema)
 Reboot reiniciar (/sistema)
 Shutdown apagar (/sistema)
 Suspend suspender (/sistema)
-Suspend poner en suspension
+Suspend poner en suspensión
 
 EjectMedia sacar (/disco/compact disc/blu-ray/blu-ray disc/c. d./d. v. d.)
 EjectMedia sacar el (disco/compact disc/blu-ray/blu-ray disc/c. d./d. v. d.)
+EjectMedia expulsar (/disco/compact disc/blu-ray/blu-ray disc/c. d./d. v. d.)
+EjectMedia expulsar el (disco/compact disc/blu-ray/blu-ray disc/c. d./d. v. d.)
 
 PlayerSeekForward (ir/saltar) (/hacia adelante/adelante) {ForwardDur}
 PlayerSeekForward adelantar {ForwardDur}
@@ -261,12 +263,12 @@ PlayerSeekSmallForward (ir/saltar) (/un poco) (/hacia adelante/adelante)
 PlayerSeekSmallForward adelantar (/un poco)
 PlayerSeekBigForward (ir/saltar) (/mucho/bastante) (/hacia adelante/adelante)
 PlayerSeekBigForward adelantar (/mucho/bastante) 
-PlayerSeekBackward (ir/saltar) (atras/hacia atras) {BackwardDur}
+PlayerSeekBackward (ir/saltar) (atrás/hacia atrás) {BackwardDur}
 PlayerSeekBackward (atrasar/volver/retroceder/rebobinar) {BackwardDur}
-PlayerSeekSmallBackward (ir/saltar) (atras/hacia atras)  (/un poco)
-PlayerSeekSmallBackward (atrasar/volver/retroceder/rebobinar)  (/un poco)
-PlayerSeekBigBackward (ir/saltar) (atras/hacia atras)  (mucho/bastante)
-PlayerSeekBigBackward (ir/saltar) (atras/hacia atras)  (mucho/bastante)
+PlayerSeekSmallBackward (ir/saltar) (atrás/hacia atrás) (/un poco)
+PlayerSeekSmallBackward (atrasar/volver/retroceder/rebobinar) (/un poco)
+PlayerSeekBigBackward (ir/saltar) (atrás/hacia atrás) (mucho/bastante)
+PlayerSeekBigBackward (ir/saltar) (atrás/hacia atrás) (mucho/bastante)
 
 AddonExecute (abrir/ejecutar/lanzar) (/addon/add on/plugin/plug in/script) {Addon}
 
@@ -275,7 +277,7 @@ AddonGlobalSearch (encontrar/buscar) {Movie}
 AddonGlobalSearch (encontrar/buscar) {Album}
 AddonGlobalSearch (encontrar/buscar) {Artist}
 
-AMAZON.HelpIntent que puedes hacer
+AMAZON.HelpIntent qué puedes hacer
 AMAZON.HelpIntent cosas que probar
 
-InsertText (escribes/insertas) {someText}
+InsertText (escribe/escribes/inserta/insertas) {someText}
