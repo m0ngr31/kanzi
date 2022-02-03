@@ -36,7 +36,7 @@ ViewMusicVideos (ver/encontrar/buscar) videoclips de {MusicVideoGenre}
 ViewAudioPlaylist (abrir/ir a/ver) (/la) lista de (canciones/música/audio/reproducción) {AudioPlaylist}
 ViewAudioPlaylist (abrir/ir a/ver) (/la) playlist {AudioPlaylist}
 ViewAudioPlaylist (abrir/ir a/ver) (/la) {AudioPlaylist} lista de (canciones/música/audio/reproducción/playlist)
-ViewAudioPlaylistRecent (abrir/ir a/ver) (álbums/canciones) recientes
+ViewAudioPlaylistRecent (abrir/ir a/ver) (álbums/álbumes/canciones) recientes
 ViewAudioPlaylistRecent (abrir/ir a/ver) (música/audio) reciente
 ViewAudioPlaylistRecent (abrir/ir a/ver) música nueva
 ViewAudioPlaylistRecent (abrir/ir a/ver) la última música 
@@ -46,8 +46,8 @@ ViewAudioPlaylistRecent (abrir/ir a/ver) nuevas canciones
 ViewAudioPlaylistRecent (abrir/ir a/ver) últimas canciones
 ViewAudioPlaylistRecent (abrir/ir a/ver) audio nuevo
 ViewAudioPlaylistRecent (abrir/ir a/ver) nuevo audio
-ViewAudioPlaylistRecent (abrir/ir a/ver) nuevos álbums
-ViewAudioPlaylistRecent (abrir/ir a/ver) últimos álbums
+ViewAudioPlaylistRecent (abrir/ir a/ver) nuevos (álbums/álbumes)
+ViewAudioPlaylistRecent (abrir/ir a/ver) últimos (álbums/álbumes)
 ViewVideoPlaylist (abrir/ir a/ver) (/la) lista de (vídeo/video/películas/vídeos/videos) {VideoPlaylist}
 ViewVideoPlaylist (abrir/ir a/ver) (/la) playlist {VideoPlaylist}
 ViewMoviePlaylistRecent (abrir/ir a/ver) (/las) películas recientes
@@ -69,13 +69,13 @@ ViewPlaylist (abrir/ir a/ver) {AudioPlaylist} lista de reproducción
 ViewPlaylist (abrir/ir a/ver) (/la) lista de reproducción {VideoPlaylist}
 ViewPlaylist (abrir/ir a/ver) {VideoPlaylist} lista de reproducción
 
-Fullscreen (ir a/pasar a/active/desactivar) (/la) pantalla completa
+Fullscreen (/ir a/pasar a/active/desactivar) (/la) pantalla completa
 Fullscreen (activar/desactivar) la visualización
 StereoscopicMode (activar/desactivar) (/modo) (estereoscópico/tres D) 
 
 AudioPassthrough (activar/desactivar) el audio (passthrough/digital) 
 AudioPassthrough (activar/desactivar) el passthrough
-Mute (mutear/silenciar)
+Mute (mutear/silenciar/silencio)
 VolumeUp subir el (volumen/sonido/audio)
 VolumeDown bajar el (volumen/sonido/audio)
 VolumeSet (/poner el) volumen (/al) {Volume}
