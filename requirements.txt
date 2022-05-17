@@ -1,5 +1,5 @@
 gunicorn
 pytz
-git+git://github.com/johnwheeler/flask-ask@master#egg=flask-ask
-git+git://github.com/m0ngr31/kodi-voice@master#egg=kodi-voice
+git+https://github.com/johnwheeler/flask-ask@master#egg=flask-ask
+git+https://github.com/m0ngr31/kodi-voice@master#egg=kodi-voice
 cryptography==2.1.4
