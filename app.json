@@ -123,5 +123,6 @@
       "required": false
     }
   },
-  "image": "heroku/python"
+  "image": "heroku/python",
+  "stack": "heroku-18"
 }
