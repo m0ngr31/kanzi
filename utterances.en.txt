@@ -253,6 +253,9 @@ Suspend go to sleep
 EjectMedia eject (/media/disc/compact disc/audio disc/blu-ray/blu-ray disc/c. d./d. v. d.)
 EjectMedia eject the (media/disc/compact disc/audio disc/blu-ray/blu-ray disc/c. d./d. v. d.)
 
+SwitchOnTV switch on (/the) (tv/television)
+SwitchOnTV switch off (/the) (tv/television)
+
 PlayerSeekForward (step/jump) (/forward/forwards) (/by) {ForwardDur}
 PlayerSeekForward forward (step/jump) by {ForwardDur}
 PlayerSeekSmallForward (/small) (step/jump) (forward/forwards)

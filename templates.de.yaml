@@ -243,6 +243,10 @@ clean_video: "Säubere Video Bibliothek"
 
 ejecting_media: "Medium auswerfen"
 
+switch_on_tv: "Switching on the TV"
+
+switch_off_tv: "Switching off the TV"
+
 suspending_system: "Schalte das System in den Bereitschaftsmodus"
 
 quitting: "Beenden"

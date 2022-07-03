@@ -746,6 +746,12 @@
       "intent": "EjectMedia"
     },
     {
+      "intent": "SwitchOnTV"
+    },    
+    {
+      "intent": "SwitchOffTV"
+    },        
+    {
       "intent": "PartyMode"
     },
     {
